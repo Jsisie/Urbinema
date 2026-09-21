@@ -1,0 +1,3065 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 6,
+    "identityHash": "156d5aa6a8493db33b763c321019a6e3",
+    "entities": [
+      {
+        "tableName": "media_assets",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mediaAssetId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `storageType` TEXT NOT NULL, `path` TEXT NOT NULL, `contentDescriptionKey` TEXT, `mimeType` TEXT, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mediaAssetId",
+            "columnName": "mediaAssetId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "storageType",
+            "columnName": "storageType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "path",
+            "columnName": "path",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentDescriptionKey",
+            "columnName": "contentDescriptionKey",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "mimeType",
+            "columnName": "mimeType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "mediaAssetId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_media_assets_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_media_assets_code` ON `${TABLE_NAME}` (`code`)"
+          }
+        ]
+      },
+      {
+        "tableName": "movies",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`movieId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `originalTitle` TEXT NOT NULL, `frenchTitle` TEXT, `releaseYear` INTEGER NOT NULL, `durationMinutes` INTEGER NOT NULL, `format` TEXT NOT NULL, `synopsis` TEXT, `posterMediaId` INTEGER, `historicalDistance` REAL NOT NULL, `artisticDemand` REAL NOT NULL, `historicalRichness` REAL NOT NULL, `culturalRichness` REAL NOT NULL, `isSilent` INTEGER NOT NULL, `isBlackAndWhite` INTEGER NOT NULL, `isExperimental` INTEGER NOT NULL, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, FOREIGN KEY(`posterMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "movieId",
+            "columnName": "movieId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "originalTitle",
+            "columnName": "originalTitle",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "frenchTitle",
+            "columnName": "frenchTitle",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "releaseYear",
+            "columnName": "releaseYear",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "durationMinutes",
+            "columnName": "durationMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "format",
+            "columnName": "format",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "synopsis",
+            "columnName": "synopsis",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "posterMediaId",
+            "columnName": "posterMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "historicalDistance",
+            "columnName": "historicalDistance",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "artisticDemand",
+            "columnName": "artisticDemand",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "historicalRichness",
+            "columnName": "historicalRichness",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "culturalRichness",
+            "columnName": "culturalRichness",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSilent",
+            "columnName": "isSilent",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isBlackAndWhite",
+            "columnName": "isBlackAndWhite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isExperimental",
+            "columnName": "isExperimental",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "movieId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_movies_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_movies_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_movies_originalTitle",
+            "unique": false,
+            "columnNames": [
+              "originalTitle"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_movies_originalTitle` ON `${TABLE_NAME}` (`originalTitle`)"
+          },
+          {
+            "name": "index_movies_frenchTitle",
+            "unique": false,
+            "columnNames": [
+              "frenchTitle"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_movies_frenchTitle` ON `${TABLE_NAME}` (`frenchTitle`)"
+          },
+          {
+            "name": "index_movies_releaseYear",
+            "unique": false,
+            "columnNames": [
+              "releaseYear"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_movies_releaseYear` ON `${TABLE_NAME}` (`releaseYear`)"
+          },
+          {
+            "name": "index_movies_posterMediaId",
+            "unique": false,
+            "columnNames": [
+              "posterMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_movies_posterMediaId` ON `${TABLE_NAME}` (`posterMediaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "posterMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "countries",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`countryId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `name` TEXT NOT NULL, `isoCode` TEXT, `imageMediaId` INTEGER, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, FOREIGN KEY(`imageMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "countryId",
+            "columnName": "countryId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isoCode",
+            "columnName": "isoCode",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "imageMediaId",
+            "columnName": "imageMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "countryId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_countries_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_countries_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_countries_isoCode",
+            "unique": false,
+            "columnNames": [
+              "isoCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_countries_isoCode` ON `${TABLE_NAME}` (`isoCode`)"
+          },
+          {
+            "name": "index_countries_imageMediaId",
+            "unique": false,
+            "columnNames": [
+              "imageMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_countries_imageMediaId` ON `${TABLE_NAME}` (`imageMediaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "imageMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "continents",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`continentId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `name` TEXT NOT NULL, `imageMediaId` INTEGER, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, FOREIGN KEY(`imageMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "continentId",
+            "columnName": "continentId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imageMediaId",
+            "columnName": "imageMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "continentId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_continents_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_continents_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_continents_imageMediaId",
+            "unique": false,
+            "columnNames": [
+              "imageMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_continents_imageMediaId` ON `${TABLE_NAME}` (`imageMediaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "imageMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "countries_continents",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`countryId` INTEGER NOT NULL, `continentId` INTEGER NOT NULL, PRIMARY KEY(`countryId`, `continentId`), FOREIGN KEY(`countryId`) REFERENCES `countries`(`countryId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`continentId`) REFERENCES `continents`(`continentId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "countryId",
+            "columnName": "countryId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "continentId",
+            "columnName": "continentId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "countryId",
+            "continentId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_countries_continents_continentId",
+            "unique": false,
+            "columnNames": [
+              "continentId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_countries_continents_continentId` ON `${TABLE_NAME}` (`continentId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "countries",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "countryId"
+            ],
+            "referencedColumns": [
+              "countryId"
+            ]
+          },
+          {
+            "table": "continents",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "continentId"
+            ],
+            "referencedColumns": [
+              "continentId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "movies_countries",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`movieId` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `isPrimary` INTEGER NOT NULL, PRIMARY KEY(`movieId`, `countryId`), FOREIGN KEY(`movieId`) REFERENCES `movies`(`movieId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`countryId`) REFERENCES `countries`(`countryId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "movieId",
+            "columnName": "movieId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countryId",
+            "columnName": "countryId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPrimary",
+            "columnName": "isPrimary",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "movieId",
+            "countryId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_movies_countries_countryId",
+            "unique": false,
+            "columnNames": [
+              "countryId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_movies_countries_countryId` ON `${TABLE_NAME}` (`countryId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "movies",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "movieId"
+            ],
+            "referencedColumns": [
+              "movieId"
+            ]
+          },
+          {
+            "table": "countries",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "countryId"
+            ],
+            "referencedColumns": [
+              "countryId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "directors",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`directorId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `firstName` TEXT, `lastName` TEXT NOT NULL, `displayName` TEXT NOT NULL, `portraitMediaId` INTEGER, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, FOREIGN KEY(`portraitMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "directorId",
+            "columnName": "directorId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstName",
+            "columnName": "firstName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "lastName",
+            "columnName": "lastName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "portraitMediaId",
+            "columnName": "portraitMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "directorId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_directors_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_directors_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_directors_portraitMediaId",
+            "unique": false,
+            "columnNames": [
+              "portraitMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_directors_portraitMediaId` ON `${TABLE_NAME}` (`portraitMediaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "portraitMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "movies_directors",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`movieId` INTEGER NOT NULL, `directorId` INTEGER NOT NULL, `billingOrder` INTEGER NOT NULL, PRIMARY KEY(`movieId`, `directorId`), FOREIGN KEY(`movieId`) REFERENCES `movies`(`movieId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`directorId`) REFERENCES `directors`(`directorId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "movieId",
+            "columnName": "movieId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "directorId",
+            "columnName": "directorId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "billingOrder",
+            "columnName": "billingOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "movieId",
+            "directorId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_movies_directors_directorId",
+            "unique": false,
+            "columnNames": [
+              "directorId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_movies_directors_directorId` ON `${TABLE_NAME}` (`directorId`)"
+          },
+          {
+            "name": "index_movies_directors_movieId_billingOrder",
+            "unique": true,
+            "columnNames": [
+              "movieId",
+              "billingOrder"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_movies_directors_movieId_billingOrder` ON `${TABLE_NAME}` (`movieId`, `billingOrder`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "movies",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "movieId"
+            ],
+            "referencedColumns": [
+              "movieId"
+            ]
+          },
+          {
+            "table": "directors",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "directorId"
+            ],
+            "referencedColumns": [
+              "directorId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "characteristic_types",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`typeCode` TEXT NOT NULL, `name` TEXT NOT NULL, PRIMARY KEY(`typeCode`))",
+        "fields": [
+          {
+            "fieldPath": "typeCode",
+            "columnName": "typeCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "typeCode"
+          ]
+        }
+      },
+      {
+        "tableName": "cinema_characteristics",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`characteristicId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `name` TEXT NOT NULL, `typeCode` TEXT NOT NULL, `description` TEXT, `imageMediaId` INTEGER, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, FOREIGN KEY(`typeCode`) REFERENCES `characteristic_types`(`typeCode`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`imageMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "characteristicId",
+            "columnName": "characteristicId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "typeCode",
+            "columnName": "typeCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "imageMediaId",
+            "columnName": "imageMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "characteristicId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_cinema_characteristics_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_cinema_characteristics_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_cinema_characteristics_typeCode",
+            "unique": false,
+            "columnNames": [
+              "typeCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_cinema_characteristics_typeCode` ON `${TABLE_NAME}` (`typeCode`)"
+          },
+          {
+            "name": "index_cinema_characteristics_imageMediaId",
+            "unique": false,
+            "columnNames": [
+              "imageMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_cinema_characteristics_imageMediaId` ON `${TABLE_NAME}` (`imageMediaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "characteristic_types",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "typeCode"
+            ],
+            "referencedColumns": [
+              "typeCode"
+            ]
+          },
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "imageMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "directors_characteristics",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`directorId` INTEGER NOT NULL, `characteristicId` INTEGER NOT NULL, PRIMARY KEY(`directorId`, `characteristicId`), FOREIGN KEY(`directorId`) REFERENCES `directors`(`directorId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`characteristicId`) REFERENCES `cinema_characteristics`(`characteristicId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "directorId",
+            "columnName": "directorId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "characteristicId",
+            "columnName": "characteristicId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "directorId",
+            "characteristicId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_directors_characteristics_characteristicId",
+            "unique": false,
+            "columnNames": [
+              "characteristicId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_directors_characteristics_characteristicId` ON `${TABLE_NAME}` (`characteristicId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "directors",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "directorId"
+            ],
+            "referencedColumns": [
+              "directorId"
+            ]
+          },
+          {
+            "table": "cinema_characteristics",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "characteristicId"
+            ],
+            "referencedColumns": [
+              "characteristicId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "movies_characteristics",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`movieId` INTEGER NOT NULL, `characteristicId` INTEGER NOT NULL, PRIMARY KEY(`movieId`, `characteristicId`), FOREIGN KEY(`movieId`) REFERENCES `movies`(`movieId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`characteristicId`) REFERENCES `cinema_characteristics`(`characteristicId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "movieId",
+            "columnName": "movieId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "characteristicId",
+            "columnName": "characteristicId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "movieId",
+            "characteristicId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_movies_characteristics_characteristicId",
+            "unique": false,
+            "columnNames": [
+              "characteristicId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_movies_characteristics_characteristicId` ON `${TABLE_NAME}` (`characteristicId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "movies",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "movieId"
+            ],
+            "referencedColumns": [
+              "movieId"
+            ]
+          },
+          {
+            "table": "cinema_characteristics",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "characteristicId"
+            ],
+            "referencedColumns": [
+              "characteristicId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "genres",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`genreId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT, `imageMediaId` INTEGER, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, FOREIGN KEY(`imageMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "genreId",
+            "columnName": "genreId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "imageMediaId",
+            "columnName": "imageMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "genreId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_genres_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_genres_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_genres_imageMediaId",
+            "unique": false,
+            "columnNames": [
+              "imageMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_genres_imageMediaId` ON `${TABLE_NAME}` (`imageMediaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "imageMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "movies_genres",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`movieId` INTEGER NOT NULL, `genreId` INTEGER NOT NULL, PRIMARY KEY(`movieId`, `genreId`), FOREIGN KEY(`movieId`) REFERENCES `movies`(`movieId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`genreId`) REFERENCES `genres`(`genreId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "movieId",
+            "columnName": "movieId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "genreId",
+            "columnName": "genreId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "movieId",
+            "genreId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_movies_genres_genreId",
+            "unique": false,
+            "columnNames": [
+              "genreId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_movies_genres_genreId` ON `${TABLE_NAME}` (`genreId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "movies",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "movieId"
+            ],
+            "referencedColumns": [
+              "movieId"
+            ]
+          },
+          {
+            "table": "genres",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "genreId"
+            ],
+            "referencedColumns": [
+              "genreId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "eras",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`eraId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `name` TEXT NOT NULL, `startYear` INTEGER NOT NULL, `endYear` INTEGER NOT NULL, `description` TEXT, `imageMediaId` INTEGER, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, FOREIGN KEY(`imageMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "eraId",
+            "columnName": "eraId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startYear",
+            "columnName": "startYear",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endYear",
+            "columnName": "endYear",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "imageMediaId",
+            "columnName": "imageMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "eraId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_eras_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_eras_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_eras_imageMediaId",
+            "unique": false,
+            "columnNames": [
+              "imageMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_eras_imageMediaId` ON `${TABLE_NAME}` (`imageMediaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "imageMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "collections",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`collectionId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `displayOrder` INTEGER NOT NULL, `name` TEXT NOT NULL, `description` TEXT, `longDescription` TEXT, `coverMediaId` INTEGER, `isPublished` INTEGER NOT NULL, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, `track` TEXT NOT NULL, FOREIGN KEY(`coverMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "collectionId",
+            "columnName": "collectionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayOrder",
+            "columnName": "displayOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "longDescription",
+            "columnName": "longDescription",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "coverMediaId",
+            "columnName": "coverMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isPublished",
+            "columnName": "isPublished",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "track",
+            "columnName": "track",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "collectionId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_collections_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_collections_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_collections_displayOrder",
+            "unique": true,
+            "columnNames": [
+              "displayOrder"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_collections_displayOrder` ON `${TABLE_NAME}` (`displayOrder`)"
+          },
+          {
+            "name": "index_collections_coverMediaId",
+            "unique": false,
+            "columnNames": [
+              "coverMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_collections_coverMediaId` ON `${TABLE_NAME}` (`coverMediaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "coverMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "collections_movies",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`collectionId` INTEGER NOT NULL, `movieId` INTEGER NOT NULL, `displayOrder` INTEGER NOT NULL, PRIMARY KEY(`collectionId`, `movieId`), FOREIGN KEY(`collectionId`) REFERENCES `collections`(`collectionId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`movieId`) REFERENCES `movies`(`movieId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "collectionId",
+            "columnName": "collectionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movieId",
+            "columnName": "movieId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayOrder",
+            "columnName": "displayOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "collectionId",
+            "movieId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_collections_movies_movieId",
+            "unique": false,
+            "columnNames": [
+              "movieId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_collections_movies_movieId` ON `${TABLE_NAME}` (`movieId`)"
+          },
+          {
+            "name": "index_collections_movies_collectionId_displayOrder",
+            "unique": true,
+            "columnNames": [
+              "collectionId",
+              "displayOrder"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_collections_movies_collectionId_displayOrder` ON `${TABLE_NAME}` (`collectionId`, `displayOrder`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "collections",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "collectionId"
+            ],
+            "referencedColumns": [
+              "collectionId"
+            ]
+          },
+          {
+            "table": "movies",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "movieId"
+            ],
+            "referencedColumns": [
+              "movieId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "collections_characteristics",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`collectionId` INTEGER NOT NULL, `characteristicId` INTEGER NOT NULL, PRIMARY KEY(`collectionId`, `characteristicId`), FOREIGN KEY(`collectionId`) REFERENCES `collections`(`collectionId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`characteristicId`) REFERENCES `cinema_characteristics`(`characteristicId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "collectionId",
+            "columnName": "collectionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "characteristicId",
+            "columnName": "characteristicId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "collectionId",
+            "characteristicId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_collections_characteristics_characteristicId",
+            "unique": false,
+            "columnNames": [
+              "characteristicId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_collections_characteristics_characteristicId` ON `${TABLE_NAME}` (`characteristicId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "collections",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "collectionId"
+            ],
+            "referencedColumns": [
+              "collectionId"
+            ]
+          },
+          {
+            "table": "cinema_characteristics",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "characteristicId"
+            ],
+            "referencedColumns": [
+              "characteristicId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "collections_countries",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`collectionId` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, PRIMARY KEY(`collectionId`, `countryId`), FOREIGN KEY(`collectionId`) REFERENCES `collections`(`collectionId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`countryId`) REFERENCES `countries`(`countryId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "collectionId",
+            "columnName": "collectionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countryId",
+            "columnName": "countryId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "collectionId",
+            "countryId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_collections_countries_countryId",
+            "unique": false,
+            "columnNames": [
+              "countryId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_collections_countries_countryId` ON `${TABLE_NAME}` (`countryId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "collections",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "collectionId"
+            ],
+            "referencedColumns": [
+              "collectionId"
+            ]
+          },
+          {
+            "table": "countries",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "countryId"
+            ],
+            "referencedColumns": [
+              "countryId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "collections_continents",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`collectionId` INTEGER NOT NULL, `continentId` INTEGER NOT NULL, PRIMARY KEY(`collectionId`, `continentId`), FOREIGN KEY(`collectionId`) REFERENCES `collections`(`collectionId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`continentId`) REFERENCES `continents`(`continentId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "collectionId",
+            "columnName": "collectionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "continentId",
+            "columnName": "continentId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "collectionId",
+            "continentId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_collections_continents_continentId",
+            "unique": false,
+            "columnNames": [
+              "continentId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_collections_continents_continentId` ON `${TABLE_NAME}` (`continentId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "collections",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "collectionId"
+            ],
+            "referencedColumns": [
+              "collectionId"
+            ]
+          },
+          {
+            "table": "continents",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "continentId"
+            ],
+            "referencedColumns": [
+              "continentId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "collections_eras",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`collectionId` INTEGER NOT NULL, `eraId` INTEGER NOT NULL, PRIMARY KEY(`collectionId`, `eraId`), FOREIGN KEY(`collectionId`) REFERENCES `collections`(`collectionId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`eraId`) REFERENCES `eras`(`eraId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "collectionId",
+            "columnName": "collectionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "eraId",
+            "columnName": "eraId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "collectionId",
+            "eraId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_collections_eras_eraId",
+            "unique": false,
+            "columnNames": [
+              "eraId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_collections_eras_eraId` ON `${TABLE_NAME}` (`eraId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "collections",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "collectionId"
+            ],
+            "referencedColumns": [
+              "collectionId"
+            ]
+          },
+          {
+            "table": "eras",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "eraId"
+            ],
+            "referencedColumns": [
+              "eraId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "rankings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rankingId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `displayOrder` INTEGER NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `longDescription` TEXT, `imageMediaId` INTEGER, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, FOREIGN KEY(`imageMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "rankingId",
+            "columnName": "rankingId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayOrder",
+            "columnName": "displayOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longDescription",
+            "columnName": "longDescription",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "imageMediaId",
+            "columnName": "imageMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "rankingId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_rankings_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_rankings_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_rankings_displayOrder",
+            "unique": true,
+            "columnNames": [
+              "displayOrder"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_rankings_displayOrder` ON `${TABLE_NAME}` (`displayOrder`)"
+          },
+          {
+            "name": "index_rankings_imageMediaId",
+            "unique": false,
+            "columnNames": [
+              "imageMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_rankings_imageMediaId` ON `${TABLE_NAME}` (`imageMediaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "imageMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "badges",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`badgeId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `difficulty` INTEGER NOT NULL, `category` TEXT NOT NULL, `iconMediaId` INTEGER, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, FOREIGN KEY(`iconMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "badgeId",
+            "columnName": "badgeId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "difficulty",
+            "columnName": "difficulty",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iconMediaId",
+            "columnName": "iconMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "badgeId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_badges_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_badges_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_badges_iconMediaId",
+            "unique": false,
+            "columnNames": [
+              "iconMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_badges_iconMediaId` ON `${TABLE_NAME}` (`iconMediaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "iconMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "quests",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`questId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `difficulty` TEXT NOT NULL, `ruleCode` TEXT NOT NULL, `targetCount` INTEGER NOT NULL, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "questId",
+            "columnName": "questId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "difficulty",
+            "columnName": "difficulty",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ruleCode",
+            "columnName": "ruleCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetCount",
+            "columnName": "targetCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "questId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_quests_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_quests_code` ON `${TABLE_NAME}` (`code`)"
+          },
+          {
+            "name": "index_quests_ruleCode",
+            "unique": false,
+            "columnNames": [
+              "ruleCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_quests_ruleCode` ON `${TABLE_NAME}` (`ruleCode`)"
+          }
+        ]
+      },
+      {
+        "tableName": "users",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `email` TEXT, `username` TEXT NOT NULL, `firstName` TEXT, `lastName` TEXT, `birthDate` TEXT, `countryId` INTEGER, `avatarMediaId` INTEGER, `rankingId` INTEGER NOT NULL, `maxLevelReached` INTEGER NOT NULL, `unlockedTrackOrdinal` INTEGER NOT NULL, `showcaseBadgeCodes` TEXT, `createdAt` TEXT NOT NULL, FOREIGN KEY(`countryId`) REFERENCES `countries`(`countryId`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`avatarMediaId`) REFERENCES `media_assets`(`mediaAssetId`) ON UPDATE NO ACTION ON DELETE SET NULL , FOREIGN KEY(`rankingId`) REFERENCES `rankings`(`rankingId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "username",
+            "columnName": "username",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstName",
+            "columnName": "firstName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "lastName",
+            "columnName": "lastName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "birthDate",
+            "columnName": "birthDate",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "countryId",
+            "columnName": "countryId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "avatarMediaId",
+            "columnName": "avatarMediaId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "rankingId",
+            "columnName": "rankingId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "maxLevelReached",
+            "columnName": "maxLevelReached",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unlockedTrackOrdinal",
+            "columnName": "unlockedTrackOrdinal",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "showcaseBadgeCodes",
+            "columnName": "showcaseBadgeCodes",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "userId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_users_username",
+            "unique": true,
+            "columnNames": [
+              "username"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_users_username` ON `${TABLE_NAME}` (`username`)"
+          },
+          {
+            "name": "index_users_countryId",
+            "unique": false,
+            "columnNames": [
+              "countryId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_users_countryId` ON `${TABLE_NAME}` (`countryId`)"
+          },
+          {
+            "name": "index_users_avatarMediaId",
+            "unique": false,
+            "columnNames": [
+              "avatarMediaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_users_avatarMediaId` ON `${TABLE_NAME}` (`avatarMediaId`)"
+          },
+          {
+            "name": "index_users_rankingId",
+            "unique": false,
+            "columnNames": [
+              "rankingId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_users_rankingId` ON `${TABLE_NAME}` (`rankingId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "countries",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "countryId"
+            ],
+            "referencedColumns": [
+              "countryId"
+            ]
+          },
+          {
+            "table": "media_assets",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "avatarMediaId"
+            ],
+            "referencedColumns": [
+              "mediaAssetId"
+            ]
+          },
+          {
+            "table": "rankings",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "rankingId"
+            ],
+            "referencedColumns": [
+              "rankingId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "user_movies",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` INTEGER NOT NULL, `movieId` INTEGER NOT NULL, `watchedOn` TEXT NOT NULL, `validatedAt` TEXT NOT NULL, PRIMARY KEY(`userId`, `movieId`), FOREIGN KEY(`userId`) REFERENCES `users`(`userId`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`movieId`) REFERENCES `movies`(`movieId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movieId",
+            "columnName": "movieId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "watchedOn",
+            "columnName": "watchedOn",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "validatedAt",
+            "columnName": "validatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "userId",
+            "movieId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_user_movies_movieId",
+            "unique": false,
+            "columnNames": [
+              "movieId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_user_movies_movieId` ON `${TABLE_NAME}` (`movieId`)"
+          },
+          {
+            "name": "index_user_movies_userId_watchedOn",
+            "unique": false,
+            "columnNames": [
+              "userId",
+              "watchedOn"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_user_movies_userId_watchedOn` ON `${TABLE_NAME}` (`userId`, `watchedOn`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "users",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "userId"
+            ],
+            "referencedColumns": [
+              "userId"
+            ]
+          },
+          {
+            "table": "movies",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "movieId"
+            ],
+            "referencedColumns": [
+              "movieId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "user_followed_collections",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` INTEGER NOT NULL, `collectionId` INTEGER NOT NULL, `followedAt` TEXT NOT NULL, PRIMARY KEY(`userId`, `collectionId`), FOREIGN KEY(`userId`) REFERENCES `users`(`userId`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`collectionId`) REFERENCES `collections`(`collectionId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "collectionId",
+            "columnName": "collectionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "followedAt",
+            "columnName": "followedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "userId",
+            "collectionId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_user_followed_collections_collectionId",
+            "unique": false,
+            "columnNames": [
+              "collectionId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_user_followed_collections_collectionId` ON `${TABLE_NAME}` (`collectionId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "users",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "userId"
+            ],
+            "referencedColumns": [
+              "userId"
+            ]
+          },
+          {
+            "table": "collections",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "collectionId"
+            ],
+            "referencedColumns": [
+              "collectionId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "user_badges",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` INTEGER NOT NULL, `badgeId` INTEGER NOT NULL, `earnedAt` TEXT NOT NULL, PRIMARY KEY(`userId`, `badgeId`), FOREIGN KEY(`userId`) REFERENCES `users`(`userId`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`badgeId`) REFERENCES `badges`(`badgeId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "badgeId",
+            "columnName": "badgeId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "earnedAt",
+            "columnName": "earnedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "userId",
+            "badgeId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_user_badges_badgeId",
+            "unique": false,
+            "columnNames": [
+              "badgeId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_user_badges_badgeId` ON `${TABLE_NAME}` (`badgeId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "users",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "userId"
+            ],
+            "referencedColumns": [
+              "userId"
+            ]
+          },
+          {
+            "table": "badges",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "badgeId"
+            ],
+            "referencedColumns": [
+              "badgeId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "user_quests",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userQuestId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` INTEGER NOT NULL, `questId` INTEGER NOT NULL, `startsAt` TEXT NOT NULL, `expiresAt` TEXT NOT NULL, `progress` INTEGER NOT NULL, `targetCountSnapshot` INTEGER NOT NULL, `xpRewardSnapshot` INTEGER NOT NULL, `completedAt` TEXT, `status` TEXT NOT NULL, FOREIGN KEY(`userId`) REFERENCES `users`(`userId`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`questId`) REFERENCES `quests`(`questId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "userQuestId",
+            "columnName": "userQuestId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questId",
+            "columnName": "questId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startsAt",
+            "columnName": "startsAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "expiresAt",
+            "columnName": "expiresAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "progress",
+            "columnName": "progress",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetCountSnapshot",
+            "columnName": "targetCountSnapshot",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xpRewardSnapshot",
+            "columnName": "xpRewardSnapshot",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completedAt",
+            "columnName": "completedAt",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "userQuestId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_user_quests_questId",
+            "unique": false,
+            "columnNames": [
+              "questId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_user_quests_questId` ON `${TABLE_NAME}` (`questId`)"
+          },
+          {
+            "name": "index_user_quests_userId_startsAt_expiresAt_status",
+            "unique": false,
+            "columnNames": [
+              "userId",
+              "startsAt",
+              "expiresAt",
+              "status"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_user_quests_userId_startsAt_expiresAt_status` ON `${TABLE_NAME}` (`userId`, `startsAt`, `expiresAt`, `status`)"
+          },
+          {
+            "name": "index_user_quests_userId_questId_startsAt",
+            "unique": true,
+            "columnNames": [
+              "userId",
+              "questId",
+              "startsAt"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_user_quests_userId_questId_startsAt` ON `${TABLE_NAME}` (`userId`, `questId`, `startsAt`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "users",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "userId"
+            ],
+            "referencedColumns": [
+              "userId"
+            ]
+          },
+          {
+            "table": "quests",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "questId"
+            ],
+            "referencedColumns": [
+              "questId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "xp_transactions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`xpTransactionId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` INTEGER NOT NULL, `userQuestId` INTEGER, `movieId` INTEGER, `source` TEXT NOT NULL, `amount` INTEGER NOT NULL, `earnedAt` TEXT NOT NULL, FOREIGN KEY(`userId`) REFERENCES `users`(`userId`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`userQuestId`) REFERENCES `user_quests`(`userQuestId`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`movieId`) REFERENCES `movies`(`movieId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "xpTransactionId",
+            "columnName": "xpTransactionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userQuestId",
+            "columnName": "userQuestId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "movieId",
+            "columnName": "movieId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "amount",
+            "columnName": "amount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "earnedAt",
+            "columnName": "earnedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "xpTransactionId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_xp_transactions_userId",
+            "unique": false,
+            "columnNames": [
+              "userId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_xp_transactions_userId` ON `${TABLE_NAME}` (`userId`)"
+          },
+          {
+            "name": "index_xp_transactions_userQuestId",
+            "unique": true,
+            "columnNames": [
+              "userQuestId"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_xp_transactions_userQuestId` ON `${TABLE_NAME}` (`userQuestId`)"
+          },
+          {
+            "name": "index_xp_transactions_movieId",
+            "unique": false,
+            "columnNames": [
+              "movieId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_xp_transactions_movieId` ON `${TABLE_NAME}` (`movieId`)"
+          },
+          {
+            "name": "index_xp_transactions_userId_movieId",
+            "unique": true,
+            "columnNames": [
+              "userId",
+              "movieId"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_xp_transactions_userId_movieId` ON `${TABLE_NAME}` (`userId`, `movieId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "users",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "userId"
+            ],
+            "referencedColumns": [
+              "userId"
+            ]
+          },
+          {
+            "table": "user_quests",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "userQuestId"
+            ],
+            "referencedColumns": [
+              "userQuestId"
+            ]
+          },
+          {
+            "table": "movies",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "movieId"
+            ],
+            "referencedColumns": [
+              "movieId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "activity_events",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`activityEventId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` INTEGER NOT NULL, `type` TEXT NOT NULL, `occurredAt` TEXT NOT NULL, `payloadJson` TEXT NOT NULL, FOREIGN KEY(`userId`) REFERENCES `users`(`userId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "activityEventId",
+            "columnName": "activityEventId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "occurredAt",
+            "columnName": "occurredAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payloadJson",
+            "columnName": "payloadJson",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "activityEventId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_activity_events_userId_occurredAt",
+            "unique": false,
+            "columnNames": [
+              "userId",
+              "occurredAt"
+            ],
+            "orders": [
+              "ASC",
+              "DESC"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_activity_events_userId_occurredAt` ON `${TABLE_NAME}` (`userId` ASC, `occurredAt` DESC)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "users",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "userId"
+            ],
+            "referencedColumns": [
+              "userId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "catalog_versions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`catalogVersionId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `version` INTEGER NOT NULL, `generatedAt` TEXT NOT NULL, `appliedAt` TEXT NOT NULL, `movieCount` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "catalogVersionId",
+            "columnName": "catalogVersionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "version",
+            "columnName": "version",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "generatedAt",
+            "columnName": "generatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "appliedAt",
+            "columnName": "appliedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movieCount",
+            "columnName": "movieCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "catalogVersionId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_catalog_versions_version",
+            "unique": true,
+            "columnNames": [
+              "version"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_catalog_versions_version` ON `${TABLE_NAME}` (`version`)"
+          }
+        ]
+      },
+      {
+        "tableName": "rank_engine_configs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rankEngineConfigId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL, `volumeLambda` REAL NOT NULL, `diversityLambda` REAL NOT NULL, `depthLambda` REAL NOT NULL, `attenuationExponent` REAL NOT NULL, `characteristicShare` REAL NOT NULL, `directorShare` REAL NOT NULL, `countryShare` REAL NOT NULL, `decadeShare` REAL NOT NULL, `continentShare` REAL NOT NULL, `eraShare` REAL NOT NULL, `genreShare` REAL NOT NULL, `formShare` REAL NOT NULL, `isActive` INTEGER NOT NULL, `createdAt` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "rankEngineConfigId",
+            "columnName": "rankEngineConfigId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "volumeLambda",
+            "columnName": "volumeLambda",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "diversityLambda",
+            "columnName": "diversityLambda",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "depthLambda",
+            "columnName": "depthLambda",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attenuationExponent",
+            "columnName": "attenuationExponent",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "characteristicShare",
+            "columnName": "characteristicShare",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "directorShare",
+            "columnName": "directorShare",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countryShare",
+            "columnName": "countryShare",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "decadeShare",
+            "columnName": "decadeShare",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "continentShare",
+            "columnName": "continentShare",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "eraShare",
+            "columnName": "eraShare",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "genreShare",
+            "columnName": "genreShare",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "formShare",
+            "columnName": "formShare",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "rankEngineConfigId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_rank_engine_configs_code",
+            "unique": true,
+            "columnNames": [
+              "code"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_rank_engine_configs_code` ON `${TABLE_NAME}` (`code`)"
+          }
+        ]
+      },
+      {
+        "tableName": "rank_thresholds",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rankEngineConfigId` INTEGER NOT NULL, `rankOrder` INTEGER NOT NULL, `minimumScore` REAL NOT NULL, PRIMARY KEY(`rankEngineConfigId`, `rankOrder`), FOREIGN KEY(`rankEngineConfigId`) REFERENCES `rank_engine_configs`(`rankEngineConfigId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "rankEngineConfigId",
+            "columnName": "rankEngineConfigId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rankOrder",
+            "columnName": "rankOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "minimumScore",
+            "columnName": "minimumScore",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "rankEngineConfigId",
+            "rankOrder"
+          ]
+        },
+        "foreignKeys": [
+          {
+            "table": "rank_engine_configs",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "rankEngineConfigId"
+            ],
+            "referencedColumns": [
+              "rankEngineConfigId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "catalog_dimension_stats",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`catalogVersionId` INTEGER NOT NULL, `dimensionCode` TEXT NOT NULL, `territoryCode` TEXT NOT NULL, `rarityReference` REAL NOT NULL, `weightReference` REAL NOT NULL, PRIMARY KEY(`catalogVersionId`, `dimensionCode`, `territoryCode`), FOREIGN KEY(`catalogVersionId`) REFERENCES `catalog_versions`(`catalogVersionId`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "catalogVersionId",
+            "columnName": "catalogVersionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dimensionCode",
+            "columnName": "dimensionCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "territoryCode",
+            "columnName": "territoryCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rarityReference",
+            "columnName": "rarityReference",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weightReference",
+            "columnName": "weightReference",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "catalogVersionId",
+            "dimensionCode",
+            "territoryCode"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_catalog_dimension_stats_dimensionCode_territoryCode",
+            "unique": false,
+            "columnNames": [
+              "dimensionCode",
+              "territoryCode"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_catalog_dimension_stats_dimensionCode_territoryCode` ON `${TABLE_NAME}` (`dimensionCode`, `territoryCode`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "catalog_versions",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "catalogVersionId"
+            ],
+            "referencedColumns": [
+              "catalogVersionId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "user_progress_state",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` INTEGER NOT NULL, `weightedVolume` REAL NOT NULL, `diversity` REAL NOT NULL, `depth` REAL NOT NULL, `score` REAL NOT NULL, `rawRankOrder` INTEGER NOT NULL, `recalculatedAt` TEXT NOT NULL, PRIMARY KEY(`userId`), FOREIGN KEY(`userId`) REFERENCES `users`(`userId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weightedVolume",
+            "columnName": "weightedVolume",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "diversity",
+            "columnName": "diversity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "depth",
+            "columnName": "depth",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "score",
+            "columnName": "score",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rawRankOrder",
+            "columnName": "rawRankOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recalculatedAt",
+            "columnName": "recalculatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "userId"
+          ]
+        },
+        "foreignKeys": [
+          {
+            "table": "users",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "userId"
+            ],
+            "referencedColumns": [
+              "userId"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '156d5aa6a8493db33b763c321019a6e3')"
+    ]
+  }
+}

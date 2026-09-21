@@ -1,0 +1,1208 @@
+package fr.jsisie.urbinema.app
+
+import android.util.Log
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import fr.jsisie.urbinema.R
+import fr.jsisie.urbinema.app.startup.AppBootstrapper
+import fr.jsisie.urbinema.data.db.ActivityEventEntity
+import fr.jsisie.urbinema.data.db.BadgeEntity
+import fr.jsisie.urbinema.data.db.CinemaCharacteristicEntity
+import fr.jsisie.urbinema.data.db.CollectionCharacteristicCrossRef
+import fr.jsisie.urbinema.data.db.CollectionCountryCrossRef
+import fr.jsisie.urbinema.data.db.CollectionProgressRow
+import fr.jsisie.urbinema.data.db.CollectionWithMovies
+import fr.jsisie.urbinema.data.db.ContinentEntity
+import fr.jsisie.urbinema.data.db.CountryContinentCrossRef
+import fr.jsisie.urbinema.data.db.CountryEntity
+import fr.jsisie.urbinema.data.db.CountryProgressRow
+import fr.jsisie.urbinema.data.db.DirectorEntity
+import fr.jsisie.urbinema.data.db.GenreEntity
+import fr.jsisie.urbinema.data.db.MovieWithRelations
+import fr.jsisie.urbinema.data.db.QuestDifficulty
+import fr.jsisie.urbinema.data.db.QuestEntity
+import fr.jsisie.urbinema.data.db.RankingEntity
+import fr.jsisie.urbinema.data.db.UrbinemaDatabase
+import fr.jsisie.urbinema.data.db.UserEntity
+import fr.jsisie.urbinema.data.db.UserMovieCrossRef
+import fr.jsisie.urbinema.data.db.UserQuestStatus
+import fr.jsisie.urbinema.data.preferences.LanguagePreference
+import fr.jsisie.urbinema.data.preferences.PreferencesRepository
+import fr.jsisie.urbinema.data.preferences.ThemePreference
+import fr.jsisie.urbinema.data.repository.ProgressRepository
+import fr.jsisie.urbinema.data.repository.ProgressionCoordinator
+import fr.jsisie.urbinema.data.repository.WeeklyQuestCoordinator
+import fr.jsisie.urbinema.data.media.MediaPaths
+import fr.jsisie.urbinema.domain.badge.ProfileBadges
+import fr.jsisie.urbinema.domain.collection.CollectionUnlockRules
+import fr.jsisie.urbinema.domain.map.CinemaMapGraph
+import fr.jsisie.urbinema.domain.map.CinemaMapLayout
+import fr.jsisie.urbinema.domain.map.ConstellationSeed
+import fr.jsisie.urbinema.domain.map.MapLayer
+import fr.jsisie.urbinema.domain.map.MapNodeKind
+import fr.jsisie.urbinema.domain.map.MapSeed
+import fr.jsisie.urbinema.domain.xp.XpEngine
+import fr.jsisie.urbinema.ui.model.AppLanguage
+import fr.jsisie.urbinema.ui.model.BadgeUi
+import fr.jsisie.urbinema.ui.model.CollectionTrack
+import fr.jsisie.urbinema.ui.model.CollectionUi
+import fr.jsisie.urbinema.ui.model.DirectorUi
+import fr.jsisie.urbinema.ui.model.ExplorationState
+import fr.jsisie.urbinema.ui.model.HistoryUi
+import fr.jsisie.urbinema.ui.model.HomeUiState
+import fr.jsisie.urbinema.ui.model.LoadState
+import fr.jsisie.urbinema.ui.model.MovieSummaryUi
+import fr.jsisie.urbinema.ui.model.MovieUi
+import fr.jsisie.urbinema.ui.model.ProfileUiState
+import fr.jsisie.urbinema.ui.model.QuestUi
+import fr.jsisie.urbinema.ui.model.RankUi
+import fr.jsisie.urbinema.ui.model.SearchHitUi
+import fr.jsisie.urbinema.ui.model.SearchKind
+import fr.jsisie.urbinema.ui.model.StatsListsUi
+import fr.jsisie.urbinema.ui.model.TerritoryUi
+import fr.jsisie.urbinema.ui.model.UrbinemaViewModel
+import fr.jsisie.urbinema.ui.theme.UrbinemaThemeMode
+import java.time.Instant
+import java.time.LocalDate
+import java.time.Year
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
+
+/**
+ * Application-level presentation model backed by Room flows.
+ *
+ * It deliberately maps database entities to UI models here, leaving both
+ * Composables and the pure domain engines independent of persistence classes.
+ */
+class MainViewModel(
+    private val bootstrapper: AppBootstrapper,
+    private val database: UrbinemaDatabase,
+    private val progressRepository: ProgressRepository,
+    private val xpEngine: XpEngine,
+    private val preferencesRepository: PreferencesRepository,
+    private val progressionCoordinator: ProgressionCoordinator,
+    private val weeklyQuestCoordinator: WeeklyQuestCoordinator,
+) : ViewModel(), UrbinemaViewModel {
+    private var user: UserEntity? = null
+    private var moviesWithRelations: List<MovieWithRelations> = emptyList()
+    private var watched: List<UserMovieCrossRef> = emptyList()
+    private var collectionsWithMovies: List<CollectionWithMovies> = emptyList()
+    private var collectionProgress: Map<Long, CollectionProgressRow> = emptyMap()
+    private var collectionCountryRefs: List<CollectionCountryCrossRef> = emptyList()
+    private var collectionCharacteristicRefs: List<CollectionCharacteristicCrossRef> = emptyList()
+    private var followedCollectionIds: Set<Long> = emptySet()
+    private var countryEntities: List<CountryEntity> = emptyList()
+    private var countryProgress: Map<Long, CountryProgressRow> = emptyMap()
+    private var countryContinents: List<CountryContinentCrossRef> = emptyList()
+    private var continentEntities: List<ContinentEntity> = emptyList()
+    private var directorEntities: List<DirectorEntity> = emptyList()
+    private var genreEntities: List<GenreEntity> = emptyList()
+    private var characteristicEntities: List<CinemaCharacteristicEntity> = emptyList()
+    private var badgeEntities: List<BadgeEntity> = emptyList()
+    private var earnedBadgeCodesOrdered: List<String> = emptyList()
+    private var rankings: List<RankingEntity> = emptyList()
+    private var questEntities: List<QuestEntity> = emptyList()
+    private var assignedQuests: List<QuestUi> = emptyList()
+    private var historyEvents: List<ActivityEventEntity> = emptyList()
+    private var totalXp: Long = 0
+    private var observedUserId: Long? = null
+    private var observing = false
+    private var bootstrapFailed = false
+
+    private var homeState by mutableStateOf(HomeUiState(loadState = LoadState.Loading))
+    private var territoryState by mutableStateOf(emptyList<TerritoryUi>())
+    private var currentState by mutableStateOf(emptyList<TerritoryUi>())
+    private var decadeState by mutableStateOf(emptyList<TerritoryUi>())
+    private var genreState by mutableStateOf(emptyList<TerritoryUi>())
+    private var collectionState by mutableStateOf(emptyList<CollectionUi>())
+    private var badgeState by mutableStateOf(emptyList<BadgeUi>())
+    private var rankState by mutableStateOf(emptyList<RankUi>())
+    private var directorState by mutableStateOf(emptyList<DirectorUi>())
+    private var movieState by mutableStateOf(
+        MovieUi("", "", null, "", "", "", false),
+    )
+    private var profileState by mutableStateOf(ProfileUiState())
+    private var statsState by mutableStateOf(StatsListsUi())
+    private var selectedThemeMode by mutableStateOf(UrbinemaThemeMode.Dark)
+    private var selectedLanguage by mutableStateOf(AppLanguage.System)
+    private var grainEnabled by mutableStateOf(false)
+    private var showOnboarding by mutableStateOf(false)
+    private var celebrationName by mutableStateOf<String?>(null)
+    private var pendingBadgeCelebrations by mutableStateOf(listOf<String>())
+    private var completionBaselineReady = false
+    private var lastCompletedCollectionIds = emptySet<String>()
+    private var celebratedBadgeCodes = emptySet<String>()
+    private var badgeCelebrationsSeeded = false
+    private var badgeCelebrationPrefsReady = false
+    private var progressHydrated = false
+    private var earnedBadgesObserved = false
+    private var userMoviesObserved = false
+
+    override val home: HomeUiState get() = homeState
+    override val territories: List<TerritoryUi> get() = territoryState
+    override val currents: List<TerritoryUi> get() = currentState
+    override val decades: List<TerritoryUi> get() = decadeState
+    override val genres: List<TerritoryUi> get() = genreState
+    override val collections: List<CollectionUi> get() = collectionState
+    override val badges: List<BadgeUi> get() = badgeState
+    override val ranks: List<RankUi> get() = rankState
+    override val directors: List<DirectorUi> get() = directorState
+    override val movie: MovieUi get() = movieState
+    override val profile: ProfileUiState get() = profileState
+    override val statsLists: StatsListsUi get() = statsState
+    override val themeMode: UrbinemaThemeMode get() = selectedThemeMode
+    override val language: AppLanguage get() = selectedLanguage
+    override val filmGrain: Boolean get() = grainEnabled
+    override val needsOnboarding: Boolean get() = showOnboarding
+    override val completedCollectionCelebration: String? get() = celebrationName
+    override val unlockedBadgeCelebration: String? get() = pendingBadgeCelebrations.firstOrNull()
+    override val availableAvatars: List<String> get() = MediaPaths.PACKAGED_AVATAR_CODES
+
+    init {
+        retryBootstrap()
+        viewModelScope.launch {
+            preferencesRepository.themeMode.collectLatest {
+                selectedThemeMode = when (it) {
+                    ThemePreference.DARK -> UrbinemaThemeMode.Dark
+                    ThemePreference.LIGHT -> UrbinemaThemeMode.Light
+                    ThemePreference.SYSTEM -> UrbinemaThemeMode.System
+                }
+            }
+        }
+        viewModelScope.launch {
+            preferencesRepository.language.collectLatest {
+                selectedLanguage = when (it) {
+                    LanguagePreference.SYSTEM -> AppLanguage.System
+                    LanguagePreference.FRENCH -> AppLanguage.French
+                    LanguagePreference.ENGLISH -> AppLanguage.English
+                }
+                refresh()
+            }
+        }
+        viewModelScope.launch {
+            preferencesRepository.filmGrain.collectLatest { grainEnabled = it }
+        }
+        viewModelScope.launch {
+            preferencesRepository.badgeCelebrations.collectLatest { prefs ->
+                celebratedBadgeCodes = prefs.codes
+                badgeCelebrationsSeeded = prefs.seeded
+                badgeCelebrationPrefsReady = true
+                refresh()
+            }
+        }
+    }
+
+    override fun retryBootstrap() {
+        viewModelScope.launch {
+            homeState = homeState.copy(loadState = LoadState.Loading)
+            bootstrapFailed = false
+            val ready = runCatching { bootstrapper.initialize() }
+                .onFailure {
+                    bootstrapFailed = true
+                    Log.e(TAG, "Bootstrap failed", it)
+                }
+                .getOrDefault(false)
+            if (!ready) bootstrapFailed = true
+            observeDatabase()
+        }
+    }
+
+    override fun setThemeMode(mode: UrbinemaThemeMode) {
+        viewModelScope.launch {
+            preferencesRepository.setThemeMode(
+                when (mode) {
+                    UrbinemaThemeMode.Dark -> ThemePreference.DARK
+                    UrbinemaThemeMode.Light -> ThemePreference.LIGHT
+                    UrbinemaThemeMode.System -> ThemePreference.SYSTEM
+                }
+            )
+        }
+    }
+
+    override fun setLanguage(language: AppLanguage) {
+        viewModelScope.launch {
+            preferencesRepository.setLanguage(
+                when (language) {
+                    AppLanguage.System -> LanguagePreference.SYSTEM
+                    AppLanguage.French -> LanguagePreference.FRENCH
+                    AppLanguage.English -> LanguagePreference.ENGLISH
+                }
+            )
+        }
+    }
+
+    override fun setFilmGrain(enabled: Boolean) {
+        viewModelScope.launch { preferencesRepository.setFilmGrain(enabled) }
+    }
+
+    override fun setUsername(username: String) {
+        val profile = user ?: return
+        val normalized = username.trim()
+        if (normalized.isEmpty() || normalized == profile.username) return
+        viewModelScope.launch {
+            database.progressDao().updateUsername(profile.userId, normalized)
+        }
+    }
+
+    override fun setAge(age: Int) {
+        val profile = user ?: return
+        if (age !in MIN_AGE..MAX_AGE) return
+        viewModelScope.launch {
+            database.progressDao().updateBirthDate(profile.userId, birthDateFromAge(age))
+            progressionCoordinator.recalculate(profile.userId)
+        }
+    }
+
+    override fun setAvatar(code: String) {
+        val profile = user ?: return
+        val normalized = code.trim()
+        if (normalized !in MediaPaths.PACKAGED_AVATAR_CODES || normalized == profile.avatarCode) return
+        viewModelScope.launch {
+            database.progressDao().updateAvatarCode(profile.userId, normalized)
+        }
+    }
+
+    /**
+     * Creates the local profile or completes a 0.1.6 leftover (pseudo without age).
+     * Age is stored as 1 January of (current year − age). Avatar must be a packaged code.
+     */
+    override fun completeOnboarding(username: String, age: Int, avatarCode: String) {
+        val normalized = username.trim()
+        val avatar = avatarCode.trim()
+        if (normalized.isEmpty() || age !in MIN_AGE..MAX_AGE) return
+        if (avatar !in MediaPaths.PACKAGED_AVATAR_CODES) return
+        val birthDate = birthDateFromAge(age)
+        viewModelScope.launch {
+            val existing = user
+            if (existing != null) {
+                database.progressDao().updateUsername(existing.userId, normalized)
+                database.progressDao().updateBirthDate(existing.userId, birthDate)
+                database.progressDao().updateAvatarCode(existing.userId, avatar)
+                progressionCoordinator.recalculate(existing.userId)
+                return@launch
+            }
+            val firstRank = database.progressDao().rankingByOrder(1) ?: return@launch
+            runCatching {
+                database.progressDao().insertUser(
+                    UserEntity(
+                        username = normalized,
+                        birthDate = birthDate,
+                        avatarCode = avatar,
+                        rankingId = firstRank.rankingId,
+                        createdAt = Instant.now(),
+                    )
+                )
+            }.onFailure { Log.e(TAG, "Onboarding profile insert failed", it) }
+        }
+    }
+
+    /**
+     * Marks the open film as seen (local date, once). Then rank/XP/badges and
+     * weekly quests are recalculated from the validated set — not from this screen.
+     */
+    override fun markCurrentMovieWatched() {
+        val currentUser = user ?: return
+        val currentMovie = moviesWithRelations.firstOrNull { it.movie.code == movieState.id } ?: return
+        if (movieState.watched || watched.any { it.movieId == currentMovie.movie.movieId }) return
+        movieState = movieState.copy(watched = true)
+        val film = currentMovie.movie
+        val h = film.historicalDistance
+        val a = film.artisticDemand
+        val r = film.historicalRichness
+        val c = film.culturalRichness
+        val intrinsic = 1.0 + 2.0 * h + 2.0 * a + 2.0 * r + 3.0 * c
+        val attenuated = kotlin.math.sqrt(intrinsic)
+        Log.i(PROGRESS_TAG, "========== Film marqué Vu ==========")
+        Log.i(
+            PROGRESS_TAG,
+            "Film ${film.code} «${film.frenchTitle ?: film.originalTitle}» (${film.releaseYear})",
+        )
+        Log.i(PROGRESS_TAG, "Axes: H(distance)=$h A(exigence)=$a R(importance)=$r C(richesse)=$c")
+        Log.i(PROGRESS_TAG, "Poids brut W_f = 1 + 2H + 2A + 2R + 3C = ${"%.4f".format(intrinsic)}")
+        Log.i(PROGRESS_TAG, "Poids atténué W' = sqrt(W_f) = ${"%.4f".format(attenuated)}  (ajouté au volume Vw)")
+        Log.i(PROGRESS_TAG, "XP de ce film = ${xpEngine.rewardForFilm()} (une fois). Quêtes : Bronze 100 / Argent 250 / Or 500")
+        viewModelScope.launch {
+            progressRepository.markWatched(
+                userId = currentUser.userId,
+                movieId = currentMovie.movie.movieId,
+                watchedOn = LocalDate.now(ZoneId.systemDefault()),
+                activityPayloadJson = """{"version":1,"movieCode":"${currentMovie.movie.code}"}""",
+            )
+            progressionCoordinator.recalculate(currentUser.userId)
+            weeklyQuestCoordinator.onProgressChanged(currentUser.userId)
+            val xp = database.progressDao().totalXp(currentUser.userId)
+            val level = xpEngine.progress(xp, currentUser.maxLevelReached)
+            Log.i(
+                PROGRESS_TAG,
+                "Après recalcul: XP total=$xp  niveau=${level.displayedLevel}  " +
+                    "dansLeNiveau=${level.xpIntoLevel}  restantPourSuivant=${level.xpNeededForNextLevel}",
+            )
+        }
+    }
+
+    override fun followCollection(code: String) {
+        val currentUser = user ?: return
+        val ui = collectionState.firstOrNull { it.id == code } ?: return
+        if (ui.locked || ui.completed) return
+        val collectionId = collectionsWithMovies.firstOrNull { it.collection.code == code }?.collection?.collectionId
+            ?: return
+        viewModelScope.launch {
+            progressRepository.followCollection(currentUser.userId, collectionId)
+        }
+    }
+
+    override fun unfollowCollection(code: String) {
+        val currentUser = user ?: return
+        val item = collectionsWithMovies.firstOrNull { it.collection.code == code } ?: return
+        if (collectionState.firstOrNull { it.id == code }?.completed == true) return
+        viewModelScope.launch {
+            progressRepository.unfollowCollection(currentUser.userId, item.collection.collectionId)
+        }
+    }
+
+    override fun setShowcaseBadges(codes: List<String>) {
+        val currentUser = user ?: return
+        val earned = earnedBadgeCodesOrdered.toSet()
+        val encoded = ProfileBadges.encode(codes.filter { it in earned })
+        viewModelScope.launch {
+            database.progressDao().updateShowcaseBadgeCodes(
+                currentUser.userId,
+                encoded.ifBlank { null },
+            )
+        }
+    }
+
+    override fun movie(code: String): MovieUi? =
+        moviesWithRelations.firstOrNull { it.movie.code == code }?.let(::toMovieUi)
+
+    override fun openMovie(code: String) {
+        moviesWithRelations.firstOrNull { it.movie.code == code }?.let { movieState = toMovieUi(it) }
+    }
+
+    override fun director(code: String): DirectorUi? = directorState.firstOrNull { it.id == code }
+
+    /** Local search over films, countries, currents, collections, directors and genres. */
+    override fun search(query: String): List<SearchHitUi> {
+        val needle = query.trim()
+        if (needle.isEmpty()) return emptyList()
+        fun match(value: String) = value.contains(needle, ignoreCase = true)
+        val movieHits = moviesWithRelations.map { rel ->
+            val movie = rel.movie
+            SearchHitUi(
+                movie.code,
+                SearchKind.Movie,
+                movie.frenchTitle ?: movie.originalTitle,
+                "${rel.directors.firstOrNull()?.displayName.orEmpty()} · ${movie.releaseYear}",
+            )
+        }.filter { match(it.title) || match(it.subtitle) }
+        val countryHits = countryEntities.filter { match(it.name) || match(it.code) }.map {
+            SearchHitUi(it.code, SearchKind.Country, it.name, "")
+        }
+        val currentHits = characteristicEntities.filter { match(it.name) || match(it.code) }.map {
+            SearchHitUi(it.code, SearchKind.Current, it.name, it.typeCode)
+        }
+        val collectionHits = collectionState.filter { match(it.name) }.map {
+            SearchHitUi(it.id, SearchKind.Collection, it.name, it.shortDescription)
+        }
+        val directorHits = directorEntities.filter { match(it.displayName) || match(it.code) }.map {
+            SearchHitUi(it.code, SearchKind.Director, it.displayName, "")
+        }
+        val genreHits = genreEntities.filter { match(it.name) || match(it.code) }.map {
+            SearchHitUi(it.code, SearchKind.Genre, it.name, "")
+        }
+        return movieHits + countryHits + currentHits + collectionHits + directorHits + genreHits
+    }
+
+    override fun collectionsForCountry(code: String): List<CollectionUi> =
+        collectionState.filter { code in it.countryCodes }
+
+    override fun collectionsForCurrent(code: String): List<CollectionUi> =
+        collectionState.filter { code in it.characteristicCodes }
+
+    override fun moviesForCountry(code: String): List<MovieSummaryUi> =
+        moviesWithRelations.filter { rel -> rel.countries.any { it.code == code } }.map(::toWatchedSummary)
+
+    override fun moviesForCurrent(code: String): List<MovieSummaryUi> =
+        moviesWithRelations.filter { rel -> rel.characteristics.any { it.code == code } }.map(::toWatchedSummary)
+
+    override fun moviesForDecade(code: String): List<MovieSummaryUi> =
+        moviesWithRelations.filter { (it.movie.releaseYear / 10 * 10).toString() == code }.map(::toWatchedSummary)
+
+    override fun moviesForGenre(code: String): List<MovieSummaryUi> =
+        moviesWithRelations.filter { rel -> rel.genres.any { it.code == code } }.map(::toWatchedSummary)
+
+    /**
+     * Sky layout for one Atlas dimension, or a film-centred constellation.
+     * Positions are stable for a given catalogue; glow still comes from [TerritoryUi].
+     */
+    override fun cinemaMap(layer: MapLayer, focusMovieCode: String): CinemaMapGraph {
+        if (layer == MapLayer.AROUND_FILM) {
+            val code = focusMovieCode.ifBlank { defaultSkyMovieCode() }
+            return CinemaMapLayout.buildAround(code, constellationSeeds(code))
+        }
+        val continentCodeById = continentEntities.associate { it.continentId to it.code }
+        val continentNameByCode = continentEntities.associate { it.code to it.name }
+        val continentByCountryId = countryContinents.associate { it.countryId to it.continentId }
+        val continentByCountryCode = countryEntities.associate { country ->
+            country.code to continentByCountryId[country.countryId]?.let { continentCodeById[it] }.orEmpty()
+        }
+        return when (layer) {
+            MapLayer.AROUND_FILM -> CinemaMapGraph(layer, emptyList(), emptyList())
+            MapLayer.COUNTRIES -> CinemaMapLayout.build(
+                layer,
+                countryEntities.map { MapSeed(it.code, continentByCountryCode[it.code].orEmpty()) },
+                moviesWithRelations.map { rel -> rel.countries.map { it.code } },
+                continentNameByCode,
+            )
+            MapLayer.CURRENTS -> CinemaMapLayout.build(
+                layer,
+                characteristicEntities.map { MapSeed(it.code) },
+                moviesWithRelations.map { rel -> rel.characteristics.map { it.code } },
+            )
+            MapLayer.DECADES -> CinemaMapLayout.build(
+                layer,
+                decadeState.map { MapSeed(it.id) },
+            )
+            MapLayer.GENRES -> CinemaMapLayout.build(
+                layer,
+                genreEntities.map { MapSeed(it.code) },
+                moviesWithRelations.map { rel -> rel.genres.map { it.code } },
+            )
+            MapLayer.DIRECTORS -> CinemaMapLayout.build(
+                layer,
+                directorEntities.map { director ->
+                    val films = moviesWithRelations.filter { rel ->
+                        rel.directors.any { it.directorId == director.directorId }
+                    }
+                    val country = films.flatMap { it.countries }
+                        .groupingBy { it.code }
+                        .eachCount()
+                        .maxByOrNull { it.value }
+                        ?.key
+                        .orEmpty()
+                    MapSeed(director.code, continentByCountryCode[country].orEmpty())
+                },
+                moviesWithRelations.map { rel -> rel.directors.map { it.code } },
+                continentNameByCode,
+            )
+            MapLayer.COLLECTIONS -> CinemaMapLayout.build(
+                layer,
+                collectionsWithMovies.map { MapSeed(it.collection.code) },
+                moviesWithRelations.map { rel ->
+                    collectionsWithMovies.filter { item ->
+                        item.movies.any { it.movieId == rel.movie.movieId }
+                    }.map { it.collection.code }
+                },
+            )
+        }
+    }
+
+    /**
+     * Wipes validations, follows, XP, badges and quests. Initiation lock comes
+     * back: [CollectionUnlockRules.LOCKED_ORDINAL] until one Initiation film is seen.
+     */
+    override fun resetProgress() {
+        val profile = user ?: return
+        user = profile.copy(unlockedTrackOrdinal = CollectionUnlockRules.LOCKED_ORDINAL)
+        watched = emptyList()
+        followedCollectionIds = emptySet()
+        refresh()
+        viewModelScope.launch {
+            progressRepository.resetProgress(profile.userId)
+            weeklyQuestCoordinator.ensureCurrentWeek(profile.userId)
+            completionBaselineReady = false
+            lastCompletedCollectionIds = emptySet()
+            celebratedBadgeCodes = emptySet()
+            badgeCelebrationsSeeded = true
+            progressHydrated = true
+            pendingBadgeCelebrations = emptyList()
+            preferencesRepository.setCelebratedBadges(emptySet())
+        }
+    }
+
+    override fun dismissCollectionCelebration() {
+        celebrationName = null
+    }
+
+    override fun dismissBadgeCelebration() {
+        pendingBadgeCelebrations = pendingBadgeCelebrations.drop(1)
+    }
+
+    private fun observeDatabase() {
+        if (observing) return
+        observing = true
+        val catalog = database.catalogDao()
+        viewModelScope.launch { catalog.observeMoviesWithRelations().collectLatest { moviesWithRelations = it; refresh() } }
+        viewModelScope.launch {
+            catalog.observeCollectionsWithMovies().collectLatest {
+                collectionsWithMovies = it
+                refresh()
+            }
+        }
+        viewModelScope.launch {
+            catalog.observeCollectionCountries().collectLatest { rows ->
+                collectionCountryRefs = rows
+                refresh()
+            }
+        }
+        viewModelScope.launch {
+            catalog.observeCollectionCharacteristics().collectLatest { rows ->
+                collectionCharacteristicRefs = rows
+                refresh()
+            }
+        }
+        viewModelScope.launch { catalog.observeCountries().collectLatest { countryEntities = it; refresh() } }
+        viewModelScope.launch { catalog.observeContinents().collectLatest { continentEntities = it; refresh() } }
+        viewModelScope.launch { catalog.observeCountryContinents().collectLatest { countryContinents = it; refresh() } }
+        viewModelScope.launch { catalog.observeDirectors().collectLatest { directorEntities = it; refresh() } }
+        viewModelScope.launch { catalog.observeGenres().collectLatest { genreEntities = it; refresh() } }
+        viewModelScope.launch { catalog.observeCharacteristics().collectLatest { characteristicEntities = it; refresh() } }
+        viewModelScope.launch { catalog.observeBadges().collectLatest { badgeEntities = it; refresh() } }
+        viewModelScope.launch { catalog.observeRankings().collectLatest { rankings = it; refresh() } }
+        viewModelScope.launch { catalog.observeQuests().collectLatest { questEntities = it; refresh() } }
+        viewModelScope.launch {
+            database.progressDao().observeLocalUser().collectLatest {
+                user = it
+                refresh()
+                if (it != null && observedUserId != it.userId) {
+                    observedUserId = it.userId
+                    observeUser(it)
+                    viewModelScope.launch { progressionCoordinator.recalculate(it.userId) }
+                }
+            }
+        }
+    }
+
+    private fun observeUser(value: UserEntity) {
+        val progress = database.progressDao()
+        viewModelScope.launch { progress.observeUserMovies(value.userId).collectLatest { watched = it; userMoviesObserved = true; refresh() } }
+        viewModelScope.launch {
+            progress.observeFollowedCollectionIds(value.userId).collectLatest {
+                followedCollectionIds = it.toSet()
+                refresh()
+            }
+        }
+        viewModelScope.launch { progress.observeTotalXp(value.userId).collectLatest { totalXp = it; refresh() } }
+        viewModelScope.launch {
+            progress.observeEarnedBadgeCodes(value.userId).collectLatest {
+                earnedBadgeCodesOrdered = it
+                earnedBadgesObserved = true
+                refresh()
+            }
+        }
+        viewModelScope.launch {
+            progress.observeCollectionProgress(value.userId).collectLatest {
+                collectionProgress = it.associateBy(CollectionProgressRow::collectionId)
+                refresh()
+            }
+        }
+        viewModelScope.launch {
+            progress.observeCountryProgress(value.userId).collectLatest {
+                countryProgress = it.associateBy(CountryProgressRow::countryId)
+                refresh()
+            }
+        }
+        viewModelScope.launch {
+            progress.observeActivity(value.userId).collectLatest { events ->
+                historyEvents = events
+                refresh()
+            }
+        }
+        viewModelScope.launch {
+            runCatching { weeklyQuestCoordinator.ensureCurrentWeek(value.userId) }
+                .onFailure { Log.e(TAG, "Weekly quest assignment failed", it) }
+            progress.observeQuestAssignmentsForWeek(
+                value.userId,
+                weeklyQuestCoordinator.currentWeekStartsAt(),
+            ).collectLatest { assignments ->
+                assignedQuests = assignments
+                    .filter {
+                        it.assignment.status == UserQuestStatus.ACTIVE ||
+                            it.assignment.status == UserQuestStatus.COMPLETED
+                    }
+                    .sortedBy { it.definition.difficulty.ordinal }
+                    .map {
+                    QuestUi(
+                        title = questTitle(it.definition.difficulty),
+                        condition = it.definition.description,
+                        rewardXp = it.assignment.xpRewardSnapshot,
+                        progress = it.assignment.progress,
+                        target = it.assignment.targetCountSnapshot,
+                    )
+                }
+                refresh()
+            }
+        }
+    }
+
+    private fun refresh() {
+        try {
+            refreshUnsafe()
+        } catch (error: Exception) {
+            Log.e(TAG, "Failed to refresh UI from Room", error)
+            if (moviesWithRelations.isEmpty()) {
+                homeState = homeState.copy(loadState = LoadState.Error)
+            }
+        }
+        showOnboarding = (user == null || user?.birthDate == null) &&
+            !bootstrapFailed &&
+            homeState.loadState == LoadState.Content
+    }
+
+    private fun refreshUnsafe() {
+        val watchedIds = watched.mapTo(hashSetOf(), UserMovieCrossRef::movieId)
+        val watchedMovies = moviesWithRelations.filter { it.movie.movieId in watchedIds }
+        val level = xpEngine.progress(totalXp, user?.maxLevelReached ?: 1)
+        val rank = rankings.firstOrNull { it.rankingId == user?.rankingId }
+            ?: rankings.firstOrNull()
+        val continentsById = continentEntities.associateBy { it.continentId }
+
+        val countriesById = countryEntities.associateBy { it.countryId }
+        val characteristicsById = characteristicEntities.associateBy { it.characteristicId }
+        val countriesByCollection = collectionCountryRefs.groupBy { it.collectionId }.mapValues { (_, values) ->
+            values.mapNotNull { countriesById[it.countryId]?.code }
+        }
+        val characteristicsByCollection = collectionCharacteristicRefs.groupBy { it.collectionId }.mapValues { (_, values) ->
+            values.mapNotNull { characteristicsById[it.characteristicId]?.code }
+        }
+        val initiation = collectionsWithMovies.firstOrNull { it.collection.code == INITIATION_CODE }
+        val initiationWatched = initiation?.movies?.count { movie -> movie.movieId in watchedIds } ?: 0
+        val profile = user
+        val latchedOrdinal = profile?.unlockedTrackOrdinal ?: CollectionUnlockRules.LOCKED_ORDINAL
+        val initiationOpen = CollectionUnlockRules.isInitiationOpen(initiationWatched)
+        val qualifiedByTrack = CollectionTrack.entries.associateWith { track ->
+            val inTrack = collectionsWithMovies.filter { collectionTrack(it.collection.track) == track }
+            inTrack.count { item ->
+                CollectionUnlockRules.isQualified(
+                    watchedCount = item.movies.count { movie -> movie.movieId in watchedIds },
+                )
+            } to inTrack.size
+        }
+        val openOrdinal = CollectionUnlockRules.latchedOpenOrdinal(
+            initiationOpen = initiationOpen,
+            tracks = CollectionTrack.entries.map { qualifiedByTrack.getValue(it) },
+            latchedOrdinal = latchedOrdinal,
+        )
+        if (profile != null && initiationOpen && openOrdinal > profile.unlockedTrackOrdinal) {
+            viewModelScope.launch {
+                database.progressDao().advanceUnlockedTrackOrdinal(profile.userId, openOrdinal)
+            }
+        }
+
+        collectionState = collectionsWithMovies.map { item ->
+            val collection = item.collection
+            val followed = collection.collectionId in followedCollectionIds
+            val progress = collectionProgress[collection.collectionId]
+            val rawProgress = percentage(progress?.watchedCount ?: 0, progress?.totalCount ?: 0)
+            val filmSummaries = item.movies.map { movie ->
+                val rel = moviesWithRelations.firstOrNull { it.movie.movieId == movie.movieId }
+                toSummary(
+                    rel ?: MovieWithRelations(movie, emptyList(), emptyList(), emptyList(), emptyList()),
+                    watched = followed && movie.movieId in watchedIds,
+                )
+            }
+            val track = collectionTrack(collection.track)
+            val lock = collectionLock(collection.code, track, openOrdinal, qualifiedByTrack)
+            CollectionUi(
+                id = collection.code,
+                name = collection.name,
+                metadata = collection.description.orEmpty(),
+                shortDescription = collection.description.orEmpty(),
+                longDescription = collection.longDescription.orEmpty(),
+                progress = if (followed) rawProgress else 0,
+                films = filmSummaries,
+                countryCodes = countriesByCollection[collection.collectionId].orEmpty(),
+                characteristicCodes = characteristicsByCollection[collection.collectionId].orEmpty(),
+                followed = followed,
+                displayOrder = collection.displayOrder,
+                track = track,
+                locked = lock.locked,
+                lockPreviousTrack = lock.previous,
+                lockRequiredCollections = lock.requiredCollections,
+                completed = followed && rawProgress >= 100,
+            )
+        }.sortedWith(compareBy<CollectionUi> { it.track.ordinal }.thenBy { it.displayOrder })
+        val newlyCompleted = collectionState.filter { it.completed }.map { it.id }.toSet()
+        if (!completionBaselineReady) {
+            if (collectionsWithMovies.isNotEmpty()) {
+                lastCompletedCollectionIds = newlyCompleted
+                completionBaselineReady = true
+            }
+        } else {
+            val justFinished = newlyCompleted - lastCompletedCollectionIds
+            lastCompletedCollectionIds = newlyCompleted
+            if (celebrationName == null) {
+                celebrationName = justFinished.firstOrNull()?.let { code ->
+                    collectionState.firstOrNull { it.id == code }?.name
+                }
+            }
+        }
+        territoryState = countryEntities.map { country ->
+            territoryFromProgress(country.code, country.name, R.string.countries, countryProgress[country.countryId])
+        }
+        currentState = characteristicEntities.map { characteristic ->
+            val total = moviesWithRelations.count { rel -> rel.characteristics.any { it.characteristicId == characteristic.characteristicId } }
+            val seen = watchedMovies.count { rel -> rel.characteristics.any { it.characteristicId == characteristic.characteristicId } }
+            territoryFromCounts(characteristic.code, characteristic.name, R.string.currents, seen, total)
+        }
+        decadeState = moviesWithRelations
+            .map { it.movie.releaseYear / 10 * 10 }
+            .distinct()
+            .sorted()
+            .map { decade ->
+                val total = moviesWithRelations.count { it.movie.releaseYear / 10 * 10 == decade }
+                val seen = watchedMovies.count { it.movie.releaseYear / 10 * 10 == decade }
+                territoryFromCounts(decade.toString(), decadeLabel(decade), R.string.decades, seen, total)
+            }
+        genreState = genreEntities.map { genre ->
+            val total = moviesWithRelations.count { rel -> rel.genres.any { it.genreId == genre.genreId } }
+            val seen = watchedMovies.count { rel -> rel.genres.any { it.genreId == genre.genreId } }
+            territoryFromCounts(genre.code, genre.name, R.string.genres, seen, total)
+        }
+        val earnedCodes = earnedBadgeCodesOrdered.toSet()
+        val showcase = ProfileBadges.resolve(earnedBadgeCodesOrdered, user?.showcaseBadgeCodes)
+        badgeState = badgeEntities.sortedWith(compareBy({ it.difficulty }, { it.code })).map {
+            BadgeUi(
+                code = it.code,
+                name = it.name,
+                condition = it.description,
+                earned = it.code in earnedCodes,
+                difficulty = it.difficulty,
+                showcaseSlot = showcase.indexOf(it.code).takeIf { slot -> slot >= 0 },
+            )
+        }
+        if (!badgeCelebrationPrefsReady || !earnedBadgesObserved || !userMoviesObserved) {
+            // Wait until Room + DataStore have a first snapshot before celebrating.
+        } else if (!progressHydrated) {
+            progressHydrated = true
+            if (!badgeCelebrationsSeeded) {
+                celebratedBadgeCodes = earnedCodes
+                badgeCelebrationsSeeded = true
+                viewModelScope.launch { preferencesRepository.setCelebratedBadges(earnedCodes) }
+            }
+        } else {
+            val justEarned = earnedBadgeCodesOrdered.filter { it !in celebratedBadgeCodes }
+            if (justEarned.isNotEmpty()) {
+                celebratedBadgeCodes = celebratedBadgeCodes + justEarned.toSet()
+                pendingBadgeCelebrations = pendingBadgeCelebrations + justEarned.map { code ->
+                    badgeState.firstOrNull { it.code == code }?.name ?: code
+                }
+                viewModelScope.launch { preferencesRepository.setCelebratedBadges(celebratedBadgeCodes) }
+            }
+        }
+        rankState = rankings.sortedBy { it.displayOrder }.map {
+            RankUi(
+                id = it.code,
+                order = it.displayOrder,
+                name = it.name,
+                description = it.description,
+                longDescription = it.longDescription ?: it.description,
+                current = it.rankingId == rank?.rankingId,
+            )
+        }
+        directorState = directorEntities.map { director ->
+            val films = moviesWithRelations.filter { rel -> rel.directors.any { it.directorId == director.directorId } }
+                .map(::toWatchedSummary)
+            val filmIds = films.map { it.id }.toSet()
+            DirectorUi(
+                director.code,
+                director.displayName,
+                films,
+                collectionState.filter { collection -> collection.films.any { it.id in filmIds } },
+            )
+        }
+
+        moviesWithRelations.firstOrNull { it.movie.code == movieState.id }?.let { movieState = toMovieUi(it) }
+
+        val xpTarget = level.xpNeededForNextLevel
+            ?.plus(level.xpIntoLevel)
+            ?.toInt()
+            ?: level.xpIntoLevel.toInt()
+        val rankLong = rank?.longDescription ?: rank?.description.orEmpty()
+        homeState = homeState.copy(
+            loadState = when {
+                moviesWithRelations.isNotEmpty() -> LoadState.Content
+                bootstrapFailed -> LoadState.Error
+                else -> LoadState.Empty
+            },
+            rank = rank?.name ?: "Novice",
+            rankNumber = rank?.displayOrder ?: 1,
+            rankLongDescription = rankLong,
+            level = level.displayedLevel,
+            xp = level.xpIntoLevel.toInt(),
+            nextLevelXp = xpTarget,
+            quests = assignedQuests,
+            collections = collectionState.filter { it.followed && !it.completed && !it.locked },
+            history = historyEvents.map { event ->
+                HistoryUi(
+                    dateLabel = formatHistoryDate(event.occurredAt.atZone(ZoneId.systemDefault()).toLocalDate()),
+                    type = event.type,
+                    subject = historySubject(event.type, event.payloadJson),
+                )
+            },
+        )
+        val watchedCountryIds = watchedMovies.flatMap { it.countries }.map { it.countryId }.toSet()
+        val continentIds = countryContinents.filter { it.countryId in watchedCountryIds }.map { it.continentId }.toSet()
+        profileState = ProfileUiState(
+            nickname = user?.username ?: "",
+            ageYears = user?.birthDate?.let { Year.now().value - it.year },
+            rank = rank?.name ?: "Novice",
+            rankCode = rank?.code ?: "RANK_01",
+            rankNumber = rank?.displayOrder ?: 1,
+            rankLongDescription = rankLong,
+            level = level.displayedLevel,
+            xp = totalXp.coerceAtMost(Int.MAX_VALUE.toLong()).toInt(),
+            xpIntoLevel = level.xpIntoLevel.toInt(),
+            nextLevelXp = xpTarget,
+            films = watched.size,
+            countries = countryProgress.values.count { it.watchedCount > 0 },
+            decades = watchedMovies.map { it.movie.releaseYear / 10 }.distinct().size,
+            currents = watchedMovies.flatMap { it.characteristics }.map { it.characteristicId }.distinct().size,
+            continents = continentIds.size,
+            directors = watchedMovies.flatMap { it.directors }.map { it.directorId }.distinct().size,
+            avatarCode = user?.avatarCode,
+        )
+        statsState = StatsListsUi(
+            films = watchedMovies.map(::toSummary),
+            countries = countryEntities.filter { (countryProgress[it.countryId]?.watchedCount ?: 0) > 0 }.map { it.name },
+            decades = watchedMovies.map { it.movie.releaseYear / 10 * 10 }.distinct().sorted().map { decadeLabel(it) },
+            currents = watchedMovies.flatMap { it.characteristics }.distinctBy { it.characteristicId }.map { it.name },
+            continents = continentIds.mapNotNull { continentsById[it]?.name },
+            directors = watchedMovies.flatMap { it.directors }.distinctBy { it.directorId }.map { it.displayName },
+        )
+    }
+
+    override fun defaultSkyMovieCode(): String {
+        val lastWatchedId = watched.firstOrNull()?.movieId
+        if (lastWatchedId != null) {
+            moviesWithRelations.firstOrNull { it.movie.movieId == lastWatchedId }?.movie?.code?.let { return it }
+        }
+        collectionsWithMovies.firstOrNull { it.collection.code == INITIATION_CODE }
+            ?.movies?.firstOrNull()?.code?.let { return it }
+        return moviesWithRelations.firstOrNull()?.movie?.code.orEmpty()
+    }
+
+    override fun mapNodeUi(id: String, kind: MapNodeKind): TerritoryUi? = when (kind) {
+        MapNodeKind.FILM -> moviesWithRelations.firstOrNull { it.movie.code == id }?.let { rel ->
+            val summary = toWatchedSummary(rel)
+            TerritoryUi(
+                summary.id,
+                summary.title,
+                R.string.films,
+                if (summary.watched) 100 else 0,
+                if (summary.watched) ExplorationState.Mastered else ExplorationState.Unexplored,
+                listOfNotNull(summary.director.takeIf { it.isNotBlank() }, summary.year.toString())
+                    .joinToString(" · "),
+            )
+        }
+        MapNodeKind.COUNTRY -> territories.firstOrNull { it.id == id }
+        MapNodeKind.CURRENT -> currents.firstOrNull { it.id == id }
+        MapNodeKind.DECADE -> decades.firstOrNull { it.id == id }
+        MapNodeKind.GENRE -> genres.firstOrNull { it.id == id }
+        MapNodeKind.DIRECTOR -> directors.firstOrNull { it.id == id }?.let { director ->
+            val seen = director.films.count { it.watched }
+            val total = director.films.size
+            val percent = if (total == 0) 0 else seen * 100 / total
+            TerritoryUi(director.id, director.name, R.string.directors, percent, explorationFromProgress(percent))
+        }
+        MapNodeKind.COLLECTION -> collections.firstOrNull { it.id == id }?.let { collection ->
+            TerritoryUi(
+                collection.id,
+                collection.name,
+                R.string.all_collections,
+                collection.progress,
+                explorationFromProgress(collection.progress),
+                collection.shortDescription,
+            )
+        }
+        MapNodeKind.TERRITORY ->
+            territories.firstOrNull { it.id == id }
+                ?: currents.firstOrNull { it.id == id }
+                ?: decades.firstOrNull { it.id == id }
+                ?: genres.firstOrNull { it.id == id }
+    }
+
+    private fun explorationFromProgress(percent: Int): ExplorationState = when {
+        percent <= 0 -> ExplorationState.Unexplored
+        percent >= 100 -> ExplorationState.Mastered
+        percent >= 75 -> ExplorationState.Completed
+        else -> ExplorationState.Explored
+    }
+
+    private fun constellationSeeds(focusCode: String): List<ConstellationSeed> {
+        val focus = moviesWithRelations.firstOrNull { it.movie.code == focusCode } ?: return emptyList()
+        val seeds = mutableListOf<ConstellationSeed>()
+        seeds += ConstellationSeed(focus.movie.code, MapNodeKind.FILM, 0)
+        focus.directors.forEach { seeds += ConstellationSeed(it.code, MapNodeKind.DIRECTOR, 1) }
+        focus.countries.forEach { seeds += ConstellationSeed(it.code, MapNodeKind.COUNTRY, 1) }
+        focus.genres.forEach { seeds += ConstellationSeed(it.code, MapNodeKind.GENRE, 1) }
+        focus.characteristics.forEach { seeds += ConstellationSeed(it.code, MapNodeKind.CURRENT, 1) }
+        val decade = (focus.movie.releaseYear / 10 * 10).toString()
+        seeds += ConstellationSeed(decade, MapNodeKind.DECADE, 1)
+        collectionsWithMovies.filter { item ->
+            item.movies.any { it.movieId == focus.movie.movieId }
+        }.forEach { seeds += ConstellationSeed(it.collection.code, MapNodeKind.COLLECTION, 1) }
+        val ring1Ids = seeds.filter { it.ring == 1 }.map { it.id }.toSet()
+        val related = moviesWithRelations.mapNotNull { other ->
+            if (other.movie.code == focusCode) return@mapNotNull null
+            val shared = mutableListOf<String>()
+            var score = 0
+            other.directors.forEach { director ->
+                if (focus.directors.any { it.directorId == director.directorId }) {
+                    score += 4
+                    shared += director.code
+                }
+            }
+            collectionsWithMovies.filter { item ->
+                item.movies.any { it.movieId == other.movie.movieId } &&
+                    item.movies.any { it.movieId == focus.movie.movieId }
+            }.forEach { item ->
+                score += 3
+                shared += item.collection.code
+            }
+            other.characteristics.forEach { current ->
+                if (focus.characteristics.any { it.characteristicId == current.characteristicId }) {
+                    score += 3
+                    shared += current.code
+                }
+            }
+            other.countries.forEach { country ->
+                if (focus.countries.any { it.countryId == country.countryId }) {
+                    score += 2
+                    shared += country.code
+                }
+            }
+            val otherDecade = (other.movie.releaseYear / 10 * 10).toString()
+            if (otherDecade == decade) {
+                score += 2
+                shared += decade
+            }
+            other.genres.forEach { genre ->
+                if (focus.genres.any { it.genreId == genre.genreId }) {
+                    score += 1
+                    shared += genre.code
+                }
+            }
+            val kept = shared.filter { it in ring1Ids }
+            if (score <= 0) null
+            else ConstellationSeed(other.movie.code, MapNodeKind.FILM, 2, score, kept)
+        }.sortedByDescending { it.relatedness }.take(CinemaMapLayout.MAX_RELATED_FILMS)
+        seeds += related
+        return CinemaMapLayout.dedupeConstellation(seeds, ::constellationLabel)
+    }
+
+    private fun toMovieUi(rel: MovieWithRelations): MovieUi {
+        val movie = rel.movie
+        val watchedIds = watched.mapTo(hashSetOf(), UserMovieCrossRef::movieId)
+        val director = rel.directors.firstOrNull()?.displayName
+        val countryNames = rel.countries.joinToString(" · ") { it.name }
+        val genreNames = rel.genres.map { it.name }
+        return MovieUi(
+            id = movie.code,
+            originalTitle = movie.originalTitle,
+            localizedTitle = movie.frenchTitle?.takeIf { it != movie.originalTitle },
+            credits = listOfNotNull(director, movie.releaseYear.toString()).joinToString(" · "),
+            metadata = listOfNotNull(
+                countryNames.takeIf { it.isNotBlank() },
+                formatDuration(movie.durationMinutes),
+                genreNames.joinToString(", ").takeIf { it.isNotBlank() },
+            ).joinToString(" · "),
+            synopsis = movie.synopsis.orEmpty(),
+            watched = movie.movieId in watchedIds,
+            countries = rel.countries.map {
+                TerritoryUi(it.code, it.name, R.string.countries, 0, ExplorationState.Unexplored)
+            },
+            genres = rel.genres.map {
+                TerritoryUi(it.code, it.name, R.string.genres, 0, ExplorationState.Unexplored)
+            },
+            directorIds = rel.directors.map { it.code },
+        )
+    }
+
+    private fun toWatchedSummary(rel: MovieWithRelations): MovieSummaryUi {
+        val watchedIds = watched.mapTo(hashSetOf(), UserMovieCrossRef::movieId)
+        return toSummary(rel, watched = rel.movie.movieId in watchedIds)
+    }
+
+    private fun toSummary(rel: MovieWithRelations, watched: Boolean = false): MovieSummaryUi = MovieSummaryUi(
+        id = rel.movie.code,
+        title = rel.movie.frenchTitle ?: rel.movie.originalTitle,
+        year = rel.movie.releaseYear,
+        director = rel.directors.firstOrNull()?.displayName.orEmpty(),
+        watched = watched,
+    )
+
+    private fun collectionTrack(raw: String): CollectionTrack =
+        CollectionTrack.entries.firstOrNull { it.name == raw } ?: when (raw) {
+            "JOURNEY" -> CollectionTrack.CLUB
+            "DEMANDING" -> CollectionTrack.CINEMATHEQUE
+            else -> CollectionTrack.CLUB
+        }
+
+    private fun questUi(quest: QuestEntity): QuestUi = QuestUi(
+        title = questTitle(quest.difficulty),
+        condition = quest.description,
+        rewardXp = when (quest.difficulty) {
+            QuestDifficulty.BRONZE -> 100
+            QuestDifficulty.SILVER -> 250
+            QuestDifficulty.GOLD -> 500
+        },
+        progress = 0,
+        target = quest.targetCount,
+    )
+
+    private fun questTitle(difficulty: QuestDifficulty): Int = when (difficulty) {
+        QuestDifficulty.BRONZE -> R.string.quest_bronze_title
+        QuestDifficulty.SILVER -> R.string.quest_silver_title
+        QuestDifficulty.GOLD -> R.string.quest_gold_title
+    }
+
+    private fun territoryFromProgress(
+        id: String,
+        name: String,
+        category: Int,
+        progress: CountryProgressRow?,
+    ): TerritoryUi = territoryFromCounts(id, name, category, progress?.watchedCount ?: 0, progress?.totalCount ?: 0)
+
+    private fun territoryFromCounts(
+        id: String,
+        name: String,
+        category: Int,
+        seen: Int,
+        total: Int,
+    ): TerritoryUi {
+        val percent = percentage(seen, total)
+        return TerritoryUi(
+            id = id,
+            name = name,
+            category = category,
+            progress = percent,
+            state = when {
+                percent == 0 -> ExplorationState.Unexplored
+                percent >= 100 -> ExplorationState.Mastered
+                percent >= 75 -> ExplorationState.Completed
+                percent > 0 -> ExplorationState.Explored
+                else -> ExplorationState.InProgress
+            },
+        )
+    }
+
+    private fun constellationLabel(seed: ConstellationSeed): String = when (seed.kind) {
+        MapNodeKind.FILM -> moviesWithRelations.firstOrNull { it.movie.code == seed.id }?.movie
+            ?.let { it.frenchTitle ?: it.originalTitle }
+            .orEmpty()
+        MapNodeKind.DIRECTOR -> directorEntities.firstOrNull { it.code == seed.id }?.displayName.orEmpty()
+        MapNodeKind.COUNTRY -> countryEntities.firstOrNull { it.code == seed.id }?.name.orEmpty()
+        MapNodeKind.GENRE -> genreEntities.firstOrNull { it.code == seed.id }?.name.orEmpty()
+        MapNodeKind.CURRENT -> characteristicEntities.firstOrNull { it.code == seed.id }?.name.orEmpty()
+        MapNodeKind.DECADE -> seed.id
+        MapNodeKind.COLLECTION -> collectionsWithMovies.firstOrNull { it.collection.code == seed.id }
+            ?.collection?.name.orEmpty()
+        MapNodeKind.TERRITORY -> seed.id
+    }
+
+    private fun decadeLabel(decade: Int): String {
+        val english = when (selectedLanguage) {
+            AppLanguage.English -> true
+            AppLanguage.French -> false
+            AppLanguage.System -> java.util.Locale.getDefault().language.startsWith("en")
+        }
+        return if (english) "${decade}s" else "Années $decade"
+    }
+
+    private fun historySubject(type: String, payloadJson: String): String {
+        val payload = runCatching { Json.parseToJsonElement(payloadJson).jsonObject }.getOrNull()
+        return when (type) {
+            HistoryUi.MOVIE_VALIDATED -> {
+                val code = payload?.get("movieCode")?.jsonPrimitive?.content
+                val movie = moviesWithRelations.firstOrNull { it.movie.code == code }?.movie
+                movie?.frenchTitle
+                    ?: movie?.originalTitle
+                    ?: code?.let(::titleFromEditorialCode)
+                    ?: ""
+            }
+            HistoryUi.BADGE_EARNED -> {
+                val code = payload?.get("badgeCode")?.jsonPrimitive?.content
+                badgeEntities.firstOrNull { it.code == code }?.name ?: code.orEmpty()
+            }
+            HistoryUi.RANK_UP -> {
+                val code = payload?.get("rankCode")?.jsonPrimitive?.content
+                rankings.firstOrNull { it.code == code }?.name ?: code.orEmpty()
+            }
+            else -> ""
+        }
+    }
+
+    private fun titleFromEditorialCode(code: String): String =
+        code.substringBeforeLast('_')
+            .split('_')
+            .filter { it.isNotBlank() }
+            .joinToString(" ") { part ->
+                part.lowercase().replaceFirstChar { char -> char.titlecase() }
+            }
+
+    private fun collectionLock(
+        code: String,
+        track: CollectionTrack,
+        openOrdinal: Int,
+        qualifiedByTrack: Map<CollectionTrack, Pair<Int, Int>>,
+    ): CollectionLockUi {
+        if (code == INITIATION_CODE) return CollectionLockUi()
+        if (!CollectionUnlockRules.isTrackLocked(track.ordinal, openOrdinal)) return CollectionLockUi()
+        if (openOrdinal < 0) return CollectionLockUi(locked = true)
+        val previous = CollectionTrack.entries[track.ordinal - 1]
+        val size = qualifiedByTrack.getValue(previous).second
+        return CollectionLockUi(
+            locked = true,
+            previous = previous,
+            requiredCollections = CollectionUnlockRules.requiredStartedCount(size),
+        )
+    }
+
+    private data class CollectionLockUi(
+        val locked: Boolean = false,
+        val previous: CollectionTrack? = null,
+        val requiredCollections: Int = CollectionUnlockRules.MIN_STARTED_COLLECTIONS,
+    )
+
+    private fun formatHistoryDate(date: LocalDate): String {
+        val today = LocalDate.now(ZoneId.systemDefault())
+        return when (date) {
+            today -> "today"
+            today.minusDays(1) -> "yesterday"
+            else -> date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM))
+        }
+    }
+
+    private fun percentage(value: Int, total: Int): Int =
+        if (total <= 0) 0 else (value * 100 / total).coerceIn(0, 100)
+
+    private fun formatDuration(minutes: Int): String {
+        val hours = minutes / 60
+        val rest = minutes % 60
+        return when {
+            hours == 0 -> "$rest min"
+            rest == 0 -> "${hours}h"
+            else -> "${hours}h${rest.toString().padStart(2, '0')}"
+        }
+    }
+
+    private companion object {
+        const val TAG = "UrbinemaViewModel"
+        const val PROGRESS_TAG = "UrbinemaProgress"
+        const val INITIATION_CODE = "COLLECTION_INITIATION"
+        const val MIN_AGE = 8
+        const val MAX_AGE = 120
+
+        fun birthDateFromAge(age: Int): LocalDate = LocalDate.of(Year.now().value - age, 1, 1)
+    }
+}

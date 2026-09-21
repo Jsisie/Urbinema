@@ -1,0 +1,5 @@
+# CSV d'exemple — une ligne = un film (UTF-8, `;`).
+# Colonnes : frenchTitle;releaseYear;director;code;originalTitle;demand;tmdbId
+# Le code et demand/tmdbId sont optionnels.
+frenchTitle;releaseYear;director;code;originalTitle
+"Le Voyage de Chihiro";2001;"Hayao Miyazaki";LE_VOYAGE_DE_CHIHIRO_2001;"千と千尋の神隠し"

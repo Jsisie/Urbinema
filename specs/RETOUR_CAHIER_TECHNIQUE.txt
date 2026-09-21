@@ -1,0 +1,104 @@
+RETOUR SUR LE CAHIER DES CHARGES TECHNIQUE — URBINEMA
+Auteur : Cursor
+Date : 2026-09-15 (révision après réponses Léo)
+Sources : CahierDesCharges_Technique.md v0.2, DECISIONS_ACTEES.txt
+
+**Archive de cadrage.** L’état réel 0.1.10 est dans
+`SPECIFICATION_DEVELOPPEUR.md` et `CahierDesCharges_Technique.md` v0.8.
+Ce fichier n’est plus un « tout est faux ». C’est l’état des lieux APRÈS tes
+réponses d’alors. Les points 1–7 de l’ancienne version + TMDb-as-source +
+compte cloud sont clos.
+
+
+========================================================================
+VERDICT
+========================================================================
+
+La stack V1 est maintenant un vrai cadrage d’app locale : Kotlin 2, Compose,
+Canvas custom, Room catalogue + progression, Koin, MVVM/Clean en packages,
+Navigation Compose, Gradle KTS + catalogs + KSP.
+
+Aligné avec : 1 user, pseudo, pas de réseau obligatoire, catalogue N croissant,
+carte texte, pas TMDb.
+
+Je peux m’appuyer là-dessus le jour du from-scratch. Ce qui manque encore est
+du contenu éditorial (listes, catalogue), pas de la stack.
+
+Mise à jour du 2026-09-16 :
+  - Projet Gradle Android STANDARD, ouvert et exécuté dans Android Studio.
+    Rien d’exotique dans l’arborescence : ce que fait le bouton Run doit
+    être ce que fait la ligne de commande. Voir technique §1.5.
+  - XP et niveaux réintégrés en V1 : 50 niveaux, courbe dédiée et XP
+    attribuée par les quêtes hebdomadaires.
+  - Le moteur de rang est entièrement spécifié (FORMULE_MATHEMATIQUE.txt
+    v0.3) et testable hors Android. C’est le premier code à écrire.
+
+
+========================================================================
+CLOS (ne plus relancer)
+========================================================================
+
+- Canvas custom, pas de lib de graphe. OK. Ce n’est toujours pas un « moteur
+  de jeu » : zoom/pan/hit-test à coder. Accepté.
+- Pas d’affiches sur la carte, texte only. OK. (L’ancienne remarque Coil-in-Canvas
+  est caduque pour la map.)
+- Film vu ≠ coordonnées X,Y. Layout de nœuds à part. Films-nœuds = plus tard. OK.
+- Catalogue Room centaines / quelques milliers, pas Letterboxd mondial. OK.
+- TMDb hors V1. Ktor hors V1. OK.
+- MVVM + Clean, domain hors UI, couches métier encore en rédaction produit. OK.
+- Navigation Compose pour commencer. OK.
+- Téléphone d’abord, tablette secondaire, pas TV/PC. Portrait puis paysage
+  en deux temps. OK.
+- Contenu = tables Room + batch. OK. Plus de « CMS web obligatoire V1 ».
+- 1 user, pas de compte, pas de social, pas de Firebase jour 1. OK.
+
+
+========================================================================
+ENCORE UTILE (nouveau / restant)
+========================================================================
+
+Mineur, au moment du premier projet Gradle :
+
+1) minSdk 26 — validé.
+
+2) Paysage : même APK que le portrait « jouable », ou milestone suivante ?
+   Recommandation : ne pas `android:screenOrientation="portrait"` définitif
+   si tu veux le paysage juste après ; gérer le layout en deux passes.
+
+3) Format du batch : JSON / CSV / `.db` dans assets.
+   À cette échelle, les trois marchent. JSON + serialization = lisible dans git.
+   `.db` précompilée = install plus bête. À choisir quand on alimente vraiment.
+
+4) Mise à jour catalogue sur un profil déjà en cours
+   (tu ajoutes 200 films, tu retires un titre d’une collection).
+   Technique : migrations Room. Produit : encore ouvert (cahier fonctionnel §24.8).
+
+5) Images hors carte
+   V0.1 textuelle autorisée ; images locales en V1 pour films, réalisateurs,
+   badges, collections, caractéristiques et avatars. Coil 3 retenu.
+
+6) Tests domain
+   Indispensables sur le moteur de rang : il est pur, entièrement spécifié,
+   et une erreur y est invisible à l’œil nu. Pas un sujet de scale, un sujet
+   de ne pas casser les rangs à chaque ajustement de coefficient.
+   Prévoir en même temps un harnais de simulation sur profils types, sans
+   lequel le calibrage se ferait à l’aveugle sur l’émulateur.
+
+7) Recherche locale
+   LIKE / FTS Room sur quelques milliers de titres : largement OK.
+   Pas de Paging obligatoire.
+
+8) Quêtes « dans le mois »
+   Horloge et fuseau de l’appareil. Pas de serveur. Un changement de date
+   système peut « tricher » : acceptable en honor system V1.
+
+
+========================================================================
+CE QUE JE NE REMETS PLUS EN CAUSE
+========================================================================
+
+Pas de backend. Pas de TMDb **dans l’app**. Pas d’affiches sur Canvas. Room suffit.
+Clean sans 6 modules Gradle. Koin. Compose Navigation.
+
+Les prochains sujets utiles sont le code et le pack éditorial, pas un nouveau
+débat de bibliothèques.

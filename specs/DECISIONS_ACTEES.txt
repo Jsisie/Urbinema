@@ -1,0 +1,644 @@
+DÉCISIONS ACTÉES — cadrage technique / produit
+Date : 2026-09-19 (aligné sur le livrable 0.1.11)
+Source : Léo (commanditaire + utilisateur n°1)
+
+En cas de conflit avec les FAQ / anciens retours, CE fichier gagne.
+Les numéros plus récents (62, 63, 64) **amendent** les plus anciens (44, 58).
+
+Tous les documents vivent dans specs/ :
+  - CahierDesCharges_Technique.md      (v0.8 — app 0.1.11)
+  - CahierDesCharges_Fonctionnel_v2.md (v0.11 — app 0.1.11)
+  - CahierDesCharges_IHM.md            (v0.8 — app 0.1.11)
+  - SPECIFICATION_DEVELOPPEUR.md       (v1.5 — livrable 0.1.11)
+  - ROADMAP_V2_V3.md
+  - ASSETS.md
+  - FORMULE_MATHEMATIQUE.txt           (v0.3, formule de rang)
+  - FORMULE_NIVEAUX_XP.txt             (v1.1, niveaux 1 à 50 + XP films)
+  - RETOUR_FORMULE_RANG.txt            (analyse de la formule)
+  - RETOUR_CAHIER_TECHNIQUE.txt        (état des lieux stack)
+  - FAQ_CAHIER_FONCTIONNEL.txt         (questions encore ouvertes)
+  - Listes_Fonctionnelles/             (rangs, badges, courants)
+
+
+========================================================================
+A. POUR QUI / COMPTE / SOCIAL
+========================================================================
+
+1. POUR QUI
+   V1 = une personne (Léo). Pas un lancement, pas un réseau.
+   Horizon lointain possible : APK à des amis, plus tard Play Store.
+   Ordre de grandeur assumé : 1 user, puis éventuellement 10–30. Jamais « des milliers
+   de simultanés » comme hypothèse de design.
+
+2. COMPTE
+   Pas de vrai compte, Google, Auth ni mot de passe.
+   Profil Room local : pseudo obligatoire ; e-mail, nom, prénom, date de
+   naissance et pays facultatifs. L'e-mail n'authentifie rien en V1.
+   Avatar choisi parmi des images proposées par l'application.
+   Pas de sync multi-appareils, pas de recovery cloud, pas de multi-profil famille.
+   Perte / désinstall = perte des données V1, acceptable à ce stade
+   (un export CSV/JSON plus tard reste une bonne soupape, pas un compte).
+
+3. SOCIAL / CONNEXIONS
+   Hors sujet. Pas de partage in-app, pas de discussion, pas de profil public,
+   pas de classement, pas d’amis.
+   Développement = cœur fonctionnel uniquement.
+
+4. « SCALABLE »
+   = ne pas peindre dans le coin (IDs stables Urbinema, domain testable,
+     contenu en base, profil déjà « un user »).
+   ≠ microservices, Firebase jour 1, Auth0, charge 1 million d’users.
+
+
+========================================================================
+B. NATURE DU CATALOGUE ET DES « FILMS VUS »  (décision produit majeure)
+========================================================================
+
+Urbinema n’est PAS un journal de films vus. C’est un parcours cinématographique
+guidé et gamifié.
+
+5. CATALOGUE FERMÉ V1
+   Films pré-enregistrés en BDD Room. Ils sont les briques des parcours,
+   collections, mouvements, pays, décennies, badges, quêtes, rangs.
+   Volume : N films, N croissant (une centaine au départ, puis 500,
+   puis 1000, puis davantage). Voir aussi le point 33.
+   Pas Letterboxd : on ne propose pas « tous les films du monde ».
+   On propose les films importants de chaque courant / mouvement / époque / pays,
+   y compris des titres moins connus s’ils comptent pour le parcours.
+
+6. GESTE UTILISATEUR
+   L’utilisateur ne renseigne pas tout ce qu’il voit dans sa vie.
+   Il valide les films que l’application lui propose au fil de l’exploration.
+   Les quêtes (« 5 films asiatiques dans le mois ») portent sur CES films
+   proposés et validés, pas sur un historique personnel hors catalogue.
+
+7. HONOR SYSTEM V1
+   Usage d’abord personnel. On n’essaie pas de contrôler les déclarations.
+
+8. PAS D’IMPORT D’HISTORIQUE EN V1
+   Letterboxd, SensCritique, etc. : non.
+   Ça irait contre la philo (parcours guidé ≠ dump de 400 films le premier soir).
+
+9. ALIMENTATION
+   Catalogue chargé facilement en BDD (batch / script), pas un CMS web V1.
+
+10. V2 POSSIBLE, FACULTATIVE, PEUT NE JAMAIS EXISTER
+    - Demander l’ajout d’un film absent (alerte / ligne en table, traitement
+      manuel admin). Plus tard seulement : automatisation TMDb ou autre API.
+    - Ne développer ça QUE si ça ne dénature pas le projet (découverte guidée,
+      pas base personnelle exhaustive).
+    - Onboarding V2 possible : sélection de films déjà connus, plus variés
+      (géo, culture, histoire, davantage d’anciens) pour repérer les zones
+      déjà explorées et personnaliser le départ — CE N’EST PAS LA V1.
+
+11. TMDb
+    Osef en V1. Pas source de vérité, pas recherche mondiale, pas enrichissement
+    obligatoire. Éventuellement beaucoup plus tard, pour des ajouts hors catalogue.
+
+
+========================================================================
+C. STACK / CARTE / DONNÉES  (réponses au retour technique)
+========================================================================
+
+12. ATLAS PUIS CARTE
+    Première livraison (0.1.6) : Atlas scrollable avec filtres.
+    Carte interactive Compose Canvas custom : **V2** (AMENDÉ 0.1.12 ;
+    c’était V3). Rien n’est commencé tant que Léo n’a pas donné le GO.
+    Pas de bibliothèque de graphe tierce.
+
+13. CARTE V1 = texte seulement (titres, noms, labels). Pas d’affiches sur la map.
+
+14. Ne pas stocker des coordonnées X,Y de carte sur l’entité « film vu ».
+    Layout de carte = nœuds de catégories, à part. Les films sur la carte
+    (constellation) = plus tard, pas la priorité, pas la V1.
+
+15. Room pour tout le contenu catalogue V1 (centaines à quelques milliers de films).
+    Ça va.
+
+16. Architecture : MVVM + Clean (packages ui / domain / data). Code propre.
+    Couches métier fonctionnelles encore en rédaction : le code attendra
+    les règles, pas l’inverse.
+
+17. Navigation : Jetpack Compose Navigation pour commencer.
+
+18. Devices : téléphone d’abord, tablette à la limite, pas TV / pas PC.
+    Portrait d’abord, paysage en deux temps mais ça reste la base d’une app
+    téléphone. minSdk = API 26, décidé.
+
+
+========================================================================
+D. RANG, NIVEAU, BADGE : TROIS CHOSES DIFFÉRENTES
+========================================================================
+
+19. LE RANG EST LE CŒUR DE L’APPLICATION
+    Pas la cartographie interactive (même si elle plaît beaucoup).
+    Le rang décrit l’identité cinéphile à un instant T : un état d’esprit,
+    une façon de voir et de concevoir le cinéma.
+    Il NE représente PAS un nombre de films vus.
+    Il évolue très lentement : gagner 2 rangs en 2 ou 3 ans, c’est déjà beaucoup.
+    Un seul rang à la fois.
+
+20. 10 RANGS (provisoires, noms et nombre modifiables)
+    1 Novice — 2 Amateur — 3 Initié — 4 Passionné — 5 Explorateur
+    6 Connaisseur — 7 Érudit — 8 Spécialiste — 9 Expert — 10 Maître
+    Descriptions complètes : Listes_Fonctionnelles/Liste_Des_Rangs.txt
+    et cahier fonctionnel §9.3.
+
+21. CHANGEMENT DE NATURE AU RANG 8
+    Rangs 1–7 : la culture s’élargit.
+    Rangs 8–10 : rapport différent au médium (langage, histoire, analyse),
+    plus seulement « j’ai vu beaucoup de films ».
+    Écart 8 → 10 = pas du volume.
+
+22. LES BADGES SONT AUTRE CHOSE
+    Débloqués dès qu’une condition est remplie. Cumulables sans limite.
+    Des dizaines, voire des centaines, ajoutés au fil du développement.
+    Ne déterminent pas le rang.
+    Première fournée de 30 badges définie :
+    Listes_Fonctionnelles/Liste_Des_Badges.txt et fonctionnel §9.8.
+
+23. XP ET NIVEAUX : RÉINTÉGRÉS EN V1
+    Cette décision remplace explicitement la suppression précédente.
+    Niveau initial 1, maximum 50, indépendant du rang.
+    XP gagnée par quêtes : Bronze 100, Argent 250, Or 500.
+    Courbe paramétrable : FORMULE_NIVEAUX_XP.txt.
+    Les premiers niveaux sont rapides ; à partir du niveau 25, le coût
+    se stabilise à 3 202 XP. Niveau 49 = 96 798 XP ; niveau 50 =
+    exactement 100 000 XP.
+    Les cinq piliers V1 sont : RANG, NIVEAU/XP, BADGES, QUÊTES,
+    ATLAS/CARTE.
+
+24. AFFICHAGE PROFIL
+    Hiérarchie : Pseudo > Rang > Badges, puis niveau/XP et statistiques.
+    Sur l'Accueil, rang à gauche, niveau à droite, barre XP juste dessous.
+    Détail : CahierDesCharges_IHM.md.
+
+25. CARACTÉRISTIQUES V1
+    Les 50 premiers de Listes_Fonctionnelles/Liste_Des_Courants_
+    Cinematographiques.txt, jusqu’à « Slow Cinema » inclus.
+    Réserve V2+ : n°51 à 100.
+
+
+========================================================================
+F. MODÈLE DE CONTENU — GENRES, MOUVEMENTS, FILMS
+========================================================================
+
+26. GENRE ≠ CARACTÉRISTIQUE (distinction structurante)
+    GENRE     = aventure, thriller, comédie, documentaire, animation...
+                Un film en a zéro à plusieurs.
+    CARACTÉRISTIQUE = Nouvelle Vague, Nouvel Hollywood, Néoréalisme...
+                Un film en a zéro à plusieurs.
+    « Documentaire » est un GENRE, pas un mouvement.
+    Liste V1 : Listes_Fonctionnelles/Liste_Des_Genres.txt.
+
+27. CARACTÉRISTIQUES N–N
+    Table cinema_characteristics : id, code stable, nom, description,
+    type. Types initiaux : MOVEMENT, CURRENT, STYLE, PERIOD, SCHOOL, WAVE.
+    Liaison movies_characteristics. Aucun movementId dans movies.
+    Un film peut avoir zéro, une ou plusieurs caractéristiques.
+
+28. VOCABULAIRE UNIFIÉ
+    Terme technique : « caractéristique cinématographique ».
+    Le type conserve la nuance mouvement/courant/style/période/école/vague.
+    Côté IHM : parler de courants, collections, parcours et territoires.
+
+29. ANNÉE DE RÉFÉRENCE
+    Une seule année par film. Le choix (sortie nationale, internationale,
+    festival, restauration, date contestée) est un problème d’IMPORT,
+    tranché au moment où le film entre en base. Ensuite elle ne bouge plus.
+    Donc non-sujet côté application.
+
+30. ÉPOQUES
+    Seront définies avec des bornes de dates précises, dans un nouveau
+    fichier de Listes_Fonctionnelles/. En cours de rédaction côté Léo ;
+    à intégrer au cahier fonctionnel une fois validé.
+
+31. FORMATS ACCEPTÉS
+    Longs métrages = format dominant.
+    Courts métrages surtout pour 1880 / 1890 / 1900 / 1910 / 1920.
+    Animation : oui, c’est du cinéma.
+    Documentaire : oui, en tant que genre.
+    Stockage : durationMinutes + format explicite SHORT / MEDIUM /
+    FEATURE / EXTENDED.
+
+32. POIDS DU FILM
+    Chaque film porte une colonne « poids » en base : ce qu’il représente
+    dans le parcours cinéphile. Un Marvel pèse peu (≈1), un Lav Diaz ou un
+    Shūji Terayama pèse beaucoup plus. Alimente le calcul du rang.
+
+33. TAILLE DU CATALOGUE = N, VARIABLE
+    N grandit en continu : une centaine au début, puis 500, puis 1000,
+    puis davantage. Aucune valeur en dur nulle part, ni dans le contenu
+    ni dans les formules.
+    Que certains badges soient inatteignables au début n’est pas un
+    problème : l’appli se parcourt sur des années, pas en deux mois.
+
+34. RARETÉ / STATISTIQUES ENTRE UTILISATEURS
+    Sans objet tant qu’il y a un seul utilisateur. La rareté d’un badge
+    est éditoriale, pas statistique.
+
+34A. SCHÉMA RELATIONNEL ACTÉ
+    - movies_countries N–N avec isPrimary ; exactement un principal.
+    - countries_continents N–N.
+    - movies_directors N–N ; chaque co-réalisateur compte dans la formule.
+    - movies_genres N–N.
+    - movies_characteristics N–N.
+    - collections_movies ordonnée + associations séparées vers
+      caractéristiques, pays, continents et époques.
+    - rankings : 10 rangs par code et ordre stables.
+    - user_movies : date de visionnage choisie par calendrier.
+    - badges : code stable, difficulté 1..5, image ; règles en Kotlin
+      indexées par code, jamais par ID.
+    - user_badges : date d'obtention ; badge acquis définitivement.
+    - médias locaux référencés par FK nullable sur toutes les entités
+      illustrables.
+    Détail et contraintes SQL : CahierDesCharges_Technique.md §6.
+
+34B. TITRES ET IMAGES
+    Titre original affiché en grand ; titre français facultatif dessous.
+    Affiches et illustrations locales prévues en V1. La V0.1 peut rester
+    textuelle. Aucun média distant ni TMDb.
+
+34C. PAS DE WATCHLIST V1
+    L'utilisateur parcourt uniquement les listes et collections proposées
+    par Urbinema.
+
+
+========================================================================
+G. CALCUL DU RANG
+========================================================================
+
+35. FORMULE ARRÊTÉE — v0.3
+    Implémentable en l’état, sans réserve technique.
+    Formulation complète : FORMULE_MATHEMATIQUE.txt
+    Justification des choix : RETOUR_FORMULE_RANG.txt
+
+    TROIS AXES :
+      Volume pondéré  V_w = somme des poids atténués des films validés
+      Diversité       D   = somme des raretés des territoires TOUCHÉS
+                            (binaire, bornée, sature)
+      Profondeur      P   = somme pondérée de sqrt(n_x - 1)
+                            (non bornée, croît toujours)
+
+      S = lambda_V * log(1 + V_w) + lambda_D * D + lambda_P * log(1 + P)
+      avec lambda_V < lambda_D et lambda_V < lambda_P
+
+    SÉPARATION DÉCOUVERTE / APPROFONDISSEMENT :
+      1er film d’un territoire  -> diversité acquise, profondeur 0
+      2e et suivants            -> plus aucune diversité, que de la
+                                   profondeur
+      C’est ce qui rend les deux axes réellement indépendants.
+
+    POIDS DU FILM :
+      W_f = 1 + 2H + 2A + 2R + 3C, donc W_f dans [1, 10]
+      rho = 0.5 ACTÉ, donc W'_f = sqrt(W_f) dans [1, 3.162]
+      Écart maximal exactement sqrt(10) = 3.16 entre le film le plus
+      accessible et le plus exigeant. C’est le « facteur 3 » voulu.
+      Le poids se branche sur le VOLUME, seule somme qui porte sur les
+      films — donc aucun double comptage avec la rareté.
+
+    ÉQUILIBRE DES DIMENSIONS :
+      w_x = Omega_X / somme des Q_x de la dimension X
+      Couvrir toute une dimension rapporte exactement sa part cible
+      Omega_X, quel que soit son nombre de valeurs.
+      Sans cela, ~500 réalisateurs écrasaient 6 continents et le rang
+      devenait un compteur de réalisateurs.
+      Parts de départ : caractéristique 0.25, réalisateur 0.20, pays 0.18,
+      décennie 0.15, continent 0.07, époque 0.05, genre 0.05, forme 0.05.
+
+    RIEN NE PEUT ÊTRE PERDU — cliquet à trois niveaux :
+      Q_x_ref = max sur les versions de catalogue
+      w_x_ref = max sur les versions de catalogue
+      Rang affiché = max(rang calculé, rang déjà atteint)
+      Indispensable : le catalogue partira de zéro et grandira pendant
+      des années sous les pieds du seul utilisateur.
+
+    CONVERSION : 9 seuils fixes T1..T9, pas de sigmoïde.
+    Le rang 10 est donc réellement atteignable.
+
+36. CHOIX ÉCARTÉ, ET POURQUOI
+    Normaliser le score par la taille du catalogue. Séduisant sur le
+    papier (le score signifierait « part du territoire parcourue »),
+    mais chaque ajout au catalogue ferait BAISSER le score d’un
+    utilisateur qui n’a rien fait. Sur un catalogue qui passera de 0 à
+    plusieurs milliers de films, la progression serait gelée.
+    Seuils absolus retenus : le score ne fait que monter.
+    Exception : la diversité EST normalisée, par nécessité (équilibre
+    des dimensions), et le cliquet sur w_x neutralise la dilution.
+
+37. ENCORE À TRANCHER (produit, pas technique)
+    - Calibrage : 20 valeurs, dont 9 seuils qui demandent un vrai
+      arbitrage cinéphile. Par simulation sur profils types.
+      Les cibles relèvent du jugement de Léo, le code ne fait que
+      résoudre.
+    - Qui attribue H, A, R, C à chaque film ? H et C sont dérivables
+      automatiquement (année, représentation dans le catalogue) ;
+      A et R relèvent du jugement. Piste : un seul curseur 1 à 5 par
+      film. Saisir 4 notes sur 2000 films à la main n’arrivera jamais.
+    Les rangs 8 à 10 restent attribués aux scores les plus élevés en V1.
+    Le rang 10 demande une couverture quasi exhaustive du catalogue.
+    Cette approximation quantitative est assumée et sera affinée.
+
+38. RÉALISATEURS EN V1 ET EN N–N
+    Entité directors + liaison movies_directors. Les co-réalisations sont
+    prises en charge ; chaque réalisateur lié reçoit une occurrence dans
+    la dimension réalisateur du rang.
+
+
+========================================================================
+H. DIVERS
+========================================================================
+
+39. PALIERS DE COLLECTION EN POURCENTAGE
+    0 % / 25 % / 50 % / 75 % / 100 %, jamais en nombre fixe de films.
+    Les collections n’ont pas toutes la même taille : des seuils absolus
+    (5, 10, 15, 20) seraient incohérents dès qu’une collection compte 12
+    ou 35 films. Une seule règle couvre alors toutes les tailles, et la
+    sélection éditoriale n’est plus contrainte par un format.
+
+40. ENVIRONNEMENT DE DÉVELOPPEMENT : ANDROID STUDIO
+    Léo ouvre, édite, compile et exécute le projet dans Android Studio.
+    Contrainte structurelle, pas un confort :
+      - projet Gradle Android STANDARD, reconnu tel quel à l’ouverture
+        (settings.gradle.kts, build.gradle.kts racine, module app,
+        gradle/libs.versions.toml, wrapper versionné) ;
+      - arborescence conventionnelle app/src/main, /test, /androidTest ;
+      - aucune structure exotique, aucun build system parallèle :
+        ce que fait le bouton Run doit être ce que fait la ligne de
+        commande ;
+      - AGP / Gradle / Kotlin sur un triplet mutuellement compatible et
+        compatible avec la version d’Android Studio utilisée ;
+      - .gitignore Android standard, local.properties JAMAIS versionné ;
+      - SDK et émulateurs gérés par Android Studio, pas par un script.
+    Le script d’import du catalogue ne doit pas casser cette règle :
+    tâche Gradle du projet, ou outil séparé produisant un fichier lu par
+    l’app. Pas un troisième système de build.
+    Détail : CahierDesCharges_Technique.md §1.5.
+    À préciser : la version exacte d’Android Studio utilisée.
+
+41. REGROUPEMENT DES SPECS
+    Tous les cahiers, listes et analyses vivent désormais dans specs/.
+    La racine du dépôt est libre pour accueillir le projet Android.
+    Le fichier FORMULE_MATHEMATIQUE.txt.txt a été renommé proprement.
+
+42. NAVIGATION : BARRE BASSE À CINQ ENTRÉES
+    Imposé par Léo. Cinq entrées, pour que la carte tombe exactement au
+    centre (avec quatre, elle serait décalée) :
+
+      Accueil | Collections | CARTE | Parcours | Profil
+
+    - Carte au MILIEU, seul onglet surélevé.
+    - Profil TOUT À DROITE.
+    - « Parcours » regroupe rang, quêtes et collections en cours.
+    - Position 2 = **Collections** (imposé après le premier run ; plus
+      « Explorer »). Libellés barre basse toujours une ligne.
+
+    Menu burger EN HAUT À GAUCHE de l’Accueil, roue des réglages EN HAUT
+    À DROITE. Les deux uniquement sur l’Accueil.
+
+    Règle anti-doublon : la barre basse contient les MODES D’USAGE, le
+    tiroir contient les INDEX EXHAUSTIFS (tous les badges, toutes les
+    collections, statistiques, recherche). L'historique est sur l'Accueil.
+    Aucune entrée
+    n’existe aux deux endroits.
+
+    Détail : CahierDesCharges_IHM.md §8.
+
+43. DIRECTION ARTISTIQUE
+    Élégant, sombre, moderne. Thème SOMBRE par défaut, thème clair
+    disponible.
+    Métaphore : la salle obscure et la lumière du projecteur.
+      Sombre : fond #0A0A0C, texte ivoire #F4EFE6, accent ambre #E8C68A.
+      Clair  : fond papier #F5F1E8, accents assombris (obligatoire, sinon
+               l’ambre clair est illisible sur fond clair).
+    Typographie : Bodoni Moda (rang, titres) + Inter (texte).
+    Proscrits : bobine, clap, fauteuil rouge, pop-corn, perforations
+    décoratives, or clinquant, violet Material 3 par défaut.
+    Référence assumée : Artly, dont on garde les collections par
+    courant/époque, mais pas le traitement daté.
+    La direction IHM v0.2 est validée comme base de prototype.
+    Détail : CahierDesCharges_IHM.md §3 et §4.
+
+44. CADENAS INITIATION (0.1.7) — REVERSE de l’ancien « cadenas reporté »
+    Initiation toujours ouverte. Les autres collections sont grisées +
+    cadenas tant que l’utilisateur n’a pas marqué AU MOINS UN film
+    d’Initiation Vu. Dialogue FR/EN (locale appareil).
+    AMENDÉ 0.1.10 (décision 63) : le SUIVI n’est plus exigé pour *rester*
+    ouvert. Les cadenas ENTRE GROUPES sont implémentés (2 collections
+    commencées = 2 films vus, ou toutes s’il y en a moins de 2) + cliquet
+    `unlockedTrackOrdinal`. L’Atlas n’a aucun cadenas.
+
+45. QUALITÉ DE CODE (exigence explicite)
+    Code propre, moderne, découpé. KDoc sur toute fonction publique,
+    expliquant le pourquoi et pas le comment. Patrons de conception là
+    où ils servent, jamais pour la forme. Bonnes pratiques Kotlin et
+    Compose : état remonté, Composables sans effet de bord, @Preview,
+    aucune logique métier dans l’UI.
+    RIEN EN DUR, avec trois systèmes de configuration :
+      - UN FICHIER PAR THÈME dans ui/theme/ ;
+      - UN FICHIER PAR LANGUE dans res/values*/strings.xml ;
+      - coefficients du rang externalisés dans le domain.
+    Internationalisation en place dès le premier écran : français par
+    défaut, anglais prévu. Zéro chaîne en dur, pas de concaténation de
+    phrases, pluriels par plurals.
+    Détail : technique §5.5 et IHM §21.
+
+46. SQUELETTE DU PROJET GÉNÉRÉ PAR LÉO
+    Léo crée le projet vide depuis Android Studio (New Project → Empty
+    Activity, template Compose). C’est le bon choix : le template produit
+    un triplet AGP / Gradle / Kotlin cohérent avec l’IDE installé.
+    À ma charge ensuite : dépendances, libs.versions.toml, configuration
+    des modules, réglages de build, et tout le code applicatif.
+    Le feu vert pour coder sera donné explicitement par Léo.
+
+47. BADGES INATTEIGNABLES : NON-SUJET
+    La base compte zéro film aujourd’hui : tout est inatteignable, par
+    construction. Les films s’ajouteront au fur et à mesure.
+    La priorité est le CŒUR : l’algorithme et l’application.
+    Reste structurant en revanche : les DONNÉES que chaque film doit
+    porter pour qu’une condition soit calculable (durée, muet, réalisateur,
+    pays, mouvement, genres, tag expérimental).
+
+48. QUÊTES HEBDOMADAIRES
+    Trois simultanées : Bronze 100 XP, Argent 250 XP, Or 500 XP.
+    Pool V1 : 4 énoncés par palier. Tirage aléatoire parmi les quêtes
+    encore faisables. Activation et expiration le lundi à 02:00, heure
+    locale. Une quête terminée ou non disparaît au renouvellement.
+    Aucune rétroactivité. Argent/Or multi-films : compteur + barre.
+
+49. ACCUEIL
+    En-tête FIXE : rang en haut à gauche, niveau en haut à droite, barre
+    XP presque pleine largeur dessous.
+    Contenu scrollable : trois quêtes, collections en cours (suivies,
+    non complétées, **non cadenassées**) circulaires illustrées avec
+    pourcentage, puis
+    historique chronologique en TITRES DE FILMS (jamais les codes).
+    Pas de recommandation de film en V1.
+    Détail : CahierDesCharges_IHM.md §9.
+
+50. COLLECTIONS
+    Cible éditoriale 20 ; pack 0.1.10 = 15 dont Initiation (10 films,
+    displayOrder 1, track GATEWAY). Cinq groupes : Premières séances /
+    Ciné-club / Salle obscure / Cinémathèque / Hors-champ. Expressionnisme
+    allemand en Ciné-club (pas Cinémathèque).
+    Progression affichée et titres dorés SEULEMENT si la collection est
+    suivie ; sinon 0 % / 0 N même si des films sont déjà Vu.
+    100 % : félicitations, sortie des « en cours », titre+% or, check,
+    bouton « Vous avez terminé cette collection » (plus de unfollow).
+    Pas de badge automatique à la complétion ; piste V2+.
+
+51. ATLAS / NŒUDS
+    Barre de filtres en haut. Un nœud ouvre les entités liées en base :
+    réalisateur -> films, genre -> films, continent -> pays, etc.
+    Listes paginées par ~50, filtrables et triables.
+    Pays exploré = au moins un film dont isPrimary est vrai.
+    Les autres seuils restent paramétrables en pourcentage.
+
+52. FICHE FILM
+    Affiche locale, titre VO principal, titre français secondaire,
+    année, durée, réalisateurs, pays, genres, caractéristiques,
+    collections et synopsis.
+
+53. TON
+    Tutoiement. Agréable, jamais jugeant. Urbinema est un compagnon de
+    route vers la cinéphilie.
+
+54. IMPORT
+    Source éditoriale JSON versionnée. Validateur strict puis génération
+    d'une base Room préchargée dans assets. Exactement un pays principal
+    vérifié transactionnellement. Base générée jamais éditée à la main.
+
+55. ONBOARDING
+    Pop-up pseudo + âge si users vide OU birthDate null. Pas de pseudo
+    par défaut « Léo ». Insert ou update. Âge 8–120 → année de naissance.
+
+56. DATE DE VISIONNAGE
+    watchedOn = LocalDate du fuseau appareil, pas UTC. Pas de calendrier
+    en 0.1.7. Interdiction du futur dans le même fuseau.
+
+57. GRAIN ARGENTIQUE
+    Overlay persisté, défaut désactivé. Calibrage 0.1.10 : voile noir ~3,2 %,
+    specks ~7–9 % d’alpha (plus léger que 0.1.9).
+
+58. AIDE
+    Écran d’aide (collections, carte, courants, rang, badges, XP) depuis
+    Réglages et le « ? » Parcours.
+    AMENDÉ 0.2.1 : essai **10 XP** par film vu (une fois). Les quêtes
+    restent la grosse source (100 / 250 / 500). Les lignes FILM déjà
+    écrites à 40 sont ramenées à 10 au recalcul ; le niveau est recalé.
+    Les lignes FILM déjà en base sont retirées au prochain recalcul ;
+    maxLevelReached est recalé sur l’XP restante.
+
+59. LOGS
+    Tag unique UrbinemaProgress (validation, XP quête, rang).
+
+60. LANGUE DES DIALOGUES
+    Configuration.setLocales : cadenas et félicitations suivent FR/EN.
+
+61. PAYS SANS ACCENTS
+    Libellés Egypte, Etats-Unis, etc. pour le tri alphabétique Atlas.
+
+62. PACK / ROOM
+    catalog_v1.json VERSION=9. Room version 7 (cliquet collections,
+    badges vitrine, XP films, avatarCode). App 0.1.11 / versionCode 19.
+
+63. 0.1.10
+    Collections : un groupe ouvert reste ouvert (unlockedTrackOrdinal).
+    Profil : 3 badges max, choix depuis Tous les badges, non obtenus en N&B.
+    Liste badges : rareté/difficulté puis code (001 avant 002).
+    XP film 40 une fois + quêtes. Grain voile ~0,032.
+    À propos : Léo Barroux, Flaticon, Avatar Maker, TMDB.
+
+64. 0.1.11
+    Avatars packagés AVATAR_01…03 (copies temporaires des badges 001–003).
+    Onboarding : pseudo + âge + avatar. Réglages : changement d’avatar.
+    Profil : avatar à gauche du pseudo, au-dessus du rang.
+    Cadenas : sans 1 Vu Initiation, Hollywood et le reste restent fermés
+    même si le cliquet était haut (reset y compris). Dialogues de cadenas
+    calculés hors AlertDialog pour suivre FR/EN. Indices H/A/R/C :
+    FORMULE_MATHEMATIQUE.txt §1.bis.
+
+65. PACK / QUÊTES
+    catalog_v1.json VERSION=10. Pool de 50 quêtes types (16 Bronze,
+    17 Argent, 17 Or), règles par motif dans DefaultQuestRules.
+    App 0.1.11 inchangée.
+
+66. AVATARS
+    10 visuels packagés AVATAR_01…10. Choix en carrousel coulissant
+    à l’onboarding et dans Réglages. App 0.1.11 inchangée jusqu’à
+    la release 0.1.12.
+
+67. PACK / CLOSE V1
+    catalog_v1.json VERSION=11. ~405 films, 42 pays, 15 collections
+    (Initiation inchangée). Vague cinéphile (~100 titres) ajoutée au
+    catalogue existant. Avatars, badges, affiches packagées = V1.
+    Carte Canvas = V2. App 0.1.11 jusqu’à la release 0.1.12.
+
+68. 0.2.1 — CARTE DU CIEL
+    Première carte interactive Compose Canvas. AMENDÉ (décisions 70 puis 72) :
+    onglet Atlas = listes ; ciel = icône étoiles.
+    App 0.2.1 / versionCode 20.
+
+69. XP FILM = 10 (ESSAI)
+    40 XP / film noyaient les quêtes. Essai : **10 XP** une fois par film.
+    Quêtes inchangées (100 / 250 / 500). Ledger FILM déjà à 40 recalé à 10.
+
+70. CARTE = CATALOGUE
+    AMENDÉ (décision 72) : l’onglet redevient Atlas listes ; le ciel
+    s’ouvre par l’icône étoiles. La constellation autour d’un film
+    (réal, pays, genres près ; films moins liés plus loin) reste la vue
+    par défaut du ciel. Tap un film = recentrer. Tap un territoire =
+    liste + fiche. Les puces gardent la vue calques. Zoom max 14.
+    Fiche film : « Voir sur la carte ».
+
+71. BADGES 031/032 + SEUILS TEMPORELS
+    031 Mappemonde (diff. 5) : un film de chaque pays principal du catalogue.
+    032 Cabinet des Frayeurs (diff. 3) : 30 films d’horreur.
+    015/016/017 doublés (20 avant 1950, 60 avant 1960, 200 avant 1980) ;
+    017 passe en difficulté 4. Pop-up FR/EN à chaque badge débloqué.
+    Pack JSON version 12.
+
+72. ONGLET ATLAS = LISTES
+    L’onglet central s’appelle **Atlas** et ouvre les listes (pays,
+    courants…). La carte du ciel est derrière l’icône étoiles en haut
+    à droite (`atlas/sky`). Amende la décision 70.
+
+73. CIEL COLORÉ + BADGES STABLES (0.2.3)
+    Sur la carte du ciel, la couleur dit le **type** : films blancs,
+    films vus dorés, réalisateurs cyan, pays corail, genres rose,
+    courants violet, décennies orange, collections bleu. Légende en
+    bas. Un même libellé n’apparaît qu’une fois (réal vs collection
+    homonyme). Pop-up de badge : une seule fois, persisté DataStore
+    (premier snapshot = déjà vu). Chaînes résolues hors AlertDialog.
+    Historique Accueil : 50 dernières + écran complet. Tiroir : un
+    peu plus d’air logo / « Index d’exploration » / premier item.
+
+74. CATALOGUE V2 + ASSET UNIQUE (0.2.4)
+    L’app charge `assets/catalog/catalog.json` (plus `catalog_v1.json`).
+    `catalog_v1.json` reste la photo V1 (405 films, pack 12).
+    `catalog_v2.json` = V1 + 1000 films + courants 1–50 et 101–102
+    (Âge d’or / Nouvel âge d’or Hollywood) et les courants 51–100
+    nécessaires aux 1000 fiches. Pack JSON **version 13**, ~1405 films,
+    ~115 caractéristiques, ~97 pays, ~33 genres. Affiches TMDB via
+    `batchPosters/` copiées dans `assets/media/posters/{CODE}.jpg`.
+
+
+========================================================================
+E. CE QUI RESTE OUVERT (cœur fonctionnel, pas le cloud)
+========================================================================
+
+RÉGLÉ — le calcul du rang.
+  La formule v0.3 est arrêtée et implémentable. Voir section G ci-dessous
+  et FORMULE_MATHEMATIQUE.txt. Il ne reste que du calibrage.
+
+RESTE OUVERT
+  Liste complète, classée par priorité : FAQ_CAHIER_FONCTIONNEL.txt.
+  Aucun arbitrage produit ne bloque la création de l'architecture, de Room,
+  du moteur de rang/XP ou des premiers écrans.
+  Restent à régler pendant le développement :
+    - mise à jour d'un catalogue sur une installation déjà utilisée ;
+    - modification d'une collection déjà complétée ;
+    - rattachement éditorial des pays transcontinentaux ;
+    - bornes des époques et attribution des poids ;
+    - contenu précis du catalogue et enrichissement du pool de quêtes ;
+    - métaphore/layout de la carte interactive (**V2**).

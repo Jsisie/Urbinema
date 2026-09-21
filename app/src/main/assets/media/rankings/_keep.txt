@@ -1,0 +1,1 @@
+﻿Drop {CODE}.webp files here. Naming and JSON wiring: specs/ASSETS.md

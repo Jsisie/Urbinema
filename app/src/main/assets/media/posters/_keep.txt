@@ -1,0 +1,3 @@
+﻿Drop {CODE}.webp, {CODE}.png, {CODE}.jpg or {CODE}.jpeg here.
+Example: TITANIC_1997.jpg (code from the movies table). No JSON change needed.
+See specs/ASSETS.md

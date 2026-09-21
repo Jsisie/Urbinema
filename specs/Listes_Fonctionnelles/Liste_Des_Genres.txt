@@ -1,0 +1,80 @@
+LISTE DES GENRES — URBINEMA
+Version : 1.0
+Date : 2026-09-16
+Statut : liste V1 extensible
+
+PRINCIPE
+========================================================================
+
+Un genre décrit la nature narrative, thématique ou formelle d'un film.
+Un film peut posséder plusieurs genres.
+
+Un genre n'est PAS un courant cinématographique :
+
+  Drame, thriller, western       = genres
+  Nouvelle Vague française      = caractéristique cinématographique
+  Cinéma d'auteur               = ni un genre, ni une caractéristique V1
+
+Les genres sont stockés dans `genres` et associés aux films par
+`movies_genres`. Chaque genre possède un code stable, indépendant de
+son identifiant technique auto-généré.
+
+
+LISTE V1
+========================================================================
+
+  01. ACTION
+  02. ANIMATION
+  03. ARTS_MARTIAUX
+  04. AVENTURE
+  05. BIOGRAPHIQUE
+  06. CATASTROPHE
+  07. COMEDIE
+  08. COMEDIE_DRAMATIQUE
+  09. CRIME
+  10. DOCUMENTAIRE
+  11. DRAME
+  12. ENQUETE
+  13. EPOUVANTE
+  14. EROTIQUE
+  15. ESPIONNAGE
+  16. FAMILLE
+  17. FANTASTIQUE
+  18. FILM_NOIR
+  19. GANGSTER
+  20. GUERRE
+  21. HISTORIQUE
+  22. HORREUR
+  23. MUSICAL
+  24. MYSTERE
+  25. PEPLUM
+  26. POLICIER
+  27. POLITIQUE
+  28. ROAD_MOVIE
+  29. ROMANCE
+  30. SCIENCE_FICTION
+  31. SPORT
+  32. SUPER_HEROS
+  33. THRILLER
+  34. WESTERN
+
+
+RÈGLES ÉDITORIALES
+========================================================================
+
+- La liste est fermée pour un pack de catalogue donné, mais extensible
+  par migration de contenu : ajouter un genre ne nécessite pas de
+  migration du schéma Room.
+- Les codes sont immuables. Le nom affiché peut être traduit ou corrigé.
+- `COMEDIE_DRAMATIQUE` est conservé comme genre éditorial autonome :
+  il ne doit pas être automatiquement déduit de COMEDIE + DRAME.
+- `FILM_NOIR` peut coexister avec une caractéristique cinématographique
+  portant le même concept. Le genre décrit ici la classification du film ;
+  la caractéristique le rattache à une tradition historique/esthétique.
+- `ANIMATION` et `DOCUMENTAIRE` sont traités comme genres en V1,
+  conformément aux décisions produit.
+- Muet, noir et blanc, court métrage, durée supérieure à trois heures et
+  expérimental ne sont pas des genres : ce sont des propriétés ou tags.
+- L'ajout de sous-genres très fins (giallo, slasher, kaijū, chambara,
+  wuxia, screwball comedy, etc.) est reporté. Ils pourront devenir des
+  genres ou des caractéristiques éditoriales selon le besoin réel.

@@ -1,0 +1,228 @@
+CALCUL DES NIVEAUX ET DE L'XP — URBINEMA
+Version : 1.1
+Date : 2026-09-18
+Statut : formule V1 paramétrable, à ajuster après tests
+
+
+========================================================================
+0. DÉCISIONS PRODUIT
+========================================================================
+
+- Niveau initial : 1.
+- XP initiale : 0.
+- Niveau maximum : 50.
+- Rang et niveau strictement indépendants.
+- Sources d'XP :
+    film vu (une fois) = 10 XP  (essai 0.2.1 ; était 40)
+    quête Bronze = 100 XP
+    quête Argent = 250 XP
+    quête Or     = 500 XP
+- Le niveau ne redescend jamais (sauf recalage si on change le tarif film
+  déjà écrit dans le ledger).
+- Une quête ne peut attribuer son XP qu'une fois.
+- Un film n'attribue ses XP qu'une fois
+  (`xp_transactions.source = FILM`, unicité par movieId).
+
+
+========================================================================
+1. INCOHÉRENCE DES REPÈRES INITIAUX
+========================================================================
+
+Les repères fournis étaient des intentions, pas une suite mathématiquement
+compatible :
+
+  niveau 45 ≈ 48 200 XP
+  niveau 49 ≈ 97 000 XP
+  niveau 50 ≈ 100 000 XP
+  coût final ≈ 3 000 XP
+
+Passer de 48 200 à 97 000 en quatre niveaux demanderait en moyenne
+12 200 XP par niveau, puis le coût retomberait brutalement à 3 000.
+Ce mur n'est ni progressif ni cohérent avec l'objectif d'un coût mensuel
+qui finit par se stabiliser.
+
+ARBITRAGE V1 :
+
+- conserver précisément les repères des niveaux 1 à 20 ;
+- faire converger le coût vers un plateau ;
+- conserver niveau 49 ≈ 97 000 ;
+- atteindre exactement 100 000 au niveau 50 ;
+- accepter que les anciens repères 25 à 45 soient relevés.
+
+
+========================================================================
+2. DÉFINITIONS
+========================================================================
+
+L       = niveau courant, 1 <= L <= 50
+T(L)    = XP cumulée minimale pour atteindre le niveau L
+C(L)    = XP requise pour passer du niveau L au niveau L + 1
+
+C(L) = T(L + 1) - T(L)
+
+Le niveau correspondant à une XP cumulée X est :
+
+Niveau(X) = max { L dans [1, 50] tel que T(L) <= X }
+
+À partir du niveau 50 :
+
+Niveau(X) = 50, quelle que soit la valeur de X.
+
+
+========================================================================
+3. COÛT DU NIVEAU SUIVANT
+========================================================================
+
+Les quatre premiers coûts reprennent les repères éditoriaux :
+
+C(1) = 115
+C(2) = 140
+C(3) = 200
+C(4) = 270
+
+Puis :
+
+C(L) = 275 + 20 * (L - 5)          pour 5 <= L <= 9
+
+C(L) = 520 + 40 * (L - 10)         pour 10 <= L <= 14
+
+C(L) = 700 + 40 * (L - 15)         pour 15 <= L <= 19
+
+C(L) = 1100 + 525 * (L - 20)       pour 20 <= L <= 24
+
+C(L) = 3202                         pour 25 <= L <= 49
+
+
+LECTURE PRODUIT
+------------------------------------------------------------------------
+
+- Niveaux 1 à 5 : une quête Argent ou Or peut suffire.
+- Niveaux 10 à 20 : une à quatre quêtes selon leur difficulté.
+- Niveaux 20 à 25 : transition volontaire vers le rythme long.
+- Niveaux 25 à 50 : coût fixe de 3 202 XP.
+
+Au plateau, il faut environ :
+
+  33 quêtes Bronze ;
+  13 quêtes Argent ;
+   7 quêtes Or.
+
+Avec trois quêtes par semaine, le rythme dépend du mélange Bronze /
+Argent / Or et reste à l'échelle de plusieurs semaines ou mois.
+
+Le maximum hebdomadaire V1 est 850 XP. Au plateau, un niveau demande donc
+au minimum 3,77 semaines si les trois quêtes sont terminées : l'objectif
+« environ un niveau par mois » est respecté. Atteindre 100 000 XP demande
+au minimum environ 118 semaines, soit un peu plus de deux ans.
+
+
+========================================================================
+4. TABLE COMPLÈTE
+========================================================================
+
+Niveau | XP cumulée | XP vers le niveau suivant
+-------|------------|---------------------------
+   1   |          0 |      115
+   2   |        115 |      140
+   3   |        255 |      200
+   4   |        455 |      270
+   5   |        725 |      275
+   6   |      1 000 |      295
+   7   |      1 295 |      315
+   8   |      1 610 |      335
+   9   |      1 945 |      355
+  10   |      2 300 |      520
+  11   |      2 820 |      560
+  12   |      3 380 |      600
+  13   |      3 980 |      640
+  14   |      4 620 |      680
+  15   |      5 300 |      700
+  16   |      6 000 |      740
+  17   |      6 740 |      780
+  18   |      7 520 |      820
+  19   |      8 340 |      860
+  20   |      9 200 |    1 100
+  21   |     10 300 |    1 625
+  22   |     11 925 |    2 150
+  23   |     14 075 |    2 675
+  24   |     16 750 |    3 200
+  25   |     19 950 |    3 202
+  26   |     23 152 |    3 202
+  27   |     26 354 |    3 202
+  28   |     29 556 |    3 202
+  29   |     32 758 |    3 202
+  30   |     35 960 |    3 202
+  31   |     39 162 |    3 202
+  32   |     42 364 |    3 202
+  33   |     45 566 |    3 202
+  34   |     48 768 |    3 202
+  35   |     51 970 |    3 202
+  36   |     55 172 |    3 202
+  37   |     58 374 |    3 202
+  38   |     61 576 |    3 202
+  39   |     64 778 |    3 202
+  40   |     67 980 |    3 202
+  41   |     71 182 |    3 202
+  42   |     74 384 |    3 202
+  43   |     77 586 |    3 202
+  44   |     80 788 |    3 202
+  45   |     83 990 |    3 202
+  46   |     87 192 |    3 202
+  47   |     90 394 |    3 202
+  48   |     93 596 |    3 202
+  49   |     96 798 |    3 202
+  50   |    100 000 |        —
+
+
+========================================================================
+5. PARAMÉTRAGE DANS LE CODE
+========================================================================
+
+La V1 implémente une table de seuils générée par une configuration unique :
+
+  MAX_LEVEL             = 50
+  BRONZE_XP             = 100
+  SILVER_XP             = 250
+  GOLD_XP               = 500
+  PLATEAU_START_LEVEL   = 25
+  PLATEAU_LEVEL_COST_XP = 3202
+
+Les segments précédents sont regroupés dans une liste typée :
+
+  XpCurveSegment(
+      startLevel,
+      endLevel,
+      baseCost,
+      incrementPerLevel
+  )
+
+La table T(1)..T(50) est construite une fois, validée au démarrage du
+moteur métier et testée en JUnit.
+
+INVARIANTS À TESTER
+------------------------------------------------------------------------
+
+- T(1) = 0.
+- T(50) = 100 000.
+- T(L + 1) > T(L) pour tout L < 50.
+- C(L) > 0 pour tout L < 50.
+- Niveau(T(L)) = L.
+- Niveau(T(L + 1) - 1) = L.
+- Niveau(X) = 50 pour X >= 100 000.
+- Les récompenses Bronze / Argent / Or sont strictement croissantes.
+
+
+========================================================================
+6. AJUSTEMENTS FUTURS
+========================================================================
+
+Cette courbe est une configuration produit, pas une vérité mathématique.
+Elle sera ajustée après observation du rythme réel des quêtes.
+
+Modifier la courbe ne doit pas retirer un niveau déjà atteint :
+
+  niveauAffiche =
+      max(niveauCalculeDepuisXp, niveauMaximumHistorique)
+
+Le niveau maximum historique est donc persisté comme un cliquet, exactement
+comme le rang maximum historique.

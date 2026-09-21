@@ -1,0 +1,605 @@
+CALCUL DU RANG CINÉPHILE — URBINEMA
+Version : 0.3 (version de référence, implémentable en l'état)
+Date : 2026-09-16
+Analyse et justification des choix : RETOUR_FORMULE_RANG.txt
+
+------------------------------------------------------------------------
+CHANGEMENTS DEPUIS LA v0.2
+------------------------------------------------------------------------
+
+  1. DIVERSITÉ ET PROFONDEUR SONT ENFIN ORTHOGONALES.
+     La diversité utilise désormais la Découverte binaire du §9 de la v0.2,
+     définie mais jamais branchée. G(n) et g(n) sont supprimés.
+     Diversité = « combien de territoires touchés », bornée.
+     Profondeur = « à quel point creusés », non bornée.
+     Les deux ne mesurent plus la même chose.
+
+  2. LE POIDS DU FILM A UNE PLACE : LE VOLUME EST PONDÉRÉ.
+     V(u) = simple comptage devient V_w(u) = somme des poids atténués.
+     W est défini par FILM, le volume est la seule somme qui porte sur
+     les FILMS : c'est donc là et nulle part ailleurs qu'il se branche
+     sans double comptage.
+
+  3. rho FIXÉ À 0.5.
+     Conséquence exacte : W_f varie dans [1, 10], donc W'_f varie dans
+     [1, sqrt(10)] = [1, 3.162].
+     Un film au maximum d'exigence vaut donc 3.16 films au minimum
+     d'exigence. C'est bien le « facteur 3 » voulu.
+
+  4. LES POIDS DE DIMENSION SONT NORMALISÉS PAR CARDINALITÉ.
+     Sans cela, les ~500 réalisateurs écrasaient les 6 continents et le
+     score devenait un compteur de réalisateurs. Voir §7.
+
+  5. EFFET CLIQUET ÉTENDU AUX POIDS DE DIMENSION.
+     Q_x et w_x sont figés par version de catalogue et pris à leur valeur
+     maximale historique : enrichir le catalogue ne peut JAMAIS faire
+     baisser un score déjà acquis.
+
+
+// ============================================================
+// 0. NOTATIONS GÉNÉRALES
+// ============================================================
+
+N       = nombre total de films dans le catalogue Urbinema
+F_u     = ensemble des films validés par l'utilisateur u
+u       = l'utilisateur
+f       = un film
+x       = une caractéristique (ex. « Japon », « Ozu », « années 1950 »)
+X       = une dimension (ex. « pays », « réalisateur », « décennie »)
+
+
+// ============================================================
+// 1. POIDS INTRINSÈQUE D'UN FILM
+// ============================================================
+
+// Quatre notes attribuées par film, normalisées dans [0,1]
+
+H_f = éloignement historique du film f
+A_f = difficulté / exigence du film f
+R_f = importance dans l'histoire du cinéma
+C_f = richesse culturelle / rareté intrinsèque
+
+W_f = 1 + 2*H_f + 2*A_f + 2*R_f + 3*C_f
+
+// Domaine : W_f ∈ [1, 10]
+//   film le plus accessible possible  → W_f = 1
+//   film maximal sur les 4 critères   → W_f = 10
+
+
+// Atténuation, pour qu'un film exceptionnel ne domine pas le score
+
+W'_f = W_f ^ ρ
+
+ρ = 0.5              // ACTÉ
+
+// Domaine : W'_f ∈ [1, 3.162]
+// Exemples :
+//   blockbuster contemporain   W_f ≈ 1.5   → W'_f ≈ 1.22
+//   grand classique connu      W_f ≈ 5     → W'_f ≈ 2.24
+//   œuvre rare et exigeante    W_f ≈ 9.5   → W'_f ≈ 3.08
+
+
+// ============================================================
+// 1.bis COMMENT ATTRIBUER H, A, R, C À UN NOUVEAU FILM
+// ============================================================
+
+// Les quatre indices vivent dans Room (`movies.historicalDistance`,
+// `artisticDemand`, `historicalRichness`, `culturalRichness`) et dans le
+// JSON pack (`catalog_v1.json`). Ils sont produits par
+// `tools/generate_catalog.py` → `scores_for()`. Tout est dans [0, 1].
+
+// --- A. Champ éditorial `demand` (le levier principal) ---
+//
+// Dans les lignes pipe du générateur, le dernier nombre avant le synopsis
+// (ex. `|0.82|`) est `demand` ∈ [0, 1], défaut 0.70.
+//
+//   ~0.45–0.55   grand public, lisible, peu de friction formelle
+//                (comédie hollywoodienne, blockbuster)
+//   ~0.65–0.75   classique « sérieux » mais encore abordable
+//   ~0.80–0.90   forme dense, rythme lent, montage exigeant, muet tardif
+//   ~0.90–1.00   expérimental, avant-garde, œuvre-monde
+//
+// Drapeaux de la colonne flags :
+//   s = muet          → +0.08 sur A
+//   e = expérimental  → +0.16 sur A
+//   b = noir & blanc  (métadonnée, pas un indice)
+//   c = couleur       (force la couleur même avant 1954)
+//
+// --- B. Formules automatiques (si le film n'est pas dans SCORE_OVERRIDES) ---
+//
+// jitter = 16 premiers bits de MD5(code) / 65535
+//          bruit stable : deux films proches n'ont pas les mêmes notes.
+// age    = (2028 − année) / (2028 − 1880)
+//          1880 → 1.0 (très loin) ; 2028 → 0.0 (aujourd'hui).
+//
+// H  éloignement historique
+//    clamp01( 0.16 + 0.72*age + 0.08*jitter )
+//    Un film de 1927 est loin ; un film de 2018 reste bas.
+//
+// A  exigence / difficulté de visionnage
+//    clamp01( 0.30 + 0.42*demand
+//             + 0.08 si muet
+//             + 0.16 si expérimental
+//             + 0.06*jitter )
+//    C'est le levier que tu tournes avec `demand`.
+//
+// R  importance dans l'histoire du cinéma
+//    clamp01( 0.48 + 0.38*age + 0.12*demand )
+//    Un vieux film exigeant pèse plus qu'un vieux film léger.
+//    Un classique récent très `demand` monte aussi, sans égaler 1920.
+//
+// C  richesse culturelle / rareté intrinsèque
+//    clamp01( 0.46 + 0.30*demand + 0.14*(1 − jitter)
+//             + 0.06 si année < 1960 )
+//    Bonus léger pour le pré-1960. Le jitter inverse évite que H et C
+//    montent toujours ensemble.
+//
+// clamp01(x) = max(0, min(1, x))
+//
+// --- C. Surcharge manuelle SCORE_OVERRIDES ---
+//
+// Pour un film dont l'auto-score ment ( trop bas pour Kane, trop haut
+// pour un divertissement ancien ), ajouter dans generate_catalog.py :
+//
+//   "CODE_ANNEE": (H, A, R, C),
+//
+// Exemple livré :
+//   SEPT_SAMOURAIS_1954     (0.72, 0.55, 0.95, 0.90)
+//   ROMA_CITTA_APERTA_1945  (0.82, 0.48, 0.96, 0.86)
+//   CLEO_DE_5_A_7_1962      (0.62, 0.50, 0.87, 0.82)
+//
+// Puis régénérer le JSON (`python tools/generate_catalog.py`).
+// L'upsert Room ne se fait que si la version du pack est strictement
+// supérieure : incrémenter VERSION dans le script.
+//
+// --- D. Recette pour ajouter un film ---
+//
+// 1. Choisir le code ASCII stable : TITRE_FR_OU_VO_ANNEE (ex. TITANIC_1997).
+// 2. Poser `demand` selon la friction de visionnage, pas selon « j'aime ».
+// 3. Cocher s / e si besoin.
+// 4. Lancer le générateur, lire les 4 indices dans le JSON.
+// 5. Si l'un des quatre détonne par rapport à des films voisins,
+//    l'écrire dans SCORE_OVERRIDES plutôt que de tordre `demand`
+//    (demand ne pilote vraiment que A, et un peu R et C).
+// 6. Vérifier W_f = 1 + 2H + 2A + 2R + 3C ∈ [1, 10]
+//    et W' = sqrt(W_f) ∈ [1, 3.16] : c'est le poids ajouté au volume.
+
+
+// ============================================================
+// 2. CARACTÉRISTIQUES ET DIMENSIONS
+// ============================================================
+
+// Une DIMENSION X est un axe d'exploration.
+// Une CARACTÉRISTIQUE x est une valeur sur cet axe.
+
+// Dimensions retenues (proposition de départ) :
+//
+//   X = pays            ex. x = Japon, Sénégal, Hongrie
+//   X = continent       ex. x = Asie, Afrique
+//   X = décennie        ex. x = 1920, 1960
+//   X = époque          ex. x = muet, âge d'or, moderne
+//   X = caractéristique ex. x = Néoréalisme, Slow Cinema, Dogme 95
+//   X = réalisateur     ex. x = Ozu, Tarkovski
+//   X = genre           ex. x = film noir, documentaire
+//   X = forme           ex. x = court métrage, muet, noir et blanc,
+//                            expérimental
+
+
+// N_x = nombre de films du catalogue possédant la caractéristique x
+
+N_x = |{f ∈ Catalogue : f possède x}|
+
+
+// ============================================================
+// 3. RARETÉ D'UNE CARACTÉRISTIQUE
+// ============================================================
+
+R_x = N / N_x
+
+
+// Normalisée par la rareté moyenne des caractéristiques
+// de la MÊME dimension
+
+Q_x = sqrt( R_x / moyenne_{x' ∈ X}(R_x') )
+
+
+// Q_x > 1 : plus rare que la moyenne de sa dimension
+// Q_x = 1 : caractéristique moyenne
+// Q_x < 1 : plus fréquente que la moyenne
+
+// PROPRIÉTÉ : N se simplifie dans le rapport R_x / moyenne(R_x).
+// Q_x est donc totalement insensible à la taille du catalogue.
+// C'est la qualité principale de cette formulation.
+
+
+// ============================================================
+// 4. VERSION DU CATALOGUE / EFFET CLIQUET
+// ============================================================
+
+// v = version du catalogue
+
+N^(v)   = nombre de films du catalogue à la version v
+N_x^(v) = nombre de films possédant x à la version v
+
+Q_x^(v) = sqrt(
+              ( N^(v) / N_x^(v) )
+              /
+              moyenne_{x' ∈ X}( N^(v) / N_x'^(v) )
+          )
+
+
+// Les valeurs sont figées par version, puis prises au maximum :
+
+Q_x_ref = max( Q_x^(v1), Q_x^(v2), ..., Q_x^(vk) )
+
+
+// Conséquence : enrichir le catalogue ne diminue jamais un acquis.
+// Prix à payer : le score peut être très légèrement surévalué
+// par rapport à un recalcul « propre ». C'est voulu.
+
+
+// ============================================================
+// 5. OCCURRENCE CHEZ UN UTILISATEUR
+// ============================================================
+
+n_x(u) = |{f ∈ F_u : f possède x}|
+
+X_u    = ensemble des caractéristiques présentes dans F_u
+       = { x : n_x(u) >= 1 }
+
+
+// Exemples :
+//   n_Ozu(u)   = nombre de films d'Ozu validés
+//   n_Japon(u) = nombre de films japonais validés
+
+// RÈGLES DE CARDINALITÉ V1 :
+//
+// - PAYS : seul le pays marqué isPrimary compte dans n_x.
+//   Une coproduction ne peut donc pas ouvrir plusieurs pays avec un film.
+// - CONTINENT : dérivé du pays principal et de ses liaisons continentales.
+// - RÉALISATEUR : chaque réalisateur lié reçoit une occurrence.
+//   Une co-réalisation nourrit donc la filmographie de chacun.
+// - CARACTÉRISTIQUE : chaque caractéristique liée reçoit une occurrence,
+//   quel que soit son type (MOVEMENT, CURRENT, STYLE, PERIOD, SCHOOL, WAVE).
+// - GENRE : chaque genre lié reçoit une occurrence.
+// - ÉPOQUE et DÉCENNIE : dérivées de l'année de référence.
+// - FORME : dérivée du format et des propriétés explicites du film.
+//   Animation et documentaire restent uniquement des GENRES afin d'éviter
+//   leur double comptage dans les deux dimensions.
+
+
+// ============================================================
+// 6. DÉCOUVERTE ET PROFONDEUR : DEUX CHOSES DIFFÉRENTES
+// ============================================================
+
+// C'est le point central de la v0.3.
+
+// DÉCOUVERTE — binaire, bornée. Un territoire est touché, ou non.
+
+Decouverte_x(u) =
+    1  si n_x(u) >= 1
+    0  sinon
+
+
+// PROFONDEUR — la première occurrence ne compte PAS.
+
+h(n) = sqrt( max(0, n - 1) )
+
+
+// Table de vérité :
+//
+//   n_x    Découverte    Profondeur
+//    0          0           0
+//    1          1           0.000
+//    2          1           1.000
+//    3          1           1.414
+//    5          1           2.000
+//   10          1           3.000
+//   20          1           4.359
+//   50          1           7.000
+
+
+// Aucune des deux ne dépend de l'ordre de validation des films.
+
+
+// ============================================================
+// 7. POIDS DES DIMENSIONS (normalisation par cardinalité)
+// ============================================================
+
+// PROBLÈME : une dimension « réalisateur » contient des centaines de
+// valeurs, une dimension « continent » en contient six. Sans correction,
+// la première écrase la seconde et le rang devient un compteur de
+// réalisateurs.
+
+// SOLUTION : chaque dimension reçoit une PART CIBLE Ω_X, et le poids
+// de chacune de ses caractéristiques est normalisé en conséquence.
+
+Ω_X = part cible de la dimension X,  avec  Σ_X Ω_X = 1
+
+w_x = Ω_X / Σ_{x' ∈ X} Q_x'_ref        pour x ∈ X
+
+
+// Conséquence : découvrir TOUTE la dimension X rapporte exactement Ω_X
+// de diversité. Chaque dimension pèse ce qu'on a décidé qu'elle pèse,
+// indépendamment du nombre de valeurs qu'elle contient.
+
+// w_x suit le même effet cliquet que Q_x :
+//     w_x_ref = max( w_x^(v1), ..., w_x^(vk) )
+
+
+// Parts cibles — PROPOSITION DE DÉPART, à calibrer :
+//
+//   Ω_caracteristique = 0.25
+//   Ω_realisateur  = 0.20
+//   Ω_pays         = 0.18
+//   Ω_decennie     = 0.15
+//   Ω_continent    = 0.07
+//   Ω_epoque       = 0.05
+//   Ω_genre        = 0.05
+//   Ω_forme        = 0.05
+//                    ----
+//                    1.00
+
+
+// ============================================================
+// 8. DIVERSITÉ
+// ============================================================
+
+D(u) = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref * Decouverte_x(u)
+
+
+// Comme Decouverte_x(u) = 1 pour tout x ∈ X_u, cela se réduit à :
+
+D(u) = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref
+
+
+// LECTURE PRODUIT :
+// « la somme des raretés des territoires touchés au moins une fois »
+// autrement dit : LA PART DU TERRITOIRE CINÉMATOGRAPHIQUE DÉCOUVERTE.
+
+// Domaine : D(u) ∈ [0, ~1]
+//   D = 0     aucun film validé
+//   D → 1     toutes les caractéristiques du catalogue touchées
+//
+// Le cliquet sur w_x_ref peut faire légèrement dépasser 1. Sans gravité.
+
+// PROPRIÉTÉ ESSENTIELLE : la diversité SATURE.
+// Le 1er film japonais rapporte de la diversité. Le 2e, plus rien.
+// Tout le reste bascule dans la profondeur.
+
+
+// ============================================================
+// 9. PROFONDEUR
+// ============================================================
+
+P(u) = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref * h( n_x(u) )
+
+     = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref * sqrt( max(0, n_x(u) - 1) )
+
+
+// LECTURE PRODUIT :
+// « à quel point l'utilisateur a creusé les territoires qu'il connaît »
+
+// Domaine : P(u) ∈ [0, +∞[  — non borné, à la différence de D.
+// C'est normal et voulu : on peut toujours creuser davantage.
+
+
+// ============================================================
+// 10. VOLUME PONDÉRÉ
+// ============================================================
+
+// Le volume n'est plus un comptage brut : chaque film compte
+// à hauteur de son exigence.
+
+V_w(u) = Σ_{f ∈ F_u}  W'_f
+
+       = Σ_{f ∈ F_u}  W_f ^ 0.5
+
+
+// Pour mémoire, le comptage brut reste conservé pour l'affichage :
+
+V(u) = |F_u|
+
+
+// LECTURE PRODUIT :
+// 100 blockbusters  → V_w ≈ 122
+// 100 grands classiques exigeants → V_w ≈ 290
+// Le second parcours « pèse » 2.4 fois le premier, à nombre égal.
+
+
+// ============================================================
+// 11. SCORE GLOBAL
+// ============================================================
+
+// Volume et profondeur sont non bornés : on les compresse.
+// La diversité est déjà bornée dans [0,1] : on la laisse telle quelle.
+
+S_V(u) = log( 1 + V_w(u) )
+
+S_D(u) = D(u)
+
+S_P(u) = log( 1 + P(u) )
+
+
+S(u) = λ_V * S_V(u)
+     + λ_D * S_D(u)
+     + λ_P * S_P(u)
+
+
+// CONTRAINTE ACTÉE :
+
+λ_V < λ_D
+λ_V < λ_P
+
+// Le volume compte, mais moins que la diversité et la profondeur.
+
+// ATTENTION D'ÉCHELLE : S_D vit dans [0,1] tandis que S_V et S_P
+// vivent dans [0, ~6]. λ_D doit donc être numériquement bien plus
+// grand que λ_V et λ_P pour peser autant. Ce n'est pas une
+// incohérence, c'est une conséquence des domaines.
+
+// Valeurs de départ proposées, à calibrer :
+//
+//   λ_V = 0.6
+//   λ_D = 6.0
+//   λ_P = 1.2
+
+
+// ============================================================
+// 11.bis ÂGE (bonus de parcours, v0.4 / livrable 0.1.9)
+// ============================================================
+
+// L'âge est demandé à l'onboarding : un spectateur plus âgé a, même
+// sans être cinéphile, simplement eu plus d'années de cinéma. Le bonus
+// est volontairement petit : il ne doit jamais remplacer diversité ni
+// profondeur, surtout tant que le catalogue de démo reste trop étroit
+// pour tester vraiment les seuils de rang.
+
+S_A(u) = λ_A * ln( 1 + max(0, âge(u) - 16) / 20 )
+
+λ_A = 0.35
+
+// Ordres de grandeur :
+//   20 ans  → S_A ≈ 0.06
+//   40 ans  → S_A ≈ 0.28
+//   60 ans  → S_A ≈ 0.41
+//   80 ans  → S_A ≈ 0.50
+// Sans date de naissance : S_A = 0.
+
+S(u) = λ_V * S_V(u)
+     + λ_D * S_D(u)
+     + λ_P * S_P(u)
+     + S_A(u)
+
+
+// ============================================================
+// 12. RANG
+// ============================================================
+
+// Neuf seuils fixes :
+
+T_1 < T_2 < T_3 < T_4 < T_5 < T_6 < T_7 < T_8 < T_9
+
+
+Rang_brut(u) =
+    1  si S(u) < T_1
+    2  si T_1 <= S(u) < T_2
+    3  si T_2 <= S(u) < T_3
+    4  si T_3 <= S(u) < T_4
+    5  si T_4 <= S(u) < T_5
+    6  si T_5 <= S(u) < T_6
+    7  si T_6 <= S(u) < T_7
+    8  si T_7 <= S(u) < T_8
+    9  si T_8 <= S(u) < T_9
+    10 si S(u) >= T_9
+
+
+// EFFET CLIQUET SUR LE RANG AFFICHÉ :
+// un rang atteint n'est jamais perdu.
+
+Rang_affiche(u) = max( Rang_brut(u), Rang_affiche_precedent(u) )
+
+
+// Cas couverts par le cliquet :
+//   - l'utilisateur retire un film validé par erreur puis le remet ;
+//   - le catalogue s'enrichit et redistribue les raretés ;
+//   - une correction éditoriale change le pays ou une caractéristique d'un film.
+
+
+// ============================================================
+// 13. RÉSUMÉ EXÉCUTABLE
+// ============================================================
+
+// --- Précalculé par version de catalogue ---------------------
+
+for each dimension X:
+    for each x in X:
+        N_x   = count(films in catalogue having x)
+        R_x   = N / N_x
+    meanR_X = mean(R_x for x in X)
+    for each x in X:
+        Q_x = sqrt(R_x / meanR_X)
+        Q_x_ref = max(Q_x, Q_x_ref_stored)      // cliquet
+    sumQ_X = sum(Q_x_ref for x in X)
+    for each x in X:
+        w_x = omega[X] / sumQ_X
+        w_x_ref = max(w_x, w_x_ref_stored)      // cliquet
+
+for each film f in catalogue:
+    W_f  = 1 + 2*H_f + 2*A_f + 2*R_f + 3*C_f
+    Wp_f = sqrt(W_f)                            // rho = 0.5
+
+
+// --- Calculé à chaque validation / retrait -------------------
+
+Vw = sum(Wp_f for f in F_u)
+
+for each x with n_x >= 1:
+    D += w_x_ref * Q_x_ref
+    P += w_x_ref * Q_x_ref * sqrt(max(0, n_x - 1))
+
+S = lambda_V * log(1 + Vw)
+  + lambda_D * D
+  + lambda_P * log(1 + P)
+
+rang_brut = lookup(S, T_1..T_9)
+rang_affiche = max(rang_brut, rang_affiche_stored)
+
+
+// COMPLEXITÉ : linéaire en nombre de caractéristiques distinctes
+// possédées par l'utilisateur. Recalcul complet instantané, même
+// à 5000 films. Aucun calcul incrémental nécessaire.
+
+
+// ============================================================
+// 14. PARAMÈTRES
+// ============================================================
+
+// ACTÉS :
+//
+//   ρ = 0.5                       atténuation du poids film
+//   λ_V < λ_D et λ_V < λ_P        le volume pèse le moins
+//   Σ_X Ω_X = 1                   les parts cibles somment à 1
+
+
+// À CALIBRER :
+//
+//   Ω_X          8 parts cibles de dimension        (somment à 1)
+//   λ_V λ_D λ_P  3 pondérations d'axe
+//   T_1 .. T_9   9 seuils de rang
+//
+//   Soit 20 valeurs, mais seules les 9 dernières demandent un vrai
+//   jugement cinéphile.
+
+
+// MÉTHODE DE CALIBRAGE :
+// simuler des profils types sur un catalogue fictif, puis ajuster
+// jusqu'à ce que chacun tombe sur le rang attendu.
+//
+//   - 50 films, uniquement blockbusters récents        → attendu : 1
+//   - 150 films, Hollywood classique uniquement        → attendu : 3
+//   - 200 films très divers, jamais approfondis        → attendu : 4-5
+//   - 200 films sur 10 cinéastes seulement             → attendu : 4-5
+//   - 400 films divers et approfondis                  → attendu : 6-7
+//   - 800 films couvrant large et creusant             → attendu : 8+
+//
+// Ces cibles relèvent du jugement de Léo, pas du code.
+
+
+// ============================================================
+// 15. CE QUE LA FORMULE NE SAIT PAS FAIRE
+// ============================================================
+
+// Elle mesure un PARCOURS, pas un REGARD.
+//
+// Le changement de nature annoncé au rang 8 du cahier fonctionnel
+// — « voir le cinéma comme langage et comme histoire » — n'est pas
+// exprimable par un comptage de films, aussi raffiné soit-il.
+//
+// DÉCISION V1 :
+// les rangs 8 à 10 restent quantitatifs et sont attribués aux scores les
+// plus élevés. Le rang 10 demande une couverture quasi exhaustive des
+// dimensions du catalogue. Une dimension d'analyse pourra enrichir cette
+// lecture plus tard sans invalider la formule.
+//
+// Ce n'est pas un défaut de la formule. C'est la limite de l'exercice.

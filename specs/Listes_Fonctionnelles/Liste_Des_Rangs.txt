@@ -1,0 +1,134 @@
+LISTE DES RANGS CINÉPHILES — URBINEMA
+Fichier de travail éditorial. Doublon volontaire du cahier fonctionnel (§9).
+Dernière mise à jour : 2026-09-15
+Statut : provisoire (noms et nombre peuvent changer)
+
+------------------------------------------------------------------------
+PRINCIPE
+------------------------------------------------------------------------
+
+Le RANG est le CŒUR de l'application. Pas la carte, pas les badges.
+
+Le rang ne mesure PAS un nombre de films vus.
+Il décrit un ÉTAT D'ESPRIT : une façon de voir et de concevoir le cinéma.
+
+Le rang bouge lentement. Gagner 2 rangs en 2 ou 3 ans est déjà beaucoup.
+Le badge, lui, se débloque dès que sa condition est remplie.
+La quête, elle, se joue à court terme.
+Le niveau, lui, progresse de 1 à 50 grâce à l'XP (quêtes 100/250/500
+et 10 XP par film unique).
+Il n'existe AUCUNE corrélation entre niveau et rang.
+
+Le rang ne redescend JAMAIS : une identité acquise ne se perd pas.
+
+Différence entre un rang 8 et un rang 10 : ce n'est pas le volume.
+Un rang 8 peut connaître par cœur Bergman, Ozu, Tarkovski, Kurosawa.
+Un rang 10 ne regarde plus le cinéma de la même façon : il tient six heures
+sur un film contemplatif obscur, sans fermer les yeux, et trouve encore que
+le troisième acte manquait de peps.
+
+10 rangs au total.
+
+------------------------------------------------------------------------
+LES 10 RANGS
+------------------------------------------------------------------------
+
+1 — NOVICE
+Découvre encore le cinéma. Culture très limitée ou principalement composée
+de films populaires / contemporains.
+
+2 — AMATEUR
+Commence à avoir des références, des réalisateurs favoris, quelques classiques.
+Le cinéma devient un intérêt régulier.
+
+3 — INITIÉ
+A dépassé le simple cinéma populaire. Commence à explorer les classiques,
+les cinématographies étrangères, certains réalisateurs importants.
+
+4 — PASSIONNÉ
+Là, on commence à parler de vraie cinéphilie. Connaît très bien plusieurs
+filmographies, commence à explorer des décennies différentes, possède déjà
+ses propres goûts et repères.
+
+5 — EXPLORATEUR
+La curiosité devient structurée. Ne se contente plus d'enchaîner les
+« grands films » : explore des pays, des mouvements, des genres, des périodes
+et des cinématographies moins connues.
+
+6 — CONNAISSEUR
+Culture désormais très solide. Nombreuses références, filmographies
+conséquentes, bonne connaissance de plusieurs pans de l'histoire du cinéma.
+
+7 — ÉRUDIT
+Culture cinématographique exceptionnelle. Grande diversité historique et
+géographique, connaissance approfondie de nombreux cinéastes et mouvements,
+capacité à faire des connexions entre eux.
+
+  >>> CHANGEMENT DE NATURE À PARTIR D'ICI <<<
+  Ce n'est plus « j'ai vu énormément de films ».
+
+8 — SPÉCIALISTE
+Compréhension approfondie du cinéma comme langage et comme histoire :
+mise en scène, montage, son, esthétique, écoles, filiations, contexte
+historique, etc.
+
+9 — EXPERT
+Culture et capacité d'analyse extrêmement poussées. Très grande maîtrise de
+l'histoire du cinéma et capacité à analyser une œuvre dans ses dimensions
+formelles, historiques et esthétiques.
+
+10 — MAÎTRE
+Le sommet. Connaissance exceptionnellement vaste et profonde du médium,
+couvrant de nombreuses périodes, régions, formes et traditions
+cinématographiques, accompagnée d'une capacité d'analyse avancée.
+
+------------------------------------------------------------------------
+CALCUL DU RANG
+------------------------------------------------------------------------
+
+Formule ARRÊTÉE (v0.3), implémentable en l'état.
+Le rang additionne trois axes :
+
+  VOLUME PONDÉRÉ  combien de films validés, chacun compté à hauteur
+                  de son exigence. Pèse le moins des trois.
+  DIVERSITÉ       combien de territoires différents touchés au moins
+                  une fois. BORNÉE : elle sature.
+  PROFONDEUR      à quel point ces territoires ont été creusés.
+                  Non bornée.
+
+RÈGLE CENTRALE — découverte et approfondissement sont séparés :
+
+  1er film japonais   -> diversité acquise, profondeur nulle
+  2e et suivants      -> plus aucune diversité, que de la profondeur
+
+Celui qui voit un film par pays aura une diversité maximale et aucune
+profondeur. Celui qui voit 50 films japonais aura l'inverse. Les deux
+profils sont distingués, c'était tout l'objectif.
+
+POIDS DU FILM : un Marvel vaut 1, une œuvre rare et exigeante jusqu'à
+3,16 fois plus. L'écart est volontairement borné — quelques films
+obscurs ne remplacent pas une vraie culture générale.
+
+RARETÉ : mesurée par rapport au catalogue. Un pays représenté par
+8 films est une zone rare, le toucher rapporte davantage.
+
+RIEN NE SE PERD : la rareté est figée par version de catalogue, et le
+rang affiché ne redescend jamais. Enrichir le catalogue ne peut pas
+dégrader un acquis.
+
+Formulation complète ....... FORMULE_MATHEMATIQUE.txt
+Analyse et justification ... RETOUR_FORMULE_RANG.txt
+
+------------------------------------------------------------------------
+ENCORE OUVERT
+------------------------------------------------------------------------
+
+- Calibrage : 20 valeurs, dont 9 seuils de rang qui demandent un vrai
+  arbitrage cinéphile. À faire par simulation sur profils types.
+  C'est le gros du travail restant.
+- Qui attribue les 4 notes de poids de chaque film ? Deux sont
+  dérivables automatiquement, deux relèvent du jugement.
+  Piste : un seul curseur de 1 à 5 par film.
+- Changement de nature au rang 8 : la limite quantitative est assumée en
+  V1. Les rangs 8 à 10 correspondent aux scores les plus élevés ; le rang
+  10 demande une couverture quasi exhaustive du catalogue.

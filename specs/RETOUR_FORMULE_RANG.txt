@@ -1,0 +1,291 @@
+ANALYSE DU CALCUL DU RANG — URBINEMA
+Auteur : Cursor
+Date : 2026-09-16
+Porte sur : FORMULE_MATHEMATIQUE.txt (v0.3)
+
+Ce document justifie les choix de la v0.3 et liste ce qui reste ouvert.
+L'historique des corrections v0.1 → v0.2 a été retiré : il n'a plus
+d'intérêt, tout est réglé.
+
+
+========================================================================
+0. VERDICT
+========================================================================
+
+La v0.3 est implémentable telle quelle, sans réserve technique.
+
+Elle tient en une quarantaine de lignes de Kotlin pur, dans le module
+domain, testable hors Android. Le recalcul complet du rang est
+instantané même à 5000 films validés : aucun calcul incrémental,
+aucune optimisation, aucune dépendance.
+
+Il ne reste que du CALIBRAGE, c'est-à-dire du jugement cinéphile.
+Ce n'est plus un problème d'ingénierie.
+
+
+========================================================================
+1. CE QUI A ÉTÉ CORRIGÉ EN v0.3, ET POURQUOI
+========================================================================
+
+1.1 — DIVERSITÉ ET PROFONDEUR ÉTAIENT COLINÉAIRES
+------------------------------------------------------------------------
+
+C'était le problème majeur de la v0.2, et il était invisible à la
+lecture parce que les deux formules avaient l'air différentes.
+
+    v0.2 :  D(u) = Σ w_x · Q_x · G(n_x)      avec G(n) ≈ 2·sqrt(n)
+            P(u) = Σ w_x · Q_x · h(n_x)      avec h(n) = sqrt(n-1)
+
+Même somme, mêmes poids, même rareté, et deux fonctions qui croissent
+toutes les deux en racine carrée. Numériquement :
+
+    n_x      G(n_x)    h(n_x)    rapport
+     1        1.000     0.000       ∞
+     2        1.707     1.000     1.71
+     5        2.996     2.000     1.50
+    10        4.398     3.000     1.47
+    20        6.268     4.359     1.44
+    50       10.104     7.000     1.44
+
+À partir de quelques films par territoire, D ≈ 1.45 · P + (nombre de
+territoires découverts). Les deux axes racontaient la même histoire.
+Régler λ_D et λ_P séparément revenait à régler un seul curseur.
+
+CORRECTION : la diversité utilise la Découverte binaire, déjà définie
+au §9 de la v0.2 mais jamais branchée dans le calcul final.
+
+    v0.3 :  D(u) = Σ w_x · Q_x                   (borné, sature)
+            P(u) = Σ w_x · Q_x · sqrt(n_x - 1)   (non borné, croît)
+
+Maintenant :
+
+    n_x      Diversité   Profondeur
+     1          1           0
+     2          1           1.00
+    10          1           3.00
+    50          1           7.00
+
+La diversité s'arrête au premier film du territoire. Tout le reste est
+de l'approfondissement. Les deux axes sont enfin indépendants, et
+λ_D et λ_P sont deux vrais réglages distincts.
+
+Bénéfice secondaire : D devient interprétable en une phrase — « la part
+du territoire cinématographique que tu as touchée ». Ce qui est
+exactement la métaphore de la carte du cahier fonctionnel.
+
+
+1.2 — LE POIDS DU FILM N'AVAIT PAS DE PLACE
+------------------------------------------------------------------------
+
+Tension structurelle de la v0.2 : W est défini par FILM, alors que D et
+P somment sur des CARACTÉRISTIQUES. Impossible d'y brancher W sans
+inventer un « poids d'une caractéristique » qui n'a pas de sens : le
+poids du Japon, ça ne veut rien dire.
+
+CORRECTION : le volume devient pondéré.
+
+    v0.2 :  V(u) = |F_u|
+    v0.3 :  V_w(u) = Σ_{f ∈ F_u} W'_f
+
+Le volume est la seule somme qui porte sur les films. C'est donc la
+seule place possible pour W, et elle ne crée aucun double comptage avec
+la rareté, qui vit sur les caractéristiques.
+
+Effet concret, à nombre de films égal :
+
+    100 blockbusters contemporains      V_w ≈ 122
+    100 classiques exigeants et rares   V_w ≈ 290
+
+Le second parcours pèse 2.4 fois le premier alors qu'il compte le même
+nombre de films. C'est exactement l'intention.
+
+Deux autres options avaient été envisagées et écartées : un quatrième
+axe « exigence » (fortement corrélé au volume, donc on retombait sur le
+problème 1.1), et des occurrences pondérées par film (qui rendait la
+profondeur dépendante du poids, donc double comptage avec la rareté).
+
+
+1.3 — ρ FIXÉ À 0.5
+------------------------------------------------------------------------
+
+W_f = 1 + 2H + 2A + 2R + 3C avec H, A, R, C dans [0,1], donc W_f varie
+exactement dans [1, 10].
+
+Avec ρ = 0.5, W'_f varie dans [1, sqrt(10)] = [1, 3.162].
+
+L'écart maximal entre le film le plus accessible et le film le plus
+exigeant du catalogue est donc de 3.16. Le « facteur 3 » annoncé est
+exact, ce n'est pas une approximation.
+
+À noter : cet écart maximal ne sera jamais atteint en pratique, parce
+qu'un film réel n'est presque jamais à 0 ou à 1 sur les quatre
+critères simultanément. L'écart réel entre un Marvel et un Lav Diaz
+sera plutôt de l'ordre de 2.5.
+
+
+1.4 — LES DIMENSIONS ÉTAIENT DÉSÉQUILIBRÉES
+------------------------------------------------------------------------
+
+Avec un catalogue de 2000 films, on aura de l'ordre de :
+
+    réalisateurs    ~500 valeurs
+    pays            ~60 valeurs
+    caractéristiques 50+ valeurs
+    genres           ~25 valeurs
+    décennies        ~14 valeurs
+    époques          ~6 valeurs
+    continents        6 valeurs
+
+En v0.2, chaque caractéristique contribuait à hauteur de w_x · Q_x sans
+tenir compte du nombre de valeurs de sa dimension. La dimension
+réalisateur apportait donc mécaniquement quatre-vingts fois plus de
+termes que la dimension continent. Le score serait devenu un compteur
+de réalisateurs déguisé.
+
+CORRECTION : normalisation par cardinalité.
+
+    w_x = Ω_X / Σ_{x' ∈ X} Q_x'_ref
+
+Découvrir TOUTE une dimension rapporte exactement sa part cible Ω_X,
+quel que soit le nombre de valeurs qu'elle contient. On règle huit
+parts qui somment à 1, au lieu de sept poids à l'aveugle.
+
+C'est aussi beaucoup plus facile à calibrer : « les caractéristiques
+cinématographiques doivent peser un quart du parcours » est une phrase
+qu'on peut discuter. « w_characteristic = 3.7 » ne l'est pas.
+
+Avec le modèle N–N de la v0.7 fonctionnelle, chaque co-réalisateur et chaque
+caractéristique liée reçoit une occurrence. Seul le pays principal compte dans
+la dimension pays, afin qu'une coproduction n'ouvre pas plusieurs territoires
+avec un seul film.
+
+
+1.5 — LE CATALOGUE QUI GRANDIT POUVAIT FAIRE BAISSER UN SCORE
+------------------------------------------------------------------------
+
+Q_x était déjà protégé par un cliquet en v0.2. Mais w_x, introduit en
+v0.3, dépend de Σ Q_x sur la dimension — donc de sa cardinalité, donc
+du catalogue. Sans protection, ajouter 200 réalisateurs au catalogue
+aurait fait baisser w_x pour tous les réalisateurs, et donc baisser D
+pour un utilisateur qui n'a rien fait.
+
+CORRECTION : le cliquet s'applique aussi à w_x.
+
+    w_x_ref = max sur toutes les versions de catalogue
+
+Plus le cliquet final sur le rang affiché lui-même. Trois niveaux de
+protection, pour une règle simple : enrichir le catalogue ne peut
+jamais dégrader un acquis. C'est indispensable ici, puisque le
+catalogue partira de zéro et grandira pendant des années sous les pieds
+du seul utilisateur.
+
+Prix à payer : le score est très légèrement surévalué par rapport à un
+recalcul propre. C'est le bon compromis.
+
+
+========================================================================
+2. CE QUI RESTE OUVERT
+========================================================================
+
+2.1 — FAUT-IL NORMALISER LE SCORE PAR LA TAILLE DU CATALOGUE ?
+------------------------------------------------------------------------
+
+J'y ai renoncé, et je préfère expliquer pourquoi, parce que l'idée est
+séduisante.
+
+Normaliser reviendrait à exprimer les trois axes en pourcentage du
+catalogue complet. Le score vivrait dans [0,1] et signifierait « part du
+territoire parcourue ». Les seuils deviendraient immédiatement lisibles
+et ne vieilliraient jamais.
+
+Mais le catalogue va passer de 0 à plusieurs milliers de films sur
+plusieurs années, avec toi comme utilisateur pendant tout ce temps.
+Avec un score normalisé, chaque ajout au catalogue fait BAISSER ton
+score sans que tu aies rien fait. Tu passerais des mois à progresser
+plus lentement que le catalogue ne grandit. Le cliquet protégerait le
+rang affiché, mais ta progression réelle serait gelée.
+
+Des seuils absolus n'ont pas ce défaut : le score ne fait que monter.
+
+Note importante : la diversité, elle, EST déjà normalisée, par
+construction (§7 de la formule). C'était nécessaire pour l'équilibre
+des dimensions. Le cliquet sur w_x neutralise l'effet de dilution.
+
+
+2.2 — LE CHANGEMENT DE NATURE AU RANG 8
+------------------------------------------------------------------------
+
+C'est la seule vraie limite conceptuelle, et elle n'est pas technique.
+
+Le cahier fonctionnel dit que les rangs 8 à 10 ne relèvent plus du
+« j'ai vu beaucoup de films » mais d'un rapport différent au médium :
+le cinéma comme langage et comme histoire. Aucune formule comptant des
+films ne peut exprimer ça, quel que soit son raffinement.
+
+Décision V1 : 8-10 restent quantitatifs. Le rang 10 demande une couverture
+quasi exhaustive du catalogue. Le décalage avec la description littéraire
+est accepté pour démarrer ; une future dimension d'analyse pourra enrichir
+ces rangs sans modifier le schéma ni les trois axes existants.
+
+
+2.3 — QUI ATTRIBUE H, A, R, C À CHAQUE FILM ?
+------------------------------------------------------------------------
+
+Quatre notes par film, sur plusieurs milliers de films. C'est le vrai
+coût caché de la formule.
+
+Deux se calculent seules :
+    H (éloignement historique) → dérivable de l'année
+    C (rareté) → dérivable de la représentation du pays et des caractéristiques
+                 dans le catalogue
+
+Deux relèvent du jugement :
+    A (exigence)
+    R (importance historique)
+
+Recommandation : un seul curseur manuel par film, de 1 à 5, dont on
+dérive A et R, le reste étant calculé. Saisir quatre notes normalisées
+sur 2000 films à la main n'arrivera jamais.
+
+
+2.4 — CALIBRAGE
+------------------------------------------------------------------------
+
+Vingt valeurs, dont seules les neuf dernières demandent un vrai
+arbitrage. Méthode : simuler des profils types et ajuster jusqu'à ce
+que chacun tombe sur le rang attendu.
+
+Les profils et les cibles sont listés au §14 de la formule. Ces cibles
+relèvent de ton jugement cinéphile, le code ne fait que résoudre.
+
+Je recommande d'écrire l'outil de simulation EN MÊME TEMPS que le
+moteur de rang : un petit harnais de test qui génère des parcours
+fictifs et affiche le rang obtenu. Sans lui, le calibrage se fera à
+l'aveugle sur l'émulateur, et ce sera pénible.
+
+
+========================================================================
+3. POUR IMPLÉMENTER
+========================================================================
+
+Le moteur tient dans le module domain, en Kotlin pur, sans Android :
+
+    RankEngine
+      - calculateWeightedVolume(films)
+      - calculateDiversity(occurrences, catalogStats)
+      - calculateDepth(occurrences, catalogStats)
+      - calculateScore(...)
+      - resolveRank(score, thresholds)
+
+    CatalogStats          précalculé par version, persisté
+      - Q_x_ref par caractéristique
+      - w_x_ref par caractéristique
+      - version
+
+    RankParameters        les 20 valeurs, externalisées et non codées
+                          en dur, pour pouvoir les ajuster sans
+                          recompiler
+
+Tout est testable en JUnit sans émulateur. C'est le premier morceau de
+code que je recommande d'écrire, avant même l'interface : il est le
+cœur du produit, il est pur, et il est entièrement spécifié.

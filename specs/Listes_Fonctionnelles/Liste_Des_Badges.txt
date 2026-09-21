@@ -1,0 +1,144 @@
+LISTE DES BADGES — URBINEMA
+Fichier de travail éditorial. Doublon volontaire du cahier fonctionnel (§9).
+Dernière mise à jour : 2026-09-20
+Statut : 32 badges. La liste a vocation à grossir
+librement au fil du développement (des dizaines, voire des centaines).
+
+------------------------------------------------------------------------
+PRINCIPE
+------------------------------------------------------------------------
+
+Un badge se débloque dès que sa condition est remplie. Rien d'autre.
+Un utilisateur peut en cumuler autant qu'il veut : les badges ne sont pas
+en concurrence entre eux, et ils ne disent rien du rang.
+
+Badge = accomplissement ponctuel, cumulable, nombreux.
+Rang  = identité cinéphile à un instant T, lent, unique, 1 à 10.
+Quête = objectif à court terme, avec une difficulté.
+
+Niveau = progression régulière par les quêtes ; indépendant du rang.
+
+Le badge EST la récompense. Il n'en accorde aucune autre.
+Il ne donne donc pas d'XP.
+
+Chaque badge possède un code stable et une difficulté de 1 à 5. Sa règle
+est implémentée en Kotlin et indexée par ce code, jamais par son ID Room.
+
+Les badges obtenus s'affichent sur le profil, SOUS le rang
+(hiérarchie d'affichage : Pseudo > Rang > Badges).
+
+Toutes les conditions portent sur les films du CATALOGUE URBINEMA validés.
+Un badge obtenu reste définitivement acquis.
+
+Pour les badges géographiques, seul le pays principal du film compte.
+Le continent est dérivé des liaisons de ce pays principal.
+
+------------------------------------------------------------------------
+BADGES — PREMIÈRE FOURNÉE
+------------------------------------------------------------------------
+
+VOLUME
+  Premier Rideau ............ voir son premier film
+  Deuxième Séance ........... voir 10 films
+  Accro au Ciné ............. voir 50 films
+  Collectionneur ............ voir 100 films
+
+GÉOGRAPHIE
+  Passeport Cinéma .......... voir des films de 15 pays différents
+  Globe-Trotter ............. voir des films de 30 pays différents
+  Cartographe du Cinéma ..... voir des films de 50 pays différents
+  Tour d'Europe ............. voir des films de 10 pays européens différents
+  Au-delà des Frontières .... voir au moins 5 films de chacun de 5 continents
+  Mappemonde ................ voir au moins un film de chaque pays du catalogue
+
+PAYS / CINÉMATOGRAPHIES
+  Dolce Vita ................ voir 20 films italiens
+  Made in USA ............... voir 50 films américains
+  Rising Sun ................ voir 20 films japonais
+  Lumière sur la France ..... voir 20 films français
+  Made in Asia .............. voir 50 films asiatiques
+
+TEMPS
+  Au-delà du Canon .......... voir 20 films sortis avant 1950
+  Archéologue du Cinéma ..... voir 60 films sortis avant 1960
+  Mémoire du Septième Art ... voir 200 films sortis avant 1980
+  Fantômes du Muet .......... voir 10 films muets
+  Retour aux Sources ........ voir des films de 5 décennies différentes
+  À Travers les Âges ........ voir des films de 8 décennies différentes
+
+MOUVEMENTS / GENRES
+  Enfant de la Nouvelle Vague  voir 15 films de réalisateurs associés à la
+                               Nouvelle Vague française
+  La Dolce Commedia ......... voir 15 films de la comédie italienne
+  L'Œil soviétique .......... voir 10 films issus du cinéma soviétique
+  Nuits américaines ......... voir 20 films noirs
+  Western Spaghetti ......... voir 15 westerns italiens
+  Cabinet des Frayeurs ...... voir 30 films d'horreur
+
+FORMES EXIGEANTES
+  La Forme avant le Fond .... voir 10 films particulièrement expérimentaux
+                              ou non narratifs
+  Le Temps suspendu ......... voir 10 films de plus de 3 heures
+  La Grande Traversée ....... voir 5 films de plus de 5 heures
+
+PANORAMA
+  Bibliothèque de Pellicule . voir au moins 10 films de 20 réalisateurs
+                              différents
+  Encyclopédie Vivante ...... voir au moins 10 films appartenant à
+                              30 mouvements cinématographiques différents
+
+------------------------------------------------------------------------
+CE QUE CES BADGES EXIGENT DU CATALOGUE (contraintes à connaître)
+------------------------------------------------------------------------
+
+Chaque badge n'est atteignable que si le catalogue contient de quoi le
+remplir. Avec un catalogue encore petit au départ, plusieurs badges
+sont aujourd'hui hors d'atteinte.
+
+Données que le catalogue DOIT porter (sinon le badge n'est pas calculable) :
+  - durée du film ............ Le Temps suspendu, La Grande Traversée
+  - muet oui/non ............. Fantômes du Muet
+  - expérimental / non narratif  La Forme avant le Fond (tag éditorial)
+  - réalisateur .............. Bibliothèque de Pellicule, Enfant de la
+                               Nouvelle Vague
+  - pays + continent ......... tous les badges géo
+  - caractéristiques ......... L'Œil soviétique, Encyclopédie Vivante, etc.
+  - genre .................... Nuits américaines, Western Spaghetti,
+                               La Dolce Commedia
+
+Point tranché : le RÉALISATEUR est une entité N-N dès la V1.
+Il est requis par ces badges ET par le calcul de profondeur du rang.
+
+Volumes minimaux impliqués :
+  Mémoire du Septième Art .... ≥ 200 films d'avant 1980 dans le catalogue
+  Mappemonde ................. ≥ 1 film pour chaque pays principal du catalogue
+  Cabinet des Frayeurs ....... ≥ 30 films d'horreur
+  Cartographe du Cinéma ...... ≥ 50 pays représentés
+  Bibliothèque de Pellicule .. ≥ 200 films répartis sur 20 réalisateurs
+  Encyclopédie Vivante ....... ≥ 300 films répartis sur 30 mouvements,
+                               sur les 50 traités en V1
+  Made in USA / Made in Asia . ≥ 50 films par zone
+
+Additionnés, ces seuils supposent un catalogue de plusieurs milliers de
+titres. Le catalogue (N films) grandit progressivement : une centaine au
+début, puis 500, puis 1000, puis davantage.
+
+Que certains badges soient inatteignables au lancement N'EST PAS UN
+PROBLÈME : Urbinema se parcourt sur des années, pas en deux mois.
+
+------------------------------------------------------------------------
+RÈGLES DE CLASSIFICATION V1
+------------------------------------------------------------------------
+
+- La Dolce Commedia : caractéristique `COMMEDIA_ALL_ITALIANA`.
+- L'Œil soviétique : caractéristique `CINEMA_SOVIETIQUE`.
+- Nuits américaines : genre `FILM_NOIR`.
+- Cabinet des Frayeurs : genre `HORREUR`.
+- Mappemonde : un film validé dont le pays principal est chacun des pays
+  principaux présents dans le catalogue (la liste grandit avec le pack).
+- Western Spaghetti : caractéristique `SPAGHETTI_WESTERN`.
+- Enfant de la Nouvelle Vague : film réalisé par au moins un réalisateur
+  associé à la caractéristique `NOUVELLE_VAGUE_FRANCAISE`.
+- Made in Asia et autres règles continentales : continent du pays principal.
+
+La liste reste plate pour commencer. Les familles et paliers sont futurs.

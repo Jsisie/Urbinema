@@ -1,0 +1,133 @@
+FAQ — URBINEMA (après 0.2.4)
+Auteur : Cursor
+Date : 2026-09-20
+
+Ce fichier remplace l’ancienne FAQ de cadrage pré-code.
+Il ne reprend plus les questions déjà tranchées (compte, cloud, TMDb dans
+l’app, journal Letterboxd, XP, rang, barre à 5 onglets, Collections au lieu
+d’Explorer, quêtes lundi 02:00, cadenas Initiation **et** entre groupes,
+suivi / 0 % / 100 %, onboarding pseudo+âge, grain persisté, historique en
+titres, watchedOn fuseau local, 3 badges profil, 10 XP par film, **carte du
+ciel = onglet Carte 0.2.1**).
+
+Priorités :
+  [!] utile avant / pendant la V2 (carte Canvas)
+  [~] après la carte / peut ne jamais exister
+  [E] travail éditorial (Léo)
+
+La feuille de route : specs/ROADMAP_V2_V3.md
+Les médias : specs/ASSETS.md
+Les décisions figées : specs/DECISIONS_ACTEES.txt
+Le code livré : specs/SPECIFICATION_DEVELOPPEUR.md
+
+
+========================================================================
+0. ÉTAT RÉEL DU PRODUIT (0.2.4)
+========================================================================
+
+App 0.2.4 / versionCode 22. Catalogue pack JSON v13 : ~1405 films,
+~97 pays, ~115 caractéristiques, 15 collections, 32 badges. Asset
+`catalog/catalog.json` (archive `catalog_v1.json`, source `catalog_v2.json`).
+Room v7. Quêtes : 50 types (16/17/17), une Bronze / une Argent / une Or
+tirées au hasard parmi celles encore finissables.
+Atlas = listes. Carte du ciel = icône étoiles (`atlas/sky`) : autour d’un
+film par défaut, calques en puces, zoom ×14, fiche depuis un nœud.
+XP : **10** par film unique + quêtes 100/250/500. Grain voile ~3,2 %.
+Médias : affiches / badges / 10 avatars packagés par code ; sans fichier =
+placeholder. L’app n’appelle pas TMDB (`batchPosters/` est hors APK).
+Avatars : carrousel à l’onboarding et dans Réglages. Photothèque : plus tard.
+
+Onboarding : pseudo + âge + avatar si aucun user OU birthDate null.
+Initiation ouverte ; ≥ 1 Vu dans Initiation ouvre Hollywood et le catalogue ;
+les groupes plus exigeants se cadenassent en chaîne (2 collections commencées,
+2 films vus) avec cliquet (unfollow ne recadenasse pas ; **reset si**).
+Progression de collection affichée seulement si suivie.
+Accueil « en cours » : suivie, pas 100 %, pas cadenassée.
+100 % : félicitations, hors « en cours », bouton figé.
+Profil : jusqu’à 3 badges choisis, non obtenus en N&B, liste difficulté puis code.
+À propos : Léo Barroux, github.com/jsisie, Flaticon, Avatar Maker, TMDB.
+Grain, Aide, logs UrbinemaProgress.
+
+
+========================================================================
+1. CATALOGUE
+========================================================================
+
+• [!] Éprouver le merge pack vN → vN+1 sur un téléphone qui a déjà de la
+      progression (films vus, quêtes en cours, badges). Le code upsert par
+      code stable et ne touche pas user_*. Que se passe-t-il si on RETIRE
+      un film d’une collection déjà suivie / à 100 % ?
+
+• [!] Une date de visionnage déjà enregistrée peut-elle être modifiée ?
+      L’architecture ne l’interdit pas ; l’UI ne le propose pas.
+      Un calendrier au moment du Vu (aujourd’hui : date du jour uniquement) ?
+
+• [E] Bornes exactes des époques.
+
+• [E] Pays transcontinentaux (Russie, Turquie, Israël, Egypte…).
+
+• [E] Catalogue « produit » : 20 collections, 50 caractéristiques, affiches.
+
+• [E] Pool de quêtes au-delà des 50 actuelles.
+
+
+========================================================================
+2. CALIBRAGE (inchangé, toujours du jugement cinéphile)
+========================================================================
+
+• [!] Composantes H/A/R/C des poids.
+
+• [!] Neuf seuils de rang sur profils réels.
+
+• [!] Courbe XP après usage réel (quêtes 100 / 250 / 500 **et** 10 XP / film).
+
+• [!] Pourcentages « exploré / complété / maîtrisé » par type de territoire.
+
+
+========================================================================
+3. V2 — CARTE INTERACTIVE (première version livrée en 0.2.1)
+========================================================================
+
+Expliqué dans fonctionnel §11, technique §8, IHM §10.
+
+Reste à juger **sur téléphone** (pas à retravailler en spec avant le
+retour de Léo) :
+
+• [!] Densité des labels, surtout Réalisateurs.
+
+• [!] Hit-test et pinch sur petits écrans / API 26.
+
+• [!] Un calque à la fois : suffisant après usage ?
+
+Hors sujet tant que Léo ne le demande pas : affiches sur la carte,
+tous les films à l’écran, lib de graphe, acteurs / compositeurs.
+
+
+========================================================================
+4. APRÈS LA CARTE / CONFORT
+========================================================================
+
+Avatars packagés, badges et affiches par code : **déjà V1**.
+
+• [E] Ordre de production des assets restants : drapeaux, portraits,
+      collections. Voir specs/ASSETS.md.
+
+• [~] Photo de profil (photothèque) : recadrage carré ? taille max ?
+
+• [~] Onboarding « films déjà connus » dans le catalogue.
+
+• [~] Badge automatique à la fin d’une collection.
+
+• [~] Export local CSV/JSON.
+
+
+========================================================================
+5. PLUS TARD / PEUT NE JAMAIS EXISTER
+========================================================================
+
+• [~] Demande d’ajout de film + traitement manuel.
+
+• [~] TMDb, sync, social, CMS web, recommandations, quêtes d’analyse.
+
+• [~] Traduction des contenus éditoriaux (l’UI FR/EN existe ; les synopsis
+      restent en français).

@@ -1,0 +1,1230 @@
+LISTE DE TRAVAIL — 1000 FILMS HORS CATALOGUE V1
+Fichier éditorial (Listes_Fonctionnelles). Ce n'est PAS un pack catalogue.
+Dernière mise à jour : 2026-09-20
+
+OBJECTIF
+========
+1000 films absents de catalog_v1.json (version 12, 405 films) qui, ensemble,
+couvrent l'histoire du cinéma telle que la racontent les listes cinéphiles,
+et qui se rattachent tous à l'un des 102 courants de
+Liste_Des_Courants_Cinematographiques.txt (50 V1 + 50 réserve + 2 âges d'or
+hollywoodiens ajoutés).
+
+SOURCES (par ordre de contrainte)
+==================================
+- They Shoot Pictures Don't They, 21e éd. (table gf1000) : tous les rangs
+  1–500 absents du catalogue sont inclus. Le reste du top 1000 TSPDT absent
+  du catalogue complète le gros de la liste.
+- Copie Letterboxd de la même liste TSPDT :
+  https://letterboxd.com/thisisdrew/list/they-shoot-pictures-dont-they-1000-greatest-7/
+- Sight & Sound / BFI, poll décennale 2022 (critics' & directors' top 100) :
+  tout titre du palmarès hors catalogue est repris ici via TSPDT ou supplément.
+- Roger Ebert, Great Movies (livres I–IV + archives rogerebert.com) :
+  titres Ebert hors catalogue et hors TSPDT 1–500, surtout Hollywood classique,
+  film noir, Nouvel Hollywood, et quelques titres non-occidentaux.
+- Canons de festivals (Cannes, Venise, Berlin, FESPACO, Golden Horse, Sundance)
+  pour les courants 51–100 : Afrique, Maghreb, Nollywood, Asie du Sud-Est,
+  monde arabe, cinéma autochtone, expérimental, exploitation, etc.
+
+RÈGLES
+======
+- Format minimal : titre (année). Ici : titre — pays — courant — réalisateur
+  — source. Titres français quand l'usage Urbinema / FR est établi ; sinon
+  titre international TSPDT / festival.
+- Aucun film déjà dans l'appli (match réalisateur + année ±1 + tokens de titre).
+- Un film = un courant principal (le plus proche parmi les 102). Beaucoup
+  en auraient plusieurs (ex. Wanda = féministe + L.A. Rebellion + indé US).
+- Proportions visées : majorité États-Unis + Europe + Asie (~90 %), plus un
+  filet Afrique / Amérique latine / Moyen-Orient / Océanie, sans parité artificielle.
+- Naissance d'une nation (Griffith, 1915) est dans le TSPDT 1–500 hors catalogue :
+  conservé comme fait d'histoire du cinéma, pas comme recommandation morale.
+
+CATALOGUE V1 (rappel, ne pas recharger ici)
+===========================================
+405 films • 42 pays • 231 réalisateurs • 40 caractéristiques • 15 collections
+• 32 badges • 50 quêtes. Pays les plus représentés déjà : USA 83, France 61,
+Italie 48, Japon 30, Allemagne 26, URSS/Russie 19. D'où une liste de travail
+plus US/UK/Asie contemporaine et plus « courants réserve » que le pack V1.
+
+COMPOSITION : 1000 films — 615 issus du TSPDT 1000 (dont 294 du top 500),
+385 suppléments (Ebert, S&S hors TSPDT, couverture des courants 51–102).
+Pays distincts : 66 • courants distincts : 102 / 102.
+
+PAYS (effectifs)
+================
+  États-Unis: 319
+  France: 122
+  Royaume-Uni: 59
+  Italie: 53
+  URSS: 26
+  Japon: 26
+  Suède: 20
+  Chine: 16
+  Taïwan: 16
+  Espagne: 15
+  Mexique: 15
+  Allemagne: 14
+  Hong Kong: 13
+  Canada: 13
+  Russie: 12
+  Inde: 11
+  Sénégal: 11
+  Allemagne de l'Ouest: 11
+  Brésil: 11
+  Nigeria: 11
+  Corée du Sud: 9
+  Australie: 9
+  Iran: 9
+  Danemark: 8
+  Argentine: 8
+  Nouvelle-Zélande: 8
+  Géorgie: 8
+  Thaïlande: 7
+  Portugal: 7
+  Israël: 7
+  Chili: 7
+  Afrique du Sud: 7
+  Belgique: 6
+  Yougoslavie: 6
+  Cuba: 6
+  Palestine: 6
+  Singapour: 6
+  Roumanie: 5
+  Turquie: 5
+  Algérie: 5
+  Burkina Faso: 5
+  Liban: 5
+  Indonésie: 5
+  Hongrie: 4
+  Éthiopie: 4
+  Philippines: 4
+  Mali: 4
+  Viêt Nam: 4
+  Cambodge: 4
+  Tchécoslovaquie: 3
+  Pays-Bas: 3
+  Bolivie: 3
+  Estonie: 3
+  Autriche: 2
+  Tunisie: 2
+  Tchad: 2
+  Pologne: 1
+  Égypte: 1
+  Cameroun: 1
+  Zimbabwe: 1
+  Grèce: 1
+  Mauritanie: 1
+  Finlande: 1
+  Lituanie: 1
+  Lettonie: 1
+  Norvège: 1
+
+COURANTS (effectifs)
+====================
+  Âge d'or d'Hollywood: 85
+  Nouvel Hollywood: 72
+  Nouvelle Vague française: 51
+  Cinéma indépendant américain: 48
+  Nouvel âge d'or hollywoodien: 45
+  Free Cinema britannique: 25
+  Nouvelle vague scandinave: 20
+  Cinéma soviétique / russe moderne: 19
+  Nouvelle Vague britannique / Kitchen Sink: 19
+  Cinéma classique italien: 18
+  New French Extremity: 18
+  Slow Cinema: 16
+  Âge d'or du cinéma japonais: 16
+  Nouveau cinéma allemand: 15
+  Réalisme poétique français: 15
+  Cinéma politique italien: 14
+  Cinéma nigérian / Nollywood: 12
+  Cinéma post-soviétique: 12
+  Cinéma sénégalais: 12
+  Nouvelle Vague hongkongaise: 12
+  Cinéma africain postcolonial: 11
+  Surréalisme cinématographique: 11
+  Montage soviétique: 10
+  Nouvelle vague / cinéma moderne espagnol: 10
+  Nuevo Cine Mexicano: 10
+  Australian New Wave: 9
+  Cinéma du look français: 9
+  Nouvelle Vague japonaise (Nūberu Bāgu): 9
+  Nouvelle Vague sud-coréenne: 9
+  Nouvelle Vague taïwanaise: 9
+  Cinquième génération chinoise: 8
+  Cinéma maghrébin postcolonial: 8
+  Expressionnisme allemand: 8
+  New Queer Cinema: 8
+  Nouvelle vague géorgienne: 8
+  Nuevo Cine Argentino: 8
+  Cinéma afro-américain indépendant / L.A. Rebellion: 7
+  Cinéma féministe: 7
+  Cinéma gore: 7
+  Cinéma néo-zélandais: 7
+  Cinéma politique latino-américain: 7
+  Cinéma sud-africain contemporain: 7
+  Cinéma thaïlandais contemporain: 7
+  Dogme 95: 7
+  Essay Film / cinéma-essai: 7
+  Nouvelle vague israélienne: 7
+  Sixième génération chinoise: 7
+  Black Wave yougoslave: 6
+  Cinéma d'exploitation: 6
+  Cinéma indonésien contemporain: 6
+  Cinéma palestinien: 6
+  Cinéma parallèle indien (Parallel Cinema): 6
+  Cinéma québécois moderne: 6
+  Cinéma-vérité: 6
+  Commedia all'italiana: 6
+  Nouvelle vague chilienne: 6
+  Nouvelle vague singapourienne: 6
+  Néoréalisme italien: 6
+  Cinéma Novo brésilien: 5
+  Cinéma balte contemporain: 5
+  Cinéma malayalam contemporain: 5
+  Cinéma malien: 5
+  Cinéma turc moderne: 5
+  Nouveau cinéma roumain / Romanian New Wave: 5
+  Nouvelle vague libanaise: 5
+  Retomada brésilienne: 5
+  École polonaise du cinéma: 5
+  Blaxploitation: 4
+  Cinéma abstrait: 4
+  Cinéma amérindien / Indigenous Cinema: 4
+  Cinéma cambodgien moderne: 4
+  Cinéma de transgression: 4
+  Cinéma diasporique: 4
+  Cinéma direct: 4
+  Cinéma militant: 4
+  Cinéma punk: 4
+  Cinéma pur: 4
+  Cinéma queer contemporain: 4
+  Cinéma vietnamien moderne: 4
+  Cinéma éthiopien contemporain: 4
+  Film noir: 4
+  Found Footage Cinema: 4
+  Grindhouse: 4
+  Mumblecore: 4
+  No Wave Cinema: 4
+  Nouvelle génération iranienne: 4
+  Nouvelle vague iranienne: 4
+  Psychotronic Cinema: 4
+  Structural Film: 4
+  Troisième Cinéma: 4
+  Cinéma dadaïste: 3
+  Cinéma expérimental américain / New American Cinema: 3
+  Cinéma postcolonial: 3
+  Expanded Cinema: 3
+  Hollywood classique: 3
+  Nouvelle Vague hongroise: 3
+  Nouvelle Vague philippine: 3
+  Nouvelle Vague tchécoslovaque: 3
+  Poliziottesco: 3
+  École britannique documentaire / documentaire social britannique: 2
+  Impressionnisme français: 1
+  Spaghetti Western: 1
+
+------------------------------------------------------------------------
+LES 1000 FILMS
+------------------------------------------------------------------------
+
+0001. In the Mood for Love (2000) — Hong Kong — Nouvelle Vague hongkongaise — Wong Kar-wai — TSPDT #17
+0002. Le Cuirassé Potemkine (1925) — URSS — Montage soviétique — Eisenstein, Sergei — TSPDT #20
+0003. Le Miroir (1975) — URSS — Cinéma soviétique / russe moderne — Tarkovsky, Andrei — TSPDT #23
+0004. Andreï Roublev (1966) — URSS — Cinéma soviétique / russe moderne — Tarkovsky, Andrei — TSPDT #28
+0005. Mulholland Drive (2001) — États-Unis — Cinéma indépendant américain — Lynch, David — TSPDT #29
+0006. Raging Bull (1980) — États-Unis — Nouvel Hollywood — Scorsese, Martin — TSPDT #35
+0007. Blade Runner (1982) — États-Unis — Nouvel Hollywood — Scott, Ridley — TSPDT #39
+0008. Barry Lyndon (1975) — Royaume-Uni — Nouvel Hollywood — Kubrick, Stanley — TSPDT #43
+0009. Le Mépris (1963) — France — Nouvelle Vague française — Godard, Jean-Luc — TSPDT #44
+0010. La Complainte du sentier (1955) — Inde — Cinéma parallèle indien (Parallel Cinema) — Ray, Satyajit — TSPDT #46
+0011. Stalker (1979) — URSS — Cinéma soviétique / russe moderne — Tarkovsky, Andrei — TSPDT #49
+0012. Beau travail (1999) — France — New French Extremity — Denis, Claire — TSPDT #52
+0013. La Mort aux trousses (1959) — États-Unis — Âge d'or d'Hollywood — Hitchcock, Alfred — TSPDT #57
+0014. Les Fraises sauvages (1957) — Suède — Nouvelle vague scandinave — Bergman, Ingmar — TSPDT #62
+0015. Docteur Folamour (1964) — Royaume-Uni — Âge d'or d'Hollywood — Kubrick, Stanley — TSPDT #65
+0016. Voyage en Italie (1954) — Italie — Néoréalisme italien — Rossellini, Roberto — TSPDT #69
+0017. Do the Right Thing (1989) — États-Unis — Cinéma afro-américain indépendant / L.A. Rebellion — Lee, Spike — TSPDT #71
+0018. Une femme sous influence (1974) — États-Unis — Cinéma indépendant américain — Cassavetes, John — TSPDT #73
+0019. Amarcord (1973) — Italie — Cinéma classique italien — Fellini, Federico — TSPDT #77
+0020. La Vie est belle (1946) — États-Unis — Âge d'or d'Hollywood — Capra, Frank — TSPDT #78
+0021. Shining (1980) — États-Unis — Nouvel Hollywood — Kubrick, Stanley — TSPDT #83
+0022. Blue Velvet (1986) — États-Unis — Cinéma indépendant américain — Lynch, David — TSPDT #85
+0023. Le Septième Sceau (1957) — Suède — Nouvelle vague scandinave — Bergman, Ingmar — TSPDT #88
+0024. Nashville (1975) — États-Unis — Nouvel Hollywood — Altman, Robert — TSPDT #90
+0025. La Splendeur des Amberson (1942) — États-Unis — Âge d'or d'Hollywood — Welles, Orson — TSPDT #91
+0026. To Be or Not to Be (1942) — États-Unis — Âge d'or d'Hollywood — Lubitsch, Ernst — TSPDT #99
+0027. La Maman et la Putain (1973) — France — Nouvelle Vague française — Eustache, Jean — TSPDT #101
+0028. Madame de... (1953) — France — Nouvelle Vague française — Ophüls, Max — TSPDT #103
+0029. Orange mécanique (1971) — Royaume-Uni — Nouvel Hollywood — Kubrick, Stanley — TSPDT #105
+0030. Annie Hall (1977) — États-Unis — Cinéma indépendant américain — Allen, Woody — TSPDT #110
+0031. Il était une fois en Amérique (1984) — Italie — Cinéma classique italien — Leone, Sergio — TSPDT #113
+0032. Alien (1979) — États-Unis — Nouvel Hollywood — Scott, Ridley — TSPDT #122
+0033. E.T. l'extra-terrestre (1982) — États-Unis — Nouvel Hollywood — Spielberg, Steven — TSPDT #123
+0034. Blow-Up (1966) — Royaume-Uni — Cinéma classique italien — Antonioni, Michelangelo — TSPDT #125
+0035. Une partie de campagne (1936) — France — Réalisme poétique français — Renoir, Jean — TSPDT #126
+0036. L'Éclipse (1962) — Italie — Cinéma classique italien — Antonioni, Michelangelo — TSPDT #130
+0037. Une question de vie ou de mort (1946) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Powell, Michael & Emeric Pressburger — TSPDT #132
+0038. Lettre d'une inconnue (1948) — États-Unis — Âge d'or d'Hollywood — Ophüls, Max — TSPDT #133
+0039. Mirage de la vie (1959) — États-Unis — Âge d'or d'Hollywood — Sirk, Douglas — TSPDT #138
+0040. There Will Be Blood (2007) — États-Unis — Nouvel âge d'or hollywoodien — Anderson, Paul Thomas — TSPDT #143
+0041. Wanda (1970) — États-Unis — Cinéma indépendant américain — Loden, Barbara — TSPDT #147
+0042. Céline et Julie vont en bateau (1974) — France — Nouvelle Vague française — Rivette, Jacques — TSPDT #148
+0043. L'Évangile selon saint Matthieu (1964) — Italie — Cinéma politique italien — Pasolini, Pier Paolo — TSPDT #149
+0044. Vol au-dessus d'un nid de coucou (1975) — États-Unis — Nouvel Hollywood — Forman, Milos — TSPDT #150
+0045. Les Parapluies de Cherbourg (1964) — France — Nouvelle Vague française — Demy, Jacques — TSPDT #151
+0046. Killer of Sheep (1977) — États-Unis — Cinéma afro-américain indépendant / L.A. Rebellion — Burnett, Charles — TSPDT #153
+0047. Les Moissons du ciel (1978) — États-Unis — Nouvel Hollywood — Malick, Terrence — TSPDT #155
+0048. Voyage au bout de l'enfer (1978) — États-Unis — Nouvel Hollywood — Cimino, Michael — TSPDT #159
+0049. L'Argent (1983) — France — Réalisme poétique français — Bresson, Robert — TSPDT #160
+0050. Chungking Express (1994) — Hong Kong — Nouvelle Vague hongkongaise — Wong Kar-wai — TSPDT #161
+0051. Mon voisin Totoro (1988) — Japon — Âge d'or du cinéma japonais — Miyazaki, Hayao — TSPDT #162
+0052. Manhattan (1979) — États-Unis — Cinéma indépendant américain — Allen, Woody — TSPDT #165
+0053. Rosemary's Baby (1968) — États-Unis — Nouvel Hollywood — Polanski, Roman — TSPDT #166
+0054. Profession : reporter (1975) — Italie — Cinéma classique italien — Antonioni, Michelangelo — TSPDT #167
+0055. La Balade sauvage (1973) — États-Unis — Nouvel Hollywood — Malick, Terrence — TSPDT #168
+0056. L'Âge d'or (1930) — France — Surréalisme cinématographique — Buñuel, Luis — TSPDT #169
+0057. Massacre à la tronçonneuse (1974) — États-Unis — Cinéma d'exploitation — Hooper, Tobe — TSPDT #170
+0058. Le Décalogue (1989) — Pologne — École polonaise du cinéma — Kieslowski, Krzysztof — TSPDT #171
+0059. Le Charme discret de la bourgeoisie (1972) — France — Surréalisme cinématographique — Buñuel, Luis — TSPDT #172
+0060. Les Aventuriers de l'arche perdue (1981) — États-Unis — Nouvel Hollywood — Spielberg, Steven — TSPDT #174
+0061. Seuls les anges ont des ailes (1939) — États-Unis — Âge d'or d'Hollywood — Hawks, Howard — TSPDT #175
+0062. Touki Bouki (1973) — Sénégal — Cinéma sénégalais — Diop Mambéty, Djibril — TSPDT #178
+0063. La Soupe au canard (1933) — États-Unis — Âge d'or d'Hollywood — McCarey, Leo — TSPDT #179
+0064. Rencontres du troisième type (1977) — États-Unis — Nouvel Hollywood — Spielberg, Steven — TSPDT #180
+0065. Les Oiseaux (1963) — États-Unis — Âge d'or d'Hollywood — Hitchcock, Alfred — TSPDT #181
+0066. Johnny Guitar (1954) — États-Unis — Hollywood classique — Ray, Nicholas — TSPDT #182
+0067. La Couleur de la grenade (1969) — URSS — Cinéma soviétique / russe moderne — Parajanov, Sergei — TSPDT #185
+0068. La Terre (1930) — URSS — Montage soviétique — Dovzhenko, Alexander — TSPDT #186
+0069. Paris, Texas (1984) — Allemagne de l'Ouest — Nouveau cinéma allemand — Wenders, Wim — TSPDT #190
+0070. Le Fleuve (1951) — France — Réalisme poétique français — Renoir, Jean — TSPDT #191
+0071. The Tree of Life (2011) — États-Unis — Nouvel Hollywood — Malick, Terrence — TSPDT #192
+0072. Falstaff (1965) — Espagne — Cinéma expérimental américain / New American Cinema — Welles, Orson — TSPDT #193
+0073. Le Narcisse noir (1947) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Powell, Michael & Emeric Pressburger — TSPDT #194
+0074. Les Glaneurs et la Glaneuse (2000) — France — Essay Film / cinéma-essai — Varda, Agnès — TSPDT #195
+0075. La Nuit (1961) — Italie — Cinéma classique italien — Antonioni, Michelangelo — TSPDT #196
+0076. Les Nuits de Cabiria (1957) — Italie — Cinéma classique italien — Fellini, Federico — TSPDT #199
+0077. Rocco et ses frères (1960) — Italie — Cinéma classique italien — Visconti, Luchino — TSPDT #200
+0078. Printemps dans une petite ville (1948) — Chine — Cinquième génération chinoise — Fei Mu — TSPDT #201
+0079. Salò ou les 120 Journées de Sodome (1975) — Italie — Cinéma politique italien — Pasolini, Pier Paolo — TSPDT #202
+0080. Lady Ève (1941) — États-Unis — Âge d'or d'Hollywood — Sturges, Preston — TSPDT #203
+0081. La Cité des douleurs (1989) — Taïwan — Nouvelle Vague taïwanaise — Hou Hsiao-hsien — TSPDT #206
+0082. News from Home (1976) — Belgique — Essay Film / cinéma-essai — Akerman, Chantal — TSPDT #207
+0083. The Thing (1982) — États-Unis — Cinéma d'exploitation — Carpenter, John — TSPDT #208
+0084. Sans toit ni loi (1985) — France — Nouvelle Vague française — Varda, Agnès — TSPDT #209
+0085. Le Dictateur (1940) — États-Unis — Âge d'or d'Hollywood — Chaplin, Charles — TSPDT #210
+0086. Magnolia (1999) — États-Unis — Nouvel âge d'or hollywoodien — Anderson, Paul Thomas — TSPDT #211
+0087. Mort à Venise (1971) — Italie — Cinéma classique italien — Visconti, Luchino — TSPDT #212
+0088. Colonel Blimp (1943) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Powell, Michael & Emeric Pressburger — TSPDT #214
+0089. Moonlight (2016) — États-Unis — Cinéma afro-américain indépendant / L.A. Rebellion — Jenkins, Barry — TSPDT #215
+0090. Breaking the Waves (1996) — Danemark — Dogme 95 — von Trier, Lars — TSPDT #216
+0091. Solaris (1972) — URSS — Cinéma soviétique / russe moderne — Tarkovsky, Andrei — TSPDT #217
+0092. L'Homme tranquille (1952) — États-Unis — Âge d'or d'Hollywood — Ford, John — TSPDT #218
+0093. Brazil (1985) — Royaume-Uni — Free Cinema britannique — Gilliam, Terry — TSPDT #220
+0094. Zéro de conduite (1933) — France — Impressionnisme français — Vigo, Jean — TSPDT #223
+0095. The Big Lebowski (1998) — États-Unis — Nouvel âge d'or hollywoodien — Coen, Joel & Ethan Coen — TSPDT #227
+0096. Eternal Sunshine of the Spotless Mind (2004) — États-Unis — Nouvel âge d'or hollywoodien — Gondry, Michel — TSPDT #228
+0097. Parasite (2019) — Corée du Sud — Nouvelle Vague sud-coréenne — Bong Joon-ho — TSPDT #231
+0098. Les Voyages de Sullivan (1941) — États-Unis — Âge d'or d'Hollywood — Sturges, Preston — TSPDT #232
+0099. Retour vers le futur (1985) — États-Unis — Cinéma indépendant américain — Zemeckis, Robert — TSPDT #233
+0100. Matrix (1999) — États-Unis — Nouvel âge d'or hollywoodien — Wachowski, Lana & Lilly Wachowski — TSPDT #234
+0101. McCabe and Mrs. Miller (1971) — États-Unis — Nouvel Hollywood — Altman, Robert — TSPDT #235
+0102. Love Streams (1984) — États-Unis — Cinéma indépendant américain — Cassavetes, John — TSPDT #238
+0103. Le Désert rouge (1964) — Italie — Cinéma classique italien — Antonioni, Michelangelo — TSPDT #243
+0104. Ivan le Terrible, 2e partie (1946) — URSS — Montage soviétique — Eisenstein, Sergei — TSPDT #246
+0105. Tous en scène (1953) — États-Unis — Âge d'or d'Hollywood — Minnelli, Vincente — TSPDT #248
+0106. Le Lauréat (1967) — États-Unis — Nouvel Hollywood — Nichols, Mike — TSPDT #249
+0107. La Liste de Schindler (1993) — États-Unis — Nouvel âge d'or hollywoodien — Spielberg, Steven — TSPDT #251
+0108. Caché (2005) — France — New French Extremity — Haneke, Michael — TSPDT #252
+0109. Performance (1970) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Roeg, Nicolas & Donald Cammell — TSPDT #254
+0110. L'Exorciste (1973) — États-Unis — Cinéma d'exploitation — Friedkin, William — TSPDT #255
+0111. Heat (1995) — États-Unis — Nouvel âge d'or hollywoodien — Mann, Michael — TSPDT #256
+0112. Meet Me in St. Louis (1944) — États-Unis — Âge d'or d'Hollywood — Minnelli, Vincente — TSPDT #257
+0113. La Ligne rouge (1998) — États-Unis — Nouvel Hollywood — Malick, Terrence — TSPDT #258
+0114. Cinema Paradiso (1988) — Italie — Cinéma politique italien — Tornatore, Giuseppe — TSPDT #259
+0115. Daughters of the Dust (1991) — États-Unis — Cinéma afro-américain indépendant / L.A. Rebellion — Dash, Julie — TSPDT #260
+0116. Belle de jour (1967) — France — Surréalisme cinématographique — Buñuel, Luis — TSPDT #261
+0117. Le Rayon vert (1986) — France — Nouvelle Vague française — Rohmer, Eric — TSPDT #262
+0118. Eyes Wide Shut (1999) — États-Unis — Nouvel Hollywood — Kubrick, Stanley — TSPDT #263
+0119. Le Bourreau (1963) — Espagne — Nouvelle vague / cinéma moderne espagnol — García Berlanga, Luis — TSPDT #264
+0120. Fargo (1996) — États-Unis — Nouvel âge d'or hollywoodien — Coen, Joel & Ethan Coen — TSPDT #265
+0121. Journal d'un curé de campagne (1951) — France — Réalisme poétique français — Bresson, Robert — TSPDT #266
+0122. Le Trésor de la Sierra Madre (1948) — États-Unis — Âge d'or d'Hollywood — Huston, John — TSPDT #268
+0123. Vérités et Mensonges (1973) — France — Essay Film / cinéma-essai — Welles, Orson — TSPDT #269
+0124. Tabu (1931) — États-Unis — Âge d'or d'Hollywood — Murnau, F.W. — TSPDT #272
+0125. Nuit et Brouillard (1955) — France — Essay Film / cinéma-essai — Resnais, Alain — TSPDT #273
+0126. La Ciénaga (2001) — Argentine — Nuevo Cine Argentino — Martel, Lucrecia — TSPDT #274
+0127. Le Grand Chantage (1957) — États-Unis — Âge d'or d'Hollywood — Mackendrick, Alexander — TSPDT #277
+0128. Que le spectacle commence (1979) — États-Unis — Nouvel Hollywood — Fosse, Bob — TSPDT #282
+0129. Un jour sans fin (1993) — États-Unis — Nouvel âge d'or hollywoodien — Ramis, Harold — TSPDT #283
+0130. Rendez-vous (1940) — États-Unis — Âge d'or d'Hollywood — Lubitsch, Ernst — TSPDT #284
+0131. Les Sentiers de la gloire (1957) — États-Unis — Âge d'or d'Hollywood — Kubrick, Stanley — TSPDT #285
+0132. L'Ascension (1977) — URSS — Cinéma soviétique / russe moderne — Shepitko, Larisa — TSPDT #286
+0133. Le Conte du chrysanthème tardif (1939) — Japon — Âge d'or du cinéma japonais — Mizoguchi, Kenji — TSPDT #287
+0134. Goodbye, Dragon Inn (2003) — Taïwan — Slow Cinema — Tsai Ming-liang — TSPDT #288
+0135. India Song (1975) — France — Essay Film / cinéma-essai — Duras, Marguerite — TSPDT #290
+0136. L'Armée des ombres (1969) — France — Nouvelle Vague française — Melville, Jean-Pierre — TSPDT #291
+0137. 2 ou 3 choses que je sais d'elle (1967) — France — Nouvelle Vague française — Godard, Jean-Luc — TSPDT #293
+0138. Tout ce que le ciel permet (1955) — États-Unis — Âge d'or d'Hollywood — Sirk, Douglas — TSPDT #294
+0139. Le Sacrifice (1986) — Suède — Cinéma soviétique / russe moderne — Tarkovsky, Andrei — TSPDT #295
+0140. Cabaret (1972) — États-Unis — Nouvel Hollywood — Fosse, Bob — TSPDT #296
+0141. Trois couleurs : Rouge (1994) — France — École polonaise du cinéma — Kieslowski, Krzysztof — TSPDT #298
+0142. Impitoyable (1992) — États-Unis — Nouvel âge d'or hollywoodien — Eastwood, Clint — TSPDT #300
+0143. Mean Streets (1973) — États-Unis — Nouvel Hollywood — Scorsese, Martin — TSPDT #302
+0144. Distant Voices, Still Lives (1988) — Royaume-Uni — Free Cinema britannique — Davies, Terence — TSPDT #303
+0145. Happy Together (1997) — Hong Kong — New Queer Cinema — Wong Kar-wai — TSPDT #304
+0146. L'Empire contre-attaque (1980) — États-Unis — Montage soviétique — Kershner, Irvin — TSPDT #305
+0147. Terre en transe (1967) — Brésil — Cinéma Novo brésilien — Rocha, Glauber — TSPDT #308
+0148. Les Vacances de M. Hulot (1953) — France — Nouvelle Vague française — Tati, Jacques — TSPDT #310
+0149. Nuages flottants (1955) — Japon — Âge d'or du cinéma japonais — Naruse, Mikio — TSPDT #312
+0150. Freaks (1932) — États-Unis — Cinéma d'exploitation — Browning, Tod — TSPDT #313
+0151. Macadam Cowboy (1969) — États-Unis — Nouvel Hollywood — Schlesinger, John — TSPDT #314
+0152. Nanouk l'Esquimau (1922) — États-Unis — Cinéma-vérité — Flaherty, Robert J. — TSPDT #316
+0153. Faces (1968) — États-Unis — Cinéma indépendant américain — Cassavetes, John — TSPDT #318
+0154. Melancholia (2011) — Danemark — Dogme 95 — von Trier, Lars — TSPDT #319
+0155. Amadeus (1984) — États-Unis — Nouvel Hollywood — Forman, Milos — TSPDT #320
+0156. The King of Comedy (1982) — États-Unis — Nouvel Hollywood — Scorsese, Martin — TSPDT #322
+0157. L'Empire des sens (1976) — Japon — Nouvelle Vague japonaise (Nūberu Bāgu) — Oshima, Nagisa — TSPDT #323
+0158. Monsieur Verdoux (1947) — États-Unis — Âge d'or d'Hollywood — Chaplin, Charles — TSPDT #326
+0159. Harold et Maude (1971) — États-Unis — Nouvel Hollywood — Ashby, Hal — TSPDT #327
+0160. Husbands (1970) — États-Unis — Cinéma indépendant américain — Cassavetes, John — TSPDT #328
+0161. Lola Montès (1955) — France — Nouvelle Vague française — Ophüls, Max — TSPDT #329
+0162. Pyaasa (1957) — Inde — Cinéma parallèle indien (Parallel Cinema) — Dutt, Guru — TSPDT #330
+0163. Indiscrétions (1940) — États-Unis — Âge d'or d'Hollywood — Cukor, George — TSPDT #333
+0164. Un après-midi de chien (1975) — États-Unis — Nouvel Hollywood — Lumet, Sidney — TSPDT #334
+0165. A Canterbury Tale (1944) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Powell, Michael & Emeric Pressburger — TSPDT #336
+0166. Le Kid (1921) — États-Unis — Âge d'or d'Hollywood — Chaplin, Charles — TSPDT #337
+0167. Les Demoiselles de Rochefort (1967) — France — Nouvelle Vague française — Demy, Jacques — TSPDT #338
+0168. West Side Story (1961) — États-Unis — Cinéma indépendant américain — Wise, Robert & Jerome Robbins — TSPDT #339
+0169. Mad Max: Fury Road (2015) — Australie — Australian New Wave — Miller, George — TSPDT #341
+0170. Tie Xi Qu: West of the Tracks (2002) — Chine — Sixième génération chinoise — Wang Bing — TSPDT #342
+0171. Bonnie and Clyde (1967) — États-Unis — Nouvel Hollywood — Penn, Arthur — TSPDT #343
+0172. Some Came Running (1958) — États-Unis — Âge d'or d'Hollywood — Minnelli, Vincente — TSPDT #344
+0173. Get Out (2017) — États-Unis — Cinéma afro-américain indépendant / L.A. Rebellion — Peele, Jordan — TSPDT #345
+0174. The Time to Live and the Time to Die (1985) — Taïwan — Nouvelle Vague taïwanaise — Hou Hsiao-hsien — TSPDT #346
+0175. Underground (1995) — Yougoslavie — Black Wave yougoslave — Kusturica, Emir — TSPDT #349
+0176. L'Arbre aux sabots (1978) — Italie — Néoréalisme italien — Olmi, Ermanno — TSPDT #350
+0177. La Double Vie de Véronique (1991) — France — École polonaise du cinéma — Kieslowski, Krzysztof — TSPDT #351
+0178. Aliens (1986) — États-Unis — Cinéma indépendant américain — Cameron, James — TSPDT #352
+0179. La Dernière Séance (1971) — États-Unis — Nouvel Hollywood — Bogdanovich, Peter — TSPDT #353
+0180. Elephant Man (1980) — États-Unis — Cinéma indépendant américain — Lynch, David — TSPDT #355
+0181. Week-end (1967) — France — Nouvelle Vague française — Godard, Jean-Luc — TSPDT #356
+0182. Opening Night (1977) — États-Unis — Cinéma indépendant américain — Cassavetes, John — TSPDT #357
+0183. A Touch of Zen (1971) — Taïwan — Nouvelle Vague taïwanaise — Hu, King — TSPDT #359
+0184. Le Maître de marionnettes (1993) — Taïwan — Nouvelle Vague taïwanaise — Hou Hsiao-hsien — TSPDT #360
+0185. Le Silence des agneaux (1991) — États-Unis — Nouvel âge d'or hollywoodien — Demme, Jonathan — TSPDT #362
+0186. La Nuit des morts-vivants (1968) — États-Unis — Cinéma gore — Romero, George A. — TSPDT #363
+0187. Le Dernier Tango à Paris (1972) — Italie — Cinéma politique italien — Bertolucci, Bernardo — TSPDT #364
+0188. Le Cheval de Turin (2011) — Hongrie — Slow Cinema — Tarr, Béla — TSPDT #365
+0189. Qu'elle était verte ma vallée (1941) — États-Unis — Âge d'or d'Hollywood — Ford, John — TSPDT #366
+0190. Écrit sur du vent (1956) — États-Unis — Âge d'or d'Hollywood — Sirk, Douglas — TSPDT #367
+0191. El (1953) — Mexique — Surréalisme cinématographique — Buñuel, Luis — TSPDT #368
+0192. Safe (1995) — États-Unis — New Queer Cinema — Haynes, Todd — TSPDT #369
+0193. Le Voyeur (1960) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Powell, Michael — TSPDT #370
+0194. Les Hommes du président (1976) — États-Unis — Nouvel Hollywood — Pakula, Alan J. — TSPDT #371
+0195. Le Songe de la lumière (1992) — Espagne — Nouvelle vague / cinéma moderne espagnol — Erice, Víctor — TSPDT #373
+0196. Place aux jeunes (1937) — États-Unis — Âge d'or d'Hollywood — McCarey, Leo — TSPDT #374
+0197. La Porte du paradis (1980) — États-Unis — Nouvel Hollywood — Cimino, Michael — TSPDT #375
+0198. The Killing of a Chinese Bookie (1976) — États-Unis — Cinéma indépendant américain — Cassavetes, John — TSPDT #376
+0199. Muriel (1963) — France — Nouvelle Vague française — Resnais, Alain — TSPDT #378
+0200. Au fil des oliviers (1994) — Iran — Nouvelle vague iranienne — Kiarostami, Abbas — TSPDT #380
+0201. Pas de printemps pour Marnie (1964) — États-Unis — Âge d'or d'Hollywood — Hitchcock, Alfred — TSPDT #381
+0202. This Is Spinal Tap (1984) — États-Unis — Cinéma indépendant américain — Reiner, Rob — TSPDT #382
+0203. Le Ruban blanc (2009) — Allemagne — New French Extremity — Haneke, Michael — TSPDT #383
+0204. Two-Lane Blacktop (1971) — États-Unis — Nouvel Hollywood — Hellman, Monte — TSPDT #384
+0205. Elle et lui (1957) — États-Unis — Âge d'or d'Hollywood — McCarey, Leo — TSPDT #386
+0206. Teorema (1968) — Italie — Cinéma politique italien — Pasolini, Pier Paolo — TSPDT #387
+0207. Lost Highway (1997) — États-Unis — Cinéma indépendant américain — Lynch, David — TSPDT #388
+0208. Stranger Than Paradise (1984) — États-Unis — No Wave Cinema — Jarmusch, Jim — TSPDT #390
+0209. Dogville (2003) — Danemark — Dogme 95 — von Trier, Lars — TSPDT #391
+0210. Under the Skin (2013) — Royaume-Uni — Free Cinema britannique — Glazer, Jonathan — TSPDT #392
+0211. Tristana (1970) — Espagne — Surréalisme cinématographique — Buñuel, Luis — TSPDT #393
+0212. The Long Goodbye (1973) — États-Unis — Nouvel Hollywood — Altman, Robert — TSPDT #398
+0213. In einem Jahr mit 13 Monden (1978) — Allemagne de l'Ouest — Nouveau cinéma allemand — Fassbinder, Rainer Werner — TSPDT #399
+0214. Nostalghia (1983) — Italie — Cinéma soviétique / russe moderne — Tarkovsky, Andrei — TSPDT #400
+0215. The Thin Blue Line (1988) — États-Unis — Cinéma indépendant américain — Morris, Errol — TSPDT #402
+0216. Orlando (1992) — Royaume-Uni — New Queer Cinema — Potter, Sally — TSPDT #403
+0217. Fantasia (1940) — États-Unis — Âge d'or d'Hollywood — Various Directors — TSPDT #404
+0218. Les Yeux sans visage (1960) — France — Nouvelle Vague française — Franju, Georges — TSPDT #406
+0219. Le Locataire (1976) — France — École polonaise du cinéma — Polanski, Roman — TSPDT #407
+0220. Naissance d'une nation (1915) — États-Unis — Âge d'or d'Hollywood — Griffith, D.W. — TSPDT #408
+0221. Zombie (1978) — États-Unis — Cinéma gore — Romero, George A. — TSPDT #409
+0222. Crimes et Délits (1989) — États-Unis — Cinéma indépendant américain — Allen, Woody — TSPDT #410
+0223. Suspiria (1977) — Italie — Cinéma gore — Argento, Dario — TSPDT #412
+0224. I Know Where I'm Going! (1945) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Powell, Michael & Emeric Pressburger — TSPDT #413
+0225. Lost in Translation (2003) — États-Unis — Nouvel âge d'or hollywoodien — Coppola, Sofia — TSPDT #415
+0226. Toni Erdmann (2016) — Allemagne — Nouveau cinéma allemand — Ade, Maren — TSPDT #416
+0227. Blanche-Neige et les Sept Nains (1937) — États-Unis — Âge d'or d'Hollywood — Hand, David — TSPDT #418
+0228. Miracle à Milan (1951) — Italie — Néoréalisme italien — De Sica, Vittorio — TSPDT #419
+0229. La Fièvre dans le sang (1961) — États-Unis — Âge d'or d'Hollywood — Kazan, Elia — TSPDT #420
+0230. Le Plaisir (1952) — France — Nouvelle Vague française — Ophüls, Max — TSPDT #421
+0231. Vingt ans après (1984) — Brésil — Cinéma Novo brésilien — Coutinho, Eduardo — TSPDT #422
+0232. Innocents, The (1961) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Clayton, Jack — TSPDT #423
+0233. Europa '51 (1952) — Italie — Néoréalisme italien — Rossellini, Roberto — TSPDT #424
+0234. Network (1976) — États-Unis — Nouvel Hollywood — Lumet, Sidney — TSPDT #425
+0235. Le Bonheur (1965) — France — Nouvelle Vague française — Varda, Agnès — TSPDT #426
+0236. Scènes de la vie conjugale (1973) — Suède — Nouvelle vague scandinave — Bergman, Ingmar — TSPDT #427
+0237. Holy Motors (2012) — France — Cinéma du look français — Carax, Leos — TSPDT #428
+0238. Cette vérité que l'on cache (1937) — États-Unis — Âge d'or d'Hollywood — McCarey, Leo — TSPDT #429
+0239. Chelsea Girls (1966) — États-Unis — Expanded Cinema — Warhol, Andy — TSPDT #431
+0240. La Fiancée de Frankenstein (1935) — États-Unis — Âge d'or d'Hollywood — Whale, James — TSPDT #432
+0241. A.I. Intelligence artificielle (2001) — États-Unis — Nouvel âge d'or hollywoodien — Spielberg, Steven — TSPDT #433
+0242. Salvatore Giuliano (1962) — Italie — Cinéma politique italien — Rosi, Francesco — TSPDT #434
+0243. Nos années sauvages (1990) — Hong Kong — Nouvelle Vague hongkongaise — Wong Kar-wai — TSPDT #435
+0244. Possession (1981) — France — Cinéma du look français — Żuławski, Andrzej — TSPDT #436
+0245. Casino (1995) — États-Unis — Nouvel âge d'or hollywoodien — Scorsese, Martin — TSPDT #437
+0246. Naked (1993) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Leigh, Mike — TSPDT #438
+0247. Non, ce pays n'est pas pour le vieil homme (2007) — États-Unis — Nouvel âge d'or hollywoodien — Coen, Joel & Ethan Coen — TSPDT #439
+0248. Phantom Thread (2017) — États-Unis — Nouvel âge d'or hollywoodien — Anderson, Paul Thomas — TSPDT #440
+0249. If.... (1968) — Royaume-Uni — Free Cinema britannique — Anderson, Lindsay — TSPDT #441
+0250. Une étoile est née (1954) — États-Unis — Âge d'or d'Hollywood — Cukor, George — TSPDT #442
+0251. Les Communiants (1963) — Suède — Nouvelle vague scandinave — Bergman, Ingmar — TSPDT #443
+0252. French Cancan (1955) — France — Réalisme poétique français — Renoir, Jean — TSPDT #444
+0253. Les Chevaux de feu (1965) — URSS — Cinéma soviétique / russe moderne — Parajanov, Sergei — TSPDT #445
+0254. Carrie au bal du diable (1976) — États-Unis — Nouvel Hollywood — De Palma, Brian — TSPDT #446
+0255. Boogie Nights (1997) — États-Unis — Nouvel âge d'or hollywoodien — Anderson, Paul Thomas — TSPDT #447
+0256. The Act of Killing (2012) — Danemark — Cinéma indonésien contemporain — Oppenheimer, Joshua — TSPDT #448
+0257. Les Évadés (1994) — États-Unis — Nouvel âge d'or hollywoodien — Darabont, Frank — TSPDT #449
+0258. Listen to Britain (1942) — Royaume-Uni — École britannique documentaire / documentaire social britannique — Jennings, Humphrey & Stewart McAllister — TSPDT #450
+0259. Songs from the Second Floor (2000) — Suède — Nouvelle vague scandinave — Andersson, Roy — TSPDT #451
+0260. L'Enfance d'Ivan (1962) — URSS — Cinéma soviétique / russe moderne — Tarkovsky, Andrei — TSPDT #452
+0261. Accattone (1961) — Italie — Cinéma politique italien — Pasolini, Pier Paolo — TSPDT #453
+0262. Les Feux de la rampe (1952) — États-Unis — Âge d'or d'Hollywood — Chaplin, Charles — TSPDT #454
+0263. L'Impératrice rouge (1934) — États-Unis — Âge d'or d'Hollywood — von Sternberg, Josef — TSPDT #456
+0264. Le Vent (1928) — États-Unis — Âge d'or d'Hollywood — Sjöström, Victor — TSPDT #458
+0265. Syndromes and a Century (2006) — Thaïlande — Cinéma thaïlandais contemporain — Weerasethakul, Apichatpong — TSPDT #459
+0266. Le Crime de M. Lange (1936) — France — Réalisme poétique français — Renoir, Jean — TSPDT #460
+0267. Les Fleurs de Shanghai (1998) — Taïwan — Nouvelle Vague taïwanaise — Hou Hsiao-hsien — TSPDT #463
+0268. Dans la chambre de Vanda (2000) — Portugal — Slow Cinema — Costa, Pedro — TSPDT #465
+0269. À nos amours (1983) — France — Nouvelle Vague française — Pialat, Maurice — TSPDT #467
+0270. Pinocchio (1940) — États-Unis — Âge d'or d'Hollywood — Sharpsteen, Ben & Hamilton Luske — TSPDT #470
+0271. Le Tombeau des lucioles (1988) — Japon — Âge d'or du cinéma japonais — Takahata, Isao — TSPDT #472
+0272. Vidas Secas (1963) — Brésil — Cinéma Novo brésilien — Pereira dos Santos, Nelson — TSPDT #473
+0273. The Dead (1987) — États-Unis — Âge d'or d'Hollywood — Huston, John — TSPDT #474
+0274. Tirez sur le pianiste (1960) — France — Nouvelle Vague française — Truffaut, François — TSPDT #475
+0275. Platform (2000) — Chine — Sixième génération chinoise — Jia Zhangke — TSPDT #476
+0276. Elephant (2003) — États-Unis — New Queer Cinema — Van Sant, Gus — TSPDT #478
+0277. Le Convoi des braves (1950) — États-Unis — Âge d'or d'Hollywood — Ford, John — TSPDT #479
+0278. Old Boy (2003) — Corée du Sud — Nouvelle Vague sud-coréenne — Park Chan-wook — TSPDT #480
+0279. Paris Is Burning (1990) — États-Unis — New Queer Cinema — Livingston, Jennie — TSPDT #481
+0280. Du silence et des ombres (1962) — États-Unis — Cinéma indépendant américain — Mulligan, Robert — TSPDT #483
+0281. Withnail et moi (1987) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Robinson, Bruce — TSPDT #485
+0282. Harlan County, U.S.A. (1976) — États-Unis — Nouvel Hollywood — Kopple, Barbara — TSPDT #486
+0283. La Région centrale (1971) — Canada — Structural Film — Snow, Michael — TSPDT #488
+0284. Cinq pièces faciles (1970) — États-Unis — Nouvel Hollywood — Rafelson, Bob — TSPDT #489
+0285. Madame et ses flirts (1942) — États-Unis — Âge d'or d'Hollywood — Sturges, Preston — TSPDT #490
+0286. Senso (1954) — Italie — Cinéma classique italien — Visconti, Luchino — TSPDT #491
+0287. Fight Club (1999) — États-Unis — Nouvel âge d'or hollywoodien — Fincher, David — TSPDT #492
+0288. La Mort de Dante Lazarescu (2005) — Roumanie — Nouveau cinéma roumain / Romanian New Wave — Puiu, Cristi — TSPDT #493
+0289. Au bord de la mer bleue (1936) — URSS — Montage soviétique — Barnet, Boris — TSPDT #495
+0290. Zama (2017) — Argentine — Nuevo Cine Argentino — Martel, Lucrecia — TSPDT #496
+0291. Secrets et Mensonges (1996) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Leigh, Mike — TSPDT #497
+0292. Les Fils de l'homme (2006) — États-Unis — Nuevo Cine Mexicano — Cuarón, Alfonso — TSPDT #498
+0293. Reservoir Dogs (1992) — États-Unis — Nouvel âge d'or hollywoodien — Tarantino, Quentin — TSPDT #499
+0294. Épouses et concubines (1991) — Chine — Cinquième génération chinoise — Zhang Yimou — TSPDT #500
+0295. The Hustler (1961) — États-Unis — Cinéma indépendant américain — Rossen, Robert — TSPDT #501
+0296. The Lives of Others (2006) — Allemagne — Nouveau cinéma allemand — von Donnersmarck, Florian Henckel — TSPDT #502
+0297. Punch-Drunk Love (2002) — États-Unis — Nouvel âge d'or hollywoodien — Anderson, Paul Thomas — TSPDT #503
+0298. Twin Peaks: Fire Walk with Me (1992) — États-Unis — Cinéma indépendant américain — Lynch, David — TSPDT #505
+0299. Die Hard (1988) — États-Unis — Cinéma indépendant américain — McTiernan, John — TSPDT #506
+0300. After Life (1998) — Japon — Âge d'or du cinéma japonais — Koreeda, Hirokazu — TSPDT #508
+0301. Inland Empire (2006) — États-Unis — Cinéma indépendant américain — Lynch, David — TSPDT #509
+0302. Blow Out (1981) — États-Unis — Nouvel Hollywood — De Palma, Brian — TSPDT #510
+0303. The Bitter Tears of Petra von Kant (1972) — Allemagne de l'Ouest — Nouveau cinéma allemand — Fassbinder, Rainer Werner — TSPDT #511
+0304. The Bridge on the River Kwai (1957) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Lean, David — TSPDT #512
+0305. Early Summer (1951) — Japon — Âge d'or du cinéma japonais — Ozu, Yasujiro — TSPDT #513
+0306. Twin Peaks: The Return [TV] (2017) — États-Unis — Cinéma indépendant américain — Lynch, David — TSPDT #514
+0307. To Have and Have Not (1944) — États-Unis — Âge d'or d'Hollywood — Hawks, Howard — TSPDT #516
+0308. Crash (1996) — Canada — Cinéma québécois moderne — Cronenberg, David — TSPDT #517
+0309. Monty Python's Life of Brian (1979) — Royaume-Uni — Free Cinema britannique — Jones, Terry — TSPDT #520
+0310. Masculin féminin (1966) — France — Nouvelle Vague française — Godard, Jean-Luc — TSPDT #521
+0311. Jurassic Park (1993) — États-Unis — Nouvel âge d'or hollywoodien — Spielberg, Steven — TSPDT #524
+0312. East of Eden (1955) — États-Unis — Âge d'or d'Hollywood — Kazan, Elia — TSPDT #528
+0313. Mad Max 2 (1981) — Australie — Australian New Wave — Miller, George — TSPDT #529
+0314. The French Connection (1971) — États-Unis — Nouvel Hollywood — Friedkin, William — TSPDT #530
+0315. Short Cuts (1993) — États-Unis — Nouvel Hollywood — Altman, Robert — TSPDT #531
+0316. The Sound of Music (1965) — États-Unis — Cinéma indépendant américain — Wise, Robert — TSPDT #532
+0317. Doctor Zhivago (1965) — États-Unis — Nouvelle Vague britannique / Kitchen Sink — Lean, David — TSPDT #533
+0318. Butch Cassidy and the Sundance Kid (1969) — États-Unis — Nouvel Hollywood — Hill, George Roy — TSPDT #534
+0319. A Moment of Innocence (1996) — Iran — Nouvelle vague iranienne — Makhmalbaf, Mohsen — TSPDT #535
+0320. Hannah and Her Sisters (1986) — États-Unis — Cinéma indépendant américain — Allen, Woody — TSPDT #538
+0321. Boyhood (2014) — États-Unis — Cinéma indépendant américain — Linklater, Richard — TSPDT #539
+0322. A Night at the Opera (1935) — États-Unis — Âge d'or d'Hollywood — Wood, Sam — TSPDT #540
+0323. And Life Goes On... (1992) — Iran — Nouvelle vague iranienne — Kiarostami, Abbas — TSPDT #541
+0324. Morvern Callar (2002) — Royaume-Uni — Free Cinema britannique — Ramsay, Lynne — TSPDT #543
+0325. The Devil, Probably (1977) — France — Réalisme poétique français — Bresson, Robert — TSPDT #544
+0326. Damned, The (1969) — Italie — Cinéma classique italien — Visconti, Luchino — TSPDT #547
+0327. Blue (1993) — Royaume-Uni — New Queer Cinema — Jarman, Derek — TSPDT #554
+0328. Tootsie (1982) — États-Unis — Nouvel Hollywood — Pollack, Sydney — TSPDT #555
+0329. The Master (2012) — États-Unis — Nouvel âge d'or hollywoodien — Anderson, Paul Thomas — TSPDT #556
+0330. Terminator 2: Judgment Day (1991) — États-Unis — Nouvel âge d'or hollywoodien — Cameron, James — TSPDT #561
+0331. The Terminator (1984) — États-Unis — Cinéma indépendant américain — Cameron, James — TSPDT #562
+0332. Russian Ark (2002) — Russie — Cinéma post-soviétique — Sokurov, Aleksandr — TSPDT #563
+0333. Ninotchka (1939) — États-Unis — Âge d'or d'Hollywood — Lubitsch, Ernst — TSPDT #564
+0334. As I Was Moving Ahead Occasionally I Saw Brief Glimpses of Beauty (2000) — États-Unis — Nouvel âge d'or hollywoodien — Mekas, Jonas — TSPDT #566
+0335. Point Blank (1967) — États-Unis — Nouvel Hollywood — Boorman, John — TSPDT #567
+0336. Amélie (2001) — France — New French Extremity — Jeunet, Jean-Pierre — TSPDT #569
+0337. Man of Aran (1934) — Royaume-Uni — Cinéma-vérité — Flaherty, Robert J. — TSPDT #571
+0338. I Walked with a Zombie (1943) — États-Unis — Film noir — Tourneur, Jacques — TSPDT #572
+0339. Crouching Tiger, Hidden Dragon (2000) — Taïwan — Cinéma afro-américain indépendant / L.A. Rebellion — Lee, Ang — TSPDT #573
+0340. Land Without Bread (1933) — Espagne — Surréalisme cinématographique — Buñuel, Luis — TSPDT #574
+0341. Je, tu, il, elle (1974) — Belgique — Cinéma féministe — Akerman, Chantal — TSPDT #575
+0342. WALL-E (2008) — États-Unis — Nouvel âge d'or hollywoodien — Stanton, Andrew — TSPDT #576
+0343. The Blue Angel (1930) — Allemagne — Expressionnisme allemand — von Sternberg, Josef — TSPDT #577
+0344. Halloween (1978) — États-Unis — Cinéma d'exploitation — Carpenter, John — TSPDT #581
+0345. Dead Man (1995) — États-Unis — Cinéma indépendant américain — Jarmusch, Jim — TSPDT #582
+0346. Fellini Satyricon (1969) — Italie — Cinéma classique italien — Fellini, Federico — TSPDT #584
+0347. The Testament of Dr. Mabuse (1933) — Allemagne — Expressionnisme allemand — Lang, Fritz — TSPDT #585
+0348. Deliverance (1972) — États-Unis — Nouvel Hollywood — Boorman, John — TSPDT #587
+0349. That Obscure Object of Desire (1977) — France — Surréalisme cinématographique — Buñuel, Luis — TSPDT #588
+0350. Zodiac (2007) — États-Unis — Nouvel âge d'or hollywoodien — Fincher, David — TSPDT #589
+0351. Rocky (1976) — États-Unis — Nouvel Hollywood — Avildsen, John G. — TSPDT #590
+0352. The Lord of the Rings: The Fellowship of the Ring (2001) — Nouvelle-Zélande — Cinéma néo-zélandais — Jackson, Peter — TSPDT #591
+0353. Wedding March, The (1928) — États-Unis — Âge d'or d'Hollywood — von Stroheim, Erich — TSPDT #592
+0354. When Harry Met Sally... (1989) — États-Unis — Cinéma indépendant américain — Reiner, Rob — TSPDT #593
+0355. Full Metal Jacket (1987) — États-Unis — Nouvel Hollywood — Kubrick, Stanley — TSPDT #596
+0356. Loves of a Blonde (1965) — Tchécoslovaquie — Nouvelle Vague tchécoslovaque — Forman, Milos — TSPDT #597
+0357. Repulsion (1965) — Royaume-Uni — Nouvel Hollywood — Polanski, Roman — TSPDT #598
+0358. Hatari! (1962) — États-Unis — Âge d'or d'Hollywood — Hawks, Howard — TSPDT #600
+0359. The Servant (1963) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Losey, Joseph — TSPDT #601
+0360. Amour (2012) — Autriche — New French Extremity — Haneke, Michael — TSPDT #602
+0361. Rebecca (1940) — États-Unis — Âge d'or d'Hollywood — Hitchcock, Alfred — TSPDT #606
+0362. Barton Fink (1991) — États-Unis — Nouvel âge d'or hollywoodien — Coen, Joel & Ethan Coen — TSPDT #607
+0363. D'Est (1993) — Belgique — Cinéma féministe — Akerman, Chantal — TSPDT #608
+0364. Fellini's Roma (1972) — Italie — Cinéma classique italien — Fellini, Federico — TSPDT #609
+0365. Seven Chances (1925) — États-Unis — Âge d'or d'Hollywood — Keaton, Buster — TSPDT #611
+0366. Edvard Munch [TV] (1974) — Suède — Nouvelle vague scandinave — Watkins, Peter — TSPDT #614
+0367. The Taking of Power by Louis XIV (1966) — France — Néoréalisme italien — Rossellini, Roberto — TSPDT #616
+0368. Symbiopsychotaxiplasm: Take One (1968) — États-Unis — Nouvel Hollywood — Greaves, William — TSPDT #617
+0369. Frankenstein (1931) — États-Unis — Âge d'or d'Hollywood — Whale, James — TSPDT #619
+0370. West Indies: The Fugitive Slaves of Liberty (1979) — France — Nouvelle Vague française — Hondo, Med — TSPDT #620
+0371. Tale of Tales (1979) — URSS — Cinéma soviétique / russe moderne — Norshteyn, Yuriy — TSPDT #621
+0372. Providence (1977) — France — Nouvelle Vague française — Resnais, Alain — TSPDT #622
+0373. Gentlemen Prefer Blondes (1953) — États-Unis — Âge d'or d'Hollywood — Hawks, Howard — TSPDT #623
+0374. The Devils (1971) — Royaume-Uni — Free Cinema britannique — Russell, Ken — TSPDT #624
+0375. Synecdoche, New York (2008) — États-Unis — Nouvel âge d'or hollywoodien — Kaufman, Charlie — TSPDT #625
+0376. Wicker Man, The (1973) — Royaume-Uni — Free Cinema britannique — Hardy, Robin — TSPDT #626
+0377. 3 Women (1977) — États-Unis — Nouvel Hollywood — Altman, Robert — TSPDT #627
+0378. The Long Day Closes (1992) — Royaume-Uni — Free Cinema britannique — Davies, Terence — TSPDT #628
+0379. Raising Arizona (1987) — États-Unis — Nouvel âge d'or hollywoodien — Coen, Joel & Ethan Coen — TSPDT #629
+0380. Don't Look Back (1967) — États-Unis — Nouvel Hollywood — Pennebaker, D.A. — TSPDT #631
+0381. The Ladies Man (1961) — États-Unis — Cinéma indépendant américain — Lewis, Jerry — TSPDT #632
+0382. The Royal Tenenbaums (2001) — États-Unis — Free Cinema britannique — Anderson, Wes — TSPDT #633
+0383. The Round-Up (1966) — Hongrie — Nouvelle Vague hongroise — Jancsó, Miklós — TSPDT #634
+0384. My Friend Ivan Lapshin (1985) — URSS — Cinéma soviétique / russe moderne — German, Aleksei — TSPDT #635
+0385. Vitelloni, I (1953) — Italie — Cinéma classique italien — Fellini, Federico — TSPDT #636
+0386. The Red Circle (1970) — France — Nouvelle Vague française — Melville, Jean-Pierre — TSPDT #637
+0387. Les Amants du Pont-Neuf (1991) — France — Cinéma du look français — Carax, Leos — TSPDT #638
+0388. Mr. Smith Goes to Washington (1939) — États-Unis — Âge d'or d'Hollywood — Capra, Frank — TSPDT #639
+0389. Fat City (1972) — États-Unis — Âge d'or d'Hollywood — Huston, John — TSPDT #640
+0390. Boudu Saved from Drowning (1932) — France — Réalisme poétique français — Renoir, Jean — TSPDT #642
+0391. Scorpio Rising (1963) — États-Unis — Cinéma indépendant américain — Anger, Kenneth — TSPDT #645
+0392. Hour of the Wolf (1968) — Suède — Nouvelle vague scandinave — Bergman, Ingmar — TSPDT #647
+0393. The Dark Knight (2008) — États-Unis — Nouvel âge d'or hollywoodien — Nolan, Christopher — TSPDT #648
+0394. Hana-bi (1997) — Japon — Âge d'or du cinéma japonais — Kitano, Takeshi — TSPDT #650
+0395. A Prophet (2009) — France — New French Extremity — Audiard, Jacques — TSPDT #651
+0396. Nazarín (1958) — Mexique — Surréalisme cinématographique — Buñuel, Luis — TSPDT #652
+0397. Portrait of Jason (1967) — États-Unis — Nouvel Hollywood — Clarke, Shirley — TSPDT #654
+0398. Casque d'or (1952) — France — Nouvelle Vague française — Becker, Jacques — TSPDT #655
+0399. Millennium Mambo (2001) — Taïwan — Nouvelle Vague taïwanaise — Hou Hsiao-hsien — TSPDT #657
+0400. Pat Garrett and Billy the Kid (1973) — États-Unis — Nouvel Hollywood — Peckinpah, Sam — TSPDT #658
+0401. Malcolm X (1992) — États-Unis — Cinéma afro-américain indépendant / L.A. Rebellion — Lee, Spike — TSPDT #659
+0402. The Golden Coach (1952) — Italie — Réalisme poétique français — Renoir, Jean — TSPDT #660
+0403. RoboCop (1987) — États-Unis — Cinéma indépendant américain — Verhoeven, Paul — TSPDT #661
+0404. Ferris Bueller's Day Off (1986) — États-Unis — Cinéma indépendant américain — Hughes, John — TSPDT #662
+0405. Ratcatcher (1999) — Royaume-Uni — Free Cinema britannique — Ramsay, Lynne — TSPDT #664
+0406. Scarface (1932) — États-Unis — Âge d'or d'Hollywood — Hawks, Howard — TSPDT #665
+0407. The Virgin Spring (1960) — Suède — Nouvelle vague scandinave — Bergman, Ingmar — TSPDT #668
+0408. Young Frankenstein (1974) — États-Unis — Nouvel Hollywood — Brooks, Mel — TSPDT #671
+0409. Arrebato (1979) — Espagne — Nouvelle vague / cinéma moderne espagnol — Zulueta, Iván — TSPDT #672
+0410. They Live by Night (1948) — États-Unis — Hollywood classique — Ray, Nicholas — TSPDT #674
+0411. Bring Me the Head of Alfredo Garcia (1974) — États-Unis — Nouvel Hollywood — Peckinpah, Sam — TSPDT #675
+0412. Akira (1988) — Japon — Âge d'or du cinéma japonais — Otomo, Katsuhiro — TSPDT #679
+0413. Manchurian Candidate, The (1962) — États-Unis — Cinéma indépendant américain — Frankenheimer, John — TSPDT #680
+0414. Wake in Fright (1971) — Australie — Australian New Wave — Kotcheff, Ted — TSPDT #682
+0415. Rushmore (1998) — États-Unis — Free Cinema britannique — Anderson, Wes — TSPDT #683
+0416. An American Werewolf in London (1981) — Royaume-Uni — Free Cinema britannique — Landis, John — TSPDT #685
+0417. Il Posto (1961) — Italie — Néoréalisme italien — Olmi, Ermanno — TSPDT #686
+0418. Place in the Sun, A (1951) — États-Unis — Âge d'or d'Hollywood — Stevens, George — TSPDT #687
+0419. Dancer in the Dark (2000) — Danemark — Dogme 95 — von Trier, Lars — TSPDT #688
+0420. Hyènes (1992) — Sénégal — Cinéma sénégalais — Diop Mambéty, Djibril — TSPDT #689
+0421. The Purple Rose of Cairo (1985) — États-Unis — Cinéma indépendant américain — Allen, Woody — TSPDT #690
+0422. Chronicle of a Summer (1961) — France — Cinéma-vérité — Rouch, Jean & Edgar Morin — TSPDT #691
+0423. Trainspotting (1996) — Royaume-Uni — Free Cinema britannique — Boyle, Danny — TSPDT #692
+0424. Bambi (1942) — États-Unis — Âge d'or d'Hollywood — Hand, David — TSPDT #693
+0425. The Ghost and Mrs. Muir (1947) — États-Unis — Âge d'or d'Hollywood — Mankiewicz, Joseph L. — TSPDT #695
+0426. The Great Beauty (2013) — Italie — Cinéma politique italien — Sorrentino, Paolo — TSPDT #696
+0427. Intruder, The (2004) — France — New French Extremity — Denis, Claire — TSPDT #698
+0428. Toy Story (1995) — États-Unis — Nouvel âge d'or hollywoodien — Lasseter, John — TSPDT #700
+0429. Wild at Heart (1990) — États-Unis — Cinéma indépendant américain — Lynch, David — TSPDT #701
+0430. The Sorrow and the Pity (1969) — France — Nouvelle Vague française — Ophüls, Marcel — TSPDT #703
+0431. Thelma & Louise (1991) — États-Unis — Nouvel âge d'or hollywoodien — Scott, Ridley — TSPDT #704
+0432. Gimme Shelter (1970) — États-Unis — Nouvel Hollywood — Maysles, Albert/David Maysles/Charlotte Zwerin — TSPDT #705
+0433. Chronicle of Anna Magdalena Bach (1968) — Allemagne de l'Ouest — Nouveau cinéma allemand — Straub, Jean-Marie — TSPDT #706
+0434. Cure (1997) — Japon — Âge d'or du cinéma japonais — Kurosawa, Kiyoshi — TSPDT #708
+0435. Salesman (1969) — États-Unis — Nouvel Hollywood — Maysles, Albert/David Maysles/Charlotte Zwerin — TSPDT #709
+0436. 4 Months, 3 Weeks and 2 Days (2007) — Roumanie — Nouveau cinéma roumain / Romanian New Wave — Mungiu, Cristian — TSPDT #711
+0437. Before Sunset (2004) — États-Unis — Cinéma indépendant américain — Linklater, Richard — TSPDT #712
+0438. Distant (2002) — Turquie — Cinéma turc moderne — Ceylan, Nuri Bilge — TSPDT #713
+0439. Local Hero (1983) — Royaume-Uni — Free Cinema britannique — Forsyth, Bill — TSPDT #714
+0440. Holy Mountain, The (1973) — Mexique — Nuevo Cine Mexicano — Jodorowsky, Alejandro — TSPDT #715
+0441. Ben-Hur (1959) — États-Unis — Âge d'or d'Hollywood — Wyler, William — TSPDT #717
+0442. Lancelot du Lac (1974) — France — Réalisme poétique français — Bresson, Robert — TSPDT #718
+0443. Memento (2000) — États-Unis — Nouvel âge d'or hollywoodien — Nolan, Christopher — TSPDT #719
+0444. 7 Women (1965) — États-Unis — Âge d'or d'Hollywood — Ford, John — TSPDT #720
+0445. Once Upon a Time... in Hollywood (2019) — États-Unis — Nouvel âge d'or hollywoodien — Tarantino, Quentin — TSPDT #721
+0446. Party, The (1968) — États-Unis — Nouvel Hollywood — Edwards, Blake — TSPDT #722
+0447. Il Grido (1957) — Italie — Cinéma classique italien — Antonioni, Michelangelo — TSPDT #723
+0448. The Phantom of Liberty (1974) — France — Surréalisme cinématographique — Buñuel, Luis — TSPDT #724
+0449. Fish Tank (2009) — Royaume-Uni — Free Cinema britannique — Arnold, Andrea — TSPDT #726
+0450. Paper Moon (1973) — États-Unis — Nouvel Hollywood — Bogdanovich, Peter — TSPDT #727
+0451. Sauve qui peut (la vie) (1980) — France — Nouvelle Vague française — Godard, Jean-Luc — TSPDT #728
+0452. Kaagaz Ke Phool (1959) — Inde — Cinéma parallèle indien (Parallel Cinema) — Dutt, Guru — TSPDT #729
+0453. The Sun Shines Bright (1953) — États-Unis — Âge d'or d'Hollywood — Ford, John — TSPDT #730
+0454. The Adventures of Prince Achmed (1926) — Allemagne — Expressionnisme allemand — Reiniger, Lotte — TSPDT #731
+0455. Dazed and Confused (1993) — États-Unis — Cinéma indépendant américain — Linklater, Richard — TSPDT #734
+0456. Nouvelle vague (1990) — France — Nouvelle Vague française — Godard, Jean-Luc — TSPDT #735
+0457. Love Me Tonight (1932) — États-Unis — Âge d'or d'Hollywood — Mamoulian, Rouben — TSPDT #737
+0458. Hunger (2008) — Royaume-Uni — Free Cinema britannique — McQueen, Steve — TSPDT #738
+0459. Moonfleet (1955) — États-Unis — Âge d'or d'Hollywood — Lang, Fritz — TSPDT #740
+0460. A New Leaf (1971) — États-Unis — Nouvel Hollywood — May, Elaine — TSPDT #741
+0461. The Hawks and the Sparrows (1966) — Italie — Cinéma politique italien — Pasolini, Pier Paolo — TSPDT #742
+0462. The Emperor's Naked Army Marches On (1987) — Japon — Âge d'or du cinéma japonais — Hara, Kazuo — TSPDT #743
+0463. Moulin Rouge! (2001) — Australie — Australian New Wave — Luhrmann, Baz — TSPDT #745
+0464. Stand by Me (1986) — États-Unis — Cinéma indépendant américain — Reiner, Rob — TSPDT #746
+0465. Antonio das Mortes (1969) — Brésil — Cinéma Novo brésilien — Rocha, Glauber — TSPDT #747
+0466. Les Dames du Bois de Boulogne (1945) — France — Réalisme poétique français — Bresson, Robert — TSPDT #749
+0467. Fly, The (1986) — États-Unis — Cinéma indépendant américain — Cronenberg, David — TSPDT #750
+0468. Miller's Crossing (1990) — États-Unis — Nouvel âge d'or hollywoodien — Coen, Joel & Ethan Coen — TSPDT #751
+0469. Titicut Follies (1967) — États-Unis — Nouvel Hollywood — Wiseman, Frederick — TSPDT #752
+0470. Oh, Sun (1970) — France — Nouvelle Vague française — Hondo, Med — TSPDT #755
+0471. The Bad and the Beautiful (1952) — États-Unis — Âge d'or d'Hollywood — Minnelli, Vincente — TSPDT #756
+0472. The Tiger of Eschnapur (1958) — Allemagne de l'Ouest — Expressionnisme allemand — Lang, Fritz — TSPDT #757
+0473. 35 Shots of Rum (2008) — France — New French Extremity — Denis, Claire — TSPDT #758
+0474. One Way or Another (1977) — Cuba — Cinéma politique latino-américain — Gómez, Sara — TSPDT #760
+0475. Design for Living (1933) — États-Unis — Âge d'or d'Hollywood — Lubitsch, Ernst — TSPDT #761
+0476. Lolita (1962) — Royaume-Uni — Âge d'or d'Hollywood — Kubrick, Stanley — TSPDT #762
+0477. Phantom of the Paradise (1974) — États-Unis — Nouvel Hollywood — De Palma, Brian — TSPDT #763
+0478. Triumph of the Will (1935) — Allemagne — Nouveau cinéma allemand — Riefenstahl, Leni — TSPDT #764
+0479. JFK (1991) — États-Unis — Nouvel âge d'or hollywoodien — Stone, Oliver — TSPDT #765
+0480. New York, New York (1977) — États-Unis — Nouvel Hollywood — Scorsese, Martin — TSPDT #767
+0481. The New World (2005) — États-Unis — Nouvel Hollywood — Malick, Terrence — TSPDT #768
+0482. Diaries, Notes and Sketches (1969) — États-Unis — Nouvel Hollywood — Mekas, Jonas — TSPDT #769
+0483. Subarnarekha (1965) — Inde — Cinéma parallèle indien (Parallel Cinema) — Ghatak, Ritwik — TSPDT #770
+0484. The Cook, the Thief, His Wife & Her Lover (1989) — Royaume-Uni — Free Cinema britannique — Greenaway, Peter — TSPDT #771
+0485. The Wild Child (1970) — France — Nouvelle Vague française — Truffaut, François — TSPDT #772
+0486. Clueless (1995) — États-Unis — Nouvel âge d'or hollywoodien — Heckerling, Amy — TSPDT #773
+0487. Fort Apache (1948) — États-Unis — Âge d'or d'Hollywood — Ford, John — TSPDT #774
+0488. Mädchen in Uniform (1931) — Allemagne — Expressionnisme allemand — Sagan, Leontine — TSPDT #777
+0489. Two English Girls (1971) — France — Nouvelle Vague française — Truffaut, François — TSPDT #780
+0490. Flaming Creatures (1963) — États-Unis — Cinéma indépendant américain — Smith, Jack — TSPDT #781
+0491. The Man Who Would Be King (1975) — Royaume-Uni — Âge d'or d'Hollywood — Huston, John — TSPDT #782
+0492. Hellzapoppin' (1941) — États-Unis — New Queer Cinema — Potter, H.C. — TSPDT #784
+0493. The Age of the Earth (1980) — Brésil — Cinéma Novo brésilien — Rocha, Glauber — TSPDT #785
+0494. Edward Scissorhands (1990) — États-Unis — Nouvel âge d'or hollywoodien — Burton, Tim — TSPDT #786
+0495. Great Expectations (1946) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Lean, David — TSPDT #787
+0496. Blissfully Yours (2002) — Thaïlande — Cinéma thaïlandais contemporain — Weerasethakul, Apichatpong — TSPDT #788
+0497. Mother and Son (1997) — Russie — Cinéma post-soviétique — Sokurov, Aleksandr — TSPDT #790
+0498. Code Unknown (2000) — France — New French Extremity — Haneke, Michael — TSPDT #791
+0499. My Life as a Dog (1985) — Suède — Nouvelle vague scandinave — Hallström, Lasse — TSPDT #792
+0500. Trial, The (1962) — France — Cinéma expérimental américain / New American Cinema — Welles, Orson — TSPDT #793
+0501. Airplane! (1980) — États-Unis — Nouvel Hollywood — Abrahams, Jim/David Zucker/Jerry Zucker — TSPDT #794
+0502. Foolish Wives (1922) — États-Unis — Âge d'or d'Hollywood — von Stroheim, Erich — TSPDT #795
+0503. Mamma Roma (1962) — Italie — Cinéma politique italien — Pasolini, Pier Paolo — TSPDT #797
+0504. Morocco (1930) — États-Unis — Âge d'or d'Hollywood — von Sternberg, Josef — TSPDT #798
+0505. Mikey and Nicky (1976) — États-Unis — Nouvel Hollywood — May, Elaine — TSPDT #800
+0506. Scarface (1983) — États-Unis — Nouvel Hollywood — De Palma, Brian — TSPDT #801
+0507. Wings (1966) — URSS — Cinéma soviétique / russe moderne — Shepitko, Larisa — TSPDT #803
+0508. Requiem for a Dream (2000) — États-Unis — Nouvel âge d'or hollywoodien — Aronofsky, Darren — TSPDT #805
+0509. Dog Star Man (1964) — États-Unis — Cinéma expérimental américain / New American Cinema — Brakhage, Stan — TSPDT #806
+0510. Un Chant d'amour (1950) — France — Nouvelle Vague française — Genet, Jean — TSPDT #807
+0511. Evil Dead II (1987) — États-Unis — Cinéma indépendant américain — Raimi, Sam — TSPDT #808
+0512. Thief of Bagdad, The (1940) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Powell, Michael/Ludwig Berger/Tim Whelan — TSPDT #809
+0513. Let the Right One In (2008) — Suède — Nouvelle vague scandinave — Alfredson, Tomas — TSPDT #811
+0514. Zelig (1983) — États-Unis — Cinéma indépendant américain — Allen, Woody — TSPDT #812
+0515. Broadcast News (1987) — États-Unis — Cinéma indépendant américain — Brooks, James L. — TSPDT #813
+0516. Margaret (2011) — États-Unis — Nouvel âge d'or hollywoodien — Lonergan, Kenneth — TSPDT #814
+0517. All Quiet on the Western Front (1930) — États-Unis — Âge d'or d'Hollywood — Milestone, Lewis — TSPDT #815
+0518. The Great Escape (1963) — États-Unis — Âge d'or d'Hollywood — Sturges, John — TSPDT #817
+0519. Saving Private Ryan (1998) — États-Unis — Nouvel âge d'or hollywoodien — Spielberg, Steven — TSPDT #818
+0520. A Woman of Paris (1923) — États-Unis — Âge d'or d'Hollywood — Chaplin, Charles — TSPDT #821
+0521. Dumbo (1941) — États-Unis — Âge d'or d'Hollywood — Sharpsteen, Ben — TSPDT #822
+0522. Inglourious Basterds (2009) — États-Unis — Nouvel âge d'or hollywoodien — Tarantino, Quentin — TSPDT #823
+0523. The Producers (1968) — États-Unis — Nouvel Hollywood — Brooks, Mel — TSPDT #824
+0524. She Wore a Yellow Ribbon (1949) — États-Unis — Âge d'or d'Hollywood — Ford, John — TSPDT #825
+0525. Forbidden Games (1952) — France — Nouvelle Vague française — Clément, René — TSPDT #827
+0526. Van Gogh (1991) — France — Nouvelle Vague française — Pialat, Maurice — TSPDT #829
+0527. Shock Corridor (1963) — États-Unis — Film noir — Fuller, Samuel — TSPDT #830
+0528. Grizzly Man (2005) — États-Unis — Nouveau cinéma allemand — Herzog, Werner — TSPDT #831
+0529. Women on the Verge of a Nervous Breakdown (1988) — Espagne — Nouvelle vague / cinéma moderne espagnol — Almodóvar, Pedro — TSPDT #832
+0530. After Hours (1985) — États-Unis — Nouvel Hollywood — Scorsese, Martin — TSPDT #833
+0531. Abraham's Valley (1993) — Portugal — Slow Cinema — Oliveira, Manoel de — TSPDT #834
+0532. Passion (1982) — France — Nouvelle Vague française — Godard, Jean-Luc — TSPDT #835
+0533. My Little Loves (1974) — France — Nouvelle Vague française — Eustache, Jean — TSPDT #836
+0534. Invasion of the Body Snatchers (1956) — États-Unis — Âge d'or d'Hollywood — Siegel, Don — TSPDT #839
+0535. Rose Hobart (1936) — États-Unis — Âge d'or d'Hollywood — Cornell, Joseph — TSPDT #840
+0536. Blue is the Warmest Colour (2013) — France — New French Extremity — Kechiche, Abdellatif — TSPDT #841
+0537. Petite Maman (2021) — France — New French Extremity — Sciamma, Céline — TSPDT #843
+0538. Amores perros (2000) — Mexique — Nuevo Cine Mexicano — González Iñárritu, Alejandro — TSPDT #844
+0539. Point Break (1991) — États-Unis — Nouvel âge d'or hollywoodien — Bigelow, Kathryn — TSPDT #845
+0540. The Son (2002) — Belgique — Cinéma féministe — Dardenne, Jean-Pierre & Luc Dardenne — TSPDT #846
+0541. O Lucky Man! (1973) — Royaume-Uni — Free Cinema britannique — Anderson, Lindsay — TSPDT #847
+0542. Deep End (1970) — Royaume-Uni — Free Cinema britannique — Skolimowski, Jerzy — TSPDT #848
+0543. White Heat (1949) — États-Unis — Âge d'or d'Hollywood — Walsh, Raoul — TSPDT #850
+0544. La Commune (Paris, 1871) (2000) — France — New French Extremity — Watkins, Peter — TSPDT #851
+0545. Toute une nuit (1982) — Belgique — Cinéma féministe — Akerman, Chantal — TSPDT #852
+0546. Losing Ground (1982) — États-Unis — Nouvel Hollywood — Collins, Kathleen — TSPDT #853
+0547. The Red and the White (1967) — Hongrie — Nouvelle Vague hongroise — Jancsó, Miklós — TSPDT #855
+0548. The Naked Island (1960) — Japon — Nouvelle Vague japonaise (Nūberu Bāgu) — Shindo, Kaneto — TSPDT #856
+0549. Who's Afraid of Virginia Woolf? (1966) — États-Unis — Cinéma indépendant américain — Nichols, Mike — TSPDT #857
+0550. Spione (1928) — Allemagne — Expressionnisme allemand — Lang, Fritz — TSPDT #858
+0551. Dodes'ka-den (1970) — Japon — Âge d'or du cinéma japonais — Kurosawa, Akira — TSPDT #859
+0552. The Asthenic Syndrome (1989) — URSS — Cinéma soviétique / russe moderne — Muratova, Kira — TSPDT #860
+0553. Starship Troopers (1997) — États-Unis — Nouvel âge d'or hollywoodien — Verhoeven, Paul — TSPDT #861
+0554. Persepolis (2007) — France — New French Extremity — Paronnaud, Vincent & Marjane Satrapi — TSPDT #862
+0555. Amour fou, L' (1969) — France — Nouvelle Vague française — Rivette, Jacques — TSPDT #863
+0556. Angel (1937) — États-Unis — Âge d'or d'Hollywood — Lubitsch, Ernst — TSPDT #864
+0557. The Right Stuff (1983) — États-Unis — Cinéma indépendant américain — Kaufman, Philip — TSPDT #867
+0558. They Were Expendable (1945) — États-Unis — Âge d'or d'Hollywood — Ford, John — TSPDT #868
+0559. Time of the Gypsies (1988) — Yougoslavie — Black Wave yougoslave — Kusturica, Emir — TSPDT #871
+0560. Hitler: A Film from Germany (1977) — Allemagne de l'Ouest — Nouveau cinéma allemand — Syberberg, Hans-Jürgen — TSPDT #872
+0561. Too Early/Too Late (1981) — France — Cinéma du look français — Straub, Jean-Marie & Danièle Huillet — TSPDT #875
+0562. Shame (1968) — Suède — Nouvelle vague scandinave — Bergman, Ingmar — TSPDT #880
+0563. Mysteries of Lisbon (2010) — Portugal — Slow Cinema — Ruiz, Raúl — TSPDT #881
+0564. Sicilia! (1999) — Italie — Cinéma politique italien — Straub, Jean-Marie & Danièle Huillet — TSPDT #883
+0565. Atlantics (2019) — France — Cinéma sénégalais — Diop, Mati — TSPDT #884
+0566. Excalibur (1981) — Royaume-Uni — Free Cinema britannique — Boorman, John — TSPDT #889
+0567. Elephant [TV] (1989) — Royaume-Uni — Free Cinema britannique — Clarke, Alan — TSPDT #890
+0568. Monty Python and the Holy Grail (1975) — Royaume-Uni — Free Cinema britannique — Gilliam, Terry & Terry Jones — TSPDT #891
+0569. Outskirts (1933) — URSS — Montage soviétique — Barnet, Boris — TSPDT #893
+0570. Red Sorghum (1987) — Chine — Cinquième génération chinoise — Zhang Yimou — TSPDT #897
+0571. The African Queen (1951) — Royaume-Uni — Âge d'or d'Hollywood — Huston, John — TSPDT #899
+0572. Spring, Summer, Autumn, Winter… and Spring (2003) — Corée du Sud — Nouvelle Vague sud-coréenne — Kim Ki-duk — TSPDT #900
+0573. The Woman Next Door (1981) — France — Nouvelle Vague française — Truffaut, François — TSPDT #901
+0574. The Night of Counting the Years (1969) — Égypte — Cinéma maghrébin postcolonial — Salam, Shadi Abdel — TSPDT #904
+0575. L' Enfance nue (1968) — France — Nouvelle Vague française — Pialat, Maurice — TSPDT #905
+0576. Shaun of the Dead (2004) — Royaume-Uni — Free Cinema britannique — Wright, Edgar — TSPDT #907
+0577. Caro diario (1993) — Italie — Cinéma politique italien — Moretti, Nanni — TSPDT #909
+0578. Akira Kurosawa's Dreams (1990) — Japon — Âge d'or du cinéma japonais — Kurosawa, Akira — TSPDT #910
+0579. The Seasons (1975) — URSS — Cinéma soviétique / russe moderne — Peleshian, Artavazd — TSPDT #912
+0580. Tabu (2012) — Portugal — Slow Cinema — Gomes, Miguel — TSPDT #916
+0581. Deep Red (1975) — Italie — Cinéma gore — Argento, Dario — TSPDT #917
+0582. People on Sunday (1930) — Allemagne — Expressionnisme allemand — Siodmak, Robert & Edgar G. Ulmer — TSPDT #921
+0583. Heimat [TV] (1984) — Allemagne de l'Ouest — Nouveau cinéma allemand — Reitz, Edgar — TSPDT #925
+0584. Seven Beauties (1975) — Italie — Cinéma classique italien — Wertmüller, Lina — TSPDT #926
+0585. River, The (1997) — Taïwan — Slow Cinema — Tsai Ming-liang — TSPDT #928
+0586. Sholay (1975) — Inde — Cinéma parallèle indien (Parallel Cinema) — Sippy, Ramesh — TSPDT #929
+0587. Night of the Demon (1957) — Royaume-Uni — Film noir — Tourneur, Jacques — TSPDT #930
+0588. The End of Summer (1961) — Japon — Âge d'or du cinéma japonais — Ozu, Yasujiro — TSPDT #931
+0589. The Criminal Life of Archibaldo de la Cruz (1955) — Mexique — Surréalisme cinématographique — Buñuel, Luis — TSPDT #932
+0590. Le Trou (1960) — France — Nouvelle Vague française — Becker, Jacques — TSPDT #935
+0591. La Flor (2018) — Argentine — Nuevo Cine Argentino — Llinás, Mariano — TSPDT #937
+0592. Simon of the Desert (1965) — Mexique — Surréalisme cinématographique — Buñuel, Luis — TSPDT #938
+0593. Kwaidan (1964) — Japon — Nouvelle Vague japonaise (Nūberu Bāgu) — Kobayashi, Masaki — TSPDT #941
+0594. No Home Movie (2015) — Belgique — Cinéma féministe — Akerman, Chantal — TSPDT #951
+0595. The Killer (1989) — Hong Kong — Nouvelle Vague hongkongaise — Woo, John — TSPDT #956
+0596. Z (1969) — France — Nouvelle Vague française — Costa-Gavras — TSPDT #958
+0597. The Lord of the Rings: The Return of the King (2003) — Nouvelle-Zélande — Cinéma néo-zélandais — Jackson, Peter — TSPDT #959
+0598. La Chienne (1931) — France — Réalisme poétique français — Renoir, Jean — TSPDT #965
+0599. From the Clouds to the Resistance (1979) — Italie — Cinéma politique italien — Straub, Jean-Marie & Danièle Huillet — TSPDT #966
+0600. Othello (1951) — Italie — Âge d'or d'Hollywood — Welles, Orson — TSPDT #967
+0601. Doomed Love [TV] (1978) — Portugal — Slow Cinema — Oliveira, Manoel de — TSPDT #968
+0602. Return, The (2003) — Russie — Cinéma post-soviétique — Zvyagintsev, Andrey — TSPDT #969
+0603. Khrustalyov, My Car! (1998) — Russie — Cinéma post-soviétique — German, Aleksei — TSPDT #973
+0604. The Last Emperor (1987) — Chine — Cinéma politique italien — Bertolucci, Bernardo — TSPDT #975
+0605. Diary (1983) — Israël — Nouvelle vague israélienne — Perlov, David — TSPDT #977
+0606. Berlin: Symphony of a Great City (1927) — Allemagne — Expressionnisme allemand — Ruttmann, Walter — TSPDT #978
+0607. Elevator to the Gallows (1958) — France — Nouvelle Vague française — Malle, Louis — TSPDT #979
+0608. Host, The (2006) — Corée du Sud — Nouvelle Vague sud-coréenne — Bong Joon-ho — TSPDT #980
+0609. La Bête humaine (1938) — France — Réalisme poétique français — Renoir, Jean — TSPDT #985
+0610. Fox and His Friends (1975) — Allemagne de l'Ouest — Nouveau cinéma allemand — Fassbinder, Rainer Werner — TSPDT #987
+0611. Olympia (1938) — Allemagne — Nouveau cinéma allemand — Riefenstahl, Leni — TSPDT #988
+0612. The Pianist (2002) — France — École polonaise du cinéma — Polanski, Roman — TSPDT #990
+0613. Léon (1994) — France — Cinéma du look français — Besson, Luc — TSPDT #991
+0614. The Long Farewell (1971) — URSS — Cinéma soviétique / russe moderne — Muratova, Kira — TSPDT #995
+0615. Sawdust and Tinsel (1953) — Suède — Nouvelle vague scandinave — Bergman, Ingmar — TSPDT #998
+0616. Manhatta (1921) — États-Unis — Cinéma pur — Charles Sheeler & Paul Strand — city symphony
+0617. Le Retour à la raison (1923) — France — Cinéma dadaïste — Man Ray — Dada
+0618. Strike (1925) — URSS — Montage soviétique — Sergei Eisenstein — canon soviétique
+0619. Anémic Cinéma (1926) — France — Cinéma dadaïste — Marcel Duchamp — Dada
+0620. Mother (1926) — URSS — Montage soviétique — Vsevolod Pudovkin — canon
+0621. Rien que les heures (1926) — France — Cinéma pur — Alberto Cavalcanti — cinéma pur / city symphony
+0622. The End of St. Petersburg (1927) — URSS — Montage soviétique — Vsevolod Pudovkin — canon
+0623. De Brug (1928) — Pays-Bas — Cinéma pur — Joris Ivens — cinéma pur
+0624. Ghosts Before Breakfast (1928) — Allemagne — Cinéma dadaïste — Hans Richter — Dada
+0625. Arsenal (1929) — URSS — Montage soviétique — Alexander Dovzhenko — canon
+0626. Regen (1929) — Pays-Bas — Cinéma pur — Joris Ivens — city symphony
+0627. The Only Son (1936) — Japon — Âge d'or du cinéma japonais — Yasujirō Ozu — Ebert
+0628. Cat People (1942) — États-Unis — Film noir — Jacques Tourneur — Ebert
+0629. Les Jeux interdits (1952) — France — Réalisme poétique français — René Clément — Ebert
+0630. Shane (1953) — États-Unis — Hollywood classique — George Stevens — Ebert
+0631. Salt of the Earth (1954) — États-Unis — Cinéma militant — Herbert J. Biberman — blacklist / militant US
+0632. Touchez pas au grisbi (1954) — France — Réalisme poétique français — Jacques Becker — Ebert
+0633. Un americano a Roma (1954) — Italie — Commedia all'italiana — Steno — canon Steno
+0634. Bob le Flambeur (1955) — France — Nouvelle Vague française — Jean-Pierre Melville — Ebert
+0635. Muerte de un ciclista (1955) — Espagne — Nouvelle vague / cinéma moderne espagnol — Juan Antonio Bardem — canon espagnol
+0636. A Movie (1958) — États-Unis — Found Footage Cinema — Bruce Conner — found footage expérimental
+0637. Ballad of a Soldier (1959) — URSS — Cinéma soviétique / russe moderne — Grigory Chukhrai — Cannes
+0638. Arnulf Rainer (1960) — Autriche — Cinéma abstrait — Peter Kubelka — structural/abstract
+0639. Primary (1960) — États-Unis — Cinéma direct — Robert Drew — cinéma direct US
+0640. Saturday Night and Sunday Morning (1960) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Karel Reisz — Kitchen Sink
+0641. Allures (1961) — États-Unis — Cinéma abstrait — Jordan Belson — West Coast abstract
+0642. Chronique d'un été (1961) — France — Cinéma-vérité — Jean Rouch & Edgar Morin — fondateur vérité
+0643. Léon Morin, prêtre (1961) — France — Nouvelle Vague française — Jean-Pierre Melville — Ebert
+0644. Plácido (1961) — Espagne — Nouvelle vague / cinéma moderne espagnol — Luis García Berlanga — canon Berlanga
+0645. Through a Glass Darkly (1961) — Suède — Nouvelle vague scandinave — Ingmar Bergman — Oscar / Ebert
+0646. Nine Days of One Year (1962) — URSS — Cinéma soviétique / russe moderne — Mikhail Romm — canon dégel
+0647. The House Is Black (1962) — Iran — Essay Film / cinéma-essai — Forough Farrokhzad — essai iranien
+0648. The Loneliness of the Long Distance Runner (1962) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Tony Richardson — Kitchen Sink
+0649. Borom Sarret (1963) — Sénégal — Cinéma sénégalais — Ousmane Sembène — premier film
+0650. Ieri, oggi, domani (1963) — Italie — Commedia all'italiana — Vittorio De Sica — Oscar
+0651. Mothlight (1963) — États-Unis — Structural Film — Stan Brakhage — Brakhage
+0652. Pour la suite du monde (1963) — Canada — Cinéma direct — Pierre Perrault & Michel Brault — ONF / direct
+0653. The Silence (1963) — Suède — Nouvelle vague scandinave — Ingmar Bergman — Ebert
+0654. This Sporting Life (1963) — Royaume-Uni — Free Cinema britannique — Lindsay Anderson — Cannes
+0655. A Hard Day's Night (1964) — Royaume-Uni — Nouvelle Vague britannique / Kitchen Sink — Richard Lester — Ebert
+0656. Dry Summer (1964) — Turquie — Cinéma turc moderne — Metin Erksan — Berlin
+0657. Empire (1964) — États-Unis — Expanded Cinema — Andy Warhol — Warhol
+0658. Matrimonio all'italiana (1964) — Italie — Commedia all'italiana — Vittorio De Sica — Oscar nominee
+0659. Pale Flower (1964) — Japon — Nouvelle Vague japonaise (Nūberu Bāgu) — Masahiro Shinoda — Ebert
+0660. The Up Series (1964) — Royaume-Uni — École britannique documentaire / documentaire social britannique — Michael Apted — Ebert
+0661. Chemmeen (1965) — Inde — Cinéma malayalam contemporain — Ramu Kariat — canon Kerala
+0662. Io la conoscevo bene (1965) — Italie — Commedia all'italiana — Antonio Pietrangeli — canon Pietrangeli
+0663. Juliet of the Spirits (1965) — Italie — Cinéma classique italien — Federico Fellini — Ebert
+0664. The Shop on Main Street (1965) — Tchécoslovaquie — Nouvelle Vague tchécoslovaque — Ján Kadár & Elmar Klos — Oscar
+0665. Death of a Bureaucrat (1966) — Cuba — Cinéma politique latino-américain — Tomás Gutiérrez Alea — comédie cubaine
+0666. Feuilles d'automne (1966) — Géorgie — Nouvelle vague géorgienne — Otar Iosseliani — canon géorgien
+0667. Lapis (1966) — États-Unis — Cinéma abstrait — James Whitney — animation abstraite
+0668. Szegénylegények (1966) — Hongrie — Nouvelle Vague hongroise — Miklós Jancsó — Cannes
+0669. The Flicker (1966) — États-Unis — Cinéma abstrait — Tony Conrad — structural
+0670. Branded to Kill (1967) — Japon — Nouvelle Vague japonaise (Nūberu Bāgu) — Seijun Suzuki — cult Suzuki
+0671. Dont Look Back (1967) — États-Unis — Cinéma direct — D. A. Pennebaker — direct cinema
+0672. I Even Met Happy Gypsies (1967) — Yougoslavie — Black Wave yougoslave — Aleksandar Petrović — Oscar nominee
+0673. La Collectionneuse (1967) — France — Nouvelle Vague française — Éric Rohmer — Ebert
+0674. Samurai Rebellion (1967) — Japon — Âge d'or du cinéma japonais — Masaki Kobayashi — Ebert
+0675. The Commissar (1967) — URSS — Cinéma soviétique / russe moderne — Aleksandr Askoldov — Berlin 1988
+0676. The Firemen's Ball (1967) — Tchécoslovaquie — Nouvelle Vague tchécoslovaque — Miloš Forman — Ebert
+0677. When I Am Dead and Gone (1967) — Yougoslavie — Black Wave yougoslave — Živojin Pavlović — canon Black Wave
+0678. Early Works (1969) — Yougoslavie — Black Wave yougoslave — Želimir Žilnik — Ours d'or
+0679. Eros + Massacre (1969) — Japon — Nouvelle Vague japonaise (Nūberu Bāgu) — Yoshishige Yoshida — canon Nuberu Bagu
+0680. Funeral Parade of Roses (1969) — Japon — Nouvelle Vague japonaise (Nūberu Bāgu) — Toshio Matsumoto — queer / new wave JP
+0681. Uski Roti (1969) — Inde — Cinéma parallèle indien (Parallel Cinema) — Mani Kaul — New Indian Cinema
+0682. Yawar Mallku (1969) — Bolivie — Troisième Cinéma — Jorge Sanjinés — Groupe Ukamau
+0683. El Topo (1970) — Mexique — Cinéma politique latino-américain — Alejandro Jodorowsky — Ebert
+0684. Il était une fois un merle chanteur (1970) — Géorgie — Nouvelle vague géorgienne — Otar Iosseliani — canon soviétique géorgien
+0685. Le Boucher (1970) — France — Nouvelle Vague française — Claude Chabrol — Ebert
+0686. Serene Velocity (1970) — États-Unis — Structural Film — Ernie Gehr — structural
+0687. Soleil Ô (1970) — France — Cinéma africain postcolonial — Med Hondo — Cannes
+0688. Woodstock (1970) — États-Unis — Cinéma-vérité — Michael Wadleigh — Ebert
+0689. Zorns Lemma (1970) — États-Unis — Structural Film — Hollis Frampton — structural
+0690. El coraje del pueblo (1971) — Bolivie — Troisième Cinéma — Jorge Sanjinés — Groupe Ukamau
+0691. Emitaï (1971) — Sénégal — Cinéma sénégalais — Ousmane Sembène — canon Sembène
+0692. How Tasty Was My Little Frenchman (1971) — Brésil — Cinéma postcolonial — Nelson Pereira dos Santos — Cinema Novo / postcolonial
+0693. Mon oncle Antoine (1971) — Canada — Cinéma québécois moderne — Claude Jutra — Ebert Great Movies
+0694. Shaft (1971) — États-Unis — Blaxploitation — Gordon Parks — canon blaxploitation
+0695. Sweet Sweetback's Baadasssss Song (1971) — États-Unis — Blaxploitation — Melvin Van Peebles — fondateur
+0696. WR: Mysteries of the Organism (1971) — Yougoslavie — Black Wave yougoslave — Dušan Makavejev — Ebert Great Movies
+0697. Walkabout (1971) — Australie — Australian New Wave — Nicolas Roeg — Ebert
+0698. Le Grand Duel (1972) — Italie — Spaghetti Western — Giancarlo Santi — spaghetti
+0699. Milano calibro 9 (1972) — Italie — Poliziottesco — Fernando Di Leo — canon poliziottesco
+0700. Pink Flamingos (1972) — États-Unis — Cinéma de transgression — John Waters — canon transgression
+0701. Super Fly (1972) — États-Unis — Blaxploitation — Gordon Parks Jr. — canon blaxploitation
+0702. Coffy (1973) — États-Unis — Blaxploitation — Jack Hill — canon blaxploitation
+0703. High Crime (1973) — Italie — Poliziottesco — Enzo G. Castellari — poliziottesco
+0704. Line Describing a Cone (1973) — États-Unis — Expanded Cinema — Anthony McCall — expanded cinema
+0705. Almost Human (1974) — Italie — Poliziottesco — Umberto Lenzi — poliziottesco
+0706. De cierta manera (1974) — Cuba — Troisième Cinéma — Sara Gómez — ICAIC
+0707. Female Trouble (1974) — États-Unis — Cinéma de transgression — John Waters — Dreamlanders
+0708. Le Principal Ennemi (1974) — Bolivie — Troisième Cinéma — Jorge Sanjinés — Ukamau
+0709. The Enigma of Kaspar Hauser (1974) — Allemagne de l'Ouest — Nouveau cinéma allemand — Werner Herzog — Ebert
+0710. The Street Fighter (1974) — Japon — Cinéma d'exploitation — Shigehiro Ozawa — exploitation martial
+0711. Chronique des années de braise (1975) — Algérie — Cinéma maghrébin postcolonial — Mohammed Lakhdar-Hamina — Palme d'or
+0712. Fantozzi (1975) — Italie — Commedia all'italiana — Luciano Salce — populaire commedia
+0713. Furtivos (1975) — Espagne — Nouvelle vague / cinéma moderne espagnol — José Luis Borau — canon Transition
+0714. Grey Gardens (1975) — États-Unis — Cinéma direct — Albert Maysles & David Maysles — Maysles
+0715. La Bataille du Chili (1975) — Chili — Nouvelle vague chilienne — Patricio Guzmán — cinéma militant
+0716. Switchblade Sisters (1975) — États-Unis — Grindhouse — Jack Hill — exploitation / grindhouse
+0717. The Battle of Chile (1975) — Chili — Cinéma militant — Patricio Guzmán — Troisième Cinéma
+0718. El desencanto (1976) — Espagne — Nouvelle vague / cinéma moderne espagnol — Jaime Chávarri — cine quinqui / Transition
+0719. Harvest: 3,000 Years (1976) — Éthiopie — Cinéma éthiopien contemporain — Haile Gerima — L.A. Rebellion / Éthiopie
+0720. La última cena (1976) — Cuba — Cinéma politique latino-américain — Tomás Gutiérrez Alea — canon ICAIC
+0721. Omar Gatlato (1976) — Algérie — Cinéma maghrébin postcolonial — Merzak Allouache — canon algérien
+0722. Stroszek (1977) — Allemagne de l'Ouest — Nouveau cinéma allemand — Werner Herzog — Ebert
+0723. The Hills Have Eyes (1977) — États-Unis — Grindhouse — Wes Craven — grindhouse
+0724. Jubilee (1978) — Royaume-Uni — Cinéma punk — Derek Jarman — punk britannique
+0725. Newsfront (1978) — Australie — Australian New Wave — Phillip Noyce — canon ANW
+0726. The Chant of Jimmie Blacksmith (1978) — Australie — Australian New Wave — Fred Schepisi — Cannes
+0727. My Brilliant Career (1979) — Australie — Australian New Wave — Gillian Armstrong — Cannes
+0728. The Driller Killer (1979) — États-Unis — No Wave Cinema — Abel Ferrara — No Wave
+0729. Vengeance Is Mine (1979) — Japon — Nouvelle Vague japonaise (Nūberu Bāgu) — Shōhei Imamura — Ebert
+0730. West Indies (1979) — France — Cinéma africain postcolonial — Med Hondo — cinéma diasporique/africain
+0731. Atlantic City (1980) — France — Nouvel Hollywood — Louis Malle — Ebert
+0732. Breaker Morant (1980) — Australie — Australian New Wave — Bruce Beresford — Oscar nominee
+0733. Cannibal Holocaust (1980) — Italie — Cinéma gore — Ruggero Deodato — found footage / gore
+0734. Forbidden Zone (1980) — États-Unis — Psychotronic Cinema — Richard Elfman — cult
+0735. La terrazza (1980) — Italie — Commedia all'italiana — Ettore Scola — Cannes
+0736. Mon oncle d'Amérique (1980) — France — Nouvelle Vague française — Alain Resnais — Ebert
+0737. Diva (1981) — France — Cinéma du look français — Jean-Jacques Beineix — Ebert Great Movies
+0738. Elippathayam (1981) — Inde — Cinéma malayalam contemporain — Adoor Gopalakrishnan — canon Malayalam
+0739. Ms. 45 (1981) — États-Unis — No Wave Cinema — Abel Ferrara — No Wave
+0740. The Beyond (1981) — Italie — Cinéma gore — Lucio Fulci — Fulci
+0741. The Decline of Western Civilization (1981) — États-Unis — Cinéma punk — Penelope Spheeris — doc punk LA
+0742. A Question of Silence (1982) — Pays-Bas — Cinéma féministe — Marleen Gorris — canon féministe
+0743. Batch '81 (1982) — Philippines — Nouvelle Vague philippine — Mike de Leon — canon philippin
+0744. Boat People (1982) — Hong Kong — Nouvelle Vague hongkongaise — Ann Hui — HK New Wave
+0745. Finye (1982) — Mali — Cinéma malien — Souleymane Cissé — Cannes
+0746. Himala (1982) — Philippines — Nouvelle Vague philippine — Ishmael Bernal — canon philippin
+0747. Liquid Sky (1982) — États-Unis — Psychotronic Cinema — Slava Tsukerman — cult No Wave adjacent
+0748. Smithereens (1982) — États-Unis — No Wave Cinema — Susan Seidelman — Cannes
+0749. Veronika Voss (1982) — Allemagne de l'Ouest — Nouveau cinéma allemand — Rainer Werner Fassbinder — Ours d'or / Ebert
+0750. Born in Flames (1983) — États-Unis — Cinéma féministe — Lizzie Borden — No Wave / féministe
+0751. El Sur (1983) — Espagne — Nouvelle vague / cinéma moderne espagnol — Víctor Erice — canon Erice
+0752. The Ballad of Narayama (1983) — Japon — Nouvelle Vague japonaise (Nūberu Bāgu) — Shōhei Imamura — Palme d'or / Ebert
+0753. When the Mountains Tremble (1983) — États-Unis — Cinéma militant — Pamela Yates — doc militant
+0754. Repentance (1984) — Géorgie — Nouvelle vague géorgienne — Tengiz Abuladze — Cannes
+0755. Repentir (1984) — Géorgie — Nouvelle vague géorgienne — Tengiz Abuladze — Cannes
+0756. Repo Man (1984) — États-Unis — Cinéma punk — Alex Cox — psychotronic / punk
+0757. The Toxic Avenger (1984) — États-Unis — Psychotronic Cinema — Michael Herz & Lloyd Kaufman — Troma
+0758. Un dimanche à la campagne (1984) — France — Nouvelle Vague française — Bertrand Tavernier — Ebert
+0759. Yellow Earth (1984) — Chine — Cinquième génération chinoise — Chen Kaige — Hong Kong Film Festival
+0760. Subway (1985) — France — Cinéma du look français — Luc Besson — César
+0761. Taipei Story (1985) — Taïwan — Nouvelle Vague taïwanaise — Edward Yang — canon Taiwan New Cinema
+0762. The Legend of Suram Fortress (1985) — Géorgie — Nouvelle vague géorgienne — Sergei Parajanov — canon
+0763. 37°2 le matin (1986) — France — Cinéma du look français — Jean-Jacques Beineix — Oscar nominee
+0764. A Better Tomorrow (1986) — Hong Kong — Nouvelle Vague hongkongaise — John Woo — HK New Wave action
+0765. Mauvais Sang (1986) — France — Cinéma du look français — Leos Carax — Cannes
+0766. Sarraounia (1986) — Burkina Faso — Cinéma africain postcolonial — Med Hondo — Cannes
+0767. Sid and Nancy (1986) — Royaume-Uni — Cinéma punk — Alex Cox — biopic punk
+0768. The Terrorizers (1986) — Taïwan — Nouvelle Vague taïwanaise — Edward Yang — canon Taiwan
+0769. Au revoir les enfants (1987) — France — Nouvelle Vague française — Louis Malle — Ebert
+0770. Noce en Galilée (1987) — Palestine — Cinéma palestinien — Michel Khleifi — Cannes
+0771. Rouge (1987) — Hong Kong — Nouvelle Vague hongkongaise — Stanley Kwan — Golden Horse
+0772. Ashik Kerib (1988) — Géorgie — Nouvelle vague géorgienne — Sergei Parajanov — canon
+0773. Camp de Thiaroye (1988) — Sénégal — Cinéma sénégalais — Ousmane Sembène — Venise
+0774. Histoire(s) du cinéma (1988) — France — Essay Film / cinéma-essai — Jean-Luc Godard — essai Godard
+0775. Red Sorghum (1988) — Chine — Cinquième génération chinoise — Zhang Yimou — Ours d'or
+0776. Jesus of Montreal (1989) — Canada — Cinéma québécois moderne — Denys Arcand — Cannes
+0777. Santa Sangre (1989) — Mexique — Cinéma politique latino-américain — Alejandro Jodorowsky — Ebert
+0778. Halfaouine (1990) — Tunisie — Cinéma maghrébin postcolonial — Férid Boughedir — canon maghrébin
+0779. Song of the Exile (1990) — Hong Kong — Nouvelle Vague hongkongaise — Ann Hui — HK New Wave
+0780. Tilaï (1990) — Burkina Faso — Cinéma africain postcolonial — Idrissa Ouédraogo — Palme d'or
+0781. Edward II (1991) — Royaume-Uni — New Queer Cinema — Derek Jarman — Venise
+0782. La Belle Noiseuse (1991) — France — Nouvelle Vague française — Jacques Rivette — Ebert
+0783. Bad Lieutenant (1992) — États-Unis — Cinéma de transgression — Abel Ferrara — Cannes
+0784. Braindead (1992) — Nouvelle-Zélande — Cinéma gore — Peter Jackson — splatter
+0785. Conte d'hiver (1992) — France — Nouvelle Vague française — Éric Rohmer — Ebert
+0786. Guelwaar (1992) — Sénégal — Cinéma sénégalais — Ousmane Sembène — Cannes
+0787. Hard Boiled (1992) — Hong Kong — Nouvelle Vague hongkongaise — John Woo — HK New Wave
+0788. Living in Bondage (1992) — Nigeria — Cinéma nigérian / Nollywood — Chris Obi Rapu — fondateur Nollywood
+0789. Léolo (1992) — Canada — Cinéma québécois moderne — Jean-Claude Lauzon — Cannes / Ebert
+0790. Quartier Mozart (1992) — Cameroun — Cinéma africain postcolonial — Jean-Pierre Bekolo — Cannes
+0791. Rabi (1992) — Burkina Faso — Cinéma africain postcolonial — Gaston Kaboré — FESPACO
+0792. Rebels of the Neon God (1992) — Taïwan — Slow Cinema — Tsai Ming-liang — canon Tsai
+0793. Sarafina! (1992) — Afrique du Sud — Cinéma sud-africain contemporain — Darrell Roodt — canon anti-apartheid
+0794. Farewell My Concubine (1993) — Chine — Cinquième génération chinoise — Chen Kaige — Palme d'or
+0795. Fresa y chocolate (1993) — Cuba — Cinéma politique latino-américain — Tomás Gutiérrez Alea & Juan Carlos Tabío — Oscar nominee
+0796. L'Odeur de la papaye verte (1993) — Viêt Nam — Cinéma vietnamien moderne — Tran Anh Hung — Caméra d'or / Oscar nominee
+0797. The Blue Kite (1993) — Chine — Cinquième génération chinoise — Tian Zhuangzhuang — Ebert
+0798. A Confucian Confusion (1994) — Taïwan — Nouvelle Vague taïwanaise — Edward Yang — Cannes
+0799. Ashes of Time (1994) — Hong Kong — Nouvelle Vague hongkongaise — Wong Kar-wai — canon WKW
+0800. Crumb (1994) — États-Unis — Cinéma-vérité — Terry Zwigoff — Ebert
+0801. Exotica (1994) — Canada — Cinéma québécois moderne — Atom Egoyan — Ebert
+0802. Heavenly Creatures (1994) — Nouvelle-Zélande — Cinéma néo-zélandais — Peter Jackson — Venise
+0803. In the Heat of the Sun (1994) — Chine — Sixième génération chinoise — Jiang Wen — Venise
+0804. Les Gens de la rizière (1994) — Cambodge — Cinéma cambodgien moderne — Rithy Panh — Cannes
+0805. Les Silences du palais (1994) — Tunisie — Cinéma maghrébin postcolonial — Moufida Tlatli — Cannes
+0806. Once Were Warriors (1994) — Nouvelle-Zélande — Cinéma néo-zélandais — Lee Tamahori — canon NZ
+0807. Vive l'amour (1994) — Taïwan — Slow Cinema — Tsai Ming-liang — Venise
+0808. Cyclo (1995) — Viêt Nam — Cinéma vietnamien moderne — Tran Anh Hung — Lion d'or
+0809. Fallen Angels (1995) — Hong Kong — Nouvelle Vague hongkongaise — Wong Kar-wai — canon WKW
+0810. Guimba (1995) — Mali — Cinéma malien — Cheick Oumar Sissoko — Cannes
+0811. La Cérémonie (1995) — France — Nouvelle Vague française — Claude Chabrol — Ebert
+0812. La Haine (1995) — France — Cinéma diasporique — Mathieu Kassovitz — Cannes
+0813. Mee Pok Man (1995) — Singapour — Nouvelle vague singapourienne — Eric Khoo — canon Khoo
+0814. The Doom Generation (1995) — États-Unis — Cinéma de transgression — Gregg Araki — New Queer / transgression
+0815. Aristotle's Plot (1996) — Zimbabwe — Cinéma africain postcolonial — Jean-Pierre Bekolo — BFI 100 Years
+0816. Gabbeh (1996) — Iran — Nouvelle vague iranienne — Mohsen Makhmalbaf — Cannes
+0817. 12 Storeys (1997) — Singapour — Nouvelle vague singapourienne — Eric Khoo — Cannes
+0818. Buud Yam (1997) — Burkina Faso — Cinéma africain postcolonial — Gaston Kaboré — Cannes
+0819. Fools (1997) — Afrique du Sud — Cinéma sud-africain contemporain — Ramadan Suleman — Cannes
+0820. Made in Hong Kong (1997) — Hong Kong — Nouvelle Vague hongkongaise — Fruit Chan — Cannes
+0821. Ossos (1997) — Portugal — Slow Cinema — Pedro Costa — Venise
+0822. Xiao Wu (1997) — Chine — Sixième génération chinoise — Jia Zhangke — Berlin
+0823. Eternity and a Day (1998) — Grèce — Slow Cinema — Theo Angelopoulos — Palme d'or
+0824. Khrustalyov, ma voiture ! (1998) — Russie — Cinéma post-soviétique — Aleksei German — Cannes
+0825. La Vie sur terre (1998) — Mali — Cinéma malien — Abderrahmane Sissako — Cannes
+0826. Show Me Love (1998) — Suède — Nouvelle vague scandinave — Lukas Moodysson — canon scandinave 90s
+0827. The Hole (1998) — Taïwan — Slow Cinema — Tsai Ming-liang — Cannes
+0828. The Idiots (1998) — Danemark — Dogme 95 — Lars von Trier — Cannes
+0829. West Beyrouth (1998) — Liban — Nouvelle vague libanaise — Ziad Doueiri — Cannes
+0830. Mifune (1999) — Danemark — Dogme 95 — Søren Kragh-Jacobsen — Berlin
+0831. Peppermint Candy (1999) — Corée du Sud — Nouvelle Vague sud-coréenne — Lee Chang-dong — canon coréen
+0832. The Blair Witch Project (1999) — États-Unis — Found Footage Cinema — Daniel Myrick & Eduardo Sánchez — found footage pop
+0833. The Little Girl Who Sold the Sun (1999) — Sénégal — Cinéma sénégalais — Djibril Diop Mambéty — court/moyen canon
+0834. Vanaprastham (1999) — Inde — Cinéma malayalam contemporain — Shaji N. Karun — Cannes
+0835. Italian for Beginners (2000) — Danemark — Dogme 95 — Lone Scherfig — Berlin
+0836. Joint Security Area (2000) — Corée du Sud — Nouvelle Vague sud-coréenne — Park Chan-wook — canon coréen
+0837. La Verticale de l'été (2000) — Viêt Nam — Cinéma vietnamien moderne — Tran Anh Hung — canon vietnamien
+0838. Lumumba (2000) — France — Cinéma postcolonial — Raoul Peck — Cannes
+0839. Mysterious Object at Noon (2000) — Thaïlande — Cinéma thaïlandais contemporain — Apichatpong Weerasethakul — festival
+0840. Nueve reinas (2000) — Argentine — Nuevo Cine Argentino — Fabián Bielinsky — canon argentino
+0841. Tears of the Black Tiger (2000) — Thaïlande — Cinéma thaïlandais contemporain — Wisit Sasanatieng — Cannes
+0842. Together (2000) — Suède — Nouvelle vague scandinave — Lukas Moodysson — canon Moodysson
+0843. Atanarjuat, la légende de l'homme rapide (2001) — Canada — Cinéma amérindien / Indigenous Cinema — Zacharias Kunuk — Caméra d'or
+0844. Donnie Darko (2001) — États-Unis — Psychotronic Cinema — Richard Kelly — cult 2000s
+0845. Faat Kiné (2001) — Sénégal — Cinéma sénégalais — Ousmane Sembène — canon tardif
+0846. Inch'Allah dimanche (2001) — Algérie — Cinéma maghrébin postcolonial — Yamina Benguigui — cinéma diasporique/maghrébin
+0847. Le Seigneur des anneaux : La Communauté de l'anneau (2001) — Nouvelle-Zélande — Cinéma néo-zélandais — Peter Jackson — Oscars / pop-canon
+0848. Trouble Every Day (2001) — France — New French Extremity — Claire Denis — Cannes
+0849. What Time Is It There? (2001) — Taïwan — Slow Cinema — Tsai Ming-liang — Cannes
+0850. Y tu mamá también (2001) — Mexique — Nuevo Cine Mexicano — Alfonso Cuarón — Sight & Sound / Ebert
+0851. Abouna (2002) — Tchad — Cinéma africain postcolonial — Mahamat-Saleh Haroun — Cannes
+0852. En attendant le bonheur (2002) — Mauritanie — Cinéma malien — Abderrahmane Sissako — Cannes
+0853. Funny Ha Ha (2002) — États-Unis — Mumblecore — Andrew Bujalski — fondateur mumblecore
+0854. Hero (2002) — Chine — Cinquième génération chinoise — Zhang Yimou — Oscar nominee
+0855. Intervention divine (2002) — Palestine — Cinéma palestinien — Elia Suleiman — Jury Cannes
+0856. Irreversible (2002) — France — New French Extremity — Gaspar Noé — Cannes
+0857. Japón (2002) — Mexique — Nuevo Cine Mexicano — Carlos Reygadas — canon Nuevo Cine Mexicano
+0858. L'Arche russe (2002) — Russie — Cinéma post-soviétique — Alexander Sokurov — Cannes
+0859. Unknown Pleasures (2002) — Chine — Sixième génération chinoise — Jia Zhangke — Cannes
+0860. Uzak (2002) — Turquie — Cinéma turc moderne — Nuri Bilge Ceylan — Cannes
+0861. Whale Rider (2002) — Nouvelle-Zélande — Cinéma néo-zélandais — Niki Caro — Oscar nominee
+0862. 15 (2003) — Singapour — Nouvelle vague singapourienne — Royston Tan — canon Singapour
+0863. Carandiru (2003) — Brésil — Retomada brésilienne — Héctor Babenco — Cannes
+0864. Crimson Gold (2003) — Iran — Nouvelle génération iranienne — Jafar Panahi — Cannes
+0865. Haute Tension (2003) — France — New French Extremity — Alexandre Aja — NFE
+0866. Le Retour (2003) — Russie — Cinéma post-soviétique — Andrey Zvyagintsev — Lion d'or
+0867. Les Invasions barbares (2003) — Canada — Cinéma québécois moderne — Denys Arcand — Oscar
+0868. Memories of Murder (2003) — Corée du Sud — Nouvelle Vague sud-coréenne — Bong Joon-ho — canon coréen
+0869. Ong-Bak (2003) — Thaïlande — Cinéma thaïlandais contemporain — Prachya Pinkaew — cinéma d'action thaï
+0870. Osuofia in London (2003) — Nigeria — Cinéma nigérian / Nollywood — Kingsley Ogoro — classique comique Nollywood
+0871. S21, la machine de mort khmère rouge (2003) — Cambodge — Cinéma cambodgien moderne — Rithy Panh — Cannes
+0872. Spring, Summer, Fall, Winter... and Spring (2003) — Corée du Sud — Nouvelle Vague sud-coréenne — Kim Ki-duk — Ebert
+0873. Suite Habana (2003) — Cuba — Cinéma politique latino-américain — Fernando Pérez — canon cubain 2000
+0874. Evolution of a Filipino Family (2004) — Philippines — Slow Cinema — Lav Diaz — slow cinema Diaz
+0875. Head-On (2004) — Allemagne — Cinéma diasporique — Fatih Akin — Ours d'or
+0876. La niña santa (2004) — Argentine — Nuevo Cine Argentino — Lucrecia Martel — Cannes
+0877. Machuca (2004) — Chili — Nouvelle vague chilienne — Andrés Wood — canon chilien
+0878. Moolaadé (2004) — Sénégal — Cinéma sénégalais — Ousmane Sembène — Ebert Great Movies
+0879. Temporada de patos (2004) — Mexique — Nuevo Cine Mexicano — Fernando Eimbcke — canon Mexique 2000
+0880. The Night of Truth (2004) — Burkina Faso — Cinéma africain postcolonial — Fanta Régina Nacro — canon femmes Afrique
+0881. Yesterday (2004) — Afrique du Sud — Cinéma sud-africain contemporain — Darrell Roodt — Oscar nominee
+0882. Brokeback Mountain (2005) — États-Unis — Cinéma queer contemporain — Ang Lee — Oscars / New Queer héritage
+0883. Paradise Now (2005) — Palestine — Cinéma palestinien — Hany Abu-Assad — Oscar nominee / Berlin
+0884. The Puffy Chair (2005) — États-Unis — Mumblecore — Jay Duplass & Mark Duplass — SXSW
+0885. Tsotsi (2005) — Afrique du Sud — Cinéma sud-africain contemporain — Gavin Hood — Oscar
+0886. 12:08 East of Bucharest (2006) — Roumanie — Nouveau cinéma roumain / Romanian New Wave — Corneliu Porumboiu — Caméra d'or
+0887. Babel (2006) — Mexique — Nuevo Cine Mexicano — Alejandro González Iñárritu — Ebert / Oscars
+0888. Bamako (2006) — Mali — Cinéma malien — Abderrahmane Sissako — Cannes
+0889. Climates (2006) — Turquie — Cinéma turc moderne — Nuri Bilge Ceylan — Cannes
+0890. Indigènes (2006) — Algérie — Cinéma maghrébin postcolonial — Rachid Bouchareb — Cannes
+0891. Offside (2006) — Iran — Nouvelle génération iranienne — Jafar Panahi — Ours d'argent
+0892. Opera Jawa (2006) — Indonésie — Cinéma indonésien contemporain — Garin Nugroho — Venise
+0893. Pan's Labyrinth (2006) — Mexique — Nuevo Cine Mexicano — Guillermo del Toro — Ebert / Oscars
+0894. Still Life (2006) — Chine — Sixième génération chinoise — Jia Zhangke — Lion d'or
+0895. Volver (2006) — Espagne — Nouvelle vague / cinéma moderne espagnol — Pedro Almodóvar — Cannes
+0896. 4 mois, 3 semaines, 2 jours (2007) — Roumanie — Nouveau cinéma roumain / Romanian New Wave — Cristian Mungiu — Palme d'or
+0897. Autumn Ball (2007) — Estonie — Cinéma balte contemporain — Veiko Õunpuu — canon balte
+0898. Caramel (2007) — Liban — Nouvelle vague libanaise — Nadine Labaki — Cannes
+0899. Cargo 200 (2007) — Russie — Cinéma post-soviétique — Aleksei Balabanov — canon russe 2000
+0900. Death Proof (2007) — États-Unis — Grindhouse — Quentin Tarantino — hommage grindhouse
+0901. Hannah Takes the Stairs (2007) — États-Unis — Mumblecore — Joe Swanberg — SXSW
+0902. Planet Terror (2007) — États-Unis — Grindhouse — Robert Rodriguez — hommage grindhouse
+0903. Silent Light (2007) — Mexique — Nuevo Cine Mexicano — Carlos Reygadas — Cannes
+0904. The Band's Visit (2007) — Israël — Nouvelle vague israélienne — Eran Kolirin — Cannes
+0905. Tropa de Elite (2007) — Brésil — Retomada brésilienne — José Padilha — Ours d'or
+0906. [Rec] (2007) — Espagne — Found Footage Cinema — Jaume Balagueró & Paco Plaza — found footage horreur
+0907. À l'intérieur (2007) — France — New French Extremity — Alexandre Bustillo & Julien Maury — NFE
+0908. Departures (2008) — Japon — Âge d'or du cinéma japonais — Yōjirō Takita — Oscar
+0909. Entre les murs (2008) — France — Cinéma diasporique — Laurent Cantet — Palme d'or
+0910. Historias extraordinarias (2008) — Argentine — Nuevo Cine Argentino — Mariano Llinás — canon NCA
+0911. Jerusalema (2008) — Afrique du Sud — Cinéma sud-africain contemporain — Ralph Ziman — canon SA
+0912. Martyrs (2008) — France — New French Extremity — Pascal Laugier — fantastique FR
+0913. Nollywood Babylon (2008) — Canada — Cinéma nigérian / Nollywood — Ben Addelman & Samir Mallal — doc Nollywood
+0914. Teza (2008) — Éthiopie — Cinéma éthiopien contemporain — Haile Gerima — Venise
+0915. Tony Manero (2008) — Chili — Nouvelle vague chilienne — Pablo Larraín — Cannes
+0916. Valse avec Bachir (2008) — Israël — Nouvelle vague israélienne — Ari Folman — Oscar nominee
+0917. Ajami (2009) — Israël — Nouvelle vague israélienne — Scandar Copti & Yaron Shani — Oscar nominee
+0918. District 9 (2009) — Afrique du Sud — Cinéma sud-africain contemporain — Neill Blomkamp — Oscar nominee
+0919. Lebanon (2009) — Israël — Nouvelle vague israélienne — Samuel Maoz — Lion d'or
+0920. Police, Adjective (2009) — Roumanie — Nouveau cinéma roumain / Romanian New Wave — Corneliu Porumboiu — Cannes
+0921. The Figurine (2009) — Nigeria — Cinéma nigérian / Nollywood — Kunle Afolayan — New Nigerian Cinema
+0922. The Time That Remains (2009) — Palestine — Cinéma palestinien — Elia Suleiman — Cannes
+0923. Boy (2010) — Nouvelle-Zélande — Cinéma néo-zélandais — Taika Waititi — Sundance
+0924. Même la pluie (2010) — Espagne — Cinéma militant — Icíar Bollaín — Berlin
+0925. Poetry (2010) — Corée du Sud — Nouvelle Vague sud-coréenne — Lee Chang-dong — Cannes
+0926. The Clock (2010) — Royaume-Uni — Found Footage Cinema — Christian Marclay — Venise
+0927. Un homme qui crie (2010) — Tchad — Cinéma africain postcolonial — Mahamat-Saleh Haroun — Cannes
+0928. 5 Broken Cameras (2011) — Palestine — Cinéma palestinien — Emad Burnat & Guy Davidi — Oscar nominee
+0929. El estudiante (2011) — Argentine — Nuevo Cine Argentino — Santiago Mitre — canon NCA
+0930. Elena (2011) — Russie — Cinéma post-soviétique — Andrey Zvyagintsev — Cannes
+0931. Et maintenant on va où ? (2011) — Liban — Nouvelle vague libanaise — Nadine Labaki — Cannes
+0932. Le Havre (2011) — Finlande — Nouvelle vague scandinave — Aki Kaurismäki — Cannes
+0933. The Raid (2011) — Indonésie — Cinéma indonésien contemporain — Gareth Evans — canon action indo
+0934. This Is Not a Film (2011) — Iran — Nouvelle génération iranienne — Jafar Panahi & Mojtaba Mirtahmasb — Cannes
+0935. Frances Ha (2012) — États-Unis — Mumblecore — Noah Baumbach — Telluride
+0936. No (2012) — Chili — Nouvelle vague chilienne — Pablo Larraín — Oscar nominee
+0937. O Som ao Redor (2012) — Brésil — Retomada brésilienne — Kleber Mendonça Filho — canon Retomada
+0938. Phone Swap (2012) — Nigeria — Cinéma nigérian / Nollywood — Kunle Afolayan — New Nollywood
+0939. The Meeting (2012) — Nigeria — Cinéma nigérian / Nollywood — Mildred Okwo — New Nollywood
+0940. Vanishing Waves (2012) — Lituanie — Cinéma balte contemporain — Kristina Buožytė — canon lituanien
+0941. A Touch of Sin (2013) — Chine — Sixième génération chinoise — Jia Zhangke — Cannes
+0942. Ilo Ilo (2013) — Singapour — Nouvelle vague singapourienne — Anthony Chen — Caméra d'or
+0943. L'Image manquante (2013) — Cambodge — Cinéma cambodgien moderne — Rithy Panh — Oscar nominee / Un Certain Regard
+0944. L'Inconnu du lac (2013) — France — Cinéma queer contemporain — Alain Guiraudie — Cannes
+0945. Norte, the End of History (2013) — Philippines — Nouvelle Vague philippine — Lav Diaz — Cannes
+0946. Omar (2013) — Palestine — Cinéma palestinien — Hany Abu-Assad — Oscar nominee
+0947. Rhymes for Young Ghouls (2013) — Canada — Cinéma amérindien / Indigenous Cinema — Jeff Barnaby — TIFF
+0948. Tangerines (2013) — Estonie — Cinéma balte contemporain — Zaza Urushadze — Oscar nominee
+0949. The Excursionist (2013) — Lettonie — Cinéma balte contemporain — Audrius Juzėnas — canon balte
+0950. A Pigeon Sat on a Branch Reflecting on Existence (2014) — Suède — Nouvelle vague scandinave — Roy Andersson — Venise
+0951. Concerning Violence (2014) — Suède — Cinéma postcolonial — Göran Hugo Olsson — Berlin / Fanon
+0952. Difret (2014) — Éthiopie — Cinéma éthiopien contemporain — Zeresenay Berhane Mehari — Sundance / Berlin
+0953. Force Majeure (2014) — Suède — Nouvelle vague scandinave — Ruben Östlund — Cannes
+0954. Gett (2014) — Israël — Nouvelle vague israélienne — Ronit Elkabetz & Shlomi Elkabetz — Cannes
+0955. Güeros (2014) — Mexique — Nuevo Cine Mexicano — Alonso Ruizpalacios — Berlin
+0956. Horse Money (2014) — Portugal — Slow Cinema — Pedro Costa — Locarno
+0957. In the Crosswind (2014) — Estonie — Cinéma balte contemporain — Martti Helde — canon Estonie
+0958. Leviathan (2014) — Russie — Cinéma post-soviétique — Andrey Zvyagintsev — Oscar nominee / Cannes
+0959. October 1 (2014) — Nigeria — Cinéma nigérian / Nollywood — Kunle Afolayan — canon Afolayan
+0960. Relatos salvajes (2014) — Argentine — Nuevo Cine Argentino — Damián Szifron — Oscar nominee
+0961. Cimetière de la splendeur (2015) — Thaïlande — Cinéma thaïlandais contemporain — Apichatpong Weerasethakul — Cannes
+0962. Dheepan (2015) — France — Cinéma diasporique — Jacques Audiard — Palme d'or
+0963. Lamb (2015) — Éthiopie — Cinéma éthiopien contemporain — Yared Zeleke — Cannes
+0964. Mustang (2015) — Turquie — Cinéma turc moderne — Deniz Gamze Ergüven — Oscar nominee
+0965. Taxi Téhéran (2015) — Iran — Nouvelle génération iranienne — Jafar Panahi — Ours d'or
+0966. The Club (2015) — Chili — Nouvelle vague chilienne — Pablo Larraín — Berlin
+0967. Aquarius (2016) — Brésil — Retomada brésilienne — Kleber Mendonça Filho — Cannes
+0968. The Wedding Party (2016) — Nigeria — Cinéma nigérian / Nollywood — Kemi Adetiba — box-office Nollywood
+0969. 120 battements par minute (2017) — France — Cinéma queer contemporain — Robin Campillo — Grand Prix Cannes
+0970. Call Me by Your Name (2017) — Italie — Cinéma queer contemporain — Luca Guadagnino — Oscar
+0971. First They Killed My Father (2017) — Cambodge — Cinéma cambodgien moderne — Angelina Jolie — Telluride
+0972. Foxtrot (2017) — Israël — Nouvelle vague israélienne — Samuel Maoz — Venise
+0973. Félicité (2017) — Sénégal — Cinéma sénégalais — Alain Gomis — Berlin
+0974. L'Insulte (2017) — Liban — Nouvelle vague libanaise — Ziad Doueiri — Oscar nominee
+0975. Loveless (2017) — Russie — Cinéma post-soviétique — Andrey Zvyagintsev — Cannes
+0976. Marlina the Murderer in Four Acts (2017) — Indonésie — Cinéma indonésien contemporain — Mouly Surya — Cannes
+0977. Pengabdi Setan (2017) — Indonésie — Cinéma indonésien contemporain — Joko Anwar — horreur indo contemporaine
+0978. The Seen and Unseen (2017) — Indonésie — Cinéma indonésien contemporain — Kamila Andini — Berlin
+0979. The Wound (2017) — Afrique du Sud — Cinéma sud-africain contemporain — John Trengove — Venice
+0980. Une femme fantastique (2017) — Chili — Nouvelle vague chilienne — Sebastián Lelio — Oscar
+0981. A Land Imagined (2018) — Singapour — Nouvelle vague singapourienne — Yeo Siew Hua — Locarno
+0982. Capharnaüm (2018) — Liban — Nouvelle vague libanaise — Nadine Labaki — Oscar nominee / Cannes
+0983. King of Boys (2018) — Nigeria — Cinéma nigérian / Nollywood — Kemi Adetiba — Nollywood contemporain
+0984. Lionheart (2018) — Nigeria — Cinéma nigérian / Nollywood — Genevieve Nnaji — Netflix / TIFF
+0985. Shirkers (2018) — Singapour — Nouvelle vague singapourienne — Sandi Tan — Sundance
+0986. The Third Wife (2018) — Viêt Nam — Cinéma vietnamien moderne — Ash Mayfair — festivals
+0987. Atlantique (2019) — Sénégal — Cinéma sénégalais — Mati Diop — Grand Prix Cannes
+0988. Bacurau (2019) — Brésil — Retomada brésilienne — Kleber Mendonça Filho & Juliano Dornelles — Cannes
+0989. Beanpole (2019) — Russie — Cinéma post-soviétique — Kantemir Balagov — Cannes
+0990. Kumbalangi Nights (2019) — Inde — Cinéma malayalam contemporain — Madhu C. Narayanan — New Malayalam
+0991. Papicha (2019) — Algérie — Cinéma maghrébin postcolonial — Mounia Meddour — Cannes
+0992. The Body Remembers When the World Broke Open (2019) — Canada — Cinéma amérindien / Indigenous Cinema — Elle-Máijá Tailfeathers & Kathleen Hepburn — Berlin
+0993. Beans (2020) — Canada — Cinéma amérindien / Indigenous Cinema — Tracey Deer — TIFF
+0994. Beginning (2020) — Géorgie — Nouvelle vague géorgienne — Dea Kulumbegashvili — San Sebastian
+0995. Citation (2020) — Nigeria — Cinéma nigérian / Nollywood — Kunle Afolayan — Netflix
+0996. The Milkmaid (2020) — Nigeria — Cinéma nigérian / Nollywood — Desmond Ovbiagele — Oscar submission
+0997. Memoria (2021) — Thaïlande — Cinéma thaïlandais contemporain — Apichatpong Weerasethakul — Cannes
+0998. The Great Indian Kitchen (2021) — Inde — Cinéma malayalam contemporain — Jeo Baby — New Malayalam
+0999. The Worst Person in the World (2021) — Norvège — Nouvelle vague scandinave — Joachim Trier — Cannes
+1000. What Do We See When We Look at the Sky? (2021) — Géorgie — Nouvelle vague géorgienne — Alexandre Koberidze — Berlin

@@ -1,0 +1,3 @@
+﻿Drop {CODE}.webp, {CODE}.png, {CODE}.jpg or {CODE}.jpeg here.
+Packaged avatars: AVATAR_01 … AVATAR_10.
+See specs/ASSETS.md

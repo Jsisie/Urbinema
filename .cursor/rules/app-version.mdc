@@ -1,0 +1,13 @@
+---
+description: Ne pas incrémenter la version tant qu'aucune APK n'a été publiée
+alwaysApply: true
+---
+
+# Version de l'app
+
+La version courante est **0.2.4** (`versionCode` 22).
+
+- Ne **pas** bumper `versionName` / `versionCode` à chaque correctif ou ajout.
+- Bumper uniquement si Léo le demande explicitement, ou au moment d'une
+  vraie release APK.
+- L'écran À propos lit `BuildConfig.VERSION_NAME`.

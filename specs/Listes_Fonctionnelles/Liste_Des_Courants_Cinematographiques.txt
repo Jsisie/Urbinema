@@ -1,0 +1,172 @@
+LISTE DES COURANTS / MOUVEMENTS CINÉMATOGRAPHIQUES — URBINEMA
+Fichier de travail éditorial. Doublon volontaire du cahier fonctionnel (§5.7).
+Dernière mise à jour : 2026-09-20
+
+PÉRIMÈTRE V1 : les 50 premiers (n°1 à n°50, jusqu'à "Slow Cinema" inclus).
+Réserve V2+ : n°51 à n°100, non traités par l'application.
+
+VOCABULAIRE : mouvements, styles, courants, manifestes, écoles et vagues
+sont des types de `cinema_characteristics`. Côté interface, on parle selon
+le contexte de courants, collections, parcours ou périodes.
+
+RÈGLE : un film possède zéro à plusieurs caractéristiques via la liaison
+N–N `movies_characteristics`. À ne pas confondre avec les GENRES
+(aventure, thriller, comédie, documentaire...), également en N–N.
+
+------------------------------------------------------------------------
+V1 — MOUVEMENTS TRAITÉS PAR L'APPLICATION (50)
+------------------------------------------------------------------------
+
+1.  Hollywood classique
+2.  Montage soviétique
+3.  Néoréalisme italien
+4.  Nouvelle Vague française
+5.  Expressionnisme allemand
+6.  Nouvel Hollywood
+7.  Surréalisme cinématographique
+8.  Film noir
+9.  Impressionnisme français
+10. Nouvelle Vague japonaise (Nūberu Bāgu)
+11. Nouveau cinéma allemand
+12. Âge d'or du cinéma japonais
+13. Nouvelle Vague taïwanaise
+14. Cinéma Novo brésilien
+15. Cinéma soviétique / russe moderne
+16. Cinéma classique italien
+17. Nouvelle Vague hongkongaise
+18. Cinéma politique italien
+19. Cinéma parallèle indien (Parallel Cinema)
+20. Cinéma indépendant américain
+21. École polonaise du cinéma
+22. Cinéma-vérité
+23. Nouvelle Vague tchécoslovaque
+24. Cinéma direct
+25. Spaghetti Western
+26. Nouvelle Vague sud-coréenne
+27. Cinquième génération chinoise
+28. Réalisme poétique français
+29. Cinéma expérimental américain / New American Cinema
+30. Troisième Cinéma
+31. Nouvelle vague iranienne
+32. Sixième génération chinoise
+33. École britannique documentaire / documentaire social britannique
+34. Free Cinema britannique
+35. Nouvelle Vague britannique / Kitchen Sink
+36. Commedia all'italiana
+37. Nouvelle génération iranienne
+38. Cinéma québécois moderne
+39. Australian New Wave
+40. Cinéma afro-américain indépendant / L.A. Rebellion
+41. Dogme 95
+42. New Queer Cinema
+43. Nouveau cinéma roumain / Romanian New Wave
+44. Nouvelle Vague hongroise
+45. Black Wave yougoslave
+46. Cinéma politique latino-américain
+47. Nouvelle Vague philippine
+48. Cinéma du look français
+49. New French Extremity
+50. Slow Cinema
+
+========================================================================
+HORS V1 — RÉSERVE V2+ (n°51 à 100)
+========================================================================
+
+51. Nuevo Cine Argentino
+52. Nuevo Cine Mexicano
+53. Nouvelle vague / cinéma moderne espagnol
+54. Nouvelle vague scandinave
+55. Cinéma turc moderne
+56. Cinéma maghrébin postcolonial
+57. Cinéma africain postcolonial
+58. Nouvelle vague chilienne
+59. Retomada brésilienne
+60. Cinéma thaïlandais contemporain
+61. Cinéma indonésien contemporain
+62. Cinéma malayalam contemporain
+63. Nouvelle vague singapourienne
+64. Cinéma vietnamien moderne
+65. Cinéma cambodgien moderne
+66. Nouvelle vague géorgienne
+67. Cinéma balte contemporain
+68. Cinéma post-soviétique
+69. Nouvelle vague israélienne
+70. Cinéma palestinien
+71. Nouvelle vague libanaise
+72. Cinéma nigérian / Nollywood
+73. Cinéma sud-africain contemporain
+74. Cinéma sénégalais
+75. Cinéma malien
+76. Cinéma éthiopien contemporain
+77. Cinéma néo-zélandais
+78. Cinéma amérindien / Indigenous Cinema
+79. Cinéma féministe
+80. Cinéma queer contemporain
+81. Cinéma militant
+82. Cinéma postcolonial
+83. Cinéma diasporique
+84. Cinéma de transgression
+85. Cinéma punk
+86. No Wave Cinema
+87. Blaxploitation
+88. Poliziottesco
+89. Mumblecore
+90. Cinéma d'exploitation
+91. Grindhouse
+92. Cinéma gore
+93. Psychotronic Cinema
+94. Cinéma abstrait
+95. Cinéma dadaïste
+96. Cinéma pur
+97. Structural Film
+98. Expanded Cinema
+99. Found Footage Cinema
+100. Essay Film / cinéma-essai
+
+========================================================================
+AJOUTS ÉDITORIAUX (n°101–102) — périodes hollywoodiennes manquantes
+========================================================================
+
+Hollywood classique (n°1) et Nouvel Hollywood (n°6) restent les entrées V1.
+Ces deux ajouts précisent des âges d'or souvent cités à part dans les listes
+cinéphiles, et évitent de tout coller dans « classique » ou « New Hollywood ».
+
+101. Âge d'or d'Hollywood
+     Studio system, star system et genres des majors, ~1927–1960.
+     Chevauche Hollywood classique (n°1) : ici l'accent est mis sur
+     l'apogée industrielle (MGM, Warner, Paramount, Fox, RKO), la comédie
+     sophistiquée, le musical studio, le mélodrame et le prestige d'avant
+     le Code qui s'effrite.
+
+102. Nouvel âge d'or hollywoodien
+     Renaissance prestige + indés US ~1990–2015 (Tarantino, PTA, Coen,
+     Fincher, Spike Lee, Nolan, Coppola Sofia, etc.), entre la fin du
+     Nouvel Hollywood et le blockbuster contemporain.
+     Chevauche Cinéma indépendant américain (n°20) et New Queer Cinema (n°42).
+
+========================================================================
+REMARQUES ÉDITORIALES
+========================================================================
+
+- Certaines entrées ne sont pas des mouvements au sens académique strict
+  (Hollywood classique, Film noir, Spaghetti Western, Cinéma indépendant
+  américain relèvent du genre, de l'industrie ou de la période).
+  Elles deviennent des `cinema_characteristics` dont le type explicite la
+  nature : MOVEMENT, CURRENT, STYLE, PERIOD, SCHOOL ou WAVE.
+
+- Chevauchements connus, désormais représentables puisqu'un film peut avoir
+  zéro, une ou plusieurs caractéristiques :
+    Cinéma-vérité / Cinéma direct
+    Cinéma soviétique moderne / Cinéma post-soviétique (hors V1)
+    Commedia all'italiana / Cinéma classique italien
+    Spaghetti Western / Cinéma politique italien
+    New Queer Cinema / Cinéma indépendant américain
+    Hollywood classique (n°1) / Âge d'or d'Hollywood (n°101)
+    Nouvel Hollywood (n°6) / Nouvel âge d'or hollywoodien (n°102)
+
+- Beaucoup de films n'appartiendront à aucune de ces 50 caractéristiques.
+  C'est valide : aucune valeur artificielle « Hors mouvement » n'est créée.
+
+- Chaque caractéristique V1 aura besoin, au minimum : un code stable, un type,
+  un nom affiché, une période éventuelle, des pays associés, une difficulté,
+  une description et une image locale facultative.
