@@ -41,7 +41,7 @@ avatars packagés, affiches par code, catalogue démo élargi.
 - Atlas = **listes** (icône liste, TalkBack).
 - **0.2.1 :** première carte du ciel (autour d’un film).
 - **0.2.3 :** couleurs par type + légende, pas de doublons de libellé,
-  pop-up badges persistés, historique Accueil 50 + tout voir.
+  pop-up badges persistés, historique Accueil 30 + tout voir.
 - Thème, langue, grain persistés. Aide. À propos.
 
 Photothèque (photo perso depuis la galerie du téléphone) : **pas** en V1.
@@ -68,6 +68,13 @@ collections / caractéristiques, export CSV. Ce n’est pas le cœur de la V2.
 
 Culture / analyse, reco, social, cloud, TMDb **dans l’app**, CMS web : pas
 avant, et plusieurs de ces lignes **peuvent ne jamais exister**.
+
+**Collections — ordre des films (noté 2026-09-21).** Aujourd’hui chaque
+collection liste ses films par **année de sortie croissante**. En V3,
+remplacer cet ordre chronologique par un ordre **éditorial**, du plus
+accessible au plus complexe à voir (Initiation déjà un peu dans cet esprit).
+Le `displayOrder` de `collections_movies` est le bon levier : pas besoin
+d’un second champ. L’Atlas (pays, courants, etc.) garde son tri utilisateur.
 
 ---
 

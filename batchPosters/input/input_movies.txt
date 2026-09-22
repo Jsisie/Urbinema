@@ -1,38 +1,23 @@
-# Films sans affiche après le batch des 1000.
-# 30 NOT_FOUND TMDB + 4 fiche OK sans image (tmdbId renseigné).
-# Relancer : python posters_batch.py fetch
+# Films sans affiche TMDB (relancer : python posters_batch.py fetch).
 frenchTitle;releaseYear;director;code;originalTitle;demand;tmdbId
-"Ivan le Terrible, 2e partie";1946;"Sergei Eisenstein";IVAN_LE_TERRIBLE_2E_PARTIE_1946;"Ivan the Terrible, Part II"
-"Le Conte du chrysanthème tardif";1939;"Kenji Mizoguchi";LE_CONTE_DU_CHRYSANTHEME_TARDIF_1939;"The Story of the Last Chrysanthemum"
 "Tie Xi Qu: West of the Tracks";2002;"Wang Bing";TIE_XI_QU_WEST_OF_THE_TRACKS_2002;"Tie Xi Qu: West of the Tracks"
-"Au fil des oliviers";1994;"Abbas Kiarostami";AU_FIL_DES_OLIVIERS_1994;"Through the Olive Trees"
 "Under the Skin";2013;"Jonathan Glazer";UNDER_THE_SKIN_2013;"Under the Skin"
-"Cette vérité que l'on cache";1937;"Leo McCarey";CETTE_VERITE_QUE_L_ON_CACHE_1937;"The Awful Truth"
-"Le Crime de M. Lange";1936;"Jean Renoir";LE_CRIME_DE_M_LANGE_1936;"The Crime of Monsieur Lange"
 "Twin Peaks: The Return [TV]";2017;"David Lynch";TWIN_PEAKS_THE_RETURN_TV_2017;"Twin Peaks: The Return"
-"Edvard Munch [TV]";1974;"Peter Watkins";EDVARD_MUNCH_TV_1974;"Edvard Munch"
 "Tale of Tales";1979;"Yuriy Norshteyn";TALE_OF_TALES_1979;"Tale of Tales"
 "The Sorrow and the Pity";1969;"Marcel Ophüls";THE_SORROW_AND_THE_PITY_1969;"The Sorrow and the Pity"
 "The Emperor's Naked Army Marches On";1987;"Kazuo Hara";THE_EMPEROR_S_NAKED_ARMY_MARCHES_ON_1987;"The Emperor's Naked Army Marches On"
-"Oh, Sun";1970;"Med Hondo";OH_SUN_1970;"Soleil Ô"
 "The Naked Island";1960;"Kaneto Shindo";THE_NAKED_ISLAND_1960;"The Naked Island"
-"Elephant [TV]";1989;"Alan Clarke";ELEPHANT_TV_1989;"Elephant"
 "Outskirts";1933;"Boris Barnet";OUTSKIRTS_1933;"Outskirts"
 "Heimat [TV]";1984;"Edgar Reitz";HEIMAT_TV_1984;"Heimat"
-"Doomed Love [TV]";1978;"Manoel de Oliveira";DOOMED_LOVE_TV_1978;"Doomed Love"
-"Les Jeux interdits";1952;"René Clément";LES_JEUX_INTERDITS_1952;"Jeux interdits"
 "Nine Days of One Year";1962;"Mikhail Romm";NINE_DAYS_OF_ONE_YEAR_1962;"Nine Days of One Year"
-"The Up Series";1964;"Michael Apted";THE_UP_SERIES_1964;"Seven Up!"
-"Feuilles d'automne";1966;"Otar Iosseliani";FEUILLES_D_AUTOMNE_1966;"Falling Leaves"
-"Le Principal Ennemi";1974;"Jorge Sanjinés";LE_PRINCIPAL_ENNEMI_1974;"The Principal Enemy"
 "Repentance";1984;"Tengiz Abuladze";REPENTANCE_1984;"Repentance"
 "Repentir";1984;"Tengiz Abuladze";REPENTIR_1984;"Monanieba"
 "Rebels of the Neon God";1992;"Tsai Ming-liang";REBELS_OF_THE_NEON_GOD_1992;"Rebels of the Neon God"
 "The Blue Kite";1993;"Tian Zhuangzhuang";THE_BLUE_KITE_1993;"The Blue Kite"
 "Crumb";1994;"Terry Zwigoff";CRUMB_1994;"Crumb"
-"Cimetière de la splendeur";2015;"Apichatpong Weerasethakul";CIMETIERE_DE_LA_SPLENDEUR_2015;"Cemetery of Splendour"
 "Beanpole";2019;"Kantemir Balagov";BEANPOLE_2019;"Beanpole"
 "Lapis";1966;"James Whitney";LAPIS_1966;"Lapis";;145619
 "Boat People";1982;"Ann Hui";BOAT_PEOPLE_1982;"Boat People";;713501
 "Bamako";2006;"Abderrahmane Sissako";BAMAKO_2006;"Bamako";;347402
 "The Meeting";2012;"Mildred Okwo";THE_MEETING_2012;"The Meeting";;423155
+"Pastoral : mourir à la campagne";1974;"Shuji Terayama";PASTORAL_MOURIR_A_LA_CAMPAGNE_1974;"Den-en ni shisu"

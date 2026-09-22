@@ -21,9 +21,16 @@ class CatalogFixtureTest {
         val report = CatalogValidator().validate(pack)
 
         assertTrue(report.errors.joinToString { "${it.path}: ${it.message}" }, report.isValid)
-        assertEquals(13, pack.version)
+        assertEquals(18, pack.version)
         assertTrue(pack.movies.size >= 1400)
-        assertTrue(pack.collections.size >= 10)
+        assertTrue(pack.collections.size >= 18)
+        assertEquals("CLUB", pack.collections.first { it.code == "COLLECTION_005" }.track)
+        assertEquals("OFFSCREEN", pack.collections.first { it.code == "COLLECTION_010" }.track)
+        assertEquals("DARKROOM", pack.collections.first { it.code == "COLLECTION_012" }.track)
+        assertEquals("GATEWAY", pack.collections.first { it.code == "COLLECTION_015" }.track)
+        assertEquals("CINEMATHEQUE", pack.collections.first { it.code == "COLLECTION_016" }.track)
+        assertEquals("DARKROOM", pack.collections.first { it.code == "COLLECTION_017" }.track)
+        assertEquals("Âge d'or japonais", pack.collections.first { it.code == "COLLECTION_003" }.name)
         assertEquals(10, pack.rankings.size)
         assertTrue(pack.rankings.all { !it.longDescription.isNullOrBlank() })
         assertEquals(32, pack.badges.size)
@@ -32,6 +39,19 @@ class CatalogFixtureTest {
         assertEquals(17, pack.quests.count { it.difficulty == "GOLD" })
         assertEquals(50, pack.quests.size)
         assertTrue(pack.movies.all { movie -> movie.countries.count { it.isPrimary } == 1 })
+        assertTrue(pack.movies.all { it.countries.size in 1..2 })
+        val usedCountries = pack.movies.flatMap { movie -> movie.countries.map { it.code } }.toSet()
+        assertEquals(usedCountries, pack.countries.map { it.code }.toSet())
+        val nouvelleVague = pack.movies.count { "NOUVELLE_VAGUE_FRANCAISE" in it.characteristicCodes }
+        assertTrue("Nouvelle Vague trop large: $nouvelleVague", nouvelleVague in 20..50)
+        val moviesByCode = pack.movies.associateBy { it.code }
+        pack.collections.forEach { collection ->
+            val years = collection.movies.map { moviesByCode.getValue(it.code).releaseYear }
+            assertTrue(
+                "${collection.code} films not year-asc: $years",
+                years == years.sorted(),
+            )
+        }
     }
 
     @Test

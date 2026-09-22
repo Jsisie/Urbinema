@@ -1,6 +1,6 @@
-FAQ — URBINEMA (après 0.2.4)
+FAQ — URBINEMA (après 0.2.4, pack 14)
 Auteur : Cursor
-Date : 2026-09-20
+Date : 2026-09-21
 
 Ce fichier remplace l’ancienne FAQ de cadrage pré-code.
 Il ne reprend plus les questions déjà tranchées (compte, cloud, TMDb dans
@@ -25,8 +25,8 @@ Le code livré : specs/SPECIFICATION_DEVELOPPEUR.md
 0. ÉTAT RÉEL DU PRODUIT (0.2.4)
 ========================================================================
 
-App 0.2.4 / versionCode 22. Catalogue pack JSON v13 : ~1405 films,
-~97 pays, ~115 caractéristiques, 15 collections, 32 badges. Asset
+App 0.2.4 / versionCode 22. Catalogue pack JSON v18 : ~1434 films,
+pays rattachés 1:1 (nationalité éditoriale), ~115 caractéristiques, 18 collections, 32 badges. Asset
 `catalog/catalog.json` (archive `catalog_v1.json`, source `catalog_v2.json`).
 Room v7. Quêtes : 50 types (16/17/17), une Bronze / une Argent / une Or
 tirées au hasard parmi celles encore finissables.

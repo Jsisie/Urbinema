@@ -219,8 +219,11 @@ def map_countries(
         suggested = ISO_OVERRIDES.get(iso) or ascii_slug(name) or iso
         unknown.append({"code": suggested, "name": name, "isoCode": iso, "continentCodes": []})
         mapped.append({"code": suggested, "isPrimary": False})
+        if len(mapped) >= 2:
+            break
     if mapped:
         mapped[0]["isPrimary"] = True
+        mapped = mapped[:2]
     return mapped, unknown
 
 
@@ -256,6 +259,13 @@ def map_characteristics(
 
     for entry in director_entries:
         for code in entry.get("characteristicCodes") or []:
+            # Period/wave tags on the director must not spill onto every film.
+            if code in {
+                "NOUVELLE_VAGUE_FRANCAISE", "HOLLYWOOD_CLASSIQUE", "NEW_HOLLYWOOD",
+                "NEOREALISME_ITALIEN", "EXPRESSIONNISME_ALLEMAND", "CINEMA_SOVIETIQUE",
+                "NOUVELLE_VAGUE_IRANIENNE", "INDIAN_PARALLEL", "KOREAN_NEW_WAVE",
+            }:
+                continue
             add(str(code))
 
     primary = country_codes[0] if country_codes else ""
@@ -294,8 +304,7 @@ def map_characteristics(
         add("AGE_OR_CINEMA_JAPONAIS")
     if primary == "ITALY" and 1944 <= year <= 1954:
         add("NEOREALISME_ITALIEN")
-    if primary == "FRANCE" and 1958 <= year <= 1968:
-        add("NOUVELLE_VAGUE_FRANCAISE")
+    # Nouvelle Vague is not "any French film 1958–1968" (Welles, Polish co-pros…).
     if primary == "FRANCE" and 1930 <= year <= 1939:
         add("REALISME_POETIQUE")
     if primary == "GERMANY" and 1919 <= year <= 1933:

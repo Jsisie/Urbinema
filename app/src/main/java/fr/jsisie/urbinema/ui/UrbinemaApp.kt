@@ -143,8 +143,8 @@ private data class Destination(val route: String, @StringRes val label: Int, val
 
 private val tabs = listOf(
     Destination(Routes.Home, R.string.home, Icons.Outlined.Home),
-    Destination(Routes.Collections, R.string.collections_tab, Icons.AutoMirrored.Outlined.MenuBook),
     Destination(Routes.Atlas, R.string.atlas, Icons.Outlined.Map),
+    Destination(Routes.Collections, R.string.collections_tab, Icons.AutoMirrored.Outlined.MenuBook),
     Destination(Routes.Progress, R.string.progress, Icons.Outlined.Route),
     Destination(Routes.Profile, R.string.profile, Icons.Outlined.Person),
 )
@@ -411,9 +411,6 @@ private fun UrbinemaNavigation(
                 composable(Routes.History) {
                     HistoryScreen(model.home.history)
                 }
-                composable(Routes.Collections) {
-                    CollectionsScreen(model.collections, ::openCollection)
-                }
                 composable(Routes.Atlas) {
                     AtlasScreen(
                         countries = model.territories,
@@ -459,6 +456,9 @@ private fun UrbinemaNavigation(
                         },
                         onOpenNode = { kind, code -> openMapNode(navController, kind, code, ::openCollection) },
                     )
+                }
+                composable(Routes.Collections) {
+                    CollectionsScreen(model.collections, ::openCollection)
                 }
                 composable(Routes.Progress) {
                     ProgressScreen(model.home, model.ranks)

@@ -60,7 +60,7 @@
     <string name="quest_reward">%1$s · %2$d XP</string>
     <string name="collection_neorealism">Néoréalisme italien</string>
     <string name="collection_new_wave">Nouvelle Vague</string>
-    <string name="collection_japan">Japon classique</string>
+    <string name="collection_japan">Âge d’or japonais</string>
     <string name="collection_italy_period">Italie · 1943–1952 · 20 films</string>
     <string name="collection_france_period">France · 1958–1968 · 20 films</string>
     <string name="collection_japan_period">Japon · 1930–1960 · 20 films</string>
@@ -70,6 +70,12 @@
     <string name="collection_movie_two">Le Voleur de bicyclette · 1948</string>
     <string name="collection_movie_three">Umberto D. · 1952</string>
     <string name="films">Films</string>
+    <string name="sort_films">Trier les films</string>
+    <string name="sort_title_az">Titre A–Z</string>
+    <string name="sort_title_za">Titre Z–A</string>
+    <string name="sort_year_asc">Année croissante</string>
+    <string name="sort_year_desc">Année décroissante</string>
+    <string name="alphabet_index_cd">Index alphabétique, glisser pour aller à une lettre</string>
     <string name="territories">Territoires</string>
     <string name="currents">Courants</string>
     <string name="all_currents">Tous les courants</string>

@@ -667,7 +667,8 @@ Une collection possède :
 - un code stable ;
 - un numéro d'ordre éditorial distinct de son identifiant technique ;
 - une image locale facultative ;
-- une liste ordonnée de films ;
+- une liste ordonnée de films (aujourd’hui : année de sortie croissante ;
+  **V3** : ordre éditorial du plus accessible au plus complexe) ;
 - des objectifs de progression ;
 - éventuellement un badge associé.
 

@@ -360,6 +360,8 @@ class CatalogImporter(
         if (movieCodes.isNotEmpty()) dao.deactivateMoviesNotIn(movieCodes)
         val collectionCodes = pack.collections.map { it.code }
         if (collectionCodes.isNotEmpty()) dao.deactivateCollectionsNotIn(collectionCodes)
+        val countryCodes = pack.countries.map { it.code }
+        if (countryCodes.isNotEmpty()) dao.deactivateCountriesNotIn(countryCodes)
         dao.insertCatalogVersion(
             CatalogVersionEntity(
                 version = pack.version,

@@ -621,15 +621,7 @@ def merge() -> None:
             chars.insert(0, editorial)
         movie["characteristicCodes"] = chars
         movie["genreCodes"] = [g for g in (movie.get("genreCodes") or []) if g in known_genres] or ["DRAME"]
-        countries = movie.get("countries") or []
-        countries = [c for c in countries if c.get("code") in known_countries]
-        if not countries:
-            countries = [{"code": film["countryCode"], "isPrimary": True}]
-        if sum(1 for c in countries if c.get("isPrimary")) != 1:
-            countries[0]["isPrimary"] = True
-            for extra in countries[1:]:
-                extra["isPrimary"] = False
-        movie["countries"] = countries
+        movie["countries"] = [{"code": film["countryCode"], "isPrimary": True}]
         directors = movie.get("directors") or []
         directors = [d for d in directors if d.get("code") in known_directors]
         if not directors:

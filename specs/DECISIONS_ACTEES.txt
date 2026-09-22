@@ -616,11 +616,33 @@ H. DIVERS
 74. CATALOGUE V2 + ASSET UNIQUE (0.2.4)
     L’app charge `assets/catalog/catalog.json` (plus `catalog_v1.json`).
     `catalog_v1.json` reste la photo V1 (405 films, pack 12).
-    `catalog_v2.json` = V1 + 1000 films + courants 1–50 et 101–102
+  `catalog_v2.json` = V1 + 1000 films + courants 1–50 et 101–102
     (Âge d’or / Nouvel âge d’or Hollywood) et les courants 51–100
     nécessaires aux 1000 fiches. Pack JSON **version 13**, ~1405 films,
     ~115 caractéristiques, ~97 pays, ~33 genres. Affiches TMDB via
     `batchPosters/` copiées dans `assets/media/posters/{CODE}.jpg`.
+
+75. RETOURS 0.2.4 (HISTORIQUE, ATLAS, DONNÉES)
+    Historique Accueil : 30 lignes (plus 50). Listes de films Atlas
+    (pays, courants, genres, décennies, réalisateurs) : tri titre A–Z /
+    Z–A ou année, plus index A–Z glissant. Bouton Vu : le « Film vu »
+    ne rebondit plus. Badges : recalcul sans N+1 Room (popup immédiate).
+    Pays : **1 nationalité éditoriale** par film (plus les dumps TMDB
+    Hong Kong / Islande / etc.). Pays sans aucun film retirés du pack
+    et désactivés à l’import. Nouvelle Vague française resserrée
+    (réalisateurs du mouvement, 1958–1973, ~42 films). Pack JSON **version 15**,
+    puis **16** pour les collections (muet 28 / Salle obscure, NCA Hors-champ,
+    Nouvel Hollywood Premières séances, Âge d'or d'Hollywood Ciné-club,
+    Japon années 70, Hitchcockiens Salle obscure). Pack **17** : films
+    de chaque collection triés par année croissante. Pack **18** : ajouts
+    Film noir / Westerns / Âge d'or japonais (ex-Japon classique). V3 : ordre
+    éditorial accessible → complexe (`ROADMAP_V2_V3.md` §2).
+
+76. RETOURS 0.2.6 (RECHERCHE VO + INDEX A–Z)
+    Recherche menu : match sur titre français **et** titre original / anglais
+    (`originalTitle`), pas seulement le libellé affiché.
+    Index lettres Atlas : même règle que le tri titre — articles « Les »,
+    « L' », « The », etc. ignorés ; « Les Amants » → lettre **A**, pas L.
 
 
 ========================================================================

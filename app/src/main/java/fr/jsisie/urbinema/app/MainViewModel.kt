@@ -51,10 +51,12 @@ import fr.jsisie.urbinema.ui.model.CollectionTrack
 import fr.jsisie.urbinema.ui.model.CollectionUi
 import fr.jsisie.urbinema.ui.model.DirectorUi
 import fr.jsisie.urbinema.ui.model.ExplorationState
+import fr.jsisie.urbinema.ui.model.FilmListSort
 import fr.jsisie.urbinema.ui.model.HistoryUi
 import fr.jsisie.urbinema.ui.model.HomeUiState
 import fr.jsisie.urbinema.ui.model.LoadState
 import fr.jsisie.urbinema.ui.model.MovieSummaryUi
+import fr.jsisie.urbinema.ui.model.sortedFilms
 import fr.jsisie.urbinema.ui.model.MovieUi
 import fr.jsisie.urbinema.ui.model.ProfileUiState
 import fr.jsisie.urbinema.ui.model.QuestUi
@@ -395,20 +397,33 @@ class MainViewModel(
         val needle = query.trim()
         if (needle.isEmpty()) return emptyList()
         fun match(value: String) = value.contains(needle, ignoreCase = true)
-        val movieHits = moviesWithRelations.map { rel ->
+        val movieHits = moviesWithRelations.mapNotNull { rel ->
             val movie = rel.movie
-            SearchHitUi(
-                movie.code,
-                SearchKind.Movie,
-                movie.frenchTitle ?: movie.originalTitle,
-                "${rel.directors.firstOrNull()?.displayName.orEmpty()} · ${movie.releaseYear}",
-            )
-        }.filter { match(it.title) || match(it.subtitle) }
-        val countryHits = countryEntities.filter { match(it.name) || match(it.code) }.map {
-            SearchHitUi(it.code, SearchKind.Country, it.name, "")
+            val french = movie.frenchTitle.orEmpty()
+            val original = movie.originalTitle
+            if (!match(french) && !match(original)) return@mapNotNull null
+            val display = french.ifBlank { original }
+            val subtitle = buildString {
+                append(rel.directors.firstOrNull()?.displayName.orEmpty())
+                append(" · ")
+                append(movie.releaseYear)
+                // Surface the English/original title when it is what matched.
+                if (french.isNotBlank() &&
+                    !french.equals(original, ignoreCase = true) &&
+                    match(original) &&
+                    !match(french)
+                ) {
+                    append(" · ")
+                    append(original)
+                }
+            }
+            SearchHitUi(movie.code, SearchKind.Movie, display, subtitle)
         }
-        val currentHits = characteristicEntities.filter { match(it.name) || match(it.code) }.map {
-            SearchHitUi(it.code, SearchKind.Current, it.name, it.typeCode)
+        val countryHits = territoryState.filter { match(it.name) || match(it.id) }.map {
+            SearchHitUi(it.id, SearchKind.Country, it.name, "")
+        }
+        val currentHits = currentState.filter { match(it.name) || match(it.id) }.map {
+            SearchHitUi(it.id, SearchKind.Current, it.name, "")
         }
         val collectionHits = collectionState.filter { match(it.name) }.map {
             SearchHitUi(it.id, SearchKind.Collection, it.name, it.shortDescription)
@@ -416,8 +431,8 @@ class MainViewModel(
         val directorHits = directorEntities.filter { match(it.displayName) || match(it.code) }.map {
             SearchHitUi(it.code, SearchKind.Director, it.displayName, "")
         }
-        val genreHits = genreEntities.filter { match(it.name) || match(it.code) }.map {
-            SearchHitUi(it.code, SearchKind.Genre, it.name, "")
+        val genreHits = genreState.filter { match(it.name) || match(it.id) }.map {
+            SearchHitUi(it.id, SearchKind.Genre, it.name, "")
         }
         return movieHits + countryHits + currentHits + collectionHits + directorHits + genreHits
     }
@@ -429,16 +444,20 @@ class MainViewModel(
         collectionState.filter { code in it.characteristicCodes }
 
     override fun moviesForCountry(code: String): List<MovieSummaryUi> =
-        moviesWithRelations.filter { rel -> rel.countries.any { it.code == code } }.map(::toWatchedSummary)
+        moviesWithRelations.filter { rel -> rel.countries.any { it.code == code } }
+            .map(::toWatchedSummary).sortedFilms(FilmListSort.TitleAsc)
 
     override fun moviesForCurrent(code: String): List<MovieSummaryUi> =
-        moviesWithRelations.filter { rel -> rel.characteristics.any { it.code == code } }.map(::toWatchedSummary)
+        moviesWithRelations.filter { rel -> rel.characteristics.any { it.code == code } }
+            .map(::toWatchedSummary).sortedFilms(FilmListSort.TitleAsc)
 
     override fun moviesForDecade(code: String): List<MovieSummaryUi> =
-        moviesWithRelations.filter { (it.movie.releaseYear / 10 * 10).toString() == code }.map(::toWatchedSummary)
+        moviesWithRelations.filter { (it.movie.releaseYear / 10 * 10).toString() == code }
+            .map(::toWatchedSummary).sortedFilms(FilmListSort.TitleAsc)
 
     override fun moviesForGenre(code: String): List<MovieSummaryUi> =
-        moviesWithRelations.filter { rel -> rel.genres.any { it.code == code } }.map(::toWatchedSummary)
+        moviesWithRelations.filter { rel -> rel.genres.any { it.code == code } }
+            .map(::toWatchedSummary).sortedFilms(FilmListSort.TitleAsc)
 
     /**
      * Sky layout for one Atlas dimension, or a film-centred constellation.
@@ -459,13 +478,13 @@ class MainViewModel(
             MapLayer.AROUND_FILM -> CinemaMapGraph(layer, emptyList(), emptyList())
             MapLayer.COUNTRIES -> CinemaMapLayout.build(
                 layer,
-                countryEntities.map { MapSeed(it.code, continentByCountryCode[it.code].orEmpty()) },
+                territoryState.map { MapSeed(it.id, continentByCountryCode[it.id].orEmpty()) },
                 moviesWithRelations.map { rel -> rel.countries.map { it.code } },
                 continentNameByCode,
             )
             MapLayer.CURRENTS -> CinemaMapLayout.build(
                 layer,
-                characteristicEntities.map { MapSeed(it.code) },
+                currentState.map { MapSeed(it.id) },
                 moviesWithRelations.map { rel -> rel.characteristics.map { it.code } },
             )
             MapLayer.DECADES -> CinemaMapLayout.build(
@@ -474,7 +493,7 @@ class MainViewModel(
             )
             MapLayer.GENRES -> CinemaMapLayout.build(
                 layer,
-                genreEntities.map { MapSeed(it.code) },
+                genreState.map { MapSeed(it.id) },
                 moviesWithRelations.map { rel -> rel.genres.map { it.code } },
             )
             MapLayer.DIRECTORS -> CinemaMapLayout.build(
@@ -709,7 +728,7 @@ class MainViewModel(
                     rel ?: MovieWithRelations(movie, emptyList(), emptyList(), emptyList(), emptyList()),
                     watched = followed && movie.movieId in watchedIds,
                 )
-            }
+            }.sortedFilms(FilmListSort.YearAsc) // année croissante ; V3 : accessible → complexe
             val track = collectionTrack(collection.track)
             val lock = collectionLock(collection.code, track, openOrdinal, qualifiedByTrack)
             CollectionUi(
@@ -746,11 +765,14 @@ class MainViewModel(
                 }
             }
         }
-        territoryState = countryEntities.map { country ->
-            territoryFromProgress(country.code, country.name, R.string.countries, countryProgress[country.countryId])
+        territoryState = countryEntities.mapNotNull { country ->
+            val progress = countryProgress[country.countryId]
+            if ((progress?.totalCount ?: 0) <= 0) return@mapNotNull null
+            territoryFromProgress(country.code, country.name, R.string.countries, progress)
         }
-        currentState = characteristicEntities.map { characteristic ->
+        currentState = characteristicEntities.mapNotNull { characteristic ->
             val total = moviesWithRelations.count { rel -> rel.characteristics.any { it.characteristicId == characteristic.characteristicId } }
+            if (total <= 0) return@mapNotNull null
             val seen = watchedMovies.count { rel -> rel.characteristics.any { it.characteristicId == characteristic.characteristicId } }
             territoryFromCounts(characteristic.code, characteristic.name, R.string.currents, seen, total)
         }
@@ -763,8 +785,9 @@ class MainViewModel(
                 val seen = watchedMovies.count { it.movie.releaseYear / 10 * 10 == decade }
                 territoryFromCounts(decade.toString(), decadeLabel(decade), R.string.decades, seen, total)
             }
-        genreState = genreEntities.map { genre ->
+        genreState = genreEntities.mapNotNull { genre ->
             val total = moviesWithRelations.count { rel -> rel.genres.any { it.genreId == genre.genreId } }
+            if (total <= 0) return@mapNotNull null
             val seen = watchedMovies.count { rel -> rel.genres.any { it.genreId == genre.genreId } }
             territoryFromCounts(genre.code, genre.name, R.string.genres, seen, total)
         }
@@ -809,9 +832,11 @@ class MainViewModel(
                 current = it.rankingId == rank?.rankingId,
             )
         }
-        directorState = directorEntities.map { director ->
+        directorState = directorEntities.mapNotNull { director ->
             val films = moviesWithRelations.filter { rel -> rel.directors.any { it.directorId == director.directorId } }
                 .map(::toWatchedSummary)
+                .sortedFilms(FilmListSort.TitleAsc)
+            if (films.isEmpty()) return@mapNotNull null
             val filmIds = films.map { it.id }.toSet()
             DirectorUi(
                 director.code,
@@ -821,7 +846,10 @@ class MainViewModel(
             )
         }
 
-        moviesWithRelations.firstOrNull { it.movie.code == movieState.id }?.let { movieState = toMovieUi(it) }
+        moviesWithRelations.firstOrNull { it.movie.code == movieState.id }?.let { rel ->
+            val ui = toMovieUi(rel)
+            movieState = ui.copy(watched = movieState.watched || ui.watched)
+        }
 
         val xpTarget = level.xpNeededForNextLevel
             ?.plus(level.xpIntoLevel)

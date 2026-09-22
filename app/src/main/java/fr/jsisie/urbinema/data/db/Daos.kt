@@ -126,6 +126,18 @@ interface CatalogDao {
     @Query("SELECT * FROM continents WHERE isActive = 1")
     suspend fun continents(): List<ContinentEntity>
 
+    @Query("SELECT * FROM countries")
+    suspend fun countries(): List<CountryEntity>
+
+    @Query("SELECT * FROM cinema_characteristics")
+    suspend fun characteristics(): List<CinemaCharacteristicEntity>
+
+    @Query("SELECT * FROM directors_characteristics")
+    suspend fun directorCharacteristics(): List<DirectorCharacteristicCrossRef>
+
+    @Query("SELECT * FROM eras WHERE isActive = 1")
+    suspend fun eras(): List<EraEntity>
+
     @Query("SELECT * FROM countries_continents")
     suspend fun countryContinents(): List<CountryContinentCrossRef>
 
@@ -556,6 +568,8 @@ interface CatalogImportDao {
     suspend fun deactivateMoviesNotIn(codes: List<String>)
     @Query("UPDATE collections SET isActive = 0, isPublished = 0 WHERE code NOT IN (:codes)")
     suspend fun deactivateCollectionsNotIn(codes: List<String>)
+    @Query("UPDATE countries SET isActive = 0 WHERE code NOT IN (:codes)")
+    suspend fun deactivateCountriesNotIn(codes: List<String>)
 
     /** Import is intentionally limited to an empty catalogue artifact. */
     @Query(

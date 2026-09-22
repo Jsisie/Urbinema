@@ -431,7 +431,7 @@ en V1 : Urbinema propose déjà ses films à travers les collections et parcours
 │ COLLECTIONS EN COURS                       │
 │   (image)      (image)      (image)        │
 │     35 %         18 %         62 %         │
-│ Néoréalisme   Nouvelle V.   Japon classique│
+│ Néoréalisme   Nouvelle V.   Âge d'or japonais│
 │                                            │
 │ HISTORIQUE                                 │
 │ Aujourd'hui · Le Roi Lion                  │

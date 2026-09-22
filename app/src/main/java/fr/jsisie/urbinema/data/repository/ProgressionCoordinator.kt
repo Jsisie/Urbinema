@@ -47,8 +47,8 @@ class ProgressionCoordinator(
         val catalogDao = database.catalogDao()
         val progressDao = database.progressDao()
         val rankDao = database.rankConfigDao()
-        val catalog = catalogDao.allMoviesWithRelations().map { it.toDomain(database) }
-        if (catalog.isEmpty()) return
+        val lookups = database.catalogDomainLookups()
+        if (lookups.primaryCountryByMovieId.isEmpty()) return
 
         val version = checkNotNull(rankDao.latestCatalogVersion())
         val existingRows = rankDao.latestDimensionStats()
@@ -63,6 +63,8 @@ class ProgressionCoordinator(
                 },
             )
         } else {
+            val catalog = catalogDao.allMoviesWithRelations().map { it.toDomain(lookups) }
+            if (catalog.isEmpty()) return
             statsEngine.build(
                 version = version.version.toLong(),
                 catalog = catalog,
@@ -87,7 +89,7 @@ class ProgressionCoordinator(
         val currentRankOrder = currentRank.displayOrder
 
         val watchedRels = progressDao.validatedMovies(userId)
-        val validated = watchedRels.map { it.toDomain(database) }
+        val validated = watchedRels.map { it.toDomain(lookups) }
         val ageYears = user.birthDate?.let { java.time.Year.now().value - it.year }
         val result = rankEngine.calculate(validated, stats, currentRankOrder, ageYears)
         val candidateRanking = checkNotNull(progressDao.rankingByOrder(result.displayedRank))
@@ -130,7 +132,7 @@ class ProgressionCoordinator(
             )
 
             val earned = progressDao.earnedBadgeCodes(userId).mapTo(hashSetOf(), ::EditorialCode)
-            val catalogCountries = catalog.mapTo(linkedSetOf()) { it.primaryCountry }
+            val catalogCountries = lookups.primaryCountryByMovieId.values.mapTo(linkedSetOf(), ::EditorialCode)
             badgeRegistry.newlyUnlocked(validated, earned, catalogCountries).forEach { unlock ->
                 val badge = progressDao.badgeByCode(unlock.badgeCode.value) ?: return@forEach
                 if (progressDao.insertUserBadge(UserBadgeCrossRef(userId, badge.badgeId, now)) != -1L) {

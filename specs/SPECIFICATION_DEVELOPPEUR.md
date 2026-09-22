@@ -13,7 +13,7 @@ code et les tests font foi.
 (`versionCode` 22). Les cahiers fonctionnel / IHM / technique, les décisions
 et la FAQ collent à cet état. Un comportement vu à l’écran a toujours une
 trace ici (navigation §2, persistence §3, règles §2.4 / §7, carte §2.2.1).
-Un chiffre de spec (XP quêtes 100/250/500, 3 badges, pack JSON **13**, Room 7, cliquet,
+Un chiffre de spec (XP quêtes 100/250/500, 3 badges, pack JSON **18**, Room 7, cliquet,
 10 avatars) se retrouve dans le code et, s’il est visible, dans `strings.xml`.
 
 ---
@@ -202,7 +202,7 @@ Room + prefs = marquer comme vus, **pas** de replay à la réouverture.
 Nouveaux codes seulement après hydratation. Reset données : liste vide,
 seeded reste vrai.
 
-Historique Accueil : 50 dernières (`HistoryUi.HOME_PREVIEW_LIMIT`) + bouton
+    Historique Accueil : 30 dernières (`HistoryUi.HOME_PREVIEW_LIMIT`) + bouton
 « Voir tout l’historique » (`history`). DAO `observeActivity` LIMIT 2000.
 Libellés via `stringResource` (`history_*_body`), pas de FR/EN figé dans
 le ViewModel.
@@ -260,7 +260,7 @@ app/src/main/assets/catalog/catalog.json
 
 Il décrit le monde : films, pays, continents, réalisateurs, caractéristiques,
 genres, ères, collections, 10 rangs, 32 badges, 50 quêtes types (16 Bronze, 17 Argent, 17 Or).
-Pack livré : champ racine `"version": 12`.
+Pack livré : champ racine `"version": 18`.
 
 Modèle Kotlin : `data/importer/CatalogPack.kt`.  
 Validateur : `data/importer/CatalogValidator.kt`.  

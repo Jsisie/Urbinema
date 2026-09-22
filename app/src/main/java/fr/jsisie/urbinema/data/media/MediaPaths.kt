@@ -26,9 +26,10 @@ object MediaPaths {
     const val ASSET_ROOT = "media"
     const val DEFAULT_EXTENSION = "webp"
     const val USER_AVATAR_RELATIVE = "media/users/avatar.webp"
+    const val MAX_NB_AVATAR = 12;
 
     val IMAGE_EXTENSIONS = listOf("webp", "png", "jpg", "jpeg")
-    val PACKAGED_AVATAR_CODES = (1..10).map { index ->
+    val PACKAGED_AVATAR_CODES = (1..MAX_NB_AVATAR).map { index ->
         "AVATAR_" + index.toString().padStart(2, '0')
     }
 

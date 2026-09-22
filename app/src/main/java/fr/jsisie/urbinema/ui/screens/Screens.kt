@@ -11,6 +11,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.gestures.detectVerticalDragGestures
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -65,11 +68,14 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.unit.sp
 import fr.jsisie.urbinema.BuildConfig
 import fr.jsisie.urbinema.R
 import fr.jsisie.urbinema.ui.components.AvatarPicker
@@ -87,6 +93,9 @@ import fr.jsisie.urbinema.data.media.MediaKind
 import fr.jsisie.urbinema.data.media.MediaPaths
 import fr.jsisie.urbinema.ui.model.AppLanguage
 import fr.jsisie.urbinema.ui.model.AtlasFilter
+import fr.jsisie.urbinema.ui.model.FilmListSort
+import fr.jsisie.urbinema.ui.model.filmIndexLetter
+import fr.jsisie.urbinema.ui.model.sortedFilms
 import fr.jsisie.urbinema.ui.model.BadgeRarity
 import fr.jsisie.urbinema.ui.model.BadgeUi
 import fr.jsisie.urbinema.ui.model.CollectionTrack
@@ -790,51 +799,157 @@ fun TerritoryScreen(
     onCollection: (String) -> Unit,
     onMovie: (String) -> Unit,
 ) {
-    LazyColumn(pageModifier, contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen)) {
-        item { ScreenTitle(title) }
-        if (collections.isNotEmpty()) {
-            item { SectionTitle(R.string.all_collections) }
-            items(collections) { collection ->
-                EditorialCard(Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs), { onCollection(collection.id) }) {
-                    Text(collection.name, style = MaterialTheme.typography.titleMedium)
-                    Text(collection.shortDescription, color = UrbinemaThemeTokens.colors.onBackgroundMuted)
+    AtlasFilmDirectory(
+        title = title,
+        collections = collections,
+        films = films,
+        onCollection = onCollection,
+        onMovie = onMovie,
+        alwaysShowFilmSection = false,
+    )
+}
+
+@Composable
+fun DirectorScreen(director: DirectorUi, onMovie: (String) -> Unit, onCollection: (String) -> Unit) {
+    AtlasFilmDirectory(
+        title = director.name,
+        collections = director.collections,
+        films = director.films,
+        onCollection = onCollection,
+        onMovie = onMovie,
+        alwaysShowFilmSection = true,
+    )
+}
+
+@Composable
+private fun AtlasFilmDirectory(
+    title: String,
+    collections: List<CollectionUi>,
+    films: List<MovieSummaryUi>,
+    onCollection: (String) -> Unit,
+    onMovie: (String) -> Unit,
+    alwaysShowFilmSection: Boolean,
+) {
+    var sortName by rememberSaveable { mutableStateOf(FilmListSort.TitleAsc.name) }
+    val sort = FilmListSort.entries.firstOrNull { it.name == sortName } ?: FilmListSort.TitleAsc
+    val sorted = remember(films, sort) { films.sortedFilms(sort) }
+    val listState = rememberLazyListState()
+    val scope = rememberCoroutineScope()
+    val titleSort = sort == FilmListSort.TitleAsc || sort == FilmListSort.TitleDesc
+    val showIndex = titleSort && sorted.size >= 8
+    var headerCount = 1
+    if (collections.isNotEmpty()) headerCount += 1 + collections.size
+    if (sorted.isNotEmpty() || alwaysShowFilmSection) headerCount += 2
+    Box(pageModifier) {
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(end = if (showIndex) 18.dp else 0.dp),
+            state = listState,
+            contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen),
+        ) {
+            item { ScreenTitle(title) }
+            if (collections.isNotEmpty()) {
+                item { SectionTitle(R.string.all_collections) }
+                items(collections, key = { it.id }) { collection ->
+                    EditorialCard(Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs), { onCollection(collection.id) }) {
+                        Text(collection.name, style = MaterialTheme.typography.titleMedium)
+                        Text(collection.shortDescription, color = UrbinemaThemeTokens.colors.onBackgroundMuted)
+                    }
                 }
             }
-        }
-        if (films.isNotEmpty()) {
-            item { SectionTitle(R.string.films) }
-            items(films) { film ->
-                EditorialCard(Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs), { onMovie(film.id) }) {
-                    WatchedFilmTitle(film.title, film.watched)
-                    Text("${film.director} · ${film.year}".trim(' ', '·'), color = UrbinemaThemeTokens.colors.onBackgroundMuted)
+            if (sorted.isNotEmpty() || alwaysShowFilmSection) {
+                item { SectionTitle(R.string.films) }
+                item { FilmSortRow(sort) { sortName = it.name } }
+                items(sorted, key = { it.id }) { film ->
+                    EditorialCard(Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs), { onMovie(film.id) }) {
+                        WatchedFilmTitle(film.title, film.watched)
+                        val subtitle = if (film.director.isBlank()) film.year.toString()
+                        else "${film.director} · ${film.year}"
+                        Text(subtitle, color = UrbinemaThemeTokens.colors.onBackgroundMuted)
+                    }
                 }
             }
+            if (collections.isEmpty() && films.isEmpty() && !alwaysShowFilmSection) {
+                item { Text(stringResource(R.string.empty_territory)) }
+            }
         }
-        if (collections.isEmpty() && films.isEmpty()) {
-            item { Text(stringResource(R.string.empty_territory)) }
+        if (showIndex) {
+            AlphabetScrubber(
+                titles = sorted.map { it.title },
+                onLetter = { letter ->
+                    // Same article-stripped letter as TitleAsc/Desc order (not raw "Les"/"L'").
+                    val index = sorted.indexOfFirst { filmIndexLetter(it.title) == letter }
+                    if (index >= 0) scope.launch { listState.scrollToItem(headerCount + index) }
+                },
+                modifier = Modifier
+                    .align(Alignment.CenterEnd)
+                    .fillMaxHeight()
+                    .padding(vertical = 72.dp, horizontal = 2.dp),
+            )
         }
     }
 }
 
 @Composable
-fun DirectorScreen(director: DirectorUi, onMovie: (String) -> Unit, onCollection: (String) -> Unit) {
-    LazyColumn(pageModifier, contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen)) {
-        item { ScreenTitle(director.name) }
-        if (director.collections.isNotEmpty()) {
-            item { SectionTitle(R.string.all_collections) }
-            items(director.collections) { collection ->
-                EditorialCard(Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs), { onCollection(collection.id) }) {
-                    Text(collection.name, style = MaterialTheme.typography.titleMedium)
-                    Text(collection.shortDescription, color = UrbinemaThemeTokens.colors.onBackgroundMuted)
-                }
-            }
+private fun FilmSortRow(current: FilmListSort, onChange: (FilmListSort) -> Unit) {
+    val options = listOf(
+        FilmListSort.TitleAsc to R.string.sort_title_az,
+        FilmListSort.TitleDesc to R.string.sort_title_za,
+        FilmListSort.YearAsc to R.string.sort_year_asc,
+        FilmListSort.YearDesc to R.string.sort_year_desc,
+    )
+    LazyRow(
+        horizontalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs),
+        modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.xs, bottom = UrbinemaThemeTokens.dimens.sm),
+    ) {
+        items(options, key = { it.first.name }) { (value, label) ->
+            FilterChip(current == value, { onChange(value) }, { Text(stringResource(label)) })
         }
-        item { SectionTitle(R.string.films) }
-        items(director.films) { film ->
-            EditorialCard(Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs), { onMovie(film.id) }) {
-                WatchedFilmTitle(film.title, film.watched)
-                Text(film.year.toString(), color = UrbinemaThemeTokens.colors.onBackgroundMuted)
+    }
+}
+
+@Composable
+private fun AlphabetScrubber(
+    titles: List<String>,
+    onLetter: (Char) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val letters = listOf('#') + ('A'..'Z').toList()
+    val present = titles.mapTo(hashSetOf(), ::filmIndexLetter)
+    val description = stringResource(R.string.alphabet_index_cd)
+    fun letterAt(y: Float, height: Int): Char {
+        if (height <= 0) return 'A'
+        val index = ((y / height) * letters.size).toInt().coerceIn(0, letters.lastIndex)
+        return letters[index]
+    }
+    Column(
+        modifier = modifier
+            .width(20.dp)
+            .semantics { contentDescription = description }
+            .pointerInput(titles) {
+                detectTapGestures { offset -> onLetter(letterAt(offset.y, size.height)) }
             }
+            .pointerInput(titles) {
+                detectVerticalDragGestures { change, _ ->
+                    onLetter(letterAt(change.position.y, size.height))
+                }
+            },
+        verticalArrangement = Arrangement.SpaceEvenly,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        letters.forEach { letter ->
+            Text(
+                letter.toString(),
+                style = MaterialTheme.typography.labelSmall,
+                fontSize = 10.sp,
+                color = if (letter in present) {
+                    UrbinemaThemeTokens.colors.accent
+                } else {
+                    UrbinemaThemeTokens.colors.onBackgroundMuted
+                },
+                modifier = Modifier.alpha(if (letter in present) 1f else 0.35f),
+            )
         }
     }
 }

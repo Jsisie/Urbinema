@@ -34,6 +34,73 @@ data class MovieSummaryUi(
     val watched: Boolean = false,
 )
 
+enum class FilmListSort {
+    TitleAsc,
+    TitleDesc,
+    YearAsc,
+    YearDesc,
+}
+
+private val filmTitleCollator: java.text.Collator = java.text.Collator.getInstance(java.util.Locale.FRENCH).apply {
+    strength = java.text.Collator.PRIMARY
+}
+
+/**
+ * Leading articles ignored for A–Z order and the letter scrubber.
+ * Longest match first so "les " wins over "le ", "l'" over bare "l".
+ */
+fun filmSortKey(title: String): String {
+    var working = title.trim().trimStart('"', '\'', '«', '»', '“', '”', '‘', '’')
+    val lower = working.lowercase()
+    val article = LEADING_ARTICLES.firstOrNull { lower.startsWith(it) }
+    if (article != null) {
+        working = working.substring(article.length).trim()
+    }
+    return working.ifBlank { title.trim() }
+}
+
+/** Same article rules as [filmSortKey] — never the raw first character of "Les" / "L'". */
+fun filmIndexLetter(title: String): Char {
+    val key = filmSortKey(title)
+    val first = key.firstOrNull { it.isLetter() }?.uppercaseChar() ?: return '#'
+    return if (first in 'A'..'Z') first else '#'
+}
+
+fun List<MovieSummaryUi>.sortedFilms(sort: FilmListSort): List<MovieSummaryUi> = when (sort) {
+    FilmListSort.TitleAsc -> sortedWith(compareByTitleAsc())
+    FilmListSort.TitleDesc -> sortedWith(compareByTitleDesc())
+    FilmListSort.YearAsc -> sortedWith(
+        Comparator { left, right ->
+            val byYear = left.year.compareTo(right.year)
+            if (byYear != 0) byYear else compareByTitleAsc().compare(left, right)
+        },
+    )
+    FilmListSort.YearDesc -> sortedWith(
+        Comparator { left, right ->
+            val byYear = right.year.compareTo(left.year)
+            if (byYear != 0) byYear else compareByTitleAsc().compare(left, right)
+        },
+    )
+}
+
+private fun compareByTitleAsc(): Comparator<MovieSummaryUi> =
+    Comparator { left, right ->
+        val byTitle = filmTitleCollator.compare(filmSortKey(left.title), filmSortKey(right.title))
+        if (byTitle != 0) byTitle else left.year.compareTo(right.year)
+    }
+
+private fun compareByTitleDesc(): Comparator<MovieSummaryUi> =
+    Comparator { left, right ->
+        val byTitle = filmTitleCollator.compare(filmSortKey(right.title), filmSortKey(left.title))
+        if (byTitle != 0) byTitle else right.year.compareTo(left.year)
+    }
+
+private val LEADING_ARTICLES: List<String> = listOf(
+    "the ", "les ", "los ", "las ", "die ", "der ", "das ",
+    "une ", "un ", "le ", "la ", "el ", "il ", "lo ",
+    "l'", "l’", "a ", "an ",
+)
+
 enum class CollectionTrack {
     GATEWAY,
     CLUB,
@@ -111,7 +178,7 @@ data class HistoryUi(
         const val BADGE_EARNED = "BADGE_EARNED"
         const val QUEST_COMPLETED = "QUEST_COMPLETED"
         const val RANK_UP = "RANK_UP"
-        const val HOME_PREVIEW_LIMIT = 50
+        const val HOME_PREVIEW_LIMIT = 30
     }
 }
 
@@ -297,7 +364,7 @@ object PreviewUrbinemaViewModel : UrbinemaViewModel {
         ),
         CollectionUi(
             "COLLECTION_003",
-            "Japon classique",
+            "Âge d'or japonais",
             "Japon · 1930–1960",
             "Quelques portes d'entrée vers l'âge d'or du cinéma japonais.",
             "Des années 1930 aux années 1960, le studio japonais produit des fresques, des mélodrames et des films de samouraïs d'une précision formelle rare. Kurosawa, Ozu et Mizoguchi en sont les sommets.",
@@ -397,9 +464,12 @@ object PreviewUrbinemaViewModel : UrbinemaViewModel {
     override fun search(query: String): List<SearchHitUi> {
         val needle = query.trim()
         if (needle.isEmpty()) return emptyList()
+        fun match(value: String) = value.contains(needle, ignoreCase = true)
         return listOf(
             SearchHitUi(movie.id, SearchKind.Movie, movie.localizedTitle ?: movie.originalTitle, "1954"),
-        ).filter { it.title.contains(needle, ignoreCase = true) }
+        ).filter {
+            match(it.title) || match(movie.originalTitle) || match(movie.localizedTitle.orEmpty())
+        }
     }
     override fun collectionsForCountry(code: String) = collections.filter { code in it.countryCodes }
     override fun collectionsForCurrent(code: String) = collections.filter { code in it.characteristicCodes }

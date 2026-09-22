@@ -60,7 +60,7 @@
     <string name="quest_reward">%1$s · %2$d XP</string>
     <string name="collection_neorealism">Italian Neorealism</string>
     <string name="collection_new_wave">French New Wave</string>
-    <string name="collection_japan">Classical Japan</string>
+    <string name="collection_japan">Japanese Golden Age</string>
     <string name="collection_italy_period">Italy · 1943–1952 · 20 films</string>
     <string name="collection_france_period">France · 1958–1968 · 20 films</string>
     <string name="collection_japan_period">Japan · 1930–1960 · 20 films</string>
@@ -70,6 +70,12 @@
     <string name="collection_movie_two">Bicycle Thieves · 1948</string>
     <string name="collection_movie_three">Umberto D. · 1952</string>
     <string name="films">Films</string>
+    <string name="sort_films">Sort films</string>
+    <string name="sort_title_az">Title A–Z</string>
+    <string name="sort_title_za">Title Z–A</string>
+    <string name="sort_year_asc">Year ascending</string>
+    <string name="sort_year_desc">Year descending</string>
+    <string name="alphabet_index_cd">Alphabetical index, slide to jump to a letter</string>
     <string name="territories">Territories</string>
     <string name="currents">Currents</string>
     <string name="all_currents">All currents</string>

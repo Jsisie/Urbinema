@@ -1429,7 +1429,7 @@ def build_collections(movies: list[dict]) -> list[dict]:
         {
             "code": "COLLECTION_003",
             "displayOrder": 4,
-            "name": "Japon classique",
+            "name": "Âge d'or japonais",
             "description": "Quelques portes d'entrée vers l'âge d'or du cinéma japonais.",
             "longDescription": (
                 "Des années 1930 aux années 1960, les grands studios japonais produisent un cinéma "
@@ -1723,20 +1723,23 @@ def build_collections(movies: list[dict]) -> list[dict]:
     ]
     tracks = {
         "COLLECTION_INITIATION": "GATEWAY",
-        "COLLECTION_005": "GATEWAY",
+        "COLLECTION_015": "GATEWAY",
         "COLLECTION_002": "CLUB",
         "COLLECTION_003": "CLUB",
+        "COLLECTION_005": "CLUB",
         "COLLECTION_006": "CLUB",
         "COLLECTION_008": "CLUB",
         "COLLECTION_009": "CLUB",
         "COLLECTION_001": "DARKROOM",
         "COLLECTION_004": "DARKROOM",
-        "COLLECTION_010": "DARKROOM",
-        "COLLECTION_012": "CINEMATHEQUE",
+        "COLLECTION_012": "DARKROOM",
+        "COLLECTION_017": "DARKROOM",
         "COLLECTION_011": "CINEMATHEQUE",
         "COLLECTION_013": "CINEMATHEQUE",
         "COLLECTION_014": "CINEMATHEQUE",
+        "COLLECTION_016": "CINEMATHEQUE",
         "COLLECTION_007": "OFFSCREEN",
+        "COLLECTION_010": "OFFSCREEN",
     }
     for collection in collections:
         code = collection["code"]
