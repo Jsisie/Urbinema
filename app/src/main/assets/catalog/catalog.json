@@ -14148,7 +14148,7 @@
       "releaseYear": 1979,
       "durationMinutes": 163,
       "format": "FEATURE",
-      "synopsis": "Un guide emmène deux hommes vers une Zone qui exauce les vœux.",
+      "synopsis": "Dans un pays et une époque indéterminés, il existe une zone interdite, fermée et gardée par des militaires. Elle aurait été créée par la chute d’une météorite, il y a bien longtemps. De temps à autre, le stalker, un passeur, se lève le matin et quitte son épouse pour guider à travers la zone le voyageur qui souhaite atteindre la Chambre des désirs, un lieu où les vœux les plus chers sont exaucés. Seul le stalker peut déjouer les nombreuses embûches du parcours. Aujourd’hui, un écrivain et un physicien sont les clients du stalker. Il faut tout d'abord échapper à la surveillance des gardes pour pénétrer dans la zone, puis avancer au hasard…",
       "historicalDistance": 0.4,
       "artisticDemand": 0.69,
       "historicalRichness": 0.72,
@@ -15282,38 +15282,6 @@
       "characteristicCodes": [
         "TAIWAN_NEW_CINEMA",
         "CINEMA_D_AUTEUR"
-      ]
-    },
-    {
-      "code": "A_TOUCH_OF_ZEN_1971",
-      "originalTitle": "俠女",
-      "frenchTitle": "A Touch of Zen",
-      "releaseYear": 1971,
-      "durationMinutes": 180,
-      "format": "EXTENDED",
-      "synopsis": "Une fugitive, un lettré et des moines transforment le wuxia en apparition.",
-      "historicalDistance": 0.46,
-      "artisticDemand": 0.65,
-      "historicalRichness": 0.72,
-      "culturalRichness": 0.81,
-      "countries": [
-        {
-          "code": "TAIWAN",
-          "isPrimary": true
-        }
-      ],
-      "directors": [
-        {
-          "code": "KING_HU",
-          "billingOrder": 0
-        }
-      ],
-      "genreCodes": [
-        "AVENTURE",
-        "DRAME"
-      ],
-      "characteristicCodes": [
-        "JIDAIGEKI"
       ]
     },
     {
@@ -20607,39 +20575,6 @@
         "CINEMA_D_AUTEUR"
       ],
       "isBlackAndWhite": true
-    },
-    {
-      "code": "STALKER_1979_TARKOVSKY",
-      "originalTitle": "Сталкер",
-      "frenchTitle": "Stalker",
-      "releaseYear": 1979,
-      "durationMinutes": 163,
-      "format": "FEATURE",
-      "synopsis": "Dans un pays et une époque indéterminés, il existe une zone interdite, fermée et gardée par des militaires. Elle aurait été créée par la chute d’une météorite, il y a bien longtemps. De temps à autre, le stalker, un passeur, se lève le matin et quitte son épouse pour guider à travers la zone le voyageur qui souhaite atteindre la Chambre des désirs, un lieu où les vœux les plus chers sont exaucés. Seul le stalker peut déjouer les nombreuses embûches du parcours. Aujourd’hui, un écrivain et un physicien sont les clients du stalker. Il faut tout d'abord échapper à la surveillance des gardes pour pénétrer dans la zone, puis avancer au hasard…",
-      "historicalDistance": 0.4,
-      "artisticDemand": 0.6,
-      "historicalRichness": 0.69,
-      "culturalRichness": 0.8,
-      "countries": [
-        {
-          "code": "RUSSIA",
-          "isPrimary": true
-        }
-      ],
-      "directors": [
-        {
-          "code": "ANDREI_TARKOVSKY",
-          "billingOrder": 0
-        }
-      ],
-      "genreCodes": [
-        "SCIENCE_FICTION",
-        "DRAME"
-      ],
-      "characteristicCodes": [
-        "CINEMA_SOVIETIQUE",
-        "CINEMA_D_AUTEUR"
-      ]
     },
     {
       "code": "BEAU_TRAVAIL_1999",
@@ -26389,7 +26324,7 @@
       ]
     },
     {
-      "code": "A_TOUCH_OF_ZEN_1971_HU",
+      "code": "A_TOUCH_OF_ZEN_1971",
       "originalTitle": "俠女",
       "frenchTitle": "A Touch of Zen",
       "releaseYear": 1970,
@@ -34938,37 +34873,6 @@
       ],
       "characteristicCodes": [
         "NEW_HOLLYWOOD"
-      ]
-    },
-    {
-      "code": "4_MONTHS_3_WEEKS_AND_2_DAYS_2007",
-      "originalTitle": "4 luni, 3 săptămâni și 2 zile",
-      "frenchTitle": "4 mois, 3 semaines, 2 jours",
-      "releaseYear": 2007,
-      "durationMinutes": 113,
-      "format": "FEATURE",
-      "synopsis": "1987, Roumanie, quelques années avant la chute du communisme. Ottila et Gabita partagent une chambre dans la cité universitaire d'une petite ville. Gabita est enceinte et l'avortement est un crime. Les deux jeunes femmes font donc appel à un certain M. Bébé pour résoudre le problème. Mais elles n'étaient pas préparées à une telle épreuve.",
-      "historicalDistance": 0.28,
-      "artisticDemand": 0.6,
-      "historicalRichness": 0.62,
-      "culturalRichness": 0.78,
-      "countries": [
-        {
-          "code": "ROMANIA",
-          "isPrimary": true
-        }
-      ],
-      "directors": [
-        {
-          "code": "CRISTIAN_MUNGIU",
-          "billingOrder": 0
-        }
-      ],
-      "genreCodes": [
-        "DRAME"
-      ],
-      "characteristicCodes": [
-        "NOUVEAU_CINEMA_ROUMAIN"
       ]
     },
     {
