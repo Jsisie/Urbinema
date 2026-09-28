@@ -1,3 +1,4 @@
+import fr.jsisie.urbinema.domain.collection.CollectionFollowRules
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

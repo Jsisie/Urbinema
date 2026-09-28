@@ -90,6 +90,7 @@ import fr.jsisie.urbinema.domain.map.MapNodeKind
 import fr.jsisie.urbinema.ui.components.WatchedFilmTitle
 import fr.jsisie.urbinema.ui.model.ExplorationState
 import fr.jsisie.urbinema.ui.model.MovieSummaryUi
+import fr.jsisie.urbinema.ui.model.TerritoryUi
 import fr.jsisie.urbinema.ui.theme.UrbinemaThemeTokens
 import kotlin.math.hypot
 import kotlinx.coroutines.launch
