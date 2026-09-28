@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 18,
   "generatedAt": "2026-09-21T09:42:22Z",
   "mediaAssets": [],
   "characteristicTypes": [
@@ -14044,6 +14044,104 @@
       "isBlackAndWhite": true
     },
     {
+      "code": "L_ENFANCE_D_IVAN_1962",
+      "originalTitle": "Иваново детство",
+      "frenchTitle": "L'Enfance d'Ivan",
+      "releaseYear": 1962,
+      "durationMinutes": 95,
+      "format": "FEATURE",
+      "synopsis": "Un enfant éclaireur traverse la guerre comme un rêve déjà mort.",
+      "historicalDistance": 0.5,
+      "artisticDemand": 0.68,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.82,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ANDREI_TARKOVSKY",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "GUERRE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "ANDREI_RUBLEV_1966",
+      "originalTitle": "Андрей Рублёв",
+      "frenchTitle": "Andreï Roublev",
+      "releaseYear": 1966,
+      "durationMinutes": 205,
+      "format": "EXTENDED",
+      "synopsis": "Un peintre d'icônes traverse la violence du XVe siècle avant de retrouver la couleur.",
+      "historicalDistance": 0.53,
+      "artisticDemand": 0.75,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ANDREI_TARKOVSKY",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "HISTORIQUE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "SOLARIS_1972",
+      "originalTitle": "Солярис",
+      "frenchTitle": "Solaris",
+      "releaseYear": 1972,
+      "durationMinutes": 167,
+      "format": "FEATURE",
+      "synopsis": "Une station spatiale ramène les morts que la planète a lus dans les consciences.",
+      "historicalDistance": 0.51,
+      "artisticDemand": 0.73,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ANDREI_TARKOVSKY",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "SCIENCE_FICTION",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
       "code": "STALKER_1979",
       "originalTitle": "Сталкер",
       "frenchTitle": "Stalker",
@@ -14136,6 +14234,104 @@
         "ROMANCE"
       ],
       "characteristicCodes": []
+    },
+    {
+      "code": "LA_COULEUR_DE_LA_GRENADE_1969",
+      "originalTitle": "Նռան գույնը",
+      "frenchTitle": "La Couleur de la grenade",
+      "releaseYear": 1969,
+      "durationMinutes": 79,
+      "format": "FEATURE",
+      "synopsis": "La vie du poète Sayat-Nova en tableaux d'étoffes, de sang et de rituel.",
+      "historicalDistance": 0.51,
+      "artisticDemand": 0.75,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "SERGEI_PARAJANOV",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_EXPERIMENTAL",
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "LE_SEPTIEME_SCEAU_1957",
+      "originalTitle": "Det sjunde inseglet",
+      "frenchTitle": "Le Septième Sceau",
+      "releaseYear": 1957,
+      "durationMinutes": 96,
+      "format": "FEATURE",
+      "synopsis": "Un chevalier joue aux échecs avec la Mort sur fond de peste.",
+      "historicalDistance": 0.53,
+      "artisticDemand": 0.69,
+      "historicalRichness": 0.77,
+      "culturalRichness": 0.89,
+      "countries": [
+        {
+          "code": "SWEDEN",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "INGMAR_BERGMAN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "LES_FRAISES_SAUVAGES_1957",
+      "originalTitle": "Smultronstället",
+      "frenchTitle": "Les Fraises sauvages",
+      "releaseYear": 1957,
+      "durationMinutes": 91,
+      "format": "FEATURE",
+      "synopsis": "Un vieux professeur revoit sa vie sur la route d'une cérémonie.",
+      "historicalDistance": 0.57,
+      "artisticDemand": 0.71,
+      "historicalRichness": 0.77,
+      "culturalRichness": 0.81,
+      "countries": [
+        {
+          "code": "SWEDEN",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "INGMAR_BERGMAN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ],
+      "isBlackAndWhite": true
     },
     {
       "code": "SOURIRES_D_UNE_NUIT_D_ETE_1955",
@@ -14392,8 +14588,7 @@
       ],
       "characteristicCodes": [
         "NOUVELLE_VAGUE_IRANIENNE",
-        "CINEMA_EXPERIMENTAL",
-        "ESSAY_FILM"
+        "CINEMA_EXPERIMENTAL"
       ],
       "isBlackAndWhite": true
     },
@@ -14492,6 +14687,131 @@
       "isBlackAndWhite": true
     },
     {
+      "code": "OLDBOY_2003",
+      "originalTitle": "올드보이",
+      "frenchTitle": "Oldboy",
+      "releaseYear": 2003,
+      "durationMinutes": 120,
+      "format": "FEATURE",
+      "synopsis": "Un homme enfermé quinze ans doit découvrir pourquoi, en cinq jours.",
+      "historicalDistance": 0.28,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.63,
+      "culturalRichness": 0.82,
+      "countries": [
+        {
+          "code": "SOUTH_KOREA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "PARK_CHAN_WOOK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "THRILLER",
+        "POLICIER"
+      ],
+      "characteristicCodes": [
+        "NEO_NOIR"
+      ]
+    },
+    {
+      "code": "MEMORIES_OF_MURDER_2003",
+      "originalTitle": "살인의 추억",
+      "frenchTitle": "Memories of Murder",
+      "releaseYear": 2003,
+      "durationMinutes": 132,
+      "format": "FEATURE",
+      "synopsis": "Deux flics de province chassent un tueur que la pluie et l'incompétence dérobent.",
+      "historicalDistance": 0.29,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.64,
+      "culturalRichness": 0.82,
+      "countries": [
+        {
+          "code": "SOUTH_KOREA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "BONG_JOON_HO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "POLICIER",
+        "DRAME",
+        "THRILLER"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "PARASITE_2019",
+      "originalTitle": "기생충",
+      "frenchTitle": "Parasite",
+      "releaseYear": 2019,
+      "durationMinutes": 132,
+      "format": "FEATURE",
+      "synopsis": "Une famille s'infiltre dans une maison riche par le sous-sol.",
+      "historicalDistance": 0.21,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.59,
+      "culturalRichness": 0.81,
+      "countries": [
+        {
+          "code": "SOUTH_KOREA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "BONG_JOON_HO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "THRILLER",
+        "COMEDIE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "POETRY_2010",
+      "originalTitle": "시",
+      "frenchTitle": "Poetry",
+      "releaseYear": 2010,
+      "durationMinutes": 139,
+      "format": "FEATURE",
+      "synopsis": "Une grand-mère apprend à écrire des vers pendant qu'un crime familial demande de l'argent.",
+      "historicalDistance": 0.33,
+      "artisticDemand": 0.7,
+      "historicalRichness": 0.62,
+      "culturalRichness": 0.7,
+      "countries": [
+        {
+          "code": "SOUTH_KOREA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "LEE_CHANG_DONG",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
       "code": "BURNING_2018",
       "originalTitle": "버닝",
       "frenchTitle": "Burning",
@@ -14520,6 +14840,38 @@
         "THRILLER"
       ],
       "characteristicCodes": []
+    },
+    {
+      "code": "LA_COMPLAINTE_DU_SENTIER_1955",
+      "originalTitle": "পথের পাঁচালী",
+      "frenchTitle": "La Complainte du sentier",
+      "releaseYear": 1955,
+      "durationMinutes": 126,
+      "format": "FEATURE",
+      "synopsis": "Apu et Durga grandissent dans un village bengali trop pauvre pour garder ses morts.",
+      "historicalDistance": 0.59,
+      "artisticDemand": 0.72,
+      "historicalRichness": 0.77,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "INDIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "SATYAJIT_RAY",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ],
+      "isBlackAndWhite": true
     },
     {
       "code": "L_INVAINCU_1956",
@@ -14708,6 +15060,134 @@
       "isBlackAndWhite": true
     },
     {
+      "code": "PRINTEMPS_DANS_UNE_PETITE_VILLE_1948",
+      "originalTitle": "小城之春",
+      "frenchTitle": "Printemps dans une petite ville",
+      "releaseYear": 1948,
+      "durationMinutes": 98,
+      "format": "FEATURE",
+      "synopsis": "Dans une ville en ruine, un ami d'enfance réveille un mariage étouffé.",
+      "historicalDistance": 0.59,
+      "artisticDemand": 0.7,
+      "historicalRichness": 0.79,
+      "culturalRichness": 0.86,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "FEI_MU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "EPOUSES_ET_CONCUBINES_1991",
+      "originalTitle": "大红灯笼高高挂",
+      "frenchTitle": "Épouses et concubines",
+      "releaseYear": 1991,
+      "durationMinutes": 125,
+      "format": "FEATURE",
+      "synopsis": "Une étudiante entre dans un palais où les lanternes décident qui est aimée.",
+      "historicalDistance": 0.39,
+      "artisticDemand": 0.66,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ZHANG_YIMOU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "MELODRAME",
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "IN_THE_MOOD_FOR_LOVE_2000",
+      "originalTitle": "花樣年華",
+      "frenchTitle": "In the Mood for Love",
+      "releaseYear": 2000,
+      "durationMinutes": 98,
+      "format": "FEATURE",
+      "synopsis": "Deux voisins découvrent l'adultère de leurs conjoints et inventent une retenue.",
+      "historicalDistance": 0.34,
+      "artisticDemand": 0.68,
+      "historicalRichness": 0.65,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "WONG_KAR_WAI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "CHUNGKING_EXPRESS_1994",
+      "originalTitle": "重慶森林",
+      "frenchTitle": "Chungking Express",
+      "releaseYear": 1994,
+      "durationMinutes": 102,
+      "format": "FEATURE",
+      "synopsis": "Deux policiers ratent l'amour dans un Hong Kong de boîtes de conserve et de perruques.",
+      "historicalDistance": 0.37,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.65,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "WONG_KAR_WAI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE",
+        "POLICIER"
+      ],
+      "characteristicCodes": []
+    },
+    {
       "code": "YI_YI_2000",
       "originalTitle": "一一",
       "frenchTitle": "Yi Yi",
@@ -14769,6 +15249,39 @@
       ],
       "characteristicCodes": [
         "TAIWAN_NEW_CINEMA"
+      ]
+    },
+    {
+      "code": "LA_CITE_DES_DOULEURS_1989",
+      "originalTitle": "悲情城市",
+      "frenchTitle": "La Cité des douleurs",
+      "releaseYear": 1989,
+      "durationMinutes": 157,
+      "format": "FEATURE",
+      "synopsis": "Une famille vit l'arrivée du Kuomintang et le massacre de 1947.",
+      "historicalDistance": 0.41,
+      "artisticDemand": 0.72,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "TAIWAN",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "HOU_HSIAO_HSIEN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": [
+        "TAIWAN_NEW_CINEMA",
+        "CINEMA_D_AUTEUR"
       ]
     },
     {
@@ -15546,8 +16059,7 @@
         "THRILLER"
       ],
       "characteristicCodes": [
-        "NEO_NOIR",
-        "NUEVO_CINE_MEXICANO"
+        "NEO_NOIR"
       ]
     },
     {
@@ -15577,13 +16089,9 @@
       "genreCodes": [
         "DRAME",
         "HORREUR",
-        "AVENTURE",
-        "FANTASTIQUE",
-        "GUERRE"
+        "AVENTURE"
       ],
-      "characteristicCodes": [
-        "NUEVO_CINE_MEXICANO"
-      ]
+      "characteristicCodes": []
     },
     {
       "code": "L_HISTOIRE_OFFICIELLE_1985",
@@ -15775,9 +16283,7 @@
       ],
       "characteristicCodes": [
         "CINEMA_AFRICAIN",
-        "CINEMA_D_AUTEUR",
-        "CINEMA_SENEGALAIS",
-        "CINEMA_EXPERIMENTAL"
+        "CINEMA_D_AUTEUR"
       ]
     },
     {
@@ -15875,8 +16381,7 @@
       ],
       "characteristicCodes": [
         "CINEMA_AFRICAIN",
-        "CINEMA_D_AUTEUR",
-        "CINEMA_MAGHREBIN"
+        "CINEMA_D_AUTEUR"
       ]
     },
     {
@@ -18210,14 +18715,46 @@
         }
       ],
       "genreCodes": [
-        "DRAME",
-        "HISTORIQUE"
+        "DRAME"
       ],
       "characteristicCodes": [
         "CINEMA_SOVIETIQUE",
         "CINEMA_D_AUTEUR",
         "CINEMA_EXPERIMENTAL"
       ]
+    },
+    {
+      "code": "L_ASCENSION_1977",
+      "originalTitle": "Восхождение",
+      "frenchTitle": "L'Ascension",
+      "releaseYear": 1977,
+      "durationMinutes": 111,
+      "format": "FEATURE",
+      "synopsis": "Deux partisans biélorusses sont pris : l'un trahit, l'autre gravit.",
+      "historicalDistance": 0.47,
+      "artisticDemand": 0.73,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "LARISA_SHEPITKO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "GUERRE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ],
+      "isBlackAndWhite": true
     },
     {
       "code": "JE_SUIS_CUBA_1964",
@@ -18283,8 +18820,7 @@
       ],
       "characteristicCodes": [
         "CINEMA_SOVIETIQUE",
-        "CINEMA_EXPERIMENTAL",
-        "CINEMA_D_AUTEUR"
+        "CINEMA_EXPERIMENTAL"
       ]
     },
     {
@@ -18383,8 +18919,7 @@
       ],
       "characteristicCodes": [
         "CINEMA_AFRICAIN",
-        "CINEMA_D_AUTEUR",
-        "CINEMA_SENEGALAIS"
+        "CINEMA_D_AUTEUR"
       ]
     },
     {
@@ -18418,8 +18953,7 @@
       ],
       "characteristicCodes": [
         "CINEMA_AFRICAIN",
-        "THIRD_CINEMA",
-        "CINEMA_MAGHREBIN"
+        "THIRD_CINEMA"
       ]
     },
     {
@@ -19317,6 +19851,68 @@
       ]
     },
     {
+      "code": "JOURS_SAUVAGES_1990",
+      "originalTitle": "阿飛正傳",
+      "frenchTitle": "Nos années sauvages",
+      "releaseYear": 1990,
+      "durationMinutes": 94,
+      "format": "FEATURE",
+      "synopsis": "Un fils de putain refuse de rester, de Manila à une mère qui n'écrit pas.",
+      "historicalDistance": 0.36,
+      "artisticDemand": 0.66,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.83,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "WONG_KAR_WAI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "HAPPY_TOGETHER_1997",
+      "originalTitle": "春光乍洩",
+      "frenchTitle": "Happy Together",
+      "releaseYear": 1997,
+      "durationMinutes": 96,
+      "format": "FEATURE",
+      "synopsis": "Deux amants hongkongais se perdent à Buenos Aires.",
+      "historicalDistance": 0.38,
+      "artisticDemand": 0.69,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "WONG_KAR_WAI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": []
+    },
+    {
       "code": "POUSSIERES_DANS_LE_VENT_1986",
       "originalTitle": "戀戀風塵",
       "frenchTitle": "Poussières dans le vent",
@@ -19348,6 +19944,37 @@
         "TAIWAN_NEW_CINEMA",
         "CINEMA_D_AUTEUR"
       ]
+    },
+    {
+      "code": "EL_VERDUGO_1963",
+      "originalTitle": "El verdugo",
+      "frenchTitle": "Le Bourreau",
+      "releaseYear": 1963,
+      "durationMinutes": 92,
+      "format": "FEATURE",
+      "synopsis": "Un croque-mort devient bourreau pour un appartement, sous Franco.",
+      "historicalDistance": 0.53,
+      "artisticDemand": 0.69,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "SPAIN",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "LUIS_GARCIA_BERLANGA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "DRAME"
+      ],
+      "characteristicCodes": [],
+      "isBlackAndWhite": true
     },
     {
       "code": "CRIA_CUERVOS_1976",
@@ -19638,6 +20265,77 @@
       ]
     },
     {
+      "code": "LE_CUIRASSE_POTEMKINE_1925_EISENSTEIN",
+      "originalTitle": "Броненосец Потёмкин",
+      "frenchTitle": "Le Cuirassé Potemkine",
+      "releaseYear": 1925,
+      "durationMinutes": 75,
+      "format": "FEATURE",
+      "synopsis": "En janvier 1905, éclate la première révolution russe, suivie le 14 juin de la révolte des marins du « Potemkine ». Ce qui au départ s'annonçait comme une petite protestation d'un équipage lassé et furieux de n'avoir à manger que de la viande pourrie a dégénéré en une véritable insurrection dans le port d'Odessa.",
+      "historicalDistance": 0.74,
+      "artisticDemand": 0.73,
+      "historicalRichness": 0.83,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "SERGEI_EISENSTEIN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HISTORIQUE",
+        "GUERRE"
+      ],
+      "characteristicCodes": [
+        "MONTAGE_SOVIETIQUE",
+        "CINEMA_MUET_MOUVEMENT"
+      ],
+      "isSilent": true,
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "LE_MIROIR_1975_TARKOVSKY",
+      "originalTitle": "Зеркало",
+      "frenchTitle": "Le Miroir",
+      "releaseYear": 1975,
+      "durationMinutes": 105,
+      "format": "FEATURE",
+      "synopsis": "Alexeï, malade et alité pour une « blanche, blanche journée », profite de son oisiveté forcée pour s’adonner à un long monologue intérieur. Il se laisse, pour d’obscures raisons, aller à un soudain besoin irrépressible de replonger dans sa propre mémoire. Il y voit notamment défiler ses sentiments ambivalents pour sa mère, et le souvenir amer d’un père poète, ayant trop tôt déserté le foyer familial. Par ce voyage intime qui le mène au cœur de son enfance, Alexeï espère éclaircir les mystères de son devenir. Il le renvoie pourtant irrémédiablement à sa propre situation et celle de son fils, confronté comme lui à une séparation parentale et au départ du père.",
+      "historicalDistance": 0.49,
+      "artisticDemand": 0.81,
+      "historicalRichness": 0.7,
+      "culturalRichness": 0.69,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ANDREI_TARKOVSKY",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_SOVIETIQUE",
+        "CINEMA_D_AUTEUR",
+        "CINEMA_EXPERIMENTAL"
+      ],
+      "isExperimental": true
+    },
+    {
       "code": "ANDREI_ROUBLEV_1966",
       "originalTitle": "Андрей Рублёв",
       "frenchTitle": "Andreï Roublev",
@@ -19808,6 +20506,39 @@
       ],
       "characteristicCodes": [
         "NEW_HOLLYWOOD",
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "LE_MEPRIS_1963_GODARD",
+      "originalTitle": "Le Mépris",
+      "frenchTitle": "Le Mépris",
+      "releaseYear": 1963,
+      "durationMinutes": 103,
+      "format": "FEATURE",
+      "synopsis": "Le scénariste Paul Javal mène une vie heureuse avec sa femme Camille. Un jour, le célèbre producteur américain Jeremy Prokosch lui propose de travailler à une adaptation de l’Odyssée, réalisée par Fritz Lang à Cinecittà. Le couple se rend alors sur les lieux du tournage et rencontre l’équipe. Prokosch fait bientôt des avances à Camille sous les yeux de Paul. Cette tentative de séduction va sonner le glas de leur couple…",
+      "historicalDistance": 0.55,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.68,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JEAN_LUC_GODARD",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_FRANCAISE",
         "CINEMA_D_AUTEUR"
       ]
     },
@@ -20244,8 +20975,7 @@
       ],
       "genreCodes": [
         "FANTASTIQUE",
-        "DRAME",
-        "HISTORIQUE"
+        "DRAME"
       ],
       "characteristicCodes": [
         "NOUVELLE_VAGUE_SCANDINAVE",
@@ -21148,8 +21878,7 @@
       "genreCodes": [
         "DRAME",
         "COMEDIE",
-        "ROMANCE",
-        "POLICIER"
+        "ROMANCE"
       ],
       "characteristicCodes": [
         "HONG_KONG_NEW_WAVE",
@@ -21531,6 +22260,41 @@
       "isBlackAndWhite": true
     },
     {
+      "code": "TOUKI_BOUKI_1973_MAMBETY",
+      "originalTitle": "Touki-Bouki",
+      "frenchTitle": "Le voyage de la Hyène",
+      "releaseYear": 1973,
+      "durationMinutes": 90,
+      "format": "FEATURE",
+      "synopsis": "Mory, jeune berger un peu marginal, et Anta son amoureuse, étudiante provocante, rêvent de partir pour Paris. Pour réaliser leur rêve, il ne leur manque que l'argent du voyage. Mory décide de se le procurer par des moyens peu orthodoxes.",
+      "historicalDistance": 0.46,
+      "artisticDemand": 0.78,
+      "historicalRichness": 0.71,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "SENEGAL",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "DJIBRIL_DIOP_MAMBETY",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_SENEGALAIS",
+        "CINEMA_D_AUTEUR",
+        "CINEMA_EXPERIMENTAL"
+      ],
+      "isExperimental": true
+    },
+    {
       "code": "LA_SOUPE_AU_CANARD_1933",
       "originalTitle": "Duck Soup",
       "frenchTitle": "La soupe au canard",
@@ -21695,6 +22459,40 @@
         "CINEMA_EXPERIMENTAL",
         "CINEMA_D_AUTEUR"
       ]
+    },
+    {
+      "code": "LA_TERRE_1930_DOVZHENKO",
+      "originalTitle": "Земля",
+      "frenchTitle": "La Terre",
+      "releaseYear": 1930,
+      "durationMinutes": 75,
+      "format": "FEATURE",
+      "synopsis": "En Ukraine, un vieillard, Semion, meurt dans un verger. La collectivisation des terres crée des antagonismes dans le village, entre les anciens et les jeunes, les riches et les pauvres. Le jeune paysan Vassili, ardent communiste, démontre l'efficacité du nouveau tracteur tout en renversant le bornage des ex-propriétaires. Après avoir passé la nuit chez sa fiancée, son allégresse manifestée par la danse est brutalement interrompue par un coup de feu qui l'abat sur le chemin du retour.",
+      "historicalDistance": 0.67,
+      "artisticDemand": 0.7,
+      "historicalRichness": 0.82,
+      "culturalRichness": 0.81,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ALEXANDER_DOVZHENKO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "MONTAGE_SOVIETIQUE",
+        "CINEMA_MUET_MOUVEMENT"
+      ],
+      "isSilent": true,
+      "isBlackAndWhite": true
     },
     {
       "code": "PARIS_TEXAS_1984",
@@ -23861,8 +24659,7 @@
         "GUERRE"
       ],
       "characteristicCodes": [
-        "CINEMA_SOVIETIQUE",
-        "CINEMA_D_AUTEUR"
+        "CINEMA_SOVIETIQUE"
       ]
     },
     {
@@ -27957,6 +28754,40 @@
       ]
     },
     {
+      "code": "LES_CHEVAUX_DE_FEU_1965_PARAJANOV",
+      "originalTitle": "Тіні забутих предків",
+      "frenchTitle": "Les Chevaux de feu",
+      "releaseYear": 1965,
+      "durationMinutes": 97,
+      "format": "FEATURE",
+      "synopsis": "Dans les Carpates, au XIXe siècle. Ivan et Marichka, deux enfants, s'aiment passionnément malgré la rivalité funeste qui oppose leurs familles depuis toujours. À l'adolescence, Ivan gagne les alpages pour garder les troupeaux. Saisi d'un étrange pressentiment, il retourne bientôt au village, pour apprendre que Marichka s'est noyée dans la rivière en voulant le rejoindre. Meurtri, il finit par épouser Palagna, dans l'espoir d'oublier son infortune…",
+      "historicalDistance": 0.48,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "SERGEI_PARAJANOV",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_SOVIETIQUE",
+        "CINEMA_EXPERIMENTAL",
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
       "code": "CARRIE_AU_BAL_DU_DIABLE_1976",
       "originalTitle": "Carrie",
       "frenchTitle": "Carrie au bal du diable",
@@ -28806,8 +29637,7 @@
       ],
       "genreCodes": [
         "THRILLER",
-        "MYSTERE",
-        "POLICIER"
+        "MYSTERE"
       ],
       "characteristicCodes": [
         "KOREAN_NEW_WAVE",
@@ -31789,6 +32619,37 @@
       "isBlackAndWhite": true
     },
     {
+      "code": "WEST_INDIES_THE_FUGITIVE_SLAVES_OF_LIBERTY_1979",
+      "originalTitle": "West Indies ou les Nègres marrons de la liberté",
+      "frenchTitle": "West Indies: The Fugitive Slaves of Liberty",
+      "releaseYear": 1979,
+      "durationMinutes": 110,
+      "format": "FEATURE",
+      "synopsis": "West Indies les nègres marrons de la liberté est un pamphlet contre la colonisation française aux Antilles et en Afrique, thématique chère à Med Hondo. Tourné dans les usines Citroën, désaffectées du quai de Javel à Paris, symbole fort de l'exploitation de la main d’œuvre ouvrière sur plusieurs générations, le film y dévoile un dispositif scénique évident. Une distance s'installe, conférant force au propos du film, rappelant la théorie de Brecht chère au cinéaste.",
+      "historicalDistance": 0.46,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MED_HONDO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "MUSICAL",
+        "HISTORIQUE",
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
       "code": "TALE_OF_TALES_1979",
       "originalTitle": "Tale of Tales",
       "frenchTitle": "Tale of Tales",
@@ -32080,6 +32941,38 @@
       "characteristicCodes": [
         "NOUVEL_AGE_OR_HOLLYWOOD",
         "MELODRAME"
+      ]
+    },
+    {
+      "code": "DON_T_LOOK_BACK_1967",
+      "originalTitle": "Bob Dylan – Don't Look Back",
+      "frenchTitle": "Don't Look Back",
+      "releaseYear": 1967,
+      "durationMinutes": 96,
+      "format": "FEATURE",
+      "synopsis": "Une tournée mythique en Angleterre de Bob Dylan en 1965, avec des apparitions de Joan Baez et Donovan.",
+      "historicalDistance": 0.5,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "USA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "D_A_PENNEBAKER",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE",
+        "MUSICAL"
+      ],
+      "characteristicCodes": [
+        "NEW_HOLLYWOOD"
       ]
     },
     {
@@ -33365,6 +34258,39 @@
       ]
     },
     {
+      "code": "HYENES_1992_MAMBETY",
+      "originalTitle": "Hyènes",
+      "frenchTitle": "Hyènes",
+      "releaseYear": 1992,
+      "durationMinutes": 110,
+      "format": "FEATURE",
+      "synopsis": "Colobane, une petite cité endormie dans la chaleur poussiéreuse du Sahel, fantôme d’une ville au charme foudroyé par la misère. On annonce le retour, après trente années d’absence, de Linguère Ramatou, devenue multi-millionnaire, « plus riche que la Banque mondiale ». Linguère arrive en train, majestueuse, vêtue de noir et or. La foule se précipite avec au premier rang Draman, qui fut jadis son amant. Linguère confirme qu’elle va faire pleuvoir ses largesses sur la ville et lui redonner vie à une seule condition  : que Draman soit condamné à mort, car il l’a autrefois trahie…",
+      "historicalDistance": 0.36,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "SENEGAL",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "DJIBRIL_DIOP_MAMBETY",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "COMEDIE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_SENEGALAIS",
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
       "code": "THE_PURPLE_ROSE_OF_CAIRO_1985",
       "originalTitle": "The Purple Rose of Cairo",
       "frenchTitle": "La Rose pourpre du Caire",
@@ -33395,6 +34321,42 @@
       ],
       "characteristicCodes": [
         "CINEMA_INDEPENDANT_AMERICAIN"
+      ]
+    },
+    {
+      "code": "CHRONICLE_OF_A_SUMMER_1961",
+      "originalTitle": "Chronique d'un été (Paris 1960)",
+      "frenchTitle": "Chronicle of a Summer",
+      "releaseYear": 1961,
+      "durationMinutes": 91,
+      "format": "FEATURE",
+      "synopsis": "Paris, été 1960. L'anthropologue et cinéaste Jean Rouch et le sociologue et critique de cinéma Edgar Morin déambulent dans les rues bondées en demandant aux passants comment ils font face aux malheurs de la vie.",
+      "historicalDistance": 0.52,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.74,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JEAN_ROUCH",
+          "billingOrder": 0
+        },
+        {
+          "code": "EDGAR_MORIN",
+          "billingOrder": 1
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_VERITE",
+        "NOUVELLE_VAGUE_FRANCAISE"
       ]
     },
     {
@@ -35061,6 +36023,38 @@
       ],
       "characteristicCodes": [
         "NEW_FRENCH_EXTREMITY"
+      ]
+    },
+    {
+      "code": "ONE_WAY_OR_ANOTHER_1977",
+      "originalTitle": "De cierta manera",
+      "frenchTitle": "One Way or Another",
+      "releaseYear": 1977,
+      "durationMinutes": 73,
+      "format": "FEATURE",
+      "synopsis": "Les images et les sons du Cuba d’après révolution prennent vie dans le long-métrage de la pionnière afro-cubaine Sara Gómez. Alliant radicalement réalisme documentaire et fiction narrative, micro-trottoir et agit-prop féministe, \"De cierta manera\" est un chef-d’œuvre inclassable.",
+      "historicalDistance": 0.43,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "CUBA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "SARA_GOMEZ",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_POLITIQUE_LATINO"
       ]
     },
     {
@@ -36757,6 +37751,37 @@
       "isBlackAndWhite": true
     },
     {
+      "code": "FORBIDDEN_GAMES_1952",
+      "originalTitle": "Jeux interdits",
+      "frenchTitle": "Jeux interdits",
+      "releaseYear": 1952,
+      "durationMinutes": 82,
+      "format": "FEATURE",
+      "synopsis": "Les parents de la petite Paulette sont tués lors des bombardements de juin 1940, dans le centre de la France. La fillette de cinq ans est recueillie par les Dollé, une famille de paysans. Elle devient l'amie de leur jeune fils de onze ans, Michel. Après avoir enterré le chien de Paulette dans un vieux moulin abandonné, les deux enfants constituent peu à peu un véritable cimetière pour insectes et petits animaux. Les problèmes commencent lorsque Michel se met à voler des croix pour en orner les tombes du cimetière miniature.",
+      "historicalDistance": 0.6,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.76,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "RENE_CLEMENT",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "GUERRE"
+      ],
+      "characteristicCodes": [],
+      "isBlackAndWhite": true
+    },
+    {
       "code": "VAN_GOGH_1991",
       "originalTitle": "Van Gogh",
       "frenchTitle": "Van Gogh",
@@ -37145,6 +38170,38 @@
       "characteristicCodes": [
         "NEW_FRENCH_EXTREMITY",
         "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "AMORES_PERROS_2000_INARRITU",
+      "originalTitle": "Amores perros",
+      "frenchTitle": "Amours chiennes",
+      "releaseYear": 2000,
+      "durationMinutes": 154,
+      "format": "FEATURE",
+      "synopsis": "Mexico. Un tragique accident de voiture mêle les extrêmes de la vie, sous l'angle de trois histoires radicalement différentes : Octavio, un adolescent qui a décidé de s'enfuir avec la femme de son frère; Daniel, un quadragénaire qui quitte sa femme et ses enfants pour aller vivre avec un top model; El Chivo, un ex-guérillero communiste devenu tueur à gages, qui n'attend plus rien de la vie.",
+      "historicalDistance": 0.34,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.64,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "MEXICO",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ALEJANDRO_GONZALEZ_INARRITU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "THRILLER"
+      ],
+      "characteristicCodes": [
+        "NUEVO_CINE_MEXICANO"
       ]
     },
     {
@@ -38261,6 +39318,37 @@
       "isBlackAndWhite": true
     },
     {
+      "code": "SPRING_SUMMER_AUTUMN_WINTER_AND_SPRING_2003",
+      "originalTitle": "봄 여름 가을 겨울 그리고 봄",
+      "frenchTitle": "Printemps, été, automne, hiver... et printemps",
+      "releaseYear": 2003,
+      "durationMinutes": 103,
+      "format": "FEATURE",
+      "synopsis": "Un maître zen et son disciple vivent au cœur d'un temple bouddhiste en bois : au fil des saisons, leurs sentiments évoluent…",
+      "historicalDistance": 0.34,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.63,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "SOUTH_KOREA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "KIM_KI_DUK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "KOREAN_NEW_WAVE"
+      ]
+    },
+    {
       "code": "THE_WOMAN_NEXT_DOOR_1981",
       "originalTitle": "La Femme d'à côté",
       "frenchTitle": "La Femme D'à Côté",
@@ -38290,6 +39378,38 @@
       ],
       "characteristicCodes": [
         "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "THE_NIGHT_OF_COUNTING_THE_YEARS_1969",
+      "originalTitle": "المومياء",
+      "frenchTitle": "La momie",
+      "releaseYear": 1969,
+      "durationMinutes": 102,
+      "format": "FEATURE",
+      "synopsis": "« Celui qui est venu reviendra, Celui qui s’est endormi s’éveillera, Celui qui est mort revivra ».\r Le scénario est basé sur des évènements réels survenus au cours d’une expédition archéologique française dans la vallée des rois en 1881. Parce que certains objets impossibles à confondre ont été vendus clandestinement, les archéologues égyptiens se lancent à la recherche des tombes des pharaons de la vingt-et-unième dynastie. C'est une tribu (la famille Abd el-Rasul) basée à Gurna à Thèbes qui vit d'un tel trafic, après avoir découvert les tombeaux cachés dans la montagne. Mais l'un de ses membres, Wannis, tourmenté par sa conscience, songe à révéler aux archéologues l'emplacement des sarcophages.",
+      "historicalDistance": 0.51,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.7,
+      "countries": [
+        {
+          "code": "EGYPT",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "SHADI_ABDEL_SALAM",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_MAGHREBIN"
       ]
     },
     {
@@ -39188,6 +40308,38 @@
       ]
     },
     {
+      "code": "RETURN_THE_2003",
+      "originalTitle": "Возвращение",
+      "frenchTitle": "Le Retour",
+      "releaseYear": 2003,
+      "durationMinutes": 110,
+      "format": "FEATURE",
+      "synopsis": "Adolescents turbulents, Ivan et son grand frère Andreï n’ont jamais connu leur père. Après douze ans d’absence, ce dernier réapparaît soudainement. Les enfants n’ont de souvenir de lui qu’à travers une photographie. Pour restaurer les liens rompus, l’homme, taciturne et autoritaire, décide d’emmener durant quelques jours ses deux fils pour une partie de pêche. Tous trois commencent un long voyage en voiture sur les routes russes. Ce court séjour se transforme en longue virée vers une île abandonnée à la recherche d'une chose mystérieuse. Ivan, dit « la crevette », devient de plus en plus arrogant.",
+      "historicalDistance": 0.34,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.63,
+      "culturalRichness": 0.7,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ANDREI_ZVIAGUINTSEV",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "MYSTERE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_POST_SOVIETIQUE"
+      ]
+    },
+    {
       "code": "KHRUSTALYOV_MY_CAR_1998",
       "originalTitle": "Хрусталёв, машину!",
       "frenchTitle": "Khroustaliov, ma voiture !",
@@ -39943,6 +41095,41 @@
       "isExperimental": true
     },
     {
+      "code": "ARSENAL_1929_DOVZHENKO",
+      "originalTitle": "Арсенал",
+      "frenchTitle": "Arsenal",
+      "releaseYear": 1929,
+      "durationMinutes": 73,
+      "format": "FEATURE",
+      "synopsis": "Après la révolution russe de 1917, la bourgeoisie tient les rênes du pouvoir dans une Ukraine désormais indépendante. En janvier 1918, pour défendre leurs idéaux, les bolcheviks lancent une grève qui paralyse Kiev, la capitale. La révolte des ouvriers de l'arsenal va y être réprimée dans le sang.",
+      "historicalDistance": 0.69,
+      "artisticDemand": 0.71,
+      "historicalRichness": 0.82,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ALEXANDER_DOVZHENKO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "GUERRE"
+      ],
+      "characteristicCodes": [
+        "MONTAGE_SOVIETIQUE",
+        "CINEMA_MUET_MOUVEMENT"
+      ],
+      "isSilent": true,
+      "isBlackAndWhite": true
+    },
+    {
       "code": "REGEN_1929",
       "originalTitle": "Regen",
       "frenchTitle": "Pluie",
@@ -40056,7 +41243,7 @@
       "releaseYear": 1952,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "Les parents de la petite Paulette sont tués lors des bombardements de juin 1940, dans le centre de la France. La fillette de cinq ans est recueillie par les Dollé, une famille de paysans. Elle devient l'amie de leur jeune fils de onze ans, Michel. Après avoir enterré le chien de Paulette dans un vieux moulin abandonné, les deux enfants constituent peu à peu un véritable cimetière pour insectes et petits animaux. Les problèmes commencent lorsque Michel se met à voler des croix pour en orner les tombes du cimetière miniature.",
+      "synopsis": "",
       "historicalDistance": 0.55,
       "artisticDemand": 0.61,
       "historicalRichness": 0.76,
@@ -40074,8 +41261,7 @@
         }
       ],
       "genreCodes": [
-        "DRAME",
-        "GUERRE"
+        "DRAME"
       ],
       "characteristicCodes": [
         "REALISME_POETIQUE"
@@ -40638,6 +41824,37 @@
       ],
       "characteristicCodes": [
         "CINEMA_SOVIETIQUE"
+      ]
+    },
+    {
+      "code": "THE_HOUSE_IS_BLACK_1962",
+      "originalTitle": "خانه سیاه است",
+      "frenchTitle": "La maison est noire",
+      "releaseYear": 1963,
+      "durationMinutes": 21,
+      "format": "SHORT",
+      "synopsis": "Une vision poétique de la vie des lépreux de Babadaghi, léproserie de Tabriz.",
+      "historicalDistance": 0.51,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "IRAN",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "FOROUGH_FARROKHZAD",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "ESSAY_FILM"
       ]
     },
     {
@@ -41297,6 +42514,39 @@
       ],
       "characteristicCodes": [
         "CINEMA_ABSTRAIT"
+      ]
+    },
+    {
+      "code": "SZEGENYLEGENYEK_1966",
+      "originalTitle": "Szegénylegények",
+      "frenchTitle": "Les Sans-espoir",
+      "releaseYear": 1966,
+      "durationMinutes": 86,
+      "format": "FEATURE",
+      "synopsis": "Au lendemain du Compromis austro-hongrois de 1867, les Sans Espoir, des bandits d'honneur, vivent parmi les paysans. Le gouvernement veut les arrêter, surtout leur chef Sandor. Pour cela, la police propose aux paysans de s'engager dans l'armée. Ainsi, les Sans Espoir seront démasqués et abattus.",
+      "historicalDistance": 0.52,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "HUNGARY",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MIKLOS_JANCSO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HISTORIQUE",
+        "GUERRE"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_HONGROISE"
       ]
     },
     {
@@ -42536,8 +43786,7 @@
         "ROMANCE"
       ],
       "characteristicCodes": [
-        "THIRD_CINEMA",
-        "CINEMA_POLITIQUE_LATINO"
+        "THIRD_CINEMA"
       ]
     },
     {
@@ -42672,6 +43921,39 @@
       ]
     },
     {
+      "code": "CHRONIQUE_DES_ANNEES_DE_BRAISE_1975_LAKHDAR_HAMINA",
+      "originalTitle": "Chronique des Années de Braise",
+      "frenchTitle": "Chronique des années de braise",
+      "releaseYear": 1975,
+      "durationMinutes": 177,
+      "format": "FEATURE",
+      "synopsis": "Festival de Cannes, 1975, Chronique des années de braise de Mohamed Lakhdar-Hamina reçoit la Palme d'or. C'est une première pour un film africain. Minutieuse chronique de l'évolution du mouvement national algérien de 1939 jusqu'au déclenchement de la révolution le 1er novembre 1954, le film démontre sans appel que la « guerre d'Algérie » n'est pas un accident de l'histoire, mais un lent processus de révoltes et de souffrances, ininterrompu, du début de la colonisation en 1830, jusqu'à cette « Toussaint rouge » du 1er novembre 54. Composé de six chapitres, le film brosse l'impitoyable tableau de l'histoire politique et guerrière de l'Algérie coloniale. En son centre, Ahmed s'éveille peu à peu à la conscience politique contre la colonisation, sous le regard de son fils, symbole de l'Algérie nouvelle, et celui de Miloud, harangueur mi-fou, mi-prophète, incarnation de la mémoire populaire de la révolte, de la libération de l'Algérie et de son peuple.",
+      "historicalDistance": 0.48,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.7,
+      "culturalRichness": 0.7,
+      "countries": [
+        {
+          "code": "ALGERIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MOHAMMED_LAKHDAR_HAMINA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "GUERRE",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_MAGHREBIN"
+      ]
+    },
+    {
       "code": "FANTOZZI_1975",
       "originalTitle": "Fantozzi",
       "frenchTitle": "Fantozzi",
@@ -42778,6 +44060,39 @@
       ]
     },
     {
+      "code": "LA_BATAILLE_DU_CHILI_1975",
+      "originalTitle": "La batalla de Chile (Parte 1). La insurrección de la burguesía",
+      "frenchTitle": "La bataille du Chili, Partie 1 : L'insurrection de la bourgeoisie",
+      "releaseYear": 1975,
+      "durationMinutes": 97,
+      "format": "FEATURE",
+      "synopsis": "En 1973, alors que Salvador Allende initie un programme de transformations sociales et politiques visant à moderniser l’État et à enrayer la pauvreté, les classes les plus conservatrices organisent une série de grèves sauvages, et la Maison-Blanche asphyxie économiquement le pays. Quand les partis qui soutiennent Allende obtiennent la majorité des suffrages en mars 1973, la droite comprend qu’elle ne peut plus avoir recours à des mécanismes légaux, sa stratégie sera désormais le coup d’État.",
+      "historicalDistance": 0.47,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.7,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "CHILE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "PATRICIO_GUZMAN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_CHILIENNE",
+        "THIRD_CINEMA"
+      ]
+    },
+    {
       "code": "SWITCHBLADE_SISTERS_1975",
       "originalTitle": "Switchblade Sisters",
       "frenchTitle": "Les loubardes",
@@ -42841,8 +44156,7 @@
       ],
       "characteristicCodes": [
         "CINEMA_MILITANT",
-        "THIRD_CINEMA",
-        "NOUVELLE_VAGUE_CHILIENNE"
+        "THIRD_CINEMA"
       ]
     },
     {
@@ -44016,6 +45330,37 @@
       ]
     },
     {
+      "code": "REPENTANCE_1984",
+      "originalTitle": "Repentance",
+      "frenchTitle": "Repentance",
+      "releaseYear": 1984,
+      "durationMinutes": 90,
+      "format": "FEATURE",
+      "synopsis": "",
+      "historicalDistance": 0.44,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.69,
+      "countries": [
+        {
+          "code": "GEORGIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "TENGIZ_ABULADZE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_GEORGIENNE"
+      ]
+    },
+    {
       "code": "REPENTIR_1984",
       "originalTitle": "Repentir",
       "frenchTitle": "Repentir",
@@ -44687,6 +46032,41 @@
         "CINEMA_EXPERIMENTAL"
       ],
       "isExperimental": true
+    },
+    {
+      "code": "RED_SORGHUM_1988",
+      "originalTitle": "红高粱",
+      "frenchTitle": "Le Sorgho rouge",
+      "releaseYear": 1988,
+      "durationMinutes": 90,
+      "format": "FEATURE",
+      "synopsis": "Les années 30, dans un village au nord-est de la Chine, au cours de l'invasion japonaise. Après la mort de son père, une jeune héritière d'une propriété exploitant le sorgho organise la résistance face aux envahisseurs qui détruisent ses récoltes.",
+      "historicalDistance": 0.41,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ZHANG_YIMOU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE",
+        "MELODRAME",
+        "CINEMA_D_AUTEUR"
+      ]
     },
     {
       "code": "JESUS_OF_MONTREAL_1989",
@@ -46232,6 +47612,38 @@
       ]
     },
     {
+      "code": "KHRUSTALYOV_MA_VOITURE_1998",
+      "originalTitle": "Хрусталёв, машину!",
+      "frenchTitle": "Khroustaliov, ma voiture !",
+      "releaseYear": 1999,
+      "durationMinutes": 147,
+      "format": "FEATURE",
+      "synopsis": "Médecin chef et spécialiste du cerveau, Youri Glinski est également général de l'Armée rouge. 1953 : sa vie de père de famille bascule quand, à l'initiative de Staline, le KGB organise le complot des blouses blanches. Il est envoyé au goulag et torturé. Mais lorsque le Petit père des peuples se meurt, Youri est libéré pour le sauver.",
+      "historicalDistance": 0.36,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.64,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "DIRECTOR",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_POST_SOVIETIQUE"
+      ]
+    },
+    {
       "code": "LA_VIE_SUR_TERRE_1998",
       "originalTitle": "La Vie sur Terre",
       "frenchTitle": "La Vie sur terre",
@@ -47314,6 +48726,39 @@
       ],
       "characteristicCodes": [
         "NUEVO_CINE_MEXICANO"
+      ]
+    },
+    {
+      "code": "L_ARCHE_RUSSE_2002",
+      "originalTitle": "Русский ковчег",
+      "frenchTitle": "L'Arche russe",
+      "releaseYear": 2002,
+      "durationMinutes": 95,
+      "format": "FEATURE",
+      "synopsis": "Invisible pour ceux qui l'entourent, un réalisateur contemporain se retrouve comme par magie dans le musée de l'Ermitage à Saint-Pétersbourg au début du XVIIIe siècle. Il y rencontre un cynique diplomate français du XIXe siècle. Les deux hommes deviennent complices au cours d'un extraordinaire voyage dans le temps, à travers le turbulent passé de la Russie, qui les conduit jusqu'à nos jours.",
+      "historicalDistance": 0.31,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.63,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "RUSSIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ALEXANDRE_SOKOUROV",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "FANTASTIQUE",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_POST_SOVIETIQUE"
       ]
     },
     {
@@ -48412,6 +49857,39 @@
       ]
     },
     {
+      "code": "PAN_S_LABYRINTH_2006",
+      "originalTitle": "El laberinto del fauno",
+      "frenchTitle": "Le Labyrinthe de Pan",
+      "releaseYear": 2006,
+      "durationMinutes": 113,
+      "format": "FEATURE",
+      "synopsis": "Espagne 1944. Ofelia s’installe avec sa mère dans une garnison dirigée par Vidal, son beau‐père, capitaine autoritaire de l’armée franquiste. À proximité de la grande maison familiale, la jeune fille découvre un étrange labyrinthe gardé par une créature nommée Pan. Le monstre lui révèle qu’elle n’est autre que la princesse d’un royaume enchanté. Afin de découvrir la vérité, Ofelia devra se soumettre à trois épreuves que rien ne l’a préparée à affronter…",
+      "historicalDistance": 0.31,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.62,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "MEXICO",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "GUILLERMO_DEL_TORO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "FANTASTIQUE",
+        "DRAME",
+        "GUERRE"
+      ],
+      "characteristicCodes": [
+        "NUEVO_CINE_MEXICANO"
+      ]
+    },
+    {
       "code": "STILL_LIFE_2006",
       "originalTitle": "三峡好人",
       "frenchTitle": "Still Life",
@@ -49452,8 +50930,7 @@
         "DRAME"
       ],
       "characteristicCodes": [
-        "KOREAN_NEW_WAVE",
-        "CINEMA_D_AUTEUR"
+        "KOREAN_NEW_WAVE"
       ]
     },
     {
@@ -51412,6 +52889,40 @@
       ]
     },
     {
+      "code": "ATLANTIQUE_2019",
+      "originalTitle": "Atlantique",
+      "frenchTitle": "Atlantique",
+      "releaseYear": 2019,
+      "durationMinutes": 104,
+      "format": "FEATURE",
+      "synopsis": "Dans une banlieue populaire de Dakar, les ouvriers d’un chantier, sans salaire depuis des mois, décident de quitter le pays par l’océan pour un avenir meilleur. Parmi eux se trouve Souleiman, qui laisse derrière lui celle qu'il aime, Ada, promise à un autre homme. Quelques jours après le départ en mer des garçons, un incendie dévaste la fête de mariage d’Ada et de mystérieuses fièvres s'emparent des filles du quartier. Issa, jeune policier, débute une enquête, loin de se douter que les esprits des noyés sont revenus. Si certains viennent réclamer vengeance, Souleiman, lui, est revenu faire ses adieux à Ada.",
+      "historicalDistance": 0.23,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.59,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "SENEGAL",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "DJIBRIL_DIOP_MAMBETY",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE",
+        "FANTASTIQUE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_SENEGALAIS",
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
       "code": "BACURAU_2019",
       "originalTitle": "Bacurau",
       "frenchTitle": "Bacurau",
@@ -52716,6 +54227,40 @@
       "isBlackAndWhite": true
     },
     {
+      "code": "LA_CONDITION_DE_L_HOMME_2_1959",
+      "originalTitle": "人間の條件 第2部",
+      "frenchTitle": "La Condition de l'homme II : Le Chemin de l'éternité",
+      "releaseYear": 1959,
+      "durationMinutes": 181,
+      "format": "EXTENDED",
+      "synopsis": "Kaji est envoyé au front ; l'armée japonaise achève de le briser.",
+      "historicalDistance": 0.5,
+      "artisticDemand": 0.66,
+      "historicalRichness": 0.76,
+      "culturalRichness": 0.91,
+      "countries": [
+        {
+          "code": "JAPAN",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MASAKI_KOBAYASHI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "GUERRE",
+        "DRAME",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": [
+        "AGE_OR_CINEMA_JAPONAIS"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
       "code": "LA_CONDITION_DE_L_HOMME_3_1961",
       "originalTitle": "人間の條件 第3部",
       "frenchTitle": "La Condition de l'homme III : La Prière du soldat",
@@ -53049,20 +54594,24 @@
           "displayOrder": 15
         },
         {
-          "code": "LES_FEUX_DANS_LA_PLAINE_1959",
+          "code": "LA_CONDITION_DE_L_HOMME_2_1959",
           "displayOrder": 16
         },
         {
-          "code": "LA_COURTISANE_DE_NAKANO_1960",
+          "code": "LES_FEUX_DANS_LA_PLAINE_1959",
           "displayOrder": 17
         },
         {
-          "code": "LA_CONDITION_DE_L_HOMME_3_1961",
+          "code": "LA_COURTISANE_DE_NAKANO_1960",
           "displayOrder": 18
         },
         {
-          "code": "HARA_KIRI_1962",
+          "code": "LA_CONDITION_DE_L_HOMME_3_1961",
           "displayOrder": 19
+        },
+        {
+          "code": "HARA_KIRI_1962",
+          "displayOrder": 20
         }
       ],
       "characteristicCodes": [
