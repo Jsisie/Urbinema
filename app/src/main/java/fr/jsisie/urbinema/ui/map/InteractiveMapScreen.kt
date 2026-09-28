@@ -90,7 +90,7 @@ import fr.jsisie.urbinema.domain.map.MapNodeKind
 import fr.jsisie.urbinema.ui.components.WatchedFilmTitle
 import fr.jsisie.urbinema.ui.model.ExplorationState
 import fr.jsisie.urbinema.ui.model.MovieSummaryUi
-import fr.jsisie.urbinema.ui.model.TerritoryUi
+import fr.jsisie.urbinema.ui.theme.UrbinemaThemeTokens
 import kotlin.math.hypot
 import kotlinx.coroutines.launch
 
@@ -104,6 +104,45 @@ internal val SkyCountry = Color(0xFFE07A5F)
 internal val SkyGenre = Color(0xFFD489C0)
 internal val SkyDecade = Color(0xFFE0A45C)
 internal val SkyCollection = Color(0xFF6EA8FF)
+
+private data class SkyPalette(
+    val isDark: Boolean,
+    val sky: Color,
+    val glow: Color,
+    val ink: Color,
+    val gold: Color,
+    val sheet: Color,
+    val fab: Color,
+    val star: Color,
+)
+
+@Composable
+private fun rememberSkyPalette(): SkyPalette {
+    val colors = UrbinemaThemeTokens.colors
+    return if (colors.isDark) {
+        SkyPalette(
+            isDark = true,
+            sky = SkyNight,
+            glow = Color(0xFF1B1430),
+            ink = SkyIvory,
+            gold = SkyGold,
+            sheet = Color(0xFF12101A),
+            fab = Color(0xFF16141F),
+            star = Color.White,
+        )
+    } else {
+        SkyPalette(
+            isDark = false,
+            sky = colors.background,
+            glow = colors.surface,
+            ink = colors.onBackground,
+            gold = colors.accent,
+            sheet = colors.surfaceElevated,
+            fab = colors.surfaceElevated,
+            star = colors.accentMuted,
+        )
+    }
+}
 
 internal fun skyKindColor(kind: MapNodeKind): Color = when (kind) {
     MapNodeKind.FILM -> SkyIvory
@@ -129,6 +168,7 @@ fun InteractiveMapScreen(
     onOpenNode: (MapNodeKind, String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val palette = rememberSkyPalette()
     val scope = rememberCoroutineScope()
     val live = remember { LiveCamera() }
     var frame by remember { mutableIntStateOf(0) }
@@ -168,7 +208,7 @@ fun InteractiveMapScreen(
     Box(
         modifier
             .fillMaxSize()
-            .background(SkyNight)
+            .background(palette.sky)
             .onSizeChanged { viewport = it },
     ) {
         val camera = remember(frame) { live.snapshot() }
@@ -178,6 +218,7 @@ fun InteractiveMapScreen(
             camera = camera,
             selectedId = selectedId,
             pulse = pulse,
+            palette = palette,
             onGestureCamera = { next ->
                 live.set(next)
                 frame++
@@ -212,7 +253,7 @@ fun InteractiveMapScreen(
                 stringResource(
                     if (layer == MapLayer.AROUND_FILM) R.string.sky_map_hint_around else R.string.sky_map_hint,
                 ),
-                color = SkyIvory.copy(alpha = 0.55f),
+                color = palette.ink.copy(alpha = 0.55f),
                 style = MaterialTheme.typography.bodyMedium,
             )
             Row(
@@ -227,16 +268,16 @@ fun InteractiveMapScreen(
                         onClick = { onLayerChange(value) },
                         label = { Text(stringResource(label)) },
                         colors = FilterChipDefaults.filterChipColors(
-                            containerColor = Color.White.copy(alpha = 0.06f),
-                            labelColor = SkyIvory.copy(alpha = 0.8f),
-                            selectedContainerColor = SkyGold.copy(alpha = 0.22f),
-                            selectedLabelColor = SkyGold,
+                            containerColor = palette.ink.copy(alpha = 0.06f),
+                            labelColor = palette.ink.copy(alpha = 0.8f),
+                            selectedContainerColor = palette.gold.copy(alpha = 0.22f),
+                            selectedLabelColor = palette.gold,
                         ),
                         border = FilterChipDefaults.filterChipBorder(
                             enabled = true,
                             selected = layer == value,
-                            borderColor = Color.White.copy(alpha = 0.12f),
-                            selectedBorderColor = SkyGold.copy(alpha = 0.7f),
+                            borderColor = palette.ink.copy(alpha = 0.12f),
+                            selectedBorderColor = palette.gold.copy(alpha = 0.7f),
                         ),
                     )
                 }
@@ -252,8 +293,8 @@ fun InteractiveMapScreen(
                 .align(Alignment.BottomEnd)
                 .navigationBarsPadding()
                 .padding(end = 16.dp, bottom = 16.dp),
-            containerColor = Color(0xFF16141F),
-            contentColor = SkyGold,
+            containerColor = palette.fab,
+            contentColor = palette.gold,
             elevation = FloatingActionButtonDefaults.elevation(0.dp, 0.dp),
             shape = CircleShape,
         ) {
@@ -267,10 +308,10 @@ fun InteractiveMapScreen(
         ) {
             Text(
                 stringResource(R.string.sky_map_legend),
-                color = SkyIvory.copy(alpha = 0.4f),
+                color = palette.ink.copy(alpha = 0.4f),
                 style = MaterialTheme.typography.labelSmall,
             )
-            SkyMapLegend(Modifier.padding(top = 6.dp))
+            SkyMapLegend(palette, Modifier.padding(top = 6.dp))
         }
     }
     if (selected != null && selectedTerritory != null) {
@@ -278,8 +319,8 @@ fun InteractiveMapScreen(
         ModalBottomSheet(
             onDismissRequest = { selectedId = null },
             sheetState = sheetState,
-            containerColor = Color(0xFF12101A),
-            contentColor = SkyIvory,
+            containerColor = palette.sheet,
+            contentColor = palette.ink,
         ) {
             NodeSheet(
                 territory = selectedTerritory,
@@ -309,6 +350,7 @@ private fun NodeSheet(
             ExplorationState.Mastered -> R.string.state_mastered
         },
     )
+    val colors = UrbinemaThemeTokens.colors
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
@@ -317,18 +359,18 @@ private fun NodeSheet(
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
         item {
-            Text(territory.name, style = MaterialTheme.typography.displayMedium, color = SkyGold)
+            Text(territory.name, style = MaterialTheme.typography.displayMedium, color = colors.accent)
             if (territory.subtitle.isNotBlank()) {
                 Text(
                     territory.subtitle,
-                    color = SkyIvory.copy(alpha = 0.65f),
+                    color = colors.onBackgroundMuted,
                     style = MaterialTheme.typography.bodyMedium,
                 )
             }
             if (kind != MapNodeKind.FILM) {
                 Text(
                     "$stateLabel · ${territory.progress} %",
-                    color = SkyIvory.copy(alpha = 0.7f),
+                    color = colors.onBackgroundMuted,
                     style = MaterialTheme.typography.bodyMedium,
                 )
                 LinearProgressIndicator(
@@ -337,8 +379,8 @@ private fun NodeSheet(
                         .fillMaxWidth()
                         .padding(top = 12.dp)
                         .height(3.dp),
-                    color = SkyGold,
-                    trackColor = Color.White.copy(alpha = 0.08f),
+                    color = colors.accent,
+                    trackColor = colors.surfacePressed,
                 )
             }
             TextButton(onClick = onOpenNode, modifier = Modifier.padding(top = 4.dp)) {
@@ -346,7 +388,7 @@ private fun NodeSheet(
                     stringResource(
                         if (kind == MapNodeKind.FILM) R.string.sky_map_open_fiche else R.string.sky_map_open_place,
                     ),
-                    color = SkyGold,
+                    color = colors.accent,
                 )
             }
         }
@@ -355,12 +397,12 @@ private fun NodeSheet(
                 Text(
                     stringResource(R.string.films),
                     style = MaterialTheme.typography.titleMedium,
-                    color = SkyViolet.copy(alpha = 0.95f),
+                    color = colors.cool,
                     modifier = Modifier.padding(top = 8.dp),
                 )
             }
             if (films.isEmpty()) {
-                item { Text(stringResource(R.string.empty_territory), color = SkyIvory.copy(alpha = 0.5f)) }
+                item { Text(stringResource(R.string.empty_territory), color = colors.onBackgroundMuted) }
             } else {
                 items(films, key = { it.id }) { film ->
                     Column(
@@ -374,7 +416,7 @@ private fun NodeSheet(
                             listOf(film.director, film.year.toString())
                                 .filter { it.isNotBlank() }
                                 .joinToString(" · "),
-                            color = SkyIvory.copy(alpha = 0.45f),
+                            color = colors.onBackgroundMuted,
                             style = MaterialTheme.typography.bodyMedium,
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis,
@@ -394,6 +436,7 @@ private fun CinemaMapCanvas(
     camera: MapCamera,
     selectedId: String?,
     pulse: Float,
+    palette: SkyPalette,
     onGestureCamera: (MapCamera) -> Unit,
     onTapNode: (CinemaMapNode) -> Unit,
     modifier: Modifier = Modifier,
@@ -471,7 +514,7 @@ private fun CinemaMapCanvas(
         val cam = camera
         drawRect(
             Brush.radialGradient(
-                colors = listOf(Color(0xFF1B1430), SkyNight),
+                colors = listOf(palette.glow, palette.sky),
                 center = Offset(size.width * 0.35f, size.height * 0.28f),
                 radius = size.maxDimension * 0.85f,
             ),
@@ -482,7 +525,7 @@ private fun CinemaMapCanvas(
             center = Offset(cam.worldToScreenX(-80f), cam.worldToScreenY(-40f)),
         )
         drawCircle(
-            SkyGold.copy(alpha = 0.045f),
+            palette.gold.copy(alpha = 0.045f),
             radius = 180.dp.toPx(),
             center = Offset(cam.worldToScreenX(140f), cam.worldToScreenY(90f)),
         )
@@ -493,7 +536,7 @@ private fun CinemaMapCanvas(
             val wx = bounds.minX + hx * bounds.width
             val wy = bounds.minY + hy * bounds.height
             drawCircle(
-                Color.White.copy(alpha = 0.08f + (i % 4) * 0.04f),
+                palette.star.copy(alpha = if (palette.isDark) 0.08f + (i % 4) * 0.04f else 0.12f),
                 radius = 1.1.dp.toPx() + (i % 3) * 0.4.dp.toPx(),
                 center = Offset(cam.worldToScreenX(wx), cam.worldToScreenY(wy)),
             )
@@ -529,9 +572,9 @@ private fun CinemaMapCanvas(
             val selected = node.id == selectedId
             val isFilm = node.kind == MapNodeKind.FILM
             val color = when {
-                node.ring == 0 -> SkyGold
-                isFilm && state >= ExplorationState.Completed -> SkyGold
-                isFilm -> SkyIvory
+                node.ring == 0 -> palette.gold
+                isFilm && state >= ExplorationState.Completed -> palette.gold
+                isFilm -> palette.ink
                 else -> skyKindColor(node.kind)
             }
             val base = when {
@@ -562,11 +605,11 @@ private fun CinemaMapCanvas(
                 drawCircle(color, radius, center)
             }
             if (state == ExplorationState.Mastered && !isFilm) {
-                drawCircle(SkyNight, radius * 0.35f, center)
+                drawCircle(palette.sky, radius * 0.35f, center)
             }
             if (selected || node.ring == 0) {
                 drawCircle(
-                    SkyGold.copy(alpha = 0.9f),
+                    palette.gold.copy(alpha = 0.9f),
                     radius + 5.dp.toPx(),
                     center,
                     style = Stroke(width = 1.4.dp.toPx()),
@@ -582,8 +625,8 @@ private fun CinemaMapCanvas(
             if (showLabel) {
                 val name = territory?.name ?: node.id
                 labelPaint.color = (when {
-                    selected || node.ring == 0 || (isFilm && state >= ExplorationState.Completed) -> SkyGold
-                    isFilm -> SkyIvory
+                    selected || node.ring == 0 || (isFilm && state >= ExplorationState.Completed) -> palette.gold
+                    isFilm -> palette.ink
                     else -> skyKindColor(node.kind)
                 })
                     .copy(alpha = if (state == ExplorationState.Unexplored && !isFilm) 0.55f else 0.92f)
@@ -604,10 +647,10 @@ private fun CinemaMapCanvas(
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun SkyMapLegend(modifier: Modifier = Modifier) {
+private fun SkyMapLegend(palette: SkyPalette, modifier: Modifier = Modifier) {
     val items = listOf(
-        Triple(SkyIvory, R.string.sky_legend_film, false),
-        Triple(SkyGold, R.string.sky_legend_watched, false),
+        Triple(palette.ink, R.string.sky_legend_film, false),
+        Triple(palette.gold, R.string.sky_legend_watched, false),
         Triple(SkyDirector, R.string.directors, false),
         Triple(SkyCountry, R.string.countries, false),
         Triple(SkyGenre, R.string.genres, false),
@@ -630,7 +673,7 @@ private fun SkyMapLegend(modifier: Modifier = Modifier) {
                 }
                 Text(
                     stringResource(label),
-                    color = SkyIvory.copy(alpha = 0.45f),
+                    color = palette.ink.copy(alpha = 0.45f),
                     style = MaterialTheme.typography.labelSmall,
                 )
             }

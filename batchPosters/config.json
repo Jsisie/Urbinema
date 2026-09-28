@@ -1,5 +1,5 @@
 {
-  "catalogPath": "../app/src/main/assets/catalog/catalog_v2.json",
+  "catalogPath": "../app/src/main/assets/catalog/catalog_v3.json",
   "inputFile": "input/input_movies.txt",
   "outputDir": "output/posters",
   "reportFile": "output/reports/fetch_report.csv",

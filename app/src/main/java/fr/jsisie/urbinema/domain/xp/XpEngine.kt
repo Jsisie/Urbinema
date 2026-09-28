@@ -1,5 +1,7 @@
 package fr.jsisie.urbinema.domain.xp
 
+import fr.jsisie.urbinema.data.db.MovieWithRelations
+
 data class XpCurveSegment(
     val startLevel: Int,
     val endLevel: Int,
@@ -7,7 +9,8 @@ data class XpCurveSegment(
     val incrementPerLevel: Int,
 ) {
     init {
-        require(startLevel in 1..49 && endLevel in startLevel..49)
+        val maxLevel = 50
+        require(startLevel in 1..maxLevel-1 && endLevel in startLevel..maxLevel-1)
         require(baseCost > 0 && incrementPerLevel >= 0)
     }
 
@@ -110,7 +113,9 @@ class XpEngine(private val configuration: XpConfiguration = XpConfiguration()) {
     fun rewardFor(difficulty: QuestDifficulty): Int = configuration.rewards.getValue(difficulty)
 
     /** XP granted once per unique validated film. Currently 10 (trial vs the old 40). */
-    fun rewardForFilm(): Int = configuration.filmReward
+    fun rewardForFilm(): Int {
+        return configuration.filmReward
+    }
 
     private fun buildThresholds(): List<Long> {
         val result = MutableList(configuration.maxLevel) { 0L }

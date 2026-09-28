@@ -300,6 +300,7 @@ interface UrbinemaViewModel {
     val needsOnboarding: Boolean
     val completedCollectionCelebration: String?
     val unlockedBadgeCelebration: String?
+    val followLimitReached: Boolean
     val availableAvatars: List<String>
     fun setThemeMode(mode: UrbinemaThemeMode)
     fun setLanguage(language: AppLanguage)
@@ -329,6 +330,7 @@ interface UrbinemaViewModel {
     fun retryBootstrap()
     fun dismissCollectionCelebration()
     fun dismissBadgeCelebration()
+    fun dismissFollowLimit()
 }
 
 private val previewFilms = listOf(
@@ -446,6 +448,7 @@ object PreviewUrbinemaViewModel : UrbinemaViewModel {
     override val needsOnboarding = false
     override val completedCollectionCelebration: String? = null
     override val unlockedBadgeCelebration: String? = null
+    override val followLimitReached: Boolean = false
     override val availableAvatars = MediaPaths.PACKAGED_AVATAR_CODES
     override fun setThemeMode(mode: UrbinemaThemeMode) = Unit
     override fun setLanguage(language: AppLanguage) = Unit
@@ -524,4 +527,5 @@ object PreviewUrbinemaViewModel : UrbinemaViewModel {
     override fun retryBootstrap() = Unit
     override fun dismissCollectionCelebration() = Unit
     override fun dismissBadgeCelebration() = Unit
+    override fun dismissFollowLimit() = Unit
 }

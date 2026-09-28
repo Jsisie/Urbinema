@@ -7,7 +7,7 @@
 ## Spécification fonctionnelle du produit
 
 **Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.2.4** (catalogue v2, ~1405 films)
+**Statut :** Cadrage fonctionnel aligné sur **0.2.8** (catalogue v3)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -946,8 +946,8 @@ Règle de déverrouillage des **autres** collections (0.1.10) :
 
 1. au moins **un** film d’Initiation est marqué Vu ;
 2. **et**, pour un groupe plus exigeant que Premières séances, le groupe
-   précédent a assez de collections commencées (2 films vus, ou toutes
-   s’il y en a moins de 2).
+   précédent a assez de collections **suivies** et commencées (2 films vus,
+   ou toutes s’il y en a moins de 2).
 
 Le **suivi** d’Initiation n’est plus une condition pour *rester* ouvert.
 Unfollow d’une collection déjà commencée ne referme pas le palier suivant.
@@ -967,10 +967,15 @@ Les collections sont regroupées sous cinq intitulés (registre « aller au cin�
 | `OFFSCREEN` | Hors-champ | Formats / expérimentations |
 
 Les groupes **se cadenassent en chaîne** depuis 0.1.10 : ouvrir Ciné-club
-demande d’avoir commencé au moins 2 collections de Premières séances
-(2 films vus dans chacune ; s’il n’y en a qu’une, celle-là suffit). Même
-logique pour Salle obscure, Cinémathèque, Hors-champ. Cliquet : un palier
-ouvert reste ouvert.
+demande d’avoir **suivi** et commencé au moins 2 collections de Premières
+séances (2 films vus dans chacune ; s’il n’y en a qu’une, celle-là suffit).
+Sans le suivi, les films partagés (ex. Initiation ∩ Nouvel Hollywood) ne
+doivent pas débloquer le palier suivant. Même logique pour Salle obscure,
+Cinémathèque, Hors-champ. Cliquet : un palier ouvert reste ouvert.
+
+Au plus **10** collections en cours (suivies et non terminées) à la fois
+(`FunctionalLimits.MAX_IN_PROGRESS_COLLECTIONS`). Un 11e suivi affiche
+une alerte ; il faut en terminer une ou ne plus en suivre une.
 
 ------
 

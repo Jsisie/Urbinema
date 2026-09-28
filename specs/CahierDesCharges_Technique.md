@@ -2,8 +2,8 @@
 
 ### Urbinema
 
-**Version :** 0.11  
-**Statut :** Cadrage technique aligné sur **0.2.4** (catalogue `catalog.json` v13)  
+**Version :** 0.12  
+**Statut :** Cadrage technique aligné sur **0.2.8** (catalogue `catalog.json` v19, graine `catalog_v3.json`)  
 **Lié à :** `CahierDesCharges_Fonctionnel_v2.md`, `CahierDesCharges_IHM.md`, `DECISIONS_ACTEES.txt`, `ROADMAP_V2_V3.md`  
 **Emplacement :** tous les documents de cadrage vivent dans `specs/`
 

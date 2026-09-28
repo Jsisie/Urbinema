@@ -30545,37 +30545,6 @@
       "isBlackAndWhite": true
     },
     {
-      "code": "TWIN_PEAKS_THE_RETURN_TV_2017",
-      "originalTitle": "Twin Peaks: The Return [TV]",
-      "frenchTitle": "Twin Peaks: The Return [TV]",
-      "releaseYear": 2017,
-      "durationMinutes": 90,
-      "format": "FEATURE",
-      "synopsis": "",
-      "historicalDistance": 0.27,
-      "artisticDemand": 0.64,
-      "historicalRichness": 0.59,
-      "culturalRichness": 0.71,
-      "countries": [
-        {
-          "code": "USA",
-          "isPrimary": true
-        }
-      ],
-      "directors": [
-        {
-          "code": "DAVID_LYNCH",
-          "billingOrder": 0
-        }
-      ],
-      "genreCodes": [
-        "DRAME"
-      ],
-      "characteristicCodes": [
-        "CINEMA_INDEPENDANT_AMERICAIN"
-      ]
-    },
-    {
       "code": "TO_HAVE_AND_HAVE_NOT_1944",
       "originalTitle": "To Have and Have Not",
       "frenchTitle": "Le Port de l'angoisse",
@@ -55695,7 +55664,7 @@
     {
       "code": "COLLECTION_017",
       "displayOrder": 17,
-      "name": "Hitchcockiens",
+      "name": "Hitchcock — Le suspense comme forme",
       "description": "Vingt films où le suspense devient une forme, de Londres à Hollywood.",
       "longDescription": "Alfred Hitchcock passe du thriller britannique des années 1930 au studio américain, puis revient à Londres pour Frenzy. Les 39 Marches, Rebecca, Fenêtre sur cour, Sueurs froides, Psychose, Les Oiseaux : le regard, la blonde, l'escalier, le train. Cette collection rassemble vingt films majeurs, retirés des autres parcours pour qu'on les voie comme une œuvre, pas comme un genre Hollywood de plus.",
       "isPublished": true,

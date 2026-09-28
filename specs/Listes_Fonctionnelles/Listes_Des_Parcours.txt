@@ -1,0 +1,288 @@
+# Liste des différents parcours
+
+Application Urbinema.
+
+## Parcours :
+
+------
+
+## I. Comment le cinéma est devenu un art
+
+Cinéma muet → Impressionnisme français → Expressionnisme Allemand → Montage Soviétique → Surréalisme Cinématographique → Classicisme Hollywood → Néoréalisme Italien → Nouvelle Vague Française → Nouvelle vague Japonaise (Nuberu Bagu) → Nouvelle vague Tchécoslovaque → Cinéma Contemporain.
+
+**Description :** Ce parcours retrace les grandes étapes esthétiques et théoriques qui ont élevé le cinéma de simple curiosité technique au statut de Septième Art. L'objectif est de comprendre comment s’est forgée la grammaire cinématographique à travers une succession de mouvements de rupture et d'affirmation artistiques.
+
+L’itinéraire s'ouvre sur les fondations du cinéma muet, période clé où s'inventent le montage narratif et les premiers codes visuels. Il explore ensuite les avant-gardes européennes des années 1920 — l'Impressionnisme français, l'Expressionnisme allemand, le Montage soviétique et le Surréalisme —, quatre courants qui ont prouvé que la caméra pouvait traduire l'inconscient, la poésie ou l'idéologie politique, s'émancipant ainsi du simple enregistrement du réel ou du théâtre filmé.
+
+La seconde moitié du parcours analyse la codification de cette grammaire par le Classicisme hollywoodien, avant d'aborder les révolutions modernes d'après-guerre. Du Néoréalisme italien à l'explosion des Nouvelles Vagues française, japonaise et tchécoslovaque, vous découvrirez comment les cinéastes ont brisé les règles académiques pour imposer le réalisme de la rue et la subjectivité de l'auteur. Le parcours s'achève sur le Cinéma contemporain, héritier direct de ces décennies d'expérimentations et de dialogues interculturels.
+
+**Transitions :**
+
+- Cinéma muet ➔ Impressionnisme français :
+  - Alors que le cinéma muet installe les bases de la narration, les cinéastes français s'en emparent pour explorer la subjectivité et le rythme visuel.
+- Impressionnisme français ➔ Expressionnisme Allemand :
+  - Tandis que la France filme les fluctuations de l'âme, l'Allemagne déforme la réalité matérielle pour projeter la folie et l'angoisse dans ses décors.
+- Expressionnisme Allemand ➔ Montage Soviétique :
+  - Face à la recherche esthétique et psychologique allemande, l'école soviétique intellectualise le cinéma en faisant du montage l'outil politique suprême.
+- Montage Soviétique ➔ Surréalisme Cinématographique :
+  - En parallèle de cette rigueur de montage constructive, les surréalistes font exploser la logique pour filmer la liberté totale des rêves et de l'inconscient.
+- Surréalisme Cinématographique ➔ Classicisme Hollywood :
+  - Après le bouillonnement anarchique de ces avant-gardes européennes, Hollywood synthétise ces techniques pour créer une industrie du récit universelle et codifiée.
+- Classicisme Hollywood ➔ Néoréalisme Italien :
+  - En réaction aux studios et au glamour standardisé américain, l'Italie d'après-guerre descend dans la rue pour capter la vérité brute de la condition humaine.
+- Néoréalisme Italien ➔ Nouvelle Vague Française :
+  - Inspirés par cette liberté de tournage italienne, de jeunes critiques français théorisent la politique des auteurs et brisent définitivement l'académisme.
+- Nouvelle Vague Française ➔ Nouvelle vague Japonaise (Nuberu Bagu) :
+  - Cet électrochoc français résonne instantanément au Japon, où une nouvelle génération de cinéastes s'approprie cette liberté pour dynamiter les codes des studios traditionnels.
+- Nouvelle vague Japonaise (Nuberu Bagu) ➔ Nouvelle vague Tchécoslovaque :
+  - La contestation devient mondiale : à l'Est, sous le régime communiste, les cinéastes tchécoslovaques utilisent à leur tour cette modernité pour injecter de l'absurde et de la satire sociale.
+- Nouvelle vague Tchécoslovaque ➔ Cinéma Contemporain :
+  - Une fois toutes ces règles brisées et réinventées par les modernités mondiales, le cinéma entre dans l'ère contemporaine, un espace de métissage où s'entremêlent tous ces héritages.
+
+**Courants** :
+
+- Cinéma muet :
+  - Années :
+    - 1895 – 1927
+  - Description :
+    - Le cinéma ne naît pas immédiatement comme un art, mais comme une prouesse technique d'enregistrement du réel (les frères Lumière). Très vite, il devient un spectacle de foire et d'illusionnisme (Georges Méliès). Durant cette période sans parole enregistrée, les cinéastes du monde entier inventent de toutes pièces la grammaire visuelle d'aujourd'hui : les mouvements de caméra, le découpage des scènes, le gros plan et le montage narratif.
+  - A savoir :
+    - **La transition parlante** : L'ère du muet prend fin brutalement en **1927** avec la sortie du film *Le Chanteur de jazz*, premier long-métrage doté de dialogues synchronisés.
+    - **L'orchestration en direct** : Les séances n'étaient jamais silencieuses ; elles étaient systématiquement accompagnées par un pianiste, un orchestre ou un bonimenteur dans la salle.
+  - Figures clés :
+    - **Louis & Auguste Lumière** (Pionniers techniques)
+    - **Georges Méliès** (Pionnier de la fiction et des effets spéciaux)
+    - **D.W. Griffith** (Pionnier du montage narratif moderne)
+    - **Charlie Chaplin** & **Buster Keaton** (Maîtres du burlesque)
+  - Films clés :
+    - ***La Sortie de l'usine Lumière à Lyon*** (1895) – Les frères Lumière
+    - ***Le Voyage dans la Lune*** (1902) – Georges Méliès
+    - ***Naissance d'une nation*** (1915) – D.W. Griffith
+    - ***Le Mécano de la General*** (1926) – Buster Keaton
+- Impressionnisme français :
+  -  Années :
+    - 1918 – 1929
+  - Description :
+    - Aussi appelé "Première Avant-garde", ce courant naît au lendemain de la Première Guerre mondiale. Mené par des cinéastes et théoriciens français, son objectif est de détacher le cinéma du théâtre et de la littérature pour en faire un art purement visuel et autonome. Pour ces réalisateurs, le cinéma doit filmer l'invisible : la subjectivité des personnages, leurs états d'âme, leurs rêves et leurs souvenirs. Ils utilisent pour cela un montage très rythmé et de nombreux effets optiques (flous, surimpressions, miroirs déformants) pour faire ressentir au spectateur la psychologie et les émotions des protagonistes.
+  - A savoir :
+    - **La photogénie** : C'est le concept central théorisé par Louis Delluc. Il désigne la capacité du cinéma à transformer le réel par l'enregistrement de la caméra, révélant une beauté ou un sens inédit que l'œil humain ne peut pas capter seul.
+    - **Fin de l'élan** : L'arrivée du cinéma sonore à la fin des années 1920, conjuguée à des difficultés de financement face aux industries américaines et allemandes, met un terme à cette vague d'expérimentations.
+  - Figures clés :
+    - **Louis Delluc** (Théoricien majeur et chef de file du mouvement)
+    - **Abel Gance** (Le grand technicien aux innovations visuelles monumentales)
+    - **Jean Epstein** (Réalisateur et philosophe du cinéma)
+    - **Germaine Dulac** (Pionnière de l'avant-garde et du cinéma féministe)
+  - Films clés :
+    - *La Souriante Madame Beudet* (1923) – Germaine Dulac
+    - *Cœur fidèle* (1923) – Jean Epstein
+    - *La Glace à trois faces* (1927) – Jean Epstein
+    - *Napoléon* (1927) – Abel Gance
+- Expressionnisme Allemand :
+  - Années :
+    - 1920 – 1926
+  - Description :
+    - Né dans une Allemagne traumatisée et ruinée par la Première Guerre mondiale, ce mouvement artistique rejette totalement le réalisme. Son but est de projeter la folie, l'angoisse, la paranoïa et la face sombre de la psyché humaine directement à l'écran. Pour cela, les cinéastes utilisent des décors peints, géométriques et déformés (lignes obliques, fenêtres asymétriques) et une gestion révolutionnaire de la lumière. Le style repose sur le clair-obscur, avec des ombres gigantesques et menaçantes qui deviennent de véritables personnages. Les acteurs adoptent un jeu outrancier, proche du théâtre ou du mime, pour accentuer la terreur et le fantastique.
+  - A savoir :
+    - **L'influence du studio** : La quasi-totalité de ces films a été tournée entièrement en studio (notamment à la UFA, près de Berlin). Ce contrôle total de l'environnement permettait aux réalisateurs de maîtriser chaque ombre et chaque angle de décor au millimètre près.
+    - **L'héritage hollywoodien** : Avec la montée du nazisme, la plupart des grands maîtres de l'expressionnisme ont fui l'Allemagne pour Hollywood. Ils y ont importé leur esthétique, donnant directement naissance aux codes visuels du Film Noir et du Cinéma d'Épouvante américain (les monstres d'Universal).
+  - Figures clés :
+    - **Robert Wiene** (Réalisateur du film fondateur du mouvement)
+    - **F.W. Murnau** (Maître de la poésie visuelle et du fantastique)
+    - **Fritz Lang** (Cinéaste visionnaire de l'architecture et de la dystopie urbaine)
+    - **Conrad Veidt** (Acteur emblématique aux expressions faciales marquantes)
+  - Films clés :
+    - *Le Cabinet du docteur Caligari* (1920) – Robert Wiene
+    - *Nosferatu le vampire* (1922) – F.W. Murnau
+    - *Les Trois Lumières* (1921) – Fritz Lang
+    - *Metropolis* (1927) – Fritz Lang
+- Montage Soviétique :
+  - Années :
+    - 1924 – 1930
+  - Description :
+    - Au lendemain de la révolution de 1917, le jeune État soviétique nationalise le cinéma, Lénine le proclamant « le plus important de tous les arts » pour éduquer les masses. Une génération de cinéastes théoriciens révolutionne alors l'histoire du cinéma en plaçant le montage au cœur de la création. Pour eux, le sens d'un film ne naît pas du contenu d'un plan isolé, mais du choc produit par la juxtaposition de deux plans différents. Le cinéma devient un langage intellectuel, rythmique et sensoriel, capable de manipuler les concepts et de susciter de puissantes émotions politiques.
+  - A savoir :
+    - **L'Effet Koulechov** : C'est l'expérience fondatrice du mouvement. Le cinéaste Lev Koulechov montre le même plan fixe du visage d'un acteur alterné successivement avec un bol de soupe, un cercueil, puis une petite fille. Les spectateurs attribuent à l'acteur des émotions différentes (faim, tristesse, tendresse), prouvant que le montage crée le sens de manière totalement artificielle.
+    - **Le montage intellectuel** : Sergueï Eisenstein a théorisé le « montage d'attractions », associant des images sans lien narratif direct pour créer une métaphore dans l'esprit du spectateur (par exemple, alterner des ouvriers qui se font fusiller avec des images d'un abattoir de bœufs).
+  - Figures clés :
+    - **Sergueï Eisenstein** (Le grand théoricien du montage-choc et de la dynamique des masses)
+    - **Dziga Vertov** (Pionnier du cinéma expérimental et du manifeste de la caméra-œil)
+    - **Lev Koulechov** (Enseignant et théoricien pionnier de la manipulation du montage)
+    - **Vsevolod Poudovkine** (Cinéaste axé sur le montage narratif et le drame psychologique)
+  - Films clés :
+    - *La Grève* (1924) – Sergueï Eisenstein
+    - *Le Cuirassé Potemkine* (1925) – Sergueï Eisenstein
+    - *La Mère* (1926) – Vsevolod Poudovkine
+    - *L'Homme à la caméra* (1929) – Dziga Vertov
+- Surréalisme Cinématographique :
+  - Années :
+    - 1924 – 1932
+  - Description :
+    - Né à Paris dans le sillage du mouvement littéraire et pictural d'André Breton, le surréalisme voit dans le cinéma l'outil idéal pour s'affranchir de la raison, de la logique et de la morale bourgeoise. Les cinéastes surréalistes refusent le récit linéaire traditionnel pour explorer les mécanismes du rêve, des désirs refoulés, de l'inconscient et de la folie. En utilisant des associations d'images absurdes, des collages visuels provocateurs et des métaphores violentes ou érotiques, ils cherchent à provoquer un choc poétique et psychologique chez le spectateur.
+  - A savoir :
+    - **La provocation publique** : Les projections surréalistes provoquaient régulièrement des scandales majeurs. Lors de la sortie de *L'Âge d'or*, des militants d'extrême droite ont saccagé la salle de cinéma, lacéré les tableaux surréalistes exposés dans le hall, et le film fut interdit par la police pendant plus de quarante ans.
+    - **Le rêve éveillé** : Les surréalistes fréquentaient les cinémas d'une manière unique : ils entraient dans les salles au hasard, sans regarder les horaires, regardaient le film quelques minutes, puis changeaient de cinéma pour créer leur propre montage aléatoire et poétique de la réalité.
+  - Figures clés :
+    - **Luis Buñuel** (Le réalisateur emblématique qui portera l'esprit surréaliste toute sa vie)
+    - **Salvador Dalí** (Peintre co-scénariste et concepteur des images des premiers films de Buñuel)
+    - **Man Ray** (Photographe et plasticien, pionnier du cinéma expérimental abstrait)
+    - **Antonin Artaud** (Théoricien, acteur et scénariste du premier film considéré comme surréaliste)
+  - Films clés :
+    - *La Coquille et le Clergyman* (1928) – Germaine Dulac (scénario d'Antonin Artaud)
+    - *Un chien andalou* (1929) – Luis Buñuel et Salvador Dalí
+    - *L'Âge d'or* (1930) – Luis Buñuel
+    - *Le Sang d'un poète* (1932) – Jean Cocteau
+- Classicisme Hollywood :
+  - Années :
+    - 1930 – 1950
+  - Description :
+    - Cet « Âge d’or » correspond à l'apogée du système des studios américains. Hollywood standardise la production et crée un langage universel fondé sur la transparence : la technique (mise en scène, montage, éclairage) doit s'effacer complètement pour que le spectateur s'immerge totalement dans l'histoire. Les récits sont linéaires, les genres (western, comédie musicale, film noir) sont strictement codifiés, et les stars (Garbo, Bogart, Gable) sont façonnées par les studios pour attirer le public. C'est l'ère du grand spectacle et de l'illusion parfaite.
+  - A savoir :
+    - **Le Code Hays** : De 1934 à la fin des années 1950, la production hollywoodienne est soumise à une censure morale très stricte. Le code interdit de montrer la nudité, les relations interraciales, les profanations, ou de présenter les criminels sous un jour sympathique. Les cinéastes ont dû redoubler d'ingéniosité visuelle et de sous-entendus pour contourner ces interdictions.
+    - **Le Studio System** : Les réalisateurs étaient alors des salariés sous contrat avec les grands studios (MGM, Paramount, Warner Bros.). Ils n'avaient que très rarement le contrôle sur le montage final de leurs films. C'est la vision du producteur qui dominait.
+  - Figures clés :
+    - **John Ford** (Le maître absolu du western et de la construction du mythe américain)
+    - **Alfred Hitchcock** (Le génie du suspense qui a su plier le système des studios à ses obsessions visuelles)
+    - **Howard Hawks** (Le réalisateur caméléon, virtuose de la comédie *screwball* et du film d'aventure)
+    - **Orson Welles** (L'enfant terrible qui a dynamité de l'intérieur les règles du classicisme avec *Citizen Kane*)
+  - Films clés :
+    - *La Chevauchée fantastique* (1939) – John Ford
+    - *Autant en emporte le vent* (1939) – Victor Fleming
+    - *Citizen Kane* (1941) – Orson Welles
+    - *Casablanca* (1942) – Michael Curtiz
+- Néoréalisme Italien :
+  - Années :
+    - 1943 – 1952
+  - Description :
+    - Né dans les ruines de l'Italie fasciste d'après-guerre, ce mouvement opère la rupture la plus radicale de l'histoire du cinéma en rejetant le glamour et l'illusionnisme hollywoodiens. Les studios de Cinecittà étant détruits ou réquisitionnés, les cinéastes descendent directement dans la rue pour filmer la pauvreté, le chômage, la destruction et la vie quotidienne de la classe ouvrière. Le style est brut, proche du reportage : lumière naturelle, décors réels et recours fréquent à des acteurs non professionnels choisis pour l'authenticité de leur visage et de leur vécu.
+  - A savoir :
+    - **L'éthique avant l'esthétique** : Pour les néoréalistes, le cinéma a un devoir moral. Il ne doit plus chercher à divertir ou à faire oublier la réalité, mais forcer le spectateur à regarder en face la détresse humaine et sociale de son époque.
+    - **Le démantèlement par la politique** : Le mouvement s'est éteint au début des années 1950, notamment à cause du gouvernement italien (via la loi Andreotti), qui refusait de subventionner des films exportant à l'étranger une image misérable et jugée « antipatriotique » du pays en pleine reconstruction.
+  - Figures clés :
+    - **Roberto Rossellini** (Le pionnier qui jette les bases du courant en filmant clandestinement)
+    - **Vittorio De Sica** (Le réalisateur humaniste qui filme le quotidien à hauteur d'homme)
+    - **Luchino Visconti** (Le cinéaste aristocrate qui insuffle une dimension tragique et opératique au réalisme)
+    - **Cesare Zavattini** (Le théoricien et scénariste crucial qui a formalisé toute la pensée néoréaliste)
+  - Films clés :
+    - *Rome, ville ouverte* (1945) – Roberto Rossellini
+    - *Païsa* (1946) – Roberto Rossellini
+    - *Le Voleur de bicyclette* (1948) – Vittorio De Sica
+    - *La Terre tremble* (1948) – Luchino Visconti
+- Nouvelle Vague Française :
+  - Années :
+    - 1958 – 1968
+  - Description :
+    - Ce mouvement majeur est initié par de jeunes critiques des *Cahiers du Cinéma* qui décident de passer derrière la caméra. Ils rejettent violemment le « cinéma de papa », jugé trop académique, bourgeois et corseté dans ses studios. Profitant d'appareils plus légers (caméras 16mm, enregistreurs portables), ils descendent dans la rue, tournent sans budget, caméra à l'épaule et en lumière naturelle. Ils dynamitent la grammaire classique en inventant de nouvelles règles : faux raccords volontaires (*jump cuts*), adresses directes des acteurs face caméra, et scénarios largement improvisés. Le cinéma devient personnel, libre et spontané.
+  - A savoir :
+    - **La politique des auteurs** : C'est le grand apport théorique de la Nouvelle Vague. François Truffaut et ses pairs affirment que le réalisateur est le seul et unique auteur de son film, au même titre qu'un écrivain pour son livre ou un peintre pour sa toile. Le metteur en scène n'est plus un technicien au service d'un studio, mais un artiste qui exprime sa vision du monde.
+    - **Le festival de Cannes 1959** : Cet événement marque le triomphe mondial du mouvement avec la présentation simultanée des *Quatre Cents Coups* de Truffaut (Prix de la mise en scène) et d'*Orphée* ou des repérages d'Alain Resnais pour *Hiroshima mon amour*.
+  - Figures clés :
+    - **François Truffaut** (Le cinéaste de l'enfance, des sentiments et du romanesque)
+    - **Jean-Luc Godard** (L'expérimentateur radical qui a déconstruit toute la forme cinématographique)
+    - **Agnès Varda** (La figure de proue de la Rive Gauche, mêlant documentaire, fiction et féminisme)
+    - **Éric Rohmer** (Le maître du verbe, de la parole et des marivaudages psychologiques)
+  - Films clés :
+    - *Le Beau Serge* (1958) – Claude Chabrol
+    - *Les Quatre Cents Coups* (1959) – François Truffaut
+    - *À bout de souffle* (1960) – Jean-Luc Godard
+    - *Cléo de 5 à 7* (1962) – Agnès Varda
+- Nouvelle vague Japonaise (Nuberu Bagu) :
+  - Années :
+    - 1959 – 1970
+  - Description :
+    - Contrairement à son homologue française née en dehors des structures traditionnelles, la Nouvelle Vague japonaise émerge d'abord au sein même d'un grand studio (la Shochiku), qui confie les rênes à de jeunes assistants pour moderniser ses productions. Ce mouvement rejette violemment le classicisme humaniste des maîtres d'après-guerre (Ozu, Kurosawa). Les cinéastes s'emparent de la caméra pour ausculter de manière crue les tabous et les traumatismes du Japon contemporain : la délinquance juvénile, la sexualité, le racisme, la corruption et le ressentiment face à l'occupation militaire américaine. Le style est agressif, heurté, caractérisé par un montage frénétique, des cadrages outranciers et une esthétique pop ou expérimentale.
+  - A savoir :
+    - **Une rupture sociopolitique** : La *Nuberu Bagu* n'est pas qu'une révolution esthétique, elle est profondément politique. Elle explose en plein climat de contestation étudiante contre la reconduction du traité de coopération de sécurité entre les États-Unis et le Japon (le traité ANPO), un événement qui s'affiche ouvertement au centre de plusieurs films du mouvement.
+    - **Le passage à l'indépendance** : Face à la censure croissante des studios devant la radicalité de leurs œuvres, les réalisateurs phares ont rapidement rompu leurs contrats pour fonder des structures de production indépendantes (notamment la mythique ATG - Art Theatre Guild) afin de conserver leur totale liberté de création.
+  - Figures clés :
+    - **Nagisa Ōshima** (Le chef de file provocateur et politiquement radical du mouvement)
+    - **Masahiro Shinoda** (Cinéaste esthète combinant théâtralité traditionnelle et modernité visuelle)
+    - **Shohei Imamura** (Le réalisateur anthropologue qui préférait filmer les pulsions de la basse société japonaise)
+    - **Kijū Yoshida** (Metteur en scène rigoureux explorant les structures du pouvoir et l'aliénation politique)
+  - Films clés :
+    - *Contes cruels de la jeunesse* (1960) – Nagisa Ōshima
+    - *La Pendaison* (1968) – Nagisa Ōshima
+    - *La Femme insecte* (1963) – Shohei Imamura
+    - *Éros + Massacre* (1969) – Kijū Yoshida
+- Nouvelle vague Tchécoslovaque : 
+  - Années :
+    - 1963 – 1968
+  - Description :
+    - Ce mouvement d'une immense richesse naît à la faveur d'un assouplissement temporaire du régime communiste en Tchécoslovaquie (le dégel). Formés à la prestigieuse école de cinéma de Prague (la FAMU), de jeunes réalisateurs profitent de cette brèche pour contourner la censure étatique. Pour critiquer l'absurdité de la bureaucratie et le totalitarisme, ils délaissent le réalisme socialiste officiel et adoptent un ton unique, caractérisé par l'humour noir, la satire féroce, l'ironie et l'absurde. Visuellement, le courant oscille entre un réalisme quasi documentaire hérité du cinéma direct et des expérimentations formelles surréalistes et colorées.
+  - A savoir :
+    - **Le Printemps de Prague** : L'âge d'or de ce courant est intimement lié à ce mouvement de libéralisation politique. L'invasion de Prague par les chars du Pacte de Varsovie en août 1968 brise net cette dynamique artistique. Les films sont interdits (« mis au coffre »), les structures de production sont reprises en main par le Parti, et plusieurs cinéastes majeurs choisissent l'exil.
+    - **La reconnaissance internationale** : Malgré sa brièveté et ses conditions de production complexes, le mouvement a connu un immense retentissement mondial, décrochant coup sur coup deux Oscars du meilleur film en langue étrangère (*Le Miroir aux alouettes* en 1965 et *Trains étroitement surveillés* en 1967).
+  - Figures clés :
+    - **Miloš Forman** (Le maître de la satire sociale et du regard tendre mais piquant sur l'humain)
+    - **Věra Chytilová** (La réalisatrice féministe, iconoclaste et visuellement la plus expérimentale du groupe)
+    - **Jiří Menzel** (Cinéaste virtuose de la tragi-comédie et de la poésie du quotidien)
+    - **Jaromil Jireš** (Réalisateur d'œuvres poétiques et critiques majeures à la forme éclatée)
+  - Films clés :
+    - *Le Miroir aux alouettes* (1965) – Ján Kadár et Elmar Klos
+    - *Les Petites Marguerites* (1966) – Věra Chytilová
+    - *Trains étroitement surveillés* (1966) – Jiří Menzel
+    - *Au feu, les pompiers !* (1967) – Miloš Forman
+- Cinéma Contemporain :
+  - Années :
+    - 2000 – Présent
+  - Description :
+    - Cette période marque l'entrée du cinéma dans une ère d'hybridation totale. Libéré des manifestes stricts du siècle dernier, le cinéma contemporain se caractérise par le métissage des styles, des genres et des cultures. C'est l'époque de la transition numérique globale, qui transforme la captation, les effets visuels et la diffusion. Les auteurs contemporains puisent librement dans toute l'histoire du cinéma, recyclant et citant les courants passés (postmodernisme) pour interroger les crises écologiques, l'aliénation technologique, les questions d'identité et les bouleversements géopolitiques mondiaux.
+  - A savoir :
+    - **La guerre des écrans** : L'émergence des plateformes de streaming et le développement des technologies domestiques redéfinissent la frontière du cinéma. La création contemporaine ne se pense plus uniquement pour la salle obscure, obligeant l'industrie à réinventer l'expérience collective du grand écran (grand spectacle technologique ou événements immersifs).
+    - **La décentralisation du regard** : L'histoire du cinéma a longtemps été dominée par l'Occident. L'ère contemporaine consacre définitivement l'explosion et la reconnaissance mondiale de cinématographies autrefois marginalisées (Corée du Sud, Iran, Mexique, Afrique de l'Ouest), bousculant les structures traditionnelles de légitimité artistique.
+  - Figures clés :
+    - **Christopher Nolan** (Architecte d'un cinéma grand public à la structure narrative complexe et cérébrale)
+    - **Bong Joon-ho** (Chef de file du renouveau coréen, maniant la satire sociale et le mélange des genres)
+    - **Denis Villeneuve** (Maître de la science-fiction moderne à l'esthétique monumentale et métaphysique)
+    - **Celine Sciamma** (Cinéaste majeure du renouvellement des regards, théorisant le *female gaze*)
+  - Films clés :
+    - *In the Mood for Love* (2000) – Wong Kar-wai
+    - *Mulholland Drive* (2001) – David Lynch
+    - *Mad Max: Fury Road* (2015) – George Miller
+    - *Parasite* (2019) – Bong Joon-ho
+
+
+
+# WORK-IN PROGRESS :
+
+
+
+------
+
+## II. Comment Hollywood a changé le cinéma
+
+Hollywood classique → Film noir → Nouvel Hollywood → Blaxploitation → Indépendant → Contre-cultures américaines.
+
+
+
+------
+
+## III. Comment le monde s'est approprié le cinéma
+
+Néoréalisme → Nouvelle Vague → Troisième Cinéma → Cinéma Novo → cinémas africains → cinémas asiatiques → nouvelles vagues nationales.
+
+Et **plus tard**, tu peux ajouter d'autres grands Parcours :
+
+
+
+------
+
+## IV. Quand le cinéma devient politique
+
+Cinéma militant → Troisième Cinéma → Cinéma politique italien → Cinéma politique latino-américain → cinéma féministe → etc.
+
+
+
+------
+
+## V. Quand le cinéma abandonne le récit
+
+Cinéma dadaïste → Cinéma abstrait → Cinéma pur → Structural Film → Expanded Cinema → Found Footage → Essay Film.
+
+
+
+------
+
+## VI. Les marges du cinéma
+
+Exploitation → Grindhouse → Gore → Psychotronic → Punk → No Wave → Transgression → New French Extremity.
+

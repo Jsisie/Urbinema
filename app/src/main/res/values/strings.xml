@@ -190,15 +190,17 @@
     <string name="collection_track_darkroom">Salle obscure</string>
     <string name="collection_track_demanding">Cinémathèque</string>
     <string name="collection_track_offscreen">Hors-champ</string>
+    <string name="follow_limit_title">Trop de collections en cours</string>
+    <string name="follow_limit_body">Tu suis déjà %1$d collections. Termine-en une, ou arrête d’en suivre une que tu ne regardes plus, avant d’en ajouter une autre.</string>
     <string name="collection_locked_title">Collection verrouillée</string>
     <string name="collection_locked_body">Pour déverrouiller le reste des collections, commence par Initiation : marque au moins un de ses films comme Vu.</string>
-    <string name="collection_locked_track_body">Pour ouvrir « %1$s », commence au moins %2$d collection(s) de « %3$s » et marque au moins %4$d films dans chacune.</string>
+    <string name="collection_locked_track_body">Pour ouvrir « %1$s », suis au moins %2$d collection(s) de « %3$s » et marque au moins %4$d films dans chacune.</string>
     <string name="badge_rarity_extra">Figurant</string>
     <string name="badge_rarity_supporting">Second rôle</string>
     <string name="badge_rarity_headliner">Tête d’affiche</string>
     <string name="help_open">Ouvrir l’aide</string>
     <string name="help_collections_title">Collections</string>
-    <string name="help_collections_body">Une collection est un parcours éditorial de films liés (un courant, un pays, un auteur…). Tu peux en suivre plusieurs : elles apparaissent alors sur l’Accueil, tant qu’elles ne sont pas à 100 % ni cadenassées. Commence par Initiation : un film Vu y déverrouille le reste du catalogue. Les groupes plus exigeants (Ciné-club, Salle obscure…) restent cadenassés tant que tu n’as pas vraiment commencé le groupe précédent : au moins deux collections, avec au moins deux films vus dans chacune (s’il n’y en a qu’une, celle-là suffit). Une fois un groupe ouvert, il reste ouvert même si tu ne suis plus les collections qui l’ont débloqué.</string>
+    <string name="help_collections_body">Une collection est un parcours éditorial de films liés (un courant, un pays, un auteur…). Tu peux en suivre jusqu’à 10 à la fois. Elles apparaissent sur l’Accueil tant qu’elles ne sont pas à 100 % ni cadenassées. Commence par Initiation : un film Vu y déverrouille le reste du catalogue. Les groupes plus exigeants (Ciné-club, Salle obscure…) restent cadenassés tant que tu n’as pas suivi et vraiment commencé le groupe précédent : au moins deux collections suivies, avec au moins deux films vus dans chacune (s’il n’y en a qu’une, celle-là suffit). Une fois un groupe ouvert, il reste ouvert même si tu ne suis plus les collections qui l’ont débloqué.</string>
     <string name="help_map_title">Atlas</string>
     <string name="help_map_body">L’onglet Atlas liste les pays, courants, décennies, genres et réalisateurs. Le rond à gauche dit où tu en es. L’icône étoiles en haut à droite ouvre la carte du ciel.</string>
     <string name="help_progress_title">Parcours</string>
@@ -231,5 +233,5 @@
     <string name="sky_map_open_place">Ouvrir ce territoire</string>
     <string name="sky_map_open_fiche_from_movie">Voir sur la carte</string>
     <string name="help_sky_map_title">Carte interactive</string>
-    <string name="help_sky_map_body">La carte du ciel part d’un film : réalisateur, pays, genres tout près, autres films plus loin s’ils partagent moins. Chaque type a sa couleur (films blancs, vus dorés). Un même nom n’apparaît qu’une fois. Les puces « Pays », « Courants »… gardent la vue territoires. Un tap ouvre la fiche ou la liste. On l’ouvre depuis l’Atlas, icône étoiles en haut à droite. Pinch pour zoomer.</string>
+    <string name="help_sky_map_body">La carte du ciel part d’un film : réalisateur, pays, genres tout près, autres films plus loin s’ils partagent moins. En thème clair, le ciel passe au papier pour rester lisible ; chaque type garde sa couleur. Un même nom n’apparaît qu’une fois. Les puces « Pays », « Courants »… gardent la vue territoires. Un tap ouvre la fiche ou la liste. On l’ouvre depuis l’Atlas, icône étoiles en haut à droite. Pinch pour zoomer.</string>
 </resources>

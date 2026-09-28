@@ -190,15 +190,17 @@
     <string name="collection_track_darkroom">Darkened theater</string>
     <string name="collection_track_demanding">Cinematheque</string>
     <string name="collection_track_offscreen">Offscreen</string>
+    <string name="follow_limit_title">Too many collections in progress</string>
+    <string name="follow_limit_body">You already follow %1$d collections. Finish one, or unfollow one you are not watching, before adding another.</string>
     <string name="collection_locked_title">Collection locked</string>
     <string name="collection_locked_body">To unlock the rest of the collections, start with Initiation: mark at least one of its films as watched.</string>
-    <string name="collection_locked_track_body">To open “%1$s”, start at least %2$d collection(s) in “%3$s” and mark at least %4$d films in each.</string>
+    <string name="collection_locked_track_body">To open “%1$s”, follow at least %2$d collection(s) in “%3$s” and mark at least %4$d films in each.</string>
     <string name="badge_rarity_extra">Extra</string>
     <string name="badge_rarity_supporting">Supporting role</string>
     <string name="badge_rarity_headliner">Headliner</string>
     <string name="help_open">Open help</string>
     <string name="help_collections_title">Collections</string>
-    <string name="help_collections_body">A collection is an editorial path of related films (a current, a country, an author…). You can follow several: they then appear on Home, as long as they are not 100 % complete or still locked. Start with Initiation: one watched film there unlocks the rest of the catalog. Harder groups (Film club, Darkened theater…) stay locked until you have truly started the previous group: at least two collections, with at least two films watched in each (if there is only one, that one is enough). Once a group is open, it stays open even if you unfollow the collections that unlocked it.</string>
+    <string name="help_collections_body">A collection is an editorial path of related films (a current, a country, an author…). You can follow up to 10 at a time. They appear on Home as long as they are not 100 % complete or still locked. Start with Initiation: one watched film there unlocks the rest of the catalog. Harder groups (Film club, Darkened theater…) stay locked until you have followed and truly started the previous group: at least two followed collections, with at least two films watched in each (if there is only one, that one is enough). Once a group is open, it stays open even if you unfollow the collections that unlocked it.</string>
     <string name="help_map_title">Atlas</string>
     <string name="help_map_body">The Atlas tab lists countries, currents, decades, genres and directors. The circle on the left shows where you stand. The stars icon in the top bar opens the sky map.</string>
     <string name="help_progress_title">Journey</string>
@@ -231,5 +233,5 @@
     <string name="sky_map_open_place">Open this place</string>
     <string name="sky_map_open_fiche_from_movie">Show on the map</string>
     <string name="help_sky_map_title">Interactive map</string>
-    <string name="help_sky_map_body">The sky map starts from a film: director, countries, genres nearby; other films farther if they share less. Each kind has its own colour (films white, watched gold). The same name is shown only once. The Countries / Currents chips keep the territory views. A tap opens the fiche or the list. Open it from the Atlas tab, stars icon in the top bar. Pinch to zoom.</string>
+    <string name="help_sky_map_body">The sky map starts from a film: director, countries, genres nearby; other films farther if they share less. In the light theme the sky switches to paper so lists stay readable; each kind keeps its colour. The same name is shown only once. The Countries / Currents chips keep the territory views. A tap opens the fiche or the list. Open it from the Atlas tab, stars icon in the top bar. Pinch to zoom.</string>
 </resources>

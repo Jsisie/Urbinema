@@ -1,7 +1,7 @@
 # Spécification développeur — Urbinema
 
-**Version :** 1.9 — 0.2.4  
-**Date :** 2026-09-20  
+**Version :** 1.10 — 0.2.8  
+**Date :** 2026-09-28  
 **Statut :** document de reprise. Il décrit le code réellement livré.
 
 Ce document est le mode d’emploi pour reprendre le projet. Les décisions
@@ -9,12 +9,12 @@ produit restent dans `DECISIONS_ACTEES.txt`. Les formules restent dans
 `FORMULE_MATHEMATIQUE.txt` et `FORMULE_NIVEAUX_XP.txt`. En cas d’écart, le
 code et les tests font foi.
 
-**Lire les docs avec l’app à côté.** Ce fichier décrit le code **0.2.4**
-(`versionCode` 22). Les cahiers fonctionnel / IHM / technique, les décisions
+**Lire les docs avec l’app à côté.** Ce fichier décrit le code **0.2.8**
+(`versionCode` 23). Les cahiers fonctionnel / IHM / technique, les décisions
 et la FAQ collent à cet état. Un comportement vu à l’écran a toujours une
 trace ici (navigation §2, persistence §3, règles §2.4 / §7, carte §2.2.1).
-Un chiffre de spec (XP quêtes 100/250/500, 3 badges, pack JSON **18**, Room 7, cliquet,
-10 avatars) se retrouve dans le code et, s’il est visible, dans `strings.xml`.
+Un chiffre de spec (XP quêtes 100/250/500, 3 badges, pack JSON **19**, Room 7, cliquet,
+10 collections en cours, 10 avatars) se retrouve dans le code (`FunctionalLimits`) et, s’il est visible, dans `strings.xml`.
 
 ---
 
@@ -25,10 +25,10 @@ Urbinema est une application Android **100 % locale**.
 - Le fichier JSON `app/src/main/assets/catalog/catalog.json` est **uniquement
   une graine éditoriale**. Il est relu quand sa `version` est **strictement
   supérieure** à celle déjà en Room. Les tables `user_*` ne sont jamais touchées.
-  `catalog_v1.json` est l’archive V1 ; `catalog_v2.json` est le pack courant
-  recopié vers `catalog.json`.
+  `catalog_v1.json` est l’archive V1 ; `catalog_v2.json` l’archive V2 ;
+  `catalog_v3.json` est le pack courant recopié vers `catalog.json`.
 - Un **nouveau profil** démarre à **0 film vu, rang Novice, niveau 1, 0 XP**.
-  Le catalogue V2 contient ~1405 films : ce n'est pas de la progression.
+  Le catalogue V3 part du V2 dédoublonné (titre + année + réalisateur).
 - Ensuite, **tout vit dans SQLite** : `urbinema.db`.
 - Fermer l’appli, tuer le process, redémarrer le téléphone : films vus,
   collections terminées, badges, XP, rang, quêtes, pseudo et thème
@@ -48,7 +48,7 @@ Urbinema est une application Android **100 % locale**.
 | IDE | Android Studio (Narwhal / Hedgehog ou plus récent) |
 | Application ID | `fr.jsisie.urbinema` |
 | Module Gradle / Android Studio | `:urbinema` (dossier physique `app/`) |
-| versionName / versionCode | `0.2.4` / `22` |
+| versionName / versionCode | `0.2.8` / `23` |
 | APK debug | `urbinema-debug.apk` |
 | minSdk | 26 |
 | compileSdk / targetSdk | 36 / 36 |
@@ -216,8 +216,14 @@ Le cliquet `users.unlockedTrackOrdinal` **ne contourne jamais** Initiation :
 un reset (bouton Réglages) remet le cliquet à −1 **et** vide `user_movies`,
 donc Hollywood redevient inaccessible.
 
-Un palier « commencé » = au moins 2 films vus dans la collection, suivie ou
-non. Un groupe vide ne débloque **pas** le suivant.
+Un palier « commencé » pour ouvrir le groupe suivant = collection **suivie**
+et au moins 2 films vus. Les titres partagés (Initiation ∩ Nouvel Hollywood)
+ne comptent pas sans suivi. Un groupe vide ne débloque **pas** le suivant.
+Au plus **10** collections en cours (`FunctionalLimits.MAX_IN_PROGRESS_COLLECTIONS`).
+
+Le catalogue est chargé **une fois** après bootstrap (`allMoviesWithRelations`),
+pas via 12 `Flow` `@Relation`. Les `refresh()` UI sont debounce
+(`UI_REFRESH_DEBOUNCE_MS`).
 
 `currentCollections` (Accueil / Parcours) = followed && !completed &&
 !locked.
@@ -379,7 +385,7 @@ film reste vu, l’historique et l’XP/rang aussi.
 
 ### 4.2 Ajouter un film
 
-1. Éditer `catalog.json` (ou `catalog_v2.json` puis recopie), tableau `movies`.
+1. Éditer `catalog_v3.json` (puis recopie vers `catalog.json`), tableau `movies`.
 2. `code` **stable, unique, immuable** (convention `TITRE_ANNEE` ASCII).
 3. Un et un seul pays `isPrimary: true`.
 4. `format` : `FEATURE` | `SHORT` | `MEDIUM` | `EXTENDED` | `TV_SERIES` | `TV_MINISERIES`.

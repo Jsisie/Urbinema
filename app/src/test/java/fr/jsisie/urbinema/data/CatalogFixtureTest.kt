@@ -21,7 +21,7 @@ class CatalogFixtureTest {
         val report = CatalogValidator().validate(pack)
 
         assertTrue(report.errors.joinToString { "${it.path}: ${it.message}" }, report.isValid)
-        assertEquals(18, pack.version)
+        assertEquals(19, pack.version)
         assertTrue(pack.movies.size >= 1400)
         assertTrue(pack.collections.size >= 18)
         assertEquals("CLUB", pack.collections.first { it.code == "COLLECTION_005" }.track)

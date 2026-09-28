@@ -644,6 +644,15 @@ H. DIVERS
     Index lettres Atlas : même règle que le tri titre — articles « Les »,
     « L' », « The », etc. ignorés ; « Les Amants » → lettre **A**, pas L.
 
+77. RETOURS 0.2.8 (CATALOG V3, CINÉ-CLUB, PERF, CAP 10, CIEL CLAIR)
+    Pack `catalog_v3.json` (copie V2 dédoublonnée, version JSON **19**) recopié
+    vers `catalog.json`. Ciné-club : une collection GATEWAY ne compte pour
+    ouvrir CLUB que si elle est **suivie** (Parrain/Jaws/Star Wars dans
+    Initiation et Nouvel Hollywood ne suffisent plus). Cap **10** collections
+    en cours (`MAX_IN_PROGRESS_COLLECTIONS`). Démarrage : snapshot catalogue
+    unique + debounce UI. Carte du ciel en salle éclairée : fond papier et
+    sheet aux couleurs du thème.
+
 
 ========================================================================
 E. CE QUI RESTE OUVERT (cœur fonctionnel, pas le cloud)

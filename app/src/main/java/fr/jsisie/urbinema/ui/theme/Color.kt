@@ -20,6 +20,7 @@ data class UrbinemaColors(
     val cool: Color,
     val rare: Color,
     val danger: Color,
+    val isDark: Boolean,
 )
 
 internal val LocalUrbinemaColors = staticCompositionLocalOf { SalleObscureColors }

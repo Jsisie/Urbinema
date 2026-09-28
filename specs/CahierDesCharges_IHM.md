@@ -2,7 +2,7 @@
 
 ### Urbinema
 
-**Version :** 1.3 — 0.2.4 : catalogue v2 (~1405 films) + affiches packagées
+**Version :** 1.4 — 0.2.8 : ciel lisible en thème clair, cap 10 collections
 **Statut :** Direction de travail validée ; carte du ciel = maquette jouable (0.2.3+)
 **Lié à :** `CahierDesCharges_Fonctionnel_v2.md`, `CahierDesCharges_Technique.md`, `DECISIONS_ACTEES.txt`
 
@@ -390,7 +390,7 @@ Sur Parcours (et les écrans d’aide thématiques) : **?** ouvre l’aide.
 Sur l’**onglet Atlas** : ☰, **?** aide, icône **étoiles** (carte du ciel).
 
 Sur la **carte du ciel** : flèche retour, titre « Carte du ciel », **?**.
-Fond nuit même en thème clair.
+Fond nuit en salle obscure ; **papier** (salle éclairée) en thème clair.
 
 Les autres écrans hors onglet : flèche de retour + titre.
 
@@ -530,7 +530,9 @@ S’ouvre depuis l’icône étoiles de l’Atlas. Vue par défaut : un film au 
 ```
 
 Le **Canvas occupe tout** sous la barre haute. Les chips et le hint sont
-**superposés**. Le ciel reste `#07060D` même si l’app est en salle éclairée.
+**superposés**. En salle obscure le ciel reste `#07060D` ; en salle éclairée
+il reprend le papier du thème pour que la liste de films (titres vus compris)
+reste lisible.
 
 ------
 

@@ -36,7 +36,9 @@ import fr.jsisie.urbinema.data.repository.ProgressRepository
 import fr.jsisie.urbinema.data.repository.ProgressionCoordinator
 import fr.jsisie.urbinema.data.repository.WeeklyQuestCoordinator
 import fr.jsisie.urbinema.data.media.MediaPaths
+import fr.jsisie.urbinema.domain.FunctionalLimits
 import fr.jsisie.urbinema.domain.badge.ProfileBadges
+import fr.jsisie.urbinema.domain.collection.CollectionFollowRules
 import fr.jsisie.urbinema.domain.collection.CollectionUnlockRules
 import fr.jsisie.urbinema.domain.map.CinemaMapGraph
 import fr.jsisie.urbinema.domain.map.CinemaMapLayout
@@ -73,7 +75,10 @@ import java.time.Year
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
@@ -96,6 +101,7 @@ class MainViewModel(
 ) : ViewModel(), UrbinemaViewModel {
     private var user: UserEntity? = null
     private var moviesWithRelations: List<MovieWithRelations> = emptyList()
+    private var moviesByMovieId: Map<Long, MovieWithRelations> = emptyMap()
     private var watched: List<UserMovieCrossRef> = emptyList()
     private var collectionsWithMovies: List<CollectionWithMovies> = emptyList()
     private var collectionProgress: Map<Long, CollectionProgressRow> = emptyMap()
@@ -119,6 +125,8 @@ class MainViewModel(
     private var observedUserId: Long? = null
     private var observing = false
     private var bootstrapFailed = false
+    private var refreshJob: Job? = null
+    private var followLimitDialog by mutableStateOf(false)
 
     private var homeState by mutableStateOf(HomeUiState(loadState = LoadState.Loading))
     private var territoryState by mutableStateOf(emptyList<TerritoryUi>())
@@ -167,6 +175,7 @@ class MainViewModel(
     override val needsOnboarding: Boolean get() = showOnboarding
     override val completedCollectionCelebration: String? get() = celebrationName
     override val unlockedBadgeCelebration: String? get() = pendingBadgeCelebrations.firstOrNull()
+    override val followLimitReached: Boolean get() = followLimitDialog
     override val availableAvatars: List<String> get() = MediaPaths.PACKAGED_AVATAR_CODES
 
     init {
@@ -355,6 +364,11 @@ class MainViewModel(
         val currentUser = user ?: return
         val ui = collectionState.firstOrNull { it.id == code } ?: return
         if (ui.locked || ui.completed) return
+        val inProgress = collectionState.count { it.followed && !it.completed }
+        if (CollectionFollowRules.atFollowLimit(inProgress)) {
+            followLimitDialog = true
+            return
+        }
         val collectionId = collectionsWithMovies.firstOrNull { it.collection.code == code }?.collection?.collectionId
             ?: return
         viewModelScope.launch {
@@ -548,6 +562,10 @@ class MainViewModel(
         }
     }
 
+    override fun dismissFollowLimit() {
+        followLimitDialog = false
+    }
+
     override fun dismissCollectionCelebration() {
         celebrationName = null
     }
@@ -559,35 +577,14 @@ class MainViewModel(
     private fun observeDatabase() {
         if (observing) return
         observing = true
-        val catalog = database.catalogDao()
-        viewModelScope.launch { catalog.observeMoviesWithRelations().collectLatest { moviesWithRelations = it; refresh() } }
         viewModelScope.launch {
-            catalog.observeCollectionsWithMovies().collectLatest {
-                collectionsWithMovies = it
-                refresh()
-            }
+            runCatching { loadCatalogSnapshot() }
+                .onFailure {
+                    bootstrapFailed = true
+                    Log.e(TAG, "Catalog snapshot failed", it)
+                }
+            refreshNow()
         }
-        viewModelScope.launch {
-            catalog.observeCollectionCountries().collectLatest { rows ->
-                collectionCountryRefs = rows
-                refresh()
-            }
-        }
-        viewModelScope.launch {
-            catalog.observeCollectionCharacteristics().collectLatest { rows ->
-                collectionCharacteristicRefs = rows
-                refresh()
-            }
-        }
-        viewModelScope.launch { catalog.observeCountries().collectLatest { countryEntities = it; refresh() } }
-        viewModelScope.launch { catalog.observeContinents().collectLatest { continentEntities = it; refresh() } }
-        viewModelScope.launch { catalog.observeCountryContinents().collectLatest { countryContinents = it; refresh() } }
-        viewModelScope.launch { catalog.observeDirectors().collectLatest { directorEntities = it; refresh() } }
-        viewModelScope.launch { catalog.observeGenres().collectLatest { genreEntities = it; refresh() } }
-        viewModelScope.launch { catalog.observeCharacteristics().collectLatest { characteristicEntities = it; refresh() } }
-        viewModelScope.launch { catalog.observeBadges().collectLatest { badgeEntities = it; refresh() } }
-        viewModelScope.launch { catalog.observeRankings().collectLatest { rankings = it; refresh() } }
-        viewModelScope.launch { catalog.observeQuests().collectLatest { questEntities = it; refresh() } }
         viewModelScope.launch {
             database.progressDao().observeLocalUser().collectLatest {
                 user = it
@@ -599,6 +596,28 @@ class MainViewModel(
                 }
             }
         }
+    }
+
+    /**
+     * Catalogue is static after bootstrap import — load once instead of
+     * 12 Room `@Relation` flows each triggering a full UI rebuild.
+     */
+    private suspend fun loadCatalogSnapshot() {
+        val catalog = database.catalogDao()
+        moviesWithRelations = catalog.allMoviesWithRelations()
+        moviesByMovieId = moviesWithRelations.associateBy { it.movie.movieId }
+        collectionsWithMovies = catalog.observeCollectionsWithMovies().first()
+        collectionCountryRefs = catalog.observeCollectionCountries().first()
+        collectionCharacteristicRefs = catalog.observeCollectionCharacteristics().first()
+        countryEntities = catalog.observeCountries().first()
+        continentEntities = catalog.observeContinents().first()
+        countryContinents = catalog.observeCountryContinents().first()
+        directorEntities = catalog.observeDirectors().first()
+        genreEntities = catalog.observeGenres().first()
+        characteristicEntities = catalog.observeCharacteristics().first()
+        badgeEntities = catalog.observeBadges().first()
+        rankings = catalog.observeRankings().first()
+        questEntities = catalog.observeQuests().first()
     }
 
     private fun observeUser(value: UserEntity) {
@@ -664,6 +683,14 @@ class MainViewModel(
     }
 
     private fun refresh() {
+        refreshJob?.cancel()
+        refreshJob = viewModelScope.launch {
+            delay(FunctionalLimits.UI_REFRESH_DEBOUNCE_MS)
+            refreshNow()
+        }
+    }
+
+    private fun refreshNow() {
         try {
             refreshUnsafe()
         } catch (error: Exception) {
@@ -703,6 +730,7 @@ class MainViewModel(
             inTrack.count { item ->
                 CollectionUnlockRules.isQualified(
                     watchedCount = item.movies.count { movie -> movie.movieId in watchedIds },
+                    followed = item.collection.collectionId in followedCollectionIds,
                 )
             } to inTrack.size
         }
@@ -723,7 +751,7 @@ class MainViewModel(
             val progress = collectionProgress[collection.collectionId]
             val rawProgress = percentage(progress?.watchedCount ?: 0, progress?.totalCount ?: 0)
             val filmSummaries = item.movies.map { movie ->
-                val rel = moviesWithRelations.firstOrNull { it.movie.movieId == movie.movieId }
+                val rel = moviesByMovieId[movie.movieId]
                 toSummary(
                     rel ?: MovieWithRelations(movie, emptyList(), emptyList(), emptyList(), emptyList()),
                     watched = followed && movie.movieId in watchedIds,
@@ -1228,8 +1256,8 @@ class MainViewModel(
         const val TAG = "UrbinemaViewModel"
         const val PROGRESS_TAG = "UrbinemaProgress"
         const val INITIATION_CODE = "COLLECTION_INITIATION"
-        const val MIN_AGE = 8
-        const val MAX_AGE = 120
+        const val MIN_AGE = FunctionalLimits.MIN_USER_AGE
+        const val MAX_AGE = FunctionalLimits.MAX_USER_AGE
 
         fun birthDateFromAge(age: Int): LocalDate = LocalDate.of(Year.now().value - age, 1, 1)
     }

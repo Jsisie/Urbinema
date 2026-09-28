@@ -18,6 +18,7 @@ internal val SalleEclaireeColors = UrbinemaColors(
     cool = Color(0xFF3E5A70),
     rare = Color(0xFF5A6B7A),
     danger = Color(0xFF8E3F36),
+    isDark = false,
 )
 
 internal val SalleEclaireeScheme = lightColorScheme(

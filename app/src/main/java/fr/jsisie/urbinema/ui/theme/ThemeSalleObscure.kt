@@ -18,6 +18,7 @@ internal val SalleObscureColors = UrbinemaColors(
     cool = Color(0xFF6E8FA8),
     rare = Color(0xFFC9D6E3),
     danger = Color(0xFFB4635A),
+    isDark = true,
 )
 
 internal val SalleObscureScheme = darkColorScheme(

@@ -4,8 +4,8 @@ package fr.jsisie.urbinema.domain.collection
  * Unlock chain between collection difficulty tracks.
  *
  * A harder track opens when the previous one has enough **started**
- * collections (a few films already marked watched). Follow is not required
- * to keep a start: unfollowing must not re-lock the next group.
+ * collections (followed, with 2+ films watched). Unfollowing must not
+ * re-lock the next group (ordinal latch).
  * Once a track ordinal has been opened it is latched forever (except reset).
  */
 object CollectionUnlockRules {
@@ -20,9 +20,14 @@ object CollectionUnlockRules {
         return minOf(MIN_STARTED_COLLECTIONS, previousTrackSize)
     }
 
-    /** True when a collection counts as started for the next-track gate (2+ films). */
-    fun isQualified(watchedCount: Int): Boolean =
-        watchedCount >= MIN_FILMS_PER_COLLECTION
+    /**
+     * A collection counts as started for the next-track gate only if it is
+     * **followed** and has at least [MIN_FILMS_PER_COLLECTION] watched films.
+     * Shared titles (Initiation ∩ Nouvel Hollywood) must not open Ciné-club
+     * just because the user marked two overlapping films Vu.
+     */
+    fun isQualified(watchedCount: Int, followed: Boolean): Boolean =
+        followed && watchedCount >= MIN_FILMS_PER_COLLECTION
 
     /** Initiation itself opens the rest of GATEWAY after a single watched film. */
     fun isInitiationOpen(watchedCount: Int): Boolean =

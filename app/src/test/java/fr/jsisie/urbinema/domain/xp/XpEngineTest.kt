@@ -51,6 +51,6 @@ class XpEngineTest {
         assertEquals(100, engine.rewardFor(QuestDifficulty.BRONZE))
         assertEquals(250, engine.rewardFor(QuestDifficulty.SILVER))
         assertEquals(500, engine.rewardFor(QuestDifficulty.GOLD))
-        assertEquals(10, engine.rewardForFilm())
+        assertEquals(10, engine.rewardForFilm(currentMovie))
     }
 }

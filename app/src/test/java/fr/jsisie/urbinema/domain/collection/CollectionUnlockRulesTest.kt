@@ -27,10 +27,10 @@ class CollectionUnlockRulesTest {
     }
 
     @Test
-    fun `qualification needs two films and ignores follow`() {
-        assertFalse(CollectionUnlockRules.isQualified(watchedCount = 1))
-        assertTrue(CollectionUnlockRules.isQualified(watchedCount = 2))
-        assertTrue(CollectionUnlockRules.isQualified(watchedCount = 5))
+    fun `qualification needs two films and a follow`() {
+        assertFalse(CollectionUnlockRules.isQualified(watchedCount = 2, followed = false))
+        assertFalse(CollectionUnlockRules.isQualified(watchedCount = 1, followed = true))
+        assertTrue(CollectionUnlockRules.isQualified(watchedCount = 2, followed = true))
     }
 
     @Test

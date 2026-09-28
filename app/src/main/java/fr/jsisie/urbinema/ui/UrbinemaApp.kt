@@ -78,6 +78,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import fr.jsisie.urbinema.R
+import fr.jsisie.urbinema.domain.collection.CollectionFollowRules
 import fr.jsisie.urbinema.domain.map.CinemaMapGraph
 import fr.jsisie.urbinema.domain.map.MapLayer
 import fr.jsisie.urbinema.domain.map.MapNodeKind
@@ -190,6 +191,19 @@ fun UrbinemaApp(model: UrbinemaViewModel = PreviewUrbinemaViewModel) {
                         confirmButton = {
                             TextButton(onClick = model::dismissBadgeCelebration) {
                                 Text(confirm)
+                            }
+                        },
+                    )
+                }
+                if (model.followLimitReached) {
+                    val cap = CollectionFollowRules.MAX_IN_PROGRESS_COLLECTIONS
+                    AlertDialog(
+                        onDismissRequest = model::dismissFollowLimit,
+                        title = { Text(stringResource(R.string.follow_limit_title)) },
+                        text = { Text(stringResource(R.string.follow_limit_body, cap)) },
+                        confirmButton = {
+                            TextButton(onClick = model::dismissFollowLimit) {
+                                Text(stringResource(R.string.confirm))
                             }
                         },
                     )
