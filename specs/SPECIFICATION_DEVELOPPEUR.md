@@ -266,7 +266,7 @@ app/src/main/assets/catalog/catalog.json
 
 Il décrit le monde : films, pays, continents, réalisateurs, caractéristiques,
 genres, ères, collections, 10 rangs, 32 badges, 59 quêtes types (19 Bronze, 20 Argent, 20 Or).
-Le pack courant est la version **24** (1527 films, 27 collections). `catalog.json` est la copie de `catalog_v3.json`.
+Le pack courant est la version **27** (1538 films, 28 collections, biographies de réalisateurs). `catalog.json` est la copie de `catalog_v3.json`. Les portraits sont des fichiers `assets/media/directors/{CODE}.jpg`, lus par code, sans ligne `mediaAssets`. La collection `COLLECTION_027` (« Cinéma des premiers temps ») est sur le groupe `GATEWAY`, avec 17 films de 1892 à 1906.
 
 Modèle Kotlin : `data/importer/CatalogPack.kt`.  
 Validateur : `data/importer/CatalogValidator.kt`.  
@@ -512,7 +512,7 @@ Injection : Koin, modules dans `urbinemaModules`.
 
 ---
 
-## 6. Schéma Room (version 7)
+## 6. Schéma Room (version 8)
 
 Export : `app/schemas/` (KSP `room.schemaLocation`).
 
@@ -538,7 +538,8 @@ ON movies_countries(movieId) WHERE isPrimary = 1;
 `collections.track` TEXT NOT NULL, ajouté par `MIGRATION_4_5` (défaut
 `JOURNEY`). Room **v6** (`MIGRATION_5_6`) : `users.unlockedTrackOrdinal`,
 `users.showcaseBadgeCodes`, `xp_transactions.source` / `movieId` (userQuestId
-nullable). Room **v7** (`MIGRATION_6_7`) : `users.avatarCode`. Colonne film
+nullable). Room **v7** (`MIGRATION_6_7`) : `users.avatarCode`. Room **v8**
+(`MIGRATION_7_8`) : `directors.biography`. Colonne film
 `artisticDemand` = exigence A_f de la formule. Comment poser H/A/R/C :
 `FORMULE_MATHEMATIQUE.txt` §1.bis.
 

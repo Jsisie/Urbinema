@@ -114,7 +114,7 @@ fun AppGuideDialog(onFinished: () -> Unit) {
                         Modifier
                             .weight(1f)
                             .verticalScroll(rememberScrollState()),
-                        verticalArrangement = Arrangement.Center,
+                        verticalArrangement = Arrangement.Top,
                     ) {
                         Text(
                             title,

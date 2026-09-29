@@ -21,8 +21,23 @@ class CatalogFixtureTest {
         val report = CatalogValidator().validate(pack)
 
         assertTrue(report.errors.joinToString { "${it.path}: ${it.message}" }, report.isValid)
-        assertEquals(24, pack.version)
-        assertEquals(1527, pack.movies.size)
+        assertEquals(27, pack.version)
+        assertEquals(1538, pack.movies.size)
+        val premiersTemps = pack.collections.first { it.code == "COLLECTION_027" }
+        assertEquals("Cinéma des premiers temps", premiersTemps.name)
+        assertEquals("GATEWAY", premiersTemps.track)
+        assertEquals(17, premiersTemps.movies.size)
+        assertEquals(
+            "GEORGE_ALBERT_SMITH",
+            pack.movies.first { it.code == "LA_LOUPE_DE_GRAND_MAMAN_1900" }.directors.first().code,
+        )
+        assertTrue(pack.movies.none { it.code == "LA_FEE_AUX_CHOUX_1900" })
+        assertEquals(
+            "ALICE_GUY",
+            pack.movies.first { it.code == "LA_FEE_AUX_CHOUX_1896" }.directors.first().code,
+        )
+        assertTrue(premiersTemps.movies.any { it.code == "LA_FEE_AUX_CHOUX_1896" })
+        assertEquals("LA_FEE_AUX_CHOUX_1896", pack.movieAliases.first { it.from == "LA_FEE_AUX_CHOUX_1900" }.to)
         assertTrue(pack.movies.none { it.code == "OLDBOY_2003" })
         assertTrue(pack.movies.any { it.code == "OLD_BOY_2003" && it.countries.any { country -> country.isPrimary } })
         assertTrue(pack.movies.any { it.code == "LA_CONDITION_DE_L_HOMME_2_1959" })

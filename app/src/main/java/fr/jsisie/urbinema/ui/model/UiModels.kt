@@ -270,6 +270,7 @@ data class DirectorUi(
     val name: String,
     val films: List<MovieSummaryUi>,
     val collections: List<CollectionUi> = emptyList(),
+    val biography: String = "",
 )
 
 data class StatsListsUi(

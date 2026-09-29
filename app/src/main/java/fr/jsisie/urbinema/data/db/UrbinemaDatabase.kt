@@ -26,7 +26,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         RankEngineConfigEntity::class, RankThresholdEntity::class,
         CatalogDimensionStatEntity::class, UserProgressStateEntity::class,
     ],
-    version = 7,
+    version = 8,
     exportSchema = true,
 )
 @TypeConverters(UrbinemaConverters::class)
@@ -48,7 +48,7 @@ abstract class UrbinemaDatabase : RoomDatabase() {
             Room.databaseBuilder(context, UrbinemaDatabase::class.java, DATABASE_NAME)
                 .addMigrations(
                     MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6,
-                    MIGRATION_6_7,
+                    MIGRATION_6_7, MIGRATION_7_8,
                 )
                 .fallbackToDestructiveMigration(true)
                 .addCallback(SchemaCallback)
@@ -127,6 +127,10 @@ abstract class UrbinemaDatabase : RoomDatabase() {
 
         val MIGRATION_6_7 = Migration(6, 7) { database ->
             database.execSQL("ALTER TABLE users ADD COLUMN avatarCode TEXT")
+        }
+
+        val MIGRATION_7_8 = Migration(7, 8) { database ->
+            database.execSQL("ALTER TABLE directors ADD COLUMN biography TEXT")
         }
 
         /** Callback shared by production and tests that require the complete physical schema. */

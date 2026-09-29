@@ -699,6 +699,20 @@ H. DIVERS
     le titre et le réalisateur correspondent ; Empire de Warhol a son propre
     code, distinct de La Chute de l’Empire romain. Le courant
     « Cinéma documentaire » est un style, distinct du genre Documentaire.
+    Pack **25** : biographies sur les réalisateurs et portraits
+    `assets/media/directors/{CODE}.jpg`. Le batch est
+    `batchsData/batchReals` (affiches : `batchsData/batchPosters`).
+    Room v8 ajoute `directors.biography` sans toucher à la progression.
+    Une fiche TMDB n’est gardée que si le nom (ou un alias) correspond.
+    13 réalisateurs restent sans photo ni bio, 49 ont une bio sans photo.
+    Pack **26** : collection « Cinéma des premiers temps » (Premières séances,
+    17 films). Onze films ajoutés, six déjà au catalogue reliés
+    (Sortie d'usine, Arrivée d'un train, Voyage dans la Lune, Vol du grand
+    rapide, Résultats du féminisme, Fée aux choux 1896). La Fée aux choux de 1900 est le même film
+    que celle de 1896 (remaster) : seule la fiche 1896 reste, dans la collection.
+    Alice Guy reste le code ALICE_GUY. Grandma's Reading Glass est crédité George Albert Smith.
+    Six réalisateurs en plus, avec portrait et biographie. 1538 films,
+    28 collections, 804 réalisateurs.
 
 
 ========================================================================

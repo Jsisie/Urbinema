@@ -1,0 +1,13 @@
+frenchTitle;releaseYear;director;code;originalTitle;demand;tmdbId
+"Pauvre Pierrot";1892;"Émile Reynaud";PAUVRE_PIERROT_1892;"Pauvre Pierrot";0.72;88013
+"Experimental Sound Film";1894;"William K.L. Dickson";EXPERIMENTAL_SOUND_FILM_1894;"Dickson Experimental Sound Film";0.7;104396
+"Annie Oakley";1894;"William K.L. Dickson";ANNIE_OAKLEY_1894;"Annie Oakley";0.62;144393
+"L'Arroseur arrosé";1895;"Louis Lumière";L_ARROSEUR_ARROSE_1895;"L'Arroseur arrosé";0.7;82120
+"Le Manoir du Diable";1896;"Georges Méliès";LE_MANOIR_DU_DIABLE_1896;"Le Manoir du diable";0.74;133063
+"Le Panorama du Grand Canal vu d'un bateau";1896;"Alexandre Promio";PANORAMA_DU_GRAND_CANAL_1896;"Panorama du grand Canal pris d'un bateau";0.68;190553
+"Escamotage d'une dame au théâtre Robert-Houdin";1896;"Georges Méliès";ESCAMOTAGE_D_UNE_DAME_1896;"Escamotage d'une dame chez Robert-Houdin";0.74;104466
+"Un homme de têtes";1898;"Georges Méliès";UN_HOMME_DE_TETES_1898;"Un homme de têtes";0.72;49296
+"La Fée aux choux";1900;"Alice Guy";LA_FEE_AUX_CHOUX_1900;"La Fée aux choux";0.74;119977
+"Grandma's Reading Glass";1900;"George Albert Smith";LA_LOUPE_DE_GRAND_MAMAN_1900;"Grandma's Reading Glass";0.7;179236
+"The Big Swallow";1901;"James Williamson";THE_BIG_SWALLOW_1901;"The Big Swallow";0.7;96035
+"Alice Guy tourne une phonoscène";1905;"Alice Guy";ALICE_GUY_TOURNE_UNE_PHONOSCENE_1905;"Alice Guy tourne une phonoscène";0.68;120005

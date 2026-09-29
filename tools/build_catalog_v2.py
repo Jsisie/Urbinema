@@ -15,12 +15,12 @@ CATALOG_V1 = ROOT / "app/src/main/assets/catalog/catalog_v1.json"
 CATALOG_V2 = ROOT / "app/src/main/assets/catalog/catalog_v2.json"
 CATALOG_LIVE = ROOT / "app/src/main/assets/catalog/catalog.json"
 LIST_1000 = ROOT / "specs/Listes_Fonctionnelles/Liste_1000_Films_Hors_Catalogue.txt"
-INPUT_1000 = ROOT / "batchPosters/input/input_1000.txt"
-TMDB_MOVIES = ROOT / "batchPosters/output/catalog/movies.json"
-POSTERS_OUT = ROOT / "batchPosters/output/posters"
+INPUT_1000 = ROOT / "batchsData/batchPosters/input/input_1000.txt"
+TMDB_MOVIES = ROOT / "batchsData/batchPosters/output/catalog/movies.json"
+POSTERS_OUT = ROOT / "batchsData/batchPosters/output/posters"
 POSTERS_APP = ROOT / "app/src/main/assets/media/posters"
 
-sys.path.insert(0, str(ROOT / "batchPosters"))
+sys.path.insert(0, str(ROOT / "batchsData/batchPosters"))
 from catalog_enrich import ascii_slug, movie_code, scores_for  # noqa: E402
 
 
@@ -503,7 +503,7 @@ def prepare() -> None:
         )
     INPUT_1000.parent.mkdir(parents=True, exist_ok=True)
     INPUT_1000.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    meta_path = ROOT / "batchPosters/input/input_1000_meta.json"
+    meta_path = ROOT / "batchsData/batchPosters/input/input_1000_meta.json"
     meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
 
     pack["version"] = 13
@@ -518,7 +518,7 @@ def prepare() -> None:
 
 
 def load_meta() -> list[dict]:
-    return json.loads((ROOT / "batchPosters/input/input_1000_meta.json").read_text(encoding="utf-8"))
+    return json.loads((ROOT / "batchsData/batchPosters/input/input_1000_meta.json").read_text(encoding="utf-8"))
 
 
 def split_person(display: str) -> tuple[str | None, str]:
@@ -672,7 +672,7 @@ def merge() -> None:
     print(f"merged movies +{added} stubs={stubs} total={len(pack['movies'])}")
     print(f"directors={len(pack['directors'])} countries={len(pack['countries'])} chars={len(pack['characteristics'])}")
     print(f"posters found {posters_ok}/{added} missing {len(missing_posters)}")
-    (ROOT / "batchPosters/output/reports/missing_posters.txt").write_text(
+    (ROOT / "batchsData/batchPosters/output/reports/missing_posters.txt").write_text(
         "\n".join(missing_posters) + ("\n" if missing_posters else ""),
         encoding="utf-8",
     )

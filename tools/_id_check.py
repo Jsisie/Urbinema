@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "batchPosters"))
+sys.path.insert(0, str(ROOT / "batchsData/batchPosters"))
 from posters_batch import TmdbClient, load_env  # noqa: E402
 
 IDS = {
@@ -20,7 +20,7 @@ IDS = {
 
 
 def main() -> None:
-    load_env(ROOT / "batchPosters" / ".env")
+    load_env(ROOT / "batchsData/batchPosters" / ".env")
     client = TmdbClient(os.environ.get("TMDB_API_KEY") or "", os.environ.get("TMDB_ACCESS_TOKEN") or "", 0.1)
     lines = []
     for code, movie_id in IDS.items():

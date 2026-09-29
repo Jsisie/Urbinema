@@ -56,13 +56,13 @@ class MediaPathsTest {
             MediaPaths.resolveExisting({ files }, MediaKind.AVATAR, "AVATAR_01"),
         )
         assertEquals(
-            (1..10).map { "AVATAR_" + it.toString().padStart(2, '0') },
+            (1..MediaPaths.MAX_NB_AVATAR).map { "AVATAR_" + it.toString().padStart(2, '0') },
             MediaPaths.PACKAGED_AVATAR_CODES,
         )
     }
 
     @Test
-    fun `all ten packaged avatars exist in assets`() {
+    fun `all packaged avatars exist in assets`() {
         val folder = java.io.File("src/main/assets/media/avatars")
         assertTrue("Missing avatars folder at ${folder.absolutePath}", folder.isDirectory)
         val names = folder.list().orEmpty().map { it.lowercase() }.toSet()

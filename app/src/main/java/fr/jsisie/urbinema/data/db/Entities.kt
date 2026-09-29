@@ -123,6 +123,7 @@ data class DirectorEntity(
     val isActive: Boolean = true,
     val createdAt: Instant,
     val updatedAt: Instant,
+    val biography: String? = null,
 )
 
 @Entity(

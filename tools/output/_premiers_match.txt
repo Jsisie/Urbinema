@@ -1,0 +1,31 @@
+version=25 movies=1527 collections=27
+displayOrders=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+directors=798 bios=722
+films_year_le_1906=6
+EARLY	1895	LA_SORTIE_DES_USINES_LUMIERE_1895	La Sortie de l'usine Lumière à Lyon	La Sortie de l'usine Lumière à Lyon
+EARLY	1896	LA_FEE_AUX_CHOUX_1896	La Fée aux choux	La Fée aux choux
+EARLY	1896	L_ARRIVEE_D_UN_TRAIN_1896	L'Arrivée d'un train en gare de La Ciotat	L'Arrivée d'un train en gare de La Ciotat
+EARLY	1902	VOYAGE_DANS_LA_LUNE_1902	Le Voyage dans la Lune	Le Voyage dans la Lune
+EARLY	1903	LE_VOL_DU_GRAND_RAPIDE_1903	Le Vol du grand rapide	The Great Train Robbery
+EARLY	1906	LES_CONSEQUENCES_DU_FEMINISME_1906	Les Conséquences du féminisme	Les Résultats du féminisme
+--- MATCH ---
+MISS	1892	Pauvre Pierrot
+MISS	1894	Experimental Sound Film
+MISS	1894	Annie Oakley
+HIT	1895	La Sortie de l'usine Lumière à Lyon	LA_SORTIE_DES_USINES_LUMIERE_1895	1895	delta=0	La Sortie de l'usine Lumière à Lyon
+MISS	1895	L'Arroseur arrosé
+HIT	1895	L'Arrivée d'un train en gare de La Ciotat	L_ARRIVEE_D_UN_TRAIN_1896	1896	delta=1	L'Arrivée d'un train en gare de La Ciotat
+MISS	1896	Le Manoir du Diable
+MISS	1896	Le Panorama du Grand Canal vu d'un bateau
+MISS	1896	Escamotage d'une dame au théâtre Robert-Houdin
+MISS	1898	Un homme de têtes
+HIT	1900	La Fée aux choux	LA_FEE_AUX_CHOUX_1896	1896	delta=4	La Fée aux choux
+MISS	1900	Grandma's Reading Glass
+MISS	1901	The Big Swallow
+HIT	1902	Le Voyage dans la Lune	VOYAGE_DANS_LA_LUNE_1902	1902	delta=0	Le Voyage dans la Lune
+HIT	1903	Le Vol du grand rapide	LE_VOL_DU_GRAND_RAPIDE_1903	1903	delta=0	Le Vol du grand rapide
+MISS	1905	Alice Guy tourne une phonoscène
+HIT	1906	Les Résultats du féminisme	LES_CONSEQUENCES_DU_FEMINISME_1906	1906	delta=0	Les Conséquences du féminisme
+poster_files=1557
+director_files=736
+files_equal=True

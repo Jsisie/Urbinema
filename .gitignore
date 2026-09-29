@@ -20,8 +20,11 @@ keystore.properties
 /.fleet
 
 # Batch affiches (clé API locale, binaires téléchargés)
-batchPosters/.env
-batchPosters/output/posters/*
-!batchPosters/output/posters/.gitkeep
-batchPosters/output/catalog/*
-!batchPosters/output/catalog/.gitkeep
+batchsData/batchPosters/.env
+batchsData/batchPosters/output/posters/*
+!batchsData/batchPosters/output/posters/.gitkeep
+batchsData/batchPosters/output/catalog/*
+!batchsData/batchPosters/output/catalog/.gitkeep
+batchsData/batchReals/.env
+batchsData/batchReals/output/photos/*
+!batchsData/batchReals/output/photos/.gitkeep

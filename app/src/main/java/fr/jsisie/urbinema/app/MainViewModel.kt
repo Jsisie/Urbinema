@@ -923,6 +923,7 @@ class MainViewModel(
                 director.displayName,
                 films,
                 collectionState.filter { collection -> collection.films.any { it.id in filmIds } },
+                director.biography.orEmpty(),
             )
         }
 

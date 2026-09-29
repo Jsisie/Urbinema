@@ -1,0 +1,6 @@
+EMILE_REYNAUD	935707	Émile Reynaud	bio=2580	photo=True
+WILLIAM_K_L_DICKSON	110347	William K.L. Dickson	bio=493	photo=True
+WILLIAM_HEISE	110348	William Heise	bio=448	photo=True
+ALEXANDRE_PROMIO	1161489	Alexandre Promio	bio=301	photo=True
+JAMES_WILLIAMSON	1037369	James Williamson	bio=418	photo=True
+GEORGE_ALBERT_SMITH	1037661	George Albert Smith	bio=826	photo=True

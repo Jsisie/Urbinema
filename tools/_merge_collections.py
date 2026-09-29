@@ -9,11 +9,11 @@ from pathlib import Path
 root = Path(r"D:\Programs\Android_Studio\projets\Urbinema")
 catalog_path = root / "app/src/main/assets/catalog/catalog_v3.json"
 match_path = root / "tools/output/_coll_match.txt"
-batch_path = root / "batchPosters/output/catalog/movies_collections.json"
-report_path = root / "batchPosters/output/reports/catalog_report.csv"
-input_path = root / "batchPosters/input/input_collections.txt"
-leftover_path = root / "batchPosters/input/input_movies.txt"
-poster_src = root / "batchPosters/output/posters"
+batch_path = root / "batchsData/batchPosters/output/catalog/movies_collections.json"
+report_path = root / "batchsData/batchPosters/output/reports/catalog_report.csv"
+input_path = root / "batchsData/batchPosters/input/input_collections.txt"
+leftover_path = root / "batchsData/batchPosters/input/input_movies.txt"
+poster_src = root / "batchsData/batchPosters/output/posters"
 poster_dst = root / "app/src/main/assets/media/posters"
 md_path = root / "specs/Listes_Fonctionnelles/Liste_Collections&Films.md"
 

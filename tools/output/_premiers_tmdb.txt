@@ -1,0 +1,35 @@
+## 1892 | Pauvre Pierrot | n=1
+88013	1892-10-28	Pauvre Pierrot	Pauvre Pierrot
+## 1892 | Pauvre Pierrot | n=1
+88013	1892-10-28	Pauvre Pierrot	Pauvre Pierrot
+## 1894 | Dickson Experimental Sound Film | n=1
+104396	1894-08-31	Dickson Experimental Sound Film	Dickson Experimental Sound Film
+## 1894 | Annie Oakley | n=1
+144393	1894-11-01	Annie Oakley	Annie Oakley
+## 1895 | L'Arroseur arrosé | n=1
+82120	1895-06-10	L'arroseur arrosé	Arroseur et arrosé
+## 1895 | The Sprinkler Sprinkled | n=1
+82120	1895-06-10	L'arroseur arrosé	Arroseur et arrosé
+## 1896 | Le Manoir du diable | n=1
+133063	1896-12-24	Le manoir du diable	Le manoir du diable
+## 1896 | The House of the Devil | n=1
+133063	1896-12-24	Le manoir du diable	Le manoir du diable
+## 1896 | Panorama du Grand Canal pris d'un bateau | n=1
+190553	1896-10-25	Panorama du grand Canal pris d'un bateau	Panorama du grand Canal pris d'un bateau
+## 1896 | Panorama of the Grand Canal | n=1
+190553	1896-10-25	Panorama du grand Canal pris d'un bateau	Panorama du grand Canal pris d'un bateau
+## 1896 | Escamotage d'une dame au théâtre Robert-Houdin | n=0
+## 1896 | The Vanishing Lady | n=1
+104466	1896-01-01	Escamotage d'une dame chez Robert-Houdin	Escamotage d'une dame chez Robert-Houdin
+## 1898 | Un homme de têtes | n=1
+49296	1898-11-30	Un homme de têtes	Un homme de têtes
+## 1898 | The Four Troublesome Heads | n=1
+49296	1898-11-30	Un homme de têtes	Un homme de têtes
+## 1900 | Grandma's Reading Glass | n=1
+179236	1900-11-01	La Loupe de grand-maman	Grandma's Reading Glass
+## 1901 | The Big Swallow | n=1
+96035	1901-10-15	The Big Swallow	The Big Swallow
+## 1905 | Alice Guy tourne une phonoscène | n=1
+120005	1907-01-09	Alice Guy tourne une phonoscène sur le théâtre de pose des Buttes-Chaumont	Alice Guy tourne une phonoscène sur le théâtre de pose des Buttes-Chaumont
+## 1907 | Alice Guy tourne une phonoscène | n=1
+120005	1907-01-09	Alice Guy tourne une phonoscène sur le théâtre de pose des Buttes-Chaumont	Alice Guy tourne une phonoscène sur le théâtre de pose des Buttes-Chaumont

@@ -1,0 +1,16 @@
+{
+  "catalogPath": "../../app/src/main/assets/catalog/catalog_v3.json",
+  "inputFile": "input/input_movies.txt",
+  "outputDir": "output/posters",
+  "reportFile": "output/reports/fetch_report.csv",
+  "logFile": "output/reports/fetch_log.txt",
+  "posterSize": "w780",
+  "preferredLanguages": ["fr", "xx", "en"],
+  "yearTolerance": 1,
+  "sleepSeconds": 0.3,
+  "skipExisting": true,
+  "maxSearchResults": 5,
+  "catalogOutputFile": "output/catalog/movies.json",
+  "catalogReportFile": "output/reports/catalog_report.csv",
+  "defaultDemand": 0.7
+}

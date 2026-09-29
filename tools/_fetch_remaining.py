@@ -11,16 +11,16 @@ import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "batchPosters"))
+sys.path.insert(0, str(ROOT / "batchsData/batchPosters"))
 
 from catalog_enrich import build_movie  # noqa: E402
 from posters_batch import TmdbClient, load_env, pick_poster_path  # noqa: E402
 
 CATALOG = ROOT / "app/src/main/assets/catalog/catalog_v3.json"
-BATCH = ROOT / "batchPosters/output/catalog/movies_collections.json"
-POSTER_SRC = ROOT / "batchPosters/output/posters"
+BATCH = ROOT / "batchsData/batchPosters/output/catalog/movies_collections.json"
+POSTER_SRC = ROOT / "batchsData/batchPosters/output/posters"
 POSTER_DST = ROOT / "app/src/main/assets/media/posters"
-INPUT = ROOT / "batchPosters/input/input_movies.txt"
+INPUT = ROOT / "batchsData/batchPosters/input/input_movies.txt"
 REPORT = ROOT / "tools/output/_remaining_fetch.txt"
 TMDB_IMAGE = "https://image.tmdb.org/t/p/w780"
 FOUND_IDS = {
@@ -278,7 +278,7 @@ def save_poster(client: TmdbClient, details: dict, code: str) -> bool:
 
 
 def main() -> None:
-    load_env(ROOT / "batchPosters" / ".env")
+    load_env(ROOT / "batchsData/batchPosters" / ".env")
     token = (os.environ.get("TMDB_ACCESS_TOKEN") or os.environ.get("TMDB_API_KEY") or "").strip()
     api_key = (os.environ.get("TMDB_API_KEY") or "").strip()
     if not token and not api_key:

@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
-sys.path.insert(0, str(ROOT / "batchPosters"))
+sys.path.insert(0, str(ROOT / "batchsData/batchPosters"))
 
 import _fetch_remaining as fetch  # noqa: E402
 from posters_batch import TmdbClient, load_env  # noqa: E402
@@ -33,7 +33,7 @@ def person_id(client: TmdbClient, name: str) -> int | None:
 
 
 def main() -> None:
-    load_env(ROOT / "batchPosters" / ".env")
+    load_env(ROOT / "batchsData/batchPosters" / ".env")
     api_key = (os.environ.get("TMDB_API_KEY") or "").strip()
     client = TmdbClient(api_key, os.environ.get("TMDB_ACCESS_TOKEN") or "", 0.15)
     lines: list[str] = []

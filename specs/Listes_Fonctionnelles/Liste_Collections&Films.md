@@ -72,7 +72,7 @@ Avant d'être une industrie ou un art classique, le cinéma a été une attracti
 - Le Panorama du Grand Canal vu d'un bateau - 1896
 - Escamotage d'une dame au théâtre Robert-Houdin - 1896
 - Un homme de têtes - 1898
-- La Fée aux choux - 1900
+- La Fée aux choux - 1896
 - Grandma's Reading Glass - 1900
 - The Big Swallow - 1901
 - Le Voyage dans la Lune - 1902

@@ -9,9 +9,9 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-INPUT = ROOT / "batchPosters" / "input" / "input_movies.txt"
-REPORT = ROOT / "batchPosters" / "output" / "reports" / "fetch_report.csv"
-SRC = ROOT / "batchPosters" / "output" / "posters"
+INPUT = ROOT / "batchsData/batchPosters" / "input" / "input_movies.txt"
+REPORT = ROOT / "batchsData/batchPosters" / "output" / "reports" / "fetch_report.csv"
+SRC = ROOT / "batchsData/batchPosters" / "output" / "posters"
 DST = ROOT / "app" / "src" / "main" / "assets" / "media" / "posters"
 EXTS = (".jpg", ".jpeg", ".png", ".webp")
 MIN_BYTES = 4_000

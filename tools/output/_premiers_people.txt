@@ -1,0 +1,20 @@
+## Émile Reynaud n=2
+935707	pop=0.7272	photo=True	Directing	Émile Reynaud
+4864146	pop=0.25	photo=False	Camera	Émile Reynaud
+## William K.L. Dickson n=1
+110347	pop=0.9343	photo=True	Directing	William K.L. Dickson
+## William Kennedy Laurie Dickson n=1
+110347	pop=0.9343	photo=True	Directing	William K.L. Dickson
+## William Heise n=1
+110348	pop=0.7084	photo=True	Directing	William Heise
+## Alexandre Promio n=2
+1161489	pop=0.6709	photo=True	Directing	Alexandre Promio
+6206087	pop=0.2694	photo=False	Directing	Jean Alexandre Louis Promio
+## James Williamson n=10
+3571380	pop=0.4637	photo=True	Acting	James Williamson
+3565790	pop=0.4369	photo=False	Acting	James Williamson
+1707669	pop=0.6724	photo=True	Acting	James Williamson
+3566497	pop=0.2563	photo=False	Directing	James Williamson
+1037369	pop=0.6446	photo=True	Directing	James Williamson
+## George Albert Smith n=1
+1037661	pop=0.5057	photo=True	Directing	George Albert Smith

@@ -13,9 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOG_V2 = ROOT / "app/src/main/assets/catalog/catalog_v2.json"
 CATALOG_LIVE = ROOT / "app/src/main/assets/catalog/catalog.json"
 POSTERS_DIR = ROOT / "app/src/main/assets/media/posters"
-INPUT_MOVIES = ROOT / "batchPosters/input/input_movies.txt"
+INPUT_MOVIES = ROOT / "batchsData/batchPosters/input/input_movies.txt"
 
-sys.path.insert(0, str(ROOT / "batchPosters"))
+sys.path.insert(0, str(ROOT / "batchsData/batchPosters"))
 from catalog_enrich import scores_for  # noqa: E402
 
 

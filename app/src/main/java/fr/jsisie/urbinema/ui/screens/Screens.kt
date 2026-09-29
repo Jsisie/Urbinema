@@ -896,6 +896,8 @@ fun DirectorScreen(
         onMovie = onMovie,
         onMarkWatched = onMarkWatched,
         alwaysShowFilmSection = true,
+        portraitCode = director.id,
+        biography = director.biography,
     )
 }
 
@@ -908,6 +910,8 @@ private fun AtlasFilmDirectory(
     onMovie: (String) -> Unit,
     onMarkWatched: (String) -> Unit,
     alwaysShowFilmSection: Boolean,
+    portraitCode: String? = null,
+    biography: String? = null,
 ) {
     var pending by remember { mutableStateOf<MovieSummaryUi?>(null) }
     pending?.let { film ->
@@ -928,6 +932,8 @@ private fun AtlasFilmDirectory(
     val titleSort = sort == FilmListSort.TitleAsc || sort == FilmListSort.TitleDesc
     val showIndex = titleSort && sorted.size >= 8
     var headerCount = 1
+    if (portraitCode != null) headerCount += 1
+    if (!biography.isNullOrBlank()) headerCount += 2
     if (collections.isNotEmpty()) headerCount += 1 + collections.size
     if (sorted.isNotEmpty() || alwaysShowFilmSection) headerCount += 2
     Box(pageModifier) {
@@ -939,6 +945,36 @@ private fun AtlasFilmDirectory(
             contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen),
         ) {
             item { ScreenTitle(title) }
+            if (portraitCode != null) {
+                item {
+                    EditorialImage(
+                        kind = MediaKind.DIRECTOR,
+                        code = portraitCode,
+                        contentDescription = stringResource(R.string.director_photo, title),
+                        modifier = Modifier
+                            .padding(top = UrbinemaThemeTokens.dimens.md)
+                            .width(120.dp)
+                            .aspectRatio(3f / 4f)
+                            .background(UrbinemaThemeTokens.colors.surface),
+                    ) {
+                        Icon(
+                            Icons.Outlined.Image,
+                            stringResource(R.string.director_photo, title),
+                            Modifier.size(28.dp),
+                        )
+                    }
+                }
+            }
+            if (!biography.isNullOrBlank()) {
+                item { SectionTitle(R.string.director_biography) }
+                item {
+                    Text(
+                        biography,
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = UrbinemaThemeTokens.colors.onBackgroundMuted,
+                    )
+                }
+            }
             if (collections.isNotEmpty()) {
                 item { SectionTitle(R.string.all_collections) }
                 items(collections, key = { it.id }) { collection ->

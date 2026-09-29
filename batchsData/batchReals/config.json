@@ -1,0 +1,9 @@
+{
+  "catalogPath": "../../app/src/main/assets/catalog/catalog_v3.json",
+  "inputFile": "input/input_directors.txt",
+  "photoDir": "output/photos",
+  "biosFile": "output/bios.json",
+  "reportFile": "output/reports/fetch_report.csv",
+  "profileSize": "w342",
+  "sleepSeconds": 0.15
+}

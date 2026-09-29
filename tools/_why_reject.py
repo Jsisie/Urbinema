@@ -4,11 +4,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
-sys.path.insert(0, str(ROOT / "batchPosters"))
+sys.path.insert(0, str(ROOT / "batchsData/batchPosters"))
 import _fetch_remaining as fetch
 from posters_batch import TmdbClient, load_env
 
-load_env(ROOT / "batchPosters" / ".env")
+load_env(ROOT / "batchsData/batchPosters" / ".env")
 client = TmdbClient(os.environ.get("TMDB_API_KEY") or "", os.environ.get("TMDB_ACCESS_TOKEN") or "", 0.1)
 lines = []
 for code, movie_id in fetch.FOUND_IDS.items():

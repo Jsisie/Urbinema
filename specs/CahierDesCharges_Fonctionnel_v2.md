@@ -7,7 +7,7 @@
 ## Spécification fonctionnelle du produit
 
 **Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 24, 1527 films, 27 collections)
+**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 27, 1538 films, 28 collections)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -2063,7 +2063,7 @@ Le MVP doit contenir :
 
 ### Collections
 
-- 27 collections dans le pack 24 ;
+- 28 collections dans le pack 27 (dont Cinéma des premiers temps, groupe Premières séances) ;
 - Initiation + cadenas Initiation **et** cadenas entre groupes, avec cliquet ;
 - suivi obligatoire pour afficher la progression (0 % si non suivie) ;
 - progression et complétion 100 % (§8).

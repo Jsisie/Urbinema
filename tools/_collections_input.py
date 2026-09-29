@@ -33,6 +33,6 @@ for raw in text.splitlines():
         return '"' + value.replace('"', "'") + '"'
     lines.append(";".join([cell(title), year, cell(director), slug(title, year), cell(title)]))
     count += 1
-path = root / "batchPosters/input/input_collections.txt"
+path = root / "batchsData/batchPosters/input/input_collections.txt"
 path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 print("to_fetch", count)

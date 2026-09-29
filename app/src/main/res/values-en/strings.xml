@@ -160,6 +160,8 @@
     <string name="movie_metadata">Japan · 3h 27m · Drama</string>
     <string name="movie_synopsis">In 16th-century Japan, villagers hire seven samurai to protect their harvest. A work about solidarity, courage and the price of victory.</string>
     <string name="poster_placeholder">Local poster unavailable</string>
+    <string name="director_biography">Biography</string>
+    <string name="director_photo">Photo of %1$s</string>
     <string name="mark_watched">Mark as watched</string>
     <string name="watched">Watched</string>
     <string name="synopsis">Synopsis</string>

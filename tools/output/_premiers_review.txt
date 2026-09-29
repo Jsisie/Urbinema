@@ -1,0 +1,19 @@
+PAUVRE_PIERROT_1892	1892	5	SHORT	EMILE_REYNAUD	FRANCE	Pauvre Pierrot	Pauvre Pierrot	syn=180
+EXPERIMENTAL_SOUND_FILM_1894	1894	1	SHORT	WILLIAM_K_L_DICKSON,WILLIAM_HEISE	USA	Experimental Sound Film	Dickson Experimental Sound Film	syn=0
+ANNIE_OAKLEY_1894	1894	1	SHORT	WILLIAM_HEISE,WILLIAM_K_L_DICKSON	USA	Annie Oakley	Annie Oakley	syn=0
+L_ARROSEUR_ARROSE_1895	1895	1	SHORT	LOUIS_LUMIERE	FRANCE	L'arroseur arrosé	Arroseur et arrosé	syn=352
+LE_MANOIR_DU_DIABLE_1896	1896	4	SHORT	GEORGES_MELIES	FRANCE	Le Manoir du Diable	Le manoir du diable	syn=0
+PANORAMA_DU_GRAND_CANAL_1896	1896	1	SHORT	ALEXANDRE_PROMIO	FRANCE	Arrivée en gondole à Venise	Panorama du grand Canal pris d'un bateau	syn=54
+ESCAMOTAGE_D_UNE_DAME_1896	1896	1	SHORT	GEORGES_MELIES	FRANCE	Escamotage d'une dame au théâtre Robert-Houdin	Escamotage d'une dame chez Robert-Houdin	syn=107
+UN_HOMME_DE_TETES_1898	1898	1	SHORT	GEORGES_MELIES	FRANCE	L'homme aux quatres têtes embarrassantes	Un homme de têtes	syn=135
+LA_FEE_AUX_CHOUX_1900	1900	2	SHORT	ALICE_GUY_BLACHE	FRANCE	La Fée aux choux	La fée aux choux	syn=168
+LA_LOUPE_DE_GRAND_MAMAN_1900	1900	1	SHORT	JACK_SMITH	UK	La Loupe de grand-maman	Grandma's Reading Glass	syn=0
+THE_BIG_SWALLOW_1901	1901	1	SHORT	JAMES_WILLIAMSON	UK	The Big Swallow	The Big Swallow	syn=59
+ALICE_GUY_TOURNE_UNE_PHONOSCENE_1905	1907	2	SHORT	ALICE_GUY_BLACHE	FRANCE	Alice Guy tourne une phonoscène sur la théâtre de pose des Buttes-Chaumont	Alice Guy tourne une phonoscène sur le théâtre de pose des Buttes-Chaumont	syn=499
+--- DIRECTORS ---
+EMILE_REYNAUD	Émile Reynaud	Émile	Reynaud
+WILLIAM_K_L_DICKSON	William K.L. Dickson	William K L	Dickson
+WILLIAM_HEISE	William Heise	William	Heise
+ALEXANDRE_PROMIO	Alexandre Promio	Alexandre	Promio
+ALICE_GUY_BLACHE	Alice Guy-Blaché	Alice	Guy-Blaché
+JAMES_WILLIAMSON	James Williamson	James	Williamson

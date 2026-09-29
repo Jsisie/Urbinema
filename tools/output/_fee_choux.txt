@@ -1,0 +1,7 @@
+## 1896 n=1
+147554	1896-03-31	El hada de las coles	La fée aux choux
+## 1900 n=1
+119977	1900-01-01	La fée aux choux	La fée aux choux
+## 1902 n=2
+147554	1896-03-31	El hada de las coles	La fée aux choux
+119977	1900-01-01	La fée aux choux	La fée aux choux

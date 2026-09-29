@@ -160,6 +160,8 @@
     <string name="movie_metadata">Japon · 3 h 27 · Drame</string>
     <string name="movie_synopsis">Dans le Japon du XVIe siècle, des villageois engagent sept samouraïs pour protéger leurs récoltes. Une œuvre sur la solidarité, le courage et le prix de la victoire.</string>
     <string name="poster_placeholder">Affiche locale indisponible</string>
+    <string name="director_biography">Biographie</string>
+    <string name="director_photo">Photo de %1$s</string>
     <string name="mark_watched">Marquer comme vu</string>
     <string name="watched">Film vu</string>
     <string name="synopsis">Synopsis</string>

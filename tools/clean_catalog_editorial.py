@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOG_V1 = ROOT / "app/src/main/assets/catalog/catalog_v1.json"
 CATALOG_V2 = ROOT / "app/src/main/assets/catalog/catalog_v2.json"
 CATALOG_LIVE = ROOT / "app/src/main/assets/catalog/catalog.json"
-META_1000 = ROOT / "batchPosters/input/input_1000_meta.json"
+META_1000 = ROOT / "batchsData/batchPosters/input/input_1000_meta.json"
 
 NV_DIRECTORS = {
     "godard", "truffaut", "chabrol", "rohmer", "rivette", "varda", "resnais",
