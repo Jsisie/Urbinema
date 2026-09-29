@@ -7,7 +7,7 @@
 ## Spécification fonctionnelle du produit
 
 **Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 23, 1453 films)
+**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 24, 1527 films, 27 collections)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -990,7 +990,7 @@ une alerte ; il faut en terminer une ou ne plus en suivre une.
 
 ## 8.5. Collections essentielles
 
-Une collection majeure pourra comporter environ 20 films essentiels, mais la taille peut varier librement : les paliers étant en pourcentage (§8.7), aucune contrainte de format ne pèse sur la sélection éditoriale. Initiation en a 10. Le pack 0.1.10 en compte 15 au total.
+Une collection majeure pourra comporter environ 20 films essentiels, mais la taille peut varier librement : les paliers étant en pourcentage (§8.7), aucune contrainte de format ne pèse sur la sélection éditoriale. Initiation en a 10. Le pack 0.1.10 en comptait 15. Le pack 24 en compte 27.
 
 ------
 
@@ -2063,7 +2063,7 @@ Le MVP doit contenir :
 
 ### Collections
 
-- 15 collections dans le pack (cible éditoriale 20) ;
+- 27 collections dans le pack 24 ;
 - Initiation + cadenas Initiation **et** cadenas entre groupes, avec cliquet ;
 - suivi obligatoire pour afficher la progression (0 % si non suivie) ;
 - progression et complétion 100 % (§8).

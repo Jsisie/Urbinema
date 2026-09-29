@@ -273,7 +273,7 @@ Le néoréalisme naît dans l'Italie défaite de 1945, quand les studios manquen
 
 L'âge des images avant la parole synchronisée.
 
-Avant 1930, le cinéma invente presque tous ses langages. Méliès truque la Lune, Griffith monumentalisé le récit, Keaton, Chaplin et Lloyd font du corps une grammaire. L'Allemagne expressionniste, Flaherty, Murnau, l'URSS du montage et Dreyer prouvent que le silence n'est pas un manque. La Passion de Jeanne d'Arc colle aux visages, L'Aurore invente une caméra lyrique, Napoléon déborde l'écran. Le parlant n'efface pas cet âge : il le recouvre. Revenir au muet, c'est réapprendre à voir avant d'écouter.
+Le cinéma invente presque tous ses langages avant que la parole synchronisée ne les recouvre. Griffith monumentalise le récit, Feuillade enchaîne Fantômas et Les Vampires, Keaton, Chaplin et Lloyd font du corps une grammaire. L'Allemagne expressionniste, Flaherty, Murnau, l'URSS du montage et Dreyer prouvent que le silence n'est pas un manque. La Passion de Jeanne d'Arc colle aux visages, L'Aurore invente une caméra lyrique, Napoléon déborde l'écran. Revenir au muet, c'est réapprendre à voir avant d'écouter.
 
 - Fantomas - 1913
 - Les Vampires - 1915

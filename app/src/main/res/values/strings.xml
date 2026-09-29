@@ -266,11 +266,21 @@
     <string name="sources_book_allard">Pierre Allard, Le Cinéma muet.</string>
     <string name="sources_book_muller">Jürgen Müller, 100 classiques du cinéma.</string>
     <string name="sources_book_philippe">Claude-Jean Philippe, 100 films pour une cinémathèque idéale.</string>
+    <string name="sources_book_sadoul">Dictionnaire des films, Georges Sadoul et Émile Breton.</string>
+    <string name="sources_book_karthala">Dictionnaire du cinéma africain (tome 1), Éditions Karthala.</string>
+    <string name="sources_book_ginsberg">Historical Dictionary of Middle Eastern Cinema, Terri Ginsberg et Chris Lippard.</string>
+    <string name="sources_book_pinel">Genres et mouvements au cinéma, Vincent Pinel, Larousse.</string>
+    <string name="sources_book_thon">Torgeir Holljen Thon, 100 norske filmer du må se (2008).</string>
     <string name="sources_sites">Listes et sites</string>
     <string name="sources_site_tspdt">They Shoot Pictures, Don’t They (TSPDT), 21e édition, table des 1 000 plus grands films.</string>
-    <string name="sources_site_letterboxd">Letterboxd, copie publique de cette liste TSPDT (tops cinéphiles).</string>
+    <string name="sources_site_letterboxd">Letterboxd, listes publiques, dont une copie de la liste TSPDT.</string>
+    <string name="sources_site_imdb">IMDb, fiches et classements publics.</string>
+    <string name="sources_site_senscritique">SensCritique, listes et fiches publiques.</string>
     <string name="sources_site_sight">Sight &amp; Sound / BFI, sondage décennal 2022 (critiques et réalisateurs).</string>
     <string name="sources_site_ebert">Roger Ebert, Great Movies (livres et archives rogerebert.com).</string>
-    <string name="sources_site_festivals">Palmarès de festivals : Cannes, Venise, Berlin, FESPACO, Golden Horse, Sundance.</string>
+    <string name="sources_site_festivals">Palmarès et archives des festivals internationaux : Cannes, Venise, Berlin, FESPACO, Golden Horse, Sundance.</string>
     <string name="sources_site_tmdb">The Movie Database (TMDB), pour les affiches embarquées. Les données de l’app restent locales.</string>
+    <string name="sources_site_kmdb">KMDb, base officielle du Korean Film Archive.</string>
+    <string name="sources_site_cahiers">Les Cahiers du cinéma et Positif.</string>
+    <string name="sources_site_criticism">Dossiers rétrospectifs : British Film Institute (Sight &amp; Sound) et la liste historique de CNN sur les chefs-d’œuvre du cinéma asiatique.</string>
 </resources>

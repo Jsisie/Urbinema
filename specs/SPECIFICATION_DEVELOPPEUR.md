@@ -266,7 +266,7 @@ app/src/main/assets/catalog/catalog.json
 
 Il décrit le monde : films, pays, continents, réalisateurs, caractéristiques,
 genres, ères, collections, 10 rangs, 32 badges, 59 quêtes types (19 Bronze, 20 Argent, 20 Or).
-Le pack courant est la version **23** (1453 films). `catalog.json` est la copie de `catalog_v3.json`.
+Le pack courant est la version **24** (1527 films, 27 collections). `catalog.json` est la copie de `catalog_v3.json`.
 
 Modèle Kotlin : `data/importer/CatalogPack.kt`.  
 Validateur : `data/importer/CatalogValidator.kt`.  

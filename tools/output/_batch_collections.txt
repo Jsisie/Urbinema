@@ -1,0 +1,66 @@
+O_DREAMLAND_1953	1953	O Dreamland	O Dreamland	LINDSAY_ANDERSON	UK
+MOMMA_DON_T_ALLOW_1956	1956	Momma Don't Allow	Momma Don't Allow	KAREL_REISZ, TONY_RICHARDSON	UK
+TOGETHER_1956	1956	Ensemble	Together	Lorenza Mazzetti, Denis Horne	UK
+EVERY_DAY_EXCEPT_CHRISTMAS_1957	1957	Every Day Except Christmas	Every Day Except Christmas	LINDSAY_ANDERSON	UK
+WE_ARE_THE_LAMBETH_BOYS_1959	1959	We Are the Lambeth Boys	We Are the Lambeth Boys	KAREL_REISZ	UK
+LES_CORPS_SAUVAGES_1959	1959	Les corps sauvages	Look Back in Anger	TONY_RICHARDSON	UK
+UN_GO_T_DE_MIEL_1961	1961	Un goût de miel	A Taste of Honey	TONY_RICHARDSON	UK
+UN_AMOUR_PAS_COMME_LES_AUTRES_1962	1962	Un amour pas comme les autres	A Kind of Loving	JOHN_SCHLESINGER	UK
+BILLY_LE_MENTEUR_1963	1963	Billy le menteur	Billy Liar	JOHN_SCHLESINGER	UK
+DARLING_1965	1965	Darling chérie	Darling	JOHN_SCHLESINGER	UK
+FANTOMAS_1913	1913	Fantômas - À l'ombre de la guillotine	Fantômas	LOUIS_FEUILLADE	FRANCE
+THE_EXTRAS_1978	1978	The Extras	茄哩啡	BONG_JOON_HO	HONG_KONG
+THE_BUTTERFLY_MURDERS_1979	1979	Butterfly Murders	蝶變	Tsui Hark	HONG_KONG
+COPS_AND_ROBBERS_1979	1979	Cops and Robbers	點指兵兵	章國明	HONG_KONG
+THE_SECRET_1979	1979	The Secret	Agentul serviciului secret	Ion Scutelnic	RUSSIA
+L_ENFER_DES_ARMES_1980	1980	L'enfer des armes	第一類型危險	Tsui Hark	HONG_KONG
+THE_SWORD_1980	1980	The Sword	名劍	章國明	HONG_KONG
+THE_STORY_OF_WOO_VIET_1981	1981	The Story of Woo Viet	胡越的故事	章國明	HONG_KONG
+THE_CLUB_1981	1981	Le Club des monstres	The Monster Club	Roy Ward Baker	UK
+NOMAD_1982	1982	Nomad	Nomad Riders	Frank Roach	USA
+ZU_LES_GUERRIERS_DE_LA_MONTAGNE_MAGIQUE_1983	1983	Zu, les guerriers de la montagne magique	新蜀山劍俠	Tsui Hark	HONG_KONG
+AH_YING_1983	1983	Ah Ying	半邊人	Allen Fong	HONG_KONG
+SHANGHAI_BLUES_1984	1984	Shanghai Blues	上海之夜	Tsui Hark	HONG_KONG
+POLICE_STORY_1985	1985	Police Story	警察故事	PARK_CHAN_WOOK	HONG_KONG
+PEKING_OPERA_BLUES_1986	1986	Peking Opera Blues	刀馬旦	Tsui Hark	HONG_KONG
+CITY_ON_FIRE_1987	1987	City on Fire	龍虎風雲	章國明	HONG_KONG
+HISTOIRE_DE_FANT_MES_CHINOIS_1987	1987	Histoires de fantômes chinois	倩女幽魂	章國明	HONG_KONG
+AS_TEARS_GO_BY_1988	1988	As Tears Go By	旺角卡門	WONG_KAR_WAI	HONG_KONG
+PEDICAB_DRIVER_1989	1989	Pedicab Driver	群龍戲鳳	TRAN_ANH_HUNG	HONG_KONG,CHINA
+BULLET_IN_THE_HEAD_1990	1990	Une Balle dans la tête	喋血街頭	JOHN_WOO	HONG_KONG
+IL_TAIT_UNE_FOIS_EN_CHINE_1991	1991	Il était une fois en Chine	黃飛鴻	Tsui Hark	HONG_KONG
+LA_MARI_E_AUX_CHEVEUX_BLANCS_1993	1993	La Mariée aux cheveux blancs	白髮魔女傳	章國明	HONG_KONG
+COMRADES_ALMOST_A_LOVE_STORY_1996	1996	Comrades, Almost a Love Story	甜蜜蜜	PARK_CHAN_WOOK	HONG_KONG
+THE_MISSION_1999	1999	The Mission	鎗火	章國明	HONG_KONG
+BLOOD_SIMPLE_1984	1985	Sang pour sang	Blood Simple	JOEL_COEN	USA
+THE_TRUMAN_SHOW_1998	1998	Le Show Truman	The Truman Show	PETER_WEIR	USA
+BEING_JOHN_MALKOVICH_1999	1999	Dans la peau de John Malkovich	Being John Malkovich	Spike Jonze	USA
+LE_SANG_D_UN_PO_TE_1930	1932	Le Sang d'un poète	Le Sang d'un poète	JEAN_COCTEAU	FRANCE
+LES_ENFANTS_TERRIBLES_1950	1950	Les Enfants terribles	Les Enfants terribles	JEAN_PIERRE_MELVILLE	FRANCE
+ENTER_THE_VOID_2009	2010	Enter the Void	Enter the Void	GASPAR_NOE	FRANCE,GERMANY
+LES_POINGS_DANS_LES_POCHES_1965	1965	Les Poings dans les poches	I pugni in tasca	Marco Bellocchio	ITALY
+ENQU_TE_SUR_UN_CITOYEN_AU_DESSUS_DE_TOUT_SOUP_ON_1970	1970	Enquête sur un citoyen au-dessus de tout soupçon	Indagine su un cittadino al di sopra di ogni sospetto	Elio Petri	ITALY
+LE_JARDIN_DES_FINZI_CONTINI_1970	1970	Le Jardin des Finzi-Contini	Il giardino dei Finzi Contini	VITTORIO_DE_SICA	GERMANY,ITALY
+LE_CASANOVA_DE_FEDERICO_FELLINI_1976	1976	Le Casanova de Fellini	Il Casanova di Federico Fellini	FEDERICO_FELLINI	ITALY
+CADAVRES_EXQUIS_1976	1976	Cadavres exquis	Cadaveri eccellenti	FRANCESCO_ROSI	ITALY,FRANCE
+QUELQUE_CHOSE_D_AUTRE_1963	1963	Quelque chose d'autre	O něčem jiném	VERA_CHYTILOVA	CZECH
+LES_DIAMANTS_DE_LA_NUIT_1964	1964	Les Diamants de la Nuit	Démanty noci	Jan Němec	CZECH
+CLAIRAGE_INTIME_1965	1965	Éclairage Intime	Intimní osvětlení	Ivan Passer	CZECH
+LA_F_TE_ET_LES_INVIT_S_1966	1966	La fête et les invités	O slavnosti a hostech	Jan Němec	CZECH
+LA_PLAISANTERIE_1968	1969	La plaisanterie	Žert	Jaromil Jireš	CZECH
+UN_T_CAPRICIEUX_1968	1968	Un été capricieux	Rozmarné léto	JIRI_MENZEL	CZECH
+LES_OISEAUX_LES_ORPHELINS_ET_LES_FOUS_1969	1969	Les oiseaux, les orphelins et les fous	Vtáčkovia, siroty a blázni	Juraj Jakubisko	CZECH,FRANCE
+LE_VOLEUR_DE_CHEVAUX_1986	1986	Le Voleur de chevaux	盗马贼	章國明	CHINA
+LE_ROI_DES_ENFANTS_1987	1987	Le Roi des enfants	孩子王	CHEN_KAIGE	CHINA
+JU_DOU_1990	1990	Ju Dou	菊豆	ZHANG_YIMOU	CHINA,JAPAN
+LA_VIE_SUR_UN_FIL_1991	1991	La Vie sur un fil	边走边唱	CHEN_KAIGE	CHINA,UK
+QIU_JU_UNE_FEMME_CHINOISE_1992	1992	Qiu Ju, une femme chinoise	秋菊打官司	ZHANG_YIMOU	CHINA,HONG_KONG
+VIVRE_1994	1994	Vivre !	活着	ZHANG_YIMOU	CHINA,HONG_KONG
+L_EMPEREUR_ET_L_ASSASSIN_1998	1998	L'Empereur et l'Assassin	荆轲刺秦王	CHEN_KAIGE	CHINA,FRANCE
+DRIFTERS_1929	1929	Drifters	Drifters	John Grierson	UK
+NIGHT_MAIL_1936	1938	Night Mail	Night Mail	Harry Watt, EDGAR_WRIGHT	UK
+LES_MA_TRES_FOUS_1955	1955	Les Maîtres fous	Les Maîtres fous	JEAN_ROUCH	FRANCE,GHANA
+LE_JOLI_MAI_1963	1963	Le Joli Mai	Le Joli Mai	CHRIS_MARKER, Pierre Lhomme	FRANCE
+HOOP_DREAMS_1994	1994	Hoop Dreams	Hoop Dreams	Steve James	USA
+EMPIRE_1964	1964	La Chute de l'Empire romain	The Fall of the Roman Empire	ANTHONY_MANN	USA
+T_O_U_C_H_I_N_G_1968	1969	T,O,U,C,H,I,N,G	T,O,U,C,H,I,N,G	Paul Sharits	USA

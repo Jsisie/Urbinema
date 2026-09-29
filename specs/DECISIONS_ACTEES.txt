@@ -658,9 +658,15 @@ H. DIVERS
     au moment où on le marque Vu. Pas de rétroactif.
     Appui long = proposer Vu (collection, Atlas, recherche, carte).
     Index lettres simple (couleur du texte) sur pays, courants, genres, réalisateurs.
-    Guide 6 pages après l’onboarding, rejouable dans Réglages. Page Sources
-    sous les crédits (livres Allard / Müller / Philippe, TSPDT, Letterboxd,
-    Sight & Sound, Ebert, festivals, TMDB pour les affiches).
+    Guide 6 pages après l’onboarding, rejouable dans Réglages. Le panneau
+    occupe environ 60 % de l’écran ; le reste est fortement flouté
+    (assombri avant Android 12, qui ne sait pas flouter derrière une fenêtre).
+    Page Sources sous les crédits : livres Allard, Müller, Philippe, Sadoul
+    et Breton, Karthala (cinéma africain, tome 1), Ginsberg et Lippard,
+    Pinel (Larousse), Thon (2008) ; TSPDT, Letterboxd, IMDb, SensCritique,
+    Sight & Sound, Ebert, palmarès et archives de festivals, KMDb, Cahiers
+    du cinéma et Positif, dossiers BFI et liste CNN du cinéma asiatique,
+    TMDB pour les affiches.
     Splash : logo sur fond blanc tant que le catalogue n’est pas chargé.
     Chaîne des rangs ouverte sur le rang courant. Dialogue + confettis au passage de rang.
     Quêtes « possible » + compteur de fréquence : non faits (trop chers à chaque film). Idée ouverte.
@@ -683,6 +689,16 @@ H. DIVERS
     Véronique et Trois couleurs : Rouge étaient déjà là. « Quand la Saint-Jean
     arrive » est entré comme « Quand viendra le mois d’octobre ». Les synopsis
     vides ont été complétés seulement quand TMDB désigne le même film.
+    Pack **24** : 9 collections en plus (1527 films, 27 collections).
+    Cinéma muet : films de 1906 et avant retirés de la collection seulement,
+    Fantômas (Feuillade, 1913) et Les Vampires ajoutés, texte long réécrit
+    sans Méliès ni « Avant 1930 ». Hitchcockiens s’appelle déjà
+    « Hitchcock — Le suspense comme forme ». Les nouvelles collections
+    gardent le titre de Liste_Collections&Films.md (Âge d’or hongkongais,
+    pas « Nouvelle Vague hongkongaise »). Une fiche TMDB n’est gardée que si
+    le titre et le réalisateur correspondent ; Empire de Warhol a son propre
+    code, distinct de La Chute de l’Empire romain. Le courant
+    « Cinéma documentaire » est un style, distinct du genre Documentaire.
 
 
 ========================================================================

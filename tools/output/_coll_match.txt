@@ -1,0 +1,212 @@
+
+## Free Cinema Britannique (15)
+MISS	1953	O Dreamland	Lindsay Anderson	
+MISS	1956	Momma Don't Allow	Karel Reisz et Tony Richardson	
+MISS	1956	Together	Lorenza Mazzetti	
+MISS	1957	Every Day Except Christmas	Lindsay Anderson	
+MISS	1959	We Are the Lambeth Boys	Karel Reisz	SATURDAY_NIGHT_AND_SUNDAY_MORNING_1960 1960 Samedi soir, dimanche matin
+MISS	1959	Les Corps sauvages	Tony Richardson	
+MAYBE	0.95	1960	Samedi soir et dimanche matin	SATURDAY_NIGHT_AND_SUNDAY_MORNING_1960	1960	Samedi soir, dimanche matin
+MISS	1961	Un goût de miel	Tony Richardson	THE_LONELINESS_OF_THE_LONG_DISTANCE_RUNNER_1962 1962 La solitude du coureur de fond
+MISS	1962	Un amour pas comme les autres	John Schlesinger	
+OK	1.00	1962	La Solitude du coureur de fond	THE_LONELINESS_OF_THE_LONG_DISTANCE_RUNNER_1962	1962	La solitude du coureur de fond
+OK	1.00	1963	Le Prix d'un homme	THIS_SPORTING_LIFE_1963	1963	Le prix d'un homme
+MISS	1963	Billy le menteur	John Schlesinger	
+MISS	1965	Darling	John Schlesinger	
+OK	1.00	1968	If....	IF_1968	1968	If....
+OK	1.00	1969	Kes	KES_1969	1969	Kes
+
+## Cinéma muet (25)
+MISS	1913	Fantomas		
+OK	1.00	1915	Les Vampires	LES_VAMPIRES_1915	1915	Les Vampires
+OK	1.00	1916	Intolérance	INTOLERANCE_1916	1916	Intolérance
+OK	1.00	1919	Le Lys brisé	LE_LYS_BRISE_1919	1919	Le Lys brisé
+OK	1.00	1920	Le Cabinet du docteur Caligari	CABINET_DU_DOCTEUR_CALIGARI_1920	1920	Le Cabinet du docteur Caligari
+OK	1.00	1921	La Charrette fantôme	LA_CHARRETTE_FANTOME_1921	1921	La Charrette fantôme
+OK	1.00	1921	Le Kid	LE_KID_1921	1921	Le Kid
+OK	1.00	1922	La Sorcellerie à travers les âges	HAXAN_1922	1922	La Sorcellerie à travers les âges
+OK	1.00	1922	Nanouk l'Esquimau	NANOUK_L_ESQUIMAU_1922	1922	Nanouk l'Esquimau
+OK	1.00	1922	Nosferatu	NOSFERATU_1922	1922	Nosferatu
+OK	1.00	1923	Monte là-dessus !	MONTEUR_DE_SECURITE_1923	1923	Monte là-dessus !
+OK	1.00	1924	Le Dernier des hommes	LE_DERNIER_DES_HOMMES_1924	1924	Le Dernier des hommes
+OK	1.00	1924	Sherlock Junior	SHERLOCK_JUNIOR_1924	1924	Sherlock Junior
+OK	1.00	1925	La Ruée vers l'or	LA_RUEE_VERS_LOR_1925	1925	La Ruée vers l'or
+OK	1.00	1925	Le Cuirassé Potemkine	LE_CUIRASSE_POTEMKINE_1925	1925	Le Cuirassé Potemkine
+OK	1.00	1926	Le Mécano de la General	LE_MECANICIEN_DE_LA_GENERAL_1926	1926	Le Mécano de la General
+OK	1.00	1927	L'Aurore	L_AURORE_1927	1927	L'Aurore
+OK	1.00	1927	Metropolis	METROPOLIS_1927	1927	Metropolis
+OK	1.00	1927	Napoléon	NAPOLEON_1927	1927	Napoléon
+OK	1.00	1928	La Foule	LA_FOULE_1928	1928	La Foule
+OK	1.00	1928	La Passion de Jeanne d'Arc	LA_PASSION_DE_JEANNE_DARC_1928	1928	La Passion de Jeanne d'Arc
+OK	1.00	1929	L'Homme à la caméra	L_HOMME_A_LA_CAMERA_1929	1929	L'Homme à la caméra
+OK	1.00	1929	Lulu	LA_BOITE_DE_PANDORE_1929	1929	Lulu
+OK	1.00	1929	Un chien andalou	UN_CHIEN_ANDALOU_1929	1929	Un chien andalou
+OK	1.00	1931	Les Lumières de la ville	LES_LUMIERES_DE_LA_VILLE_1931	1931	Les Lumières de la ville
+
+## Âge d'or hongkongais (35)
+MISS	1978	The Extras	Yim Ho	
+MISS	1979	The Butterfly Murders	Tsui Hark	
+MISS	1979	Cops and Robbers	Alex Cheung	
+MISS	1979	The Secret	Ann Hui	
+MISS	1980	L'Enfer des armes	Tsui Hark	
+MISS	1980	The Sword	Patrick Tam	
+MISS	1980	The Spooky Bunch	Ann Hui	
+MISS	1981	The Story of Woo Viet	Ann Hui	
+MISS	1981	The Club	Kirk Wong	
+MISS	1982	Nomad	Patrick Tam	
+OK	1.00	1982	Boat People	BOAT_PEOPLE_1982	1982	Boat People
+MISS	1983	Zu, les guerriers de la montagne magique	Tsui Hark	
+MISS	1983	Ah Ying	Allen Fong	ZELIG_1983 1983 Zelig
+MISS	1984	Shanghai Blues	Tsui Hark	
+MISS	1985	Police Story	Jackie Chan	
+OK	1.00	1986	Le Syndicat du crime	A_BETTER_TOMORROW_1986	1986	Le Syndicat du crime
+MISS	1986	Peking Opera Blues	Tsui Hark	
+MISS	1987	City on Fire	Ringo Lam	
+OK	1.00	1987	Rouge	ROUGE_1987	1987	Rouge
+MISS	1987	Histoire de fantômes chinois	Ching Siu-tung	
+MISS	1988	As Tears Go By	Wong Kar-wai	
+OK	1.00	1989	The Killer	THE_KILLER_1989	1989	The Killer
+MISS	1989	Pedicab Driver	Sammo Hung	
+MISS	1990	Days of Being Wild	Wong Kar-wai	NOS_ANNEES_SAUVAGES_1990 1990 Nos années sauvages
+MISS	1990	Bullet in the Head	John Woo	
+MISS	1991	Il était une fois en Chine	Tsui Hark	
+OK	1.00	1992	À toute épreuve	HARD_BOILED_1992	1992	À toute épreuve
+MISS	1993	La Mariée aux cheveux blancs	Ronny Yu	
+OK	1.00	1994	Chungking Express	CHUNGKING_EXPRESS_1994_KAR_WAI	1994	Chungking Express
+MISS	1995	Fallen Angels	Wong Kar-wai	CHUNGKING_EXPRESS_1994_KAR_WAI 1994 Chungking Express | ASHES_OF_TIME_1994 1994 Les Cendres du temps | FALLEN_ANGELS_1995 1995 Les Anges déchus
+MISS	1996	Comrades, Almost a Love Story	Peter Chan	
+OK	1.00	1997	Made in Hong Kong	MADE_IN_HONG_KONG_1997	1997	Made in Hong Kong
+OK	1.00	1997	Happy Together	HAPPY_TOGETHER_1997_KAR_WAI	1997	Happy Together
+MISS	1999	The Mission	Johnnie To	
+OK	1.00	2000	In the Mood for Love	IN_THE_MOOD_FOR_LOVE_2000_KAR_WAI	2000	In the Mood for Love
+
+## Cinéma américain post-Nouvel Hollywood (19)
+OK	1.00	1980	Raging Bull	RAGING_BULL_1980	1980	Raging Bull
+OK	1.00	1982	The King of Comedy	THE_KING_OF_COMEDY_1982	1982	La Valse des pantins
+OK	1.00	1984	Stranger Than Paradise	STRANGER_THAN_PARADISE_1984	1984	Stranger Than Paradise
+MISS	1984	Blood Simple	Joel et Ethan Coen	
+OK	1.00	1985	After Hours	AFTER_HOURS_1985	1985	After Hours
+OK	1.00	1986	Blue Velvet	BLUE_VELVET_1986	1986	Blue Velvet
+MAYBE	0.93	1989	Do the Right Thing —Spike Lee	DO_THE_RIGHT_THING_1989	1989	Do the Right Thing
+OK	1.00	1990	Les Affranchis	LES_AFFRANCHIS_1990	1990	Les Affranchis
+OK	1.00	1990	Miller's Crossing	MILLER_S_CROSSING_1990	1990	Miller's Crossing
+OK	1.00	1991	Le Silence des agneaux	LE_SILENCE_DES_AGNEAUX_1991	1991	Le Silence des agneaux
+OK	1.00	1992	Reservoir Dogs	RESERVOIR_DOGS_1992	1992	Les Enragés
+OK	1.00	1996	Fargo	FARGO_1996	1996	Fargo
+OK	1.00	1997	Boogie Nights	BOOGIE_NIGHTS_1997	1997	Nuits endiablées
+MISS	1998	The Truman Show	Peter Weir	
+MISS	1999	Being John Malkovich	Spike Jonze	
+OK	1.00	1999	Magnolia	MAGNOLIA_1999	1999	Magnolia
+OK	1.00	1999	Fight Club	FIGHT_CLUB_1999	1999	Fight Club
+OK	1.00	2003	Lost in Translation	LOST_IN_TRANSLATION_2003	2003	Traduction infidèle
+OK	1.00	2007	There Will Be Blood	THERE_WILL_BE_BLOOD_2007	2007	Il y aura du sang
+
+## Cinéma Surréaliste et Onirique (16)
+OK	1.00	1929	Un chien andalou	UN_CHIEN_ANDALOU_1929	1929	Un chien andalou
+MISS	1930	Le Sang d'un poète	Jean Cocteau	
+MISS	1950	Les Enfants terribles	Jean-Pierre Melville	
+OK	1.00	1961	L'Année dernière à Marienbad	L_ANNEE_DERNIERE_A_MARIENBAD_1961	1961	L'Année dernière à Marienbad
+OK	1.00	1972	Le Charme discret de la bourgeoisie	LE_CHARME_DISCRET_DE_LA_BOURGEOISIE_1972	1972	Le Charme discret de la bourgeoisie
+OK	1.00	1973	La Montagne sacrée	HOLY_MOUNTAIN_THE_1973	1973	La Montagne sacrée
+OK	1.00	1970	El Topo	EL_TOPO_1970	1970	El Topo
+MISS	1970	Valerie et la Semaine des merveilles	Jaromil Jireš	
+OK	1.00	1975	Le Miroir	LE_MIROIR_1975	1975	Le Miroir
+OK	1.00	1977	Eraserhead	ERASERHEAD_1977	1977	Eraserhead
+OK	1.00	1983	Videodrome	VIDEODROME_1983	1983	Vidéodrome
+OK	1.00	1986	Blue Velvet	BLUE_VELVET_1986	1986	Blue Velvet
+OK	1.00	1985	Brazil	BRAZIL_1985	1985	Brazil
+OK	1.00	1997	Lost Highway	LOST_HIGHWAY_1997	1997	Lost Highway
+MISS	2009	Enter the Void	Gaspar Noé	
+OK	1.00	2012	Holy Motors	HOLY_MOTORS_2012	2012	Holy Motors
+
+## Post-néoréalisme italien (20)
+OK	1.00	1954	La Strada	LA_STRADA_1954	1954	La Strada
+OK	1.00	1957	Le Cri	IL_GRIDO_1957	1957	Le Cri
+OK	1.00	1957	Les Nuits de Cabiria	LES_NUITS_DE_CABIRIA_1957	1957	Les Nuits de Cabiria
+OK	1.00	1960	L'Avventura	L_AVVENTURA_1960	1960	L'Avventura
+OK	1.00	1960	La Dolce Vita	LA_DOLCE_VITA_1960	1960	La Dolce Vita
+OK	1.00	1960	Rocco et ses frères	ROCCO_ET_SES_FRERES_1960	1960	Rocco et ses frères
+OK	1.00	1961	Accattone	ACCATTONE_1961	1961	Accattone
+OK	1.00	1963	Le Guépard	LE_GUEPARD_1963	1963	Le Guépard
+OK	1.00	1963	8½	HUIT_ET_DEMI_1963	1963	Huit et demi
+OK	1.00	1964	Le Désert rouge	LE_DESERT_ROUGE_1964	1964	Le Désert rouge
+OK	1.00	1964	L'Évangile selon saint Matthieu	L_EVANGILE_SELON_SAINT_MATTHIEU_1964	1965	L'Évangile selon saint Matthieu
+MISS	1965	Les Poings dans les poches	Marco Bellocchio	
+MISS	1970	Enquête sur un citoyen au-dessus de tout soupçon	Elio Petri	
+MISS	1970	Le Jardin des Finzi-Contini	Vittorio De Sica	
+OK	1.00	1970	Le Conformiste	LE_CONFORMISTE_1970	1970	Le Conformiste
+OK	1.00	1971	Mort à Venise	MORT_A_VENISE_1971	1971	Mort à Venise
+MISS	1976	Le Casanova de Federico Fellini	Federico Fellini	
+OK	1.00	1976	1900	NOVECENTO_1976	1976	1900
+MISS	1976	Cadavres exquis	Francesco Rosi	
+OK	1.00	1975	Salò ou les 120 Journées de Sodome	SALO_OU_LES_120_JOURNEES_DE_SODOME_1975	1976	Salò ou les 120 Journées de Sodome
+
+## Nouvelle Vague tchécoslovaque (16)
+MISS	1962	Le Soleil dans un filet	Štefan Uher	
+MISS	1963	Quelque chose d'autre	Věra Chytilová	
+MISS	1964	Les Diamants de la nuit	Jan Němec	
+OK	1.00	1965	Les Amours d'une blonde	LOVES_OF_A_BLONDE_1965	1965	Les amours d'une blonde
+MISS	1965	Éclairage intime	Ivan Passer	
+OK	1.00	1965	Le Miroir aux alouettes	THE_SHOP_ON_MAIN_STREET_1965	1965	Le Miroir aux alouettes
+OK	1.00	1966	Trains étroitement surveillés	TRAINS_ETROITEMENT_SURVEILLES_1966	1966	Trains étroitement surveillés
+OK	1.00	1966	Les Petites Marguerites	LES_PETITES_MARGUERITES_1966	1966	Les Petites Marguerites
+MISS	1966	La Fête et les Invités	Jan Němec	
+MISS	1967	Le Bal des pompiers	Miloš Forman	THE_FIREMEN_S_BALL_1967 1967 Au feu, les pompiers !
+OK	1.00	1967	Marketa Lazarová	MARKETA_LAZAROVA_1967	1967	Marketa Lazarová
+MISS	1968	La Plaisanterie	Jaromil Jireš	
+MISS	1968	Un été capricieux	Jiří Menzel	
+MISS	1969	Le Crémateur	Juraj Herz	
+MISS	1969	Les Oiseaux, les Orphelins et les Fous	Juraj Jakubisko	
+MISS	1970	Valérie et la Semaine des merveilles	Jaromil Jireš	
+
+## Cinéma Chinois - Cinquième Génération (16)
+MISS	1983	Un et Huit	Zhang Junzhao	
+OK	1.00	1984	Terre jaune	YELLOW_EARTH_1984	1984	Terre Jaune
+MISS	1985	L'Incident du canon noir	Huang Jianxin	
+MISS	1986	Le Voleur de chevaux	Tian Zhuangzhuang	
+MISS	1987	Le Vieux Puits	Wu Tianming	
+MISS	1987	Le Roi des enfants	Chen Kaige	
+OK	1.00	1987	Le Sorgho rouge	RED_SORGHUM_1987	1988	Le Sorgho rouge
+MISS	1990	Ju Dou	Zhang Yimou	EPOUSES_ET_CONCUBINES_1991_YIMOU 1991 Épouses et Concubines
+MISS	1991	La Vie sur un fil	Chen Kaige	
+OK	1.00	1991	Épouses et Concubines	EPOUSES_ET_CONCUBINES_1991_YIMOU	1991	Épouses et Concubines
+MISS	1992	Qiu Ju, une femme chinoise	Zhang Yimou	EPOUSES_ET_CONCUBINES_1991_YIMOU 1991 Épouses et Concubines
+OK	1.00	1993	Adieu ma concubine	FAREWELL_MY_CONCUBINE_1993	1993	Adieu ma concubine
+MISS	1993	Le Cerf-volant bleu	Tian Zhuangzhuang	THE_BLUE_KITE_1993 1993 The Blue Kite
+MISS	1994	Vivre !	Zhang Yimou	
+MISS	1996	La Lune tentatrice	Chen Kaige	
+MISS	1998	L'Empereur et l'Assassin	Chen Kaige	
+
+## Cinéma Documentaire (20)
+OK	1.00	1922	Nanouk l'Esquimau	NANOUK_L_ESQUIMAU_1922	1922	Nanouk l'Esquimau
+OK	1.00	1929	L'Homme à la caméra	L_HOMME_A_LA_CAMERA_1929	1929	L'Homme à la caméra
+MISS	1929	Drifters	John Grierson	
+MISS	1936	Night Mail	Harry Watt & Basil Wright	
+OK	1.00	1942	Listen to Britain	LISTEN_TO_BRITAIN_1942	1942	Listen to Britain
+MISS	1955	Les Maîtres fous	Jean Rouch	
+OK	1.00	1956	Nuit et Brouillard	NUIT_ET_BROUILLARD_1955	1956	Nuit et Brouillard
+OK	1.00	1961	Chronique d'un été	CHRONIQUE_D_UN_ETE_1961	1961	Chronique d'un été
+OK	1.00	1960	Primary	PRIMARY_1960	1960	Primary
+MISS	1963	Le Joli Mai	Chris Marker & Pierre Lhomme	LA_JETEE_1962 1962 La Jetée | POUR_LA_SUITE_DU_MONDE_1963 1963 Pour la suite du monde
+MAYBE	0.97	1967	Don't Look Back	DONT_LOOK_BACK_1967	1967	Dont Look Back
+OK	1.00	1967	Titicut Follies	TITICUT_FOLLIES_1967	1967	Titicut Follies
+OK	1.00	1969	Salesman	SALESMAN_1969	1969	Salesman
+OK	1.00	1970	Gimme Shelter	GIMME_SHELTER_1970	1970	Gimme Shelter
+OK	1.00	1975	Grey Gardens	GREY_GARDENS_1975	1976	Grey Gardens
+OK	1.00	1985	Shoah	SHOAH_1985	1985	Shoah
+OK	1.00	1983	Sans Soleil	SANS_SOLEIL_1983	1983	Sans soleil
+OK	1.00	1988	The Thin Blue Line	THE_THIN_BLUE_LINE_1988	1988	Le dossier Adams
+MISS	1976	Harlan County War	Barbara Kopple	HARLAN_COUNTY_U_S_A_1976 1976 Harlan County, U.S.A.
+MISS	1994	Hoop Dreams	Steve James	
+
+## Cinéma Expérimental et Formel (10)
+OK	1.00	1923	Le Retour à la raison	LE_RETOUR_A_LA_RAISON_1923	1923	Le Retour à la raison
+OK	1.00	1924	Entr'acte	ENTR_ACTE_1924	1924	Entr'acte
+OK	1.00	1943	Meshes of the Afternoon	MESHES_OF_THE_AFTERNOON_1943	1943	Meshes of the Afternoon
+OK	1.00	1964	Dog Star Man	DOG_STAR_MAN_1964	1964	Dog Star Man
+OK	1.00	1963	Scorpio Rising	SCORPIO_RISING_1963	1964	Scorpio Rising
+OK	1.00	1963	Mothlight	MOTHLIGHT_1963	1963	Mothlight
+MISS	1964	Empire	Andy Warhol	
+OK	1.00	1967	Wavelength	WAVELENGTH_1967	1967	Wavelength
+MISS	1968	T,O,U,C,H,I,N,G	Paul Sharits	
+OK	1.00	1970	Serene Velocity	SERENE_VELOCITY_1970	1970	Serene Velocity

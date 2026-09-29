@@ -21,13 +21,13 @@ Ca va sans dire qu'à CHAQUE fois que tu traites un tiret (donc un sujet à part
 - [x] Ça serait tellement bien dans une collection (collection, liste de pays, liste de genres etc... Tout ce qui contient une liste de films) de pouvoir rester appuyer sur un film et ça te propose de le marquer en Vu.  
 - [x] Je veux le truc des lettres sur le côté droit pour la liste des courants, pays, genres et réalisateurs aussi. Sans lettre en doré etc.. Juste en blanc simple partout. 
 - [ ] Rangs beaucoup trop souples, on devient rang 3 ultra rapidement avec seulement 9 films. Voir comment on peut solutionner ça... Mettre un peu plus de poids sur le nombre de films vu je pense, pour commencer. Qualité > Quantité je suis 100% d'accord, mais il faut pas non plus gagner 2 rangs en ayant juste vu 5 films de 5 pays et 5 époques différentes quoi. Mais là avec 129 films je suis rang 6, ça me paraît un peu trop. 
-- [x] Ajouter une page quand on ouvre l'appli pour la première fois (comme il y a actuellement pour choisir le pseudo etc.. Juste après avoir choisir photo/pseudo/age) pour expliquer rapidement comment fonctionne l'appli, ce qu'on peut trouver sur chaque onglet etc..), en mode carroussel, 1er page du caroussel une explication rapide, 2ème page la page home, 3ème page la page atlas, 4eme page la page collections, 5eme page la future page parcours, 6eme page la page profile. Et ce petit "tuto" doit être visible dans les settings dans un bouton aide ou autre.
+- [x] Ajouter une page quand on ouvre l'appli pour la première fois (comme il y a actuellement pour choisir le pseudo etc.. Juste après avoir choisir photo/pseudo/age) pour expliquer rapidement comment fonctionne l'appli, ce qu'on peut trouver sur chaque onglet etc..), en mode carroussel, 1er page du caroussel une explication rapide, 2ème page la page home, 3ème page la page atlas, 4eme page la page collections, 5eme page la future page parcours, 6eme page la page profile. Et ce petit "tuto" doit être visible dans les settings dans un bouton aide ou autre. Le panneau fait environ 60 % de l’écran, le reste est fortement flouté.
 - [x] Ajouter une page "source" genre œuvre/sites/articles etc. Dans les settings, peut-être un mini bouton discret sous les crédits actuels ou un texte cliquable même pas un bouton (genre "Voir toutes les sources"). L'idée est de citer toutes les sources utilisées pour la partie histoire/choix de films etc... Avec déjà pour commencer : 
   - Livres : 
     - "Le Cinéma Muet" de Pierre Allard. 
     - "100 classiques du cinéma" de Jurgen Muller. 
     - "100 films pour une cinémathèque idéale" de Claude Jean Philippe. 
-  - Ajouter une phrase explicative. Découpé les sources en catégories "livres" / sites/etc.. Ajouter les sites que j'ai utilisé la dernière fois pour faire le catalog v3 (le top letterbox, le top roger ebbert, les sites que tu as utilisé etc etc...)
+  - Ajouter une phrase explicative. Découpé les sources en catégories "livres" / sites/etc.. Ajouter les sites que j'ai utilisé la dernière fois pour faire le catalog v3 (le top letterbox, le top roger ebbert, les sites que tu as utilisé etc etc...). Ajoutées ensuite : Sadoul et Breton, Karthala (cinéma africain), Ginsberg et Lippard, Pinel (Larousse), Thon 2008, KMDb, Cahiers du cinéma et Positif, dossiers BFI / liste CNN du cinéma asiatique, IMDb et SensCritique. Letterboxd et les archives de festivals y étaient déjà, le libellé les cite comme sources à part entière.
 - [ ] Ajouter pour les quêtes une colonne boolean qui dit si la quête est possible ou non. Réfléchir à quand et comment l'alimenter (on ne peut pas check toutes les quêtes à chaque film vu), et peut-être un compteur pour que les quêtes qui tombent souvent aient moins de chance de tomber justement. **Reporté** : pas implémenté en 0.3.0. Le tirage hebdomadaire filtre déjà l’impossible une fois par semaine. Un scan à chaque film vu, et un compteur de fréquence, restent une idée pour plus tard (cahier fonctionnel + décision 78).
 - [x] Sur la page Profil quand on appuie sur le logo de notre rang et que ça amène à la page où on voit tous les rangs en chaîne, il faudrait que ça amène direct à la position de notre rang 
 - [x] Ajouter bien sûr un message qui dit quand a gagné un rang avec des confettis etc !
@@ -150,40 +150,39 @@ Ca va sans dire qu'à CHAQUE fois que tu traites un tiret (donc un sujet à part
       -  Qui est le père d'Hirut ? - 1965 - Ilala Ibsa
       -  Crumbs - 2015 - Miguel Llansó
 
--  [ ] Ajouter plusieurs collections et ajouter les films des collections qui ne sont actuellement pas dans le catalog_v3. TOUT est listé dans le fichier "Liste_Collections&Films.md". ALORS, point important avant de se retrouver avec 1000 doublons, ce fichier "Liste_Collections&Films.md" liste TOUTES les collections et leurs films associés. Donc évidemment une grande partie existent déjà, TOUTEFOIS, certains collections ont été modifées (le "rang" (difficulté), ou même certains films en plus/en moins). Je vais quand même essayer de tout te lister en-dessous pour te faciliter le taff, mais fais quand même un deuxième check après entre le fichier et le catalog_v3 (copie de catalog_v2 je rappelle). Ensuite, évidemment tu vas créer tous ces nouveaux films en base (dans le catalog_v3 quoi), mais tu penseras BIEN aussi à jouer le batchPosters sur ces films, en les ajoutant dans le input à ceux déjà présents, en faisant tourner le batch, une fois le batch terminé en copiant TOUTES les affiches de "output" dans media/posters comme dab, à vider le fichier "input" SAUF pour les films où l'affiche n'a pas été trouvé, n'a pas été récupéré etc.. Bref comme dab quoi. Liste des collecs :
+-  [x] Ajouter plusieurs collections et ajouter les films des collections qui ne sont actuellement pas dans le catalog_v3. Fait, pack **24**, **1527** films, **27** collections. Les œuvres déjà au catalogue ont été reliées, pas dupliquées. Cinéma muet : films ≤ 1906 retirés de la collection seulement ; Fantômas (1913) et Les Vampires ajoutés ; texte long réécrit sans Méliès. Hitchcockiens s’appelle déjà « Hitchcock — Le suspense comme forme ». Neuf collections ajoutées sous le titre de Liste_Collections&Films.md (Âge d’or hongkongais, pas le surnom « Nouvelle Vague hongkongaise »), films par année croissante. Les mauvaises fiches TMDB (autre Secret, autre Club, autre Nomad, La Chute de l’Empire romain) n’ont pas été prises ; Empire de Warhol a le code EMPIRE_WARHOL_1964. Courant ajouté : Cinéma documentaire (style), distinct du genre Documentaire. Pas de règles de déblocage entre collections. TOUT est listé dans le fichier "Liste_Collections&Films.md". ALORS, point important avant de se retrouver avec 1000 doublons, ce fichier "Liste_Collections&Films.md" liste TOUTES les collections et leurs films associés. Donc évidemment une grande partie existent déjà, TOUTEFOIS, certains collections ont été modifées (le "rang" (difficulté), ou même certains films en plus/en moins). Je vais quand même essayer de tout te lister en-dessous pour te faciliter le taff, mais fais quand même un deuxième check après entre le fichier et le catalog_v3 (copie de catalog_v2 je rappelle). Ensuite, évidemment tu vas créer tous ces nouveaux films en base (dans le catalog_v3 quoi), mais tu penseras BIEN aussi à jouer le batchPosters sur ces films, en les ajoutant dans le input à ceux déjà présents, en faisant tourner le batch, une fois le batch terminé en copiant TOUTES les affiches de "output" dans media/posters comme dab, à vider le fichier "input" SAUF pour les films où l'affiche n'a pas été trouvé, n'a pas été récupéré etc.. Bref comme dab quoi. Liste des collecs :
 
   - Collections modifiées :
 
     - Cinéma muet : Supprimer les films en/avant 1906. Modifier également la description pour ne plus faire référence à Melies et la lune (car il n'y a plus "un voyager vers la lune") et les années. Ajout de "Les Vampires" et "Fantomas".
     - Hitchcockiens : Renommer la collection en "Hitchcock — Le suspense comme forme", ça a plus de sens.
-    - 
-
-  - [ ] Collections à ajouter :
-
-    *(PS: pour les nouvelles collections, il y a tout d'abord le titre de la collection, une description courte pour la données "description" et une description plus longue pour la données "longDescription". Et ensuite bien sûr la liste des films. Pour connaître le rang/difficulté de la collection, je les ai rangé dedans à chaque fois, donc "premières séances", toutes les collections de rang 1, puis "ciné-club", toutes les collections de rang 2 etc...)*
+    
+- [x] Collections à ajouter :
+  
+  *(PS: pour les nouvelles collections, il y a tout d'abord le titre de la collection, une description courte pour la données "description" et une description plus longue pour la données "longDescription". Et ensuite bien sûr la liste des films. Pour connaître le rang/difficulté de la collection, je les ai rangé dedans à chaque fois, donc "premières séances", toutes les collections de rang 1, puis "ciné-club", toutes les collections de rang 2 etc...)*
     *(PS2: Pour chaque film j'ai mis le réal pour t'aider à trouver les films, mais une fois tous les films ajoutés/créés tu peux retirer les noms de réals pour garder les mêmes format des autres collections)*
-
-    *(PS3: Des fois les titres sont en VF, d'autres fois en VO, de toute façon tu ajouteras bien les titres en français et en VO comme dab)*
-
-    - Post-néoréalisme Italien, rang : Cinémathèque
-
-    - Nouvelle Vague Tchécoslovaque, rang : Cinémathèque
-
-    - Cinéma Chinois - Cinquième Génération : rang : Cinémathèque
-
-    - Nouvelle Vague hongkongaise : rang : "Salle Obscure"
-
-    - Free Cinema Britannique : rang : "Ciné-Club"
-
-    - Cinéma Documentaire : rang : "Cinémathèque"
-
-    - post-Nouvel Hollywood : rang : "Salle Obscure"
-
-    - Cinéma Surréaliste et onirique : rang : "Salle Obscure"
-
-    - Cinéma Expérimentale et formel : rang "Hors-champ"
-
-  - [ ] Note Importante pour les nouvelles Collections (et les autres aussi d'ailleurs) : Bien vérifier que la liste de films et la description (courte et surtout longue) sont en adéquation ! Car des fois j'ai modifié la liste des films et donc peut-être qu'un réal cité dans la description ne fais plur partie de la collection ! Donc bien vérifier à chaque fois, et adapter/refaire la description si besoin.
+  
+  *(PS3: Des fois les titres sont en VF, d'autres fois en VO, de toute façon tu ajouteras bien les titres en français et en VO comme dab)*
+  
+  - Post-néoréalisme Italien, rang : Cinémathèque
+  
+  - Nouvelle Vague Tchécoslovaque, rang : Cinémathèque
+  
+  - Cinéma Chinois - Cinquième Génération : rang : Cinémathèque
+  
+  - Nouvelle Vague hongkongaise : rang : "Salle Obscure"
+  
+  - Free Cinema Britannique : rang : "Ciné-Club"
+  
+  - Cinéma Documentaire : rang : "Cinémathèque"
+  
+  - post-Nouvel Hollywood : rang : "Salle Obscure"
+  
+  - Cinéma Surréaliste et onirique : rang : "Salle Obscure"
+  
+  - Cinéma Expérimentale et formel : rang "Hors-champ"
+  
+- [x] Note Importante pour les nouvelles Collections (et les autres aussi d'ailleurs) : Bien vérifier que la liste de films et la description (courte et surtout longue) sont en adéquation ! Les textes des neuf collections citaient encore des réalisateurs présents dans les listes. Seul le texte long du cinéma muet a été réécrit.
 
 
 

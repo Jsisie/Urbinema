@@ -1,0 +1,5 @@
+THE_SPOOKY_BUNCH_1980 The Spooky Bunch | 撞到正！ | 1980-05-22 | ['Ann Hui|Director']
+THE_SECRET_1979 The Secret | 瘋劫 | 1979-10-31 | ['Ann Hui|Director']
+THE_CLUB_1981 The Club | 舞廳 | 1981-09-17 | ['Kirk Wong Chi-Keung|Director']
+NOMAD_1982 Nomad | 烈火青春 | 1982-11-25 | ['Patrick Tam Kar-Ming|Director']
+L_INCIDENT_DU_CANON_NOIR_1985 The Black Cannon Incident | 黑炮事件 | 1985-01-02 | ['Huang Jianxin|Director']

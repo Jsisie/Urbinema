@@ -1,0 +1,5 @@
+THE_SPOOKY_BUNCH_1980 ok=False blob='許鞍華 Tony Hope' covers=False jobs=['Action Director', 'Art Direction', 'Assistant Director', 'Costume Design', 'Director', 'Director of Photography', 'Editor', 'Focus Puller']
+THE_SECRET_1979 ok=False blob='許鞍華 鍾志文' covers=False jobs=['Art Direction', 'Costume Designer', 'Director', 'Director of Photography', 'Editor', 'Executive Producer', 'Gaffer', 'Original Music Composer']
+THE_CLUB_1981 ok=False blob='黃志強 古國華' covers=False jobs=['Assistant Director', 'Director', 'Director of Photography', 'Producer', 'Writer']
+NOMAD_1982 ok=False blob='譚家明 鍾志文 黃仲標 傲志君' covers=False jobs=['Associate Producer', 'Director', 'Director of Photography', 'Editor', 'Executive Producer', 'Foley Artist', 'Gaffer', 'Original Music Composer']
+L_INCIDENT_DU_CANON_NOIR_1985 ok=False blob='黄建新 王新生 Feng Wei' covers=False jobs=['Adaptation', 'Art Direction', 'Director', 'Director of Photography', 'Editor', 'Producer', 'Production Manager', 'Sound Recordist']

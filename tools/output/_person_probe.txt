@@ -1,0 +1,71 @@
+QUERY Kirk Wong
+  6432568|Kirk Wong|Directing
+  58036|Kirk Wong Chi-Keung|Directing
+    45815|1994|Organized Crime & Triad Bureau|O記重案實錄
+    18857|1993|Crime Story|重案組
+    152421|1983|Flash Future Kung Fu|打擂台
+    155393|1992|Taking Manhattan|買起曼克頓
+    180896|1986|True Colours|英雄正傳
+    180897|1994|Rock N'Roll Cop|省港一號通緝犯
+    170319|1981|The Club|舞廳
+    173137|1988|Gunmen|天羅地網
+    179995|1984|Lifeline Express|鴻運當頭
+    220785|1999|The Disciples|The Disciples
+    9448|1998|The Big Hit|The Big Hit
+  1415225|Wong Chi-Keung|Acting
+  129771|Wong Chung|Writing
+    446858|1981|Gold Constables|Tian ya guai ke yi zhen feng
+    621099|1980|The Kung Fu Cook|Huo tóu xiao zi
+QUERY Wong Chi-keung
+  1415225|Wong Chi-Keung|Acting
+  4735012|Wong Chi-Keung|Acting
+  2533876|Chi Keung Wong|Costume & Make-Up
+  1634898|Wong Chi-Keung|Acting
+  1417267|Wong Chi-Keung|Acting
+  3817832|Chi-Keung Wong|Acting
+QUERY Patrick Tam
+  80374|Patrick Tam|Acting
+  71063|Patrick Tam Kar-Ming|Directing
+    11960|2006|After This Our Exile|父子
+    44860|1984|Cherie|雪兒
+    44861|1987|Final Victory|最後勝利
+    73841|1980|The Sword|名劍
+    78033|1989|My Heart Is That Eternal Rose|殺手蝴蝶夢
+    157229|1982|Nomad|烈火青春
+    182227|1981|Love Massacre|愛殺
+    195748|1988|Burning Snow|雪在燒
+    1177373|1976|Seven Women: Liu Wing-Sheung|七女性：廖詠湘
+    1177379|1976|Seven Women: Ivy Ho, Yeung Si-Dai, Lee Yan-Yi|七女性：岸西、楊詩蒂、李欣頤
+    1177359|1976|Seven Women: Miu Kam-Fung|七女性：苗金鳳
+    1177387|1976|Seven Women: Louise Lee|七女性：李司棋
+  1965563|Patrick Tamisiea|Acting
+  1759231|Patrick Tambay|Acting
+  277101|Danny Tamberelli|Acting
+QUERY Patrick Tam Kar-ming
+  71063|Patrick Tam Kar-Ming|Directing
+    11960|2006|After This Our Exile|父子
+    44860|1984|Cherie|雪兒
+    44861|1987|Final Victory|最後勝利
+    73841|1980|The Sword|名劍
+    78033|1989|My Heart Is That Eternal Rose|殺手蝴蝶夢
+    157229|1982|Nomad|烈火青春
+    182227|1981|Love Massacre|愛殺
+    195748|1988|Burning Snow|雪在燒
+    1177373|1976|Seven Women: Liu Wing-Sheung|七女性：廖詠湘
+    1177379|1976|Seven Women: Ivy Ho, Yeung Si-Dai, Lee Yan-Yi|七女性：岸西、楊詩蒂、李欣頤
+    1177359|1976|Seven Women: Miu Kam-Fung|七女性：苗金鳳
+    1177387|1976|Seven Women: Louise Lee|七女性：李司棋
+QUERY Tam Kar Ming
+  71063|Patrick Tam Kar-Ming|Directing
+    11960|2006|After This Our Exile|父子
+    44860|1984|Cherie|雪兒
+    44861|1987|Final Victory|最後勝利
+    73841|1980|The Sword|名劍
+    78033|1989|My Heart Is That Eternal Rose|殺手蝴蝶夢
+    157229|1982|Nomad|烈火青春
+    182227|1981|Love Massacre|愛殺
+    195748|1988|Burning Snow|雪在燒
+    1177373|1976|Seven Women: Liu Wing-Sheung|七女性：廖詠湘
+    1177379|1976|Seven Women: Ivy Ho, Yeung Si-Dai, Lee Yan-Yi|七女性：岸西、楊詩蒂、李欣頤
+    1177359|1976|Seven Women: Miu Kam-Fung|七女性：苗金鳳
+    1177387|1976|Seven Women: Louise Lee|七女性：李司棋

@@ -1,5 +1,8 @@
 package fr.jsisie.urbinema.ui.screens
 
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
+import android.view.WindowManager
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
@@ -10,11 +13,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -26,17 +28,20 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import androidx.compose.ui.window.DialogWindowProvider
 import fr.jsisie.urbinema.R
 import fr.jsisie.urbinema.ui.components.SectionTitle
 import fr.jsisie.urbinema.ui.theme.UrbinemaThemeTokens
@@ -80,50 +85,69 @@ fun AppGuideDialog(onFinished: () -> Unit) {
         onDismissRequest = {},
         properties = DialogProperties(usePlatformDefaultWidth = false, dismissOnBackPress = false, dismissOnClickOutside = false),
     ) {
-        Column(
-            Modifier
-                .fillMaxSize()
-                .background(colors.background)
-                .statusBarsPadding()
-                .navigationBarsPadding()
-                .padding(UrbinemaThemeTokens.dimens.screen),
-        ) {
-            Column(
-                Modifier
-                    .weight(1f)
-                    .verticalScroll(rememberScrollState()),
-                verticalArrangement = Arrangement.Center,
-            ) {
-                Text(
-                    title,
-                    style = MaterialTheme.typography.displayMedium,
-                    color = colors.onBackground,
-                    textAlign = TextAlign.Start,
-                )
-                Text(
-                    body,
-                    modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.lg),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = colors.onBackgroundMuted,
-                )
-                Text(
-                    count,
-                    modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.xl),
-                    color = colors.onBackgroundFaint,
-                )
+        val dialogView = LocalView.current
+        SideEffect {
+            val window = (dialogView.parent as? DialogWindowProvider)?.window ?: return@SideEffect
+            window.setBackgroundDrawable(ColorDrawable(android.graphics.Color.TRANSPARENT))
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                window.addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND)
+                window.setDimAmount(0.2f)
+                window.setBackgroundBlurRadius(120)
+                window.attributes = window.attributes.apply { blurBehindRadius = 120 }
+            } else {
+                window.setDimAmount(0.72f)
             }
-            Row(
-                Modifier
+        }
+        Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Surface(
+                modifier = Modifier
+                    .padding(horizontal = 24.dp)
+                    .widthIn(max = 480.dp)
                     .fillMaxWidth()
-                    .padding(top = UrbinemaThemeTokens.dimens.md),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
+                    .fillMaxHeight(0.6f),
+                shape = MaterialTheme.shapes.large,
+                color = colors.surface,
+                contentColor = colors.onBackground,
             ) {
-                TextButton(onClick = onFinished) { Text(skip, color = colors.onBackground) }
-                Button(onClick = {
-                    if (last) onFinished() else page.intValue += 1
-                }) {
-                    Text(action)
+                Column(Modifier.padding(24.dp)) {
+                    Column(
+                        Modifier
+                            .weight(1f)
+                            .verticalScroll(rememberScrollState()),
+                        verticalArrangement = Arrangement.Center,
+                    ) {
+                        Text(
+                            title,
+                            style = MaterialTheme.typography.displayMedium,
+                            color = colors.onBackground,
+                            textAlign = TextAlign.Start,
+                        )
+                        Text(
+                            body,
+                            modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.lg),
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = colors.onBackgroundMuted,
+                        )
+                        Text(
+                            count,
+                            modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.xl),
+                            color = colors.onBackgroundFaint,
+                        )
+                    }
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(top = UrbinemaThemeTokens.dimens.md),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        TextButton(onClick = onFinished) { Text(skip, color = colors.onBackground) }
+                        Button(onClick = {
+                            if (last) onFinished() else page.intValue += 1
+                        }) {
+                            Text(action)
+                        }
+                    }
                 }
             }
         }
@@ -201,12 +225,22 @@ fun SourcesScreen() {
         item { Text(stringResource(R.string.sources_book_allard)) }
         item { Text(stringResource(R.string.sources_book_muller)) }
         item { Text(stringResource(R.string.sources_book_philippe)) }
+        item { Text(stringResource(R.string.sources_book_sadoul)) }
+        item { Text(stringResource(R.string.sources_book_karthala)) }
+        item { Text(stringResource(R.string.sources_book_ginsberg)) }
+        item { Text(stringResource(R.string.sources_book_pinel)) }
+        item { Text(stringResource(R.string.sources_book_thon)) }
         item { SectionTitle(R.string.sources_sites) }
         item { Text(stringResource(R.string.sources_site_tspdt)) }
         item { Text(stringResource(R.string.sources_site_letterboxd)) }
+        item { Text(stringResource(R.string.sources_site_imdb)) }
+        item { Text(stringResource(R.string.sources_site_senscritique)) }
         item { Text(stringResource(R.string.sources_site_sight)) }
         item { Text(stringResource(R.string.sources_site_ebert)) }
         item { Text(stringResource(R.string.sources_site_festivals)) }
+        item { Text(stringResource(R.string.sources_site_kmdb)) }
+        item { Text(stringResource(R.string.sources_site_cahiers)) }
+        item { Text(stringResource(R.string.sources_site_criticism)) }
         item { Text(stringResource(R.string.sources_site_tmdb)) }
     }
 }

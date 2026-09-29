@@ -1,5 +1,5 @@
 {
-  "version": 23,
+  "version": 24,
   "generatedAt": "2026-09-21T09:42:22Z",
   "mediaAssets": [],
   "characteristicTypes": [
@@ -6489,6 +6489,251 @@
       "lastName": "Pawlikowski",
       "displayName": "Paweł Pawlikowski",
       "characteristicCodes": []
+    },
+    {
+      "code": "LORENZA_MAZZETTI",
+      "firstName": "Lorenza",
+      "lastName": "Mazzetti",
+      "displayName": "Lorenza Mazzetti",
+      "characteristicCodes": []
+    },
+    {
+      "code": "DENIS_HORNE",
+      "firstName": "Denis",
+      "lastName": "Horne",
+      "displayName": "Denis Horne",
+      "characteristicCodes": []
+    },
+    {
+      "code": "YIM_HO",
+      "firstName": "Yim",
+      "lastName": "Ho",
+      "displayName": "Yim Ho",
+      "characteristicCodes": []
+    },
+    {
+      "code": "TSUI_HARK",
+      "firstName": "Tsui",
+      "lastName": "Hark",
+      "displayName": "Tsui Hark",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ALEX_CHEUNG",
+      "firstName": "Alex",
+      "lastName": "Cheung",
+      "displayName": "Alex Cheung",
+      "characteristicCodes": []
+    },
+    {
+      "code": "PATRICK_TAM",
+      "firstName": "Patrick",
+      "lastName": "Tam",
+      "displayName": "Patrick Tam",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ANN_HUI",
+      "firstName": "Ann",
+      "lastName": "Hui",
+      "displayName": "Ann Hui",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ALLEN_FONG",
+      "firstName": "Allen",
+      "lastName": "Fong",
+      "displayName": "Allen Fong",
+      "characteristicCodes": []
+    },
+    {
+      "code": "JACKIE_CHAN",
+      "firstName": "Jackie",
+      "lastName": "Chan",
+      "displayName": "Jackie Chan",
+      "characteristicCodes": []
+    },
+    {
+      "code": "RINGO_LAM",
+      "firstName": "Ringo",
+      "lastName": "Lam",
+      "displayName": "Ringo Lam",
+      "characteristicCodes": []
+    },
+    {
+      "code": "CHING_SIU_TUNG",
+      "firstName": "Ching",
+      "lastName": "Siu-tung",
+      "displayName": "Ching Siu-tung",
+      "characteristicCodes": []
+    },
+    {
+      "code": "SAMMO_HUNG",
+      "firstName": "Sammo",
+      "lastName": "Hung",
+      "displayName": "Sammo Hung",
+      "characteristicCodes": []
+    },
+    {
+      "code": "RONNY_YU",
+      "firstName": "Ronny",
+      "lastName": "Yu",
+      "displayName": "Ronny Yu",
+      "characteristicCodes": []
+    },
+    {
+      "code": "PETER_CHAN",
+      "firstName": "Peter",
+      "lastName": "Chan",
+      "displayName": "Peter Chan",
+      "characteristicCodes": []
+    },
+    {
+      "code": "JOHNNIE_TO",
+      "firstName": "Johnnie",
+      "lastName": "To",
+      "displayName": "Johnnie To",
+      "characteristicCodes": []
+    },
+    {
+      "code": "JOEL",
+      "firstName": "",
+      "lastName": "Joel",
+      "displayName": "Joel",
+      "characteristicCodes": []
+    },
+    {
+      "code": "SPIKE_JONZE",
+      "firstName": "Spike",
+      "lastName": "Jonze",
+      "displayName": "Spike Jonze",
+      "characteristicCodes": []
+    },
+    {
+      "code": "MARCO_BELLOCCHIO",
+      "firstName": "Marco",
+      "lastName": "Bellocchio",
+      "displayName": "Marco Bellocchio",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ELIO_PETRI",
+      "firstName": "Elio",
+      "lastName": "Petri",
+      "displayName": "Elio Petri",
+      "characteristicCodes": []
+    },
+    {
+      "code": "JAN_NEMEC",
+      "firstName": "Jan",
+      "lastName": "Němec",
+      "displayName": "Jan Němec",
+      "characteristicCodes": []
+    },
+    {
+      "code": "IVAN_PASSER",
+      "firstName": "Ivan",
+      "lastName": "Passer",
+      "displayName": "Ivan Passer",
+      "characteristicCodes": []
+    },
+    {
+      "code": "JAROMIL_JIRES",
+      "firstName": "Jaromil",
+      "lastName": "Jireš",
+      "displayName": "Jaromil Jireš",
+      "characteristicCodes": []
+    },
+    {
+      "code": "JURAJ_JAKUBISKO",
+      "firstName": "Juraj",
+      "lastName": "Jakubisko",
+      "displayName": "Juraj Jakubisko",
+      "characteristicCodes": []
+    },
+    {
+      "code": "JOHN_GRIERSON",
+      "firstName": "John",
+      "lastName": "Grierson",
+      "displayName": "John Grierson",
+      "characteristicCodes": []
+    },
+    {
+      "code": "HARRY_WATT",
+      "firstName": "Harry",
+      "lastName": "Watt",
+      "displayName": "Harry Watt",
+      "characteristicCodes": []
+    },
+    {
+      "code": "BASIL_WRIGHT",
+      "firstName": "Basil",
+      "lastName": "Wright",
+      "displayName": "Basil Wright",
+      "characteristicCodes": []
+    },
+    {
+      "code": "PIERRE_LHOMME",
+      "firstName": "Pierre",
+      "lastName": "Lhomme",
+      "displayName": "Pierre Lhomme",
+      "characteristicCodes": []
+    },
+    {
+      "code": "STEVE_JAMES",
+      "firstName": "Steve",
+      "lastName": "James",
+      "displayName": "Steve James",
+      "characteristicCodes": []
+    },
+    {
+      "code": "PAUL_SHARITS",
+      "firstName": "Paul",
+      "lastName": "Sharits",
+      "displayName": "Paul Sharits",
+      "characteristicCodes": []
+    },
+    {
+      "code": "STEFAN_UHER",
+      "firstName": "Štefan",
+      "lastName": "Uher",
+      "displayName": "Štefan Uher",
+      "characteristicCodes": []
+    },
+    {
+      "code": "JURAJ_HERZ",
+      "firstName": "Juraj",
+      "lastName": "Herz",
+      "displayName": "Juraj Herz",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ZHANG_JUNZHAO",
+      "firstName": "Zhang",
+      "lastName": "Junzhao",
+      "displayName": "Zhang Junzhao",
+      "characteristicCodes": []
+    },
+    {
+      "code": "WU_TIANMING",
+      "firstName": "Wu",
+      "lastName": "Tianming",
+      "displayName": "Wu Tianming",
+      "characteristicCodes": []
+    },
+    {
+      "code": "KIRK_WONG",
+      "firstName": "Kirk",
+      "lastName": "Wong",
+      "displayName": "Kirk Wong",
+      "characteristicCodes": []
+    },
+    {
+      "code": "HUANG_JIANXIN",
+      "firstName": "Huang",
+      "lastName": "Jianxin",
+      "displayName": "Huang Jianxin",
+      "characteristicCodes": []
     }
   ],
   "characteristics": [
@@ -7181,6 +7426,12 @@
       "name": "Nouvel âge d'or hollywoodien",
       "typeCode": "PERIOD",
       "description": "Renaissance prestige US ~1990–2015 : Tarantino, PTA, Coen, Fincher, Nolan."
+    },
+    {
+      "code": "DOCUMENTAIRE",
+      "name": "Cinéma documentaire",
+      "typeCode": "STYLE",
+      "description": "Le réel comme sujet : enquête, portrait ou essai, plutôt que le reportage illustré."
     }
   ],
   "genres": [
@@ -8449,7 +8700,8 @@
         "MONTAGE_SOVIETIQUE",
         "CINEMA_SOVIETIQUE",
         "CINEMA_EXPERIMENTAL",
-        "CINEMA_MUET_MOUVEMENT"
+        "CINEMA_MUET_MOUVEMENT",
+        "DOCUMENTAIRE"
       ],
       "isSilent": true,
       "isBlackAndWhite": true,
@@ -10218,7 +10470,8 @@
       ],
       "characteristicCodes": [
         "LEFT_BANK",
-        "CINEMA_EXPERIMENTAL"
+        "CINEMA_EXPERIMENTAL",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -13615,7 +13868,9 @@
         "DOCUMENTAIRE",
         "HISTORIQUE"
       ],
-      "characteristicCodes": []
+      "characteristicCodes": [
+        "DOCUMENTAIRE"
+      ]
     },
     {
       "code": "OUT_1_1971",
@@ -24014,7 +24269,8 @@
       "characteristicCodes": [
         "ESSAY_FILM",
         "CINEMA_D_AUTEUR",
-        "LEFT_BANK"
+        "LEFT_BANK",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -24903,7 +25159,8 @@
       ],
       "characteristicCodes": [
         "CINEMA_VERITE",
-        "CINEMA_MUET_MOUVEMENT"
+        "CINEMA_MUET_MOUVEMENT",
+        "DOCUMENTAIRE"
       ],
       "isSilent": true,
       "isBlackAndWhite": true
@@ -27007,7 +27264,8 @@
         "DOCUMENTAIRE"
       ],
       "characteristicCodes": [
-        "CINEMA_INDEPENDANT_AMERICAIN"
+        "CINEMA_INDEPENDANT_AMERICAIN",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -28502,7 +28760,8 @@
         "DOCUMENTAIRE"
       ],
       "characteristicCodes": [
-        "ECOLE_BRITANNIQUE_DOCUMENTAIRE"
+        "ECOLE_BRITANNIQUE_DOCUMENTAIRE",
+        "DOCUMENTAIRE"
       ],
       "isBlackAndWhite": true
     },
@@ -29324,7 +29583,8 @@
         "DOCUMENTAIRE"
       ],
       "characteristicCodes": [
-        "NEW_HOLLYWOOD"
+        "NEW_HOLLYWOOD",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -34127,7 +34387,8 @@
         "MUSICAL"
       ],
       "characteristicCodes": [
-        "NEW_HOLLYWOOD"
+        "NEW_HOLLYWOOD",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -34238,7 +34499,8 @@
         "DOCUMENTAIRE"
       ],
       "characteristicCodes": [
-        "NEW_HOLLYWOOD"
+        "NEW_HOLLYWOOD",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -35324,7 +35586,8 @@
         "DRAME"
       ],
       "characteristicCodes": [
-        "NEW_HOLLYWOOD"
+        "NEW_HOLLYWOOD",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -40802,7 +41065,8 @@
       ],
       "characteristicCodes": [
         "CINEMA_DIRECT",
-        "HOLLYWOOD_CLASSIQUE"
+        "HOLLYWOOD_CLASSIQUE",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -40902,7 +41166,8 @@
       ],
       "characteristicCodes": [
         "CINEMA_VERITE",
-        "NOUVELLE_VAGUE_FRANCAISE"
+        "NOUVELLE_VAGUE_FRANCAISE",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -41786,7 +42051,8 @@
       ],
       "characteristicCodes": [
         "CINEMA_DIRECT",
-        "NEW_HOLLYWOOD"
+        "NEW_HOLLYWOOD",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -43166,7 +43432,8 @@
       ],
       "characteristicCodes": [
         "CINEMA_DIRECT",
-        "NEW_HOLLYWOOD"
+        "NEW_HOLLYWOOD",
+        "DOCUMENTAIRE"
       ]
     },
     {
@@ -55554,6 +55821,2436 @@
       "characteristicCodes": [
         "CINEMA_AFRICAIN"
       ]
+    },
+    {
+      "code": "O_DREAMLAND_1953",
+      "originalTitle": "O Dreamland",
+      "frenchTitle": "O Dreamland",
+      "releaseYear": 1953,
+      "durationMinutes": 13,
+      "format": "SHORT",
+      "synopsis": "",
+      "historicalDistance": 0.6,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.76,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "LINDSAY_ANDERSON",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE",
+        "COMEDIE"
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "MOMMA_DON_T_ALLOW_1956",
+      "originalTitle": "Momma Don't Allow",
+      "frenchTitle": "Momma Don't Allow",
+      "releaseYear": 1956,
+      "durationMinutes": 22,
+      "format": "SHORT",
+      "synopsis": "",
+      "historicalDistance": 0.57,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "KAREL_REISZ",
+          "billingOrder": 0
+        },
+        {
+          "code": "TONY_RICHARDSON",
+          "billingOrder": 1
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE",
+        "MUSICAL"
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ]
+    },
+    {
+      "code": "TOGETHER_1956",
+      "originalTitle": "Together",
+      "frenchTitle": "Ensemble",
+      "releaseYear": 1956,
+      "durationMinutes": 52,
+      "format": "MEDIUM",
+      "synopsis": "Dans le quartier londonien de l'East End, nous suivons quelques journées de deux amis inséparables qui sont muets. On les voit toujours ensemble, à la foire, au bistrot, à une fête foraine, durant leur travail sur les quais de la Tamise. Souvent, ils sont suivis par une horde d'enfants qui se moquent cruellement de leur infirmité. Un jour, l'un attend le second au bord du fleuve. Il est précipité à l'eau par un gamin et se noie, alors que son compagnon qui arrive, n'entend pas les cris du malheureux.",
+      "historicalDistance": 0.54,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.82,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "LORENZA_MAZZETTI",
+          "billingOrder": 0
+        },
+        {
+          "code": "DENIS_HORNE",
+          "billingOrder": 1
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ]
+    },
+    {
+      "code": "EVERY_DAY_EXCEPT_CHRISTMAS_1957",
+      "originalTitle": "Every Day Except Christmas",
+      "frenchTitle": "Every Day Except Christmas",
+      "releaseYear": 1957,
+      "durationMinutes": 37,
+      "format": "SHORT",
+      "synopsis": "",
+      "historicalDistance": 0.52,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.85,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "LINDSAY_ANDERSON",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ]
+    },
+    {
+      "code": "WE_ARE_THE_LAMBETH_BOYS_1959",
+      "originalTitle": "We Are the Lambeth Boys",
+      "frenchTitle": "We Are the Lambeth Boys",
+      "releaseYear": 1959,
+      "durationMinutes": 53,
+      "format": "MEDIUM",
+      "synopsis": "",
+      "historicalDistance": 0.53,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.74,
+      "culturalRichness": 0.82,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "KAREL_REISZ",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ]
+    },
+    {
+      "code": "LES_CORPS_SAUVAGES_1959",
+      "originalTitle": "Look Back in Anger",
+      "frenchTitle": "Les corps sauvages",
+      "releaseYear": 1959,
+      "durationMinutes": 98,
+      "format": "FEATURE",
+      "synopsis": "Diplômé de l'université désabusé, en colère pactise avec sa rancune contre la vie de la classe moyenne et des valeurs.",
+      "historicalDistance": 0.52,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.74,
+      "culturalRichness": 0.83,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "TONY_RICHARDSON",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "UN_GO_T_DE_MIEL_1961",
+      "originalTitle": "A Taste of Honey",
+      "frenchTitle": "Un goût de miel",
+      "releaseYear": 1961,
+      "durationMinutes": 100,
+      "format": "FEATURE",
+      "synopsis": "Jo, une petite collégiène un peu gauche, vit à Manchester avec sa mère Helen qui se soucie plus de trouver un nouvel amant que de s'occuper de sa fille. Un soir que sa mère l'a mise dehors pour vivre une nouvelle aventure amoureuse, Jo vit une brève idylle avec un marin noir. Enceinte et abandonnée par sa mère qui s'est mariée, elle rencontre Geoffrey, jeune homosexuel qui lui propose de vivre à ses côtés. Mais la mère ne l'entend pas de cette oreille...",
+      "historicalDistance": 0.55,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.74,
+      "culturalRichness": 0.69,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "TONY_RICHARDSON",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ]
+    },
+    {
+      "code": "UN_AMOUR_PAS_COMME_LES_AUTRES_1962",
+      "originalTitle": "A Kind of Loving",
+      "frenchTitle": "Un amour pas comme les autres",
+      "releaseYear": 1962,
+      "durationMinutes": 112,
+      "format": "FEATURE",
+      "synopsis": "",
+      "historicalDistance": 0.5,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JOHN_SCHLESINGER",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "BILLY_LE_MENTEUR_1963",
+      "originalTitle": "Billy Liar",
+      "frenchTitle": "Billy le menteur",
+      "releaseYear": 1963,
+      "durationMinutes": 98,
+      "format": "FEATURE",
+      "synopsis": "Dans une petite ville anglaise terne et ennuyeuse, un jeune mythomane mène une vie imaginaire et trompe tout son entourage.",
+      "historicalDistance": 0.5,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JOHN_SCHLESINGER",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "ROMANCE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ]
+    },
+    {
+      "code": "DARLING_1965",
+      "originalTitle": "Darling",
+      "frenchTitle": "Darling chérie",
+      "releaseYear": 1965,
+      "durationMinutes": 122,
+      "format": "FEATURE",
+      "synopsis": "Une femme devenue une célébrité internationale raconte l'échec de sa vie sentimentale à un magazine féminin: un mari insignifiant, un journaliste, un homme d'affaires cynique, puis, devenue comédienne, un prince rencontré sur un plateau.",
+      "historicalDistance": 0.51,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JOHN_SCHLESINGER",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ]
+    },
+    {
+      "code": "FANTOMAS_1913",
+      "originalTitle": "Fantômas",
+      "frenchTitle": "Fantômas",
+      "releaseYear": 1913,
+      "durationMinutes": 339,
+      "format": "EXTENDED",
+      "synopsis": "Un récit puissant des exploits et des crimes de l'archi-vilain Fantômas alors qu'il parvient à échapper à l'inlassable persécution de l'inspecteur Juve.",
+      "historicalDistance": 0.79,
+      "artisticDemand": 0.73,
+      "historicalRichness": 0.86,
+      "culturalRichness": 0.75,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "LOUIS_FEUILLADE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "THRILLER"
+      ],
+      "characteristicCodes": [
+        "CINEMA_MUET_MOUVEMENT"
+      ],
+      "isSilent": true,
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "THE_EXTRAS_1978",
+      "originalTitle": "茄哩啡",
+      "frenchTitle": "The Extras",
+      "releaseYear": 1978,
+      "durationMinutes": 86,
+      "format": "FEATURE",
+      "synopsis": "",
+      "historicalDistance": 0.43,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "YIM_HO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "THE_BUTTERFLY_MURDERS_1979",
+      "originalTitle": "蝶變",
+      "frenchTitle": "Butterfly Murders",
+      "releaseYear": 1979,
+      "durationMinutes": 88,
+      "format": "FEATURE",
+      "synopsis": "Dans la Chine ancienne, le château d'un puissant seigneur est la proie d'une étrange invasion de papillons meurtriers. Une escouade de guerriers pénètre l'enceinte de la forteresse pour faire la lumière sur ce mystère... Arts martiaux et ambiance angoissante forment le cocktail détonnant de ce Thriller fantastique moyenâgeux, premier film signé Tsui Hark.",
+      "historicalDistance": 0.46,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.69,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "TSUI_HARK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "MYSTERE",
+        "FANTASTIQUE",
+        "THRILLER",
+        "HORREUR",
+        "ACTION"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "COPS_AND_ROBBERS_1979",
+      "originalTitle": "點指兵兵",
+      "frenchTitle": "Cops and Robbers",
+      "releaseYear": 1979,
+      "durationMinutes": 91,
+      "format": "FEATURE",
+      "synopsis": "Cops and Robbers décrit une ville où les citoyens ordinaires ont peu de confiance en la police, loin du Hong Kong d’aujourd’hui.",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ALEX_CHEUNG",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "POLICIER"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "L_ENFER_DES_ARMES_1980",
+      "originalTitle": "第一類型危險",
+      "frenchTitle": "L'enfer des armes",
+      "releaseYear": 1980,
+      "durationMinutes": 100,
+      "format": "FEATURE",
+      "synopsis": "Une jeune fille fait chanter trois jeunes garçons responsables d'un meurtre.",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "TSUI_HARK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "POLICIER",
+        "THRILLER",
+        "ACTION"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "THE_SWORD_1980",
+      "originalTitle": "名劍",
+      "frenchTitle": "The Sword",
+      "releaseYear": 1980,
+      "durationMinutes": 85,
+      "format": "FEATURE",
+      "synopsis": "Un jeune épéiste en quête de gloire cherche à affronter un célèbre combattant pour asseoir sa réputation.",
+      "historicalDistance": 0.41,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "PATRICK_TAM",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ACTION"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "THE_STORY_OF_WOO_VIET_1981",
+      "originalTitle": "胡越的故事",
+      "frenchTitle": "The Story of Woo Viet",
+      "releaseYear": 1981,
+      "durationMinutes": 92,
+      "format": "FEATURE",
+      "synopsis": "Une embarcation de fortune arrive en vue des côtes hongkongaises avec à son bord des réfugiés vietamiens dont Wu Yuet. Il est attendu par une correspondante qui l'accueille lorsqu'il fuit le camp de transit où il a assisté à un meurtre. Devant fuir, dans l'attente d'un passeport qui lui permettra de rejoindre les Etats-Unis, il fait la connaissance d'une autre réfugiée, Cherie. Ils s'envolent ensemble pour ce pays lointain mais Le passeur qui a touché l'argent pour les papiers, vend la jeune femme à un proxénète lors d'une escale aux Phillipines. Wu Yuet fait tout pour la retrouver et se retrouve sous la coupe d'un chef de gang.",
+      "historicalDistance": 0.39,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ANN_HUI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "POLICIER",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "ZU_LES_GUERRIERS_DE_LA_MONTAGNE_MAGIQUE_1983",
+      "originalTitle": "新蜀山劍俠",
+      "frenchTitle": "Zu, les guerriers de la montagne magique",
+      "releaseYear": 1983,
+      "durationMinutes": 98,
+      "format": "FEATURE",
+      "synopsis": "Dans les montagnes sacrées de Zu, un monstre aux pouvoirs immenses tente de renaître. De courageux chevaliers, avec l'appui d'un jeune éclaireur, ont 49 jours pour sauver le monde.",
+      "historicalDistance": 0.42,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.75,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "TSUI_HARK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "FANTASTIQUE",
+        "ACTION",
+        "AVENTURE",
+        "COMEDIE"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "AH_YING_1983",
+      "originalTitle": "半邊人",
+      "frenchTitle": "Ah Ying",
+      "releaseYear": 1983,
+      "durationMinutes": 110,
+      "format": "FEATURE",
+      "synopsis": "Ah Ying est une jeune fille issue d'une famille modeste qui rêve de devenir actrice et d’échapper au petit deux-pièces où s’entasse toute la famille. Elle s’inscrit aux cours du « centre culturel du cinéma de Hong Kong » et, rencontre là un réalisateur tout juste rentré des Etats-Unis, avec un projet qu'il ne parvient pas à concrétiser. Le cours fascinant Ah Ying, ils restent à discuter ensemble à la fin ; le réalisateur s'intéresse de plus en plus à elle et se lance dans un projet de documentaire sur elle et ses proches.",
+      "historicalDistance": 0.41,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ALLEN_FONG",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "SHANGHAI_BLUES_1984",
+      "originalTitle": "上海之夜",
+      "frenchTitle": "Shanghai Blues",
+      "releaseYear": 1984,
+      "durationMinutes": 103,
+      "format": "FEATURE",
+      "synopsis": "L'histoire d'amour d'une chanteuse et d'un violoniste à Shanghaï, durant la guerre. Séparés, ils ont à nouveau l'occasion de se croiser quelques années plus tard.",
+      "historicalDistance": 0.44,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.7,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "TSUI_HARK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "POLICE_STORY_1985",
+      "originalTitle": "警察故事",
+      "frenchTitle": "Police Story",
+      "releaseYear": 1985,
+      "durationMinutes": 100,
+      "format": "FEATURE",
+      "synopsis": "L'inspecteur Chan se voit confier la protection d'une femme, petite amie d'un parrain de la mafia que Chan essaye de mettre sous les verrous depuis plusieurs mois. En moins de 48h, il va devoir faire face à cette mission, à sa fiancée qui le croit infidèle et à la horde de mafieux qui veut le mettre hors-circuit.",
+      "historicalDistance": 0.39,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JACKIE_CHAN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ACTION",
+        "POLICIER",
+        "COMEDIE"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "PEKING_OPERA_BLUES_1986",
+      "originalTitle": "刀馬旦",
+      "frenchTitle": "Peking Opera Blues",
+      "releaseYear": 1986,
+      "durationMinutes": 105,
+      "format": "FEATURE",
+      "synopsis": "Peu de temps après l’instauration de la République de Chine, le pays est soumis à un contrôle militaire, et disputé par différents groupes. Tsao Wan est la fille d’un seigneur de guerre, mais elle appartient secrètement à un groupe de révolutionnaires. Dans un grand jeu de travestissements, de masques et de hasards, elle va participer au renversement du régime. C’est dans le théâtre Peking Opera qu’elle rencontre deux autres femmes, qui vont malgré elles faire partie de la rébellion.",
+      "historicalDistance": 0.41,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "TSUI_HARK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ACTION",
+        "COMEDIE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "CITY_ON_FIRE_1987",
+      "originalTitle": "龍虎風雲",
+      "frenchTitle": "City on Fire",
+      "releaseYear": 1987,
+      "durationMinutes": 105,
+      "format": "FEATURE",
+      "synopsis": "Un policier infiltre un gang de cambrioleurs prêts à organiser le casse d'une bijouterie.",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "RINGO_LAM",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ACTION",
+        "AVENTURE",
+        "POLICIER",
+        "THRILLER"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "HISTOIRE_DE_FANT_MES_CHINOIS_1987",
+      "originalTitle": "倩女幽魂",
+      "frenchTitle": "Histoires de fantômes chinois",
+      "releaseYear": 1987,
+      "durationMinutes": 98,
+      "format": "FEATURE",
+      "synopsis": "Ning, jeune collecteur de créances, parcourt pendant deux ans la Chine moyenâgeuse avec son chien Lingot d'or. Il aime Lan, mais celle-ci, lassée de ne pas le voir aussi souvent qu'elle le souhaite, s'est fiancée avec un autre. Ning est désemparé. C'est au cours d'un voyage qu'il rencontre enfin l'amour en la personne de Qian, une femme fantôme qui lui sauve la vie à plusieurs reprises. Perdu dans le monde des morts, Ning apprend à surmonter sa peur pour braver les dangers qui le guettent.",
+      "historicalDistance": 0.37,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "CHING_SIU_TUNG",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "FANTASTIQUE",
+        "ACTION"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "AS_TEARS_GO_BY_1988",
+      "originalTitle": "旺角卡門",
+      "frenchTitle": "As Tears Go By",
+      "releaseYear": 1988,
+      "durationMinutes": 102,
+      "format": "FEATURE",
+      "synopsis": "Petit gangster de Hong-Kong, Wah se partage entre son boulot habituel, le recouvrement de dettes, et la nécessité de protéger son acolyte, Fly, à la conduite problématique : celui-ci ne cesse d’emprunter de l’argent qu’il ne peut jamais rembourser. Mais cette vie, déjà̀ passablement déréglée, est bouleversée quand Wah doit héberger sa jolie cousine, Ngor, qui vit loin de la ville, sur l’île de Lantau. Wah entame alors un épuisant va-et-vient entre son amour naissant pour Ngor, mirage d’une vie paisible, et sa fidélité́ à son «frère» de gang, Fly, tabassé à répétition par les hommes de main d’un autre gangster, Tony. Wah devra choisir sa destinée.",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "WONG_KAR_WAI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "POLICIER",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "PEDICAB_DRIVER_1989",
+      "originalTitle": "群龍戲鳳",
+      "frenchTitle": "Pedicab Driver",
+      "releaseYear": 1989,
+      "durationMinutes": 95,
+      "format": "FEATURE",
+      "synopsis": "Fat Tung est le chef d’une bande de chauffeurs de taxi en vélo. Alors qu’ils se disputent les meilleurs coins de la ville et les meilleurs clients, un ami de Fat Tung tombe amoureux d’une jeune femme, qui est en réalité une prostituée, dont le patron est un dangereux maquereau nommé Master 5.",
+      "historicalDistance": 0.39,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        },
+        {
+          "code": "CHINA",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "SAMMO_HUNG",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ACTION",
+        "COMEDIE",
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "IL_TAIT_UNE_FOIS_EN_CHINE_1991",
+      "originalTitle": "黃飛鴻",
+      "frenchTitle": "Il était une fois en Chine",
+      "releaseYear": 1991,
+      "durationMinutes": 134,
+      "format": "FEATURE",
+      "synopsis": "A la fin du XIXe siècle à Fa Shan, en Chine du Sud. Tandis que les puissances coloniales européennes et américaines s'y affrontent pour le contrôle du commerce maritime, les premiers signes d'occidentalisation commencent à percer dans la société chinoise. Dans ce climat politique tendu, Wong Fei-hung, docteur en médecine chinoise, maître de kung-fu et chef instructeur de l'armée du Dragon noir, est chargé par le commandant Lau de maintenir l'ordre durant les guerres qui éloignent ses troupes de la région, afin de sauvegarder ce qui reste de paix et de stabilité.",
+      "historicalDistance": 0.34,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "TSUI_HARK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ACTION",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "LA_MARI_E_AUX_CHEVEUX_BLANCS_1993",
+      "originalTitle": "白髮魔女傳",
+      "frenchTitle": "La Mariée aux cheveux blancs",
+      "releaseYear": 1993,
+      "durationMinutes": 92,
+      "format": "FEATURE",
+      "synopsis": "Lian a été élevée par des loups. C’est aujourd’hui une sorcière redoutée. Lorsqu’elle se retrouve face à un jeune guerrier membre du clan ennemi, c’est le coup de foudre.",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.65,
+      "culturalRichness": 0.68,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "RONNY_YU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "FANTASTIQUE",
+        "DRAME",
+        "ACTION"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "COMRADES_ALMOST_A_LOVE_STORY_1996",
+      "originalTitle": "甜蜜蜜",
+      "frenchTitle": "Comrades, Almost a Love Story",
+      "releaseYear": 1996,
+      "durationMinutes": 118,
+      "format": "FEATURE",
+      "synopsis": "Li Xiao-jun arrive à Hong Kong dans l’espoir d’y gagner l’argent nécessaire pour lui et sa fiancée, restée sur le continent. Contre toute attente, il rencontre la belle et ambitieuse Li Qiao, dont il va peu à peu tomber amoureux. Réalisée un an avant la rétrocession, cette romance épique nous transporte de Hong Kong à New York, à travers toute une série de rendez-vous manqués. Maggie Cheung et Leon Lai y incarnent un couple mythique qui marqua toute une génération.",
+      "historicalDistance": 0.36,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.65,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "PETER_CHAN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "THE_MISSION_1999",
+      "originalTitle": "鎗火",
+      "frenchTitle": "The Mission",
+      "releaseYear": 1999,
+      "durationMinutes": 81,
+      "format": "FEATURE",
+      "synopsis": "A la suite de la tentative manquée d'assassinat d'un parrain local, cinq professionnels retirés du milieu sont engagés pour assurer la protection de M. Lung, un gros bonnet de la pègre, membre des triades chinoises. Curtis, James, Mike , Roy et Shin (Kelly Lin) vont devoir faire abstraction de leurs problèmes extérieurs et s'adapter au groupe pour mener à bien leur soudaine mission. Ces cinq gardes du corps tissent des liens d'amitié, mais celle-ci est mise à mal lorsque Curtis reçoit l'ordre de tuer Shin qui vient d'avoir une liaison avec Mme Lung.",
+      "historicalDistance": 0.35,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.64,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JOHNNIE_TO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ACTION",
+        "POLICIER",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "BLOOD_SIMPLE_1984",
+      "originalTitle": "Blood Simple",
+      "frenchTitle": "Sang pour sang",
+      "releaseYear": 1985,
+      "durationMinutes": 96,
+      "format": "FEATURE",
+      "synopsis": "Visser, un détective privé que les scrupules n'étouffent pas, est chargé de surveiller la jeune et jolie Abby pour le compte de son mari, Julian Marty, un patron de bar malchanceux. Très rapidement, Visser lui apporte des preuves qu'Abby a depuis quelque temps une liaison avec Ray, un employé de Julian...",
+      "historicalDistance": 0.42,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "USA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JOEL",
+          "billingOrder": 0
+        },
+        {
+          "code": "ETHAN_COEN",
+          "billingOrder": 1
+        }
+      ],
+      "genreCodes": [
+        "POLICIER",
+        "DRAME",
+        "THRILLER"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "THE_TRUMAN_SHOW_1998",
+      "originalTitle": "The Truman Show",
+      "frenchTitle": "Le Show Truman",
+      "releaseYear": 1998,
+      "durationMinutes": 102,
+      "format": "FEATURE",
+      "synopsis": "Il est la vedette d’un show télévisé - mais il ne le sait pas. Jim Carrey a conquis à la fois les critiques et le public pour sa prestation inoubliable dans ce chef-d'œuvre de Peter Weir. Il interprète Truman Burbank, un homme dont la vie entière est un show télévisé - Ses moindres faits et gestes sont filmés à son insu par un créateur/réalisateur/producteur avant-gardiste : la ville entière est un immense studio de cinéma ; ses voisins, ses collègues, ses amis et même sa femme sont des acteurs professionnels d’Hollywood. Un jour pourtant, Truman se doute de quelque chose. Sa réaction face à cette découverte vous fera rire, pleurer et vous émerveillera comme aucun film ne l’a jamais fait.",
+      "historicalDistance": 0.37,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.64,
+      "culturalRichness": 0.7,
+      "countries": [
+        {
+          "code": "USA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "PETER_WEIR",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "BEING_JOHN_MALKOVICH_1999",
+      "originalTitle": "Being John Malkovich",
+      "frenchTitle": "Dans la peau de John Malkovich",
+      "releaseYear": 1999,
+      "durationMinutes": 112,
+      "format": "FEATURE",
+      "synopsis": "Craig Schwartz est marionnettiste de rue, mais ne parvient pas à vivre de son art. Lotte, son épouse, s'intéresse beaucoup plus à ses animaux qu'à lui. Devant leurs difficultes financières, le jeune homme trouve un emploi au septième étage du building de l'entreprise Lester. En classant des dossiers, Craig découvre une porte dérobée et l'emprunte. Celle-ci le conduit pour quinze minutes à l'intérieur de John Malkovich. Cette prodigieuse découverte va lui permettre de changer de vie.",
+      "historicalDistance": 0.32,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.64,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "USA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "SPIKE_JONZE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "DRAME",
+        "FANTASTIQUE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LE_SANG_D_UN_PO_TE_1930",
+      "originalTitle": "Le Sang d'un poète",
+      "frenchTitle": "Le Sang d'un poète",
+      "releaseYear": 1932,
+      "durationMinutes": 49,
+      "format": "MEDIUM",
+      "synopsis": "Un studio de cinéma. Une statue du poète s'anime. Une main essaie en vain d'ouvrir une serrure. Seul dans sa chambre, le poète peint un visage dont la bouche se met à vivre. Il ne peut l'effacer. Après avoir posé la bouche sur une statue qui bouge et parle, le poète s'enfonce dans un miroir, le traverse et se retrouve dans le couloir de « l'Hôtel des Folies dramatiques ». Il regarde par les trous de serrures ce qui se passe dans les chambres…",
+      "historicalDistance": 0.64,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.81,
+      "culturalRichness": 0.85,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JEAN_COCTEAU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "FANTASTIQUE"
+      ],
+      "characteristicCodes": [
+        "SURREALISME"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "LES_ENFANTS_TERRIBLES_1950",
+      "originalTitle": "Les Enfants terribles",
+      "frenchTitle": "Les Enfants terribles",
+      "releaseYear": 1950,
+      "durationMinutes": 105,
+      "format": "FEATURE",
+      "synopsis": "Après la mort de leur mère, un frère et une sœur vivent dans la chambre fermée d'un grand appartement parisien où, avec deux amis, ils se créent un univers a la fois baroque et insolite.",
+      "historicalDistance": 0.55,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.76,
+      "culturalRichness": 0.85,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JEAN_PIERRE_MELVILLE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "SURREALISME"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "ENTER_THE_VOID_2009",
+      "originalTitle": "Enter the Void",
+      "frenchTitle": "Enter the Void",
+      "releaseYear": 2010,
+      "durationMinutes": 154,
+      "format": "FEATURE",
+      "synopsis": "Oscar et sa sœur Linda habitent depuis peu à Tokyo. Oscar survit de petits deals de drogue alors que Linda est stripteaseuse dans une boite de nuit. Un soir, lors d'une descente de police, Oscar est touché par une balle. Tandis qu'il agonise, son esprit, fidèle à la promesse faite à sa sœur de ne jamais l'abandonner, refuse de quitter le monde des vivants. Son esprit erre alors dans la ville et ses visions deviennent de plus en plus chaotiques et cauchemardesques. Passé, présent et futur se mélangent dans un maelstrom hallucinatoire.",
+      "historicalDistance": 0.27,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.61,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        },
+        {
+          "code": "GERMANY",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "GASPAR_NOE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "FANTASTIQUE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "SURREALISME"
+      ]
+    },
+    {
+      "code": "LES_POINGS_DANS_LES_POCHES_1965",
+      "originalTitle": "I pugni in tasca",
+      "frenchTitle": "Les Poings dans les poches",
+      "releaseYear": 1965,
+      "durationMinutes": 105,
+      "format": "FEATURE",
+      "synopsis": "Dans cette famille sans père, l'aîné, Augusto, fait figure de chef de clan auprès de sa mère, aveugle, de Leone, le cadet frappé de débilité, de sa sœur la belle Giulia et surtout d'Alessandro, son frère épileptique. Animé de sentiments incestueux envers Giulia, ce dernier aimerait s'affranchir de l'univers bourgeois qui l'oppresse. Perpétuellement insatisfait, Alessandro aimerait connaître la même indépendance qu'Augusto, et fomente pour atteindre son but des plans de plus en plus sombres.",
+      "historicalDistance": 0.47,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "ITALY",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MARCO_BELLOCCHIO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "ENQU_TE_SUR_UN_CITOYEN_AU_DESSUS_DE_TOUT_SOUP_ON_1970",
+      "originalTitle": "Indagine su un cittadino al di sopra di ogni sospetto",
+      "frenchTitle": "Enquête sur un citoyen au-dessus de tout soupçon",
+      "releaseYear": 1970,
+      "durationMinutes": 111,
+      "format": "FEATURE",
+      "synopsis": "En Italie, au début des années 70, le chef de la brigade criminelle est sur le point d’être promu au poste de directeur de la section politique. Persuadé que ses fonctions le placent au-dessus des lois, il égorge sa maîtresse, Augusta Terzi, au cours de leurs joutes amoureuses. Avec un sang-froid parfait, il met tout en œuvre pour prouver que personne n'aura l'intelligence, ni même l'audace, de le soupçonner et de troubler ainsi la bonne hiérarchie sociale. Il s'ingénie à semer des preuves accablantes, relançant l'enquête quand celle-ci s'égare...",
+      "historicalDistance": 0.47,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.71,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "ITALY",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ELIO_PETRI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "THRILLER"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LE_JARDIN_DES_FINZI_CONTINI_1970",
+      "originalTitle": "Il giardino dei Finzi Contini",
+      "frenchTitle": "Le Jardin des Finzi-Contini",
+      "releaseYear": 1970,
+      "durationMinutes": 94,
+      "format": "FEATURE",
+      "synopsis": "Italie, 1938. Ayant entrepris depuis peu de se convertir à l'antisémitisme, le régime fasciste multiplie les mesures vexatoires contre les Juifs italiens. Mais la famille Finzi-Contini, pilier de l'aristocratie de Ferrare depuis des générations, ne croit pas à l'imminence de la menace. Les deux enfants adultes, Micól et Alberto, aiment bien donner des parties et jouer au tennis dans l'immense parc qui entoure le palazzo familial. Comme les clubs sportifs viennent d'être interdits aux Juifs, des jeunes gens de milieux plus modestes sont désormais invités à jouer dans le jardin des Finzi-Contini. C'est ainsi que Giorgio a l'occasion de rencontrer la lointaine Micól et tombe peu à peu amoureux d'elle, qui lui en préfère un autre, cependant qu'hors des murs, le pire se prépare...",
+      "historicalDistance": 0.48,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.71,
+      "culturalRichness": 0.75,
+      "countries": [
+        {
+          "code": "ITALY",
+          "isPrimary": true
+        },
+        {
+          "code": "GERMANY",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "VITTORIO_DE_SICA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LE_CASANOVA_DE_FEDERICO_FELLINI_1976",
+      "originalTitle": "Il Casanova di Federico Fellini",
+      "frenchTitle": "Le Casanova de Fellini",
+      "releaseYear": 1976,
+      "durationMinutes": 123,
+      "format": "FEATURE",
+      "synopsis": "Au XVIIIème siècle, à Venise. Les rues, pontons et canaux sont animés par le traditionnel carnaval qui déploie les pompes d’une grande fête païenne. Giacomo Casanova, habillé en Pierrot, se rend à l’invitation que lui a fait parvenir une coquette et coquine religieuse. Leurs ébats érotiques sont observés par l’ambassadeur de France, De Bernis, amant de la nonne et voyeur complaisant. C’est le point de départ d’une série d’aventures galantes et sinistres racontées sans vergogne par le célèbre séducteur.",
+      "historicalDistance": 0.47,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.7,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "ITALY",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "FEDERICO_FELLINI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "CADAVRES_EXQUIS_1976",
+      "originalTitle": "Cadaveri eccellenti",
+      "frenchTitle": "Cadavres exquis",
+      "releaseYear": 1976,
+      "durationMinutes": 116,
+      "format": "FEATURE",
+      "synopsis": "Une série d'assassinats de magistrats a lieu. L'enquête est confiée à l'inspecteur Rogas qui soupçonne la mafia. Mais il découvre que les hommes au pouvoir utilisent cette affaire à des fins politiques: l'Etat est compromis avec des extremistes dans le but de destabiliser le gouvernement.",
+      "historicalDistance": 0.44,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.7,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "ITALY",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "FRANCESCO_ROSI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "THRILLER"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "QUELQUE_CHOSE_D_AUTRE_1963",
+      "originalTitle": "O něčem jiném",
+      "frenchTitle": "Quelque chose d'autre",
+      "releaseYear": 1963,
+      "durationMinutes": 81,
+      "format": "FEATURE",
+      "synopsis": "Au début des années 1960, les réalisatrices étaient bien plus nombreuses dans le bloc de l’Est que de l’autre côté du Rideau de Fer, à l’instar de Věra Chytilová, figure de la Nouvelle Vague tchécoslovaque. \"Quelque chose d’autre\", réunit deux parcours de femmes, l’un fictif et l’autre réel : celui de la gymnaste et future médaillée d’or Eva Bosáková, qui joue ici son propre rôle.",
+      "historicalDistance": 0.48,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "CZECH",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "VERA_CHYTILOVA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ]
+    },
+    {
+      "code": "LES_DIAMANTS_DE_LA_NUIT_1964",
+      "originalTitle": "Démanty noci",
+      "frenchTitle": "Les Diamants de la Nuit",
+      "releaseYear": 1964,
+      "durationMinutes": 67,
+      "format": "FEATURE",
+      "synopsis": "La tragique poursuite de deux jeunes juifs après leur évasion d'un train qui les transportait dans un camp de concentration...",
+      "historicalDistance": 0.53,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.7,
+      "countries": [
+        {
+          "code": "CZECH",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JAN_NEMEC",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "GUERRE"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ]
+    },
+    {
+      "code": "CLAIRAGE_INTIME_1965",
+      "originalTitle": "Intimní osvětlení",
+      "frenchTitle": "Éclairage Intime",
+      "releaseYear": 1965,
+      "durationMinutes": 73,
+      "format": "FEATURE",
+      "synopsis": "Petr et Bambas sont d’anciens camarades de conservatoire. Soliste violoncelliste à Prague, Petr vient donner un concert dans la ville où Bambas, directeur d’une école de musique, l’a invité pour compléter l’orchestre local. Il accueille Petr et sa compagne chez lui, où il vit avec femme, enfants et… beaux-parents.",
+      "historicalDistance": 0.47,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "CZECH",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "IVAN_PASSER",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "COMEDIE"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ]
+    },
+    {
+      "code": "LA_F_TE_ET_LES_INVIT_S_1966",
+      "originalTitle": "O slavnosti a hostech",
+      "frenchTitle": "La fête et les invités",
+      "releaseYear": 1966,
+      "durationMinutes": 70,
+      "format": "FEATURE",
+      "synopsis": "Un petit groupe d'amis bourgeois est en sortie d'une journée à la campagne, sortie qui comprend un pique-nique. Alors qu'ils se promènent après le pique-nique, ils rencontrent un groupe d'hommes à l'air officieux qui les réquisitionnent dans une petite clairière. Bien qu'il n'y ait pas de menace directe et que les pique-niqueurs n'aient pas peur, ils ressentent néanmoins le besoin de faire ce que les hommes disent.",
+      "historicalDistance": 0.54,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.68,
+      "countries": [
+        {
+          "code": "CZECH",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JAN_NEMEC",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "COMEDIE"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ]
+    },
+    {
+      "code": "LA_PLAISANTERIE_1968",
+      "originalTitle": "Žert",
+      "frenchTitle": "La plaisanterie",
+      "releaseYear": 1969,
+      "durationMinutes": 77,
+      "format": "FEATURE",
+      "synopsis": "Dans les années 1950, Ludvik Jahn a été exclu du Parti communiste et de l'Université par ses camarades de classe, à cause d'une note politiquement incorrecte qu'il avait envoyée à sa petite amie. Quinze ans plus tard, il tente de se venger en séduisant Helena, la femme d'un de ses accusateurs.",
+      "historicalDistance": 0.46,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "CZECH",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JAROMIL_JIRES",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ]
+    },
+    {
+      "code": "UN_T_CAPRICIEUX_1968",
+      "originalTitle": "Rozmarné léto",
+      "frenchTitle": "Un été capricieux",
+      "releaseYear": 1968,
+      "durationMinutes": 73,
+      "format": "FEATURE",
+      "synopsis": "Les amis profitent des charmes de la nature – et de leurs invités.",
+      "historicalDistance": 0.48,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "CZECH",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JIRI_MENZEL",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ]
+    },
+    {
+      "code": "LES_OISEAUX_LES_ORPHELINS_ET_LES_FOUS_1969",
+      "originalTitle": "Vtáčkovia, siroty a blázni",
+      "frenchTitle": "Les oiseaux, les orphelins et les fous",
+      "releaseYear": 1969,
+      "durationMinutes": 118,
+      "format": "FEATURE",
+      "synopsis": "Parabole en mosaique, joyeusement carnavalesque ou trois orphelins, trois fous abandonnes ne survivent que grace a leur folie programmee dans un monde insense et laid.",
+      "historicalDistance": 0.48,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "CZECH",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "JURAJ_JAKUBISKO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "FANTASTIQUE",
+        "COMEDIE"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ]
+    },
+    {
+      "code": "LE_VOLEUR_DE_CHEVAUX_1986",
+      "originalTitle": "盗马贼",
+      "frenchTitle": "Le Voleur de chevaux",
+      "releaseYear": 1986,
+      "durationMinutes": 86,
+      "format": "FEATURE",
+      "synopsis": "Norbu, un berger tibétain, vit avec son épouse et leur fils dans un petit village. Alors que la famille a de plus en plus de mal à subvenir à ses besoins, Norbu décide de voler des chevaux. Mais son geste ne restera pas sans conséquences…",
+      "historicalDistance": 0.42,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "TIAN_ZHUANGZHUANG",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
+    },
+    {
+      "code": "LE_ROI_DES_ENFANTS_1987",
+      "originalTitle": "孩子王",
+      "frenchTitle": "Le Roi des enfants",
+      "releaseYear": 1987,
+      "durationMinutes": 107,
+      "format": "FEATURE",
+      "synopsis": "Pendant la Révolution Culturelle, un homme est envoyé dans l'arrière pays chinois. Arrivé dans une région montagneuse, il voit les habitants d'un village lui demander de devenir professeur.",
+      "historicalDistance": 0.39,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "CHEN_KAIGE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
+    },
+    {
+      "code": "JU_DOU_1990",
+      "originalTitle": "菊豆",
+      "frenchTitle": "Ju Dou",
+      "releaseYear": 1990,
+      "durationMinutes": 95,
+      "format": "FEATURE",
+      "synopsis": "Dans la Chine rurale des années 1920, Ju Dou est achétée puis mariée à un vieil homme brutal et stérile, propriétaire d'une teinturerie. Cependant, la jeune femme tombe enceinte du neveu de son mari.",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        },
+        {
+          "code": "JAPAN",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "ZHANG_YIMOU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
+    },
+    {
+      "code": "LA_VIE_SUR_UN_FIL_1991",
+      "originalTitle": "边走边唱",
+      "frenchTitle": "La Vie sur un fil",
+      "releaseYear": 1991,
+      "durationMinutes": 110,
+      "format": "FEATURE",
+      "synopsis": "En Chine. Un musicien aveugle est persuadé qu'il retrouvera la vue le jour où se brisera la millième corde de son instrument favori, le qin, un banjo oriental. C'est en tout cas ce que lui a promis son maître, qui l'a incité, pour cette raison, à vouer son existence à la musique. Mais le temps a passé, le joueur de qin a vieilli – il a maintenant un disciple, le jeune Shitou –, et s'il est devenu une sorte de saint vivant, il n'a, par contre, toujours pas retrouvé la vue. De plus, la pratique de son art, d'un village à l'autre, lui permet tout juste de survivre…",
+      "historicalDistance": 0.34,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        },
+        {
+          "code": "UK",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "CHEN_KAIGE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
+    },
+    {
+      "code": "QIU_JU_UNE_FEMME_CHINOISE_1992",
+      "originalTitle": "秋菊打官司",
+      "frenchTitle": "Qiu Ju, une femme chinoise",
+      "releaseYear": 1992,
+      "durationMinutes": 100,
+      "format": "FEATURE",
+      "synopsis": "Wan Qinglai, un paysan, est passé à tabac pour avoir osé demander au chef du village Wang Shantang un endroit pour entreposer ses piments. Sa femme, Qiu Ju, alors enceinte, décide d’aller demander des explications. Wang Shantang lui offre de l’argent mais elle refuse. Elle ne désire qu’une chose : réparer l’honneur de son mari. Pour cela, Qiu Ju va entamer un long voyage à travers le pays et se rendre dans tous les tribunaux possibles afin que justice soit faite.",
+      "historicalDistance": 0.38,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        },
+        {
+          "code": "HONG_KONG",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "ZHANG_YIMOU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
+    },
+    {
+      "code": "VIVRE_1994",
+      "originalTitle": "活着",
+      "frenchTitle": "Vivre !",
+      "releaseYear": 1994,
+      "durationMinutes": 133,
+      "format": "FEATURE",
+      "synopsis": "À travers l'épopée d'une famille ordinaire et de Fugui, le personnage principal, l'histoire de la Chine profonde des années quarante aux années soixante-dix.",
+      "historicalDistance": 0.34,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.65,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        },
+        {
+          "code": "HONG_KONG",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "ZHANG_YIMOU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE",
+        "GUERRE"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
+    },
+    {
+      "code": "L_EMPEREUR_ET_L_ASSASSIN_1998",
+      "originalTitle": "荆轲刺秦王",
+      "frenchTitle": "L'Empereur et l'Assassin",
+      "releaseYear": 1998,
+      "durationMinutes": 162,
+      "format": "FEATURE",
+      "synopsis": "Au IIIe siècle avant Jésus-Christ, Ying Zhen, roi de Qin, a un projet. Il souhaite unifier les sept royaumes de Chine continentale pour constituer un empire dont il rêve de prendre la tête. À Dame Zhao, son amie d'enfance et de coeur, il promet d'accomplir son destin sans violence et sans tuerie. Dame Zhao lui suggère de simuler une tentative d'assassinat qui permettrait d'envahir le royaume de Yan. Elle recrute pour ce faire Jing Ke, un assassin patenté. Mais à la cour, le favori de la reine tente un coup d'Etat. Ying Zhen en sort victorieux et fait tuer tous les mutins. C'est alors qu'il apprend qu'il n'est qu'un bâtard, fils de l'ex-chancelier…",
+      "historicalDistance": 0.36,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.64,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "CHEN_KAIGE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "HISTORIQUE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
+    },
+    {
+      "code": "DRIFTERS_1929",
+      "originalTitle": "Drifters",
+      "frenchTitle": "Drifters",
+      "releaseYear": 1929,
+      "durationMinutes": 49,
+      "format": "MEDIUM",
+      "synopsis": "",
+      "historicalDistance": 0.66,
+      "artisticDemand": 0.69,
+      "historicalRichness": 0.82,
+      "culturalRichness": 0.84,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JOHN_GRIERSON",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_MUET_MOUVEMENT",
+        "DOCUMENTAIRE"
+      ],
+      "isSilent": true,
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "NIGHT_MAIL_1936",
+      "originalTitle": "Night Mail",
+      "frenchTitle": "Night Mail",
+      "releaseYear": 1938,
+      "durationMinutes": 25,
+      "format": "SHORT",
+      "synopsis": "",
+      "historicalDistance": 0.65,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.8,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "UK",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "HARRY_WATT",
+          "billingOrder": 0
+        },
+        {
+          "code": "BASIL_WRIGHT",
+          "billingOrder": 1
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "LES_MA_TRES_FOUS_1955",
+      "originalTitle": "Les Maîtres fous",
+      "frenchTitle": "Les Maîtres fous",
+      "releaseYear": 1955,
+      "durationMinutes": 36,
+      "format": "SHORT",
+      "synopsis": "Tourné en un seul jour, le film montre les pratiques rituelles d'une secte religieuse. Les pratiquants du culte Hauka, des travailleurs des régions du Niger venus à Accra, se réunissent à l'occasion de leur grande cérémonie annuelle.",
+      "historicalDistance": 0.59,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JEAN_ROUCH",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "DOCUMENTAIRE"
+      ]
+    },
+    {
+      "code": "LE_JOLI_MAI_1963",
+      "originalTitle": "Le Joli Mai",
+      "frenchTitle": "Le Joli Mai",
+      "releaseYear": 1963,
+      "durationMinutes": 165,
+      "format": "FEATURE",
+      "synopsis": "Paris, mai 1962. La guerre d'Algérie vient de s'achever avec les accords d'Evian. En ce premier mois de paix depuis sept ans, que font, à quoi pensent les Parisiens ? Chacun témoigne à sa manière de ses angoisses, ses bonheurs, ses espoirs. Peu à peu, se dessine un portrait pris sur le vif de la France à l'aube des années 60.",
+      "historicalDistance": 0.53,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "CHRIS_MARKER",
+          "billingOrder": 0
+        },
+        {
+          "code": "PIERRE_LHOMME",
+          "billingOrder": 1
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "DOCUMENTAIRE"
+      ]
+    },
+    {
+      "code": "HOOP_DREAMS_1994",
+      "originalTitle": "Hoop Dreams",
+      "frenchTitle": "Hoop Dreams",
+      "releaseYear": 1994,
+      "durationMinutes": 174,
+      "format": "FEATURE",
+      "synopsis": "Le documentaire s'attache à décrire le parcours de deux jeunes aspirant basketteurs, depuis leurs premiers matchs jusqu'à leur recrutement au sein des collèges...",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.65,
+      "culturalRichness": 0.67,
+      "countries": [
+        {
+          "code": "USA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "STEVE_JAMES",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "DOCUMENTAIRE"
+      ]
+    },
+    {
+      "code": "T_O_U_C_H_I_N_G_1968",
+      "originalTitle": "T,O,U,C,H,I,N,G",
+      "frenchTitle": "T,O,U,C,H,I,N,G",
+      "releaseYear": 1969,
+      "durationMinutes": 12,
+      "format": "SHORT",
+      "synopsis": "",
+      "historicalDistance": 0.45,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "USA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "PAUL_SHARITS",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_EXPERIMENTAL"
+      ]
+    },
+    {
+      "code": "BULLET_IN_THE_HEAD_1990",
+      "originalTitle": "喋血街頭",
+      "frenchTitle": "Bullet in the Head",
+      "releaseYear": 1990,
+      "durationMinutes": 136,
+      "format": "FEATURE",
+      "synopsis": "L’histoire d’un trio d’amis, Ben, Paul et Frank, qui de leur jeunesse insouciante à Hong Kong en 1967 à la fin de la guerre du Vietnam, deviendront les pires ennemis.",
+      "historicalDistance": 0.38,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JOHN_WOO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ACTION",
+        "POLICIER",
+        "THRILLER",
+        "GUERRE"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "VALERIE_ET_LA_SEMAINE_DES_MERVEILLES_1970",
+      "originalTitle": "Valerie a týden divů",
+      "frenchTitle": "Valérie et la Semaine des merveilles",
+      "releaseYear": 1970,
+      "durationMinutes": 76,
+      "format": "FEATURE",
+      "synopsis": "Valérie, jeune orpheline de 13 ans vivant seule avec sa grand-mère, vit dans un rêve désorientant où elle est séduite par des prêtres, des vampires, des hommes et des femmes confondus.",
+      "historicalDistance": 0.46,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "CZECH",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JAROMIL_JIRES",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "FANTASTIQUE",
+        "AVENTURE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "SURREALISME",
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ]
+    },
+    {
+      "code": "LE_SOLEIL_DANS_UN_FILET_1962",
+      "originalTitle": "Slnko v sieti",
+      "frenchTitle": "Le Soleil dans un filet",
+      "releaseYear": 1962,
+      "durationMinutes": 90,
+      "format": "FEATURE",
+      "synopsis": "Fajolo est étudiant à Bratislava. Il ne pense qu'à son transistor et à la photo. Avec sa petite amie Bela, il adore bronzer, sur le toit de sa maison. Bela vit dans une ambiance familiale détestable, entre une mère aveugle et un père qui est une véritable épave. Fajolo ne comprend pas ses problèmes et ne lui est d'aucune aide. Un jour, en colère, elle casse son transistor. Fajolo, furieux, cesse alors de la voir. Mais il s'aperçoit très vite qu'il tient à elle...",
+      "historicalDistance": 0.49,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "CZECH",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "STEFAN_UHER",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ]
+    },
+    {
+      "code": "LE_CR_MATEUR_1969",
+      "originalTitle": "Spalovač mrtvol",
+      "frenchTitle": "Le Crémateur",
+      "releaseYear": 1969,
+      "durationMinutes": 100,
+      "format": "FEATURE",
+      "synopsis": "M. Kopfrkingl est un employé modèle. Incinérateur de cadavres de son état, il exerce son métier avec amour. Il aime ses morts, il est heureux de libérer les âmes et souhaite, par amour de son prochain, a tous une mort prochaine. À la veille de la Seconde Guerre mondiale un ami nazi le persuade qu'il doit avoir du sang allemand dans les veines. Et M. Kopfrkingl se prend à rêver d'une race pure. Son crématoire va pouvoir tourner à plein régime.",
+      "historicalDistance": 0.49,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "CZECH",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JURAJ_HERZ",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "HORREUR",
+        "DRAME",
+        "POLICIER",
+        "COMEDIE"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ]
+    },
+    {
+      "code": "UN_ET_HUIT_1983",
+      "originalTitle": "一个和八个",
+      "frenchTitle": "Un et Huit",
+      "releaseYear": 1983,
+      "durationMinutes": 90,
+      "format": "FEATURE",
+      "synopsis": "",
+      "historicalDistance": 0.38,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.81,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ZHANG_JUNZHAO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
+    },
+    {
+      "code": "LE_VIEUX_PUITS_1987",
+      "originalTitle": "老井",
+      "frenchTitle": "Le Vieux Puits",
+      "releaseYear": 1987,
+      "durationMinutes": 129,
+      "format": "FEATURE",
+      "synopsis": "",
+      "historicalDistance": 0.39,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "WU_TIANMING",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
+    },
+    {
+      "code": "LA_LUNE_TENTATRICE_1996",
+      "originalTitle": "風月",
+      "frenchTitle": "La Lune tentatrice",
+      "releaseYear": 1996,
+      "durationMinutes": 130,
+      "format": "FEATURE",
+      "synopsis": "Dans une petite ville de campagne proche de Pékin, le clan Pang règne sur la vie locale, baignée dans la drogue. Jusqu'au jour où le vieux maître décède.",
+      "historicalDistance": 0.37,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.65,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        },
+        {
+          "code": "HONG_KONG",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "CHEN_KAIGE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
+    },
+    {
+      "code": "EMPIRE_WARHOL_1964",
+      "originalTitle": "Empire",
+      "frenchTitle": "Empire",
+      "releaseYear": 1964,
+      "durationMinutes": 479,
+      "format": "EXTENDED",
+      "synopsis": "",
+      "historicalDistance": 0.48,
+      "artisticDemand": 0.77,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "USA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ANDY_WARHOL",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_EXPERIMENTAL"
+      ],
+      "isExperimental": true
+    },
+    {
+      "code": "THE_SPOOKY_BUNCH_1980",
+      "originalTitle": "撞到正！",
+      "frenchTitle": "The Spooky Bunch",
+      "releaseYear": 1980,
+      "durationMinutes": 97,
+      "format": "FEATURE",
+      "synopsis": "",
+      "historicalDistance": 0.42,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ANN_HUI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "HORREUR",
+        "FANTASTIQUE"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "THE_SECRET_1979",
+      "originalTitle": "瘋劫",
+      "frenchTitle": "The Secret",
+      "releaseYear": 1979,
+      "durationMinutes": 85,
+      "format": "FEATURE",
+      "synopsis": "",
+      "historicalDistance": 0.47,
+      "artisticDemand": 0.66,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.69,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ANN_HUI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "MYSTERE",
+        "THRILLER"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "THE_CLUB_1981",
+      "originalTitle": "舞廳",
+      "frenchTitle": "The Club",
+      "releaseYear": 1981,
+      "durationMinutes": 86,
+      "format": "FEATURE",
+      "synopsis": "",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "KIRK_WONG",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "POLICIER",
+        "ACTION"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "NOMAD_1982",
+      "originalTitle": "烈火青春",
+      "frenchTitle": "Nomad",
+      "releaseYear": 1982,
+      "durationMinutes": 96,
+      "format": "FEATURE",
+      "synopsis": "Rejetons de la classe aisée hongkongaise, Louis et son amie Kathy vont se lier à Tomato et Pong, de condition plus modeste. Devenus inséparables, les deux couples mènent une vie oisive, rêvant de rallier des contrées lointaines à bord du Nomad, le voilier du père de Louis. Ils seront bientôt rejoints par Shinsuke, le petit ami nippon de Kathy, poursuivi pour avoir déserté l’Armée rouge japonaise…",
+      "historicalDistance": 0.41,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "HONG_KONG",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "PATRICK_TAM",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE",
+        "THRILLER"
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "L_INCIDENT_DU_CANON_NOIR_1985",
+      "originalTitle": "黑炮事件",
+      "frenchTitle": "L'Incident du canon noir",
+      "releaseYear": 1985,
+      "durationMinutes": 99,
+      "format": "FEATURE",
+      "synopsis": "",
+      "historicalDistance": 0.38,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "CHINA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "HUANG_JIANXIN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "COMEDIE"
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ]
     }
   ],
   "collections": [
@@ -56420,120 +59117,108 @@
       "displayOrder": 8,
       "name": "Cinéma muet",
       "description": "L'âge des images avant la parole synchronisée.",
-      "longDescription": "Avant 1930, le cinéma invente presque tous ses langages. Méliès truque la Lune, Griffith monumentalisé le récit, Keaton, Chaplin et Lloyd font du corps une grammaire. L'Allemagne expressionniste, Flaherty, Murnau, l'URSS du montage et Dreyer prouvent que le silence n'est pas un manque. La Passion de Jeanne d'Arc colle aux visages, L'Aurore invente une caméra lyrique, Napoléon déborde l'écran. Le parlant n'efface pas cet âge : il le recouvre. Revenir au muet, c'est réapprendre à voir avant d'écouter.",
+      "longDescription": "Le cinéma invente presque tous ses langages avant que la parole synchronisée ne les recouvre. Griffith monumentalise le récit, Feuillade enchaîne Fantômas et Les Vampires, Keaton, Chaplin et Lloyd font du corps une grammaire. L'Allemagne expressionniste, Flaherty, Murnau, l'URSS du montage et Dreyer prouvent que le silence n'est pas un manque. La Passion de Jeanne d'Arc colle aux visages, L'Aurore invente une caméra lyrique, Napoléon déborde l'écran. Revenir au muet, c'est réapprendre à voir avant d'écouter.",
       "isPublished": true,
       "movies": [
         {
-          "code": "LA_SORTIE_DES_USINES_LUMIERE_1895",
+          "code": "FANTOMAS_1913",
           "displayOrder": 1
         },
         {
-          "code": "L_ARRIVEE_D_UN_TRAIN_1896",
+          "code": "LES_VAMPIRES_1915",
           "displayOrder": 2
         },
         {
-          "code": "LA_FEE_AUX_CHOUX_1896",
+          "code": "INTOLERANCE_1916",
           "displayOrder": 3
         },
         {
-          "code": "VOYAGE_DANS_LA_LUNE_1902",
+          "code": "LE_LYS_BRISE_1919",
           "displayOrder": 4
         },
         {
-          "code": "LE_VOL_DU_GRAND_RAPIDE_1903",
+          "code": "CABINET_DU_DOCTEUR_CALIGARI_1920",
           "displayOrder": 5
         },
         {
-          "code": "INTOLERANCE_1916",
+          "code": "LA_CHARRETTE_FANTOME_1921",
           "displayOrder": 6
         },
         {
-          "code": "LE_LYS_BRISE_1919",
+          "code": "LE_KID_1921",
           "displayOrder": 7
         },
         {
-          "code": "CABINET_DU_DOCTEUR_CALIGARI_1920",
+          "code": "HAXAN_1922",
           "displayOrder": 8
         },
         {
-          "code": "LA_CHARRETTE_FANTOME_1921",
+          "code": "NANOUK_L_ESQUIMAU_1922",
           "displayOrder": 9
         },
         {
-          "code": "LE_KID_1921",
+          "code": "NOSFERATU_1922",
           "displayOrder": 10
         },
         {
-          "code": "HAXAN_1922",
+          "code": "MONTEUR_DE_SECURITE_1923",
           "displayOrder": 11
         },
         {
-          "code": "NANOUK_L_ESQUIMAU_1922",
+          "code": "LE_DERNIER_DES_HOMMES_1924",
           "displayOrder": 12
         },
         {
-          "code": "NOSFERATU_1922",
+          "code": "SHERLOCK_JUNIOR_1924",
           "displayOrder": 13
         },
         {
-          "code": "MONTEUR_DE_SECURITE_1923",
+          "code": "LA_RUEE_VERS_LOR_1925",
           "displayOrder": 14
         },
         {
-          "code": "LE_DERNIER_DES_HOMMES_1924",
+          "code": "LE_CUIRASSE_POTEMKINE_1925",
           "displayOrder": 15
         },
         {
-          "code": "SHERLOCK_JUNIOR_1924",
+          "code": "LE_MECANICIEN_DE_LA_GENERAL_1926",
           "displayOrder": 16
         },
         {
-          "code": "LA_RUEE_VERS_LOR_1925",
+          "code": "L_AURORE_1927",
           "displayOrder": 17
         },
         {
-          "code": "LE_CUIRASSE_POTEMKINE_1925",
+          "code": "METROPOLIS_1927",
           "displayOrder": 18
         },
         {
-          "code": "LE_MECANICIEN_DE_LA_GENERAL_1926",
+          "code": "NAPOLEON_1927",
           "displayOrder": 19
         },
         {
-          "code": "L_AURORE_1927",
+          "code": "LA_FOULE_1928",
           "displayOrder": 20
         },
         {
-          "code": "METROPOLIS_1927",
+          "code": "LA_PASSION_DE_JEANNE_DARC_1928",
           "displayOrder": 21
         },
         {
-          "code": "NAPOLEON_1927",
+          "code": "LA_BOITE_DE_PANDORE_1929",
           "displayOrder": 22
         },
         {
-          "code": "LA_FOULE_1928",
+          "code": "L_HOMME_A_LA_CAMERA_1929",
           "displayOrder": 23
         },
         {
-          "code": "LA_PASSION_DE_JEANNE_DARC_1928",
+          "code": "UN_CHIEN_ANDALOU_1929",
           "displayOrder": 24
         },
         {
-          "code": "L_HOMME_A_LA_CAMERA_1929",
-          "displayOrder": 25
-        },
-        {
-          "code": "LA_BOITE_DE_PANDORE_1929",
-          "displayOrder": 26
-        },
-        {
-          "code": "UN_CHIEN_ANDALOU_1929",
-          "displayOrder": 27
-        },
-        {
           "code": "LES_LUMIERES_DE_LA_VILLE_1931",
-          "displayOrder": 28
+          "displayOrder": 25
         }
       ],
       "characteristicCodes": [
@@ -56983,6 +59668,817 @@
         "UK"
       ],
       "track": "DARKROOM"
+    },
+    {
+      "code": "COLLECTION_018",
+      "displayOrder": 18,
+      "name": "Free Cinema Britannique",
+      "description": "La jeunesse britannique quitte les studios pour filmer la vie telle qu'elle est.",
+      "longDescription": "À la fin des années 1950, de jeunes cinéastes britanniques tournent leur regard vers les ouvriers, les petites villes et une jeunesse qui ne se reconnaît plus dans le cinéma traditionnel. Lindsay Anderson, Tony Richardson et Karel Reisz filment les rues, les usines, les appartements et les frustrations quotidiennes. Influencé par le théâtre et le documentaire, le Free Cinema cherche une liberté de ton et une proximité nouvelle avec ses personnages. O Dreamland, We Are the Lambeth Boys, Saturday Night and Sunday Morning ou A Taste of Honey annoncent une transformation plus large du cinéma britannique et préparent, avec leurs propres moyens, l'émergence d'un cinéma social durable.",
+      "isPublished": true,
+      "movies": [
+        {
+          "code": "O_DREAMLAND_1953",
+          "displayOrder": 1
+        },
+        {
+          "code": "MOMMA_DON_T_ALLOW_1956",
+          "displayOrder": 2
+        },
+        {
+          "code": "TOGETHER_1956",
+          "displayOrder": 3
+        },
+        {
+          "code": "EVERY_DAY_EXCEPT_CHRISTMAS_1957",
+          "displayOrder": 4
+        },
+        {
+          "code": "LES_CORPS_SAUVAGES_1959",
+          "displayOrder": 5
+        },
+        {
+          "code": "WE_ARE_THE_LAMBETH_BOYS_1959",
+          "displayOrder": 6
+        },
+        {
+          "code": "SATURDAY_NIGHT_AND_SUNDAY_MORNING_1960",
+          "displayOrder": 7
+        },
+        {
+          "code": "UN_GO_T_DE_MIEL_1961",
+          "displayOrder": 8
+        },
+        {
+          "code": "THE_LONELINESS_OF_THE_LONG_DISTANCE_RUNNER_1962",
+          "displayOrder": 9
+        },
+        {
+          "code": "UN_AMOUR_PAS_COMME_LES_AUTRES_1962",
+          "displayOrder": 10
+        },
+        {
+          "code": "BILLY_LE_MENTEUR_1963",
+          "displayOrder": 11
+        },
+        {
+          "code": "THIS_SPORTING_LIFE_1963",
+          "displayOrder": 12
+        },
+        {
+          "code": "DARLING_1965",
+          "displayOrder": 13
+        },
+        {
+          "code": "IF_1968",
+          "displayOrder": 14
+        },
+        {
+          "code": "KES_1969",
+          "displayOrder": 15
+        }
+      ],
+      "characteristicCodes": [
+        "FREE_CINEMA"
+      ],
+      "countryCodes": [
+        "UK"
+      ],
+      "track": "CLUB"
+    },
+    {
+      "code": "COLLECTION_019",
+      "displayOrder": 19,
+      "name": "Âge d'or hongkongais",
+      "description": "Quand Hong Kong transforme le cinéma populaire en laboratoire de formes.",
+      "longDescription": "À la fin des années 1970, une nouvelle génération de cinéastes renouvelle le cinéma hongkongais en venant de la télévision, du cinéma indépendant ou de formations à l'étranger. Ann Hui, Tsui Hark, Patrick Tam ou Allen Fong filment la ville contemporaine, la violence sociale et les bouleversements politiques avec une liberté nouvelle, tandis que l'industrie populaire connaît en parallèle une explosion des arts martiaux, de la comédie, du polar et du fantastique.  Dans les années 1980, ces deux dynamiques finissent par se rencontrer : John Woo, Jackie Chan, Tsui Hark ou Ringo Lam réinventent les codes du cinéma de genre avec une mise en scène toujours plus spectaculaire, tandis qu'une seconde vague menée par Wong Kar-wai, Stanley Kwan ou Fruit Chan pousse le cinéma hongkongais vers la mémoire, le désir et l'identité.  De la Nouvelle Vague au grand spectacle, cette collection raconte comment une petite industrie devient l'un des cinémas les plus inventifs et influents du monde.",
+      "isPublished": true,
+      "movies": [
+        {
+          "code": "THE_EXTRAS_1978",
+          "displayOrder": 1
+        },
+        {
+          "code": "COPS_AND_ROBBERS_1979",
+          "displayOrder": 2
+        },
+        {
+          "code": "THE_BUTTERFLY_MURDERS_1979",
+          "displayOrder": 3
+        },
+        {
+          "code": "THE_SECRET_1979",
+          "displayOrder": 4
+        },
+        {
+          "code": "L_ENFER_DES_ARMES_1980",
+          "displayOrder": 5
+        },
+        {
+          "code": "THE_SPOOKY_BUNCH_1980",
+          "displayOrder": 6
+        },
+        {
+          "code": "THE_SWORD_1980",
+          "displayOrder": 7
+        },
+        {
+          "code": "THE_CLUB_1981",
+          "displayOrder": 8
+        },
+        {
+          "code": "THE_STORY_OF_WOO_VIET_1981",
+          "displayOrder": 9
+        },
+        {
+          "code": "BOAT_PEOPLE_1982",
+          "displayOrder": 10
+        },
+        {
+          "code": "NOMAD_1982",
+          "displayOrder": 11
+        },
+        {
+          "code": "AH_YING_1983",
+          "displayOrder": 12
+        },
+        {
+          "code": "ZU_LES_GUERRIERS_DE_LA_MONTAGNE_MAGIQUE_1983",
+          "displayOrder": 13
+        },
+        {
+          "code": "SHANGHAI_BLUES_1984",
+          "displayOrder": 14
+        },
+        {
+          "code": "POLICE_STORY_1985",
+          "displayOrder": 15
+        },
+        {
+          "code": "A_BETTER_TOMORROW_1986",
+          "displayOrder": 16
+        },
+        {
+          "code": "PEKING_OPERA_BLUES_1986",
+          "displayOrder": 17
+        },
+        {
+          "code": "CITY_ON_FIRE_1987",
+          "displayOrder": 18
+        },
+        {
+          "code": "HISTOIRE_DE_FANT_MES_CHINOIS_1987",
+          "displayOrder": 19
+        },
+        {
+          "code": "ROUGE_1987",
+          "displayOrder": 20
+        },
+        {
+          "code": "AS_TEARS_GO_BY_1988",
+          "displayOrder": 21
+        },
+        {
+          "code": "PEDICAB_DRIVER_1989",
+          "displayOrder": 22
+        },
+        {
+          "code": "THE_KILLER_1989",
+          "displayOrder": 23
+        },
+        {
+          "code": "BULLET_IN_THE_HEAD_1990",
+          "displayOrder": 24
+        },
+        {
+          "code": "NOS_ANNEES_SAUVAGES_1990",
+          "displayOrder": 25
+        },
+        {
+          "code": "IL_TAIT_UNE_FOIS_EN_CHINE_1991",
+          "displayOrder": 26
+        },
+        {
+          "code": "HARD_BOILED_1992",
+          "displayOrder": 27
+        },
+        {
+          "code": "LA_MARI_E_AUX_CHEVEUX_BLANCS_1993",
+          "displayOrder": 28
+        },
+        {
+          "code": "CHUNGKING_EXPRESS_1994_KAR_WAI",
+          "displayOrder": 29
+        },
+        {
+          "code": "FALLEN_ANGELS_1995",
+          "displayOrder": 30
+        },
+        {
+          "code": "COMRADES_ALMOST_A_LOVE_STORY_1996",
+          "displayOrder": 31
+        },
+        {
+          "code": "HAPPY_TOGETHER_1997_KAR_WAI",
+          "displayOrder": 32
+        },
+        {
+          "code": "MADE_IN_HONG_KONG_1997",
+          "displayOrder": 33
+        },
+        {
+          "code": "THE_MISSION_1999",
+          "displayOrder": 34
+        },
+        {
+          "code": "IN_THE_MOOD_FOR_LOVE_2000_KAR_WAI",
+          "displayOrder": 35
+        }
+      ],
+      "characteristicCodes": [
+        "HONG_KONG_NEW_WAVE"
+      ],
+      "countryCodes": [
+        "HONG_KONG"
+      ],
+      "track": "DARKROOM"
+    },
+    {
+      "code": "COLLECTION_020",
+      "displayOrder": 20,
+      "name": "Cinéma américain post-Nouvel Hollywood",
+      "description": "Quand le cinéma américain réinvente l'indépendance après la révolution des années 70.",
+      "longDescription": "Au début des années 1980, les studios reprennent progressivement la main, mais la génération de Scorsese continue de chercher de nouvelles formes. Dans son sillage, Jarmusch, les frères Coen, Spike Lee, Lynch, Tarantino ou Paul Thomas Anderson font émerger une nouvelle génération d'auteurs, entre cinéma indépendant et Hollywood. Des années 80 aux années 2000, les genres se déplacent, les frontières entre cinéma indépendant et grand studio deviennent poreuses et de nouvelles voix s'imposent. De Raging Bull à There Will Be Blood, cette collection raconte ce que devient le cinéma américain après la fin du grand âge des années 70.",
+      "isPublished": true,
+      "movies": [
+        {
+          "code": "RAGING_BULL_1980",
+          "displayOrder": 1
+        },
+        {
+          "code": "THE_KING_OF_COMEDY_1982",
+          "displayOrder": 2
+        },
+        {
+          "code": "STRANGER_THAN_PARADISE_1984",
+          "displayOrder": 3
+        },
+        {
+          "code": "AFTER_HOURS_1985",
+          "displayOrder": 4
+        },
+        {
+          "code": "BLOOD_SIMPLE_1984",
+          "displayOrder": 5
+        },
+        {
+          "code": "BLUE_VELVET_1986",
+          "displayOrder": 6
+        },
+        {
+          "code": "DO_THE_RIGHT_THING_1989",
+          "displayOrder": 7
+        },
+        {
+          "code": "LES_AFFRANCHIS_1990",
+          "displayOrder": 8
+        },
+        {
+          "code": "MILLER_S_CROSSING_1990",
+          "displayOrder": 9
+        },
+        {
+          "code": "LE_SILENCE_DES_AGNEAUX_1991",
+          "displayOrder": 10
+        },
+        {
+          "code": "RESERVOIR_DOGS_1992",
+          "displayOrder": 11
+        },
+        {
+          "code": "FARGO_1996",
+          "displayOrder": 12
+        },
+        {
+          "code": "BOOGIE_NIGHTS_1997",
+          "displayOrder": 13
+        },
+        {
+          "code": "THE_TRUMAN_SHOW_1998",
+          "displayOrder": 14
+        },
+        {
+          "code": "BEING_JOHN_MALKOVICH_1999",
+          "displayOrder": 15
+        },
+        {
+          "code": "FIGHT_CLUB_1999",
+          "displayOrder": 16
+        },
+        {
+          "code": "MAGNOLIA_1999",
+          "displayOrder": 17
+        },
+        {
+          "code": "LOST_IN_TRANSLATION_2003",
+          "displayOrder": 18
+        },
+        {
+          "code": "THERE_WILL_BE_BLOOD_2007",
+          "displayOrder": 19
+        }
+      ],
+      "characteristicCodes": [],
+      "countryCodes": [
+        "USA"
+      ],
+      "track": "DARKROOM"
+    },
+    {
+      "code": "COLLECTION_021",
+      "displayOrder": 21,
+      "name": "Cinéma Surréaliste et Onirique",
+      "description": "Quand le cinéma cesse de raconter le monde pour inventer ses propres règles.",
+      "longDescription": "Du surréalisme de Buñuel et Cocteau aux visions de Jodorowsky, de la déformation du récit chez Resnais aux labyrinthes de David Lynch, certains cinéastes utilisent la fiction pour faire vaciller nos repères. Le temps se brise, les identités se dédoublent, les espaces deviennent mentaux et les images cessent parfois d'obéir à une logique réaliste. Cette collection traverse un cinéma qui reste profondément narratif ou poétique tout en repoussant les conventions du récit, de la mise en scène et du montage. Ici, l'expérimentation ne consiste pas seulement à abandonner les règles : elle consiste à en inventer de nouvelles.",
+      "isPublished": true,
+      "movies": [
+        {
+          "code": "UN_CHIEN_ANDALOU_1929",
+          "displayOrder": 1
+        },
+        {
+          "code": "LE_SANG_D_UN_PO_TE_1930",
+          "displayOrder": 2
+        },
+        {
+          "code": "LES_ENFANTS_TERRIBLES_1950",
+          "displayOrder": 3
+        },
+        {
+          "code": "L_ANNEE_DERNIERE_A_MARIENBAD_1961",
+          "displayOrder": 4
+        },
+        {
+          "code": "EL_TOPO_1970",
+          "displayOrder": 5
+        },
+        {
+          "code": "VALERIE_ET_LA_SEMAINE_DES_MERVEILLES_1970",
+          "displayOrder": 6
+        },
+        {
+          "code": "LE_CHARME_DISCRET_DE_LA_BOURGEOISIE_1972",
+          "displayOrder": 7
+        },
+        {
+          "code": "HOLY_MOUNTAIN_THE_1973",
+          "displayOrder": 8
+        },
+        {
+          "code": "LE_MIROIR_1975",
+          "displayOrder": 9
+        },
+        {
+          "code": "ERASERHEAD_1977",
+          "displayOrder": 10
+        },
+        {
+          "code": "VIDEODROME_1983",
+          "displayOrder": 11
+        },
+        {
+          "code": "BRAZIL_1985",
+          "displayOrder": 12
+        },
+        {
+          "code": "BLUE_VELVET_1986",
+          "displayOrder": 13
+        },
+        {
+          "code": "LOST_HIGHWAY_1997",
+          "displayOrder": 14
+        },
+        {
+          "code": "ENTER_THE_VOID_2009",
+          "displayOrder": 15
+        },
+        {
+          "code": "HOLY_MOTORS_2012",
+          "displayOrder": 16
+        }
+      ],
+      "characteristicCodes": [
+        "SURREALISME"
+      ],
+      "countryCodes": [],
+      "track": "DARKROOM"
+    },
+    {
+      "code": "COLLECTION_022",
+      "displayOrder": 22,
+      "name": "Post-néoréalisme italien",
+      "description": "Le cinéma italien se libère du réel et invente de nouvelles formes.",
+      "longDescription": "Après le néoréalisme, le cinéma italien ne revient pas au studio : il transforme le monde. Fellini fait de la mémoire et du spectacle une matière baroque, Antonioni filme l'aliénation et les paysages modernes, Visconti passe du peuple à l'aristocratie et à la fresque historique. Pasolini mêle cinéma, politique, religion et mythologie tandis que Bertolucci, Rosi ou Bellocchio prolongent cette effervescence dans les années 1960 et 1970. De La dolce vita à Salò, de L'Avventura au Guépard, cette collection suit un cinéma italien qui ne cherche plus seulement à montrer la réalité : il cherche à comprendre ce qu'elle est devenue.",
+      "isPublished": true,
+      "movies": [
+        {
+          "code": "LA_STRADA_1954",
+          "displayOrder": 1
+        },
+        {
+          "code": "IL_GRIDO_1957",
+          "displayOrder": 2
+        },
+        {
+          "code": "LES_NUITS_DE_CABIRIA_1957",
+          "displayOrder": 3
+        },
+        {
+          "code": "LA_DOLCE_VITA_1960",
+          "displayOrder": 4
+        },
+        {
+          "code": "L_AVVENTURA_1960",
+          "displayOrder": 5
+        },
+        {
+          "code": "ROCCO_ET_SES_FRERES_1960",
+          "displayOrder": 6
+        },
+        {
+          "code": "ACCATTONE_1961",
+          "displayOrder": 7
+        },
+        {
+          "code": "HUIT_ET_DEMI_1963",
+          "displayOrder": 8
+        },
+        {
+          "code": "LE_GUEPARD_1963",
+          "displayOrder": 9
+        },
+        {
+          "code": "LE_DESERT_ROUGE_1964",
+          "displayOrder": 10
+        },
+        {
+          "code": "LES_POINGS_DANS_LES_POCHES_1965",
+          "displayOrder": 11
+        },
+        {
+          "code": "L_EVANGILE_SELON_SAINT_MATTHIEU_1964",
+          "displayOrder": 12
+        },
+        {
+          "code": "ENQU_TE_SUR_UN_CITOYEN_AU_DESSUS_DE_TOUT_SOUP_ON_1970",
+          "displayOrder": 13
+        },
+        {
+          "code": "LE_CONFORMISTE_1970",
+          "displayOrder": 14
+        },
+        {
+          "code": "LE_JARDIN_DES_FINZI_CONTINI_1970",
+          "displayOrder": 15
+        },
+        {
+          "code": "MORT_A_VENISE_1971",
+          "displayOrder": 16
+        },
+        {
+          "code": "CADAVRES_EXQUIS_1976",
+          "displayOrder": 17
+        },
+        {
+          "code": "LE_CASANOVA_DE_FEDERICO_FELLINI_1976",
+          "displayOrder": 18
+        },
+        {
+          "code": "NOVECENTO_1976",
+          "displayOrder": 19
+        },
+        {
+          "code": "SALO_OU_LES_120_JOURNEES_DE_SODOME_1975",
+          "displayOrder": 20
+        }
+      ],
+      "characteristicCodes": [],
+      "countryCodes": [
+        "ITALY"
+      ],
+      "track": "CINEMATHEQUE"
+    },
+    {
+      "code": "COLLECTION_023",
+      "displayOrder": 23,
+      "name": "Nouvelle Vague tchécoslovaque",
+      "description": "Une génération de cinéastes fait exploser les règles du cinéma d'État.",
+      "longDescription": "Au début des années 1960, une nouvelle génération tchécoslovaque transforme la comédie, le récit social et le cinéma politique. Miloš Forman observe avec ironie une jeunesse qui étouffe, Věra Chytilová détruit les conventions narratives, Jiří Menzel mêle humour et mélancolie, tandis que Jan Němec et Juraj Herz poussent le cinéma vers l'absurde, l'angoisse et l'allégorie. Entre liberté créative et contrôle politique, cette génération fait naître l'un des cinémas les plus inventifs du bloc de l'Est. Les Amours d'une blonde, Les Petites Marguerites ou Trains étroitement surveillés ne ressemblent pas toujours à une même école : ils partagent surtout le sentiment qu'il faut trouver une nouvelle manière de regarder le monde.",
+      "isPublished": true,
+      "movies": [
+        {
+          "code": "LE_SOLEIL_DANS_UN_FILET_1962",
+          "displayOrder": 1
+        },
+        {
+          "code": "QUELQUE_CHOSE_D_AUTRE_1963",
+          "displayOrder": 2
+        },
+        {
+          "code": "LES_DIAMANTS_DE_LA_NUIT_1964",
+          "displayOrder": 3
+        },
+        {
+          "code": "CLAIRAGE_INTIME_1965",
+          "displayOrder": 4
+        },
+        {
+          "code": "LOVES_OF_A_BLONDE_1965",
+          "displayOrder": 5
+        },
+        {
+          "code": "THE_SHOP_ON_MAIN_STREET_1965",
+          "displayOrder": 6
+        },
+        {
+          "code": "LA_F_TE_ET_LES_INVIT_S_1966",
+          "displayOrder": 7
+        },
+        {
+          "code": "LES_PETITES_MARGUERITES_1966",
+          "displayOrder": 8
+        },
+        {
+          "code": "TRAINS_ETROITEMENT_SURVEILLES_1966",
+          "displayOrder": 9
+        },
+        {
+          "code": "MARKETA_LAZAROVA_1967",
+          "displayOrder": 10
+        },
+        {
+          "code": "THE_FIREMEN_S_BALL_1967",
+          "displayOrder": 11
+        },
+        {
+          "code": "UN_T_CAPRICIEUX_1968",
+          "displayOrder": 12
+        },
+        {
+          "code": "LA_PLAISANTERIE_1968",
+          "displayOrder": 13
+        },
+        {
+          "code": "LES_OISEAUX_LES_ORPHELINS_ET_LES_FOUS_1969",
+          "displayOrder": 14
+        },
+        {
+          "code": "LE_CR_MATEUR_1969",
+          "displayOrder": 15
+        },
+        {
+          "code": "VALERIE_ET_LA_SEMAINE_DES_MERVEILLES_1970",
+          "displayOrder": 16
+        }
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_TCHEQUE"
+      ],
+      "countryCodes": [
+        "CZECH"
+      ],
+      "track": "CINEMATHEQUE"
+    },
+    {
+      "code": "COLLECTION_024",
+      "displayOrder": 24,
+      "name": "Cinéma Chinois - Cinquième Génération",
+      "description": "Après la Révolution culturelle, une génération réinvente le regard chinois.",
+      "longDescription": "Diplômés de l'Académie de cinéma de Pékin au début des années 1980, les cinéastes de la Cinquième Génération rompent avec les formes du cinéma maoïste pour regarder l'histoire chinoise autrement. Chen Kaige, Zhang Yimou et Tian Zhuangzhuang transforment les paysages, les couleurs, les traditions et les destins individuels en matières cinématographiques, tandis que d'autres cinéastes explorent la comédie, la mémoire politique ou les marges de la société. De *Terre jaune* au *Cerf-volant bleu*, leurs films confrontent l'individu à une histoire faite de bouleversements, de violences et de traditions. Cette génération fait connaître le cinéma chinois sur la scène internationale tout en repoussant les limites de ce qu'il est possible de montrer en Chine.",
+      "isPublished": true,
+      "movies": [
+        {
+          "code": "UN_ET_HUIT_1983",
+          "displayOrder": 1
+        },
+        {
+          "code": "YELLOW_EARTH_1984",
+          "displayOrder": 2
+        },
+        {
+          "code": "L_INCIDENT_DU_CANON_NOIR_1985",
+          "displayOrder": 3
+        },
+        {
+          "code": "LE_VOLEUR_DE_CHEVAUX_1986",
+          "displayOrder": 4
+        },
+        {
+          "code": "LE_ROI_DES_ENFANTS_1987",
+          "displayOrder": 5
+        },
+        {
+          "code": "LE_VIEUX_PUITS_1987",
+          "displayOrder": 6
+        },
+        {
+          "code": "RED_SORGHUM_1987",
+          "displayOrder": 7
+        },
+        {
+          "code": "JU_DOU_1990",
+          "displayOrder": 8
+        },
+        {
+          "code": "EPOUSES_ET_CONCUBINES_1991_YIMOU",
+          "displayOrder": 9
+        },
+        {
+          "code": "LA_VIE_SUR_UN_FIL_1991",
+          "displayOrder": 10
+        },
+        {
+          "code": "QIU_JU_UNE_FEMME_CHINOISE_1992",
+          "displayOrder": 11
+        },
+        {
+          "code": "FAREWELL_MY_CONCUBINE_1993",
+          "displayOrder": 12
+        },
+        {
+          "code": "THE_BLUE_KITE_1993",
+          "displayOrder": 13
+        },
+        {
+          "code": "VIVRE_1994",
+          "displayOrder": 14
+        },
+        {
+          "code": "LA_LUNE_TENTATRICE_1996",
+          "displayOrder": 15
+        },
+        {
+          "code": "L_EMPEREUR_ET_L_ASSASSIN_1998",
+          "displayOrder": 16
+        }
+      ],
+      "characteristicCodes": [
+        "CINQUIEME_GENERATION_CHINOISE"
+      ],
+      "countryCodes": [
+        "CHINA"
+      ],
+      "track": "CINEMATHEQUE"
+    },
+    {
+      "code": "COLLECTION_025",
+      "displayOrder": 25,
+      "name": "Cinéma Documentaire",
+      "description": "Quand le cinéma cesse de jouer la réalité pour tenter de la regarder.",
+      "longDescription": "Du regard ethnographique de Robert Flaherty au cinéma-vérité, du montage politique de Dziga Vertov aux portraits patients de Frederick Wiseman, le documentaire n'est jamais une simple copie du réel. Filmer implique de choisir, cadrer, monter, interroger et parfois provoquer. Cette collection traverse les grandes formes documentaires : observation, propagande, enquête, film-essai et cinéma direct. Elle montre comment des cinéastes ont utilisé une caméra tournée vers le monde pour inventer des formes aussi diverses que Nanouk l'Esquimau, L'Homme à la caméra, Chronique d'un été ou Titicut Follies. Le documentaire n'est pas l'absence de mise en scène : c'est une autre manière de la penser.",
+      "isPublished": true,
+      "movies": [
+        {
+          "code": "NANOUK_L_ESQUIMAU_1922",
+          "displayOrder": 1
+        },
+        {
+          "code": "DRIFTERS_1929",
+          "displayOrder": 2
+        },
+        {
+          "code": "L_HOMME_A_LA_CAMERA_1929",
+          "displayOrder": 3
+        },
+        {
+          "code": "NIGHT_MAIL_1936",
+          "displayOrder": 4
+        },
+        {
+          "code": "LISTEN_TO_BRITAIN_1942",
+          "displayOrder": 5
+        },
+        {
+          "code": "LES_MA_TRES_FOUS_1955",
+          "displayOrder": 6
+        },
+        {
+          "code": "NUIT_ET_BROUILLARD_1955",
+          "displayOrder": 7
+        },
+        {
+          "code": "PRIMARY_1960",
+          "displayOrder": 8
+        },
+        {
+          "code": "CHRONIQUE_D_UN_ETE_1961",
+          "displayOrder": 9
+        },
+        {
+          "code": "LE_JOLI_MAI_1963",
+          "displayOrder": 10
+        },
+        {
+          "code": "DONT_LOOK_BACK_1967",
+          "displayOrder": 11
+        },
+        {
+          "code": "TITICUT_FOLLIES_1967",
+          "displayOrder": 12
+        },
+        {
+          "code": "SALESMAN_1969",
+          "displayOrder": 13
+        },
+        {
+          "code": "GIMME_SHELTER_1970",
+          "displayOrder": 14
+        },
+        {
+          "code": "GREY_GARDENS_1975",
+          "displayOrder": 15
+        },
+        {
+          "code": "HARLAN_COUNTY_U_S_A_1976",
+          "displayOrder": 16
+        },
+        {
+          "code": "SANS_SOLEIL_1983",
+          "displayOrder": 17
+        },
+        {
+          "code": "SHOAH_1985",
+          "displayOrder": 18
+        },
+        {
+          "code": "THE_THIN_BLUE_LINE_1988",
+          "displayOrder": 19
+        },
+        {
+          "code": "HOOP_DREAMS_1994",
+          "displayOrder": 20
+        }
+      ],
+      "characteristicCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "countryCodes": [],
+      "track": "CINEMATHEQUE"
+    },
+    {
+      "code": "COLLECTION_026",
+      "displayOrder": 26,
+      "name": "Cinéma Expérimental et Formel",
+      "description": "Quand le cinéma ne cherche plus à raconter, mais à explorer ce que peut être une image.",
+      "longDescription": "Ici, le film devient une expérience de perception plutôt qu'un récit. La pellicule est grattée, peinte ou exposée, la caméra devient un dispositif, le temps s'étire jusqu'à l'épuisement et le montage peut disparaître presque entièrement. De Man Ray à Maya Deren, de Brakhage à Warhol et Michael Snow, ces cinéastes déplacent le cinéma vers l'abstraction, la matière, la durée et la perception. Il ne s'agit plus de détourner les règles du récit : il s'agit de découvrir ce qui reste du cinéma lorsqu'on commence à les abandonner.",
+      "isPublished": true,
+      "movies": [
+        {
+          "code": "LE_RETOUR_A_LA_RAISON_1923",
+          "displayOrder": 1
+        },
+        {
+          "code": "ENTR_ACTE_1924",
+          "displayOrder": 2
+        },
+        {
+          "code": "MESHES_OF_THE_AFTERNOON_1943",
+          "displayOrder": 3
+        },
+        {
+          "code": "MOTHLIGHT_1963",
+          "displayOrder": 4
+        },
+        {
+          "code": "DOG_STAR_MAN_1964",
+          "displayOrder": 5
+        },
+        {
+          "code": "EMPIRE_WARHOL_1964",
+          "displayOrder": 6
+        },
+        {
+          "code": "SCORPIO_RISING_1963",
+          "displayOrder": 7
+        },
+        {
+          "code": "WAVELENGTH_1967",
+          "displayOrder": 8
+        },
+        {
+          "code": "T_O_U_C_H_I_N_G_1968",
+          "displayOrder": 9
+        },
+        {
+          "code": "SERENE_VELOCITY_1970",
+          "displayOrder": 10
+        }
+      ],
+      "characteristicCodes": [
+        "CINEMA_EXPERIMENTAL"
+      ],
+      "countryCodes": [],
+      "track": "OFFSCREEN"
     }
   ],
   "rankings": [

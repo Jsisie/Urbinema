@@ -12,7 +12,7 @@
 >
 > Les éléments **imposés par Léo** sont signalés par la mention **[imposé]**. Le reste relève de ma proposition.
 >
-> **0.3.0 —** Pendant le chargement du catalogue, fond blanc plein écran et icône de l’app (plus le texte « Votre aventure commence ici »). Après le pseudo, un carrousel de 6 pages (intro, Accueil, Atlas, Collections, futur Parcours, Profil), rejouable dans Réglages (« Revoir le guide »). « Voir toutes les sources » sous les crédits. Index A–Z blanc (couleur du texte, pas l’or) sur pays, courants, genres et réalisateurs. Appui long sur un film d’une liste → confirmer Vu. La chaîne des rangs s’ouvre sur le rang courant. Un nouveau rang ouvre un dialogue avec confettis. Chaque liste de films affiche son effectif en petit.
+> **0.3.0 —** Pendant le chargement du catalogue, fond blanc plein écran et icône de l’app (plus le texte « Votre aventure commence ici »). Après le pseudo, un guide de 6 pages (intro, Accueil, Atlas, Collections, futur Parcours, Profil) dans un panneau d’environ 60 % de l’écran, le reste fortement flouté. Rejouable dans Réglages (« Revoir le guide »). « Voir toutes les sources » sous les crédits. Index A–Z blanc (couleur du texte, pas l’or) sur pays, courants, genres et réalisateurs. Appui long sur un film d’une liste → confirmer Vu. La chaîne des rangs s’ouvre sur le rang courant. Un nouveau rang ouvre un dialogue avec confettis. Chaque liste de films affiche son effectif en petit.
 
 ------
 
@@ -845,7 +845,7 @@ Roue en haut à droite : choisir jusqu’à 3 badges débloqués pour le Profil.
 
 L’onglet Collections groupe les fiches sous les cinq intitulés de `track`
 (Premières séances, Ciné-club, Salle obscure, Cinémathèque, Hors-champ).
-**Initiation** est toujours en tête, toujours ouverte.
+Le pack 24 en compte 27. **Initiation** est toujours en tête, toujours ouverte.
 
 Collections verrouillées : niveaux de gris + cadenas, non ouvrables, dialogue
 §7.2 (Initiation : ≥ 1 Vu ; palier suivant : 2 collections commencées).
