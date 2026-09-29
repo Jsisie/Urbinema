@@ -281,7 +281,8 @@
     <string name="sources_site_sight">Sight &amp; Sound / BFI, sondage décennal 2022 (critiques et réalisateurs).</string>
     <string name="sources_site_ebert">Roger Ebert, Great Movies (livres et archives rogerebert.com).</string>
     <string name="sources_site_festivals">Palmarès et archives des festivals internationaux : Cannes, Venise, Berlin, FESPACO, Golden Horse, Sundance.</string>
-    <string name="sources_site_tmdb">The Movie Database (TMDB), pour les affiches embarquées. Les données de l’app restent locales.</string>
+    <string name="sources_site_tmdb">The Movie Database (TMDB), pour les affiches embarquées et les biographies de réalisateurs. Les données de l’app restent locales.</string>
+    <string name="sources_site_wikipedia">Wikipédia, textes des biographies de réalisateurs (licence CC BY-SA), repris via TMDB.</string>
     <string name="sources_site_kmdb">KMDb, base officielle du Korean Film Archive.</string>
     <string name="sources_site_cahiers">Les Cahiers du cinéma et Positif.</string>
     <string name="sources_site_criticism">Dossiers rétrospectifs : British Film Institute (Sight &amp; Sound) et la liste historique de CNN sur les chefs-d’œuvre du cinéma asiatique.</string>

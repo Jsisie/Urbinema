@@ -169,6 +169,7 @@ class CatalogImporter(
                     lastName = value.lastName,
                     displayName = value.displayName,
                     biography = value.biography?.takeIf { it.isNotBlank() },
+                    biographyEn = value.biographyEn?.takeIf { it.isNotBlank() },
                     portraitMediaId = value.portraitMediaCode.idIn(mediaIds),
                     isActive = value.isActive,
                     createdAt = timestamp,

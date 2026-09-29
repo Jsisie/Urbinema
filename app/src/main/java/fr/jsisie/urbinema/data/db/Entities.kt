@@ -124,6 +124,7 @@ data class DirectorEntity(
     val createdAt: Instant,
     val updatedAt: Instant,
     val biography: String? = null,
+    val biographyEn: String? = null,
 )
 
 @Entity(

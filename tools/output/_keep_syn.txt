@@ -1,0 +1,10 @@
+LA_PASSION_DE_JEANNE_DARC_1928	La Passion de Jeanne d'Arc	56	Le procès de Jeanne, collé aux visages, jusqu'au bûcher.
+KES_1969	Kes	80	Un garçon de Barnsley dresse un crécerelle pour échapper à l'école et à la mine.
+BERLIN_ALEXANDERPLATZ_1980	Berlin Alexanderplatz	68	Franz Biberkopf sort de prison et Berlin des années 1920 le reprend.
+LA_MAISON_EST_NOIRE_1963	La Maison est noire	77	Une vision poétique de la vie des lépreux de Babadaghi, léproserie de Tabriz.
+DIMENSIONS_OF_DIALOGUE_1982	Dimensions of Dialogue	64	Des têtes d'objets se dévorent jusqu'à n'être plus que bouillie.
+LIMITE_1931	Limite	69	Trois naufragés dérivent, entrecoupés de souvenirs presque abstraits.
+WAVELENGTH_1967	Wavelength	75	Un zoom de quarante-cinq minutes traverse un loft jusqu'à une photo de mer.
+BODY_AND_SOUL_1925	Body and Soul	65	Un faux révérend tyrannise une communauté noire, jusqu'au réveil.
+L_HEURE_DES_FOURNEAUX_1968	L'Heure des fourneaux	70	Un essai militant sur le néocolonialisme, à projeter et à interrompre.
+LE_CHACAL_DE_NAHUELTORO_1969	Le Chacal de Nahueltoro	73	Un analphabète massacre une famille, apprend à lire, et l'État l'exécute.

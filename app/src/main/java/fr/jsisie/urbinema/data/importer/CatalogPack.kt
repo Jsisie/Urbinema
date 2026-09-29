@@ -68,6 +68,7 @@ data class DirectorImport(
     val lastName: String,
     val displayName: String,
     val biography: String? = null,
+    val biographyEn: String? = null,
     val portraitMediaCode: String? = null,
     val characteristicCodes: List<String> = emptyList(),
     val isActive: Boolean = true,

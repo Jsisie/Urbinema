@@ -242,5 +242,6 @@ fun SourcesScreen() {
         item { Text(stringResource(R.string.sources_site_cahiers)) }
         item { Text(stringResource(R.string.sources_site_criticism)) }
         item { Text(stringResource(R.string.sources_site_tmdb)) }
+        item { Text(stringResource(R.string.sources_site_wikipedia)) }
     }
 }

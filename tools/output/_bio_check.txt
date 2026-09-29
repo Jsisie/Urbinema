@@ -1,0 +1,7 @@
+legacy_type=str legacy_len=2941
+legacy_fr=True
+fetch_fr=2847 fetch_en=2204 status=OK
+legacy_keys=728 lang_keys=804
+stripped_len=2847 equal_en=False
+catalog_fr=2847 catalog_en=2204
+catalog_both=243

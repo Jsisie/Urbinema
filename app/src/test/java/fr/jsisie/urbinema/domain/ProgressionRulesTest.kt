@@ -61,10 +61,10 @@ class ProgressionRulesTest {
     fun `duration rules are strictly over three and five hours`() {
         val registry = BadgeRegistry.initial()
         assertFalse(registry.require(code("027")).holds(
-            (1..10).map { movie("THREE_$it", duration = 180) },
+            (1..20).map { movie("THREE_$it", duration = 180) },
         ))
         assertTrue(registry.require(code("027")).holds(
-            (1..10).map { movie("LONG_$it", duration = 181) },
+            (1..20).map { movie("LONG_$it", duration = 181) },
         ))
         assertFalse(registry.require(code("028")).holds(
             (1..5).map { movie("FIVE_$it", duration = 300) },
@@ -74,12 +74,15 @@ class ProgressionRulesTest {
     @Test
     fun `era badges use the doubled cinephile thresholds`() {
         val registry = BadgeRegistry.initial()
-        assertFalse(registry.require(code("015")).holds((1..19).map { movie("PRE50_$it", year = 1949) }))
-        assertTrue(registry.require(code("015")).holds((1..20).map { movie("PRE50_$it", year = 1949) }))
-        assertFalse(registry.require(code("016")).holds((1..59).map { movie("PRE60_$it", year = 1959) }))
-        assertTrue(registry.require(code("016")).holds((1..60).map { movie("PRE60_$it", year = 1959) }))
-        assertFalse(registry.require(code("017")).holds((1..199).map { movie("PRE80_$it", year = 1979) }))
-        assertTrue(registry.require(code("017")).holds((1..200).map { movie("PRE80_$it", year = 1979) }))
+        assertFalse(registry.require(code("015")).holds((1..39).map { movie("PRE50_$it", year = 1949) }))
+        assertTrue(registry.require(code("015")).holds((1..40).map { movie("PRE50_$it", year = 1949) }))
+        assertFalse(registry.require(code("016")).holds((1..99).map { movie("PRE60_$it", year = 1959) }))
+        assertTrue(registry.require(code("016")).holds((1..100).map { movie("PRE60_$it", year = 1959) }))
+        assertFalse(registry.require(code("017")).holds((1..299).map { movie("PRE80_$it", year = 1979) }))
+        assertTrue(registry.require(code("017")).holds((1..300).map { movie("PRE80_$it", year = 1979) }))
+        val decades = (1890..2020 step 10).map { movie("DECADE_$it", year = it) }
+        assertFalse(registry.require(code("020")).holds(decades.dropLast(1)))
+        assertTrue(registry.require(code("020")).holds(decades))
     }
 
     @Test

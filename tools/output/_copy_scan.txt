@@ -1,0 +1,12 @@
+v1=405 v3=1538 v1_in_v3_short_lt160=371
+len_min=44 p50=70 max=960
+missing_decades=[]
+wiki_bios=269
+AKIRA_KUROSAWA	Source: Article "Akira Kurosawa" de Wikipédia en français, soumis à la licence CC-BY-SA 3.0.
+ROBERTO_ROSSELLINI	Source: Article "Roberto Rossellini" de Wikipédia en français, soumis à la licence CC-BY-SA 3.0.
+AGNES_VARDA	Source: Article "Agnès Varda" de Wikipédia en français, soumis à la licence CC-BY-SA 3.0.
+GEORGES_MELIES	©Wikipedia
+GIOVANNI_PASTRONE	Description above from the Wikipedia article Giovanni Pastrone, licensed under CC-BY-SA, full list of contributors on Wikipedia.
+ABEL_GANCE	Source: Article "Abel Gance" de Wikipédia en français, soumis à la licence CC-BY-SA 3.0.
+ERICH_VON_STROHEIM	Source: Article "Erich von Stroheim" de Wikipédia en français, soumis à la licence CC-BY-SA 3.0.
+RENE_CLAIR	Source: Article "René Clair" de Wikipédia en français, soumis à la licence CC-BY-SA 3.0.

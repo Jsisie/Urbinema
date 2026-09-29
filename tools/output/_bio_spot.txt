@@ -1,0 +1,22 @@
+version=28 movies=1538 directors=804
+bios_both=242 fr_only=9 en_only=473 none=80 tiny=1
+MIKE_NICHOLS	biography	len=0	head=	tail=
+MIKE_NICHOLS	biographyEn	len=2733	head=Mike Nichols (born Mikhail Igor Peschkowsky; November 6, 1931 – November 19, 2014) was a German-born American film and t	tail=ional Medal of Arts in 2001, the Kennedy Center Honors in 2003 and the AFI Life Achievement Award in 2010. His films garnered a total of 42 Academy Award nominations and seven wins
+AKIRA_KUROSAWA	biography	len=2846	head=Akira Kurosawa (黒澤 明, Kurosawa Akira) est un réalisateur, producteur, scénariste et monteur japonais, né le 23 mars 1910	tail=e de sept enfants. Deux d’entre eux sont presqu’adultes à sa naissance, et une de ses sœurs meurt peu de temps après. Kurosawa ne grandit alors qu’avec trois de ses frères et sœurs
+AKIRA_KUROSAWA	biographyEn	len=2203	head=Akira Kurosawa (黒澤 明) was a Japanese filmmaker and painter who directed thirty films in a career spanning over five deca	tail=nt of Asia in the 20th century. His career has been honored by many retrospectives, critical studies and biographies in both print and video, and by releases in many consumer media
+CHING_SIU_TUNG	biography	len=0	head=	tail=
+CHING_SIU_TUNG	biographyEn	len=251	head=Tony Ching Siu-Tung (traditional Chinese: 程小東 (born 1953) is a Hong Kong action choreographer, film director, actor and 	tail=g action choreographer, film director, actor and film producer, who has directed over 20 films, including the critically acclaimed supernatural fantasy A Chinese Ghost Story (1987)
+FRANCIS_FORD_COPPOLA	biography	len=1959	head=Francis Ford Coppola (né le 7 avril 1939) est un réalisateur, producteur et scénariste américain. Il est largement recon	tail=but des années 1990 aient été saluées par la critique, le travail ultérieur de Coppola n'a pas rencontré le même niveau de succès critique et commercial que ses films des années 70
+FRANCIS_FORD_COPPOLA	biographyEn	len=1818	head=Francis Ford Coppola (born April 7, 1939) is an American filmmaker. He is widely acclaimed as one of Hollywood's most ce	tail=some of Coppola's ventures in the 1980s and early 1990s were critically lauded, Coppola's later work has not met the same level of critical and commercial success as his '70s films
+film=AUTANT_EN_EMPORTE_LE_VENT_1939 syn_len=420
+En Géorgie, en 1861, Scarlett O'Hara est une jeune femme fière et volontaire de la haute société sudiste. Courtisée par tous les bons partis du pays, elle n'a d'yeux que pour Ashley Wilkes malgré ses fiançailles avec sa douce et timide cousine, Melanie Hamilton. Scarlett est pourtant bien décidée à le faire changer d'avis, mais à la réception des Douze Chênes c'est du cynique Rhett Butler qu'elle 
+badge 002: Voir 20 films.
+badge 003: Voir 100 films.
+badge 004: Voir 300 films.
+badge 015: Voir 40 films sortis avant 1950.
+badge 016: Voir 100 films sortis avant 1960.
+badge 017: Voir 300 films sortis avant 1980.
+badge 018: Voir 20 films muets.
+badge 020: Voir un film de chaque décennie, de 1890 à 2020.
+badge 027: Voir 20 films de plus de trois heures.
+BASSEK_BA_KOBHIO	biographyEn	21	Cameroonian filmmaker

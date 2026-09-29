@@ -39,9 +39,9 @@ BADGES — PREMIÈRE FOURNÉE
 
 VOLUME
   Premier Rideau ............ voir son premier film
-  Deuxième Séance ........... voir 10 films
-  Accro au Ciné ............. voir 50 films
-  Collectionneur ............ voir 100 films
+  Deuxième Séance ........... voir 20 films
+  Accro au Ciné ............. voir 100 films
+  Collectionneur ............ voir 300 films
 
 GÉOGRAPHIE
   Passeport Cinéma .......... voir des films de 15 pays différents
@@ -59,12 +59,12 @@ PAYS / CINÉMATOGRAPHIES
   Made in Asia .............. voir 50 films asiatiques
 
 TEMPS
-  Au-delà du Canon .......... voir 20 films sortis avant 1950
-  Archéologue du Cinéma ..... voir 60 films sortis avant 1960
-  Mémoire du Septième Art ... voir 200 films sortis avant 1980
-  Fantômes du Muet .......... voir 10 films muets
+  Au-delà du Canon .......... voir 40 films sortis avant 1950
+  Archéologue du Cinéma ..... voir 100 films sortis avant 1960
+  Mémoire du Septième Art ... voir 300 films sortis avant 1980
+  Fantômes du Muet .......... voir 20 films muets
   Retour aux Sources ........ voir des films de 5 décennies différentes
-  À Travers les Âges ........ voir des films de 8 décennies différentes
+  À Travers les Âges ........ voir un film de chaque décennie, des années 1890 aux années 2020
 
 MOUVEMENTS / GENRES
   Enfant de la Nouvelle Vague  voir 15 films de réalisateurs associés à la
@@ -78,7 +78,7 @@ MOUVEMENTS / GENRES
 FORMES EXIGEANTES
   La Forme avant le Fond .... voir 10 films particulièrement expérimentaux
                               ou non narratifs
-  Le Temps suspendu ......... voir 10 films de plus de 3 heures
+  Le Temps suspendu ......... voir 20 films de plus de 3 heures
   La Grande Traversée ....... voir 5 films de plus de 5 heures
 
 PANORAMA
@@ -110,7 +110,7 @@ Point tranché : le RÉALISATEUR est une entité N-N dès la V1.
 Il est requis par ces badges ET par le calcul de profondeur du rang.
 
 Volumes minimaux impliqués :
-  Mémoire du Septième Art .... ≥ 200 films d'avant 1980 dans le catalogue
+  Mémoire du Septième Art .... ≥ 300 films d'avant 1980 dans le catalogue
   Mappemonde ................. ≥ 1 film pour chaque pays principal du catalogue
   Cabinet des Frayeurs ....... ≥ 30 films d'horreur
   Cartographe du Cinéma ...... ≥ 50 pays représentés

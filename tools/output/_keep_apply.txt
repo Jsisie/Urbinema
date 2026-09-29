@@ -1,0 +1,19 @@
+LA_PASSION_DE_JEANNE_DARC_1928	56->360
+BERLIN_ALEXANDERPLATZ_1980	68->264
+LA_MAISON_EST_NOIRE_1963	77->183
+DIMENSIONS_OF_DIALOGUE_1982	64->96
+LIMITE_1931	69->531
+WAVELENGTH_1967	75->142
+BODY_AND_SOUL_1925	65->167
+L_HEURE_DES_FOURNEAUX_1968	70->575
+LE_CHACAL_DE_NAHUELTORO_1969	73->277
+kes_hit	79243	1969	The Lion is Ready to Jump	236
+kes_hit	492269	1969	The Brothers	224
+kes_hit	642	1969	Butch Cassidy and the Sundance Kid	173
+kes_hit	3116	1969	Midnight Cowboy	223
+kes_hit	306781	1969	Savage Wolf Pack	398
+kes_hit	786433	1969	Star of the Giants - Bloody Final	318
+kes_hit	85484	1969	Daddy's Gone A-Hunting	87
+kes_hit	490639	1969	Two Enemy Women Gamblers	134
+berlin_hit	43189	1980	Berlin Alexanderplatz	264
+skip	KES wrong match

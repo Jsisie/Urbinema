@@ -161,7 +161,7 @@ fun UrbinemaApp(model: UrbinemaViewModel = PreviewUrbinemaViewModel) {
         UrbinemaTheme(model.themeMode) {
             Box(Modifier.fillMaxSize()) {
                 UrbinemaNavigation(model, model.themeMode, model::setThemeMode)
-                if (model.filmGrain) FilmGrainOverlay()
+                if (model.filmGrain) FilmGrainOverlay(dark = UrbinemaThemeTokens.colors.isDark)
                 if (model.needsOnboarding) {
                     OnboardingDialog(
                         avatars = model.availableAvatars,
@@ -246,13 +246,16 @@ private fun Context.withLocale(locale: Locale): Context {
 }
 
 @Composable
-private fun FilmGrainOverlay() {
+private fun FilmGrainOverlay(dark: Boolean) {
+    val wash = if (dark) 0.038f else 0.032f
+    val lightSpeck = if (dark) 0.096f else 0.07f
+    val darkSpeck = if (dark) 0.10f else 0.09f
     Canvas(
         Modifier
             .fillMaxSize()
             .graphicsLayer { compositingStrategy = CompositingStrategy.Offscreen },
     ) {
-        drawRect(Color.Black.copy(alpha = 0.032f))
+        drawRect(Color.Black.copy(alpha = wash))
         val step = 5.dp.toPx()
         var x = 0f
         while (x < size.width) {
@@ -262,13 +265,13 @@ private fun FilmGrainOverlay() {
                 val speck = hash % 8
                 if (speck == 0) {
                     drawCircle(
-                        color = Color.White.copy(alpha = 0.07f),
-                        radius = 0.7.dp.toPx(),
+                        color = Color.White.copy(alpha = lightSpeck),
+                        radius = if (dark) 0.74.dp.toPx() else 0.7.dp.toPx(),
                         center = Offset(x, y),
                     )
                 } else if (speck == 1) {
                     drawCircle(
-                        color = Color.Black.copy(alpha = 0.09f),
+                        color = Color.Black.copy(alpha = darkSpeck),
                         radius = 0.8.dp.toPx(),
                         center = Offset(x, y),
                     )

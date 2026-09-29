@@ -48,9 +48,9 @@ class BadgeRegistry(rules: Map<EditorialCode, BadgeRule>) {
          */
         fun initial(): BadgeRegistry = BadgeRegistry(linkedMapOf(
             code("001") to countAtLeast(1),
-            code("002") to countAtLeast(10),
-            code("003") to countAtLeast(50),
-            code("004") to countAtLeast(100),
+            code("002") to countAtLeast(20),
+            code("003") to countAtLeast(100),
+            code("004") to countAtLeast(300),
             code("005") to distinctCountries(15),
             code("006") to distinctCountries(30),
             code("007") to distinctCountries(50),
@@ -67,12 +67,12 @@ class BadgeRegistry(rules: Map<EditorialCode, BadgeRule>) {
             code("012") to countryCount("JAPAN", 20),
             code("013") to countryCount("FRANCE", 20),
             code("014") to continentCount("ASIA", 50),
-            code("015") to yearBefore(1950, 20),
-            code("016") to yearBefore(1960, 60),
-            code("017") to yearBefore(1980, 200),
-            code("018") to BadgeRule { movies, _ -> movies.count(Movie::isSilent) >= 10 },
+            code("015") to yearBefore(1950, 40),
+            code("016") to yearBefore(1960, 100),
+            code("017") to yearBefore(1980, 300),
+            code("018") to BadgeRule { movies, _ -> movies.count(Movie::isSilent) >= 20 },
             code("019") to distinctDecades(5),
-            code("020") to distinctDecades(8),
+            code("020") to everyDecadeFrom1890To2020(),
             code("021") to BadgeRule { movies, _ ->
                 movies.count { code("NOUVELLE_VAGUE_FRANCAISE") in it.directorCharacteristics } >= 15
             },
@@ -81,7 +81,7 @@ class BadgeRegistry(rules: Map<EditorialCode, BadgeRule>) {
             code("024") to genreCount("FILM_NOIR", 20),
             code("025") to characteristicCount("SPAGHETTI_WESTERN", 15),
             code("026") to BadgeRule { movies, _ -> movies.count(Movie::isExperimental) >= 10 },
-            code("027") to BadgeRule { movies, _ -> movies.count { it.durationMinutes > 180 } >= 10 },
+            code("027") to BadgeRule { movies, _ -> movies.count { it.durationMinutes > 180 } >= 20 },
             code("028") to BadgeRule { movies, _ -> movies.count { it.durationMinutes > 300 } >= 5 },
             code("029") to BadgeRule { movies, _ ->
                 movies.flatMap { movie -> movie.directors.map { it to movie.code } }
@@ -114,6 +114,12 @@ class BadgeRegistry(rules: Map<EditorialCode, BadgeRule>) {
             BadgeRule { movies, _ -> movies.count { code(genre) in it.genres } >= target }
         private fun yearBefore(year: Int, target: Int) =
             BadgeRule { movies, _ -> movies.count { it.releaseYear < year } >= target }
+
+        /** One validated film in every decade from the 1890s through the 2020s. */
+        private fun everyDecadeFrom1890To2020() = BadgeRule { movies, _ ->
+            val seen = movies.map { it.releaseYear / 10 }.toSet()
+            (189..202).all { it in seen }
+        }
         private fun allCatalogCountries() = BadgeRule { movies, catalogCountries ->
             catalogCountries.isNotEmpty() &&
                 catalogCountries.all { country -> movies.any { it.primaryCountry == country } }

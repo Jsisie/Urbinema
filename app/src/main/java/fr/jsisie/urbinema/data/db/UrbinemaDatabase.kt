@@ -26,7 +26,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         RankEngineConfigEntity::class, RankThresholdEntity::class,
         CatalogDimensionStatEntity::class, UserProgressStateEntity::class,
     ],
-    version = 8,
+    version = 9,
     exportSchema = true,
 )
 @TypeConverters(UrbinemaConverters::class)
@@ -48,7 +48,7 @@ abstract class UrbinemaDatabase : RoomDatabase() {
             Room.databaseBuilder(context, UrbinemaDatabase::class.java, DATABASE_NAME)
                 .addMigrations(
                     MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6,
-                    MIGRATION_6_7, MIGRATION_7_8,
+                    MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9,
                 )
                 .fallbackToDestructiveMigration(true)
                 .addCallback(SchemaCallback)
@@ -133,10 +133,21 @@ abstract class UrbinemaDatabase : RoomDatabase() {
             // Room compare le schéma juste après la migration. Cet index partiel
             // n'est pas dans les annotations : onOpen l'a déjà créé sur la base v7.
             // On le retire pour le contrôle, onOpen le recrée ensuite.
-            database.execSQL("DROP INDEX IF EXISTS `$PRIMARY_COUNTRY_INDEX`")
+            dropPartialCountryIndex(database)
             if (!hasColumn(database, "directors", "biography")) {
                 database.execSQL("ALTER TABLE directors ADD COLUMN biography TEXT")
             }
+        }
+
+        val MIGRATION_8_9 = Migration(8, 9) { database ->
+            dropPartialCountryIndex(database)
+            if (!hasColumn(database, "directors", "biographyEn")) {
+                database.execSQL("ALTER TABLE directors ADD COLUMN biographyEn TEXT")
+            }
+        }
+
+        private fun dropPartialCountryIndex(database: SupportSQLiteDatabase) {
+            database.execSQL("DROP INDEX IF EXISTS `$PRIMARY_COUNTRY_INDEX`")
         }
 
         private fun hasColumn(database: SupportSQLiteDatabase, table: String, column: String): Boolean {

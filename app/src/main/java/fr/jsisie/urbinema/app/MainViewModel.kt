@@ -923,7 +923,7 @@ class MainViewModel(
                 director.displayName,
                 films,
                 collectionState.filter { collection -> collection.films.any { it.id in filmIds } },
-                director.biography.orEmpty(),
+                director.biographyFor(prefersEnglish()),
             )
         }
 
@@ -1229,13 +1229,20 @@ class MainViewModel(
         MapNodeKind.TERRITORY -> seed.id
     }
 
+    private fun prefersEnglish(): Boolean = when (selectedLanguage) {
+        AppLanguage.English -> true
+        AppLanguage.French -> false
+        AppLanguage.System -> java.util.Locale.getDefault().language.startsWith("en")
+    }
+
+    private fun DirectorEntity.biographyFor(english: Boolean): String {
+        val french = biography?.trim().orEmpty()
+        val englishText = biographyEn?.trim().orEmpty()
+        return if (english) englishText.ifBlank { french } else french.ifBlank { englishText }
+    }
+
     private fun decadeLabel(decade: Int): String {
-        val english = when (selectedLanguage) {
-            AppLanguage.English -> true
-            AppLanguage.French -> false
-            AppLanguage.System -> java.util.Locale.getDefault().language.startsWith("en")
-        }
-        return if (english) "${decade}s" else "Années $decade"
+        return if (prefersEnglish()) "${decade}s" else "Années $decade"
     }
 
     private fun historySubject(type: String, payloadJson: String): String {

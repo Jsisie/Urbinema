@@ -266,7 +266,7 @@ app/src/main/assets/catalog/catalog.json
 
 Il décrit le monde : films, pays, continents, réalisateurs, caractéristiques,
 genres, ères, collections, 10 rangs, 32 badges, 59 quêtes types (19 Bronze, 20 Argent, 20 Or).
-Le pack courant est la version **27** (1538 films, 28 collections, biographies de réalisateurs). `catalog.json` est la copie de `catalog_v3.json`. Les portraits sont des fichiers `assets/media/directors/{CODE}.jpg`, lus par code, sans ligne `mediaAssets`. La collection `COLLECTION_027` (« Cinéma des premiers temps ») est sur le groupe `GATEWAY`, avec 17 films de 1892 à 1906.
+Le pack courant est la version **28** (1538 films, 28 collections, biographies de réalisateurs en français et en anglais quand les deux existent). `catalog.json` est la copie de `catalog_v3.json`. Les portraits sont des fichiers `assets/media/directors/{CODE}.jpg`, lus par code, sans ligne `mediaAssets`. La collection `COLLECTION_027` (« Cinéma des premiers temps ») est sur le groupe `GATEWAY`, avec 17 films de 1892 à 1906.
 
 Modèle Kotlin : `data/importer/CatalogPack.kt`.  
 Validateur : `data/importer/CatalogValidator.kt`.  
@@ -512,7 +512,7 @@ Injection : Koin, modules dans `urbinemaModules`.
 
 ---
 
-## 6. Schéma Room (version 8)
+## 6. Schéma Room (version 9)
 
 Export : `app/schemas/` (KSP `room.schemaLocation`).
 
@@ -535,8 +535,10 @@ ON movies_countries(movieId) WHERE isPrimary = 1;
 
 Room ne connaît pas cet index. Toute migration doit le supprimer avant le
 contrôle de schéma (`DROP INDEX IF EXISTS`), sinon l’ouverture plante.
-`onOpen` le recrée juste après. `MIGRATION_7_8` le fait, puis ajoute
-`directors.biography`.
+`onOpen` le recrée juste après. `MIGRATION_7_8` ajoute `directors.biography`.
+`MIGRATION_8_9` ajoute `directors.biographyEn`. Les deux retirent l'index
+avant le contrôle. L'app affiche la biographie anglaise quand la langue est
+l'anglais, sinon la française, et retombe sur l'autre si une langue manque.
 
 `PRAGMA foreign_keys = ON` à chaque ouverture.
 
@@ -544,7 +546,8 @@ contrôle de schéma (`DROP INDEX IF EXISTS`), sinon l’ouverture plante.
 `JOURNEY`). Room **v6** (`MIGRATION_5_6`) : `users.unlockedTrackOrdinal`,
 `users.showcaseBadgeCodes`, `xp_transactions.source` / `movieId` (userQuestId
 nullable). Room **v7** (`MIGRATION_6_7`) : `users.avatarCode`. Room **v8**
-(`MIGRATION_7_8`) : `directors.biography`. Colonne film
+(`MIGRATION_7_8`) : `directors.biography`. Room **v9** (`MIGRATION_8_9`) :
+`directors.biographyEn`. Colonne film
 `artisticDemand` = exigence A_f de la formule. Comment poser H/A/R/C :
 `FORMULE_MATHEMATIQUE.txt` §1.bis.
 

@@ -972,6 +972,7 @@ private fun AtlasFilmDirectory(
                         biography,
                         style = MaterialTheme.typography.bodyLarge,
                         color = UrbinemaThemeTokens.colors.onBackgroundMuted,
+                        modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.md),
                     )
                 }
             }

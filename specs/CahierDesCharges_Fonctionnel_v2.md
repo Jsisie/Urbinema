@@ -7,7 +7,7 @@
 ## Spécification fonctionnelle du produit
 
 **Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 27, 1538 films, 28 collections)
+**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 28, 1538 films, 28 collections)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -1215,9 +1215,9 @@ Liste de travail : `Listes_Fonctionnelles/Liste_Des_Badges.txt`
 | Badge | Condition |
 | --- | --- |
 | Premier Rideau | voir son premier film |
-| Deuxième Séance | voir 10 films |
-| Accro au Ciné | voir 50 films |
-| Collectionneur | voir 100 films |
+| Deuxième Séance | voir 20 films |
+| Accro au Ciné | voir 100 films |
+| Collectionneur | voir 300 films |
 
 ### Géographie
 
@@ -1244,12 +1244,12 @@ Liste de travail : `Listes_Fonctionnelles/Liste_Des_Badges.txt`
 
 | Badge | Condition |
 | --- | --- |
-| Au-delà du Canon | voir 20 films sortis avant 1950 |
-| Archéologue du Cinéma | voir 60 films sortis avant 1960 |
-| Mémoire du Septième Art | voir 200 films sortis avant 1980 |
-| Fantômes du Muet | voir 10 films muets |
+| Au-delà du Canon | voir 40 films sortis avant 1950 |
+| Archéologue du Cinéma | voir 100 films sortis avant 1960 |
+| Mémoire du Septième Art | voir 300 films sortis avant 1980 |
+| Fantômes du Muet | voir 20 films muets |
 | Retour aux Sources | voir des films de 5 décennies différentes |
-| À Travers les Âges | voir des films de 8 décennies différentes |
+| À Travers les Âges | voir un film de chaque décennie, des années 1890 aux années 2020 |
 
 ### Mouvements et genres
 
@@ -1267,7 +1267,7 @@ Liste de travail : `Listes_Fonctionnelles/Liste_Des_Badges.txt`
 | Badge | Condition |
 | --- | --- |
 | La Forme avant le Fond | voir 10 films particulièrement expérimentaux ou non narratifs |
-| Le Temps suspendu | voir 10 films de plus de 3 heures |
+| Le Temps suspendu | voir 20 films de plus de 3 heures |
 | La Grande Traversée | voir 5 films de plus de 5 heures |
 
 ### Panorama
