@@ -97,7 +97,7 @@
     <string name="state_explored">Explored</string>
     <string name="state_completed">Completed</string>
     <string name="state_mastered">Mastered</string>
-    <string name="territory_description">%1$s, %2$s, %3$d percent progress</string>
+    <string name="territory_description">%1$s, %2$s</string>
     <string name="atlas_intro">Territories remain visible, even when they are still unknown.</string>
     <string name="atlas_legend">Empty circle: unexplored · arc: in progress · ring: completed · center dot: mastered</string>
     <string name="search_everywhere">Search the catalog</string>

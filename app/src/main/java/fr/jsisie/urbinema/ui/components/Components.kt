@@ -185,7 +185,7 @@ fun TerritoryRow(item: TerritoryUi, onClick: () -> Unit, modifier: Modifier = Mo
         ""
     }
     val a11y = buildString {
-        append(stringResource(R.string.territory_description, item.name, stateLabel, item.progress))
+        append(stringResource(R.string.territory_description, item.name, stateLabel))
         if (filmCountLabel.isNotEmpty()) append(", ").append(filmCountLabel)
     }
     Row(
@@ -230,7 +230,6 @@ fun TerritoryRow(item: TerritoryUi, onClick: () -> Unit, modifier: Modifier = Mo
                 color = colors.onBackgroundFaint,
             )
         }
-        Text(stringResource(R.string.percent_value, item.progress), style = MaterialTheme.typography.labelMedium)
     }
 }
 

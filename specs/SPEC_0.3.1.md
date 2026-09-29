@@ -41,7 +41,7 @@ Ca va sans dire qu'à CHAQUE fois que tu traites un tiret (donc un sujet à part
 
 -  [x] Ajouter des quêtes de "courant" (ex : "Voir 1 Giallo"). De courant je dis bien, pas de collection. Fait : 9 quêtes (bronze Giallo, Dogme 95, jidai-geki ; argent néoréalisme, expressionnisme, western spaghetti ; or surréalisme, âge d'or japonais, cinéma soviétique). Pack 21, 59 quêtes (19 / 20 / 20).
 
--  [x] Nombre de films discret sur chaque liste : ligne Atlas (pays, courant, décennie, genre, réalisateur), section Films d’une fiche (territoire, collection, réalisateur, feuille de la carte), et cartes de collection.
+-  [x] Nombre de films discret : à droite des lignes Atlas (pays, courant, décennie, genre, réalisateur), sans le pourcentage de vus. Section Films d’une fiche (territoire, collection, réalisateur, feuille de la carte). Pas sur les cartes de la liste Collections.
 
 -  [x] Ajout de films par pays dans les pays avec peu de films. Fait jusqu’à l’Éthiopie, pack **23**, **1453** films. Pas de doublon quand l’œuvre était déjà là (Véronique, Trois couleurs : Rouge, et avant ça Quartier Mozart, Timbuktu, Soleil Ô). « Quand la Saint-Jean arrive » est enregistré sous « Quand viendra le mois d’octobre ». Synopsis : les vides ont été remplis quand la fiche TMDB est le même film ; 11 restent vides. 
 

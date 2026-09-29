@@ -485,7 +485,7 @@ Deux surfaces. L’onglet bas **Carte** ouvre toujours l’**Atlas**. La
 
 ## 10.1. Intention
 
-> **Atlas :** trouver un territoire, comparer les %.
+> **Atlas :** trouver un territoire. Le nombre de films est à droite de la ligne ; le pourcentage de vus n’y est pas.
 > **Ciel :** sentir l’étendue, voyager, voir ce qui s’allume.
 
 Même modèle (cinq états, mêmes codes). Le ciel n’ajoute pas de règle métier.
@@ -502,13 +502,14 @@ L’icône **étoiles** en haut à droite ouvre le ciel.
 │  ☰              Atlas            ?  ✦   │
 └─────────────────────────────────────────┘
 │  ( Courants ) ( Pays ) ( Décennies ) …  │
-│  France       48 films   ● or   42 %    │
+│  France                         48 films │
 │  …                                      │
 ```
 
-Le nombre de films du catalogue est affiché en petit sur chaque ligne
-(pays, courant, décennie, genre, réalisateur) et sur chaque carte de
-collection. La section Films d’une fiche reprend ce total : « Films · 24 ».
+Le nombre de films du catalogue est affiché en petit, à droite de chaque
+ligne d’Atlas (pays, courant, décennie, genre, réalisateur). Pas de
+pourcentage de films vus sur ces lignes. La liste des collections ne
+répète pas ce nombre : il apparaît sur la fiche, « Films · 24 ».
 
 ------
 

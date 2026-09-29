@@ -706,7 +706,6 @@ fun CollectionsScreen(collections: List<CollectionUi>, onCollection: (String) ->
                                 },
                             )
                             Text(collection.shortDescription, color = UrbinemaThemeTokens.colors.onBackgroundMuted)
-                            FilmCountLabel(collection.films.size)
                         }
                         if (collection.locked) {
                             Icon(

@@ -97,7 +97,7 @@
     <string name="state_explored">Exploré</string>
     <string name="state_completed">Complété</string>
     <string name="state_mastered">Maîtrisé</string>
-    <string name="territory_description">%1$s, %2$s, progression %3$d pour cent</string>
+    <string name="territory_description">%1$s, %2$s</string>
     <string name="atlas_intro">Les territoires restent visibles, même lorsqu’ils sont encore inconnus.</string>
     <string name="atlas_legend">Cercle vide : non exploré · arc : en cours · anneau : complété · point central : maîtrisé</string>
     <string name="search_everywhere">Rechercher dans le catalogue</string>
