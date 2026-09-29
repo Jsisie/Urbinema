@@ -32,12 +32,12 @@ avatars packagés, affiches par code, catalogue démo élargi.
   `{CODE}` dans `assets/media/badges/`.
 - Affiches / portraits : convention `{CODE}.webp|png|jpg|jpeg` dans
   `assets/media/…`. Batch hors-app `batchPosters/` (clé TMDB dans `.env`).
-- Cadenas Initiation (≥ 1 Vu) **et** cadenas entre groupes + cliquet.
+- Cadenas Initiation (suivie + ≥ 1 Vu) **et** cadenas entre groupes + cliquet.
 - Pack JSON **v11** : ~405 films, 15 collections (Initiation inchangée,
   les 14 autres alimentées), 50 quêtes types (16/17/17), 42 pays.
 - Quêtes hebdo lundi 02:00 : une tirée au hasard par palier, éligibilité
   `remainingCapacity`.
-- XP 1–50, rang formule v0.3, **10 XP par film unique** (essai) + quêtes 100/250/500.
+- XP 1–50, rang formule v0.3, **25 XP** si le film est dans une collection suivie + quêtes 100/250/500.
 - Atlas = **listes** (icône liste, TalkBack).
 - **0.2.1 :** première carte du ciel (autour d’un film).
 - **0.2.3 :** couleurs par type + légende, pas de doublons de libellé,
@@ -89,4 +89,4 @@ d’un second champ. L’Atlas (pays, courants, etc.) garde son tri utilisateur.
 - Langue / thème / grain persistés.
 - Cadenas Initiation, groupes, cliquet, suivi → %, titres dorés, 100 % UI.
 - 10 avatars packagés, carrousel. Badges packagés par code.
-- **10 XP** par film unique (essai). Crédits À propos.
+- **25 XP** si collection suivie. Crédits À propos + page Sources.

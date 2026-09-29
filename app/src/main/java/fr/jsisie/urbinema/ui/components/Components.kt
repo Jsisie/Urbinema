@@ -5,6 +5,8 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -25,8 +27,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Person
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -70,14 +74,21 @@ fun SectionTitle(@StringRes title: Int, modifier: Modifier = Modifier) {
 }
 
 /** Presents content on a flat outlined surface, avoiding decorative shadows. */
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun EditorialCard(
     modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null,
+    onLongClick: (() -> Unit)? = null,
     highlighted: Boolean = false,
     content: @Composable ColumnScope.() -> Unit,
 ) {
-    val interactive = if (onClick == null) modifier else modifier.clickable(onClick = onClick)
+    val interactive = when {
+        onClick != null && onLongClick != null ->
+            modifier.combinedClickable(onClick = onClick, onLongClick = onLongClick)
+        onClick != null -> modifier.clickable(onClick = onClick)
+        else -> modifier
+    }
     Card(
         modifier = interactive.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = UrbinemaThemeTokens.colors.surface),
@@ -93,6 +104,27 @@ fun EditorialCard(
             content = content,
         )
     }
+}
+
+/** Confirms a long-press “mark as watched” on a film row. */
+@Composable
+fun MarkWatchedDialog(title: String, onConfirm: () -> Unit, onDismiss: () -> Unit) {
+    // Resolved outside the dialog window so the in-app language applies.
+    val heading = stringResource(R.string.mark_watched)
+    val body = stringResource(R.string.mark_watched_prompt, title)
+    val confirm = stringResource(R.string.confirm)
+    val cancel = stringResource(R.string.cancel)
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(heading) },
+        text = { Text(body) },
+        confirmButton = {
+            TextButton(onClick = onConfirm) { Text(confirm) }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) { Text(cancel) }
+        },
+    )
 }
 
 /** Accessible progress bar with a numeric fallback to color. */

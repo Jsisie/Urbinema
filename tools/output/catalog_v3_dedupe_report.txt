@@ -1,154 +1,97 @@
-source=catalog_v2.json movies_before=1429 after=1381 dropped=48 version=19
+source=catalog_v2.json movies_before=1429 after=1383 dropped=46 version=20
+rule=same directors + same compact title + year gap <= 1 (<= 2 if original titles match) + duration gap <= 20 + same part index
 
-KEEP AMORES_PERROS_2000
-  DROP AMORES_PERROS_2000_INARRITU
-KEEP ANDREI_ROUBLEV_1966
-  DROP ANDREI_RUBLEV_1966
-KEEP ARSENAL_1929
-  DROP ARSENAL_1929_DOVZHENKO
-KEEP ATLANTICS_2019
-  DROP ATLANTIQUE_2019
-KEEP CHRONIQUE_DES_ANNEES_DE_BRAISE_1975
-  DROP CHRONIQUE_DES_ANNEES_DE_BRAISE_1975_LAKHDAR_HAMINA
-KEEP CHRONIQUE_D_UN_ETE_1961
-  DROP CHRONICLE_OF_A_SUMMER_1961
-KEEP CHUNGKING_EXPRESS_1994_KAR_WAI
-  DROP CHUNGKING_EXPRESS_1994
-KEEP DE_CIERTA_MANERA_1974
-  DROP ONE_WAY_OR_ANOTHER_1977
-KEEP DONT_LOOK_BACK_1967
-  DROP DON_T_LOOK_BACK_1967
-KEEP EPOUSES_ET_CONCUBINES_1991_YIMOU
-  DROP EPOUSES_ET_CONCUBINES_1991
-KEEP HAPPY_TOGETHER_1997_KAR_WAI
-  DROP HAPPY_TOGETHER_1997
-KEEP HYENES_1992
-  DROP HYENES_1992_MAMBETY
-KEEP IN_THE_MOOD_FOR_LOVE_2000_KAR_WAI
-  DROP IN_THE_MOOD_FOR_LOVE_2000
-KEEP KHRUSTALYOV_MY_CAR_1998
-  DROP KHRUSTALYOV_MA_VOITURE_1998
-KEEP LA_CITE_DES_DOULEURS_1989_HSIAO_HSIEN
-  DROP LA_CITE_DES_DOULEURS_1989
-KEEP LA_COMPLAINTE_DU_SENTIER_1955_RAY
-  DROP LA_COMPLAINTE_DU_SENTIER_1955
-KEEP LA_CONDITION_DE_L_HOMME_1959
-  DROP LA_CONDITION_DE_L_HOMME_2_1959
-KEEP LA_COULEUR_DE_LA_GRENADE_1969_PARAJANOV
-  DROP LA_COULEUR_DE_LA_GRENADE_1969
-KEEP LA_MAISON_EST_NOIRE_1963
-  DROP THE_HOUSE_IS_BLACK_1962
-KEEP LA_MUMIE_1969
-  DROP THE_NIGHT_OF_COUNTING_THE_YEARS_1969
-KEEP LA_TERRE_1930
-  DROP LA_TERRE_1930_DOVZHENKO
-KEEP LES_CHEVAUX_DE_FEU_1965
-  DROP LES_CHEVAUX_DE_FEU_1965_PARAJANOV
-KEEP LES_FRAISES_SAUVAGES_1957_BERGMAN
-  DROP LES_FRAISES_SAUVAGES_1957
-KEEP LES_JEUX_INTERDITS_1952
-  DROP FORBIDDEN_GAMES_1952
-KEEP LE_BOURREAU_1963
-  DROP EL_VERDUGO_1963
-KEEP LE_CUIRASSE_POTEMKINE_1925
-  DROP LE_CUIRASSE_POTEMKINE_1925_EISENSTEIN
-KEEP LE_LABYRINTHE_DE_PAN_2006
-  DROP PAN_S_LABYRINTH_2006
-KEEP LE_MEPRIS_1963
-  DROP LE_MEPRIS_1963_GODARD
-KEEP LE_MIROIR_1975
-  DROP LE_MIROIR_1975_TARKOVSKY
-KEEP LE_RETOUR_2003
-  DROP RETURN_THE_2003
-KEEP LE_SEPTIEME_SCEAU_1957_BERGMAN
-  DROP LE_SEPTIEME_SCEAU_1957
-KEEP L_ASCENSION_1977_SHEPITKO
-  DROP L_ASCENSION_1977
-KEEP L_ENFANCE_D_IVAN_1962_TARKOVSKY
-  DROP L_ENFANCE_D_IVAN_1962
-KEEP MEMORIES_OF_MURDER_2003_JOON_HO
-  DROP MEMORIES_OF_MURDER_2003
-KEEP NOS_ANNEES_SAUVAGES_1990
-  DROP JOURS_SAUVAGES_1990
-KEEP OLD_BOY_2003
-  DROP OLDBOY_2003
-KEEP PARASITE_2019_JOON_HO
-  DROP PARASITE_2019
-KEEP POETRY_2010_CHANG_DONG
-  DROP POETRY_2010
-KEEP PRINTEMPS_DANS_UNE_PETITE_VILLE_1948_MU
-  DROP PRINTEMPS_DANS_UNE_PETITE_VILLE_1948
-KEEP RED_SORGHUM_1987
-  DROP RED_SORGHUM_1988
-KEEP REPENTIR_1984
-  DROP REPENTANCE_1984
-KEEP RUSSIAN_ARK_2002
-  DROP L_ARCHE_RUSSE_2002
-KEEP SOLARIS_1972_TARKOVSKY
-  DROP SOLARIS_1972
-KEEP SPRING_SUMMER_FALL_WINTER_AND_SPRING_2003
-  DROP SPRING_SUMMER_AUTUMN_WINTER_AND_SPRING_2003
-KEEP THE_BATTLE_OF_CHILE_1975
-  DROP LA_BATAILLE_DU_CHILI_1975
-KEEP THE_ROUND_UP_1966
-  DROP SZEGENYLEGENYEK_1966
-KEEP TOUKI_BOUKI_1973
-  DROP TOUKI_BOUKI_1973_MAMBETY
-KEEP WEST_INDIES_1979
-  DROP WEST_INDIES_THE_FUGITIVE_SLAVES_OF_LIBERTY_1979
+KEEP AMORES_PERROS_2000 | Amours chiennes | Amores perros
+  DROP AMORES_PERROS_2000_INARRITU | Amours chiennes | Amores perros
+KEEP ANDREI_ROUBLEV_1966 | Andreï Roublev | Андрей Рублёв
+  DROP ANDREI_RUBLEV_1966 | Andreï Roublev | Андрей Рублёв
+KEEP ARSENAL_1929 | Arsenal | Арсенал
+  DROP ARSENAL_1929_DOVZHENKO | Arsenal | Арсенал
+KEEP ATLANTICS_2019 | Atlantics | Atlantique
+  DROP ATLANTIQUE_2019 | Atlantique | Atlantique
+KEEP CHRONIQUE_DES_ANNEES_DE_BRAISE_1975 | Chronique des années de braise | وقائع سنين الجمر
+  DROP CHRONIQUE_DES_ANNEES_DE_BRAISE_1975_LAKHDAR_HAMINA | Chronique des années de braise | Chronique des Années de Braise
+KEEP CHRONIQUE_D_UN_ETE_1961 | Chronique d'un été | Chronique d'un été (Paris 1960)
+  DROP CHRONICLE_OF_A_SUMMER_1961 | Chronicle of a Summer | Chronique d'un été (Paris 1960)
+KEEP CHUNGKING_EXPRESS_1994_KAR_WAI | Chungking Express | 重慶森林
+  DROP CHUNGKING_EXPRESS_1994 | Chungking Express | 重慶森林
+KEEP DE_CIERTA_MANERA_1974 | De cierta manera | De cierta manera
+  DROP ONE_WAY_OR_ANOTHER_1977 | One Way or Another | De cierta manera
+KEEP DONT_LOOK_BACK_1967 | Dont Look Back | Bob Dylan – Don't Look Back
+  DROP DON_T_LOOK_BACK_1967 | Don't Look Back | Bob Dylan – Don't Look Back
+KEEP EPOUSES_ET_CONCUBINES_1991_YIMOU | Épouses et Concubines | 大红灯笼高高挂
+  DROP EPOUSES_ET_CONCUBINES_1991 | Épouses et concubines | 大红灯笼高高挂
+KEEP HAPPY_TOGETHER_1997_KAR_WAI | Happy Together | 春光乍洩
+  DROP HAPPY_TOGETHER_1997 | Happy Together | 春光乍洩
+KEEP HYENES_1992 | Hyènes | Hyènes
+  DROP HYENES_1992_MAMBETY | Hyènes | Hyènes
+KEEP IN_THE_MOOD_FOR_LOVE_2000_KAR_WAI | In the Mood for Love | 花樣年華
+  DROP IN_THE_MOOD_FOR_LOVE_2000 | In the Mood for Love | 花樣年華
+KEEP KHRUSTALYOV_MY_CAR_1998 | Khroustaliov, ma voiture ! | Хрусталёв, машину!
+  DROP KHRUSTALYOV_MA_VOITURE_1998 | Khroustaliov, ma voiture ! | Хрусталёв, машину!
+KEEP LA_CITE_DES_DOULEURS_1989_HSIAO_HSIEN | La Cité des douleurs | 悲情城市
+  DROP LA_CITE_DES_DOULEURS_1989 | La Cité des douleurs | 悲情城市
+KEEP LA_COMPLAINTE_DU_SENTIER_1955_RAY | La Complainte du sentier | পথের পাঁচালী
+  DROP LA_COMPLAINTE_DU_SENTIER_1955 | La Complainte du sentier | পথের পাঁচালী
+KEEP LA_COULEUR_DE_LA_GRENADE_1969_PARAJANOV | Sayat Nova : La Couleur de la grenade | Նռան գույնը
+  DROP LA_COULEUR_DE_LA_GRENADE_1969 | La Couleur de la grenade | Նռան գույնը
+KEEP LA_MAISON_EST_NOIRE_1963 | La Maison est noire | خانه سیاه است
+  DROP THE_HOUSE_IS_BLACK_1962 | La maison est noire | خانه سیاه است
+KEEP LA_MUMIE_1969 | La Nuit des compter les années | المومياء
+  DROP THE_NIGHT_OF_COUNTING_THE_YEARS_1969 | La momie | المومياء
+KEEP LA_TERRE_1930 | La Terre | Земля
+  DROP LA_TERRE_1930_DOVZHENKO | La Terre | Земля
+KEEP LES_CHEVAUX_DE_FEU_1965 | Les Chevaux de feu | Тіні забутих предків
+  DROP LES_CHEVAUX_DE_FEU_1965_PARAJANOV | Les Chevaux de feu | Тіні забутих предків
+KEEP LES_FRAISES_SAUVAGES_1957_BERGMAN | Les Fraises sauvages | Smultronstället
+  DROP LES_FRAISES_SAUVAGES_1957 | Les Fraises sauvages | Smultronstället
+KEEP LES_JEUX_INTERDITS_1952 | Les Jeux interdits | Les Jeux interdits
+  DROP FORBIDDEN_GAMES_1952 | Jeux interdits | Jeux interdits
+KEEP LE_BOURREAU_1963 | Le Bourreau | El verdugo
+  DROP EL_VERDUGO_1963 | Le Bourreau | El verdugo
+KEEP LE_CUIRASSE_POTEMKINE_1925 | Le Cuirassé Potemkine | Броненосец Потёмкин
+  DROP LE_CUIRASSE_POTEMKINE_1925_EISENSTEIN | Le Cuirassé Potemkine | Броненосец Потёмкин
+KEEP LE_LABYRINTHE_DE_PAN_2006 | Le Labyrinthe de Pan | El laberinto del fauno
+  DROP PAN_S_LABYRINTH_2006 | Le Labyrinthe de Pan | El laberinto del fauno
+KEEP LE_MEPRIS_1963 | Le Mépris | Le Mépris
+  DROP LE_MEPRIS_1963_GODARD | Le Mépris | Le Mépris
+KEEP LE_MIROIR_1975 | Le Miroir | Зеркало
+  DROP LE_MIROIR_1975_TARKOVSKY | Le Miroir | Зеркало
+KEEP LE_RETOUR_2003 | Le Retour | Возвращение
+  DROP RETURN_THE_2003 | Le Retour | Возвращение
+KEEP LE_SEPTIEME_SCEAU_1957_BERGMAN | Le Septième Sceau | Det sjunde inseglet
+  DROP LE_SEPTIEME_SCEAU_1957 | Le Septième Sceau | Det sjunde inseglet
+KEEP L_ASCENSION_1977_SHEPITKO | L'Ascension | Восхождение
+  DROP L_ASCENSION_1977 | L'Ascension | Восхождение
+KEEP L_ENFANCE_D_IVAN_1962_TARKOVSKY | L’Enfance d’Ivan | Иваново детство
+  DROP L_ENFANCE_D_IVAN_1962 | L'Enfance d'Ivan | Иваново детство
+KEEP MEMORIES_OF_MURDER_2003_JOON_HO | Memories of Murder | 살인의 추억
+  DROP MEMORIES_OF_MURDER_2003 | Memories of Murder | 살인의 추억
+KEEP NOS_ANNEES_SAUVAGES_1990 | Nos années sauvages | 阿飛正傳
+  DROP JOURS_SAUVAGES_1990 | Nos années sauvages | 阿飛正傳
+KEEP OLD_BOY_2003 | Old Boy | 올드보이
+  DROP OLDBOY_2003 | Oldboy | 올드보이
+KEEP PARASITE_2019_JOON_HO | Parasite | 기생충
+  DROP PARASITE_2019 | Parasite | 기생충
+KEEP POETRY_2010_CHANG_DONG | Poetry | 시
+  DROP POETRY_2010 | Poetry | 시
+KEEP PRINTEMPS_DANS_UNE_PETITE_VILLE_1948_MU | Printemps dans une petite ville | 小城之春
+  DROP PRINTEMPS_DANS_UNE_PETITE_VILLE_1948 | Printemps dans une petite ville | 小城之春
+KEEP RED_SORGHUM_1987 | Le Sorgho rouge | 红高粱
+  DROP RED_SORGHUM_1988 | Le Sorgho rouge | 红高粱
+KEEP RUSSIAN_ARK_2002 | L'Arche russe | Русский ковчег
+  DROP L_ARCHE_RUSSE_2002 | L'Arche russe | Русский ковчег
+KEEP SOLARIS_1972_TARKOVSKY | Solaris | Солярис
+  DROP SOLARIS_1972 | Solaris | Солярис
+KEEP SPRING_SUMMER_FALL_WINTER_AND_SPRING_2003 | Printemps, été, automne, hiver... et printemps | 봄 여름 가을 겨울 그리고 봄
+  DROP SPRING_SUMMER_AUTUMN_WINTER_AND_SPRING_2003 | Printemps, été, automne, hiver... et printemps | 봄 여름 가을 겨울 그리고 봄
+KEEP THE_BATTLE_OF_CHILE_1975 | La bataille du Chili, Partie 1 : L'insurrection de la bourgeoisie | La batalla de Chile (Parte 1). La insurrección de la burguesía
+  DROP LA_BATAILLE_DU_CHILI_1975 | La bataille du Chili, Partie 1 : L'insurrection de la bourgeoisie | La batalla de Chile (Parte 1). La insurrección de la burguesía
+KEEP THE_ROUND_UP_1966 | Les Sans-espoir | Szegénylegények
+  DROP SZEGENYLEGENYEK_1966 | Les Sans-espoir | Szegénylegények
+KEEP TOUKI_BOUKI_1973 | Touki Bouki | Touki Bouki
+  DROP TOUKI_BOUKI_1973_MAMBETY | Le voyage de la Hyène | Touki-Bouki
+KEEP WEST_INDIES_1979 | West Indies: The Fugitive Slaves of Liberty | West Indies ou les Nègres marrons de la liberté
+  DROP WEST_INDIES_THE_FUGITIVE_SLAVES_OF_LIBERTY_1979 | West Indies: The Fugitive Slaves of Liberty | West Indies ou les Nègres marrons de la liberté
 
-remaining_same_director_year_groups=18
-SAME_DIR_YEAR 1954 ALFRED_HITCHCOCK
-  FENETRE_SUR_COUR_1954 | Fenêtre sur cour | Rear Window
-  LE_CRIME_ETAIT_PRESQUE_PARFAIT_1954 | Le Crime était presque parfait | Dial M for Murder
-SAME_DIR_YEAR 2013 DIRECTOR
-  ILO_ILO_2013 | Ilo Ilo | 爸妈不在家
-  TANGERINES_2013 | Mandarines | Mandariinid
-SAME_DIR_YEAR 1974 FRANCIS_FORD_COPPOLA
-  LE_PARRAIN_2_1974 | Le Parrain 2 | The Godfather Part II
-  CONVERSATION_SECRETE_1974 | Conversation secrète | The Conversation
-SAME_DIR_YEAR 1957 INGMAR_BERGMAN
-  LES_FRAISES_SAUVAGES_1957_BERGMAN | Les Fraises sauvages | Smultronstället
-  LE_SEPTIEME_SCEAU_1957_BERGMAN | Le Septième Sceau | Det sjunde inseglet
-SAME_DIR_YEAR 1963 INGMAR_BERGMAN
-  LES_COMMUNIANTS_1963 | Les Communiants | Nattvardsgästerna
-  THE_SILENCE_1963 | Le Silence | Tystnaden
-SAME_DIR_YEAR 1968 INGMAR_BERGMAN
-  HOUR_OF_THE_WOLF_1968 | L'Heure du loup | Vargtimmen
-  SHAME_1968 | La Honte | Skammen
-SAME_DIR_YEAR 1963 JEAN_LUC_GODARD
-  LE_MEPRIS_1963 | Le Mépris | Le Mépris
-  LE_PETIT_SOLDAT_1963 | Le Petit Soldat | Le Petit Soldat
-SAME_DIR_YEAR 1967 JEAN_LUC_GODARD
-  2_OU_3_CHOSES_QUE_JE_SAIS_D_ELLE_1967 | Deux ou trois choses que je sais d'elle | 2 ou 3 choses que je sais d'elle
-  WEEK_END_1967 | Week-end | Week End
-SAME_DIR_YEAR 1930 JOSEF_VON_STERNBERG
-  THE_BLUE_ANGEL_1930 | L'Ange bleu | Der blaue Engel
-  MOROCCO_1930 | Cœurs brûlés | Morocco
-SAME_DIR_YEAR 2000 LEE_CHANG_DONG
-  CROUCHING_TIGER_HIDDEN_DRAGON_2000 | Tigre & Dragon | 卧虎藏龍
-  PEPPERMINT_CANDY_1999 | Peppermint Candy | 박하사탕
-SAME_DIR_YEAR 1937 LEO_MCCAREY
-  PLACE_AUX_JEUNES_1937 | Place aux jeunes | Make Way for Tomorrow
-  CETTE_VERITE_QUE_L_ON_CACHE_1937 | Cette vérité que l'on cache | Cette vérité que l'on cache
-SAME_DIR_YEAR 2002 NURI_BILGE_CEYLAN
-  DISTANT_2002 | Distant | Making Distant
-  UZAK_2002 | Uzak | Uzak
-SAME_DIR_YEAR 1941 PRESTON_STURGES
-  LADY_EVE_1941 | Un cœur pris au piège | The Lady Eve
-  LES_VOYAGES_DE_SULLIVAN_1941 | Les Voyages de Sullivan | Sullivan's Travels
-SAME_DIR_YEAR 1925 SERGEI_EISENSTEIN
-  LE_CUIRASSE_POTEMKINE_1925 | Le Cuirassé Potemkine | Броненосец Потёмкин
-  LA_GREVE_1925 | La Grève | Стачка
-SAME_DIR_YEAR 1968 SERGIO_CORBUCCI
-  LE_GRAND_SILENCE_1968 | Le Grand Silence | Il grande silenzio
-  LE_MERCENAIRE_1968 | Le Mercenaire | Il mercenario
-SAME_DIR_YEAR 1993 STEVEN_SPIELBERG
-  LA_LISTE_DE_SCHINDLER_1993 | La Liste de Schindler | Schindler's List
-  JURASSIC_PARK_1993 | Le parc jurassique | Jurassic Park
-SAME_DIR_YEAR 1939 VICTOR_FLEMING
-  AUTANT_EN_EMPORTE_LE_VENT_1939 | Autant en emporte le vent | Gone with the Wind
-  LE_MAGICIEN_D_OZ_1939 | Le Magicien d'Oz | The Wizard of Oz
-SAME_DIR_YEAR 1994 WONG_KAR_WAI
-  CHUNGKING_EXPRESS_1994_KAR_WAI | Chungking Express | 重慶森林
-  ASHES_OF_TIME_1994 | Les Cendres du temps | 東邪西毒
+aliases=46 every_v2_code_kept_or_aliased=yes primary_country=yes dangling_refs=0

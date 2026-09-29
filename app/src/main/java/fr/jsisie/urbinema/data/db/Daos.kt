@@ -566,6 +566,26 @@ interface CatalogImportDao {
     suspend fun parkRankingDisplayOrders()
     @Query("UPDATE movies SET isActive = 0 WHERE code NOT IN (:codes)")
     suspend fun deactivateMoviesNotIn(codes: List<String>)
+
+    @Query(
+        """DELETE FROM user_movies
+           WHERE movieId = :fromId
+             AND userId IN (SELECT userId FROM user_movies WHERE movieId = :toId)"""
+    )
+    suspend fun dropUserMoviesAlreadyOnTarget(fromId: Long, toId: Long)
+
+    @Query("UPDATE user_movies SET movieId = :toId WHERE movieId = :fromId")
+    suspend fun moveUserMovies(fromId: Long, toId: Long)
+
+    @Query(
+        """DELETE FROM xp_transactions
+           WHERE movieId = :fromId
+             AND userId IN (SELECT userId FROM xp_transactions WHERE movieId = :toId)"""
+    )
+    suspend fun dropXpAlreadyOnTarget(fromId: Long, toId: Long)
+
+    @Query("UPDATE xp_transactions SET movieId = :toId WHERE movieId = :fromId")
+    suspend fun moveXpMovies(fromId: Long, toId: Long)
     @Query("UPDATE collections SET isActive = 0, isPublished = 0 WHERE code NOT IN (:codes)")
     suspend fun deactivateCollectionsNotIn(codes: List<String>)
     @Query("UPDATE countries SET isActive = 0 WHERE code NOT IN (:codes)")

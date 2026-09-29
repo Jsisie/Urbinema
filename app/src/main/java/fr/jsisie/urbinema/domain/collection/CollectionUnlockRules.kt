@@ -29,9 +29,12 @@ object CollectionUnlockRules {
     fun isQualified(watchedCount: Int, followed: Boolean): Boolean =
         followed && watchedCount >= MIN_FILMS_PER_COLLECTION
 
-    /** Initiation itself opens the rest of GATEWAY after a single watched film. */
-    fun isInitiationOpen(watchedCount: Int): Boolean =
-        watchedCount >= INITIATION_MIN_FILMS
+    /**
+     * Initiation opens the rest of Premières séances only when it is followed
+     * and at least [INITIATION_MIN_FILMS] of its films is watched.
+     */
+    fun isInitiationOpen(watchedCount: Int, followed: Boolean): Boolean =
+        followed && watchedCount >= INITIATION_MIN_FILMS
 
     /**
      * An empty previous track never unlocks the next one (size 0 would otherwise
@@ -47,7 +50,7 @@ object CollectionUnlockRules {
      * [LOCKED_ORDINAL] means only Initiation itself is available.
      *
      * The latch keeps a harder group open after unfollow, but **never**
-     * bypasses Initiation: without one watched Initiation film, every other
+     * bypasses Initiation: without a followed Initiation and one watched film, every other
      * collection stays locked (reset included).
      *
      * [tracks] is ordered like the UI tracks: each pair is

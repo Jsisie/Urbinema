@@ -59,6 +59,13 @@ class CollectionUnlockRulesTest {
     }
 
     @Test
+    fun `initiation opens premieres seances only when followed and one film is watched`() {
+        assertFalse(CollectionUnlockRules.isInitiationOpen(watchedCount = 1, followed = false))
+        assertFalse(CollectionUnlockRules.isInitiationOpen(watchedCount = 0, followed = true))
+        assertTrue(CollectionUnlockRules.isInitiationOpen(watchedCount = 1, followed = true))
+    }
+
+    @Test
     fun `gateway stays closed until initiation has a watched film`() {
         val tracks = listOf(0 to 2, 0 to 5, 0 to 3)
         assertEquals(

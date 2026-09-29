@@ -1,5 +1,6 @@
 package fr.jsisie.urbinema.ui.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -39,7 +40,6 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -54,6 +54,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.window.DialogProperties
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -64,7 +65,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
@@ -83,6 +86,7 @@ import fr.jsisie.urbinema.ui.components.CollectionMedallion
 import fr.jsisie.urbinema.ui.components.EditorialCard
 import fr.jsisie.urbinema.ui.components.EditorialImage
 import fr.jsisie.urbinema.ui.components.LabeledProgress
+import fr.jsisie.urbinema.ui.components.MarkWatchedDialog
 import fr.jsisie.urbinema.ui.components.QuestCard
 import fr.jsisie.urbinema.ui.components.SectionTitle
 import fr.jsisie.urbinema.ui.components.TerritoryRow
@@ -95,6 +99,7 @@ import fr.jsisie.urbinema.ui.model.AppLanguage
 import fr.jsisie.urbinema.ui.model.AtlasFilter
 import fr.jsisie.urbinema.ui.model.FilmListSort
 import fr.jsisie.urbinema.ui.model.filmIndexLetter
+import fr.jsisie.urbinema.ui.model.filmSortKey
 import fr.jsisie.urbinema.ui.model.sortedFilms
 import fr.jsisie.urbinema.ui.model.BadgeRarity
 import fr.jsisie.urbinema.ui.model.BadgeUi
@@ -126,8 +131,18 @@ private val pageModifier: Modifier
 fun UiStatePane(state: LoadState, onRetry: () -> Unit = {}, content: @Composable () -> Unit) {
     when (state) {
         LoadState.Content -> content()
-        LoadState.Loading -> Box(pageModifier, contentAlignment = Alignment.Center) {
-            CircularProgressIndicator(color = UrbinemaThemeTokens.colors.accent)
+        LoadState.Loading -> Box(
+            Modifier.fillMaxSize().background(
+                if (UrbinemaThemeTokens.colors.isDark) UrbinemaThemeTokens.colors.background else Color.White,
+            ),
+            contentAlignment = Alignment.Center,
+        ) {
+            Image(
+                painter = painterResource(R.drawable.logo_urbinema),
+                contentDescription = stringResource(R.string.app_name),
+                modifier = Modifier.size(220.dp),
+                contentScale = ContentScale.Fit,
+            )
         }
         LoadState.Empty -> MessagePane(R.string.empty_state, null)
         LoadState.Error -> MessagePane(R.string.error_state, onRetry)
@@ -162,7 +177,6 @@ fun HomeScreen(
         Column(pageModifier) {
             Column(
                 Modifier.fillMaxWidth()
-                    .background(UrbinemaThemeTokens.colors.surfaceElevated)
                     .clickable(onClick = onOpenProfile)
                     .padding(horizontal = UrbinemaThemeTokens.dimens.screen, vertical = UrbinemaThemeTokens.dimens.sm),
             ) {
@@ -280,12 +294,16 @@ fun AtlasScreen(
     var selected by rememberSaveable { mutableStateOf(AtlasFilter.Countries) }
     val listState = rememberLazyListState()
     val scope = rememberCoroutineScope()
-    val items = when (selected) {
+    val raw = when (selected) {
         AtlasFilter.Countries -> countries
         AtlasFilter.Currents -> currents
         AtlasFilter.Decades -> decades
         AtlasFilter.Genres -> genres
         AtlasFilter.Directors -> directors
+    }
+    val indexed = selected != AtlasFilter.Decades
+    val items = remember(raw, indexed) {
+        if (indexed) raw.sortedBy { filmSortKey(it.name) } else raw
     }
     val filters = listOf(
         AtlasFilter.Currents to R.string.currents,
@@ -294,37 +312,55 @@ fun AtlasScreen(
         AtlasFilter.Genres to R.string.genres,
         AtlasFilter.Directors to R.string.directors,
     )
-    LazyColumn(
-        modifier = pageModifier,
-        state = listState,
-        contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen),
-    ) {
-        item { ScreenTitle(R.string.atlas) }
-        item {
-            LazyRow(horizontalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs)) {
-                items(filters) { (filter, label) ->
-                    FilterChip(
-                        selected == filter,
-                        {
-                            if (selected != filter) {
-                                selected = filter
-                                scope.launch { listState.scrollToItem(0) }
-                            }
-                        },
-                        { Text(stringResource(label)) },
-                    )
+    Box(pageModifier) {
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(end = if (indexed) 18.dp else 0.dp),
+            state = listState,
+            contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen),
+        ) {
+            item { ScreenTitle(R.string.atlas) }
+            item {
+                LazyRow(horizontalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs)) {
+                    items(filters) { (filter, label) ->
+                        FilterChip(
+                            selected == filter,
+                            {
+                                if (selected != filter) {
+                                    selected = filter
+                                    scope.launch { listState.scrollToItem(0) }
+                                }
+                            },
+                            { Text(stringResource(label)) },
+                        )
+                    }
                 }
             }
+            item {
+                Text(
+                    stringResource(R.string.atlas_intro),
+                    color = UrbinemaThemeTokens.colors.onBackgroundMuted,
+                    modifier = Modifier.padding(vertical = UrbinemaThemeTokens.dimens.md),
+                )
+            }
+            items(items, key = { it.id }) { TerritoryRow(it, { onSelect(selected, it.id) }) }
+            item { Text(stringResource(R.string.atlas_legend), style = MaterialTheme.typography.bodyMedium) }
         }
-        item {
-            Text(
-                stringResource(R.string.atlas_intro),
-                color = UrbinemaThemeTokens.colors.onBackgroundMuted,
-                modifier = Modifier.padding(vertical = UrbinemaThemeTokens.dimens.md),
+        if (indexed) {
+            AlphabetScrubber(
+                titles = items.map { it.name },
+                plain = true,
+                onLetter = { letter ->
+                    val index = items.indexOfFirst { filmIndexLetter(it.name) == letter }
+                    if (index >= 0) scope.launch { listState.scrollToItem(3 + index) }
+                },
+                modifier = Modifier
+                    .align(Alignment.CenterEnd)
+                    .fillMaxHeight()
+                    .padding(vertical = 72.dp, horizontal = 2.dp),
             )
         }
-        items(items) { TerritoryRow(it, { onSelect(selected, it.id) }) }
-        item { Text(stringResource(R.string.atlas_legend), style = MaterialTheme.typography.bodyMedium) }
     }
 }
 
@@ -496,13 +532,20 @@ fun ProfileScreen(
 
 @Composable
 fun RanksScreen(ranks: List<RankUi>) {
+    val ordered = remember(ranks) { ranks.sortedBy { it.order } }
+    val listState = rememberLazyListState()
+    val currentIndex = ordered.indexOfFirst { it.current }
+    LaunchedEffect(currentIndex) {
+        if (currentIndex >= 0) listState.scrollToItem(currentIndex + 1)
+    }
     LazyColumn(
         modifier = pageModifier,
+        state = listState,
         contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         item { ScreenTitle(R.string.all_ranks) }
-        itemsIndexed(ranks.sortedBy { it.order }) { index, rank ->
+        itemsIndexed(ordered) { index, rank ->
             Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
                 val color = if (rank.current) UrbinemaThemeTokens.colors.accent else UrbinemaThemeTokens.colors.onBackground
                 Text(
@@ -536,7 +579,7 @@ fun RanksScreen(ranks: List<RankUi>) {
                         textAlign = TextAlign.Center,
                     )
                 }
-                if (index != ranks.lastIndex) {
+                if (index != ordered.lastIndex) {
                     Icon(
                         Icons.Outlined.KeyboardArrowDown,
                         contentDescription = null,
@@ -715,7 +758,19 @@ fun CollectionScreen(
     onMovie: (String) -> Unit,
     onFollow: () -> Unit,
     onUnfollow: () -> Unit,
+    onMarkWatched: (String) -> Unit = {},
 ) {
+    var pending by remember { mutableStateOf<MovieSummaryUi?>(null) }
+    pending?.let { film ->
+        MarkWatchedDialog(
+            title = film.title,
+            onConfirm = {
+                onMarkWatched(film.id)
+                pending = null
+            },
+            onDismiss = { pending = null },
+        )
+    }
     LazyColumn(pageModifier, contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen)) {
         item {
             Text(
@@ -773,6 +828,9 @@ fun CollectionScreen(
             EditorialCard(
                 Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs).alpha(if (collection.locked) 0.42f else 1f),
                 { if (!collection.locked) onMovie(film.id) },
+                if (collection.locked || film.watched) null else {
+                    { pending = film }
+                },
             ) {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                     Column(Modifier.weight(1f)) {
@@ -798,6 +856,7 @@ fun TerritoryScreen(
     films: List<MovieSummaryUi>,
     onCollection: (String) -> Unit,
     onMovie: (String) -> Unit,
+    onMarkWatched: (String) -> Unit = {},
 ) {
     AtlasFilmDirectory(
         title = title,
@@ -805,18 +864,25 @@ fun TerritoryScreen(
         films = films,
         onCollection = onCollection,
         onMovie = onMovie,
+        onMarkWatched = onMarkWatched,
         alwaysShowFilmSection = false,
     )
 }
 
 @Composable
-fun DirectorScreen(director: DirectorUi, onMovie: (String) -> Unit, onCollection: (String) -> Unit) {
+fun DirectorScreen(
+    director: DirectorUi,
+    onMovie: (String) -> Unit,
+    onCollection: (String) -> Unit,
+    onMarkWatched: (String) -> Unit = {},
+) {
     AtlasFilmDirectory(
         title = director.name,
         collections = director.collections,
         films = director.films,
         onCollection = onCollection,
         onMovie = onMovie,
+        onMarkWatched = onMarkWatched,
         alwaysShowFilmSection = true,
     )
 }
@@ -828,8 +894,20 @@ private fun AtlasFilmDirectory(
     films: List<MovieSummaryUi>,
     onCollection: (String) -> Unit,
     onMovie: (String) -> Unit,
+    onMarkWatched: (String) -> Unit,
     alwaysShowFilmSection: Boolean,
 ) {
+    var pending by remember { mutableStateOf<MovieSummaryUi?>(null) }
+    pending?.let { film ->
+        MarkWatchedDialog(
+            title = film.title,
+            onConfirm = {
+                onMarkWatched(film.id)
+                pending = null
+            },
+            onDismiss = { pending = null },
+        )
+    }
     var sortName by rememberSaveable { mutableStateOf(FilmListSort.TitleAsc.name) }
     val sort = FilmListSort.entries.firstOrNull { it.name == sortName } ?: FilmListSort.TitleAsc
     val sorted = remember(films, sort) { films.sortedFilms(sort) }
@@ -862,7 +940,13 @@ private fun AtlasFilmDirectory(
                 item { SectionTitle(R.string.films) }
                 item { FilmSortRow(sort) { sortName = it.name } }
                 items(sorted, key = { it.id }) { film ->
-                    EditorialCard(Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs), { onMovie(film.id) }) {
+                    EditorialCard(
+                        Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs),
+                        { onMovie(film.id) },
+                        if (film.watched) null else {
+                            { pending = film }
+                        },
+                    ) {
                         WatchedFilmTitle(film.title, film.watched)
                         val subtitle = if (film.director.isBlank()) film.year.toString()
                         else "${film.director} · ${film.year}"
@@ -914,6 +998,7 @@ private fun AlphabetScrubber(
     titles: List<String>,
     onLetter: (Char) -> Unit,
     modifier: Modifier = Modifier,
+    plain: Boolean = false,
 ) {
     val letters = listOf('#') + ('A'..'Z').toList()
     val present = titles.mapTo(hashSetOf(), ::filmIndexLetter)
@@ -943,12 +1028,12 @@ private fun AlphabetScrubber(
                 letter.toString(),
                 style = MaterialTheme.typography.labelSmall,
                 fontSize = 10.sp,
-                color = if (letter in present) {
-                    UrbinemaThemeTokens.colors.accent
-                } else {
-                    UrbinemaThemeTokens.colors.onBackgroundMuted
+                color = when {
+                    plain -> UrbinemaThemeTokens.colors.onBackground
+                    letter in present -> UrbinemaThemeTokens.colors.accent
+                    else -> UrbinemaThemeTokens.colors.onBackgroundMuted
                 },
-                modifier = Modifier.alpha(if (letter in present) 1f else 0.35f),
+                modifier = Modifier.alpha(if (plain || letter in present) 1f else 0.35f),
             )
         }
     }
@@ -1191,8 +1276,23 @@ private fun RankArtwork(
 }
 
 @Composable
-fun SearchScreen(search: (String) -> List<SearchHitUi>, onHit: (SearchHitUi) -> Unit) {
+fun SearchScreen(
+    search: (String) -> List<SearchHitUi>,
+    onMarkWatched: (String) -> Unit = {},
+    onHit: (SearchHitUi) -> Unit,
+) {
     var query by remember { mutableStateOf("") }
+    var pending by remember { mutableStateOf<SearchHitUi?>(null) }
+    pending?.let { hit ->
+        MarkWatchedDialog(
+            title = hit.title,
+            onConfirm = {
+                onMarkWatched(hit.id)
+                pending = null
+            },
+            onDismiss = { pending = null },
+        )
+    }
     val results = search(query)
     LazyColumn(pageModifier, contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen)) {
         item { ScreenTitle(R.string.search) }
@@ -1212,7 +1312,13 @@ fun SearchScreen(search: (String) -> List<SearchHitUi>, onHit: (SearchHitUi) -> 
             item { Text(stringResource(R.string.search_no_results), modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.lg)) }
         } else {
             items(results) { hit ->
-                EditorialCard(Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs), { onHit(hit) }) {
+                EditorialCard(
+                    Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs),
+                    { onHit(hit) },
+                    if (hit.kind != SearchKind.Movie) null else {
+                        { pending = hit }
+                    },
+                ) {
                     Text(hit.title, style = MaterialTheme.typography.titleMedium)
                     Text(
                         hit.subtitle.ifBlank { stringResource(searchKindLabel(hit.kind)) },
@@ -1330,6 +1436,8 @@ fun SettingsScreen(
     availableAvatars: List<String>,
     onAvatarChange: (String) -> Unit,
     onHelp: () -> Unit = {},
+    onReplayGuide: () -> Unit = {},
+    onSources: () -> Unit = {},
     onResetProgress: () -> Unit = {},
 ) {
     var editedUsername by remember(username) { mutableStateOf(username) }
@@ -1445,6 +1553,14 @@ fun SettingsScreen(
                 colors = ButtonDefaults.buttonColors(containerColor = UrbinemaThemeTokens.colors.accent),
             ) { Text(stringResource(R.string.help_open)) }
         }
+        item {
+            OutlinedButton(
+                onClick = onReplayGuide,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = UrbinemaThemeTokens.dimens.sm),
+            ) { Text(stringResource(R.string.replay_guide)) }
+        }
         item { SectionTitle(R.string.data) }
         item {
             Button(
@@ -1485,6 +1601,14 @@ fun SettingsScreen(
                     stringResource(R.string.about_avatars),
                     color = UrbinemaThemeTokens.colors.onBackgroundMuted,
                     modifier = Modifier.clickable { uriHandler.openUri("https://avatarmaker.com") },
+                )
+                Text(
+                    stringResource(R.string.see_all_sources),
+                    color = UrbinemaThemeTokens.colors.onBackgroundMuted,
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier
+                        .padding(top = UrbinemaThemeTokens.dimens.sm)
+                        .clickable(onClick = onSources),
                 )
             }
         }
@@ -1563,7 +1687,7 @@ private fun SettingsSwitch(label: Int, checked: Boolean, onCheckedChange: (Boole
 }
 
 @Composable
-private fun ScreenTitle(title: Int) {
+internal fun ScreenTitle(title: Int) {
     Text(
         stringResource(title),
         style = MaterialTheme.typography.displayLarge,

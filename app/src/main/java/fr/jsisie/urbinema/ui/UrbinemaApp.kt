@@ -92,6 +92,7 @@ import fr.jsisie.urbinema.ui.model.SearchKind
 import fr.jsisie.urbinema.ui.model.StatsCategory
 import fr.jsisie.urbinema.ui.model.TerritoryUi
 import fr.jsisie.urbinema.ui.model.UrbinemaViewModel
+import fr.jsisie.urbinema.ui.screens.AppGuideDialog
 import fr.jsisie.urbinema.ui.screens.AtlasScreen
 import fr.jsisie.urbinema.ui.screens.BadgesScreen
 import fr.jsisie.urbinema.ui.screens.CollectionScreen
@@ -107,9 +108,11 @@ import fr.jsisie.urbinema.ui.screens.NamedListScreen
 import fr.jsisie.urbinema.ui.screens.OnboardingDialog
 import fr.jsisie.urbinema.ui.screens.ProfileScreen
 import fr.jsisie.urbinema.ui.screens.ProgressScreen
+import fr.jsisie.urbinema.ui.screens.RankUpDialog
 import fr.jsisie.urbinema.ui.screens.RanksScreen
 import fr.jsisie.urbinema.ui.screens.SearchScreen
 import fr.jsisie.urbinema.ui.screens.SettingsScreen
+import fr.jsisie.urbinema.ui.screens.SourcesScreen
 import fr.jsisie.urbinema.ui.screens.StatsScreen
 import fr.jsisie.urbinema.ui.screens.TerritoryScreen
 import fr.jsisie.urbinema.ui.theme.UrbinemaTheme
@@ -137,6 +140,7 @@ private object Routes {
     const val Director = "director/{directorCode}"
     const val Territory = "territory/{kind}/{code}"
     const val Help = "help/{topic}"
+    const val Sources = "sources"
     const val History = "history"
 }
 
@@ -163,6 +167,11 @@ fun UrbinemaApp(model: UrbinemaViewModel = PreviewUrbinemaViewModel) {
                         avatars = model.availableAvatars,
                         onConfirm = model::completeOnboarding,
                     )
+                } else if (model.showAppGuide) {
+                    AppGuideDialog(onFinished = model::dismissAppGuide)
+                }
+                model.rankUpCelebration?.let { name ->
+                    RankUpDialog(rankName = name, onDismiss = model::dismissRankUp)
                 }
                 model.completedCollectionCelebration?.let { name ->
                     val resources = LocalContext.current.resources
@@ -292,7 +301,7 @@ private fun UrbinemaNavigation(
     val isTab = tabs.any { it.route == route }
     val highlightedTab = when {
         isTab -> route
-        route == Routes.Settings -> Routes.Profile
+        route == Routes.Settings || route == Routes.Sources -> Routes.Profile
         route == Routes.SkyMap -> Routes.Atlas
         else -> activeTab
     }
@@ -464,6 +473,7 @@ private fun UrbinemaNavigation(
                         onLayerChange = { mapLayer = it },
                         filmsOf = { code -> skyFilms(model, mapLayer, code, graph) },
                         onMovie = { navController.navigate(movieRoute(it)) },
+                        onMarkWatched = model::markMovieWatched,
                         onCenterFilm = {
                             mapFocus = it
                             mapLayer = MapLayer.AROUND_FILM
@@ -501,6 +511,8 @@ private fun UrbinemaNavigation(
                         availableAvatars = model.availableAvatars,
                         onAvatarChange = model::setAvatar,
                         onHelp = { navController.navigate(helpRoute(HelpTopic.All)) },
+                        onReplayGuide = model::replayAppGuide,
+                        onSources = { navController.navigate(Routes.Sources) },
                         onResetProgress = model::resetProgress,
                     )
                 }
@@ -537,6 +549,7 @@ private fun UrbinemaNavigation(
                             onMovie = { navController.navigate(movieRoute(it)) },
                             onFollow = { model.followCollection(collection.id) },
                             onUnfollow = { model.unfollowCollection(collection.id) },
+                            onMarkWatched = model::markMovieWatched,
                         )
                     }
                 }
@@ -544,7 +557,7 @@ private fun UrbinemaNavigation(
                     BadgesScreen(model.badges, model::setShowcaseBadges)
                 }
                 composable(Routes.Search) {
-                    SearchScreen(model::search) { hit ->
+                    SearchScreen(model::search, onMarkWatched = model::markMovieWatched) { hit ->
                         when (hit.kind) {
                             SearchKind.Movie -> navController.navigate(movieRoute(hit.id))
                             SearchKind.Country -> navController.navigate(territoryRoute("country", hit.id))
@@ -592,6 +605,7 @@ private fun UrbinemaNavigation(
                             director = director,
                             onMovie = { navController.navigate(movieRoute(it)) },
                             onCollection = ::openCollection,
+                            onMarkWatched = model::markMovieWatched,
                         )
                     }
                 }
@@ -628,6 +642,7 @@ private fun UrbinemaNavigation(
                         films = films,
                         onCollection = ::openCollection,
                         onMovie = { navController.navigate(movieRoute(it)) },
+                        onMarkWatched = model::markMovieWatched,
                     )
                 }
                 composable(
@@ -639,6 +654,7 @@ private fun UrbinemaNavigation(
                         ?: HelpTopic.All
                     HelpScreen(topic)
                 }
+                composable(Routes.Sources) { SourcesScreen() }
             }
         }
     }

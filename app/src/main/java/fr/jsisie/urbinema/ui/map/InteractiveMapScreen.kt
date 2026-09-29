@@ -14,6 +14,8 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.calculateCentroid
@@ -87,6 +89,7 @@ import fr.jsisie.urbinema.domain.map.CinemaMapNode
 import fr.jsisie.urbinema.domain.map.MapCamera
 import fr.jsisie.urbinema.domain.map.MapLayer
 import fr.jsisie.urbinema.domain.map.MapNodeKind
+import fr.jsisie.urbinema.ui.components.MarkWatchedDialog
 import fr.jsisie.urbinema.ui.components.WatchedFilmTitle
 import fr.jsisie.urbinema.ui.model.ExplorationState
 import fr.jsisie.urbinema.ui.model.MovieSummaryUi
@@ -165,6 +168,7 @@ fun InteractiveMapScreen(
     onLayerChange: (MapLayer) -> Unit,
     filmsOf: (String) -> List<MovieSummaryUi>,
     onMovie: (String) -> Unit,
+    onMarkWatched: (String) -> Unit = {},
     onCenterFilm: (String) -> Unit,
     onOpenNode: (MapNodeKind, String) -> Unit,
     modifier: Modifier = Modifier,
@@ -328,20 +332,34 @@ fun InteractiveMapScreen(
                 films = films,
                 kind = selected.kind,
                 onMovie = onMovie,
+                onMarkWatched = onMarkWatched,
                 onOpenNode = { onOpenNode(selected.kind, selected.id) },
             )
         }
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun NodeSheet(
     territory: TerritoryUi,
     films: List<MovieSummaryUi>,
     kind: MapNodeKind,
     onMovie: (String) -> Unit,
+    onMarkWatched: (String) -> Unit,
     onOpenNode: () -> Unit,
 ) {
+    var pending by remember { mutableStateOf<MovieSummaryUi?>(null) }
+    pending?.let { film ->
+        MarkWatchedDialog(
+            title = film.title,
+            onConfirm = {
+                onMarkWatched(film.id)
+                pending = null
+            },
+            onDismiss = { pending = null },
+        )
+    }
     val stateLabel = stringResource(
         when (territory.state) {
             ExplorationState.Unexplored -> R.string.state_unexplored
@@ -409,7 +427,12 @@ private fun NodeSheet(
                     Column(
                         Modifier
                             .fillMaxWidth()
-                            .clickable { onMovie(film.id) }
+                            .combinedClickable(
+                                onClick = { onMovie(film.id) },
+                                onLongClick = if (film.watched) null else {
+                                    { pending = film }
+                                },
+                            )
                             .padding(vertical = 6.dp),
                     ) {
                         WatchedFilmTitle(film.title, film.watched)

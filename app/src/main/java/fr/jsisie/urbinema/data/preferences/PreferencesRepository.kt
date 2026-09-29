@@ -48,6 +48,14 @@ class PreferencesRepository(private val context: Context) {
         )
     }
 
+    val tutorialCompleted: Flow<Boolean> = context.urbinemaPreferences.data.map { values ->
+        values[TUTORIAL_COMPLETED] ?: true
+    }
+
+    suspend fun setTutorialCompleted(completed: Boolean) {
+        context.urbinemaPreferences.edit { it[TUTORIAL_COMPLETED] = completed }
+    }
+
     suspend fun setThemeMode(mode: ThemePreference) {
         context.urbinemaPreferences.edit { it[THEME_MODE] = mode.name }
     }
@@ -73,5 +81,6 @@ class PreferencesRepository(private val context: Context) {
         val FILM_GRAIN = booleanPreferencesKey("film_grain")
         val BADGE_CELEBRATION_SEEDED = booleanPreferencesKey("badge_celebration_seeded")
         val BADGE_CELEBRATION_CODES = stringPreferencesKey("badge_celebration_codes")
+        val TUTORIAL_COMPLETED = booleanPreferencesKey("tutorial_completed")
     }
 }

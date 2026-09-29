@@ -104,6 +104,7 @@ class CatalogImporter(
     private suspend fun persist(pack: CatalogPack) {
         val dao = database.catalogImportDao()
         val timestamp = Instant.parse(pack.generatedAt)
+        remapRetiredMovies(pack.movieAliases)
         dao.parkCollectionDisplayOrders()
         dao.parkRankingDisplayOrders()
         dao.clearCountriesContinents()
@@ -370,6 +371,23 @@ class CatalogImporter(
                 movieCount = pack.movies.size,
             )
         )
+    }
+
+    /**
+     * A duplicate removed from the pack must not stay as the film the user marked
+     * watched: that row would lose its countries on the next import and crash startup.
+     */
+    private suspend fun remapRetiredMovies(aliases: List<MovieAliasImport>) {
+        val dao = database.catalogImportDao()
+        for (alias in aliases) {
+            val from = dao.movieByCode(alias.from) ?: continue
+            val to = dao.movieByCode(alias.to) ?: continue
+            if (from.movieId == to.movieId) continue
+            dao.dropUserMoviesAlreadyOnTarget(from.movieId, to.movieId)
+            dao.moveUserMovies(from.movieId, to.movieId)
+            dao.dropXpAlreadyOnTarget(from.movieId, to.movieId)
+            dao.moveXpMovies(from.movieId, to.movieId)
+        }
     }
 
     private suspend fun upsertMedia(value: MediaAssetEntity): Long {

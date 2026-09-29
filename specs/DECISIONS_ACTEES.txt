@@ -653,6 +653,25 @@ H. DIVERS
     unique + debounce UI. Carte du ciel en salle éclairée : fond papier et
     sheet aux couleurs du thème.
 
+78. LIVRABLE 0.3.0 (GUIDE, XP, LISTES, RANG, CATALOGUE)
+    XP film = 25, uniquement si le film appartient à une collection suivie
+    au moment où on le marque Vu. Pas de rétroactif.
+    Appui long = proposer Vu (collection, Atlas, recherche, carte).
+    Index lettres simple (couleur du texte) sur pays, courants, genres, réalisateurs.
+    Guide 6 pages après l’onboarding, rejouable dans Réglages. Page Sources
+    sous les crédits (livres Allard / Müller / Philippe, TSPDT, Letterboxd,
+    Sight & Sound, Ebert, festivals, TMDB pour les affiches).
+    Splash : logo sur fond blanc tant que le catalogue n’est pas chargé.
+    Chaîne des rangs ouverte sur le rang courant. Dialogue + confettis au passage de rang.
+    Quêtes « possible » + compteur de fréquence : non faits (trop chers à chaque film). Idée ouverte.
+    Catalogue : `tools/dedupe_catalog_v3.py` relit catalog_v2.json (jamais modifié)
+    et écrit catalog_v3.json + catalog.json en version **20**. Un film n’est retiré
+    que s’il s’agit du même œuvre (mêmes réalisateurs, même titre compacté, même
+    partie, années proches). 1429 → 1383, 46 alias. OLDBOY_2003 → OLD_BOY_2003.
+    La Condition de l’homme II reste. L’import déplace Vu/XP de l’ancien code
+    vers le film gardé avant d’effacer les liens pays, pour ne plus planter
+    au démarrage (« has no primary country »).
+
 
 ========================================================================
 E. CE QUI RESTE OUVERT (cœur fonctionnel, pas le cloud)

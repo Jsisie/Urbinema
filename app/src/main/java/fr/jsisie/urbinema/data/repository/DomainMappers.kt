@@ -54,6 +54,17 @@ suspend fun UrbinemaDatabase.catalogDomainLookups(): CatalogDomainLookups {
     )
 }
 
+/**
+ * Maps a complete Room projection to the Android-free rank/badge model.
+ * A retired duplicate can still be referenced by an old "vu" row after its
+ * country links were cleared; callers skip that row instead of crashing startup.
+ */
+fun MovieWithRelations.toDomainOrNull(lookups: CatalogDomainLookups): Movie? {
+    val hasCountry = lookups.primaryCountryByMovieId[movie.movieId] != null || countries.isNotEmpty()
+    if (!hasCountry) return null
+    return toDomain(lookups)
+}
+
 /** Maps a complete Room projection to the Android-free rank/badge model. */
 fun MovieWithRelations.toDomain(lookups: CatalogDomainLookups): Movie {
     val primaryCountry = lookups.primaryCountryByMovieId[movie.movieId]

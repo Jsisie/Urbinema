@@ -2,7 +2,7 @@
 
 ### Urbinema
 
-**Version :** 1.4 — 0.2.8 : ciel lisible en thème clair, cap 10 collections
+**Version :** 1.5 — 0.3.0 : splash logo, guide, sources, index lettres, appui long Vu, célébration de rang
 **Statut :** Direction de travail validée ; carte du ciel = maquette jouable (0.2.3+)
 **Lié à :** `CahierDesCharges_Fonctionnel_v2.md`, `CahierDesCharges_Technique.md`, `DECISIONS_ACTEES.txt`
 
@@ -11,6 +11,8 @@
 > pas avant.
 >
 > Les éléments **imposés par Léo** sont signalés par la mention **[imposé]**. Le reste relève de ma proposition.
+>
+> **0.3.0 —** Pendant le chargement du catalogue, fond blanc plein écran et icône de l’app (plus le texte « Votre aventure commence ici »). Après le pseudo, un carrousel de 6 pages (intro, Accueil, Atlas, Collections, futur Parcours, Profil), rejouable dans Réglages (« Revoir le guide »). « Voir toutes les sources » sous les crédits. Index A–Z blanc (couleur du texte, pas l’or) sur pays, courants, genres et réalisateurs. Appui long sur un film d’une liste → confirmer Vu. La chaîne des rangs s’ouvre sur le rang courant. Un nouveau rang ouvre un dialogue avec confettis.
 
 ------
 
@@ -278,7 +280,7 @@ gris (~42 % d’opacité) avec une **icône cadenas**. Un tap n’ouvre pas la f
 il affiche une boîte (`setLocales`) :
 
 - titre : « Collection verrouillée »
-- Initiation pas encore ouverte : « marque au moins un de ses films comme Vu »
+- Initiation pas encore ouverte : « Suivre la collection et marquer un film comme vu »
 - palier suivant : « commence au moins N collection(s) de {groupe précédent}
   et marque au moins 2 films dans chacune »
 

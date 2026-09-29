@@ -7,7 +7,7 @@
 ## Spécification fonctionnelle du produit
 
 **Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.2.8** (catalogue v3)
+**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 20, 1383 films)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -861,14 +861,14 @@ Deux sources, à calibrer après usage :
 
 | Source | XP |
 | --- | ---: |
-| **Film vu** (une fois) | **10** (essai ; était 40, trop généreux) |
+| **Film vu** (une fois, et seulement s’il est dans une collection suivie à cet instant) | **25** |
 | **Quête Bronze** | 100 |
 | **Quête Argent** | 250 |
 | **Quête Or** | 500 |
 
-Les quêtes restent la grosse source d’assiduité. 10 XP par film évite de
-noyer le niveau en enchaînant le catalogue (~4 050 XP si on voit tout,
-contre 16 200 à 40). Badges et collections ne donnent **pas** d’XP.
+Les quêtes restent la grosse source d’assiduité. Un film hors collection suivie ne donne pas d’XP. 25 XP, seulement au moment où on le marque Vu, évite de noyer le niveau. Les films déjà vus ne sont pas recalculés. Badges et collections ne donnent **pas** d’XP.
+
+Pas de colonne « quête possible » ni de compteur de fréquence en 0.3.0 : le tirage de la semaine filtre déjà les quêtes devenues impossibles, une fois, sur le catalogue. Refaire ce contrôle à chaque film vu ralentirait l’app. L’idée (flag + moins de chances pour les quêtes qui tombent souvent) reste ouverte pour plus tard.
 
 Une quête expirée ou inachevée ne donne aucune XP. Une quête n'est jamais
 rétroactive : seuls les films validés après son activation et dont la date de
@@ -1034,13 +1034,13 @@ Les appellations définitives restent à travailler. En 0.1.7, l'interface affic
 | Notion | Rôle | Quantité | Rythme |
 | ------ | ---- | -------- | ------ |
 | **Rang** | Identité cinéphile à un instant T : un état d'esprit, une façon de voir et de concevoir le cinéma | 10, un seul à la fois | Bouge très lentement — des années |
-| **Niveau / XP** | Progression ludique (quêtes + **10 XP** / film une fois) | 1 à 50 | Régulier |
+| **Niveau / XP** | Progression ludique (quêtes + **25 XP** si le film est dans une collection suivie) | 1 à 50 | Régulier |
 | **Badge** | Accomplissement ponctuel une fois une condition remplie | Des dizaines, voire des centaines, cumulables | Dès que la condition tombe |
 | **Quête** | Objectif à court terme, avec une difficulté | Trois par semaine | Hebdomadaire |
 
 Le rang **n'est pas** un compteur de films et ne se déduit ni du niveau, ni des
-badges, ni des quêtes. Inversement, le niveau dépend de l'XP (quêtes + 10 XP
-par film vu une fois) et jamais du rang.
+badges, ni des quêtes. Inversement, le niveau dépend de l'XP (quêtes + 25 XP
+pour un film d'une collection suivie, une seule fois) et jamais du rang.
 
 ------
 
@@ -2368,7 +2368,7 @@ Encore ouvert :
 
 **Tranché (0.1.10) :** pack actuel **15 collections** (cible 20), ordonnées par
 un numéro éditorial et un `track`. **Initiation** en tête, toujours ouverte.
-Cadenas Initiation : ≥ 1 film Vu dans Initiation. Cadenas **entre groupes** :
+Cadenas Initiation : collection **suivie** et ≥ 1 film Vu. Cadenas **entre groupes** :
 2 collections commencées (2 films vus) dans le palier précédent. **Cliquet** :
 un palier ouvert reste ouvert. Progression affichée et titres dorés **seulement
 si la collection est suivie**. À 100 % : félicitations, sortie des « en cours »,
@@ -2385,7 +2385,7 @@ arrêtée et paramétrable (§9.4). Les rangs 8 à 10 restent quantitatifs en V1
 le rang 10 demande un parcours quasi exhaustif. Le rang ne redescend jamais.
 
 XP et niveaux : 50 niveaux, indépendants du rang, obtenus par les quêtes
-**et 10 XP par film unique** (essai 0.2.1). Courbe : `FORMULE_NIVEAUX_XP.txt`.
+**et 25 XP** quand le film marqué Vu appartient à une collection suivie. Courbe : `FORMULE_NIVEAUX_XP.txt`.
 
 Encore ouvert :
 
@@ -2421,9 +2421,9 @@ Encore ouvert : enrichir le pool ; calibrer après usage.
 **Tranché :** l’onglet **Atlas** ouvre les **listes** (décision 72, amende 70).
 Carte du ciel = icône étoiles. Vue ciel : constellation autour d’un film.
 Puces = calques territoires. Zoom max 14. Tap film = recentrer ; tap
-territoire = feuille + fiche. XP film = **10** (décision 69).
+territoire = feuille + fiche. XP film = **25**, seulement si une collection suivie contient ce film (0.3.0).
 
-Encore ouvert : calibrage après test (labels, densité, 10 XP vs quêtes).
+Encore ouvert : calibrage après test (labels, densité, 25 XP en collection suivie vs quêtes).
 
 ------
 

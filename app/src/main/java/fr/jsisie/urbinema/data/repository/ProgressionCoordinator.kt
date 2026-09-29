@@ -63,7 +63,7 @@ class ProgressionCoordinator(
                 },
             )
         } else {
-            val catalog = catalogDao.allMoviesWithRelations().map { it.toDomain(lookups) }
+            val catalog = catalogDao.allMoviesWithRelations().mapNotNull { it.toDomainOrNull(lookups) }
             if (catalog.isEmpty()) return
             statsEngine.build(
                 version = version.version.toLong(),
@@ -89,7 +89,7 @@ class ProgressionCoordinator(
         val currentRankOrder = currentRank.displayOrder
 
         val watchedRels = progressDao.validatedMovies(userId)
-        val validated = watchedRels.map { it.toDomain(lookups) }
+        val validated = watchedRels.mapNotNull { it.toDomainOrNull(lookups) }
         val ageYears = user.birthDate?.let { java.time.Year.now().value - it.year }
         val result = rankEngine.calculate(validated, stats, currentRankOrder, ageYears)
         val candidateRanking = checkNotNull(progressDao.rankingByOrder(result.displayedRank))
@@ -156,28 +156,9 @@ class ProgressionCoordinator(
                     progressDao.setMaxLevelReached(userId, calculated)
                     Log.i(TAG, "XP films retirée ($stripped lignes). Niveau recalé : $calculated")
                 }
-            } else {
-                val retargeted = progressDao.updateXpAmountBySource(userId, XpSources.FILM, filmXp)
-                val alreadyPaid = progressDao.filmXpMovieIds(userId).toHashSet()
-                watchedRels.forEach { rel ->
-                    if (rel.movie.movieId in alreadyPaid) return@forEach
-                    progressDao.insertXpTransactionIgnore(
-                        XpTransactionEntity(
-                            userId = userId,
-                            movieId = rel.movie.movieId,
-                            source = XpSources.FILM,
-                            amount = filmXp,
-                            earnedAt = now,
-                        )
-                    )
-                }
-                if (retargeted > 0) {
-                    val remaining = progressDao.totalXp(userId)
-                    val calculated = xpEngine.progress(remaining, 1).calculatedLevel
-                    progressDao.setMaxLevelReached(userId, calculated)
-                    Log.i(TAG, "XP film recalée à $filmXp ($retargeted lignes). Niveau recalé : $calculated")
-                }
             }
+            // Do not backfill every watched film. XP is granted only at mark time,
+            // and only when the film belongs to a followed collection.
         }
     }
 

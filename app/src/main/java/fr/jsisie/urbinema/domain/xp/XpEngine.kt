@@ -1,6 +1,7 @@
 package fr.jsisie.urbinema.domain.xp
 
 import fr.jsisie.urbinema.data.db.MovieWithRelations
+import fr.jsisie.urbinema.domain.FunctionalLimits
 
 data class XpCurveSegment(
     val startLevel: Int,
@@ -23,7 +24,7 @@ data class XpCurveSegment(
 
 data class XpConfiguration(
     val maxLevel: Int = 50,
-    val filmReward: Int = 10,
+    val filmReward: Int = FunctionalLimits.FILM_XP_IN_FOLLOWED_COLLECTION,
     val rewards: Map<QuestDifficulty, Int> = mapOf(
         QuestDifficulty.BRONZE to 100,
         QuestDifficulty.SILVER to 250,
@@ -112,10 +113,8 @@ class XpEngine(private val configuration: XpConfiguration = XpConfiguration()) {
     /** Returns the immutable reward associated with a quest difficulty. */
     fun rewardFor(difficulty: QuestDifficulty): Int = configuration.rewards.getValue(difficulty)
 
-    /** XP granted once per unique validated film. Currently 10 (trial vs the old 40). */
-    fun rewardForFilm(): Int {
-        return configuration.filmReward
-    }
+    /** XP once, and only when the film sits in a followed collection. Otherwise 0. */
+    fun rewardForFilm(): Int = configuration.filmReward
 
     private fun buildThresholds(): List<Long> {
         val result = MutableList(configuration.maxLevel) { 0L }

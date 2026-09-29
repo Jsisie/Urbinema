@@ -125,8 +125,13 @@ class MainViewModel(
     private var observedUserId: Long? = null
     private var observing = false
     private var bootstrapFailed = false
+    private var catalogLoaded = false
     private var refreshJob: Job? = null
     private var followLimitDialog by mutableStateOf(false)
+    private var guideVisible by mutableStateOf(false)
+    private var rankUpName by mutableStateOf<String?>(null)
+    private var rankCelebrationSeeded = false
+    private var lastRankOrder = 1
 
     private var homeState by mutableStateOf(HomeUiState(loadState = LoadState.Loading))
     private var territoryState by mutableStateOf(emptyList<TerritoryUi>())
@@ -176,6 +181,8 @@ class MainViewModel(
     override val completedCollectionCelebration: String? get() = celebrationName
     override val unlockedBadgeCelebration: String? get() = pendingBadgeCelebrations.firstOrNull()
     override val followLimitReached: Boolean get() = followLimitDialog
+    override val showAppGuide: Boolean get() = guideVisible
+    override val rankUpCelebration: String? get() = rankUpName
     override val availableAvatars: List<String> get() = MediaPaths.PACKAGED_AVATAR_CODES
 
     init {
@@ -201,6 +208,11 @@ class MainViewModel(
         }
         viewModelScope.launch {
             preferencesRepository.filmGrain.collectLatest { grainEnabled = it }
+        }
+        viewModelScope.launch {
+            preferencesRepository.tutorialCompleted.collectLatest { completed ->
+                guideVisible = !completed
+            }
         }
         viewModelScope.launch {
             preferencesRepository.badgeCelebrations.collectLatest { prefs ->
@@ -299,6 +311,7 @@ class MainViewModel(
                 database.progressDao().updateBirthDate(existing.userId, birthDate)
                 database.progressDao().updateAvatarCode(existing.userId, avatar)
                 progressionCoordinator.recalculate(existing.userId)
+                preferencesRepository.setTutorialCompleted(false)
                 return@launch
             }
             val firstRank = database.progressDao().rankingByOrder(1) ?: return@launch
@@ -313,6 +326,7 @@ class MainViewModel(
                     )
                 )
             }.onFailure { Log.e(TAG, "Onboarding profile insert failed", it) }
+            preferencesRepository.setTutorialCompleted(false)
         }
     }
 
@@ -321,10 +335,41 @@ class MainViewModel(
      * weekly quests are recalculated from the validated set — not from this screen.
      */
     override fun markCurrentMovieWatched() {
-        val currentUser = user ?: return
         val currentMovie = moviesWithRelations.firstOrNull { it.movie.code == movieState.id } ?: return
-        if (movieState.watched || watched.any { it.movieId == currentMovie.movie.movieId }) return
-        movieState = movieState.copy(watched = true)
+        markMovie(currentMovie)
+    }
+
+    override fun markMovieWatched(code: String) {
+        val movie = moviesWithRelations.firstOrNull { it.movie.code == code } ?: return
+        markMovie(movie)
+    }
+
+    override fun replayAppGuide() {
+        viewModelScope.launch { preferencesRepository.setTutorialCompleted(false) }
+    }
+
+    override fun dismissAppGuide() {
+        viewModelScope.launch { preferencesRepository.setTutorialCompleted(true) }
+    }
+
+    override fun dismissRankUp() {
+        rankUpName = null
+    }
+
+    /**
+     * Marks a film as seen once. Film XP is granted only when it belongs to a
+     * collection the profile currently follows.
+     */
+    private fun markMovie(currentMovie: MovieWithRelations) {
+        val currentUser = user ?: return
+        if (watched.any { it.movieId == currentMovie.movie.movieId }) return
+        if (movieState.id == currentMovie.movie.code) {
+            movieState = movieState.copy(watched = true)
+        }
+        val awardXp = collectionsWithMovies.any { item ->
+            item.collection.collectionId in followedCollectionIds &&
+                item.movies.any { it.movieId == currentMovie.movie.movieId }
+        }
         val film = currentMovie.movie
         val h = film.historicalDistance
         val a = film.artisticDemand
@@ -332,6 +377,7 @@ class MainViewModel(
         val c = film.culturalRichness
         val intrinsic = 1.0 + 2.0 * h + 2.0 * a + 2.0 * r + 3.0 * c
         val attenuated = kotlin.math.sqrt(intrinsic)
+        val filmXp = if (awardXp) xpEngine.rewardForFilm() else 0
         Log.i(PROGRESS_TAG, "========== Film marqué Vu ==========")
         Log.i(
             PROGRESS_TAG,
@@ -340,13 +386,14 @@ class MainViewModel(
         Log.i(PROGRESS_TAG, "Axes: H(distance)=$h A(exigence)=$a R(importance)=$r C(richesse)=$c")
         Log.i(PROGRESS_TAG, "Poids brut W_f = 1 + 2H + 2A + 2R + 3C = ${"%.4f".format(intrinsic)}")
         Log.i(PROGRESS_TAG, "Poids atténué W' = sqrt(W_f) = ${"%.4f".format(attenuated)}  (ajouté au volume Vw)")
-        Log.i(PROGRESS_TAG, "XP de ce film = ${xpEngine.rewardForFilm()} (une fois). Quêtes : Bronze 100 / Argent 250 / Or 500")
+        Log.i(PROGRESS_TAG, "XP de ce film = $filmXp (collection suivie=$awardXp). Quêtes : Bronze 100 / Argent 250 / Or 500")
         viewModelScope.launch {
             progressRepository.markWatched(
                 userId = currentUser.userId,
                 movieId = currentMovie.movie.movieId,
                 watchedOn = LocalDate.now(ZoneId.systemDefault()),
                 activityPayloadJson = """{"version":1,"movieCode":"${currentMovie.movie.code}"}""",
+                awardFilmXp = awardXp,
             )
             progressionCoordinator.recalculate(currentUser.userId)
             weeklyQuestCoordinator.onProgressChanged(currentUser.userId)
@@ -548,6 +595,8 @@ class MainViewModel(
         user = profile.copy(unlockedTrackOrdinal = CollectionUnlockRules.LOCKED_ORDINAL)
         watched = emptyList()
         followedCollectionIds = emptySet()
+        rankCelebrationSeeded = false
+        rankUpName = null
         refresh()
         viewModelScope.launch {
             progressRepository.resetProgress(profile.userId)
@@ -583,6 +632,7 @@ class MainViewModel(
                     bootstrapFailed = true
                     Log.e(TAG, "Catalog snapshot failed", it)
                 }
+            catalogLoaded = true
             refreshNow()
         }
         viewModelScope.launch {
@@ -710,6 +760,7 @@ class MainViewModel(
         val level = xpEngine.progress(totalXp, user?.maxLevelReached ?: 1)
         val rank = rankings.firstOrNull { it.rankingId == user?.rankingId }
             ?: rankings.firstOrNull()
+        noteRankChange(rank)
         val continentsById = continentEntities.associateBy { it.continentId }
 
         val countriesById = countryEntities.associateBy { it.countryId }
@@ -722,9 +773,10 @@ class MainViewModel(
         }
         val initiation = collectionsWithMovies.firstOrNull { it.collection.code == INITIATION_CODE }
         val initiationWatched = initiation?.movies?.count { movie -> movie.movieId in watchedIds } ?: 0
+        val initiationFollowed = initiation?.collection?.collectionId in followedCollectionIds
         val profile = user
         val latchedOrdinal = profile?.unlockedTrackOrdinal ?: CollectionUnlockRules.LOCKED_ORDINAL
-        val initiationOpen = CollectionUnlockRules.isInitiationOpen(initiationWatched)
+        val initiationOpen = CollectionUnlockRules.isInitiationOpen(initiationWatched, initiationFollowed)
         val qualifiedByTrack = CollectionTrack.entries.associateWith { track ->
             val inTrack = collectionsWithMovies.filter { collectionTrack(it.collection.track) == track }
             inTrack.count { item ->
@@ -886,6 +938,7 @@ class MainViewModel(
         val rankLong = rank?.longDescription ?: rank?.description.orEmpty()
         homeState = homeState.copy(
             loadState = when {
+                !catalogLoaded -> LoadState.Loading
                 moviesWithRelations.isNotEmpty() -> LoadState.Content
                 bootstrapFailed -> LoadState.Error
                 else -> LoadState.Empty
@@ -1241,6 +1294,20 @@ class MainViewModel(
 
     private fun percentage(value: Int, total: Int): Int =
         if (total <= 0) 0 else (value * 100 / total).coerceIn(0, 100)
+
+    private fun noteRankChange(rank: RankingEntity?) {
+        val order = rank?.displayOrder ?: return
+        if (user == null || !catalogLoaded) return
+        if (!rankCelebrationSeeded) {
+            lastRankOrder = order
+            rankCelebrationSeeded = true
+            return
+        }
+        if (order > lastRankOrder) {
+            rankUpName = rank.name
+        }
+        lastRankOrder = order
+    }
 
     private fun formatDuration(minutes: Int): String {
         val hours = minutes / 60

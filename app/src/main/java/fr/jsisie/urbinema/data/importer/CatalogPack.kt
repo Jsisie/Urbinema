@@ -20,6 +20,14 @@ data class CatalogPack(
     val rankings: List<RankingImport> = emptyList(),
     val badges: List<BadgeImport> = emptyList(),
     val quests: List<QuestImport> = emptyList(),
+    /** Codes removed as duplicates. `from` no longer has a movie row; `to` is the film that remains. */
+    val movieAliases: List<MovieAliasImport> = emptyList(),
+)
+
+@Serializable
+data class MovieAliasImport(
+    val from: String,
+    val to: String,
 )
 
 @Serializable

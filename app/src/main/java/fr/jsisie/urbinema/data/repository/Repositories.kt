@@ -50,6 +50,7 @@ class ProgressRepository(
         movieId: Long,
         watchedOn: LocalDate,
         activityPayloadJson: String,
+        awardFilmXp: Boolean,
     ) {
         require(!watchedOn.isAfter(LocalDate.now(clock))) { "watchedOn cannot be in the future" }
         val now = Instant.now(clock)
@@ -65,7 +66,7 @@ class ProgressRepository(
                     payloadJson = activityPayloadJson,
                 )
             )
-            val filmXp = xpEngine.rewardForFilm()
+            val filmXp = if (awardFilmXp) xpEngine.rewardForFilm() else 0
             if (filmXp > 0) {
                 database.progressDao().insertXpTransactionIgnore(
                     XpTransactionEntity(

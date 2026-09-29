@@ -301,6 +301,8 @@ interface UrbinemaViewModel {
     val completedCollectionCelebration: String?
     val unlockedBadgeCelebration: String?
     val followLimitReached: Boolean
+    val showAppGuide: Boolean
+    val rankUpCelebration: String?
     val availableAvatars: List<String>
     fun setThemeMode(mode: UrbinemaThemeMode)
     fun setLanguage(language: AppLanguage)
@@ -310,6 +312,7 @@ interface UrbinemaViewModel {
     fun setAvatar(code: String)
     fun completeOnboarding(username: String, age: Int, avatarCode: String)
     fun markCurrentMovieWatched()
+    fun markMovieWatched(code: String)
     fun followCollection(code: String)
     fun unfollowCollection(code: String)
     fun setShowcaseBadges(codes: List<String>)
@@ -331,6 +334,9 @@ interface UrbinemaViewModel {
     fun dismissCollectionCelebration()
     fun dismissBadgeCelebration()
     fun dismissFollowLimit()
+    fun replayAppGuide()
+    fun dismissAppGuide()
+    fun dismissRankUp()
 }
 
 private val previewFilms = listOf(
@@ -449,6 +455,8 @@ object PreviewUrbinemaViewModel : UrbinemaViewModel {
     override val completedCollectionCelebration: String? = null
     override val unlockedBadgeCelebration: String? = null
     override val followLimitReached: Boolean = false
+    override val showAppGuide: Boolean = false
+    override val rankUpCelebration: String? = null
     override val availableAvatars = MediaPaths.PACKAGED_AVATAR_CODES
     override fun setThemeMode(mode: UrbinemaThemeMode) = Unit
     override fun setLanguage(language: AppLanguage) = Unit
@@ -458,6 +466,7 @@ object PreviewUrbinemaViewModel : UrbinemaViewModel {
     override fun setAvatar(code: String) = Unit
     override fun completeOnboarding(username: String, age: Int, avatarCode: String) = Unit
     override fun markCurrentMovieWatched() = Unit
+    override fun markMovieWatched(code: String) = Unit
     override fun followCollection(code: String) = Unit
     override fun unfollowCollection(code: String) = Unit
     override fun setShowcaseBadges(codes: List<String>) = Unit
@@ -528,4 +537,7 @@ object PreviewUrbinemaViewModel : UrbinemaViewModel {
     override fun dismissCollectionCelebration() = Unit
     override fun dismissBadgeCelebration() = Unit
     override fun dismissFollowLimit() = Unit
+    override fun replayAppGuide() = Unit
+    override fun dismissAppGuide() = Unit
+    override fun dismissRankUp() = Unit
 }

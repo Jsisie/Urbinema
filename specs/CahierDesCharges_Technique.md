@@ -3,7 +3,7 @@
 ### Urbinema
 
 **Version :** 0.12  
-**Statut :** Cadrage technique aligné sur **0.2.8** (catalogue `catalog.json` v19, graine `catalog_v3.json`)  
+**Statut :** Cadrage technique aligné sur **0.3.0** (catalogue `catalog.json` v20, graine `catalog_v3.json`, 1383 films)  
 **Lié à :** `CahierDesCharges_Fonctionnel_v2.md`, `CahierDesCharges_IHM.md`, `DECISIONS_ACTEES.txt`, `ROADMAP_V2_V3.md`  
 **Emplacement :** tous les documents de cadrage vivent dans `specs/`
 
@@ -404,7 +404,7 @@ l’import et mappés vers `CLUB` / `CINEMATHEQUE`. Room **version 5** a ajouté
 utilise `xp_transactions.source` / `movieId`.
 
 Le cadenas Initiation n’est **pas** une colonne de collection : il est dérivé
-(≥ 1 film Vu dans Initiation) puis **latché** dans `users.unlockedTrackOrdinal`.
+(Initiation **suivie** et ≥ 1 film Vu) puis **latché** dans `users.unlockedTrackOrdinal`.
 Un groupe ouvert ne se recadenasse plus. La complétion 100 % non plus :
 `followed` reste vrai, l’UI masque la collection des « en cours » **et**
 ignore les collections encore cadenassées.

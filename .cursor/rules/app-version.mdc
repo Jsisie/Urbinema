@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Version de l'app
 
-La version courante est **0.2.8** (`versionCode` 23).
+La version courante est **0.3.0** (`versionCode` 24).
 
 - Ne **pas** bumper `versionName` / `versionCode` à chaque correctif ou ajout.
 - Bumper uniquement si Léo le demande explicitement, ou au moment d'une

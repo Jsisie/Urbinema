@@ -1,6 +1,6 @@
 # Spécification développeur — Urbinema
 
-**Version :** 1.10 — 0.2.8  
+**Version :** 1.11 — 0.3.0  
 **Date :** 2026-09-28  
 **Statut :** document de reprise. Il décrit le code réellement livré.
 
@@ -9,11 +9,11 @@ produit restent dans `DECISIONS_ACTEES.txt`. Les formules restent dans
 `FORMULE_MATHEMATIQUE.txt` et `FORMULE_NIVEAUX_XP.txt`. En cas d’écart, le
 code et les tests font foi.
 
-**Lire les docs avec l’app à côté.** Ce fichier décrit le code **0.2.8**
-(`versionCode` 23). Les cahiers fonctionnel / IHM / technique, les décisions
+**Lire les docs avec l’app à côté.** Ce fichier décrit le code **0.3.0**
+(`versionCode` 24). Les cahiers fonctionnel / IHM / technique, les décisions
 et la FAQ collent à cet état. Un comportement vu à l’écran a toujours une
 trace ici (navigation §2, persistence §3, règles §2.4 / §7, carte §2.2.1).
-Un chiffre de spec (XP quêtes 100/250/500, 3 badges, pack JSON **19**, Room 7, cliquet,
+Un chiffre de spec (XP quêtes 100/250/500, **25 XP** film si collection suivie, 3 badges, pack JSON **20**, Room 7, cliquet,
 10 collections en cours, 10 avatars) se retrouve dans le code (`FunctionalLimits`) et, s’il est visible, dans `strings.xml`.
 
 ---
@@ -48,7 +48,7 @@ Urbinema est une application Android **100 % locale**.
 | IDE | Android Studio (Narwhal / Hedgehog ou plus récent) |
 | Application ID | `fr.jsisie.urbinema` |
 | Module Gradle / Android Studio | `:urbinema` (dossier physique `app/`) |
-| versionName / versionCode | `0.2.8` / `23` |
+| versionName / versionCode | `0.3.0` / `24` |
 | APK debug | `urbinema-debug.apk` |
 | minSdk | 26 |
 | compileSdk / targetSdk | 36 / 36 |
@@ -154,7 +154,7 @@ L’onglet actif : retaper l’onglet revient à sa racine.
   des « en cours ».
 - Le rang **ne recule jamais**.
 - Le niveau XP **ne recule jamais** (`users.maxLevelReached`), sauf recalage
-  si le tarif film du ledger change. Un film Vu = **10 XP une fois**.
+  si le tarif film du ledger change. Un film Vu = **25 XP une fois**, et seulement s’il est dans une collection suivie.
   Quêtes 100 / 250 / 500.
 - Réglages → **Réinitialiser les données** : confirme, puis efface **uniquement**
   la progression. Le catalogue et le profil (pseudo) restent.
@@ -577,7 +577,7 @@ Fichier : `domain/xp/XpEngine.kt`.
 
 Deux sources, ledger `xp_transactions` :
 
-- **FILM** : **10 XP** par film unique (essai ; était 40).
+- **FILM** : **25 XP** (`FunctionalLimits.FILM_XP_IN_FOLLOWED_COLLECTION`) une seule fois, et seulement si le film est dans une collection **suivie** au moment du marquage. Sinon 0. Pas de rattrapage des films déjà vus.
 - **QUEST** : Bronze 100, Argent 250, Or 500. Assiduité.
 
 Courbe exacte :
