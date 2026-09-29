@@ -1,5 +1,5 @@
 {
-  "version": 20,
+  "version": 23,
   "generatedAt": "2026-09-21T09:42:22Z",
   "mediaAssets": [],
   "characteristicTypes": [
@@ -581,6 +581,14 @@
       "code": "YUGOSLAVIA",
       "name": "Yougoslavie",
       "isoCode": "YU",
+      "continentCodes": [
+        "EUROPE"
+      ]
+    },
+    {
+      "code": "SWITZERLAND",
+      "name": "Suisse",
+      "isoCode": "CH",
       "continentCodes": [
         "EUROPE"
       ]
@@ -5605,13 +5613,6 @@
       "characteristicCodes": []
     },
     {
-      "code": "MARK_NELSON",
-      "firstName": "Mark",
-      "lastName": "Nelson",
-      "displayName": "Mark Nelson",
-      "characteristicCodes": []
-    },
-    {
       "code": "MOJTABA_MIRTAHMASB",
       "firstName": "Mojtaba",
       "lastName": "Mirtahmasb",
@@ -6103,6 +6104,391 @@
         "AGE_OR_CINEMA_JAPONAIS",
         "CINEMA_D_AUTEUR"
       ]
+    },
+    {
+      "code": "JEAN_EPSTEIN",
+      "firstName": "Jean",
+      "lastName": "Epstein",
+      "displayName": "Jean Epstein",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ARNE_SKOUEN",
+      "firstName": "Arne",
+      "lastName": "Skouen",
+      "displayName": "Arne Skouen",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ERIK_L_CHEN",
+      "firstName": "Erik",
+      "lastName": "Løchen",
+      "displayName": "Erik Løchen",
+      "characteristicCodes": []
+    },
+    {
+      "code": "HENNING_CARLSEN",
+      "firstName": "Henning",
+      "lastName": "Carlsen",
+      "displayName": "Henning Carlsen",
+      "characteristicCodes": []
+    },
+    {
+      "code": "IVO_CAPRINO",
+      "firstName": "Ivo",
+      "lastName": "Caprino",
+      "displayName": "Ivo Caprino",
+      "characteristicCodes": []
+    },
+    {
+      "code": "NILS_GAUP",
+      "firstName": "Nils",
+      "lastName": "Gaup",
+      "displayName": "Nils Gaup",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ERIK_SKJOLDBJ_RG",
+      "firstName": "Erik",
+      "lastName": "Skjoldbjærg",
+      "displayName": "Erik Skjoldbjærg",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ERNST_MARISCHKA",
+      "firstName": "Ernst",
+      "lastName": "Marischka",
+      "displayName": "Ernst Marischka",
+      "characteristicCodes": []
+    },
+    {
+      "code": "GERALD_KARGL",
+      "firstName": "Gerald",
+      "lastName": "Kargl",
+      "displayName": "Gerald Kargl",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ULRICH_SEIDL",
+      "firstName": "Ulrich",
+      "lastName": "Seidl",
+      "displayName": "Ulrich Seidl",
+      "characteristicCodes": []
+    },
+    {
+      "code": "HENRI_STORCK",
+      "firstName": "Henri",
+      "lastName": "Storck",
+      "displayName": "Henri Storck",
+      "characteristicCodes": []
+    },
+    {
+      "code": "HARRY_KUMEL",
+      "firstName": "Harry",
+      "lastName": "Kümel",
+      "displayName": "Harry Kümel",
+      "characteristicCodes": []
+    },
+    {
+      "code": "THIERRY_ZENO",
+      "firstName": "Thierry",
+      "lastName": "Zéno",
+      "displayName": "Thierry Zéno",
+      "characteristicCodes": []
+    },
+    {
+      "code": "JEAN_PIERRE_DIKONGUE_PIPA",
+      "firstName": "Jean-Pierre",
+      "lastName": "Dikongué-Pipa",
+      "displayName": "Jean-Pierre Dikongué-Pipa",
+      "characteristicCodes": []
+    },
+    {
+      "code": "BASSEK_BA_KOBHIO",
+      "firstName": "Bassek Ba",
+      "lastName": "Kobhio",
+      "displayName": "Bassek Ba Kobhio",
+      "characteristicCodes": []
+    },
+    {
+      "code": "JEAN_MARIE_TENO",
+      "firstName": "Jean-Marie",
+      "lastName": "Téno",
+      "displayName": "Jean-Marie Téno",
+      "characteristicCodes": []
+    },
+    {
+      "code": "BAE_YONG_KYUN",
+      "firstName": "Bae",
+      "lastName": "Yong-kyun",
+      "displayName": "Bae Yong-kyun",
+      "characteristicCodes": []
+    },
+    {
+      "code": "KAMAL_SELIM",
+      "firstName": "Kamal",
+      "lastName": "Selim",
+      "displayName": "Kamal Selim",
+      "characteristicCodes": []
+    },
+    {
+      "code": "GRIGORI_KROMANOV",
+      "firstName": "Grigori",
+      "lastName": "Kromanov",
+      "displayName": "Grigori Kromanov",
+      "characteristicCodes": []
+    },
+    {
+      "code": "RAINER_SARNET",
+      "firstName": "Rainer",
+      "lastName": "Sarnet",
+      "displayName": "Rainer Sarnet",
+      "characteristicCodes": []
+    },
+    {
+      "code": "NORODOM_SIHANOUK",
+      "firstName": "Norodom",
+      "lastName": "Sihanouk",
+      "displayName": "Norodom Sihanouk",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ANTONIO_EGUINO",
+      "firstName": "Antonio",
+      "lastName": "Eguino",
+      "displayName": "Antonio Eguino",
+      "characteristicCodes": []
+    },
+    {
+      "code": "RUY_DUARTE_DE_CARVALHO",
+      "firstName": "Ruy Duarte de",
+      "lastName": "Carvalho",
+      "displayName": "Ruy Duarte de Carvalho",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ZEZE_GAMBOA",
+      "firstName": "Zézé",
+      "lastName": "Gamboa",
+      "displayName": "Zézé Gamboa",
+      "characteristicCodes": []
+    },
+    {
+      "code": "FRADIQUE",
+      "firstName": "",
+      "lastName": "Fradique",
+      "displayName": "Fradique",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ERIK_BLOMBERG",
+      "firstName": "Erik",
+      "lastName": "Blomberg",
+      "displayName": "Erik Blomberg",
+      "characteristicCodes": []
+    },
+    {
+      "code": "GARETH_EVANS",
+      "firstName": "Gareth",
+      "lastName": "Evans",
+      "displayName": "Gareth Evans",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ROLANDS_KALNINS",
+      "firstName": "Rolands",
+      "lastName": "Kalniņš",
+      "displayName": "Rolands Kalniņš",
+      "characteristicCodes": []
+    },
+    {
+      "code": "GINTS_ZILBALODIS",
+      "firstName": "Gints",
+      "lastName": "Zilbalodis",
+      "displayName": "Gints Zilbalodis",
+      "characteristicCodes": []
+    },
+    {
+      "code": "GEORGES_NASSER",
+      "firstName": "Georges",
+      "lastName": "Nasser",
+      "displayName": "Georges Nasser",
+      "characteristicCodes": []
+    },
+    {
+      "code": "MAROUN_BAGDADI",
+      "firstName": "Maroun",
+      "lastName": "Bagdadi",
+      "displayName": "Maroun Bagdadi",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ARUNAS_ZEBRIUNAS",
+      "firstName": "Arūnas",
+      "lastName": "Žebriūnas",
+      "displayName": "Arūnas Žebriūnas",
+      "characteristicCodes": []
+    },
+    {
+      "code": "VYTAUTAS_ZALAKEVICIUS",
+      "firstName": "Vytautas",
+      "lastName": "Žalakevičius",
+      "displayName": "Vytautas Žalakevičius",
+      "characteristicCodes": []
+    },
+    {
+      "code": "SARUNAS_BARTAS",
+      "firstName": "Šarūnas",
+      "lastName": "Bartas",
+      "displayName": "Šarūnas Bartas",
+      "characteristicCodes": []
+    },
+    {
+      "code": "GEOFF_MURPHY",
+      "firstName": "Geoff",
+      "lastName": "Murphy",
+      "displayName": "Geoff Murphy",
+      "characteristicCodes": []
+    },
+    {
+      "code": "VINCENT_WARD",
+      "firstName": "Vincent",
+      "lastName": "Ward",
+      "displayName": "Vincent Ward",
+      "characteristicCodes": []
+    },
+    {
+      "code": "PAUL_ROTHA",
+      "firstName": "Paul",
+      "lastName": "Rotha",
+      "displayName": "Paul Rotha",
+      "characteristicCodes": []
+    },
+    {
+      "code": "GEORGE_SLUIZER",
+      "firstName": "George",
+      "lastName": "Sluizer",
+      "displayName": "George Sluizer",
+      "characteristicCodes": []
+    },
+    {
+      "code": "YANG_JU_NAM",
+      "firstName": "Ju-nam",
+      "lastName": "Yang",
+      "displayName": "Yang Ju-nam",
+      "characteristicCodes": []
+    },
+    {
+      "code": "YOO_HYUN_MOK",
+      "firstName": "Hyun-mok",
+      "lastName": "Yoo",
+      "displayName": "Yoo Hyun-mok",
+      "characteristicCodes": []
+    },
+    {
+      "code": "MIKA_KAURISMAKI",
+      "firstName": "Mika",
+      "lastName": "Kaurismäki",
+      "displayName": "Mika Kaurismäki",
+      "characteristicCodes": []
+    },
+    {
+      "code": "NIKOS_KOUNDOUROS",
+      "firstName": "Nikos",
+      "lastName": "Koundouros",
+      "displayName": "Nikos Koundouros",
+      "characteristicCodes": []
+    },
+    {
+      "code": "MICHAEL_CACOYANNIS",
+      "firstName": "Michael",
+      "lastName": "Cacoyannis",
+      "displayName": "Michael Cacoyannis",
+      "characteristicCodes": []
+    },
+    {
+      "code": "LIVIU_CIULEI",
+      "firstName": "Liviu",
+      "lastName": "Ciulei",
+      "displayName": "Liviu Ciulei",
+      "characteristicCodes": []
+    },
+    {
+      "code": "NOURI_BOUZID",
+      "firstName": "Nouri",
+      "lastName": "Bouzid",
+      "displayName": "Nouri Bouzid",
+      "characteristicCodes": []
+    },
+    {
+      "code": "KAOUTHER_BEN_HANIA",
+      "firstName": "Kaouther Ben",
+      "lastName": "Hania",
+      "displayName": "Kaouther Ben Hania",
+      "characteristicCodes": []
+    },
+    {
+      "code": "PHAM_THIEN_AN",
+      "firstName": "Phạm Thiên",
+      "lastName": "Ân",
+      "displayName": "Phạm Thiên Ân",
+      "characteristicCodes": []
+    },
+    {
+      "code": "MICHAEL_RAEBURN",
+      "firstName": "Michael",
+      "lastName": "Raeburn",
+      "displayName": "Michael Raeburn",
+      "characteristicCodes": []
+    },
+    {
+      "code": "GODWIN_MAWURU",
+      "firstName": "Godwin",
+      "lastName": "Mawuru",
+      "displayName": "Godwin Mawuru",
+      "characteristicCodes": []
+    },
+    {
+      "code": "MIGUEL_LLANSO",
+      "firstName": "Miguel",
+      "lastName": "Llansó",
+      "displayName": "Miguel Llansó",
+      "characteristicCodes": []
+    },
+    {
+      "code": "ILALA_IBSA",
+      "firstName": "Ilala",
+      "lastName": "Ibsa",
+      "displayName": "Ilala Ibsa",
+      "characteristicCodes": []
+    },
+    {
+      "code": "KIRA_MURATOVA",
+      "firstName": "Kira",
+      "lastName": "Mouratova",
+      "displayName": "Kira Mouratova",
+      "characteristicCodes": []
+    },
+    {
+      "code": "MYROSLAV_SLABOSHPYTSKYI",
+      "firstName": "Myroslav",
+      "lastName": "Slaboshpytskyi",
+      "displayName": "Myroslav Slaboshpytskyi",
+      "characteristicCodes": []
+    },
+    {
+      "code": "DANG_NHAT_MINH",
+      "firstName": "Nhật Minh",
+      "lastName": "Đặng",
+      "displayName": "Đặng Nhật Minh",
+      "characteristicCodes": []
+    },
+    {
+      "code": "PAWEL_PAWLIKOWSKI",
+      "firstName": "Paweł",
+      "lastName": "Pawlikowski",
+      "displayName": "Paweł Pawlikowski",
+      "characteristicCodes": []
     }
   ],
   "characteristics": [
@@ -22889,7 +23275,7 @@
       "releaseYear": 1946,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Tandis qu'Ivan le Terrible tente d'asseoir son pouvoir en créant une armée personnelle, ses ennemis, les Boyars russes, complotent pour assassiner leur tsar.",
       "historicalDistance": 0.6,
       "artisticDemand": 0.62,
       "historicalRichness": 0.77,
@@ -23872,7 +24258,7 @@
       "releaseYear": 1939,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Fin du XIXe siècle, Tokyo. Kikugorô Onoe est un acteur populaire de kabuki. Son fils, Kikunosuke, est un piètre acteur en comparaison. Pourtant, c'est lui qui doit succéder à son père. Se reposant sur le prestige de son nom, Kikinosuke s'offre le luxe de ne pas travailler son jeu et enchaîne les conquêtes. La réalité va bientôt le rattraper.",
       "historicalDistance": 0.63,
       "artisticDemand": 0.62,
       "historicalRichness": 0.79,
@@ -25107,7 +25493,7 @@
       "releaseYear": 2002,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A Shenyang, dans la Chine profonde, Tie Xi Qu est un gigantesque complexe industriel né au temps de l'occupation japonaise.  Il a ensuite prospéré jusqu'à compter un million d'ouvriers avant 1990.  Wang Bing a filmé de 1999 à 2001 la lente agonie des usines et des hommes dans l'effondrement final d'un système obsolète.  En suivant au quotidien la descente aux Enfers d'une classe ouvrière autrefois promise à d'autres gloires par la Révolution chinoise, Wang Bing nous plonge au coeur d'une épopée moderne et il élève ces hommes et ces femmes au rang des plus bouleversants héros de cinéma.  Remarque:  Chacune des quatres parties intitulées Rouille I, Rouille II (4h), Vestiges (2h56) et Rails (2h15) peut se voir indépendamment, car chacune correspond à la même histoire, mais montrée d'un point de vue différent.",
       "historicalDistance": 0.32,
       "artisticDemand": 0.62,
       "historicalRichness": 0.63,
@@ -25936,7 +26322,7 @@
       "releaseYear": 1992,
       "durationMinutes": 138,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Filmmaker Victor Erice follows Spanish artist Antonio Lopez in his painstaking attempt to paint the image of a tree.",
       "historicalDistance": 0.38,
       "artisticDemand": 0.63,
       "historicalRichness": 0.66,
@@ -26104,7 +26490,7 @@
       "releaseYear": 1994,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Une équipe de cinéma arrive dans un village du nord de l'Iran dévasté par un tremblement de terre pour réaliser un film « Et la vie continue ». Hossein, jeune maçon, est engagé pour un petit rôle dans le film. Sa partenaire est Farkhonde, la jeune fille du voisinage dont il est amoureux...",
       "historicalDistance": 0.35,
       "artisticDemand": 0.61,
       "historicalRichness": 0.65,
@@ -26436,7 +26822,7 @@
       "releaseYear": 2013,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Une extraterrestre prend des hommes en autostop, puis les envoûte, de ses yeux, de sa bouche et de son corps de rêve. Attirés dans un couloir noir, ces derniers poursuivent cette beauté fatale alors que telle une araignée tissant sa toile, elle les tue les uns après les autres pour le compte de son espèce…",
       "historicalDistance": 0.25,
       "artisticDemand": 0.61,
       "historicalRichness": 0.6,
@@ -27490,7 +27876,7 @@
       "releaseYear": 1966,
       "durationMinutes": 210,
       "format": "EXTENDED",
-      "synopsis": "",
+      "synopsis": "Follows various residents of the Chelsea Hotel in 1966 New York City.",
       "historicalDistance": 0.49,
       "artisticDemand": 0.78,
       "historicalRichness": 0.72,
@@ -28091,7 +28477,7 @@
       "releaseYear": 1942,
       "durationMinutes": 20,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "A depiction of life in wartime Britain during the Second World War. Director Humphrey Jennings visits many aspects of civilian life and of the turmoil and privation caused by the war, all without narration.",
       "historicalDistance": 0.59,
       "artisticDemand": 0.6,
       "historicalRichness": 0.78,
@@ -28368,7 +28754,7 @@
       "releaseYear": 1936,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "M. Lange est employé dans la société d'édition de Batala, patron véreux et sans scrupules. Durant ses heures de loisir, Lange écrit des histoires : les aventures d'Arizona Jim. Batala, menacé de poursuites pour n'avoir pas honoré un contrat publicitaire, décide de publier Arizona Jim, en modifiant à l'insu de l'auteur certains passages afin d'intégrer des réclames au texte. Ne pouvant plus honorer ses dettes, Batala prend la fuite. Le train dans lequel il s'enfuit a un grave accident, et on l'annonce mort. Les employés des éditions Batala s'organisent en coopérative, et lancent un nouveau magazine dont Arizona Jim est la figure principale. C'est un immense succès auprès du jeune public. Mais quelque temps plus tard, Batala, qui avait profité de l'accident de train pour voler l'identité d'une des victimes revient et réclame une part des bénéfices.",
       "historicalDistance": 0.64,
       "artisticDemand": 0.62,
       "historicalRichness": 0.8,
@@ -28917,7 +29303,7 @@
       "releaseYear": 1976,
       "durationMinutes": 104,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A heartbreaking record of the thirteen-month struggle between a community fighting to survive and a corporation dedicated to the bottom line.",
       "historicalDistance": 0.48,
       "artisticDemand": 0.64,
       "historicalRichness": 0.7,
@@ -28948,7 +29334,7 @@
       "releaseYear": 1971,
       "durationMinutes": 193,
       "format": "EXTENDED",
-      "synopsis": "",
+      "synopsis": "A 1971 experimental Canadian film directed by Michael Snow. Shot in the Canadian mountains over a period of 24 hours using a robotic arm.",
       "historicalDistance": 0.51,
       "artisticDemand": 0.65,
       "historicalRichness": 0.71,
@@ -30610,7 +30996,7 @@
       "releaseYear": 2000,
       "durationMinutes": 288,
       "format": "EXTENDED",
-      "synopsis": "",
+      "synopsis": "A compilation of over 30 years of private home movie footage shot by Lithuanian-American avant-garde director Jonas Mekas, assembled by Mekas \"purely by chance\", without concern for chronological order.",
       "historicalDistance": 0.36,
       "artisticDemand": 0.64,
       "historicalRichness": 0.64,
@@ -31658,20 +32044,24 @@
     },
     {
       "code": "EDVARD_MUNCH_TV_1974",
-      "originalTitle": "Edvard Munch [TV]",
-      "frenchTitle": "Edvard Munch [TV]",
+      "originalTitle": "Edvard Munch",
+      "frenchTitle": "Edvard Munch",
       "releaseYear": 1974,
-      "durationMinutes": 90,
-      "format": "FEATURE",
-      "synopsis": "",
+      "durationMinutes": 210,
+      "format": "EXTENDED",
+      "synopsis": "Une biographie très subjective des jeunes années du peintre norvégien Edvard Munch, aux prises avec les conventions de la société puritaine de son temps. Un film considéré par beaucoup comme la meilleure oeuvre jamais consacrée à l’acte créatif et à la peinture («un travail de génie» selon Ingmar Bergman). Montage audacieux qui revisite les techniques documentaires et narratives, Edvard Munch est un «Cri» personnel autant qu’un portrait de l’artiste et de son milieu.",
       "historicalDistance": 0.44,
       "artisticDemand": 0.61,
       "historicalRichness": 0.7,
-      "culturalRichness": 0.78,
+      "culturalRichness": 0.77,
       "countries": [
         {
-          "code": "SWEDEN",
+          "code": "NORWAY",
           "isPrimary": true
+        },
+        {
+          "code": "SWEDEN",
+          "isPrimary": false
         }
       ],
       "directors": [
@@ -31681,11 +32071,13 @@
         }
       ],
       "genreCodes": [
+        "HISTORIQUE",
         "DRAME"
       ],
       "characteristicCodes": [
-        "NOUVELLE_VAGUE_SCANDINAVE"
-      ]
+        "CINEMA_EXPERIMENTAL"
+      ],
+      "isExperimental": true
     },
     {
       "code": "THE_TAKING_OF_POWER_BY_LOUIS_XIV_1966",
@@ -31727,7 +32119,7 @@
       "releaseYear": 1968,
       "durationMinutes": 75,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "In Manhattan's Central Park, a film crew directed by William Greaves is shooting a screen test with various pairs of actors. It's a confrontation between a couple: he demands to know what's wrong, she challenges his sexual orientation. Cameras shoot the exchange, and another camera records Greaves and his crew. Sometimes we watch the crew discussing this scene, its language, and the process of making a movie. Is there such a thing as natural language? Are all things related to sex? The camera records distractions - a woman rides horseback past them; a garrulous homeless vet who sleeps in the park chats them up. What's the nature of making a movie?",
       "historicalDistance": 0.47,
       "artisticDemand": 0.77,
       "historicalRichness": 0.72,
@@ -31795,7 +32187,7 @@
       "releaseYear": 1979,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "À partir d'une comptine pour enfants très populaire en Russie, les souvenirs et les images enfouies de la vie d'un artiste.",
       "historicalDistance": 0.46,
       "artisticDemand": 0.64,
       "historicalRichness": 0.69,
@@ -33538,7 +33930,7 @@
       "releaseYear": 2005,
       "durationMinutes": 110,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Tom Vansant is an emergency physician from Brussels who is desperately searching for his daughter who ran away from home and is now missing for eighteen months. He meets a girl of whom he thinks that she knows what happened to his daughter but the girl doesn't want to talk about her past. In his search to find out why she doesn't talk about it he ends up in a small village in the Ardennes where no one wants to help him discover what really happened.",
       "historicalDistance": 0.34,
       "artisticDemand": 0.65,
       "historicalRichness": 0.62,
@@ -34679,7 +35071,7 @@
       "releaseYear": 1987,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Kenzo Okuzaki est un des rares survivants parmi les soldats japonais qui se trouvaient en Nouvelle-Guinee pendant la guerre. Rapatrié au Japon, il tient un petit commerce à Kobe, mais ne peut pas oublier le destin subi par ses camarades pendant la guerre.",
       "historicalDistance": 0.39,
       "artisticDemand": 0.62,
       "historicalRichness": 0.67,
@@ -34942,7 +35334,7 @@
       "releaseYear": 1970,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Un immigré africain en quête de travail, découvre les aspérités de la « Douce France », le racisme de ses collègues, le désintérêt des syndicats et l'indifférence des dignitaires africains qui vivent à Paris, au pays de « nos ancêtres les Gaulois ».  Un cri de révolte contre toutes les formes d'oppression, la colonisation et toutes ses séquelles politiques, économiques et sociales ainsi qu'une violente dénonciation des fantoches installés au pouvoir dans beaucoup de pays d'Afrique par la bourgeoisie française.",
       "historicalDistance": 0.51,
       "artisticDemand": 0.65,
       "historicalRichness": 0.71,
@@ -35304,7 +35696,7 @@
       "releaseYear": 1968,
       "durationMinutes": 180,
       "format": "EXTENDED",
-      "synopsis": "",
+      "synopsis": "Also known as Walden, Jonas Mekas’s first diary film is a six-reel chronicle of his life in 1960s New York, interweaving moments with family, friends, lovers, and artistic idols. Blending everyday encounters with portraits of the avant-garde art scene, it forms an epic, personal meditation on community, creativity, and the passage of time.",
       "historicalDistance": 0.47,
       "artisticDemand": 0.61,
       "historicalRichness": 0.72,
@@ -35571,7 +35963,7 @@
       "releaseYear": 1963,
       "durationMinutes": 42,
       "format": "MEDIUM",
-      "synopsis": "",
+      "synopsis": "Filmmaker and artist Jack Smith described his own film as a “comedy set in a haunted movie studio.” Flaming Creatures begins humorously enough with several men and women, mostly of indeterminate gender, vamping it up in front of the camera and participating in a mock advertisement for an indelible, heart-shaped brand of lipstick. However, things take a dark, nightmarish turn when a transvestite chases, catches and begins molesting a woman. Soon, all of the titular “creatures” participate in a (mostly clothed) orgy that causes a massive earthquake. After the creatures are killed in the resulting chaos, a vampire dressed like an old Hollywood starlet rises from her coffin to resurrect the dead. All ends happily enough when the now undead creatures dance with each other, even though another orgy and earthquake loom over the end title card.",
       "historicalDistance": 0.48,
       "artisticDemand": 0.76,
       "historicalRichness": 0.73,
@@ -36145,7 +36537,7 @@
       "releaseYear": 1966,
       "durationMinutes": 3,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "An experimental film poem in celebration of life and visions. Techniques include live action, animation, montage and found images.  Preserved by the Academy Film Archive in 2011.",
       "historicalDistance": 0.51,
       "artisticDemand": 0.63,
       "historicalRichness": 0.72,
@@ -36208,7 +36600,7 @@
       "releaseYear": 1964,
       "durationMinutes": 6,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "A man is supine on a mountain side. Images rush past of nature and a stained glass saint. An infant is born. We see a lactating nipple. Images include a mountain peak, farm buildings, a tree stump, a fire, a crawling baby, and the sun. The man falls and rolls. Then, later, he swings his ax.",
       "historicalDistance": 0.53,
       "artisticDemand": 0.64,
       "historicalRichness": 0.73,
@@ -37056,7 +37448,7 @@
       "releaseYear": 1936,
       "durationMinutes": 20,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "Cornell employs clips from 1931's jungle melodrama East of Borneo – more specifically, clips of its lead actress, Rose Hobart – to disquieting effect. Through Cornell's collage editing, Hobart becomes a singular object of desire and dread, trapped in an exotic paradise.",
       "historicalDistance": 0.63,
       "artisticDemand": 0.61,
       "historicalRichness": 0.8,
@@ -37396,7 +37788,7 @@
       "releaseYear": 1982,
       "durationMinutes": 86,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Sara, a cold college professor, and her husband, an ecstatic painter, spend a summer away from the city, straining their rocky relationship.",
       "historicalDistance": 0.42,
       "artisticDemand": 0.62,
       "historicalRichness": 0.68,
@@ -37460,7 +37852,7 @@
       "releaseYear": 1960,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Au Japon, sur une minuscule île de l'archipel de Setonaikai, un couple vit avec ses deux jeunes enfants. La terre est aride et l'île ne possède pas de ressource en eau douce. Pour cultiver cette terre ingrate et survivre, le couple est donc obligé de faire de continuels voyages en barque entre la terre ferme et l'île : ramener l'eau précieuse et en arroser avec attention et parcimonie chacun des plants cultivés. Ces gestes renouvelés sans cesse rythment le quotidien. Les jours passent, puis les saisons. Un jour, alors que les parents sont partis chercher l'eau, un des enfants tombe malade, sans raison. Il meurt rapidement sans que personne n'ait pu faire quoi que ce soit pour le sauver. Ses camarades de classe arrivent en bateau pour lui rendre un dernier hommage, puis repartent. Malgré un bref moment de révolte de la mère contre cette vie, le rituel reprend.",
       "historicalDistance": 0.52,
       "artisticDemand": 0.61,
       "historicalRichness": 0.74,
@@ -37964,7 +38356,7 @@
       "releaseYear": 2010,
       "durationMinutes": 266,
       "format": "EXTENDED",
-      "synopsis": "",
+      "synopsis": "The tragic story of the many lives of Father Dinis, his dark origins and his pious works, and the different fates of all those who, trapped in a sinister web of love, hate and crime, cross paths with him through years of adventure.",
       "historicalDistance": 0.28,
       "artisticDemand": 0.62,
       "historicalRichness": 0.61,
@@ -38097,7 +38489,7 @@
       "releaseYear": 1989,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Représentation, sans dialogues ni explications, de 18 meurtres particulièrement violents commis en Irlande du Nord.",
       "historicalDistance": 0.36,
       "artisticDemand": 0.6,
       "historicalRichness": 0.66,
@@ -38165,7 +38557,7 @@
       "releaseYear": 1933,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "L'Allemagne a déclaré la guerre à la Russie. Un vent patriotique souffle sur le faubourg d'une petite ville frontalière de l'empire tsariste. Les hommes partent au front et découvrent l'horreur des tranchées.",
       "historicalDistance": 0.66,
       "artisticDemand": 0.62,
       "historicalRichness": 0.81,
@@ -38828,7 +39220,7 @@
       "releaseYear": 2018,
       "durationMinutes": 8,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "Jacinta lives with her mother Alma, who has now brought grandmother Soledad home, to look after her, as she's had a cerebral stroke. Jacinta lives Soledad's presence as an invasion of her intimacy, and feels jealous of the attention Alma pays to her grandma, leaving Alma more and more worn-out.",
       "historicalDistance": 0.27,
       "artisticDemand": 0.64,
       "historicalRichness": 0.59,
@@ -38995,7 +39387,7 @@
       "releaseYear": 1969,
       "durationMinutes": 93,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Based on motifs from Jurandot and Sart's operetta \"Miss Polonia,\" this musical comedy tells the story of a star of the Opole Festival who tries to make a career in Paris. After winning the Audience Award at the Opole Festival, young singer Mariola leaves for Paris to pursue a career there. However, her performances are not successful. She tries to hide this fact and uses various methods to sign a contract. Her beloved, the young composer Piotr, discovers the truth about her alleged career, while at the same time rejecting offers from a star who is interested in him and wants to promote his songs. Piotr and Mariola return to Warsaw.",
       "historicalDistance": 0.48,
       "artisticDemand": 0.62,
       "historicalRichness": 0.72,
@@ -39259,7 +39651,7 @@
       "releaseYear": 1983,
       "durationMinutes": 330,
       "format": "EXTENDED",
-      "synopsis": "",
+      "synopsis": "A film diary in which Perlov films the minutiae of his and his family's day-to-day life. From these small bits, he builds up a broad picture of life in Israel in the '70s and '80s.",
       "historicalDistance": 0.45,
       "artisticDemand": 0.65,
       "historicalRichness": 0.68,
@@ -39735,7 +40127,7 @@
       "releaseYear": 1926,
       "durationMinutes": 7,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "A spiral design spins. It's replaced by a spinning disk. These two continue in perfect alternation until the end: a spiral design, a disk. Each disk is labelled and can be read as it rotates. The messages, in French, feature puns and whimsical rhymes and alliteration. The final message comments on the spiral motif itself.",
       "historicalDistance": 0.67,
       "artisticDemand": 0.84,
       "historicalRichness": 0.83,
@@ -39771,7 +40163,7 @@
       "releaseYear": 1926,
       "durationMinutes": 50,
       "format": "MEDIUM",
-      "synopsis": "",
+      "synopsis": "\"Matches Mary\" has sold matches on the streets of New York for many years and nobody knows her real identity. The truth is that Mary's young son had been kidnapped many years ago and she donned ragged attire while searching for the man, whom she knew, who did it. Years later day she meets him on the street and demands to know about her son, now grown to manhood. The man, now calling himself Foster, escapes but Mary track him to his home. Foster's nephew comes in and announces that he has gotten married while in college. Foster is furious and threatens violence. That night he is found murdered and Peter is accused of the crime, and is put on trial. Mary testifies she was the one who murdered Foster. She is about to be sentenced when a detective brings in a confession from two burglars who admit killing Foster. Peter asks Mary who she is and she replies she is just \"somebody's mother.\" Later, an old friend and a lawyer bring evidence that reunites Mary with her lost son, Peter.",
       "historicalDistance": 0.69,
       "artisticDemand": 0.7,
       "historicalRichness": 0.83,
@@ -39876,7 +40268,7 @@
       "releaseYear": 1928,
       "durationMinutes": 16,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "The Hefbrug may not be a remarkably beautiful bridge, but through a mix of close-ups, long shots, bird’s eye views and low angles, Joris Ivens conveys a sense of the bridge’s structure, its intricate mechanisms and ways of operating, the way it fits into the overall transport infrastructure and therefore the immense importance of this bridge for the whole city of Rotterdam.",
       "historicalDistance": 0.71,
       "artisticDemand": 0.72,
       "historicalRichness": 0.82,
@@ -39910,7 +40302,7 @@
       "releaseYear": 1928,
       "durationMinutes": 9,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "Hans Richter, noted for his abstract shorts, has everyday objects rebelling against their daily routine.",
       "historicalDistance": 0.72,
       "artisticDemand": 0.89,
       "historicalRichness": 0.82,
@@ -40292,7 +40684,7 @@
       "releaseYear": 1958,
       "durationMinutes": 12,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "Bruce Conner's landmark experimental film consisting entirely of found footage edited to a new score.",
       "historicalDistance": 0.57,
       "artisticDemand": 0.65,
       "historicalRichness": 0.74,
@@ -40357,7 +40749,7 @@
       "releaseYear": 1960,
       "durationMinutes": 7,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "An experimental film, the last in Peter Kubelka's trilogy of “metric films”. Each frame of Arnulf Rainer is composed of darkness or light and silence or sound.",
       "historicalDistance": 0.55,
       "artisticDemand": 0.64,
       "historicalRichness": 0.74,
@@ -40388,7 +40780,7 @@
       "releaseYear": 1960,
       "durationMinutes": 53,
       "format": "MEDIUM",
-      "synopsis": "",
+      "synopsis": "Primary is a documentary film about the primary elections between John F. Kennedy and Hubert Humphrey in 1960. Primary is the first documentary to use light equipment in order to follow their subjects in a more intimate filmmaking style. This unconventional way of filming created a new look for documentary films where the camera’s lens was right in the middle of what ever drama was occurring.  Preserved by the Academy Film Archive in partnership with The Film Foundation in 1998.",
       "historicalDistance": 0.51,
       "artisticDemand": 0.61,
       "historicalRichness": 0.74,
@@ -40453,7 +40845,7 @@
       "releaseYear": 1961,
       "durationMinutes": 8,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "Allures is a spectacular sequence of moving figures and points, a film which reaches out to the cosmic and the spiritual, where the spatial dimension becomes transcendental.",
       "historicalDistance": 0.5,
       "artisticDemand": 0.61,
       "historicalRichness": 0.74,
@@ -40616,7 +41008,7 @@
       "releaseYear": 1962,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Neuf journées de la vie d'un jeune physicien russe, qui vient de se faire accidentellement irradier, qui se marie, et qui subit une nouvelle irradiation potentiellement  mortelle...",
       "historicalDistance": 0.5,
       "artisticDemand": 0.61,
       "historicalRichness": 0.73,
@@ -40744,7 +41136,7 @@
       "releaseYear": 1963,
       "durationMinutes": 4,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "Seemingly at random, the wings and other bits of moths and insects move rapidly across the screen. Most are brown or sepia; up close, we can see patterns within wings, similar to the veins in a leaf. Sometimes the images look like paper cutouts, like Matisse. Green objects occasionally appear. Most wings are translucent. The technique makes them appear to be stuck directly to the film.",
       "historicalDistance": 0.52,
       "artisticDemand": 0.79,
       "historicalRichness": 0.73,
@@ -41078,7 +41470,7 @@
       "releaseYear": 1965,
       "durationMinutes": 140,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Karutthamma, the daughter of a Hindu fisherman, falls in love with a Muslim fish trader. However, social prejudices seem to ruin their love life and invite the wrath of their communities.",
       "historicalDistance": 0.49,
       "artisticDemand": 0.62,
       "historicalRichness": 0.73,
@@ -41244,7 +41636,7 @@
       "releaseYear": 1966,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Fraîchement diplômés de l'Institut d'œnologie de Tbilissi, Niko et Otar entrent dans une coopérative vinicole. Otar, plus âgé et plus assuré, se conforme aux exigences des chefs, alors que Niko, naïf et sincère, éprouve quelques difficultés.",
       "historicalDistance": 0.47,
       "artisticDemand": 0.6,
       "historicalRichness": 0.72,
@@ -41275,7 +41667,7 @@
       "releaseYear": 1966,
       "durationMinutes": 10,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "James Whitney’s Lapis (1966) is a classic work of abstract cinema, a 10-minute animation that took three years to create using primitive computer equipment. In this piece smaller circles oscillate in and out in an array of colors resembling a kaleidoscope while being accompanied with Indian sitar music. The patterns become hypnotic and trance inducing. This work clearly correlates the auditory and the visual and is a wonderful example of the concept of synaesthesia.",
       "historicalDistance": 0.51,
       "artisticDemand": 0.63,
       "historicalRichness": 0.72,
@@ -41306,7 +41698,7 @@
       "releaseYear": 1966,
       "durationMinutes": 30,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "A film consisting of alternating black and white frames.",
       "historicalDistance": 0.5,
       "artisticDemand": 0.62,
       "historicalRichness": 0.72,
@@ -41564,7 +41956,7 @@
       "releaseYear": 1967,
       "durationMinutes": 79,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "The story about Jimmy Barka, a young vagabond who works as a seasonal worker. Having been sacked from the job, his dreams are to become a singer. As most of the things in the Balkans happen, he is destined to failure.",
       "historicalDistance": 0.53,
       "artisticDemand": 0.65,
       "historicalRichness": 0.72,
@@ -41597,7 +41989,7 @@
       "releaseYear": 1971,
       "durationMinutes": 87,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Inspired by Karl Marx's \"Das Kapital\", three men and a girl named Jugoslava decide to wake up the conscience within the working class and peasants. Faced with the primitivism and a lack of morale, their revolution fails and the girl is the one to be sacrificed as a witness of their unsuccessful attempt.",
       "historicalDistance": 0.48,
       "artisticDemand": 0.63,
       "historicalRichness": 0.71,
@@ -41724,7 +42116,7 @@
       "releaseYear": 1969,
       "durationMinutes": 70,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A community reacts against a group of foreigners who under the guise of development assistance are forcibly sterilizing the peasant women.",
       "historicalDistance": 0.5,
       "artisticDemand": 0.63,
       "historicalRichness": 0.72,
@@ -41857,7 +42249,7 @@
       "releaseYear": 1970,
       "durationMinutes": 23,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "An experimental short film which shows a time-lapse in the basement hallway of a Binghamton University building.",
       "historicalDistance": 0.48,
       "artisticDemand": 0.62,
       "historicalRichness": 0.71,
@@ -41953,7 +42345,7 @@
       "releaseYear": 1970,
       "durationMinutes": 60,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Zorns Lemma is a 1970 American structural film by Hollis Frampton. It is named after Zorn's lemma (also known as the Kuratowski–Zorn lemma), a proposition of set theory formulated by mathematician Max Zorn in 1935.  Zorns Lemma is prefaced with a reading from an early grammar textbook. The remainder of the film, largely silent, shows the viewer an evolving 24-part \"alphabet\" (where i & j and u & v are interchanged) which is cycled through, replaced and expanded upon. The film's conclusion shows a man, woman and dog walking through snow as several voices read passages from On Light, or the Ingression of Forms by Robert Grosseteste.",
       "historicalDistance": 0.44,
       "artisticDemand": 0.59,
       "historicalRichness": 0.71,
@@ -41985,7 +42377,7 @@
       "releaseYear": 1971,
       "durationMinutes": 94,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A documentary reenactment of the government-ordered massacre of striking tin miners and their families at the Siglo XX Mines in 1967 in Bolivia.",
       "historicalDistance": 0.49,
       "artisticDemand": 0.63,
       "historicalRichness": 0.71,
@@ -42451,7 +42843,7 @@
       "releaseYear": 1973,
       "durationMinutes": 30,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "LINE DESCRIBING A CONE is what I term a solid light film. It deals with the projected light beam itself, rather than treating the light beam as a mere carrier of coded information, which is decoded when it strikes the flat surface (the screen). It is projected in the normal way, on a 16mm film projector. Though inevitably there will be a wall that limits the length of the beam, a screen is not necessary. The viewer watches the film, by standing with his, or her, back towards what would normally be the screen, and looking along the beam towards the projector itself. The film begins as a coherent line of light, like a laser beam, and develops through the 30 minute duration, into a complete, hollow cone of light. Line Describing a Cone deals with one of the irreducible, necessary conditions of film: projected light. It deals with this phenomenon directly, independent of any other consideration. It is the first film to exist solely in real, three-dimensional, space.",
       "historicalDistance": 0.49,
       "artisticDemand": 0.64,
       "historicalRichness": 0.71,
@@ -42580,7 +42972,7 @@
       "releaseYear": 1974,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "In the remote Andean highlands of Peru, a tight-knit indigenous peasant community has endured generations of brutal exploitation by local landowners. When a shocking act of violence exposes the complete failure of the official justice system to protect them, the villagers’ simmering anger pushes them toward a crossroads.",
       "historicalDistance": 0.5,
       "artisticDemand": 0.65,
       "historicalRichness": 0.7,
@@ -42709,7 +43101,7 @@
       "releaseYear": 1975,
       "durationMinutes": 82,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "The relationship between a poacher and his domineering mother in rural Spain is upended when he falls for an escapee from a reform school.",
       "historicalDistance": 0.49,
       "artisticDemand": 0.65,
       "historicalRichness": 0.7,
@@ -42852,7 +43244,7 @@
       "releaseYear": 1976,
       "durationMinutes": 97,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "This film is a documentary about the poet Leopoldo Panero. His widow and his sons talk about death in general in this special case, and also about their own family problems.",
       "historicalDistance": 0.43,
       "artisticDemand": 0.61,
       "historicalRichness": 0.7,
@@ -42884,7 +43276,7 @@
       "releaseYear": 1975,
       "durationMinutes": 150,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "In this meditative film the everyday lives of poor Ethiopian peasants are shown using documentary as well as storytelling techniques, with its drama arising out of the timeless yet persistent issues of their lives.",
       "historicalDistance": 0.46,
       "artisticDemand": 0.63,
       "historicalRichness": 0.7,
@@ -43078,7 +43470,7 @@
       "releaseYear": 1978,
       "durationMinutes": 110,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Two brothers working as news cameramen for competing companies in '50s Australia find their lives dramatically affected by the constantly changing times in which they live.",
       "historicalDistance": 0.42,
       "artisticDemand": 0.61,
       "historicalRichness": 0.69,
@@ -43598,7 +43990,7 @@
       "releaseYear": 1981,
       "durationMinutes": 100,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "The Los Angeles punk music scene circa 1980 is the focus of this film. With Alice Bag Band, Black Flag, Catholic Discipline, Circle Jerks, Fear, Germs, and X.",
       "historicalDistance": 0.41,
       "artisticDemand": 0.61,
       "historicalRichness": 0.68,
@@ -43694,7 +44086,7 @@
       "releaseYear": 1982,
       "durationMinutes": 28,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "This film closely examines the tension between the established Italian fishing community and the recently arrived Vietnamese fishermen in California’s Monterey Bay peninsula. It documents a specific facet of anti-Asian sentiment and the conflicts faced by an industry that is also fighting for survival.",
       "historicalDistance": 0.39,
       "artisticDemand": 0.6,
       "historicalRichness": 0.68,
@@ -43760,7 +44152,7 @@
       "releaseYear": 1982,
       "durationMinutes": 124,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "When plain orphan Elsa begins having visions of the Virgin Mary, the rest of the residents of her isolated village find themselves questioning their own beliefs and values. Soon, Elsa is healing people with a variety of ailments. As word of this phenomenon spreads, tourists, pilgrims, patients and a documentary filmmaker all arrive on a quest to partake in the miracle.",
       "historicalDistance": 0.42,
       "artisticDemand": 0.62,
       "historicalRichness": 0.68,
@@ -43985,7 +44377,7 @@
       "releaseYear": 1983,
       "durationMinutes": 83,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A documentary on the war between the Guatemalan military and the Mayan population, with first hand accounts by Nobel Peace Prize winner Rigoberta Menchú.",
       "historicalDistance": 0.45,
       "artisticDemand": 0.64,
       "historicalRichness": 0.68,
@@ -44022,7 +44414,7 @@
       "releaseYear": 1984,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Dans une époque et un pays indéterminés, la famille de Varlam Aravidze suit ses funérailles en grande pompe. Or son cadavre est mystérieusement exhumé a plusieurs reprises. On finit par trouver le coupable.",
       "historicalDistance": 0.44,
       "artisticDemand": 0.64,
       "historicalRichness": 0.68,
@@ -44053,7 +44445,7 @@
       "releaseYear": 1984,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Dans une époque et un pays indéterminés, la famille de Varlam Aravidze suit ses funérailles en grande pompe. Or son cadavre est mystérieusement exhumé a plusieurs reprises. On finit par trouver le coupable.",
       "historicalDistance": 0.45,
       "artisticDemand": 0.65,
       "historicalRichness": 0.68,
@@ -45116,7 +45508,7 @@
       "releaseYear": 1992,
       "durationMinutes": 163,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "The film tells the story of a man who joins a secret cult, kills his wife in a ritual sacrifice, gains enormous wealth as a reward, and is afterwards haunted by the dead wife's ghost.",
       "historicalDistance": 0.39,
       "artisticDemand": 0.63,
       "historicalRichness": 0.66,
@@ -45211,7 +45603,7 @@
       "releaseYear": 1992,
       "durationMinutes": 62,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A blacksmith falls off his bicycle when he tries to avoid a tortoise which crosses his path. He brings the animal home to his twelve year old son, Rabi, who becomes so fascinated that he forgets his chores at this father's shop. When the angry smith removes the tortoise, Rabi's grandfather, Pusga, helps Rabi find a larger one to consol the boy. Rabi wants to tame the animal and this new obsession leads him to defy parental authority. Pusga gently opens the boy's eyes to the visible and invisible ways of nature. Rabi starts to understand liberty, responsibility and respect for life. In turn he awakens long buried sentiments in the grandfather.",
       "historicalDistance": 0.37,
       "artisticDemand": 0.62,
       "historicalRichness": 0.66,
@@ -45242,7 +45634,7 @@
       "releaseYear": 1992,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Kan-sheng passe son temps à déambuler dans les rues de Taipei à pied ou en mobylette. Un jour, alors qu'il circule exceptionnellement dans le taxi de son père, il remarque un jeune homme à moto. Ce dernier, agacé par les coups de klaxon de son père, casse le rétroviseur de la voiture. Kang-sheng le retrouve quelque temps plus tard et le suit. S'ensuit une fascination progressive de Kan-sheng pour ce jeune homme et sa petite amie.",
       "historicalDistance": 0.38,
       "artisticDemand": 0.62,
       "historicalRichness": 0.66,
@@ -45406,7 +45798,7 @@
       "releaseYear": 1993,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "L'histoire d'un petit garçon, Tietou, de sa mère, trois fois veuve, et de ses trois pères. Trois périodes de sa vie correspondant à trois étapes dans l'histoire de la Chine.",
       "historicalDistance": 0.39,
       "artisticDemand": 0.64,
       "historicalRichness": 0.65,
@@ -45504,7 +45896,7 @@
       "releaseYear": 1994,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Portrait sans complaisance de Robert Crumb, le monstre de la BD underground et père de Fritz The Cat. Il grandit au sein d’une famille dont le climat psychologique explique bien des choses : aussi bien certaines de ses thématiques obsessionnelles (un régal pour un psychanalyste…), que la proximité de l’artiste avec les marginaux des milieux urbains...",
       "historicalDistance": 0.34,
       "artisticDemand": 0.6,
       "historicalRichness": 0.65,
@@ -45823,7 +46215,7 @@
       "releaseYear": 1996,
       "durationMinutes": 93,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "The movie shows the rise and fall of a cruel and despotic village chief Guimba, and his son Jangine in a fictional village in the Sahel of Mali.",
       "historicalDistance": 0.32,
       "artisticDemand": 0.6,
       "historicalRichness": 0.65,
@@ -45917,7 +46309,7 @@
       "releaseYear": 1996,
       "durationMinutes": 105,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A painfully shy noodle-shop owner and a prostitute have a chance encounter when destiny arrives in the form of a car accident.",
       "historicalDistance": 0.37,
       "artisticDemand": 0.63,
       "historicalRichness": 0.65,
@@ -46080,7 +46472,7 @@
       "releaseYear": 1997,
       "durationMinutes": 97,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "In an early 19th century African village, Wend Kuuni – a young man, lives with his adopted family after his mother was killed as a witch. When Pughneere – his adopted sister – becomes ill, the villagers suspect Wend Kuuni. In order to save Pughneere's life (and his own) he must set out on a journey to find a healer. His quest brings him in contact with people around him and is a journey of self-discovery.",
       "historicalDistance": 0.32,
       "artisticDemand": 0.6,
       "historicalRichness": 0.64,
@@ -46565,7 +46957,7 @@
       "releaseYear": 1999,
       "durationMinutes": 119,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Kunhikuttan, a famous Kathakali dancer, meets Subhadra, a woman from an upper caste family, who falls in love with his character rather than himself.",
       "historicalDistance": 0.34,
       "artisticDemand": 0.63,
       "historicalRichness": 0.64,
@@ -46930,7 +47322,7 @@
       "releaseYear": 2001,
       "durationMinutes": 120,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A forty-year-old woman refuses to give into the stigma of unwed motherhood and climbs the ladder of success in a male dominated field.",
       "historicalDistance": 0.32,
       "artisticDemand": 0.61,
       "historicalRichness": 0.63,
@@ -47450,7 +47842,7 @@
       "releaseYear": 2003,
       "durationMinutes": 93,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Five troubled teens, abandoned by society and family, form a bond in a world of violence, drugs, and self-destruction, facing harsh realities of modern Singapore.",
       "historicalDistance": 0.33,
       "artisticDemand": 0.63,
       "historicalRichness": 0.63,
@@ -47710,7 +48102,7 @@
       "releaseYear": 2003,
       "durationMinutes": 84,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Osuofia (Nkem Owoh), a bamboozled villager from Nigeria, travels to London, England to receive his share of an inheritance left for him by a deceased relative.",
       "historicalDistance": 0.31,
       "artisticDemand": 0.61,
       "historicalRichness": 0.63,
@@ -47809,7 +48201,7 @@
       "releaseYear": 2003,
       "durationMinutes": 84,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Dawn breaks in La Habana, and as the day advances we follow the simple lives of ten ordinary Cubans, with only sounds and images accompanied by music.",
       "historicalDistance": 0.29,
       "artisticDemand": 0.6,
       "historicalRichness": 0.63,
@@ -47840,7 +48232,7 @@
       "releaseYear": 2004,
       "durationMinutes": 625,
       "format": "EXTENDED",
-      "synopsis": "",
+      "synopsis": "Spanning from 1971 to 1987, in rural areas under the Marcos regime, a poor farming family struggle to overcome challenges brought on by corruption and greed for power.",
       "historicalDistance": 0.33,
       "artisticDemand": 0.64,
       "historicalRichness": 0.63,
@@ -48160,7 +48552,7 @@
       "releaseYear": 2006,
       "durationMinutes": 85,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Josh, a struggling musician, wins a vintage recliner in an eBay auction. Since he lives in New York and the chair is in Atlanta, this poses a bit of a problem. He asks his girlfriend, Emily, to accompany him on the trip, and his hippie brother Rhett joins the pair along the way.",
       "historicalDistance": 0.32,
       "artisticDemand": 0.63,
       "historicalRichness": 0.62,
@@ -48288,7 +48680,7 @@
       "releaseYear": 2006,
       "durationMinutes": 95,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Melé est une chanteuse de bar et son mari, Chaka, au chômage s'enfonce dans le silence. Malgré une fille qui les unit, leur couple s'émiette petit à petit. Ils vivent dans une maison qu'ils partagent avec plusieurs familles. Dans la cour, se tient un étonnant événement : le procès de la société civile africaine contre la Banque mondiale et le FMI !",
       "historicalDistance": 0.27,
       "artisticDemand": 0.6,
       "historicalRichness": 0.62,
@@ -48547,7 +48939,7 @@
       "releaseYear": 2007,
       "durationMinutes": 123,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Autumn in Estonia, where six people live, six solitudes, prisoners of the monotonous architecture of Soviet-era concrete buildings, in search of human companionship, of love, of a ray of light in an ocean of gray.",
       "historicalDistance": 0.34,
       "artisticDemand": 0.65,
       "historicalRichness": 0.62,
@@ -48677,7 +49069,7 @@
       "releaseYear": 2007,
       "durationMinutes": 83,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Hannah is a recent college graduate interning at a Chicago production company. She is crushing on two writers at work, Matt and Paul, who share an office and keep her entertained. Will a relationship with one of them disrupt the delicate balance of their friendship?",
       "historicalDistance": 0.33,
       "artisticDemand": 0.64,
       "historicalRichness": 0.62,
@@ -48973,7 +49365,7 @@
       "releaseYear": 2008,
       "durationMinutes": 242,
       "format": "EXTENDED",
-      "synopsis": "",
+      "synopsis": "X arrives in a small town and witnesses a violent act; Z takes the job of a dead manager and discovers that he had a notebook written in code and a map; H is hired to go down a river and investigate a series of mysterious monoliths built on the shore.",
       "historicalDistance": 0.26,
       "artisticDemand": 0.6,
       "historicalRichness": 0.62,
@@ -49070,7 +49462,7 @@
       "releaseYear": 2009,
       "durationMinutes": 74,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Nigeria's film industry, Nollywood, is the third-largest in the world--an unstoppable economic and cultural force that has taken the continent by storm and is now bursting beyond the borders of Africa. \"Nollywood Babylon\" is a feature documentary detailing the industry's phenomenal success. Propelled by a booming 1970s soundtrack of African underground music, the movie presents an electric vision of a modern African metropolis and a revealing look at the powerhouse that is Nigerian cinema.",
       "historicalDistance": 0.26,
       "artisticDemand": 0.6,
       "historicalRichness": 0.61,
@@ -49300,7 +49692,7 @@
       "releaseYear": 2010,
       "durationMinutes": 110,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A cop named Cristi must go undercover to trail teen Victor who is suspected of selling pot in the north-eastern city of Vaslui.",
       "historicalDistance": 0.32,
       "artisticDemand": 0.65,
       "historicalRichness": 0.61,
@@ -49494,7 +49886,7 @@
       "releaseYear": 2010,
       "durationMinutes": 1440,
       "format": "EXTENDED",
-      "synopsis": "",
+      "synopsis": "A 24-hour compendium of time-themed film clips, all synched to the time that appears on the clocks and watches within.",
       "historicalDistance": 0.26,
       "artisticDemand": 0.6,
       "historicalRichness": 0.61,
@@ -49716,12 +50108,12 @@
     },
     {
       "code": "THE_RAID_2011",
-      "originalTitle": "The Jockstrap Raiders",
+      "originalTitle": "Serbuan Maut",
       "frenchTitle": "The Raid",
       "releaseYear": 2011,
-      "durationMinutes": 19,
-      "format": "SHORT",
-      "synopsis": "",
+      "durationMinutes": 101,
+      "format": "FEATURE",
+      "synopsis": "Au cœur des quartiers pauvres de Jakarta, se trouve une citadelle imprenable dans laquelle se cache le plus dangereux trafiquant du pays. Une équipe de policiers d’élite est envoyée donner l’assaut lors d’un raid secret mené aux premières lueurs du jour. Mais grâce à ses indics, le baron de la drogue est déjà au courant et a eu amplement le temps de se préparer. À l’instant où le groupe d’intervention pénètre dans l’immeuble, le piège se referme : les portes sont condamnées, l’électricité est coupée et une armée d’hommes surentrainés débarque. Piégés dans cet immeuble étouffant, les policiers vont devoir se battre étage après étage pour avoir une chance de survivre.",
       "historicalDistance": 0.31,
       "artisticDemand": 0.64,
       "historicalRichness": 0.61,
@@ -49730,17 +50122,22 @@
         {
           "code": "INDONESIA",
           "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
         }
       ],
       "directors": [
         {
-          "code": "MARK_NELSON",
+          "code": "GARETH_EVANS",
           "billingOrder": 0
         }
       ],
       "genreCodes": [
-        "ANIMATION",
-        "COMEDIE"
+        "ACTION",
+        "THRILLER",
+        "POLICIER"
       ],
       "characteristicCodes": [
         "CINEMA_INDONESIEN"
@@ -49918,7 +50315,7 @@
       "releaseYear": 2012,
       "durationMinutes": 132,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Makinde is at the mercy of political patronage when he tries to secure a government contract.",
       "historicalDistance": 0.29,
       "artisticDemand": 0.63,
       "historicalRichness": 0.61,
@@ -50238,14 +50635,14 @@
       "releaseYear": 2013,
       "durationMinutes": 110,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A true story about an 11-year-old girl named Maria who makes her way back home to Lithuania from Siberia.",
       "historicalDistance": 0.29,
       "artisticDemand": 0.64,
       "historicalRichness": 0.6,
       "culturalRichness": 0.7,
       "countries": [
         {
-          "code": "LATVIA",
+          "code": "LITHUANIA",
           "isPrimary": true
         }
       ],
@@ -50626,7 +51023,7 @@
       "releaseYear": 2015,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Des soldats atteints d’une mystérieuse maladie du sommeil sont transférés dans un hôpital provisoire installé dans une école abandonnée. Jenjira se porte volontaire pour s’occuper de Itt, un beau soldat auquel personne ne rend visite. Elle se lie d’amitié avec Keng, une jeune médium qui utilise ses pouvoirs pour aider les proches à communiquer avec les hommes endormis. Un jour, Jenjira trouve le journal intime de Itt, couvert d’écrits et de croquis étranges. Peut-être existe-t-il une connexion entre l’énigmatique syndrome des soldats et le site ancien mythique qui s’étend sous  l’école ? La magie, la guérison, la romance et les rêves se mêlent sur la fragile route de Jenjira vers une conscience profonde d’elle-même et du monde qui l’entoure.",
       "historicalDistance": 0.29,
       "artisticDemand": 0.64,
       "historicalRichness": 0.6,
@@ -51198,7 +51595,7 @@
       "releaseYear": 2017,
       "durationMinutes": 59,
       "format": "MEDIUM",
-      "synopsis": "",
+      "synopsis": "The Wounds We Cannot See tells the gripping story of former US Navy Airman Nancy Ross of Hingham, Massachusetts who was falsely adopted because of a family secret she never knew. Ross was violently raped during her service in 1988 and has since struggled with addiction, mental illness and depression. She continues to battle Post Traumatic Stress Disorder as a direct result of her attack and subsequent abusive relationships. While Nancy has undergone extensive therapy since her honorable discharge from the Navy she still suffers from addiction and mental illness, living in constant fear of the future.",
       "historicalDistance": 0.22,
       "artisticDemand": 0.6,
       "historicalRichness": 0.59,
@@ -51387,7 +51784,7 @@
       "releaseYear": 2018,
       "durationMinutes": 97,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "In 1992, teenager Sandi Tan shot Singapore's first indie road movie with her enigmatic American mentor Georges – who then vanished with all the footage. Twenty years later, the 16mm film is recovered, sending Tan, now a novelist in Los Angeles, on a personal odyssey in search of Georges' vanishing footprints.",
       "historicalDistance": 0.28,
       "artisticDemand": 0.65,
       "historicalRichness": 0.59,
@@ -51487,7 +51884,7 @@
       "releaseYear": 2019,
       "durationMinutes": 90,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "1945, la deuxième guerre mondiale a ravagé Léningrad. Au sein de ces ruines, deux jeunes femmes, Iya et Masha, tentent de se reconstruire et de donner un sens à leur vie.",
       "historicalDistance": 0.25,
       "artisticDemand": 0.63,
       "historicalRichness": 0.59,
@@ -51518,7 +51915,7 @@
       "releaseYear": 2019,
       "durationMinutes": 135,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "Four brothers living in the fishing hamlet of Kumbalangi share a love-hate relationship with each other. Their relationship progresses when Saji, Boney and Franky decide to help Bobby stand by his love.",
       "historicalDistance": 0.26,
       "artisticDemand": 0.63,
       "historicalRichness": 0.59,
@@ -51582,7 +51979,7 @@
       "releaseYear": 2019,
       "durationMinutes": 106,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "When Áila encounters a young Indigenous woman, barefoot and crying in the rain on the side of a busy street, she soon discovers that this young woman, Rosie, has just escaped a violent assault at the hands of her boyfriend. Áila decides to bring Rosie home with her and over the course of the evening, the two navigate the aftermath of this traumatic event.",
       "historicalDistance": 0.27,
       "artisticDemand": 0.65,
       "historicalRichness": 0.59,
@@ -51617,7 +52014,7 @@
       "releaseYear": 2020,
       "durationMinutes": 1,
       "format": "SHORT",
-      "synopsis": "",
+      "synopsis": "Two agents decide to use the Beans Protocol, a deadly yet effective intel gathering tactic.",
       "historicalDistance": 0.27,
       "artisticDemand": 0.65,
       "historicalRichness": 0.58,
@@ -51712,7 +52109,7 @@
       "releaseYear": 2020,
       "durationMinutes": 136,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "A Fulani milkmaid confronts religious extremists in rural Sub-Saharan Africa in a quest to locate her missing sister, but efforts to recapture her disrupted past prove complicated.",
       "historicalDistance": 0.21,
       "artisticDemand": 0.6,
       "historicalRichness": 0.58,
@@ -51777,7 +52174,7 @@
       "releaseYear": 2021,
       "durationMinutes": 100,
       "format": "FEATURE",
-      "synopsis": "",
+      "synopsis": "After marriage, a woman struggles to be the submissive wife that her husband and his family expect her to be.",
       "historicalDistance": 0.22,
       "artisticDemand": 0.62,
       "historicalRichness": 0.58,
@@ -52845,6 +53242,2317 @@
       "characteristicCodes": [
         "AGE_OR_CINEMA_JAPONAIS",
         "JIDAIGEKI"
+      ]
+    },
+    {
+      "code": "COEUR_FIDELE_1923",
+      "originalTitle": "Cœur fidèle",
+      "frenchTitle": "Cœur fidèle",
+      "releaseYear": 1923,
+      "durationMinutes": 87,
+      "format": "FEATURE",
+      "synopsis": "Une orpheline, recueillie par les tenanciers d'un cabaret subit les mauvais traitements d'un voyou. Celui-ci sera abattu par une infirme permettant ainsi à la jeune fille de vivre avec son fiancé.",
+      "historicalDistance": 0.7,
+      "artisticDemand": 0.7,
+      "historicalRichness": 0.83,
+      "culturalRichness": 0.82,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JEAN_EPSTEIN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_MUET_MOUVEMENT"
+      ],
+      "isSilent": true,
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "LA_GLACE_A_TROIS_FACES_1927",
+      "originalTitle": "La glace à trois faces",
+      "frenchTitle": "La Glace à trois faces",
+      "releaseYear": 1927,
+      "durationMinutes": 39,
+      "format": "SHORT",
+      "synopsis": "Un jeune homme riche, a été séduit par trois femmes, une belle Anglaise, Pearl, une artiste russe, Athalia, une charmante ouvrière, Lucie. Mais, épris avant tout de liberté, il ne va à aucun de ses rendez-vous. Passionné de vitesse, il prend plutôt sa voiture de sport et fonce vers les plages de la Normandie. En route, une hirondelle en piqué le blesse mortellement.",
+      "historicalDistance": 0.67,
+      "artisticDemand": 0.69,
+      "historicalRichness": 0.82,
+      "culturalRichness": 0.84,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JEAN_EPSTEIN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_MUET_MOUVEMENT",
+        "CINEMA_EXPERIMENTAL"
+      ],
+      "isSilent": true,
+      "isBlackAndWhite": true,
+      "isExperimental": true
+    },
+    {
+      "code": "LE_RESCAPE_1957",
+      "originalTitle": "Ni liv",
+      "frenchTitle": "Le Rescapé",
+      "releaseYear": 1957,
+      "durationMinutes": 96,
+      "format": "FEATURE",
+      "synopsis": "Le film dépeint une histoire vraie, durant la Seconde Guerre mondiale en Norvège. Seul rescapé d'un affrontement entre son navire et celui de militaires allemands sur les côtes norvégiennes, Jan Baalsruds tente de rejoindre la frontière de la Suède, pays neutre du conflit, alors qu'il est recherché par l'armée allemande en poste en Norvège. Les locaux l'aideront pendant son périple.",
+      "historicalDistance": 0.56,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "NORWAY",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ARNE_SKOUEN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ACTION",
+        "GUERRE",
+        "THRILLER",
+        "DRAME",
+        "AVENTURE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LA_CHASSE_1959",
+      "originalTitle": "Jakten",
+      "frenchTitle": "La Chasse",
+      "releaseYear": 1959,
+      "durationMinutes": 94,
+      "format": "FEATURE",
+      "synopsis": "Bjørn et Knut tombent tous deux amoureux de Guri qui, dans un premier temps, choisit Bjørn. Knut part à l’étranger. Les trois se retrouvent pour une partie de chasse au tétra dans une région sauvage. La tension entre eux culmine jusqu’à ce qui pourrait être considéré comme un accident de chasse…",
+      "historicalDistance": 0.55,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.74,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "NORWAY",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ERIK_L_CHEN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE",
+        "THRILLER"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LA_FAIM_1966",
+      "originalTitle": "Sult",
+      "frenchTitle": "La Faim",
+      "releaseYear": 1966,
+      "durationMinutes": 112,
+      "format": "FEATURE",
+      "synopsis": "Oslo est un écrivain désargenté à la recherche de l'édition de ses œuvres dans un journal. Tenaillé par la faim, mais en même temps pétri d'orgueil ou d'humilité, il refuse les mains tendues par quelques amis.",
+      "historicalDistance": 0.5,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "NORWAY",
+          "isPrimary": true
+        },
+        {
+          "code": "DENMARK",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "HENNING_CARLSEN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "GRAND_PRIX_PIGNON_SUR_ROC_1975",
+      "originalTitle": "Flåklypa Grand Prix",
+      "frenchTitle": "Grand Prix Pignon-sur-Roc",
+      "releaseYear": 1975,
+      "durationMinutes": 88,
+      "format": "FEATURE",
+      "synopsis": "Theodore Lajante se lance dans la construction d'un bolide pour participer au Grand Prix et vaincre son ancien employé qui s'est servi de ses plans pour concevoir sa voiture.",
+      "historicalDistance": 0.43,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.7,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "NORWAY",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "IVO_CAPRINO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "AVENTURE",
+        "ANIMATION",
+        "COMEDIE",
+        "FAMILLE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LE_PASSEUR_1987",
+      "originalTitle": "Ofelas",
+      "frenchTitle": "Le Passeur",
+      "releaseYear": 1987,
+      "durationMinutes": 86,
+      "format": "FEATURE",
+      "synopsis": "Il y a quelque mille ans en Laponie. Aigin, adolescent de retour de la chasse, retrouve toute sa famille massacrée par un groupe de guerriers tchudes. Repéré, il parvient a s'enfuir et trouve refuge dans un campement lapon voisin. Cependant, blessé, il a laissé des traces derrière lui. Certains hommes de la tribu lui reprochent de les avoir mis en danger et décident de s'enfuir. Aigin reste seul, bien décidé à venger sa famille. Quelques heures plus tard, des Lapons reviennent pour l'aider, mais ils sont à nouveau massacrés. Aigin propose alors un marché aux Tchudes.",
+      "historicalDistance": 0.37,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "NORWAY",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "NILS_GAUP",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "AVENTURE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "INSOMNIA_1997",
+      "originalTitle": "Insomnia",
+      "frenchTitle": "Insomnia",
+      "releaseYear": 1997,
+      "durationMinutes": 97,
+      "format": "FEATURE",
+      "synopsis": "Au nord de la Norvège, pendant l’été lorsque le soleil ne se couche plus, une jeune femme est assassinée dans un petit village. Deux policiers de la brigade criminelle d’Oslo viennent aider les forces locales à enquêter. Mais la traque de l’assassin va conduire l’un des policiers à commettre l’irréparable…",
+      "historicalDistance": 0.33,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.64,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "NORWAY",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ERIK_SKJOLDBJ_RG",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "THRILLER",
+        "POLICIER",
+        "MYSTERE"
+      ],
+      "characteristicCodes": [
+        "NEO_NOIR"
+      ]
+    },
+    {
+      "code": "SISSI_1955",
+      "originalTitle": "Sissi",
+      "frenchTitle": "Sissi",
+      "releaseYear": 1955,
+      "durationMinutes": 101,
+      "format": "FEATURE",
+      "synopsis": "La jeune Sissi accompagne à la cour impériale d’Autriche sa mère et sa sœur aînée Hélène promise au futur empereur. Comme à son habitude Sissi profite d’un moment en solitaire pour partir en promenade au cours de laquelle elle va rencontrer sans le savoir l’héritier impérial…",
+      "historicalDistance": 0.55,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.81,
+      "countries": [
+        {
+          "code": "AUSTRIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ERNST_MARISCHKA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "ANGST_1983",
+      "originalTitle": "Angst",
+      "frenchTitle": "Angst",
+      "releaseYear": 1983,
+      "durationMinutes": 83,
+      "format": "FEATURE",
+      "synopsis": "Un psychopathe est libéré de prison après avoir purgé une longue peine pour meurtre. Errant dans la ville, il retrouve le monde avec une seule idée en tête : tuer à nouveau. Excité par le nouveau terrain de jeu qui s’offre à lui, le psychopathe s’apprête à frapper…",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "AUSTRIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "GERALD_KARGL",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "THRILLER",
+        "POLICIER",
+        "HORREUR"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LE_SEPTIEME_CONTINENT_1989",
+      "originalTitle": "Der siebente Kontinent",
+      "frenchTitle": "Le Septième Continent",
+      "releaseYear": 1989,
+      "durationMinutes": 104,
+      "format": "FEATURE",
+      "synopsis": "Une famille bourgeoise décide de se couper de toute vie sociale, au risque de s'anéantir totalement.",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "AUSTRIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MICHAEL_HANEKE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "BENNYS_VIDEO_1992",
+      "originalTitle": "Benny's Video",
+      "frenchTitle": "Benny's Video",
+      "releaseYear": 1992,
+      "durationMinutes": 110,
+      "format": "FEATURE",
+      "synopsis": "Benny, adolescent d'origine bourgeoise, coupé de toute communication avec des parents trop souvent absents, s'est enfermé dans l'univers de la vidéo. Peu à peu son sens des réalités et des valeurs se déforme. Sa rencontre avec une jeune fille va dériver vers l'horreur...",
+      "historicalDistance": 0.35,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "AUSTRIA",
+          "isPrimary": true
+        },
+        {
+          "code": "SWITZERLAND",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "MICHAEL_HANEKE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "POLICIER",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "DOG_DAYS_2001",
+      "originalTitle": "Hundstage",
+      "frenchTitle": "Dog Days",
+      "releaseYear": 2001,
+      "durationMinutes": 120,
+      "format": "FEATURE",
+      "synopsis": "Pendant un week-end caniculaire, dans la pesante atmosphère de la banlieue viennoise, entre l'enfer des installations urbaines, les autoroutes, les complexes immobiliers, les supermarchés, six histoires dramatiques s'entrelacent et montrent que personne ne saurait résister à la lourde tension de cet été étouffant.",
+      "historicalDistance": 0.31,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.63,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "AUSTRIA",
+          "isPrimary": true
+        },
+        {
+          "code": "GERMANY",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "ULRICH_SEIDL",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "COMEDIE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "MISERE_AU_BORINAGE_1934",
+      "originalTitle": "Misère au Borinage",
+      "frenchTitle": "Misère au Borinage",
+      "releaseYear": 1934,
+      "durationMinutes": 36,
+      "format": "SHORT",
+      "synopsis": "Ce documentaire militant explore longuement la misère des mineurs, l'exploitation ouvrière au Borinage en cette époque, les conditions de vie difficiles des ouvriers de la houille, leurs maladies physiques, etc.",
+      "historicalDistance": 0.66,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.81,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "BELGIUM",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JORIS_IVENS",
+          "billingOrder": 0
+        },
+        {
+          "code": "HENRI_STORCK",
+          "billingOrder": 1
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "MALPERTUIS_1971",
+      "originalTitle": "Malpertuis",
+      "frenchTitle": "Malpertuis",
+      "releaseYear": 1971,
+      "durationMinutes": 125,
+      "format": "FEATURE",
+      "synopsis": "Malpertuis est le nom d'un vieux manoir en ruine qui est en réalité un labyrinthe où des personnages de la mythologie grecque sont emprisonnés par le Cassavius alité (Welles). Il parvient à les garder (ainsi que son neveu et sa nièce) prisonniers même après sa mort, à travers un testament contraignant. Comme Jan, le neveu, (Carrière) dénoue le mystère, il découvre qu'il ne peut pas échapper à la maison parce que Malpertuis est beaucoup plus important que ce qu'il était amené à croire.",
+      "historicalDistance": 0.5,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.71,
+      "culturalRichness": 0.69,
+      "countries": [
+        {
+          "code": "BELGIUM",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "HARRY_KUMEL",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HORREUR",
+        "FANTASTIQUE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LES_LEVRES_ROUGES_1971",
+      "originalTitle": "Les Lèvres rouges",
+      "frenchTitle": "Les Lèvres rouges",
+      "releaseYear": 1971,
+      "durationMinutes": 100,
+      "format": "FEATURE",
+      "synopsis": "Ostende, Belgique. Dans un hôtel décadent du bord de mer, Stefan et Valérie, un couple de jeunes mariés, rencontrent la mystérieuse comtesse Báthory et Ilona, sa secrétaire.",
+      "historicalDistance": 0.5,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.71,
+      "culturalRichness": 0.7,
+      "countries": [
+        {
+          "code": "BELGIUM",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "HARRY_KUMEL",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HORREUR",
+        "THRILLER"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "VASE_DE_NOCES_1974",
+      "originalTitle": "Vase de Noces",
+      "frenchTitle": "Vase de noces",
+      "releaseYear": 1974,
+      "durationMinutes": 91,
+      "format": "FEATURE",
+      "synopsis": "Les amours interdites d'un agriculteur et d'une truie. Trois porcelets naîtront, que l'homme fera cruellement disparaître avant de se suicider.",
+      "historicalDistance": 0.46,
+      "artisticDemand": 0.7,
+      "historicalRichness": 0.7,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "BELGIUM",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "THIERRY_ZENO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "HORREUR",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_EXPERIMENTAL"
+      ],
+      "isExperimental": true
+    },
+    {
+      "code": "MUNA_MOTO_1975",
+      "originalTitle": "Muna Moto",
+      "frenchTitle": "Muna Moto : L'Enfant de l'autre",
+      "releaseYear": 1975,
+      "durationMinutes": 89,
+      "format": "FEATURE",
+      "synopsis": "Ngando et Ddomé s'aiment. Ngando demande Ndomé en mariage mais la famille de Ndomé lui rappelle qu'il doit s'acquitter de la dot. Orphelin, il fait appel à son oncle qui, déjà marié à trois femmes stériles, décide d'épouser la jeune fille alors qu'elle attend un enfant de Ngando. Désespéré, le jeune homme, le jour de la fête traditionnelle du Ngaondo, enlève sa propre fille.",
+      "historicalDistance": 0.43,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.7,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "CAMEROON",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "JEAN_PIERRE_DIKONGUE_PIPA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "SANGO_MALO_1991",
+      "originalTitle": "Sango Malo",
+      "frenchTitle": "Sango Malo",
+      "releaseYear": 1991,
+      "durationMinutes": 93,
+      "format": "FEATURE",
+      "synopsis": "Au Cameroun, le nouvel instituteur Bernard Malo Malo va venir bousculer le petit village de Lebamzip. Sensible aux idées libertaires, celui-ci n'hésite pas à parler de politique ou de sexualité avec ses élèves. Et alors qu'il propose aux paysans de se regrouper en coopérative, l'affrontement avec les notables devient inévitable...",
+      "historicalDistance": 0.38,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.75,
+      "countries": [
+        {
+          "code": "CAMEROON",
+          "isPrimary": true
+        },
+        {
+          "code": "BURKINA_FASO",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "BASSEK_BA_KOBHIO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "CHEF_1999",
+      "originalTitle": "Chef!",
+      "frenchTitle": "Chef !",
+      "releaseYear": 1999,
+      "durationMinutes": 61,
+      "format": "FEATURE",
+      "synopsis": "Documentarian Jean-Marie Teno -- originally from Cameroon but now living in France -- explores the sad state of human rights in his native land as Cameroon struggles against political corruption towards something resembling democracy in Chef!. As the film opens, Teno examines a pro-government rally in Bandjourn where a young man was nearly killed by a mob for stealing chickens. As we look deeper into \"justice\" in Cameroon, we discover vigilante murder is commonplace; wife beating is tolerated by the law; freedom of the press does not exist; those who violate the many \"laws\" on the books are faced with inhuman prison conditions; and bribery is the most common method of dealing with the authorities. While activists continue to battle for justice and peace, Chef! makes clear that the road before them is long and steep.",
+      "historicalDistance": 0.36,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.64,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "CAMEROON",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "JEAN_MARIE_TENO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "LES_SAIGNANTES_2005",
+      "originalTitle": "Les Saignantes",
+      "frenchTitle": "Les Saignantes",
+      "releaseYear": 2005,
+      "durationMinutes": 97,
+      "format": "FEATURE",
+      "synopsis": "Best friends Majolie and Chouchou are two beautiful young women trying to get ahead in a near-future Cameroon. After accidentally killing a powerful politician during sex, the two come up with a plot to dispose of the body, and get into the glamorous wakes that have taken over the local nightlife.",
+      "historicalDistance": 0.28,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.62,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "CAMEROON",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "JEAN_PIERRE_BEKOLO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "THRILLER",
+        "DRAME",
+        "SCIENCE_FICTION"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "POURQUOI_BODHI_DHARMA_1989",
+      "originalTitle": "달마가 동쪽으로 간 까닭은?",
+      "frenchTitle": "Pourquoi Bodhi-Dharma est-il parti vers l'Orient ?",
+      "releaseYear": 1989,
+      "durationMinutes": 135,
+      "format": "FEATURE",
+      "synopsis": "Variations et interrogations sur le sens de la vie dans un ermitage ou un vieux maître zen s'apprête à rendre l'âme.",
+      "historicalDistance": 0.43,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.67,
+      "countries": [
+        {
+          "code": "SOUTH_KOREA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "BAE_YONG_KYUN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "SLOW_CINEMA"
+      ]
+    },
+    {
+      "code": "THREE_IRON_2004",
+      "originalTitle": "빈집",
+      "frenchTitle": "Locataires",
+      "releaseYear": 2004,
+      "durationMinutes": 90,
+      "format": "FEATURE",
+      "synopsis": "Tae-suk arpente les rues à moto. Il laisse des prospectus sur les poignées de porte des maisons. Quand il revient quelques jours après, il sait ainsi lesquelles sont désertées. Il y pénètre alors, occupe ces lieux inhabités, sans jamais rien y voler. Il va même jusqu'à laver le linge, réparer les objets cassés qui l'entourent. Un jour, il s'installe dans une maison aisée où habite Sun-houa, une femme maltraitée par son mari. Dès qu'il découvre sa présence, il quitte les lieux. Pourtant, ne pouvant l'oublier, il revient sur ses pas pour l'emmener avec lui. Dès lors, d'appartements en villas, de demeures en maisons, le couple partage en silence la solitude qui les unit. Alors que tout le monde cherche à les séparer, un étrange lien aussi puissant qu'invisible semble les confondre.",
+      "historicalDistance": 0.33,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.63,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "SOUTH_KOREA",
+          "isPrimary": true
+        },
+        {
+          "code": "JAPAN",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "KIM_KI_DUK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE",
+        "POLICIER"
+      ],
+      "characteristicCodes": [
+        "KOREAN_NEW_WAVE"
+      ]
+    },
+    {
+      "code": "LA_VOLONTE_1939",
+      "originalTitle": "العزيمة",
+      "frenchTitle": "La Volonté",
+      "releaseYear": 1939,
+      "durationMinutes": 108,
+      "format": "FEATURE",
+      "synopsis": "The story of a young man from a lower-class family who falls in love with a wealthy girl. Despite the class difference and the obstacles they face, their love endures, and they must navigate the challenges posed by their families' social disparity and the economic hardships of the time.",
+      "historicalDistance": 0.64,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.79,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "EGYPT",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "KAMAL_SELIM",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN"
+      ]
+    },
+    {
+      "code": "LA_TERRE_1969",
+      "originalTitle": "الأرض",
+      "frenchTitle": "La Terre",
+      "releaseYear": 1969,
+      "durationMinutes": 134,
+      "format": "FEATURE",
+      "synopsis": "Dans les années 1930, une monarchie sous tutelle de la Grande-Bretagne gouverne l’Égypte. Loin du Caire, les paysans d’un village vivent péniblement. Un jour, pour favoriser les propriétaires terriens, les autorités décident de restreindre les permis d’irrigation. Accablés, les paysans tentent de se révolter.",
+      "historicalDistance": 0.5,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.71,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "EGYPT",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "YOUSSEF_CHAHINE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL",
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "THE_LAST_RELIC_1969",
+      "originalTitle": "Viimne reliikvia",
+      "frenchTitle": "La Dernière Relique",
+      "releaseYear": 1969,
+      "durationMinutes": 86,
+      "format": "FEATURE",
+      "synopsis": "La Dernière Relique (Viimne reliikvia) est un film estonien de l'ère soviétique réalisé par Grigori Kromanov et sorti en 1969. Le film est adapté du roman Vürst Gabriel ehk Pirita kloostri viimsed päevad d'Eduard Bornhöhe (1893). Il est produit par les studios Tallinnfilm.",
+      "historicalDistance": 0.46,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.71,
+      "culturalRichness": 0.77,
+      "countries": [
+        {
+          "code": "ESTONIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "GRIGORI_KROMANOV",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "AVENTURE",
+        "HISTORIQUE",
+        "ROMANCE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "NOVEMBER_2017",
+      "originalTitle": "November",
+      "frenchTitle": "November",
+      "releaseYear": 2017,
+      "durationMinutes": 115,
+      "format": "FEATURE",
+      "synopsis": "Dans un village païen d’Estonie où les loups-garous, la peste et les esprits errent, le soucis central des habitants est de survivre aux hivers rigoureux. Sans aucun tabou. Ils se volent les uns les autres, dérobent des biens à leur seigneur allemand et même au Diable quand l’occasion se présente. Tout est valable pour survivre ! Pour les aider, les villageois ont pour habitude de se tourner vers d’énigmatiques créatures filiformes faites de bois et de métal. Au milieu de ce chaos, une jeune fermière désespérée tombe amoureuse d’un citadin.",
+      "historicalDistance": 0.27,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.59,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "ESTONIA",
+          "isPrimary": true
+        },
+        {
+          "code": "POLAND",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "RAINER_SARNET",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "FANTASTIQUE",
+        "ROMANCE",
+        "HORREUR"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LA_JOIE_DE_VIVRE_1969",
+      "originalTitle": "La Joie de Vivre",
+      "frenchTitle": "La Joie de vivre",
+      "releaseYear": 1969,
+      "durationMinutes": 66,
+      "format": "FEATURE",
+      "synopsis": "Captain Siporak and Inspector Sam Baun raid the gambling place at Kirirom owned by Prince Chantavong. This place is disguised as an orchid shop. As soon as Prince Chantavong is detained in jail, his wife, princess Sulpra, spends her time having a love relationship with her nephew. Then she meets Okhnia Sneha Sambat, a great hotelier. Okhnia takes her to a big island at Sihanoukville for their holiday. After being released from prison, Prince Chantavong, armed with guns, tries to look for her everywhere.",
+      "historicalDistance": 0.5,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "CAMBODIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "NORODOM_SIHANOUK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LA_NATION_CLANDESTINE_1989",
+      "originalTitle": "La Nación Clandestina",
+      "frenchTitle": "La Nation clandestine",
+      "releaseYear": 1989,
+      "durationMinutes": 122,
+      "format": "FEATURE",
+      "synopsis": "Sebastian Mamani returns to his Aymara community from which he was expelled long ago. He is carrying the great mask of death, he must dance 'til death.",
+      "historicalDistance": 0.36,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "BOLIVIA",
+          "isPrimary": true
+        },
+        {
+          "code": "SPAIN",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "JORGE_SANJINES",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "THIRD_CINEMA"
+      ]
+    },
+    {
+      "code": "CHUQUIAGO_1977",
+      "originalTitle": "Chuquiago",
+      "frenchTitle": "Chuquiago",
+      "releaseYear": 1977,
+      "durationMinutes": 86,
+      "format": "FEATURE",
+      "synopsis": "Racial, social and cultural aspects of La Paz (called Chuquiago by the Aymaras) seen through four stories.",
+      "historicalDistance": 0.42,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "BOLIVIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ANTONIO_EGUINO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "THIRD_CINEMA"
+      ]
+    },
+    {
+      "code": "NELISITA_1982",
+      "originalTitle": "Nelisita",
+      "frenchTitle": "Nelisita",
+      "releaseYear": 1982,
+      "durationMinutes": 90,
+      "format": "FEATURE",
+      "synopsis": "Adapted from two legends of the Nyaneka people in southeastern Angola. Set during a time of famine, and with only two families surviving, the film charts the struggle of Nelisita, a young man who confronts the spirits with help from animals and his friends.",
+      "historicalDistance": 0.43,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "ANGOLA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "RUY_DUARTE_DE_CARVALHO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "FANTASTIQUE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "O_HEROI_2005",
+      "originalTitle": "O Herói",
+      "frenchTitle": "Un héros",
+      "releaseYear": 2005,
+      "durationMinutes": 97,
+      "format": "FEATURE",
+      "synopsis": "Recruté de force dans l'armée angolaise à l'âge de quinze ans, Vitorio est démobilisé après plus de vingt ans de combats. Au cours d'une de ses dernières missions, il a marché sur une mine antipersonnelle et a dû être amputé d'une jambe.  Après des mois d'attente, il reçoit enfin une prothèse grâce à laquelle il espère pouvoir commencer une nouvelle vie. Seul et démuni, il erre dans les rues de Luanda à la recherche de travail et de sa famille dont il est sans nouvelles.  Dans cette ville confrontée à l'afflux des réfugiés et aux pénuries en tout genre, Vitorio ne rencontre que pitié, moquerie ou indifférence. Une nuit, alors qu'il dort dans la rue, il se fait voler sa prothèse... et avec elle ses rêves de retour à une vie normale. Au fil des rencontres, il retrouve espoir...",
+      "historicalDistance": 0.31,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.63,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "ANGOLA",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "ZEZE_GAMBOA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "AIR_CONDITIONER_2020",
+      "originalTitle": "Ar Condicionado",
+      "frenchTitle": "Air Conditioner",
+      "releaseYear": 2020,
+      "durationMinutes": 72,
+      "format": "FEATURE",
+      "synopsis": "One day, air conditioners in the Angolan capital Luanda start to mysteriously fall from buildings. When security guard Matacedo is told to get his overheating boss an air conditioning unit by the end of the day, he embarks on a mission that brings him into contact with the eccentric owner of an electronics store.",
+      "historicalDistance": 0.23,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.58,
+      "culturalRichness": 0.75,
+      "countries": [
+        {
+          "code": "ANGOLA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "FRADIQUE",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "LE_RENNE_BLANC_1952",
+      "originalTitle": "Valkoinen peura",
+      "frenchTitle": "Le Renne blanc",
+      "releaseYear": 1952,
+      "durationMinutes": 73,
+      "format": "FEATURE",
+      "synopsis": "Aslak conduit son troupeau de rennes au fil des saisons, il est souvent absent. Sa femme, Pirita, se sent seule et va consulter un devin qui lui prédit qu'à l'approche de l'hiver, elle deviendra sorcière. La peur et le désir accompagnent sa conversion. Pirita mène une double vie entre les ténèbres et la lumière, femme le jour, animal maléfique la nuit...",
+      "historicalDistance": 0.6,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.76,
+      "culturalRichness": 0.75,
+      "countries": [
+        {
+          "code": "FINLAND",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ERIK_BLOMBERG",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "FANTASTIQUE",
+        "HORREUR"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LES_INDIGNES_1982",
+      "originalTitle": "Arvottomat",
+      "frenchTitle": "Les Indignes",
+      "releaseYear": 1982,
+      "durationMinutes": 119,
+      "format": "FEATURE",
+      "synopsis": "Manne, Harri, and Ville Alfa are rootless twenty-somethings in search of purpose for their banal lives. After Manne steals a priceless painting from a group of petty criminals, Manne and Harri flee from the gangsters across Finland, while Ville goes to Paris. On the road they meet Veera, an old girlfriend of Harri's, and try to avoid the gangsters in pursuit.",
+      "historicalDistance": 0.45,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.69,
+      "countries": [
+        {
+          "code": "FINLAND",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MIKA_KAURISMAKI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "POLICIER",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_SCANDINAVE",
+        "ROAD_MOVIE"
+      ]
+    },
+    {
+      "code": "OMBRES_AU_PARADIS_1986",
+      "originalTitle": "Varjoja paratiisissa",
+      "frenchTitle": "Ombres au paradis",
+      "releaseYear": 1986,
+      "durationMinutes": 73,
+      "format": "FEATURE",
+      "synopsis": "L’histoire d’amour d’un conducteur de camion à ordures, Nikander, et d’une caissière de supermarché, Ilona. Un des rares films du nouveau cinéma finlandais enfin sur nos écrans.",
+      "historicalDistance": 0.38,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "FINLAND",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "AKI_KAURISMAKI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ROMANCE"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_SCANDINAVE",
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "SWEET_DREAM_1936",
+      "originalTitle": "미몽",
+      "frenchTitle": "Sweet Dream",
+      "releaseYear": 1936,
+      "durationMinutes": 47,
+      "format": "MEDIUM",
+      "synopsis": "Middle-class housewife Ae-soon is excessively vain and neglectful of her duties as a homemaker. Unable to tolerate her any longer, Ae-soon's husband kicks her out, and she leaves him and their daughter Jeong-hee to take up with her lover in a hotel.",
+      "historicalDistance": 0.67,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.8,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "SOUTH_KOREA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "YANG_JU_NAM",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "AIMLESS_BULLET_1961",
+      "originalTitle": "오발탄",
+      "frenchTitle": "Une balle perdue",
+      "releaseYear": 1961,
+      "durationMinutes": 108,
+      "format": "FEATURE",
+      "synopsis": "Un lycéen s'apprête à commettre l'irréparable mais la tâche n'est pas si simple à accomplir. Arrivera-t-il à aller jusqu'au bout de son projet ?",
+      "historicalDistance": 0.56,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.74,
+      "culturalRichness": 0.69,
+      "countries": [
+        {
+          "code": "SOUTH_KOREA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "YOO_HYUN_MOK",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "IEODO_1977",
+      "originalTitle": "이어도",
+      "frenchTitle": "Ieodo",
+      "releaseYear": 1977,
+      "durationMinutes": 112,
+      "format": "FEATURE",
+      "synopsis": "",
+      "historicalDistance": 0.45,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.69,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "SOUTH_KOREA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "KIM_KI_YOUNG",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "MYSTERE",
+        "DRAME",
+        "HORREUR"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "OGRE_D_ATHENES_1956",
+      "originalTitle": "Ο Δράκος",
+      "frenchTitle": "L'Ogre d'Athènes",
+      "releaseYear": 1956,
+      "durationMinutes": 103,
+      "format": "FEATURE",
+      "synopsis": "Un petit homme effrayant et paisible est pris par erreur par \"le Dragon\", un criminel notoire, et devient brièvement le roi des enfers.",
+      "historicalDistance": 0.56,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.79,
+      "countries": [
+        {
+          "code": "GREECE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "NIKOS_KOUNDOUROS",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "POLICIER",
+        "COMEDIE",
+        "THRILLER",
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "STELLA_1955",
+      "originalTitle": "Στέλλα",
+      "frenchTitle": "Stella",
+      "releaseYear": 1955,
+      "durationMinutes": 100,
+      "format": "FEATURE",
+      "synopsis": "The story of a young, wild woman who doesn't want to compromise and settle down. Stella is a restless, rebellious Greek woman who plays with men and enjoys her life as much as she can. But when she meets a young footballer, things get mixed up. She loves him but she loves her freedom too. So it's about time she made an important choice.",
+      "historicalDistance": 0.59,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "GREECE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MICHAEL_CACOYANNIS",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ROMANCE",
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "QUATRE_CHEMISES_BLANCHES_1967",
+      "originalTitle": "Četri balti krekli",
+      "frenchTitle": "Quatre chemises blanches",
+      "releaseYear": 1967,
+      "durationMinutes": 77,
+      "format": "FEATURE",
+      "synopsis": "Cezars Kalnins installs telephones by day and composes pop songs by night. His band has a hard time receiving the permit from Soviet censorship authorities for a public debut. A member of the Culture Committee superficially listens to Cēzars' songs and deems the lyrics \"unsuitable and frivolous” and \"unfit for the Soviet youth”, and is later powerless to stop the grindstone of public debate, which she has herself initiated.",
+      "historicalDistance": 0.48,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "LATVIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ROLANDS_KALNINS",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "MUSICAL"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "FLOW_2024",
+      "originalTitle": "Straume",
+      "frenchTitle": "Flow, le chat qui n'avait plus peur de l'eau",
+      "releaseYear": 2024,
+      "durationMinutes": 85,
+      "format": "FEATURE",
+      "synopsis": "Un chat se réveille dans un univers envahi par l’eau où toute vie humaine semble avoir disparu. Il trouve refuge sur un bateau avec un groupe d’autres animaux. Mais s’entendre avec eux s’avère un défi encore plus grand que de surmonter sa peur de l'eau ! Tous devront désormais apprendre à surmonter leurs différences et à s’adapter au nouveau monde qui s’impose à eux.",
+      "historicalDistance": 0.22,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.57,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "LATVIA",
+          "isPrimary": true
+        },
+        {
+          "code": "BELGIUM",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "GINTS_ZILBALODIS",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "AVENTURE",
+        "ANIMATION",
+        "FAMILLE",
+        "FANTASTIQUE"
+      ],
+      "characteristicCodes": [
+        "ANIMATION_DAUTEUR",
+        "CINEMA_BALTE"
+      ]
+    },
+    {
+      "code": "VERS_L_INCONNU_1957",
+      "originalTitle": "إلى أين؟",
+      "frenchTitle": "Vers l'inconnu ?",
+      "releaseYear": 1957,
+      "durationMinutes": 78,
+      "format": "FEATURE",
+      "synopsis": "Une famille vit dans la pauvreté dans les montagnes libanaises. Un jour, le père part pour le Brésil, considéré comme un eldorado par plusieurs de ses compatriotes, et laisse ainsi la mère élever seule leurs enfants. Vingt ans plus tard, un vieil homme que personne ne reconnaît arrive au village…",
+      "historicalDistance": 0.55,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.75,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "LEBANON",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "GEORGES_NASSER",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "BEYROUTH_O_BEYROUTH_1975",
+      "originalTitle": "بيروت يا بيروت",
+      "frenchTitle": "Beyrouth, ô Beyrouth",
+      "releaseYear": 1975,
+      "durationMinutes": 110,
+      "format": "FEATURE",
+      "synopsis": "Au lendemain de la guerre israélo-arabe de 1967, quatre jeunes Libanais en devenir évoluent dans un contexte politique en pleine mutation.",
+      "historicalDistance": 0.49,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.7,
+      "culturalRichness": 0.68,
+      "countries": [
+        {
+          "code": "LEBANON",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MAROUN_BAGDADI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "GUERRE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "HORS_LA_VIE_1991",
+      "originalTitle": "Hors la vie",
+      "frenchTitle": "Hors la vie",
+      "releaseYear": 1991,
+      "durationMinutes": 97,
+      "format": "FEATURE",
+      "synopsis": "Un photographe français est kidnappé dans un Beyrouth déchiré par la guerre. Au fil du temps, son intégrité et sa confiance en lui vont être brisés.",
+      "historicalDistance": 0.37,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.75,
+      "countries": [
+        {
+          "code": "LEBANON",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "MAROUN_BAGDADI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "GUERRE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "LA_FILLE_A_L_ECHO_1964",
+      "originalTitle": "Paskutinė atostogų diena",
+      "frenchTitle": "La Fille à l'écho",
+      "releaseYear": 1964,
+      "durationMinutes": 67,
+      "format": "FEATURE",
+      "synopsis": "C’est le dernier jour des vacances pour Vika. Vêtue de sa robe ample, les cheveux au vent, elle arpente le littoral déjà maintes fois foulé par ses pieds nus au cours de l’été. Libre de ses mouvements et de la présence des adultes, cette petite fille hardie, cor de chasse autour du cou, laisse son innocence et sa curiosité la guider, sans crainte.",
+      "historicalDistance": 0.53,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "LITHUANIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ARUNAS_ZEBRIUNAS",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "FAMILLE",
+        "ROMANCE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "PERSONNE_NE_VOULAIT_MOURIR_1965",
+      "originalTitle": "Niekas nenorėjo mirti",
+      "frenchTitle": "Personne ne voulait mourir",
+      "releaseYear": 1965,
+      "durationMinutes": 107,
+      "format": "FEATURE",
+      "synopsis": "The film is set in Lithuania after the Second World War. It shows dramatic events in a small Lithuanian farming community, where people are split between the Soviets and the \"brothers in the woods\", who are fighting to defend their land from the Soviets after the end of the Second World War.",
+      "historicalDistance": 0.51,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "LITHUANIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "VYTAUTAS_ZALAKEVICIUS",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "ACTION",
+        "HISTORIQUE",
+        "GUERRE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "CORRIDOR_1995",
+      "originalTitle": "Koridorius",
+      "frenchTitle": "Corridor",
+      "releaseYear": 1995,
+      "durationMinutes": 85,
+      "format": "FEATURE",
+      "synopsis": "Un immeuble dégradé, quelque part en Lituanie. Dans un silence épais et une lumière charbonneuse, les gens qui y vivent ne font qu'attendre. Parfois, ils se déplacent jusqu'à la fenêtre et jettent un oeil dehors, sur les toits enneigés. Une fête improvisée dans l'un des appartements a-t-elle quelque chance de réunir ces égarés ? L'alcool, la musique et la séduction opèrent, puis, au petit matin, la fête finie, reste la solitude...",
+      "historicalDistance": 0.37,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.65,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "LITHUANIA",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "SARUNAS_BARTAS",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "SLOW_CINEMA",
+        "CINEMA_BALTE"
+      ]
+    },
+    {
+      "code": "UTU_1983",
+      "originalTitle": "Utu",
+      "frenchTitle": "Utu",
+      "releaseYear": 1983,
+      "durationMinutes": 117,
+      "format": "FEATURE",
+      "synopsis": "En Nouvelle-Zélande, dans les années 1870. Alors que les Anglais viennent de coloniser le pays, un jeune guerrier maori se rebelle contre l'envahisseur...",
+      "historicalDistance": 0.43,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "NEW_ZEALAND",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "GEOFF_MURPHY",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "GUERRE",
+        "AVENTURE",
+        "DRAME",
+        "HISTORIQUE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "VIGIL_1984",
+      "originalTitle": "Vigil",
+      "frenchTitle": "Vigil",
+      "releaseYear": 1984,
+      "durationMinutes": 90,
+      "format": "FEATURE",
+      "synopsis": "Aux confins de la Nouvelle-Zélande, la jeune Toss voit son quotidien bouleversé lorsque son père meurt subitement en gardant ses moutons. Quand un étranger, Ethan, rapporte le corps à la ferme, l'adolescente est méfiante. Ethan se fait de plus en plus présent, jusqu'à s'installer chez eux et à remplacer le père dans les tâches quotidiennes. Quand sa mère commence une relation avec cet étrange personnage, Toss ne peut le voir que comme un dangereux intrus qui a brisé l'isolement et l'impénétrabilité de son monde.",
+      "historicalDistance": 0.39,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "NEW_ZEALAND",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "VINCENT_WARD",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "L_AGRESSION_1962",
+      "originalTitle": "De overval",
+      "frenchTitle": "L'Agression",
+      "releaseYear": 1962,
+      "durationMinutes": 98,
+      "format": "FEATURE",
+      "synopsis": "Il est de 8 Décembre 1944. Dans la prison de Leeuwarden tout semble paisible, mais les apparences sont trompeuses. Un groupe de combattants de la résistance néerlandaise va 49 de leurs compagnons libérer spectaculaire.",
+      "historicalDistance": 0.52,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "NETHERLANDS",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "PAUL_ROTHA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "GUERRE",
+        "HISTORIQUE",
+        "DRAME"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "L_HOMME_QUI_VOULAIT_SAVOIR_1988",
+      "originalTitle": "Spoorloos",
+      "frenchTitle": "L'homme qui voulait savoir",
+      "releaseYear": 1988,
+      "durationMinutes": 107,
+      "format": "FEATURE",
+      "synopsis": "Sur la route des vacances, Rex et Saskia s'arrêtent sur une aire d'autoroute. L'homme s'éloigne du véhicule pendant quelques minutes. À son retour, sa compagne a disparu. Fou de douleur, il renonce à sa vie professionnelle et sociale pour se consacrer exclusivement à la recherche de la disparue. Après trois années d'une quête infructueuse, il reçoit une étrange carte postale, dont l'auteur prétend connaître la vérité sur la disparition…",
+      "historicalDistance": 0.43,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.67,
+      "countries": [
+        {
+          "code": "NETHERLANDS",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "GEORGE_SLUIZER",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "THRILLER",
+        "MYSTERE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "TROIS_COULEURS_BLANC_1994",
+      "originalTitle": "Trzy kolory. Biały",
+      "frenchTitle": "Trois couleurs : Blanc",
+      "releaseYear": 1994,
+      "durationMinutes": 100,
+      "format": "FEATURE",
+      "synopsis": "Karol a tout perdu après son divorce avec Dominique, il ne peut même pas retourner en Pologne et refuse de devenir meurtrier pour de l'argent. Après avoir enfin réussi à retourner dans son pays, il se lance dans diverses entreprises et tombe dans le piège de sa vengeance sur Dominique.",
+      "historicalDistance": 0.39,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.65,
+      "culturalRichness": 0.7,
+      "countries": [
+        {
+          "code": "POLAND",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "KRZYSZTOF_KIESLOWSKI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "COMEDIE",
+        "DRAME",
+        "MYSTERE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_D_AUTEUR"
+      ]
+    },
+    {
+      "code": "IDA_2013",
+      "originalTitle": "Ida",
+      "frenchTitle": "Ida",
+      "releaseYear": 2013,
+      "durationMinutes": 80,
+      "format": "FEATURE",
+      "synopsis": "Dans la Pologne des années 60, quatre jours avant de prononcer ses voeux, Anna, jeune orpheline élevée au couvent, est envoyée par la mère supérieure à la rencontre de sa tante Wanda, qu'elle ne connaît pas. Wanda, en déshabillé, un homme quittant subrepticement sa chambre, se montre d'abord très froide. A la jeune fille elle révèle qu'elle est juive et que les siens ont péri pendant la guerre, enterrés nul ne sait où. Wanda finit par se radoucir et accueille Anna, que ses parents avaient prénommée Ida. Elle décide de partir avec sa nièce dans la ferme de son enfance, à la recherche de témoins des derniers jours de sa famille...",
+      "historicalDistance": 0.25,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.6,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "POLAND",
+          "isPrimary": true
+        },
+        {
+          "code": "DENMARK",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "PAWEL_PAWLIKOWSKI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [],
+      "isBlackAndWhite": true
+    },
+    {
+      "code": "LA_FORET_DES_PENDUS_1965",
+      "originalTitle": "Pădurea spânzuraţilor",
+      "frenchTitle": "La Forêt des pendus",
+      "releaseYear": 1965,
+      "durationMinutes": 165,
+      "format": "FEATURE",
+      "synopsis": "Front austro-hongrois, 1916. Engagé volontaire dans l’armée impériale, le lieutenant roumain Bologa fait partie de la Cour Martiale qui condamne à mort un soldat tchèque pour désertion. Devant l’attitude de certains officiers, Bologa se laisse gagner par des troubles de conscience.",
+      "historicalDistance": 0.51,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "ROMANIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "LIVIU_CIULEI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "HISTORIQUE",
+        "GUERRE",
+        "ROMANCE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "BACCALAUREAT_2016",
+      "originalTitle": "Bacalaureat",
+      "frenchTitle": "Baccalauréat",
+      "releaseYear": 2016,
+      "durationMinutes": 128,
+      "format": "FEATURE",
+      "synopsis": "Romeo, médecin dans une petite ville de Transylvanie, a tout mis en œuvre pour que sa fille, Eliza, soit acceptée dans une université anglaise. Il ne reste plus à la jeune fille, très bonne élève, qu’une formalité qui ne devrait pas poser de problème : obtenir son baccalauréat. Mais Eliza se fait agresser et le précieux Sésame semble brutalement hors de portée. Avec lui, c’est toute la vie de Romeo qui est remise en question quand il oublie alors tous les principes qu’il a inculqués à sa fille, entre compromis et compromissions…",
+      "historicalDistance": 0.27,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.59,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "ROMANIA",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "CRISTIAN_MUNGIU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "NOUVEAU_CINEMA_ROUMAIN"
+      ]
+    },
+    {
+      "code": "BYE_BYE_AFRICA_1999",
+      "originalTitle": "Bye Bye Africa",
+      "frenchTitle": "Bye Bye Africa",
+      "releaseYear": 1999,
+      "durationMinutes": 87,
+      "format": "FEATURE",
+      "synopsis": "A la suite du décès de sa mère, le réalisateur retourne dans son pays, au Tchad. Il en profite pour faire des repérages pour son prochain film. Très vite, il se trouve confronté à une réalité incontournable : salles de cinema détruites, absence de toute structure de production ou de diffusion.",
+      "historicalDistance": 0.3,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.63,
+      "culturalRichness": 0.78,
+      "countries": [
+        {
+          "code": "CHAD",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "MAHAMAT_SALEH_HAROUN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "DARATT_2006",
+      "originalTitle": "Daratt",
+      "frenchTitle": "Daratt",
+      "releaseYear": 2006,
+      "durationMinutes": 95,
+      "format": "FEATURE",
+      "synopsis": "Tchad, 2006. Le gouvernement a accordé l’amnistie à tous les criminels de guerre. Atim, seize ans, reçoit un revolver des mains de son grand-père pour aller tuer l’assassin de son père…",
+      "historicalDistance": 0.3,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.62,
+      "culturalRichness": 0.74,
+      "countries": [
+        {
+          "code": "CHAD",
+          "isPrimary": true
+        },
+        {
+          "code": "BELGIUM",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "MAHAMAT_SALEH_HAROUN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ACTION",
+        "DRAME",
+        "THRILLER"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "LINGUI_2021",
+      "originalTitle": "Lingui : les liens sacrés",
+      "frenchTitle": "Lingui, les liens sacrés",
+      "releaseYear": 2021,
+      "durationMinutes": 90,
+      "format": "FEATURE",
+      "synopsis": "Dans les faubourgs de N’djaména au Tchad, Amina vit seule avec Maria, sa fille unique de quinze ans. Son monde déjà fragile s’écroule le jour où elle découvre que sa fille est enceinte. Cette grossesse, l'adolescente n’en veut pas. Dans un pays où l'avortement est non seulement condamné par la religion, mais aussi par la loi, Amina se retrouve face à un combat qui semble perdu d’avance…",
+      "historicalDistance": 0.24,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.58,
+      "culturalRichness": 0.73,
+      "countries": [
+        {
+          "code": "CHAD",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "MAHAMAT_SALEH_HAROUN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "L_HOMME_DE_CENDRES_1986",
+      "originalTitle": "ريح السد‎",
+      "frenchTitle": "L'Homme de cendres",
+      "releaseYear": 1986,
+      "durationMinutes": 148,
+      "format": "FEATURE",
+      "synopsis": "Un jeune ébéniste de Sfax, Hachemi, doit suivre la décision de ses parents et se marier. Cependant, lui et un autre garçon, Farfat, ont été violés dans leur enfance par leur contremaître Ameur, et en restent traumatisés.",
+      "historicalDistance": 0.44,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.67,
+      "culturalRichness": 0.67,
+      "countries": [
+        {
+          "code": "TUNISIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "NOURI_BOUZID",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_MAGHREBIN"
+      ]
+    },
+    {
+      "code": "LES_FILLES_D_OLFA_2023",
+      "originalTitle": "Les Filles d'Olfa",
+      "frenchTitle": "Les Filles d’Olfa",
+      "releaseYear": 2023,
+      "durationMinutes": 107,
+      "format": "FEATURE",
+      "synopsis": "La vie d'Olfa, Tunisienne et mère de 4 filles, oscille entre ombre et lumière. Un jour, ses deux filles aînées disparaissent. Pour combler leur absence, la réalisatrice Kaouther Ben Hania convoque des actrices professionnelles et met en place un dispositif de cinéma hors du commun afin de lever le voile sur l’histoire d’Olfa et ses filles. Un voyage intime fait d’espoir, de rébellion, de violence, de transmission et de sororité qui va questionner le fondement même de nos sociétés.",
+      "historicalDistance": 0.24,
+      "artisticDemand": 0.63,
+      "historicalRichness": 0.58,
+      "culturalRichness": 0.72,
+      "countries": [
+        {
+          "code": "TUNISIA",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "KAOUTHER_BEN_HANIA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DOCUMENTAIRE",
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL",
+        "CINEMA_MAGHREBIN"
+      ]
+    },
+    {
+      "code": "LE_SYNDROME_ASTHENIQUE_1989",
+      "originalTitle": "Астенический синдром",
+      "frenchTitle": "Le Syndrome asthénique",
+      "releaseYear": 1989,
+      "durationMinutes": 153,
+      "format": "FEATURE",
+      "synopsis": "Une mère de famille, veuve, et un instituteur brisé par la vie, tous deux en pleine dépression, réagissent de façons très différentes à la pression qu'exerce sur eux la société.",
+      "historicalDistance": 0.43,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.68,
+      "countries": [
+        {
+          "code": "UKRAINE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "KIRA_MURATOVA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_EXPERIMENTAL"
+      ]
+    },
+    {
+      "code": "THE_TRIBE_2014",
+      "originalTitle": "Плем'я",
+      "frenchTitle": "The Tribe",
+      "releaseYear": 2014,
+      "durationMinutes": 132,
+      "format": "FEATURE",
+      "synopsis": "Sergey, sourd et muet, entre dans un internat spécialisé et doit subir les rites de la bande qui fait régner son ordre, trafics et prostitution, dans l’école. Il parvient à en gravir les échelons mais tombe amoureux de la jeune Anna, membre de cette tribu, qui vend son corps pour survivre et quitter l’Ukraine. Sergey devra briser les lois de cette hiérarchie sans pitié.",
+      "historicalDistance": 0.23,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.6,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "UKRAINE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MYROSLAV_SLABOSHPYTSKYI",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "POLICIER"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "QUAND_LA_SAINT_JEAN_ARRIVE_1984",
+      "originalTitle": "Bao giờ cho đến tháng Mười",
+      "frenchTitle": "Quand viendra le mois d'octobre",
+      "releaseYear": 1984,
+      "durationMinutes": 95,
+      "format": "FEATURE",
+      "synopsis": "De retour du front où elle apprit que son mari était porté disparu au combat, Duyen est tellement terrassée par la douleur qu’elle tombe dans la rivière pendant la traversée en bac. Sauvée de la noyade par l’instituteur Khang, elle fait de lui un ami et confident. Pour cacher la vérité à son beau-père gravement malade, elle demande à Khang d’écrire des lettres factices et de lui envoyer chez elle comme si de rien n’était. La complicité intime naissante entre lui et Duyen n’est pas du goût de sa petite amie et de ses collègues à l’école. Pour que cesse la médisance, Khang est muté ailleurs. Le beau-père est au seuil de la mort. Il implore sa belle-fille d’envoyer un télégramme pour faire revenir son fils. Sur la route vers le bureau de poste, elle croise un convoi militaire.",
+      "historicalDistance": 0.45,
+      "artisticDemand": 0.65,
+      "historicalRichness": 0.68,
+      "culturalRichness": 0.68,
+      "countries": [
+        {
+          "code": "VIETNAM",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "DANG_NHAT_MINH",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME",
+        "GUERRE"
+      ],
+      "characteristicCodes": []
+    },
+    {
+      "code": "L_ARBRE_AUX_PAPILLONS_D_OR_2023",
+      "originalTitle": "Bên Trong Vỏ Kén Vàng",
+      "frenchTitle": "L'Arbre aux papillons d'or",
+      "releaseYear": 2023,
+      "durationMinutes": 179,
+      "format": "FEATURE",
+      "synopsis": "Après la mort de sa belle-sœur dans un accident de moto à Saigon, Thien se voit confier la tâche de ramener son corps dans leur village natal. Il y emmène également son neveu Dao (5 ans), qui a miraculeusement survécu à l'accident. Au milieu des paysages mystiques de la campagne vietnamienne, Thien part à la recherche de son frère aîné, disparu il y a des années, un voyage qui remet profondément en question sa foi.",
+      "historicalDistance": 0.25,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.58,
+      "culturalRichness": 0.7,
+      "countries": [
+        {
+          "code": "VIETNAM",
+          "isPrimary": true
+        },
+        {
+          "code": "FRANCE",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "PHAM_THIEN_AN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "SLOW_CINEMA"
+      ]
+    },
+    {
+      "code": "JIT_1990",
+      "originalTitle": "Jit",
+      "frenchTitle": "Jit",
+      "releaseYear": 1990,
+      "durationMinutes": 98,
+      "format": "FEATURE",
+      "synopsis": "A young African man must try every trick in the book in this attempts to win the heart of the most beautiful girl in his village.",
+      "historicalDistance": 0.4,
+      "artisticDemand": 0.64,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.71,
+      "countries": [
+        {
+          "code": "ZIMBABWE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "MICHAEL_RAEBURN",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "ROMANCE",
+        "COMEDIE",
+        "FANTASTIQUE"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "NERIA_1991",
+      "originalTitle": "Neria",
+      "frenchTitle": "Neria",
+      "releaseYear": 1991,
+      "durationMinutes": 103,
+      "format": "FEATURE",
+      "synopsis": "A Zimbabwean widow (Jesesi Mungoshi) falls prey to her greedy brother-in-law (Dominic Kanaventi) who takes her children and belongings.",
+      "historicalDistance": 0.37,
+      "artisticDemand": 0.61,
+      "historicalRichness": 0.66,
+      "culturalRichness": 0.76,
+      "countries": [
+        {
+          "code": "ZIMBABWE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "GODWIN_MAWURU",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN",
+        "CINEMA_AFRICAIN_POSTCOLONIAL"
+      ]
+    },
+    {
+      "code": "CRUMBS_2015",
+      "originalTitle": "Crumbs",
+      "frenchTitle": "Crumbs",
+      "releaseYear": 2015,
+      "durationMinutes": 68,
+      "format": "FEATURE",
+      "synopsis": "Sous le soleil d’une Ethiopie post-apocalyptique, un super-héros nain veut rejoindre l’épave d’un vaisseau spatial qui obstrue le ciel...",
+      "historicalDistance": 0.26,
+      "artisticDemand": 0.62,
+      "historicalRichness": 0.6,
+      "culturalRichness": 0.75,
+      "countries": [
+        {
+          "code": "ETHIOPIA",
+          "isPrimary": true
+        },
+        {
+          "code": "FINLAND",
+          "isPrimary": false
+        }
+      ],
+      "directors": [
+        {
+          "code": "MIGUEL_LLANSO",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "AVENTURE",
+        "DRAME",
+        "SCIENCE_FICTION"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN"
+      ]
+    },
+    {
+      "code": "QUI_EST_LE_PERE_D_HIRUT_1965",
+      "originalTitle": "ሕሩት አባትዋ ማነው?",
+      "frenchTitle": "Qui est le père d'Hirut ?",
+      "releaseYear": 1965,
+      "durationMinutes": 1,
+      "format": "SHORT",
+      "synopsis": "Ethiopia's first feature-length film was directed, written and produced by the local businessman Ilala Ibsa. It is about a woman that succumbs to prostitution. It was not popular with audiences and did not make its money back.",
+      "historicalDistance": 0.48,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.8,
+      "countries": [
+        {
+          "code": "ETHIOPIA",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "ILALA_IBSA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "CINEMA_AFRICAIN"
       ]
     }
   ],
@@ -54974,6 +57682,78 @@
       "description": "Voir 5 films de la Nouvelle Vague française",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_CHARACTERISTIC_NOUVELLE_VAGUE_FRANCAISE",
+      "targetCount": 5
+    },
+    {
+      "code": "QUEST_BRONZE_GIALLO",
+      "name": "Une lame rouge",
+      "description": "Voir 1 Giallo",
+      "difficulty": "BRONZE",
+      "ruleCode": "WATCH_CHARACTERISTIC_GIALLO",
+      "targetCount": 1
+    },
+    {
+      "code": "QUEST_BRONZE_DOGME",
+      "name": "Le vœu de chasteté",
+      "description": "Voir 1 film Dogme 95",
+      "difficulty": "BRONZE",
+      "ruleCode": "WATCH_CHARACTERISTIC_DOGME_95",
+      "targetCount": 1
+    },
+    {
+      "code": "QUEST_BRONZE_JIDAIGEKI",
+      "name": "Lame et époque",
+      "description": "Voir 1 jidai-geki",
+      "difficulty": "BRONZE",
+      "ruleCode": "WATCH_CHARACTERISTIC_JIDAIGEKI",
+      "targetCount": 1
+    },
+    {
+      "code": "QUEST_SILVER_NEOREALISM",
+      "name": "Les rues d'après-guerre",
+      "description": "Voir 3 films du néoréalisme italien",
+      "difficulty": "SILVER",
+      "ruleCode": "WATCH_CHARACTERISTIC_NEOREALISME_ITALIEN",
+      "targetCount": 3
+    },
+    {
+      "code": "QUEST_SILVER_EXPRESSIONISM",
+      "name": "Ombres inclinées",
+      "description": "Voir 3 films de l'expressionnisme allemand",
+      "difficulty": "SILVER",
+      "ruleCode": "WATCH_CHARACTERISTIC_EXPRESSIONNISME_ALLEMAND",
+      "targetCount": 3
+    },
+    {
+      "code": "QUEST_SILVER_SPAGHETTI",
+      "name": "Trois duels au soleil",
+      "description": "Voir 3 westerns spaghetti",
+      "difficulty": "SILVER",
+      "ruleCode": "WATCH_CHARACTERISTIC_SPAGHETTI_WESTERN",
+      "targetCount": 3
+    },
+    {
+      "code": "QUEST_GOLD_SURREALISM",
+      "name": "Logique du rêve",
+      "description": "Voir 5 films surréalistes",
+      "difficulty": "GOLD",
+      "ruleCode": "WATCH_CHARACTERISTIC_SURREALISME",
+      "targetCount": 5
+    },
+    {
+      "code": "QUEST_GOLD_JAPAN_GOLDEN",
+      "name": "Cinq écrans d'or",
+      "description": "Voir 5 films de l'âge d'or du cinéma japonais",
+      "difficulty": "GOLD",
+      "ruleCode": "WATCH_CHARACTERISTIC_AGE_OR_CINEMA_JAPONAIS",
+      "targetCount": 5
+    },
+    {
+      "code": "QUEST_GOLD_SOVIET",
+      "name": "Cinq montages",
+      "description": "Voir 5 films du cinéma soviétique",
+      "difficulty": "GOLD",
+      "ruleCode": "WATCH_CHARACTERISTIC_CINEMA_SOVIETIQUE",
       "targetCount": 5
     }
   ],

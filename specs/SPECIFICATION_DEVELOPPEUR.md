@@ -265,8 +265,8 @@ app/src/main/assets/catalog/catalog.json
 ```
 
 Il décrit le monde : films, pays, continents, réalisateurs, caractéristiques,
-genres, ères, collections, 10 rangs, 32 badges, 50 quêtes types (16 Bronze, 17 Argent, 17 Or).
-Pack livré : champ racine `"version": 18`.
+genres, ères, collections, 10 rangs, 32 badges, 59 quêtes types (19 Bronze, 20 Argent, 20 Or).
+Le pack courant est la version **23** (1453 films). `catalog.json` est la copie de `catalog_v3.json`.
 
 Modèle Kotlin : `data/importer/CatalogPack.kt`.  
 Validateur : `data/importer/CatalogValidator.kt`.  
@@ -378,7 +378,11 @@ Films :
 - `CLEO_DE_5_A_7_1962` — Cléo de 5 à 7 (Varda, 1962)
 
 Plus : 42 pays, 6 continents, 15 collections, 10 rangs,
-32 badges (codes `001`–`032`), 50 quêtes types (16 Bronze, 17 Argent, 17 Or).
+32 badges (codes `001`–`032`), 59 quêtes types (19 Bronze, 20 Argent, 20 Or).
+Une quête de courant utilise `WATCH_CHARACTERISTIC_<CODE>` (déjà résolu par
+`DefaultQuestRules`) et `targetCount`. Le nombre de films d’une liste vient de
+`TerritoryUi.filmCount` (Atlas) ou de la taille de la liste affichée
+(section « Films · N », cartes de collection, feuille de la carte).
 
 Pour tester la persistence : marquer un film vu, tuer l’app, relancer → le
 film reste vu, l’historique et l’XP/rang aussi.

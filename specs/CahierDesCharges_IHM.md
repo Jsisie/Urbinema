@@ -12,7 +12,7 @@
 >
 > Les éléments **imposés par Léo** sont signalés par la mention **[imposé]**. Le reste relève de ma proposition.
 >
-> **0.3.0 —** Pendant le chargement du catalogue, fond blanc plein écran et icône de l’app (plus le texte « Votre aventure commence ici »). Après le pseudo, un carrousel de 6 pages (intro, Accueil, Atlas, Collections, futur Parcours, Profil), rejouable dans Réglages (« Revoir le guide »). « Voir toutes les sources » sous les crédits. Index A–Z blanc (couleur du texte, pas l’or) sur pays, courants, genres et réalisateurs. Appui long sur un film d’une liste → confirmer Vu. La chaîne des rangs s’ouvre sur le rang courant. Un nouveau rang ouvre un dialogue avec confettis.
+> **0.3.0 —** Pendant le chargement du catalogue, fond blanc plein écran et icône de l’app (plus le texte « Votre aventure commence ici »). Après le pseudo, un carrousel de 6 pages (intro, Accueil, Atlas, Collections, futur Parcours, Profil), rejouable dans Réglages (« Revoir le guide »). « Voir toutes les sources » sous les crédits. Index A–Z blanc (couleur du texte, pas l’or) sur pays, courants, genres et réalisateurs. Appui long sur un film d’une liste → confirmer Vu. La chaîne des rangs s’ouvre sur le rang courant. Un nouveau rang ouvre un dialogue avec confettis. Chaque liste de films affiche son effectif en petit.
 
 ------
 
@@ -502,9 +502,13 @@ L’icône **étoiles** en haut à droite ouvre le ciel.
 │  ☰              Atlas            ?  ✦   │
 └─────────────────────────────────────────┘
 │  ( Courants ) ( Pays ) ( Décennies ) …  │
-│  France            ● or         42 %    │
+│  France       48 films   ● or   42 %    │
 │  …                                      │
 ```
+
+Le nombre de films du catalogue est affiché en petit sur chaque ligne
+(pays, courant, décennie, genre, réalisateur) et sur chaque carte de
+collection. La section Films d’une fiche reprend ce total : « Films · 24 ».
 
 ------
 

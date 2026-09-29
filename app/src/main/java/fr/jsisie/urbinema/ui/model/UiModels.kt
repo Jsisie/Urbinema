@@ -202,6 +202,7 @@ data class TerritoryUi(
     val progress: Int,
     val state: ExplorationState,
     val subtitle: String = "",
+    val filmCount: Int = 0,
 )
 
 data class MovieUi(

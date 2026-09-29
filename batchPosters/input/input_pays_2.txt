@@ -1,0 +1,17 @@
+# Grèce → Pays-Bas. Timbuktu et Soleil Ô sont déjà au catalogue.
+frenchTitle;releaseYear;director;code;originalTitle
+"L'Ogre d'Athènes";1956;"Nikos Koundouros";OGRE_D_ATHENES_1956;"O Drakos"
+"Stella";1955;"Michael Cacoyannis";STELLA_1955;"Stella"
+"Quatre chemises blanches";1967;"Rolands Kalniņš";QUATRE_CHEMISES_BLANCHES_1967;"Četri balti krekli"
+"Flow";2024;"Gints Zilbalodis";FLOW_2024;"Straume"
+"Vers l'inconnu ?";1957;"Georges Nasser";VERS_L_INCONNU_1957;"Ila ayn"
+"Beyrouth ô Beyrouth";1975;"Maroun Bagdadi";BEYROUTH_O_BEYROUTH_1975;"Beyrouth ya Beyrouth"
+"Hors la vie";1991;"Maroun Bagdadi";HORS_LA_VIE_1991;"Hors la vie"
+"La Fille à l'écho";1964;"Arūnas Žebriūnas";LA_FILLE_A_L_ECHO_1964;"Paskutinė atostogų diena"
+"Personne ne voulait mourir";1965;"Vytautas Žalakevičius";PERSONNE_NE_VOULAIT_MOURIR_1965;"Niekas nenorėjo mirti"
+"Corridor";1995;"Šarūnas Bartas";CORRIDOR_1995;"Koridorius"
+"The Excursionist";2013;"Audrius Juzėnas";THE_EXCURSIONIST_2013;"Ekskursantė"
+"Utu";1983;"Geoff Murphy";UTU_1983;"Utu"
+"Vigil";1984;"Vincent Ward";VIGIL_1984;"Vigil"
+"L'Agression";1962;"Paul Rotha";L_AGRESSION_1962;"De Overval"
+"L'Homme qui voulait savoir";1988;"George Sluizer";L_HOMME_QUI_VOULAIT_SAVOIR_1988;"Spoorloos"

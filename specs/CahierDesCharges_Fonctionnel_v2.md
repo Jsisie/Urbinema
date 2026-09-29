@@ -7,7 +7,7 @@
 ## Spécification fonctionnelle du produit
 
 **Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 20, 1383 films)
+**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 23, 1453 films)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -1377,8 +1377,10 @@ et une Or.
 Le décalage à 02:00 permet de terminer un film commencé le dimanche soir et de
 l'enregistrer avant le renouvellement.
 
-Les quêtes sont écrites manuellement dans le catalogue. La V1 embarque
-**50 quêtes types** (16 Bronze, 17 Argent, 17 Or). Chaque lundi 02:00, l'app
+Les quêtes sont écrites manuellement dans le catalogue. Le pack 21 embarque
+**59 quêtes types** (19 Bronze, 20 Argent, 20 Or), dont des quêtes de courant
+(`WATCH_CHARACTERISTIC_*`, par exemple « Voir 1 Giallo »), pas de collection.
+Chaque lundi 02:00, l'app
 tire **au hasard une quête par palier** parmi celles encore faisables (assez de films
 non vus pour atteindre la cible). Une quête devenue impossible en cours de
 semaine est remplacée. La génération automatique de nouveaux énoncés est

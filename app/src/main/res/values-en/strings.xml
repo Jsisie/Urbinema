@@ -70,6 +70,11 @@
     <string name="collection_movie_two">Bicycle Thieves · 1948</string>
     <string name="collection_movie_three">Umberto D. · 1952</string>
     <string name="films">Films</string>
+    <string name="section_with_count">%1$s · %2$d</string>
+    <plurals name="film_count">
+        <item quantity="one">%d film</item>
+        <item quantity="other">%d films</item>
+    </plurals>
     <string name="sort_films">Sort films</string>
     <string name="sort_title_az">Title A–Z</string>
     <string name="sort_title_za">Title Z–A</string>

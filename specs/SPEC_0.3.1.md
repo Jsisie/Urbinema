@@ -39,15 +39,116 @@ Ca va sans dire qu'à CHAQUE fois que tu traites un tiret (donc un sujet à part
 
 ### Ajouts data :
 
--  [ ] Ajouter des quêtes de "courant" (ex : "Voir 1 Giallo"). De courant je dis bien, pas de collection.
+-  [x] Ajouter des quêtes de "courant" (ex : "Voir 1 Giallo"). De courant je dis bien, pas de collection. Fait : 9 quêtes (bronze Giallo, Dogme 95, jidai-geki ; argent néoréalisme, expressionnisme, western spaghetti ; or surréalisme, âge d'or japonais, cinéma soviétique). Pack 21, 59 quêtes (19 / 20 / 20).
 
--  [ ] Ajouter de films par pays dans les pays avec peu de films : 
+-  [x] Nombre de films discret sur chaque liste : ligne Atlas (pays, courant, décennie, genre, réalisateur), section Films d’une fiche (territoire, collection, réalisateur, feuille de la carte), et cartes de collection.
+
+-  [x] Ajout de films par pays dans les pays avec peu de films. Fait jusqu’à l’Éthiopie, pack **23**, **1453** films. Pas de doublon quand l’œuvre était déjà là (Véronique, Trois couleurs : Rouge, et avant ça Quartier Mozart, Timbuktu, Soleil Ô). « Quand la Saint-Jean arrive » est enregistré sous « Quand viendra le mois d’octobre ». Synopsis : les vides ont été remplis quand la fiche TMDB est le même film ; 11 restent vides. 
 
    -  France :
       -  *Cœur fidèle* (1923) – Jean Epstein
       -  *La Glace à trois faces* (1927) – Jean Epstein
    -  Norvège :
-      -    
+      -    Le Rescapé - 1957 - Arne Skouen
+      -    La Chasse - 1959 - Erik Løchen
+      -    La Faim - 1966 - Henning Carlsen
+      -    Edvard Munch - 1974 - Peter Watkins
+      -    Grand Prix Pignon-sur-Roc - 1975 - Ivo Caprino
+      -    Le Passeur - 1987 - Nils Gaup
+      -    Insomnia - 1997 - Erik Skjoldbjærg
+   -  Autriche :
+      -  Sissi - 1955 - Ernst Marischka
+      -  Angst - 1983 - Gerald Kargl
+      -  Le Septième Continent - 1989 - Michael Haneke
+      -  Benny's Video - 1992 - Michael Haneke
+      -  Dog Days - 2001 - Ulrich Seidl
+   -  Belge :
+      -  Je vous parle d'un temps... - 1934 - Henri Storck et Joris Ivens
+      -  Malpertuis - 1971 - Harry Kümel
+      -  Les Lèvres rouges - 1971 - Harry Kümel
+      -  Vase de noces - 1974 - Thierry Zéno
+   -  Cameroun :
+      -  Muna Moto - 1975 - Jean-Pierre Dikongué Pipa
+      -  Quartier Mozart - 1992 - Jean-Pierre Bekolo
+      -  Sango Malo - 1991 - Bassek Ba Kobhio
+      -  Chef ! - 1999 - Jean-Marie Teno
+      -  Les Saignantes - 2005 - Jean-Pierre Bekolo
+   -  Corée du Sud :
+      -  Sweet Dream - 1936 - Yang Ju-nam
+      -  Aimless Bullet - 1961 - Yoo Hyun-mok
+      -  Ieodo - 1977 - Kim Ki-young
+      -  Pourquoi Bodhi-Dharma est-il parti vers l'Orient ? - 1989 - Bae Yong-kyun
+      -  3-Iron - 2004 - Kim Ki-duk
+   -  Egypte :
+      -  La Volonté - 1939 - Kamal Selim
+      -  La Terre - 1969 - Youssef Chahine
+   -  Estonie :
+      -  The Last Relic - 1969 - Grigori Kromanov
+      -  November - 2017 - Rainer Sarnet
+   -  Cambodge :
+      -  La Joie de vivre - 1969 - Norodom Sihanouk
+   -  Bolivie :
+      -  La Nation clandestine - 1989 - Jorge Sanjinés
+      -  Chuquiago - 1977 - Antonio Eguino
+   -  Angola :
+      -  Nelisita - 1982 - Ruy Duarte de Carvalho
+      -  O Herói - 2005 - Zézé Gamboa
+      -  Air Conditioner - 2020 - Fradique
+   -  Finlande :
+      -  Le Renne blanc - 1952 - Erik Blomberg
+      -  Les Indignes - 1982 - Mika Kaurismäki
+      -  Ombres au paradis - 1986 - Aki Kaurismäki
+   -  Grèce :
+      -  L'Ogre d'Athènes - 1956 - Nikos Koundouros
+      -  Stella - 1955 - Michael Cacoyannis
+   -  Lettonie :
+      -  Quatre chemises blanches - 1967 - Rolands Kalniņš
+      -  Flow - 2024 - Gints Zilbalodis
+   -  Liban :
+      -  Vers l'inconnu ? - 1957 - Georges Nasser
+      -  Beyrouth ô Beyrouth - 1975 - Maroun Bagdadi
+      -  Hors la vie - 1991 - Maroun Bagdadi
+   -  Lituanie :
+      -  La Fille à l'écho - 1964 - Arūnas Žebriūnas
+      -  Personne ne voulait mourir - 1965 - Vytautas Žalakevičius
+      -  Corridor - 1995 - Šarūnas Bartas
+      -  The Excursionist - 2013 - Audrius Juzėnas
+   -  Mauritanie :
+      -  Soleil Ô - 1969 - Med Hondo
+      -  Timbuktu - 2014 - Abderrahmane Sissako
+   -  Nouvelle-Zélande :
+      -  Utu - 1983 - Geoff Murphy
+      -  Vigil - 1984 - Vincent Ward
+   -  Pays-Bas :
+      -  L'Agression - 1962 - Paul Rotha
+      -  L'Homme qui voulait savoir - 1988 - George Sluizer
+   -  Pologne :
+      -  La Double Vie de Véronique - 1991 - Krzysztof Kieślowski
+      -  Trois Couleurs : Blanc - 1994 - Krzysztof Kieślowski
+      -  Trois Couleurs : Rouge - 1994 - Krzysztof Kieślowski
+      -  Ida - 2013 - Paweł Pawlikowski
+   -  Roumanie :
+      -  La Forêt des pendus - 1965 - Liviu Ciulei
+      -  Baccalauréat - 2016 - Cristian Mungiu
+   -  Tchad :
+      -  Bye Bye Africa - 1999 - Mahamat-Saleh Haroun
+      -  Daratt - 2006 - Mahamat-Saleh Haroun
+      -  Lingui, les liens sacrés - 2021 - Mahamat-Saleh Haroun
+   -  Tunisie :
+      -  L'Homme de cendres - 1986 - Nouri Bouzid
+      -  Les Filles d'Olfa - 2023 - Kaouther Ben Hania
+   -  Ukraine :
+      -  Le Syndrome asthénique - 1989 - Kira Mouratova
+      -  The Tribe - 2014 - Myroslav Slaboshpytsky
+   -  Vietnam :
+      -  Quand la Saint-Jean arrive - 1984 - Đặng Nhật Minh
+      -  L'Arbre aux papillons d'or - 2023 - Phạm Thiên Ân
+   -  Zimbabwe :
+      -  Jit - 1990 - Michael Raeburn
+      -  Neria - 1991 - Godwin Mawuru
+   -  Ethiopie :
+      -  Qui est le père d'Hirut ? - 1965 - Ilala Ibsa
+      -  Crumbs - 2015 - Miguel Llansó
 
 -  [ ] Ajouter plusieurs collections et ajouter les films des collections qui ne sont actuellement pas dans le catalog_v3. TOUT est listé dans le fichier "Liste_Collections&Films.md". ALORS, point important avant de se retrouver avec 1000 doublons, ce fichier "Liste_Collections&Films.md" liste TOUTES les collections et leurs films associés. Donc évidemment une grande partie existent déjà, TOUTEFOIS, certains collections ont été modifées (le "rang" (difficulté), ou même certains films en plus/en moins). Je vais quand même essayer de tout te lister en-dessous pour te faciliter le taff, mais fais quand même un deuxième check après entre le fichier et le catalog_v3 (copie de catalog_v2 je rappelle). Ensuite, évidemment tu vas créer tous ces nouveaux films en base (dans le catalog_v3 quoi), mais tu penseras BIEN aussi à jouer le batchPosters sur ces films, en les ajoutant dans le input à ceux déjà présents, en faisant tourner le batch, une fois le batch terminé en copiant TOUTES les affiches de "output" dans media/posters comme dab, à vider le fichier "input" SAUF pour les films où l'affiche n'a pas été trouvé, n'a pas été récupéré etc.. Bref comme dab quoi. Liste des collecs :
 
@@ -82,7 +183,7 @@ Ca va sans dire qu'à CHAQUE fois que tu traites un tiret (donc un sujet à part
 
     - Cinéma Expérimentale et formel : rang "Hors-champ"
 
-  - [ ] Note Importante pour les nouvelles Collections (et els autres aussi d'ailleurs) : Bien vérifier que la liste de films et la description (courte et surtout longue) sont en adéquation ! Car des fois j'ai modifié la liste des films et donc peut-être qu'un réal cité dans la description ne fais plur partie de la collection ! Donc bien vérifier à chaque fois, et adapter/refaire la description si besoin.
+  - [ ] Note Importante pour les nouvelles Collections (et les autres aussi d'ailleurs) : Bien vérifier que la liste de films et la description (courte et surtout longue) sont en adéquation ! Car des fois j'ai modifié la liste des films et donc peut-être qu'un réal cité dans la description ne fais plur partie de la collection ! Donc bien vérifier à chaque fois, et adapter/refaire la description si besoin.
 
 
 

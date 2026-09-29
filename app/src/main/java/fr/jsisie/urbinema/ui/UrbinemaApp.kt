@@ -440,8 +440,18 @@ private fun UrbinemaNavigation(
                         currents = model.currents,
                         decades = model.decades,
                         genres = model.genres,
-                        directors = model.directors.map {
-                            TerritoryUi(it.id, it.name, R.string.directors, 0, ExplorationState.Unexplored)
+                        directors = model.directors.map { director ->
+                            val seen = director.films.count { it.watched }
+                            val total = director.films.size
+                            val percent = if (total == 0) 0 else seen * 100 / total
+                            TerritoryUi(
+                                director.id,
+                                director.name,
+                                R.string.directors,
+                                percent,
+                                explorationFrom(percent),
+                                filmCount = total,
+                            )
                         },
                     ) { filter, code ->
                         when (filter) {
@@ -780,7 +790,14 @@ private fun skyTerritories(
         val seen = director.films.count { it.watched }
         val total = director.films.size
         val percent = if (total == 0) 0 else seen * 100 / total
-        TerritoryUi(director.id, director.name, R.string.directors, percent, explorationFrom(percent))
+        TerritoryUi(
+            director.id,
+            director.name,
+            R.string.directors,
+            percent,
+            explorationFrom(percent),
+            filmCount = total,
+        )
     }
     MapLayer.COLLECTIONS -> model.collections.map { collection ->
         TerritoryUi(
@@ -790,6 +807,7 @@ private fun skyTerritories(
             collection.progress,
             explorationFrom(collection.progress),
             collection.shortDescription,
+            filmCount = collection.films.size,
         )
     }
     MapLayer.AROUND_FILM -> emptyList()

@@ -671,6 +671,18 @@ H. DIVERS
     La Condition de l’homme II reste. L’import déplace Vu/XP de l’ancien code
     vers le film gardé avant d’effacer les liens pays, pour ne plus planter
     au démarrage (« has no primary country »).
+    Pack **21** : 9 quêtes de courant en plus (Giallo, Dogme 95, jidai-geki,
+    néoréalisme, expressionnisme, western spaghetti, surréalisme, âge d’or
+    japonais, cinéma soviétique). 59 quêtes (19 / 20 / 20).
+    Chaque liste de films affiche son effectif, en petit.
+    Pack **22** : films ajoutés de la France aux Pays-Bas (1436 films).
+    The Raid 2011 est *Serbuan maut* de Gareth Evans. Pas de second film
+    quand le même œuvre était déjà là (Quartier Mozart, Timbuktu, Soleil Ô,
+    Edvard Munch, The Excursionist).
+    Pack **23** : films ajoutés de la Pologne à l’Éthiopie (1453 films).
+    Véronique et Trois couleurs : Rouge étaient déjà là. « Quand la Saint-Jean
+    arrive » est entré comme « Quand viendra le mois d’octobre ». Les synopsis
+    vides ont été complétés seulement quand TMDB désigne le même film.
 
 
 ========================================================================

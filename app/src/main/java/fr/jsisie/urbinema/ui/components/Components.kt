@@ -47,6 +47,7 @@ import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -64,9 +65,14 @@ import fr.jsisie.urbinema.ui.theme.UrbinemaThemeTokens
 
 /** Displays an uppercase micro-label without forcing editorial copy into capitals. */
 @Composable
-fun SectionTitle(@StringRes title: Int, modifier: Modifier = Modifier) {
+fun SectionTitle(@StringRes title: Int, count: Int? = null, modifier: Modifier = Modifier) {
+    val label = if (count == null) {
+        stringResource(title)
+    } else {
+        stringResource(R.string.section_with_count, stringResource(title), count)
+    }
     Text(
-        text = stringResource(title).uppercase(),
+        text = label.uppercase(),
         style = MaterialTheme.typography.labelMedium,
         color = UrbinemaThemeTokens.colors.onBackgroundMuted,
         modifier = modifier.padding(top = UrbinemaThemeTokens.dimens.lg),
@@ -173,7 +179,15 @@ fun TerritoryRow(item: TerritoryUi, onClick: () -> Unit, modifier: Modifier = Mo
             ExplorationState.Mastered -> R.string.state_mastered
         }
     )
-    val a11y = stringResource(R.string.territory_description, item.name, stateLabel, item.progress)
+    val filmCountLabel = if (item.filmCount > 0) {
+        pluralStringResource(R.plurals.film_count, item.filmCount, item.filmCount)
+    } else {
+        ""
+    }
+    val a11y = buildString {
+        append(stringResource(R.string.territory_description, item.name, stateLabel, item.progress))
+        if (filmCountLabel.isNotEmpty()) append(", ").append(filmCountLabel)
+    }
     Row(
         modifier = modifier.fillMaxWidth().heightIn(min = UrbinemaThemeTokens.dimens.touch)
             .clickable(onClick = onClick).semantics { contentDescription = a11y }
@@ -209,8 +223,27 @@ fun TerritoryRow(item: TerritoryUi, onClick: () -> Unit, modifier: Modifier = Mo
             Text(item.name, style = MaterialTheme.typography.titleMedium)
             Text(stateLabel, style = MaterialTheme.typography.bodyMedium, color = colors.onBackgroundMuted)
         }
+        if (filmCountLabel.isNotEmpty()) {
+            Text(
+                filmCountLabel,
+                style = MaterialTheme.typography.labelMedium,
+                color = colors.onBackgroundFaint,
+            )
+        }
         Text(stringResource(R.string.percent_value, item.progress), style = MaterialTheme.typography.labelMedium)
     }
+}
+
+/** Small catalogue size, used wherever a list stands for a set of films. */
+@Composable
+fun FilmCountLabel(count: Int, modifier: Modifier = Modifier) {
+    if (count <= 0) return
+    Text(
+        pluralStringResource(R.plurals.film_count, count, count),
+        modifier = modifier,
+        style = MaterialTheme.typography.labelMedium,
+        color = UrbinemaThemeTokens.colors.onBackgroundFaint,
+    )
 }
 
 /** Compact weekly quest, closer to a stadium than a full editorial card. */

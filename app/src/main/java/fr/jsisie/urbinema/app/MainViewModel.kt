@@ -1021,7 +1021,14 @@ class MainViewModel(
             val seen = director.films.count { it.watched }
             val total = director.films.size
             val percent = if (total == 0) 0 else seen * 100 / total
-            TerritoryUi(director.id, director.name, R.string.directors, percent, explorationFromProgress(percent))
+            TerritoryUi(
+                director.id,
+                director.name,
+                R.string.directors,
+                percent,
+                explorationFromProgress(percent),
+                filmCount = total,
+            )
         }
         MapNodeKind.COLLECTION -> collections.firstOrNull { it.id == id }?.let { collection ->
             TerritoryUi(
@@ -1031,6 +1038,7 @@ class MainViewModel(
                 collection.progress,
                 explorationFromProgress(collection.progress),
                 collection.shortDescription,
+                filmCount = collection.films.size,
             )
         }
         MapNodeKind.TERRITORY ->
@@ -1195,6 +1203,7 @@ class MainViewModel(
             name = name,
             category = category,
             progress = percent,
+            filmCount = total,
             state = when {
                 percent == 0 -> ExplorationState.Unexplored
                 percent >= 100 -> ExplorationState.Mastered

@@ -414,7 +414,7 @@ private fun NodeSheet(
         if (kind != MapNodeKind.FILM) {
             item {
                 Text(
-                    stringResource(R.string.films),
+                    stringResource(R.string.section_with_count, stringResource(R.string.films), films.size),
                     style = MaterialTheme.typography.titleMedium,
                     color = colors.cool,
                     modifier = Modifier.padding(top = 8.dp),

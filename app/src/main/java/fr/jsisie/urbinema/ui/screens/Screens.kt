@@ -84,6 +84,7 @@ import fr.jsisie.urbinema.R
 import fr.jsisie.urbinema.ui.components.AvatarPicker
 import fr.jsisie.urbinema.ui.components.CollectionMedallion
 import fr.jsisie.urbinema.ui.components.EditorialCard
+import fr.jsisie.urbinema.ui.components.FilmCountLabel
 import fr.jsisie.urbinema.ui.components.EditorialImage
 import fr.jsisie.urbinema.ui.components.LabeledProgress
 import fr.jsisie.urbinema.ui.components.MarkWatchedDialog
@@ -409,7 +410,18 @@ fun ProgressScreen(state: HomeUiState, ranks: List<RankUi>) {
             }
         } else {
             items(state.collections) { collection ->
-                Text(collection.name, style = MaterialTheme.typography.titleMedium)
+                Row(
+                    Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        collection.name,
+                        style = MaterialTheme.typography.titleMedium,
+                        modifier = Modifier.weight(1f),
+                    )
+                    FilmCountLabel(collection.films.size)
+                }
                 LabeledProgress(collection.progress)
             }
         }
@@ -694,6 +706,7 @@ fun CollectionsScreen(collections: List<CollectionUi>, onCollection: (String) ->
                                 },
                             )
                             Text(collection.shortDescription, color = UrbinemaThemeTokens.colors.onBackgroundMuted)
+                            FilmCountLabel(collection.films.size)
                         }
                         if (collection.locked) {
                             Icon(
@@ -823,7 +836,7 @@ fun CollectionScreen(
             )
         }
         item { Text(collection.longDescription.ifBlank { collection.shortDescription }, style = MaterialTheme.typography.bodyLarge) }
-        item { SectionTitle(R.string.films) }
+        item { SectionTitle(R.string.films, collection.films.size) }
         items(collection.films) { film ->
             EditorialCard(
                 Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs).alpha(if (collection.locked) 0.42f else 1f),
@@ -933,11 +946,12 @@ private fun AtlasFilmDirectory(
                     EditorialCard(Modifier.padding(vertical = UrbinemaThemeTokens.dimens.xs), { onCollection(collection.id) }) {
                         Text(collection.name, style = MaterialTheme.typography.titleMedium)
                         Text(collection.shortDescription, color = UrbinemaThemeTokens.colors.onBackgroundMuted)
+                        FilmCountLabel(collection.films.size)
                     }
                 }
             }
             if (sorted.isNotEmpty() || alwaysShowFilmSection) {
-                item { SectionTitle(R.string.films) }
+                item { SectionTitle(R.string.films, sorted.size) }
                 item { FilmSortRow(sort) { sortName = it.name } }
                 items(sorted, key = { it.id }) { film ->
                     EditorialCard(
