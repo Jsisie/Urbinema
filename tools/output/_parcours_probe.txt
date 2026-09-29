@@ -1,0 +1,18 @@
+Q La Coquille et le Clergyman 1928 n=1
+  118014	1928	The Seashell and the Clergyman	La Coquille et le Clergyman
+Q The Seashell and the Clergyman 1928 n=1
+  118014	1928	The Seashell and the Clergyman	La Coquille et le Clergyman
+Q Contes cruels de la jeunesse 1960 n=1
+  88527	1960	Cruel Story of Youth	青春残酷物語
+Q Cruel Story of Youth 1960 n=1
+  88527	1960	Cruel Story of Youth	青春残酷物語
+Q La Pendaison 1968 n=1
+  98193	1968	Death by Hanging	絞死刑
+Q Death by Hanging 1968 n=1
+  98193	1968	Death by Hanging	絞死刑
+Q La Femme insecte 1963 n=1
+  42984	1963	The Insect Woman	にっぽん昆虫記
+Q The Insect Woman 1963 n=1
+  42984	1963	The Insect Woman	にっぽん昆虫記
+Q Nippon konchuki 1963 n=1
+  42984	1963	The Insect Woman	にっぽん昆虫記

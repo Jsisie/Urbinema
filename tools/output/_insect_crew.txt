@@ -1,0 +1,6 @@
+jobs=['Art Direction', 'Assistant Director', 'Director', 'Director of Photography', 'Editor', 'Lighting Director', 'Original Music Composer', 'Producer', 'Production Manager', 'Sound', 'Writer']
+Director	今村昌平	20025
+Director of Photography	姫田真佐久	123868
+Art Direction	中村公彦	1132463
+Assistant Director	磯見忠彦	1269526
+Lighting Director	岩木保夫	1589525

@@ -17,6 +17,7 @@ data class CatalogPack(
     val eras: List<EraImport> = emptyList(),
     val movies: List<MovieImport> = emptyList(),
     val collections: List<CollectionImport> = emptyList(),
+    val paths: List<PathImport> = emptyList(),
     val rankings: List<RankingImport> = emptyList(),
     val badges: List<BadgeImport> = emptyList(),
     val quests: List<QuestImport> = emptyList(),
@@ -154,6 +155,44 @@ data class CollectionImport(
 
 @Serializable
 data class CollectionMovieImport(val code: String, val displayOrder: Int)
+
+/** Pedagogical path. See the developer spec, section « Parcours ». */
+@Serializable
+data class PathImport(
+    val code: String,
+    val displayOrder: Int,
+    val name: String,
+    val summary: String,
+    val description: String,
+    val periodLabel: String,
+    val steps: List<PathStepImport> = emptyList(),
+    val isActive: Boolean = true,
+)
+
+@Serializable
+data class PathStepImport(
+    val code: String,
+    val position: Int,
+    val characteristicCode: String,
+    val name: String,
+    val periodLabel: String,
+    val description: String,
+    val facts: List<PathFactImport> = emptyList(),
+    val figures: List<PathFigureImport> = emptyList(),
+    val movies: List<String> = emptyList(),
+    val transition: String? = null,
+    val isActive: Boolean = true,
+)
+
+@Serializable
+data class PathFactImport(val title: String, val body: String)
+
+@Serializable
+data class PathFigureImport(
+    val displayName: String,
+    val role: String,
+    val directorCode: String? = null,
+)
 
 @Serializable
 data class RankingImport(

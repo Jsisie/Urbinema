@@ -15,6 +15,7 @@ enum class MediaKind(val folder: String) {
     POSTER("posters"),
     COLLECTION("collections"),
     DIRECTOR("directors"),
+    MOVEMENT("movements"),
     COUNTRY("countries"),
     CONTINENT("continents"),
     AVATAR("avatars"),

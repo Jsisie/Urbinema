@@ -1,0 +1,5 @@
+frenchTitle;releaseYear;director;code;originalTitle;demand;tmdbId
+"La Coquille et le Clergyman";1928;"Dulac";LA_COQUILLE_ET_LE_CLERGYMAN_1928;"La Coquille et le Clergyman";0.8;118014
+"Contes cruels de la jeunesse";1960;"Oshima";CONTES_CRUELS_DE_LA_JEUNESSE_1960;"青春残酷物語";0.62;88527
+"La Pendaison";1968;"Oshima";LA_PENDAISON_1968;"絞死刑";0.7;98193
+"La Femme insecte";1963;"Imamura";LA_FEMME_INSECTE_1963;"にっぽん昆虫記";0.68;42984

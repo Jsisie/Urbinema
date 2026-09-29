@@ -95,6 +95,21 @@ interface CatalogDao {
     @Query("SELECT * FROM quests WHERE isActive = 1 ORDER BY difficulty, name")
     fun observeQuests(): Flow<List<QuestEntity>>
 
+    @Query("SELECT * FROM learning_paths WHERE isActive = 1 ORDER BY displayOrder")
+    suspend fun allLearningPaths(): List<LearningPathEntity>
+
+    @Query("SELECT * FROM learning_path_steps WHERE isActive = 1 ORDER BY position")
+    suspend fun allLearningPathSteps(): List<LearningPathStepEntity>
+
+    @Query("SELECT * FROM learning_path_facts ORDER BY position")
+    suspend fun allLearningPathFacts(): List<LearningPathFactEntity>
+
+    @Query("SELECT * FROM learning_path_figures ORDER BY position")
+    suspend fun allLearningPathFigures(): List<LearningPathFigureEntity>
+
+    @Query("SELECT * FROM learning_path_movies ORDER BY position")
+    suspend fun allLearningPathMovies(): List<LearningPathMovieCrossRef>
+
     @Query("SELECT * FROM countries WHERE isActive = 1 ORDER BY name")
     fun observeCountries(): Flow<List<CountryEntity>>
 
@@ -590,6 +605,33 @@ interface CatalogImportDao {
     suspend fun deactivateCollectionsNotIn(codes: List<String>)
     @Query("UPDATE countries SET isActive = 0 WHERE code NOT IN (:codes)")
     suspend fun deactivateCountriesNotIn(codes: List<String>)
+
+    @Insert suspend fun insertLearningPath(value: LearningPathEntity): Long
+    @Update suspend fun updateLearningPath(value: LearningPathEntity)
+    @Query("SELECT * FROM learning_paths WHERE code = :code LIMIT 1")
+    suspend fun learningPathByCode(code: String): LearningPathEntity?
+    @Insert suspend fun insertLearningPathStep(value: LearningPathStepEntity): Long
+    @Update suspend fun updateLearningPathStep(value: LearningPathStepEntity)
+    @Query("SELECT * FROM learning_path_steps WHERE code = :code LIMIT 1")
+    suspend fun learningPathStepByCode(code: String): LearningPathStepEntity?
+    @Insert suspend fun insertLearningPathFacts(values: List<LearningPathFactEntity>)
+    @Insert suspend fun insertLearningPathFigures(values: List<LearningPathFigureEntity>)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertLearningPathMovies(values: List<LearningPathMovieCrossRef>)
+    @Query("DELETE FROM learning_path_movies")
+    suspend fun clearLearningPathMovies()
+    @Query("DELETE FROM learning_path_facts")
+    suspend fun clearLearningPathFacts()
+    @Query("DELETE FROM learning_path_figures")
+    suspend fun clearLearningPathFigures()
+    @Query("UPDATE learning_paths SET displayOrder = -(pathId + 100000)")
+    suspend fun parkLearningPathDisplayOrders()
+    @Query("UPDATE learning_path_steps SET position = -(stepId + 100000)")
+    suspend fun parkLearningPathStepPositions()
+    @Query("UPDATE learning_paths SET isActive = 0 WHERE code NOT IN (:codes)")
+    suspend fun deactivateLearningPathsNotIn(codes: List<String>)
+    @Query("UPDATE learning_path_steps SET isActive = 0 WHERE code NOT IN (:codes)")
+    suspend fun deactivateLearningPathStepsNotIn(codes: List<String>)
 
     /** Import is intentionally limited to an empty catalogue artifact. */
     @Query(

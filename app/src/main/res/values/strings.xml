@@ -10,6 +10,10 @@
     <string name="map">Carte</string>
     <string name="atlas">Atlas</string>
     <string name="progress">Parcours</string>
+    <string name="paths_intro">Des lectures pour comprendre comment le cinéma s’est construit. Rien à cocher : on ouvre un parcours, puis un courant.</string>
+    <string name="path_facts">À savoir</string>
+    <string name="path_figures">Figures clés</string>
+    <string name="path_films">Films clés</string>
     <string name="profile">Profil</string>
     <string name="settings">Réglages</string>
     <string name="username">Pseudo</string>
@@ -211,7 +215,7 @@
     <string name="help_map_title">Atlas</string>
     <string name="help_map_body">L’onglet Atlas liste les pays, courants, décennies, genres et réalisateurs. Le rond à gauche dit où tu en es. L’icône étoiles en haut à droite ouvre la carte du ciel.</string>
     <string name="help_progress_title">Parcours</string>
-    <string name="help_progress_body">Parcours rassemble ton rang, tes quêtes de la semaine et tes collections en cours. Le rang bouge lentement : il décrit un état d’esprit, pas un compteur. L’XP vient surtout des quêtes (Bronze 100, Argent 250, Or 500). Un film vu pour la première fois donne 25 XP seulement s’il appartient à une collection que tu suis.</string>
+    <string name="help_progress_body">Parcours est une lecture, pas une liste de films à cocher. Chaque parcours relie des courants. Un point d’interrogation entre deux bulles ouvre la transition. La bulle ouvre la période, le texte, les choses à savoir, les figures et les films. Seuls les films et les réalisateurs déjà dans l’app s’ouvrent. Marquer un film Vu se fait toujours depuis la fiche film.</string>
     <string name="help_currents_title">Courants</string>
     <string name="help_currents_body">Un courant est un mouvement, un style ou une école (Nouvelle Vague, film noir, néoréalisme…). C’est une façon de relier des films au-delà du pays ou de l’année. Tu les trouves dans l’Atlas et dans les collections.</string>
     <string name="help_rank_title">Rang</string>
@@ -255,7 +259,7 @@
     <string name="guide_page_collections">Collections</string>
     <string name="guide_body_collections">Une collection est un petit parcours éditorial. Tu peux en suivre dix à la fois. Un film d’une collection suivie, marqué vu pour la première fois, donne 25 XP. Un appui long sur un film propose de le marquer vu.</string>
     <string name="guide_page_journey">Parcours</string>
-    <string name="guide_body_journey">Cet onglet rassemble aujourd’hui ton rang, tes quêtes et tes collections en cours. Une page pédagogique, avec des courants reliés entre eux, arrivera plus tard à cet endroit.</string>
+    <string name="guide_body_journey">Parcours relie des courants pour raconter une histoire du cinéma. On lit, on ouvre une bulle, on suit un film ou un réalisateur. Ce n’est pas une page pour cocher des films vus.</string>
     <string name="guide_page_profile">Profil</string>
     <string name="guide_body_profile">Ton pseudo, ton rang et tes badges. Un tap sur le rang ouvre la chaîne des dix rangs, calée sur le tien. Les réglages sont en haut à droite.</string>
     <string name="guide_page_count">%1$d / %2$d</string>

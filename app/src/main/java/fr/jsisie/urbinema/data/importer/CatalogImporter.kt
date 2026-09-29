@@ -17,6 +17,11 @@ import fr.jsisie.urbinema.data.db.DirectorCharacteristicCrossRef
 import fr.jsisie.urbinema.data.db.DirectorEntity
 import fr.jsisie.urbinema.data.db.EraEntity
 import fr.jsisie.urbinema.data.db.GenreEntity
+import fr.jsisie.urbinema.data.db.LearningPathEntity
+import fr.jsisie.urbinema.data.db.LearningPathFactEntity
+import fr.jsisie.urbinema.data.db.LearningPathFigureEntity
+import fr.jsisie.urbinema.data.db.LearningPathMovieCrossRef
+import fr.jsisie.urbinema.data.db.LearningPathStepEntity
 import fr.jsisie.urbinema.data.db.MediaAssetEntity
 import fr.jsisie.urbinema.data.db.MediaStorageType
 import fr.jsisie.urbinema.data.db.MovieCharacteristicCrossRef
@@ -107,6 +112,8 @@ class CatalogImporter(
         remapRetiredMovies(pack.movieAliases)
         dao.parkCollectionDisplayOrders()
         dao.parkRankingDisplayOrders()
+        dao.parkLearningPathDisplayOrders()
+        dao.parkLearningPathStepPositions()
         dao.clearCountriesContinents()
         dao.clearDirectorsCharacteristics()
         dao.clearMoviesCountries()
@@ -118,6 +125,9 @@ class CatalogImporter(
         dao.clearCollectionsCountries()
         dao.clearCollectionsContinents()
         dao.clearCollectionsEras()
+        dao.clearLearningPathMovies()
+        dao.clearLearningPathFacts()
+        dao.clearLearningPathFigures()
 
         val mediaIds = pack.mediaAssets.associate { value ->
             value.code to upsertMedia(
@@ -359,6 +369,75 @@ class CatalogImporter(
                 )
             )
         }
+        val pathIds = pack.paths.associate { value ->
+            value.code to upsertLearningPath(
+                LearningPathEntity(
+                    code = value.code,
+                    displayOrder = value.displayOrder,
+                    name = value.name,
+                    summary = value.summary,
+                    description = value.description,
+                    periodLabel = value.periodLabel,
+                    isActive = value.isActive,
+                    createdAt = timestamp,
+                    updatedAt = timestamp,
+                )
+            )
+        }
+        val stepIds = pack.paths.flatMap { path ->
+            path.steps.map { step -> path.code to step }
+        }.associate { (pathCode, value) ->
+            value.code to upsertLearningPathStep(
+                LearningPathStepEntity(
+                    code = value.code,
+                    pathId = pathIds.id(pathCode),
+                    position = value.position,
+                    characteristicId = characteristicIds.id(value.characteristicCode),
+                    name = value.name,
+                    periodLabel = value.periodLabel,
+                    description = value.description,
+                    transitionText = value.transition,
+                    isActive = value.isActive,
+                )
+            )
+        }
+        insertAll(pack.paths.flatMap { path ->
+            path.steps.flatMap { step ->
+                step.facts.mapIndexed { index, fact ->
+                    LearningPathFactEntity(
+                        stepId = stepIds.id(step.code),
+                        position = index,
+                        title = fact.title,
+                        body = fact.body,
+                    )
+                }
+            }
+        }, dao::insertLearningPathFacts)
+        insertAll(pack.paths.flatMap { path ->
+            path.steps.flatMap { step ->
+                step.figures.mapIndexed { index, figure ->
+                    LearningPathFigureEntity(
+                        stepId = stepIds.id(step.code),
+                        position = index,
+                        displayName = figure.displayName,
+                        role = figure.role,
+                        directorId = figure.directorCode.idIn(directorIds),
+                    )
+                }
+            }
+        }, dao::insertLearningPathFigures)
+        insertAll(pack.paths.flatMap { path ->
+            path.steps.flatMap { step ->
+                step.movies.mapIndexed { index, code ->
+                    LearningPathMovieCrossRef(stepIds.id(step.code), movieIds.id(code), index)
+                }
+            }
+        }, dao::insertLearningPathMovies)
+        val pathCodes = pack.paths.map { it.code }
+        if (pathCodes.isNotEmpty()) dao.deactivateLearningPathsNotIn(pathCodes)
+        val stepCodes = pack.paths.flatMap { path -> path.steps.map { it.code } }
+        if (stepCodes.isNotEmpty()) dao.deactivateLearningPathStepsNotIn(stepCodes)
+
         val movieCodes = pack.movies.map { it.code }
         if (movieCodes.isNotEmpty()) dao.deactivateMoviesNotIn(movieCodes)
         val collectionCodes = pack.collections.map { it.code }
@@ -453,6 +532,20 @@ class CatalogImporter(
         val existing = dao.collectionByCode(value.code) ?: return dao.insertCollection(value)
         dao.updateCollection(value.copy(collectionId = existing.collectionId, createdAt = existing.createdAt))
         return existing.collectionId
+    }
+
+    private suspend fun upsertLearningPath(value: LearningPathEntity): Long {
+        val dao = database.catalogImportDao()
+        val existing = dao.learningPathByCode(value.code) ?: return dao.insertLearningPath(value)
+        dao.updateLearningPath(value.copy(pathId = existing.pathId, createdAt = existing.createdAt))
+        return existing.pathId
+    }
+
+    private suspend fun upsertLearningPathStep(value: LearningPathStepEntity): Long {
+        val dao = database.catalogImportDao()
+        val existing = dao.learningPathStepByCode(value.code) ?: return dao.insertLearningPathStep(value)
+        dao.updateLearningPathStep(value.copy(stepId = existing.stepId))
+        return existing.stepId
     }
 
     private suspend fun upsertRanking(value: RankingEntity) {

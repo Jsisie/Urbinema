@@ -7,7 +7,7 @@
 ## Spécification fonctionnelle du produit
 
 **Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 28, 1538 films, 28 collections)
+**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 29, 1542 films, 28 collections, parcours 1)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -1813,6 +1813,25 @@ L'administration devra permettre de gérer :
 - les fiches pédagogiques ;
 - les concepts ;
 - les contenus associés.
+
+------
+
+## 15.8. Parcours pédagogiques (0.3.0, pack 29)
+
+L'onglet Parcours n'est pas une collection et ne marque aucun film Vu. Il
+propose des lectures : pour l'instant le parcours « Comment le cinéma est
+devenu un art », onze courants du muet au cinéma contemporain.
+
+Chaque courant est une bulle. Entre deux bulles, un point d'interrogation
+ouvre une petite fenêtre qui contient seulement la phrase de transition. La bulle ouvre une fiche (période, description, à savoir,
+figures, films). Une figure ouvre la fiche réalisateur quand elle existe.
+Un film ouvre la fiche film. Les personnes sans fiche (acteur, théoricien)
+restent du texte.
+
+Le mode d'emploi pour modifier un parcours, une transition ou un courant est
+dans la spec développeur, §6.4. Le texte source est
+`Listes_Fonctionnelles/Listes_Des_Parcours.txt` ; l'app lit la clé `paths`
+du catalogue.
 
 ------
 

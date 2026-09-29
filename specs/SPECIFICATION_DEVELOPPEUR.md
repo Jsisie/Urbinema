@@ -512,7 +512,7 @@ Injection : Koin, modules dans `urbinemaModules`.
 
 ---
 
-## 6. Schéma Room (version 9)
+## 6. Schéma Room (version 10)
 
 Export : `app/schemas/` (KSP `room.schemaLocation`).
 
@@ -524,7 +524,8 @@ Export : `app/schemas/` (KSP `room.schemaLocation`).
 `genres`, `movies_genres`, `eras`, `collections`, `collections_movies`,
 `collections_characteristics`, `collections_countries`,
 `collections_continents`, `collections_eras`, `rankings`, `badges`, `quests`,
-`catalog_versions`.
+`catalog_versions`, `learning_paths`, `learning_path_steps`,
+`learning_path_facts`, `learning_path_figures`, `learning_path_movies`.
 
 Contrainte physique hors annotations Room, recréée à chaque `onOpen` :
 
@@ -547,7 +548,9 @@ l'anglais, sinon la française, et retombe sur l'autre si une langue manque.
 `users.showcaseBadgeCodes`, `xp_transactions.source` / `movieId` (userQuestId
 nullable). Room **v7** (`MIGRATION_6_7`) : `users.avatarCode`. Room **v8**
 (`MIGRATION_7_8`) : `directors.biography`. Room **v9** (`MIGRATION_8_9`) :
-`directors.biographyEn`. Colonne film
+`directors.biographyEn`. Room **v10** (`MIGRATION_9_10`) : tables des
+parcours pédagogiques (ci-dessous). Elle retire aussi l'index partiel avant
+le contrôle. Colonne film
 `artisticDemand` = exigence A_f de la formule. Comment poser H/A/R/C :
 `FORMULE_MATHEMATIQUE.txt` §1.bis.
 
@@ -562,6 +565,87 @@ nullable). Room **v7** (`MIGRATION_6_7`) : `users.avatarCode`. Room **v8**
 
 `rank_engine_configs`, `rank_thresholds` (9 seuils, rangs 2 à 10),
 `catalog_dimension_stats` (raretés Q et poids, ratchet catalogue).
+
+### 6.4 Parcours pédagogiques
+
+L'onglet **Parcours** (4e entrée) lit ces tables. L'ancien écran (rang, quêtes,
+collections en cours) est le composable `ProgressScreen`, conservé dans
+`Screens.kt`. Son appel est commenté dans `UrbinemaApp.kt`, juste au-dessus
+de `PathsScreen`, avec la mention « Ancien onglet Parcours ».
+
+La source éditoriale est `specs/Listes_Fonctionnelles/Listes_Des_Parcours.txt`.
+L'app ne lit pas ce fichier. Elle lit le catalogue, clé `paths`, importée
+dans Room quand `version` augmente. Pack courant : **29**.
+
+Fichiers : `CatalogPack.kt` (`PathImport`), `CatalogImporter.persist`,
+`MainViewModel` (`paths`), `ParcoursScreens.kt`. Dessins des bulles :
+`app/src/main/assets/media/movements/{code du courant}.png` (aussi `.jpg` ou
+`.webp`). `MediaKind.MOVEMENT`.
+
+Forme JSON, un objet dans `paths` :
+
+```json
+{
+  "code": "PARCOURS_001",
+  "displayOrder": 1,
+  "name": "Comment le cinéma est devenu un art",
+  "summary": "Première phrase, affichée sur la liste.",
+  "description": "Texte long, affiché en tête du fil.",
+  "periodLabel": "1895 – aujourd'hui",
+  "steps": [
+    {
+      "code": "PARCOURS_001_00",
+      "position": 0,
+      "characteristicCode": "CINEMA_MUET_MOUVEMENT",
+      "name": "Cinéma muet",
+      "periodLabel": "1895 – 1927",
+      "description": "Texte de la fiche.",
+      "facts": [{ "title": "La transition parlante", "body": "..." }],
+      "figures": [{ "displayName": "Georges Méliès", "role": "Pionnier", "directorCode": "GEORGES_MELIES" }],
+      "movies": ["VOYAGE_DANS_LA_LUNE_1902"],
+      "transition": "Phrase vers la bulle suivante."
+    }
+  ]
+}
+```
+
+`position` 0 est la bulle du haut. `transition` est le texte du point
+d'interrogation **entre cette bulle et la suivante**. La fenêtre n'affiche
+que cette phrase, sans titre et sans les noms des courants. La dernière bulle
+n'a pas de `transition`. `directorCode` est facultatif : sans lui, la figure
+reste du texte (acteur, théoricien). S'il est présent, il doit exister dans
+`directors`. `movies` et `characteristicCode` doivent exister. L'ordre des
+tableaux `facts`, `figures` et `movies` est l'ordre affiché.
+
+Modifier un parcours : éditer `name`, `summary`, `description` ou
+`periodLabel` dans `catalog_v3.json`, copier vers `catalog.json`, monter
+`version` d'un cran.
+
+Ajouter un parcours : un nouvel objet dans `paths`, `code` et `displayOrder`
+uniques, au moins une étape. La liste de l'onglet affiche chaque objet.
+
+Ajouter un courant dans un parcours : un objet de plus dans `steps`.
+`code` unique dans tout le catalogue (`PARCOURS_001_11`), `position` unique
+dans ce parcours. Décaler les `position` suivantes. La `transition` de
+l'étape d'avant devient le lien vers la nouvelle ; la nouvelle porte la
+transition vers la suivante. Le dessin est le fichier
+`media/movements/{characteristicCode}.png`. Si le courant n'existe pas encore,
+l'ajouter aussi dans `characteristics` (`typeCode` déjà présent :
+`MOVEMENT`, `WAVE`, `PERIOD`, `STYLE`…).
+
+Modifier une transition : changer la chaîne `transition` de l'étape du
+dessus. Chaîne vide ou champ absent : pas de point d'interrogation.
+
+Modifier un « À savoir », une figure ou un film : éditer le tableau
+correspondant. Retirer un `directorCode` rend la figure non cliquable.
+Ajouter un film qui n'est pas dans `movies` : le créer (affiche dans
+`media/posters/{CODE}.jpg`, réalisateur, pays, synopsis) et noter la ligne
+dans `batchsData/batchPosters/input/`. Un réalisateur nouveau : fiche dans
+`directors`, photo `media/directors/{CODE}.jpg`, ligne dans
+`batchsData/batchReals/input/input_directors.txt`.
+
+Après toute modification du JSON : `version` strictement plus grande, copie
+`catalog_v3.json` → `catalog.json`. L'import ne vide pas la progression.
 
 ---
 

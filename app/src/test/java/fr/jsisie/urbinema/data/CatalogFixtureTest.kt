@@ -21,8 +21,14 @@ class CatalogFixtureTest {
         val report = CatalogValidator().validate(pack)
 
         assertTrue(report.errors.joinToString { "${it.path}: ${it.message}" }, report.isValid)
-        assertEquals(28, pack.version)
-        assertEquals(1538, pack.movies.size)
+        assertEquals(29, pack.version)
+        assertEquals(1542, pack.movies.size)
+        val parcours = pack.paths.first { it.code == "PARCOURS_001" }
+        assertEquals(11, parcours.steps.size)
+        assertEquals("CINEMA_MUET_MOUVEMENT", parcours.steps.first().characteristicCode)
+        assertEquals("CINEMA_CONTEMPORAIN_MOUVEMENT", parcours.steps.last().characteristicCode)
+        assertTrue(pack.movies.any { it.code == "LA_COQUILLE_ET_LE_CLERGYMAN_1928" })
+        assertTrue(pack.directors.any { it.code == "SHOHEI_IMAMURA" })
         val premiersTemps = pack.collections.first { it.code == "COLLECTION_027" }
         assertEquals("Cinéma des premiers temps", premiersTemps.name)
         assertEquals("GATEWAY", premiersTemps.track)

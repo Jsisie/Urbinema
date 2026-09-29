@@ -106,8 +106,9 @@ import fr.jsisie.urbinema.ui.model.CollectionUi
 import fr.jsisie.urbinema.ui.screens.MovieScreen
 import fr.jsisie.urbinema.ui.screens.NamedListScreen
 import fr.jsisie.urbinema.ui.screens.OnboardingDialog
+import fr.jsisie.urbinema.ui.screens.PathDetailScreen
+import fr.jsisie.urbinema.ui.screens.PathsScreen
 import fr.jsisie.urbinema.ui.screens.ProfileScreen
-import fr.jsisie.urbinema.ui.screens.ProgressScreen
 import fr.jsisie.urbinema.ui.screens.RankUpDialog
 import fr.jsisie.urbinema.ui.screens.RanksScreen
 import fr.jsisie.urbinema.ui.screens.SearchScreen
@@ -142,6 +143,7 @@ private object Routes {
     const val Help = "help/{topic}"
     const val Sources = "sources"
     const val History = "history"
+    const val Path = "path/{pathCode}"
 }
 
 private data class Destination(val route: String, @StringRes val label: Int, val icon: ImageVector)
@@ -247,9 +249,9 @@ private fun Context.withLocale(locale: Locale): Context {
 
 @Composable
 private fun FilmGrainOverlay(dark: Boolean) {
-    val wash = if (dark) 0.038f else 0.032f
-    val lightSpeck = if (dark) 0.096f else 0.07f
-    val darkSpeck = if (dark) 0.10f else 0.09f
+    val wash = if (dark) 0.035f else 0.032f
+    val lightSpeck = if (dark) 0.083f else 0.07f
+    val darkSpeck = if (dark) 0.095f else 0.09f
     Canvas(
         Modifier
             .fillMaxSize()
@@ -266,7 +268,7 @@ private fun FilmGrainOverlay(dark: Boolean) {
                 if (speck == 0) {
                     drawCircle(
                         color = Color.White.copy(alpha = lightSpeck),
-                        radius = if (dark) 0.74.dp.toPx() else 0.7.dp.toPx(),
+                        radius = if (dark) 0.72.dp.toPx() else 0.7.dp.toPx(),
                         center = Offset(x, y),
                     )
                 } else if (speck == 1) {
@@ -498,7 +500,24 @@ private fun UrbinemaNavigation(
                     CollectionsScreen(model.collections, ::openCollection)
                 }
                 composable(Routes.Progress) {
-                    ProgressScreen(model.home, model.ranks)
+                    // Ancien onglet Parcours : rang, quêtes de la semaine, collections en cours.
+                    // ProgressScreen est conservé pour le remettre plus tard (Accueil ou Profil).
+                    // ProgressScreen(model.home, model.ranks)
+                    PathsScreen(model.paths) { code -> navController.navigate(pathRoute(code)) }
+                }
+                composable(
+                    Routes.Path,
+                    arguments = listOf(navArgument("pathCode") { type = NavType.StringType }),
+                ) { pathEntry ->
+                    val code = pathEntry.arguments?.getString("pathCode").orEmpty()
+                    val path = model.paths.firstOrNull { it.id == code }
+                    if (path != null) {
+                        PathDetailScreen(
+                            path = path,
+                            onMovie = { navController.navigate(movieRoute(it)) },
+                            onDirector = { navController.navigate(directorRoute(it)) },
+                        )
+                    }
                 }
                 composable(Routes.Profile) {
                     ProfileScreen(
@@ -876,5 +895,7 @@ private fun collectionRoute(code: String): String = "collection/$code"
 private fun movieRoute(code: String): String = "movie/$code"
 
 private fun directorRoute(code: String): String = "director/$code"
+
+private fun pathRoute(code: String): String = "path/$code"
 
 private fun territoryRoute(kind: String, code: String): String = "territory/$kind/$code"

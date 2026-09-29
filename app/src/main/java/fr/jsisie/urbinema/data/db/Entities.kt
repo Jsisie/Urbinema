@@ -306,6 +306,94 @@ data class CollectionContinentCrossRef(val collectionId: Long, val continentId: 
 )
 data class CollectionEraCrossRef(val collectionId: Long, val eraId: Long)
 
+/** A pedagogical path through cinema currents. Edited in the catalog `paths` array. */
+@Entity(
+    tableName = "learning_paths",
+    indices = [Index("code", unique = true), Index("displayOrder", unique = true)],
+)
+data class LearningPathEntity(
+    @PrimaryKey(autoGenerate = true) val pathId: Long = 0,
+    val code: String,
+    val displayOrder: Int,
+    val name: String,
+    val summary: String,
+    val description: String,
+    val periodLabel: String,
+    val isActive: Boolean = true,
+    val createdAt: Instant,
+    val updatedAt: Instant,
+)
+
+/** One current bubble on a path. `transitionText` leads to the next bubble. */
+@Entity(
+    tableName = "learning_path_steps",
+    foreignKeys = [
+        ForeignKey(LearningPathEntity::class, ["pathId"], ["pathId"], CASCADE),
+        ForeignKey(CinemaCharacteristicEntity::class, ["characteristicId"], ["characteristicId"], RESTRICT),
+    ],
+    indices = [
+        Index("code", unique = true),
+        Index("pathId"),
+        Index("characteristicId"),
+        Index(value = ["pathId", "position"], unique = true),
+    ],
+)
+data class LearningPathStepEntity(
+    @PrimaryKey(autoGenerate = true) val stepId: Long = 0,
+    val code: String,
+    val pathId: Long,
+    val position: Int,
+    val characteristicId: Long,
+    val name: String,
+    val periodLabel: String,
+    val description: String,
+    val transitionText: String? = null,
+    val isActive: Boolean = true,
+)
+
+/** Short "À savoir" note under a path step. */
+@Entity(
+    tableName = "learning_path_facts",
+    foreignKeys = [ForeignKey(LearningPathStepEntity::class, ["stepId"], ["stepId"], CASCADE)],
+    indices = [Index("stepId"), Index(value = ["stepId", "position"], unique = true)],
+)
+data class LearningPathFactEntity(
+    @PrimaryKey(autoGenerate = true) val factId: Long = 0,
+    val stepId: Long,
+    val position: Int,
+    val title: String,
+    val body: String,
+)
+
+/** A key person on a path step. `directorId` is set when a director fiche exists. */
+@Entity(
+    tableName = "learning_path_figures",
+    foreignKeys = [
+        ForeignKey(LearningPathStepEntity::class, ["stepId"], ["stepId"], CASCADE),
+        ForeignKey(DirectorEntity::class, ["directorId"], ["directorId"], SET_NULL),
+    ],
+    indices = [Index("stepId"), Index("directorId"), Index(value = ["stepId", "position"], unique = true)],
+)
+data class LearningPathFigureEntity(
+    @PrimaryKey(autoGenerate = true) val figureId: Long = 0,
+    val stepId: Long,
+    val position: Int,
+    val displayName: String,
+    val role: String,
+    val directorId: Long? = null,
+)
+
+@Entity(
+    tableName = "learning_path_movies",
+    primaryKeys = ["stepId", "movieId"],
+    foreignKeys = [
+        ForeignKey(LearningPathStepEntity::class, ["stepId"], ["stepId"], CASCADE),
+        ForeignKey(MovieEntity::class, ["movieId"], ["movieId"], RESTRICT),
+    ],
+    indices = [Index("movieId"), Index(value = ["stepId", "position"], unique = true)],
+)
+data class LearningPathMovieCrossRef(val stepId: Long, val movieId: Long, val position: Int)
+
 @Entity(
     tableName = "rankings",
     foreignKeys = [ForeignKey(MediaAssetEntity::class, ["mediaAssetId"], ["imageMediaId"], SET_NULL)],

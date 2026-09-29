@@ -176,6 +176,31 @@ class CatalogValidator {
         }
         duplicateInts("collections.displayOrder", pack.collections.map { it.displayOrder }, ::error)
         duplicateInts("rankings.displayOrder", pack.rankings.map { it.displayOrder }, ::error)
+        pack.paths.forEachIndexed { index, path ->
+            val pathKey = "paths[$index]"
+            if (path.name.isBlank()) error("$pathKey.name", "must not be blank")
+            if (path.steps.isEmpty()) error("$pathKey.steps", "must contain at least one step")
+            references(
+                "$pathKey.steps.characteristicCode",
+                path.steps.map { it.characteristicCode },
+                characteristics,
+            )
+            path.steps.forEach { step ->
+                references("$pathKey.steps.movies", step.movies, movies)
+                references(
+                    "$pathKey.steps.figures.directorCode",
+                    step.figures.mapNotNull { it.directorCode },
+                    directors,
+                )
+            }
+            duplicateRefs("$pathKey.steps", path.steps.map { it.code }, ::error)
+            val positions = path.steps.map { it.position }
+            if (positions.any { it < 0 } || positions.distinct().size != positions.size) {
+                error("$pathKey.steps.position", "must contain unique non-negative values")
+            }
+        }
+        duplicateRefs("paths", pack.paths.map { it.code }, ::error)
+        duplicateInts("paths.displayOrder", pack.paths.map { it.displayOrder }, ::error)
 
         references("rankings.imageMediaCode", pack.rankings.mapNotNull { it.imageMediaCode }, media)
         references("badges.iconMediaCode", pack.badges.mapNotNull { it.iconMediaCode }, media)

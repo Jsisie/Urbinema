@@ -10,6 +10,10 @@
     <string name="map">Map</string>
     <string name="atlas">Atlas</string>
     <string name="progress">Journey</string>
+    <string name="paths_intro">Readings on how cinema was built. Nothing to tick: open a path, then a current.</string>
+    <string name="path_facts">Worth knowing</string>
+    <string name="path_figures">Key figures</string>
+    <string name="path_films">Key films</string>
     <string name="profile">Profile</string>
     <string name="settings">Settings</string>
     <string name="username">Nickname</string>
@@ -211,7 +215,7 @@
     <string name="help_map_title">Atlas</string>
     <string name="help_map_body">The Atlas tab lists countries, currents, decades, genres and directors. The circle on the left shows where you stand. The stars icon in the top bar opens the sky map.</string>
     <string name="help_progress_title">Journey</string>
-    <string name="help_progress_body">Journey gathers your rank, weekly quests and collections in progress. Rank moves slowly: it is a state of mind, not a counter. XP comes mostly from quests (Bronze 100, Silver 250, Gold 500). A film watched for the first time grants 25 XP only when it belongs to a collection you follow.</string>
+    <string name="help_progress_body">Journey is a reading, not a list of films to tick. Each path links currents. A question mark between two bubbles opens the transition. The bubble opens the period, the text, the notes, the figures and the films. Only films and directors already in the app open. Marking a film watched still happens from the film page.</string>
     <string name="help_currents_title">Currents</string>
     <string name="help_currents_body">A current is a movement, style or school (New Wave, film noir, neorealism…). It links films beyond country or year. You will find them in the Atlas and in collections.</string>
     <string name="help_rank_title">Rank</string>
@@ -255,7 +259,7 @@
     <string name="guide_page_collections">Collections</string>
     <string name="guide_body_collections">A collection is a short editorial path. You can follow ten at once. A film from a followed collection, marked watched for the first time, grants 25 XP. A long press on a film offers to mark it watched.</string>
     <string name="guide_page_journey">Journey</string>
-    <string name="guide_body_journey">This tab currently gathers your rank, quests and collections in progress. A teaching page, with currents linked together, will arrive here later.</string>
+    <string name="guide_body_journey">Journey links currents to tell a story of cinema. You read, open a bubble, and follow a film or a director. It is not a page for ticking films as watched.</string>
     <string name="guide_page_profile">Profile</string>
     <string name="guide_body_profile">Your name, rank and badges. A tap on the rank opens the chain of ten ranks, scrolled to yours. Settings are at the top right.</string>
     <string name="guide_page_count">%1$d / %2$d</string>

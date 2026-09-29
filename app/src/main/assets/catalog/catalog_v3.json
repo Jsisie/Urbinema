@@ -1,5 +1,5 @@
 {
-  "version": 28,
+  "version": 29,
   "generatedAt": "2026-09-21T09:42:22Z",
   "mediaAssets": [],
   "characteristicTypes": [
@@ -7754,6 +7754,16 @@
       ],
       "firstName": "George Albert",
       "biographyEn": "Along with his better-known French counterpart Georges Méliès, George Albert Smith, usually credited as G.A. Smith, was one of the first filmmakers to explore fictional and fantastic themes, often using surprisingly sophisticated special effects. His background was ideal – an established portrait photographer, he also had a long-standing interest in show business, running a tourist attraction in his native Brighton featuring a fortune teller. His films were among the first to feature such innovations as superimposition (Smith patented a double-exposure system in 1897), close-ups and scene transitions involving wipes and focus pulls. He also patented Kinemacolor – the world's first commercial cinema color system--in 1906, which was extremely successful for a time, despite the special equipment required to project it"
+    },
+    {
+      "code": "SHOHEI_IMAMURA",
+      "firstName": "Shōhei",
+      "lastName": "Imamura",
+      "displayName": "Shōhei Imamura",
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_JAPONAISE"
+      ],
+      "biography": "Shōhei Imamura (15 September 1926 – 30 May 2006) was a Japanese film director. He was the first Japanese director to win two Palme d'Or awards, but was never Oscar-nominated in any category."
     }
   ],
   "characteristics": [
@@ -8452,6 +8462,12 @@
       "name": "Cinéma documentaire",
       "typeCode": "STYLE",
       "description": "Le réel comme sujet : enquête, portrait ou essai, plutôt que le reportage illustré."
+    },
+    {
+      "code": "CINEMA_CONTEMPORAIN_MOUVEMENT",
+      "name": "Cinéma contemporain",
+      "typeCode": "PERIOD",
+      "description": "L'ère d'hybridation du cinéma, après les manifestes du XXe siècle : métissage des formes, du numérique et des regards mondiaux."
     }
   ],
   "genres": [
@@ -59658,6 +59674,142 @@
       ],
       "isSilent": true,
       "isBlackAndWhite": true
+    },
+    {
+      "code": "LA_COQUILLE_ET_LE_CLERGYMAN_1928",
+      "originalTitle": "La Coquille et le Clergyman",
+      "frenchTitle": "La Coquille et le Clergyman",
+      "releaseYear": 1928,
+      "durationMinutes": 41,
+      "format": "MEDIUM",
+      "synopsis": "Un homme habillé de noir, un clergyman, verse, à l'aide d'une grande coquille d'huître, un liquide noir dans des flacons qu'il brise ensuite. Une porte s'ouvre, un officier couvert de médailles apparaît, brise la coquille avec son sabre et sort. Le clergyman le suit à quatre pattes jusque dans la rue. Une calèche passe, à l'intérieur l'officier et une belle femme blonde ; le clergyman les suit dans une église. L'officier est assis dans un confessionnal, le clergyman se jette sur lui, mais l'officier est maintenant habillé en prêtre et son visage se transforme ; la femme regarde.",
+      "historicalDistance": 0.67,
+      "artisticDemand": 0.89,
+      "historicalRichness": 0.83,
+      "culturalRichness": 0.87,
+      "isSilent": true,
+      "isBlackAndWhite": true,
+      "isExperimental": true,
+      "countries": [
+        {
+          "code": "FRANCE",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "GERMAINE_DULAC",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "SURREALISME"
+      ]
+    },
+    {
+      "code": "CONTES_CRUELS_DE_LA_JEUNESSE_1960",
+      "originalTitle": "青春残酷物語",
+      "frenchTitle": "Contes cruels de la jeunesse",
+      "releaseYear": 1960,
+      "durationMinutes": 96,
+      "format": "FEATURE",
+      "synopsis": "Makoto, une adolescente un peu perdue à la recherche d'expériences nouvelles et de sensations fortes, accepte de suivre des inconnus dans leur voiture. Un jour, elle rencontre un jeune homme, Kiyoshi, mi-étudiant, mi-délinquant, et décide de quitter sa famille pour aller vivre avec lui...",
+      "historicalDistance": 0.53,
+      "artisticDemand": 0.59,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.71,
+      "isSilent": false,
+      "isBlackAndWhite": true,
+      "isExperimental": false,
+      "countries": [
+        {
+          "code": "JAPAN",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "NAGISA_OSHIMA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_JAPONAISE"
+      ]
+    },
+    {
+      "code": "LA_PENDAISON_1968",
+      "originalTitle": "絞死刑",
+      "frenchTitle": "La Pendaison",
+      "releaseYear": 1968,
+      "durationMinutes": 117,
+      "format": "FEATURE",
+      "synopsis": "Un condamné à mort qui a survécu à sa pendaison doit être à nouveau exécuté.",
+      "historicalDistance": 0.45,
+      "artisticDemand": 0.6,
+      "historicalRichness": 0.72,
+      "culturalRichness": 0.81,
+      "isSilent": false,
+      "isBlackAndWhite": true,
+      "isExperimental": false,
+      "countries": [
+        {
+          "code": "JAPAN",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "NAGISA_OSHIMA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_JAPONAISE"
+      ]
+    },
+    {
+      "code": "LA_FEMME_INSECTE_1963",
+      "originalTitle": "にっぽん昆虫記",
+      "frenchTitle": "La Femme insecte",
+      "releaseYear": 1963,
+      "durationMinutes": 123,
+      "format": "FEATURE",
+      "synopsis": "Au début du siècle, Tome nait à la campagne dans la pauvreté la plus totale. Décidé à changer sa condition et à connaitre la fortune par tous les moyens, elle part pour la ville. Son destin suit celui de son pays dont elle subit les bouleversements de front.",
+      "historicalDistance": 0.48,
+      "artisticDemand": 0.59,
+      "historicalRichness": 0.73,
+      "culturalRichness": 0.79,
+      "isSilent": false,
+      "isBlackAndWhite": true,
+      "isExperimental": false,
+      "countries": [
+        {
+          "code": "JAPAN",
+          "isPrimary": true
+        }
+      ],
+      "directors": [
+        {
+          "code": "SHOHEI_IMAMURA",
+          "billingOrder": 0
+        }
+      ],
+      "genreCodes": [
+        "DRAME"
+      ],
+      "characteristicCodes": [
+        "NOUVELLE_VAGUE_JAPONAISE"
+      ]
     }
   ],
   "collections": [
@@ -62932,6 +63084,483 @@
     {
       "from": "LA_FEE_AUX_CHOUX_1900",
       "to": "LA_FEE_AUX_CHOUX_1896"
+    }
+  ],
+  "paths": [
+    {
+      "code": "PARCOURS_001",
+      "displayOrder": 1,
+      "name": "Comment le cinéma est devenu un art",
+      "summary": "Ce parcours retrace les grandes étapes esthétiques et théoriques qui ont élevé le cinéma de simple curiosité technique au statut de Septième Art. L'objectif est de comprendre comment s’est forgée la grammaire cinématographique à travers une succession de mouvements de rupture et d'affirmation artistiques.",
+      "description": "Ce parcours retrace les grandes étapes esthétiques et théoriques qui ont élevé le cinéma de simple curiosité technique au statut de Septième Art. L'objectif est de comprendre comment s’est forgée la grammaire cinématographique à travers une succession de mouvements de rupture et d'affirmation artistiques.\n\nL’itinéraire s'ouvre sur les fondations du cinéma muet, période clé où s'inventent le montage narratif et les premiers codes visuels. Il explore ensuite les avant-gardes européennes des années 1920 — l'Impressionnisme français, l'Expressionnisme allemand, le Montage soviétique et le Surréalisme —, quatre courants qui ont prouvé que la caméra pouvait traduire l'inconscient, la poésie ou l'idéologie politique, s'émancipant ainsi du simple enregistrement du réel ou du théâtre filmé.\n\nLa seconde moitié du parcours analyse la codification de cette grammaire par le Classicisme hollywoodien, avant d'aborder les révolutions modernes d'après-guerre. Du Néoréalisme italien à l'explosion des Nouvelles Vagues française, japonaise et tchécoslovaque, vous découvrirez comment les cinéastes ont brisé les règles académiques pour imposer le réalisme de la rue et la subjectivité de l'auteur. Le parcours s'achève sur le Cinéma contemporain, héritier direct de ces décennies d'expérimentations et de dialogues interculturels.",
+      "periodLabel": "1895 – aujourd'hui",
+      "steps": [
+        {
+          "code": "PARCOURS_001_00",
+          "position": 0,
+          "characteristicCode": "CINEMA_MUET_MOUVEMENT",
+          "name": "Cinéma muet",
+          "periodLabel": "1895 – 1927",
+          "description": "Le cinéma ne naît pas immédiatement comme un art, mais comme une prouesse technique d'enregistrement du réel (les frères Lumière). Très vite, il devient un spectacle de foire et d'illusionnisme (Georges Méliès). Durant cette période sans parole enregistrée, les cinéastes du monde entier inventent de toutes pièces la grammaire visuelle d'aujourd'hui : les mouvements de caméra, le découpage des scènes, le gros plan et le montage narratif.",
+          "facts": [
+            {
+              "title": "La transition parlante",
+              "body": "L'ère du muet prend fin brutalement en **1927** avec la sortie du film *Le Chanteur de jazz*, premier long-métrage doté de dialogues synchronisés."
+            },
+            {
+              "title": "L'orchestration en direct",
+              "body": "Les séances n'étaient jamais silencieuses ; elles étaient systématiquement accompagnées par un pianiste, un orchestre ou un bonimenteur dans la salle."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "Louis & Auguste Lumière",
+              "role": "Pionniers techniques",
+              "directorCode": "LOUIS_LUMIERE"
+            },
+            {
+              "displayName": "Georges Méliès",
+              "role": "Pionnier de la fiction et des effets spéciaux",
+              "directorCode": "GEORGES_MELIES"
+            },
+            {
+              "displayName": "D.W. Griffith",
+              "role": "Pionnier du montage narratif moderne",
+              "directorCode": "DW_GRIFFITH"
+            },
+            {
+              "displayName": "Charlie Chaplin",
+              "role": "Maîtres du burlesque",
+              "directorCode": "CHARLIE_CHAPLIN"
+            },
+            {
+              "displayName": "Buster Keaton",
+              "role": "Maîtres du burlesque",
+              "directorCode": "BUSTER_KEATON"
+            }
+          ],
+          "movies": [
+            "LA_SORTIE_DES_USINES_LUMIERE_1895",
+            "VOYAGE_DANS_LA_LUNE_1902",
+            "NAISSANCE_D_UNE_NATION_1915",
+            "LE_MECANICIEN_DE_LA_GENERAL_1926"
+          ],
+          "transition": "Alors que le cinéma muet installe les bases de la narration, les cinéastes français s'en emparent pour explorer la subjectivité et le rythme visuel."
+        },
+        {
+          "code": "PARCOURS_001_01",
+          "position": 1,
+          "characteristicCode": "IMPRESSIONNISME_FRANCAIS",
+          "name": "Impressionnisme français",
+          "periodLabel": "1918 – 1929",
+          "description": "Aussi appelé \"Première Avant-garde\", ce courant naît au lendemain de la Première Guerre mondiale. Mené par des cinéastes et théoriciens français, son objectif est de détacher le cinéma du théâtre et de la littérature pour en faire un art purement visuel et autonome. Pour ces réalisateurs, le cinéma doit filmer l'invisible : la subjectivité des personnages, leurs états d'âme, leurs rêves et leurs souvenirs. Ils utilisent pour cela un montage très rythmé et de nombreux effets optiques (flous, surimpressions, miroirs déformants) pour faire ressentir au spectateur la psychologie et les émotions des protagonistes.",
+          "facts": [
+            {
+              "title": "La photogénie",
+              "body": "C'est le concept central théorisé par Louis Delluc. Il désigne la capacité du cinéma à transformer le réel par l'enregistrement de la caméra, révélant une beauté ou un sens inédit que l'œil humain ne peut pas capter seul."
+            },
+            {
+              "title": "Fin de l'élan",
+              "body": "L'arrivée du cinéma sonore à la fin des années 1920, conjuguée à des difficultés de financement face aux industries américaines et allemandes, met un terme à cette vague d'expérimentations."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "Louis Delluc",
+              "role": "Théoricien majeur et chef de file du mouvement"
+            },
+            {
+              "displayName": "Abel Gance",
+              "role": "Le grand technicien aux innovations visuelles monumentales",
+              "directorCode": "ABEL_GANCE"
+            },
+            {
+              "displayName": "Jean Epstein",
+              "role": "Réalisateur et philosophe du cinéma",
+              "directorCode": "JEAN_EPSTEIN"
+            },
+            {
+              "displayName": "Germaine Dulac",
+              "role": "Pionnière de l'avant-garde et du cinéma féministe",
+              "directorCode": "GERMAINE_DULAC"
+            }
+          ],
+          "movies": [],
+          "transition": "Tandis que la France filme les fluctuations de l'âme, l'Allemagne déforme la réalité matérielle pour projeter la folie et l'angoisse dans ses décors."
+        },
+        {
+          "code": "PARCOURS_001_02",
+          "position": 2,
+          "characteristicCode": "EXPRESSIONNISME_ALLEMAND",
+          "name": "Expressionnisme Allemand",
+          "periodLabel": "1920 – 1926",
+          "description": "Né dans une Allemagne traumatisée et ruinée par la Première Guerre mondiale, ce mouvement artistique rejette totalement le réalisme. Son but est de projeter la folie, l'angoisse, la paranoïa et la face sombre de la psyché humaine directement à l'écran. Pour cela, les cinéastes utilisent des décors peints, géométriques et déformés (lignes obliques, fenêtres asymétriques) et une gestion révolutionnaire de la lumière. Le style repose sur le clair-obscur, avec des ombres gigantesques et menaçantes qui deviennent de véritables personnages. Les acteurs adoptent un jeu outrancier, proche du théâtre ou du mime, pour accentuer la terreur et le fantastique.",
+          "facts": [
+            {
+              "title": "L'influence du studio",
+              "body": "La quasi-totalité de ces films a été tournée entièrement en studio (notamment à la UFA, près de Berlin). Ce contrôle total de l'environnement permettait aux réalisateurs de maîtriser chaque ombre et chaque angle de décor au millimètre près."
+            },
+            {
+              "title": "L'héritage hollywoodien",
+              "body": "Avec la montée du nazisme, la plupart des grands maîtres de l'expressionnisme ont fui l'Allemagne pour Hollywood. Ils y ont importé leur esthétique, donnant directement naissance aux codes visuels du Film Noir et du Cinéma d'Épouvante américain (les monstres d'Universal)."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "Robert Wiene",
+              "role": "Réalisateur du film fondateur du mouvement",
+              "directorCode": "ROBERT_WIENE"
+            },
+            {
+              "displayName": "F.W. Murnau",
+              "role": "Maître de la poésie visuelle et du fantastique",
+              "directorCode": "FW_MURNAU"
+            },
+            {
+              "displayName": "Fritz Lang",
+              "role": "Cinéaste visionnaire de l'architecture et de la dystopie urbaine",
+              "directorCode": "FRITZ_LANG"
+            },
+            {
+              "displayName": "Conrad Veidt",
+              "role": "Acteur emblématique aux expressions faciales marquantes"
+            }
+          ],
+          "movies": [],
+          "transition": "Face à la recherche esthétique et psychologique allemande, l'école soviétique intellectualise le cinéma en faisant du montage l'outil politique suprême."
+        },
+        {
+          "code": "PARCOURS_001_03",
+          "position": 3,
+          "characteristicCode": "MONTAGE_SOVIETIQUE",
+          "name": "Montage Soviétique",
+          "periodLabel": "1924 – 1930",
+          "description": "Au lendemain de la révolution de 1917, le jeune État soviétique nationalise le cinéma, Lénine le proclamant « le plus important de tous les arts » pour éduquer les masses. Une génération de cinéastes théoriciens révolutionne alors l'histoire du cinéma en plaçant le montage au cœur de la création. Pour eux, le sens d'un film ne naît pas du contenu d'un plan isolé, mais du choc produit par la juxtaposition de deux plans différents. Le cinéma devient un langage intellectuel, rythmique et sensoriel, capable de manipuler les concepts et de susciter de puissantes émotions politiques.",
+          "facts": [
+            {
+              "title": "L'Effet Koulechov",
+              "body": "C'est l'expérience fondatrice du mouvement. Le cinéaste Lev Koulechov montre le même plan fixe du visage d'un acteur alterné successivement avec un bol de soupe, un cercueil, puis une petite fille. Les spectateurs attribuent à l'acteur des émotions différentes (faim, tristesse, tendresse), prouvant que le montage crée le sens de manière totalement artificielle."
+            },
+            {
+              "title": "Le montage intellectuel",
+              "body": "Sergueï Eisenstein a théorisé le « montage d'attractions », associant des images sans lien narratif direct pour créer une métaphore dans l'esprit du spectateur (par exemple, alterner des ouvriers qui se font fusiller avec des images d'un abattoir de bœufs)."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "Sergueï Eisenstein",
+              "role": "Le grand théoricien du montage-choc et de la dynamique des masses",
+              "directorCode": "SERGEI_EISENSTEIN"
+            },
+            {
+              "displayName": "Dziga Vertov",
+              "role": "Pionnier du cinéma expérimental et du manifeste de la caméra-œil",
+              "directorCode": "DZIGA_VERTOV"
+            },
+            {
+              "displayName": "Lev Koulechov",
+              "role": "Enseignant et théoricien pionnier de la manipulation du montage"
+            },
+            {
+              "displayName": "Vsevolod Poudovkine",
+              "role": "Cinéaste axé sur le montage narratif et le drame psychologique",
+              "directorCode": "VSEVOLOD_PUDOVKIN"
+            }
+          ],
+          "movies": [],
+          "transition": "En parallèle de cette rigueur de montage constructive, les surréalistes font exploser la logique pour filmer la liberté totale des rêves et de l'inconscient."
+        },
+        {
+          "code": "PARCOURS_001_04",
+          "position": 4,
+          "characteristicCode": "SURREALISME",
+          "name": "Surréalisme Cinématographique",
+          "periodLabel": "1924 – 1932",
+          "description": "Né à Paris dans le sillage du mouvement littéraire et pictural d'André Breton, le surréalisme voit dans le cinéma l'outil idéal pour s'affranchir de la raison, de la logique et de la morale bourgeoise. Les cinéastes surréalistes refusent le récit linéaire traditionnel pour explorer les mécanismes du rêve, des désirs refoulés, de l'inconscient et de la folie. En utilisant des associations d'images absurdes, des collages visuels provocateurs et des métaphores violentes ou érotiques, ils cherchent à provoquer un choc poétique et psychologique chez le spectateur.",
+          "facts": [
+            {
+              "title": "La provocation publique",
+              "body": "Les projections surréalistes provoquaient régulièrement des scandales majeurs. Lors de la sortie de *L'Âge d'or*, des militants d'extrême droite ont saccagé la salle de cinéma, lacéré les tableaux surréalistes exposés dans le hall, et le film fut interdit par la police pendant plus de quarante ans."
+            },
+            {
+              "title": "Le rêve éveillé",
+              "body": "Les surréalistes fréquentaient les cinémas d'une manière unique : ils entraient dans les salles au hasard, sans regarder les horaires, regardaient le film quelques minutes, puis changeaient de cinéma pour créer leur propre montage aléatoire et poétique de la réalité."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "Luis Buñuel",
+              "role": "Le réalisateur emblématique qui portera l'esprit surréaliste toute sa vie",
+              "directorCode": "LUIS_BUNUEL"
+            },
+            {
+              "displayName": "Salvador Dalí",
+              "role": "Peintre co-scénariste et concepteur des images des premiers films de Buñuel"
+            },
+            {
+              "displayName": "Man Ray",
+              "role": "Photographe et plasticien, pionnier du cinéma expérimental abstrait",
+              "directorCode": "MAN_RAY"
+            },
+            {
+              "displayName": "Antonin Artaud",
+              "role": "Théoricien, acteur et scénariste du premier film considéré comme surréaliste"
+            }
+          ],
+          "movies": [],
+          "transition": "Après le bouillonnement anarchique de ces avant-gardes européennes, Hollywood synthétise ces techniques pour créer une industrie du récit universelle et codifiée."
+        },
+        {
+          "code": "PARCOURS_001_05",
+          "position": 5,
+          "characteristicCode": "HOLLYWOOD_CLASSIQUE",
+          "name": "Classicisme Hollywood",
+          "periodLabel": "1930 – 1950",
+          "description": "Cet « Âge d’or » correspond à l'apogée du système des studios américains. Hollywood standardise la production et crée un langage universel fondé sur la transparence : la technique (mise en scène, montage, éclairage) doit s'effacer complètement pour que le spectateur s'immerge totalement dans l'histoire. Les récits sont linéaires, les genres (western, comédie musicale, film noir) sont strictement codifiés, et les stars (Garbo, Bogart, Gable) sont façonnées par les studios pour attirer le public. C'est l'ère du grand spectacle et de l'illusion parfaite.",
+          "facts": [
+            {
+              "title": "Le Code Hays",
+              "body": "De 1934 à la fin des années 1950, la production hollywoodienne est soumise à une censure morale très stricte. Le code interdit de montrer la nudité, les relations interraciales, les profanations, ou de présenter les criminels sous un jour sympathique. Les cinéastes ont dû redoubler d'ingéniosité visuelle et de sous-entendus pour contourner ces interdictions."
+            },
+            {
+              "title": "Le Studio System",
+              "body": "Les réalisateurs étaient alors des salariés sous contrat avec les grands studios (MGM, Paramount, Warner Bros.). Ils n'avaient que très rarement le contrôle sur le montage final de leurs films. C'est la vision du producteur qui dominait."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "John Ford",
+              "role": "Le maître absolu du western et de la construction du mythe américain",
+              "directorCode": "JOHN_FORD"
+            },
+            {
+              "displayName": "Alfred Hitchcock",
+              "role": "Le génie du suspense qui a su plier le système des studios à ses obsessions visuelles",
+              "directorCode": "ALFRED_HITCHCOCK"
+            },
+            {
+              "displayName": "Howard Hawks",
+              "role": "Le réalisateur caméléon, virtuose de la comédie *screwball* et du film d'aventure",
+              "directorCode": "HOWARD_HAWKS"
+            },
+            {
+              "displayName": "Orson Welles",
+              "role": "L'enfant terrible qui a dynamité de l'intérieur les règles du classicisme avec *Citizen Kane*",
+              "directorCode": "ORSON_WELLES"
+            }
+          ],
+          "movies": [],
+          "transition": "En réaction aux studios et au glamour standardisé américain, l'Italie d'après-guerre descend dans la rue pour capter la vérité brute de la condition humaine."
+        },
+        {
+          "code": "PARCOURS_001_06",
+          "position": 6,
+          "characteristicCode": "NEOREALISME_ITALIEN",
+          "name": "Néoréalisme Italien",
+          "periodLabel": "1943 – 1952",
+          "description": "Né dans les ruines de l'Italie fasciste d'après-guerre, ce mouvement opère la rupture la plus radicale de l'histoire du cinéma en rejetant le glamour et l'illusionnisme hollywoodiens. Les studios de Cinecittà étant détruits ou réquisitionnés, les cinéastes descendent directement dans la rue pour filmer la pauvreté, le chômage, la destruction et la vie quotidienne de la classe ouvrière. Le style est brut, proche du reportage : lumière naturelle, décors réels et recours fréquent à des acteurs non professionnels choisis pour l'authenticité de leur visage et de leur vécu.",
+          "facts": [
+            {
+              "title": "L'éthique avant l'esthétique",
+              "body": "Pour les néoréalistes, le cinéma a un devoir moral. Il ne doit plus chercher à divertir ou à faire oublier la réalité, mais forcer le spectateur à regarder en face la détresse humaine et sociale de son époque."
+            },
+            {
+              "title": "Le démantèlement par la politique",
+              "body": "Le mouvement s'est éteint au début des années 1950, notamment à cause du gouvernement italien (via la loi Andreotti), qui refusait de subventionner des films exportant à l'étranger une image misérable et jugée « antipatriotique » du pays en pleine reconstruction."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "Roberto Rossellini",
+              "role": "Le pionnier qui jette les bases du courant en filmant clandestinement",
+              "directorCode": "ROBERTO_ROSSELLINI"
+            },
+            {
+              "displayName": "Vittorio De Sica",
+              "role": "Le réalisateur humaniste qui filme le quotidien à hauteur d'homme",
+              "directorCode": "VITTORIO_DE_SICA"
+            },
+            {
+              "displayName": "Luchino Visconti",
+              "role": "Le cinéaste aristocrate qui insuffle une dimension tragique et opératique au réalisme",
+              "directorCode": "LUCHINO_VISCONTI"
+            },
+            {
+              "displayName": "Cesare Zavattini",
+              "role": "Le théoricien et scénariste crucial qui a formalisé toute la pensée néoréaliste"
+            }
+          ],
+          "movies": [],
+          "transition": "Inspirés par cette liberté de tournage italienne, de jeunes critiques français théorisent la politique des auteurs et brisent définitivement l'académisme."
+        },
+        {
+          "code": "PARCOURS_001_07",
+          "position": 7,
+          "characteristicCode": "NOUVELLE_VAGUE_FRANCAISE",
+          "name": "Nouvelle Vague Française",
+          "periodLabel": "1958 – 1968",
+          "description": "Ce mouvement majeur est initié par de jeunes critiques des *Cahiers du Cinéma* qui décident de passer derrière la caméra. Ils rejettent violemment le « cinéma de papa », jugé trop académique, bourgeois et corseté dans ses studios. Profitant d'appareils plus légers (caméras 16mm, enregistreurs portables), ils descendent dans la rue, tournent sans budget, caméra à l'épaule et en lumière naturelle. Ils dynamitent la grammaire classique en inventant de nouvelles règles : faux raccords volontaires (*jump cuts*), adresses directes des acteurs face caméra, et scénarios largement improvisés. Le cinéma devient personnel, libre et spontané.",
+          "facts": [
+            {
+              "title": "La politique des auteurs",
+              "body": "C'est le grand apport théorique de la Nouvelle Vague. François Truffaut et ses pairs affirment que le réalisateur est le seul et unique auteur de son film, au même titre qu'un écrivain pour son livre ou un peintre pour sa toile. Le metteur en scène n'est plus un technicien au service d'un studio, mais un artiste qui exprime sa vision du monde."
+            },
+            {
+              "title": "Le festival de Cannes 1959",
+              "body": "Cet événement marque le triomphe mondial du mouvement avec la présentation simultanée des *Quatre Cents Coups* de Truffaut (Prix de la mise en scène) et d'*Orphée* ou des repérages d'Alain Resnais pour *Hiroshima mon amour*."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "François Truffaut",
+              "role": "Le cinéaste de l'enfance, des sentiments et du romanesque",
+              "directorCode": "FRANCOIS_TRUFFAUT"
+            },
+            {
+              "displayName": "Jean-Luc Godard",
+              "role": "L'expérimentateur radical qui a déconstruit toute la forme cinématographique",
+              "directorCode": "JEAN_LUC_GODARD"
+            },
+            {
+              "displayName": "Agnès Varda",
+              "role": "La figure de proue de la Rive Gauche, mêlant documentaire, fiction et féminisme",
+              "directorCode": "AGNES_VARDA"
+            },
+            {
+              "displayName": "Éric Rohmer",
+              "role": "Le maître du verbe, de la parole et des marivaudages psychologiques",
+              "directorCode": "ERIC_ROHMER"
+            }
+          ],
+          "movies": [],
+          "transition": "Cet électrochoc français résonne instantanément au Japon, où une nouvelle génération de cinéastes s'approprie cette liberté pour dynamiter les codes des studios traditionnels."
+        },
+        {
+          "code": "PARCOURS_001_08",
+          "position": 8,
+          "characteristicCode": "NOUVELLE_VAGUE_JAPONAISE",
+          "name": "Nouvelle vague Japonaise (Nuberu Bagu)",
+          "periodLabel": "1959 – 1970",
+          "description": "Contrairement à son homologue française née en dehors des structures traditionnelles, la Nouvelle Vague japonaise émerge d'abord au sein même d'un grand studio (la Shochiku), qui confie les rênes à de jeunes assistants pour moderniser ses productions. Ce mouvement rejette violemment le classicisme humaniste des maîtres d'après-guerre (Ozu, Kurosawa). Les cinéastes s'emparent de la caméra pour ausculter de manière crue les tabous et les traumatismes du Japon contemporain : la délinquance juvénile, la sexualité, le racisme, la corruption et le ressentiment face à l'occupation militaire américaine. Le style est agressif, heurté, caractérisé par un montage frénétique, des cadrages outranciers et une esthétique pop ou expérimentale.",
+          "facts": [
+            {
+              "title": "Une rupture sociopolitique",
+              "body": "La *Nuberu Bagu* n'est pas qu'une révolution esthétique, elle est profondément politique. Elle explose en plein climat de contestation étudiante contre la reconduction du traité de coopération de sécurité entre les États-Unis et le Japon (le traité ANPO), un événement qui s'affiche ouvertement au centre de plusieurs films du mouvement."
+            },
+            {
+              "title": "Le passage à l'indépendance",
+              "body": "Face à la censure croissante des studios devant la radicalité de leurs œuvres, les réalisateurs phares ont rapidement rompu leurs contrats pour fonder des structures de production indépendantes (notamment la mythique ATG - Art Theatre Guild) afin de conserver leur totale liberté de création."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "Nagisa Ōshima",
+              "role": "Le chef de file provocateur et politiquement radical du mouvement",
+              "directorCode": "NAGISA_OSHIMA"
+            },
+            {
+              "displayName": "Masahiro Shinoda",
+              "role": "Cinéaste esthète combinant théâtralité traditionnelle et modernité visuelle",
+              "directorCode": "MASAHIRO_SHINODA"
+            },
+            {
+              "displayName": "Shohei Imamura",
+              "role": "Le réalisateur anthropologue qui préférait filmer les pulsions de la basse société japonaise",
+              "directorCode": "SHOHEI_IMAMURA"
+            },
+            {
+              "displayName": "Kijū Yoshida",
+              "role": "Metteur en scène rigoureux explorant les structures du pouvoir et l'aliénation politique",
+              "directorCode": "YOSHISHIGE_YOSHIDA"
+            }
+          ],
+          "movies": [],
+          "transition": "La contestation devient mondiale : à l'Est, sous le régime communiste, les cinéastes tchécoslovaques utilisent à leur tour cette modernité pour injecter de l'absurde et de la satire sociale."
+        },
+        {
+          "code": "PARCOURS_001_09",
+          "position": 9,
+          "characteristicCode": "NOUVELLE_VAGUE_TCHEQUE",
+          "name": "Nouvelle vague Tchécoslovaque",
+          "periodLabel": "1963 – 1968",
+          "description": "Ce mouvement d'une immense richesse naît à la faveur d'un assouplissement temporaire du régime communiste en Tchécoslovaquie (le dégel). Formés à la prestigieuse école de cinéma de Prague (la FAMU), de jeunes réalisateurs profitent de cette brèche pour contourner la censure étatique. Pour critiquer l'absurdité de la bureaucratie et le totalitarisme, ils délaissent le réalisme socialiste officiel et adoptent un ton unique, caractérisé par l'humour noir, la satire féroce, l'ironie et l'absurde. Visuellement, le courant oscille entre un réalisme quasi documentaire hérité du cinéma direct et des expérimentations formelles surréalistes et colorées.",
+          "facts": [
+            {
+              "title": "Le Printemps de Prague",
+              "body": "L'âge d'or de ce courant est intimement lié à ce mouvement de libéralisation politique. L'invasion de Prague par les chars du Pacte de Varsovie en août 1968 brise net cette dynamique artistique. Les films sont interdits (« mis au coffre »), les structures de production sont reprises en main par le Parti, et plusieurs cinéastes majeurs choisissent l'exil."
+            },
+            {
+              "title": "La reconnaissance internationale",
+              "body": "Malgré sa brièveté et ses conditions de production complexes, le mouvement a connu un immense retentissement mondial, décrochant coup sur coup deux Oscars du meilleur film en langue étrangère (*Le Miroir aux alouettes* en 1965 et *Trains étroitement surveillés* en 1967)."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "Miloš Forman",
+              "role": "Le maître de la satire sociale et du regard tendre mais piquant sur l'humain",
+              "directorCode": "MILOS_FORMAN"
+            },
+            {
+              "displayName": "Věra Chytilová",
+              "role": "La réalisatrice féministe, iconoclaste et visuellement la plus expérimentale du groupe",
+              "directorCode": "VERA_CHYTILOVA"
+            },
+            {
+              "displayName": "Jiří Menzel",
+              "role": "Cinéaste virtuose de la tragi-comédie et de la poésie du quotidien",
+              "directorCode": "JIRI_MENZEL"
+            },
+            {
+              "displayName": "Jaromil Jireš",
+              "role": "Réalisateur d'œuvres poétiques et critiques majeures à la forme éclatée",
+              "directorCode": "JAROMIL_JIRES"
+            }
+          ],
+          "movies": [],
+          "transition": "Une fois toutes ces règles brisées et réinventées par les modernités mondiales, le cinéma entre dans l'ère contemporaine, un espace de métissage où s'entremêlent tous ces héritages."
+        },
+        {
+          "code": "PARCOURS_001_10",
+          "position": 10,
+          "characteristicCode": "CINEMA_CONTEMPORAIN_MOUVEMENT",
+          "name": "Cinéma Contemporain",
+          "periodLabel": "2000 – Présent",
+          "description": "Cette période marque l'entrée du cinéma dans une ère d'hybridation totale. Libéré des manifestes stricts du siècle dernier, le cinéma contemporain se caractérise par le métissage des styles, des genres et des cultures. C'est l'époque de la transition numérique globale, qui transforme la captation, les effets visuels et la diffusion. Les auteurs contemporains puisent librement dans toute l'histoire du cinéma, recyclant et citant les courants passés (postmodernisme) pour interroger les crises écologiques, l'aliénation technologique, les questions d'identité et les bouleversements géopolitiques mondiaux.",
+          "facts": [
+            {
+              "title": "La guerre des écrans",
+              "body": "L'émergence des plateformes de streaming et le développement des technologies domestiques redéfinissent la frontière du cinéma. La création contemporaine ne se pense plus uniquement pour la salle obscure, obligeant l'industrie à réinventer l'expérience collective du grand écran (grand spectacle technologique ou événements immersifs)."
+            },
+            {
+              "title": "La décentralisation du regard",
+              "body": "L'histoire du cinéma a longtemps été dominée par l'Occident. L'ère contemporaine consacre définitivement l'explosion et la reconnaissance mondiale de cinématographies autrefois marginalisées (Corée du Sud, Iran, Mexique, Afrique de l'Ouest), bousculant les structures traditionnelles de légitimité artistique."
+            }
+          ],
+          "figures": [
+            {
+              "displayName": "Christopher Nolan",
+              "role": "Architecte d'un cinéma grand public à la structure narrative complexe et cérébrale",
+              "directorCode": "CHRISTOPHER_NOLAN"
+            },
+            {
+              "displayName": "Bong Joon-ho",
+              "role": "Chef de file du renouveau coréen, maniant la satire sociale et le mélange des genres",
+              "directorCode": "BONG_JOON_HO"
+            },
+            {
+              "displayName": "Denis Villeneuve",
+              "role": "Maître de la science-fiction moderne à l'esthétique monumentale et métaphysique",
+              "directorCode": "DENIS_VILLENEUVE"
+            },
+            {
+              "displayName": "Celine Sciamma",
+              "role": "Cinéaste majeure du renouvellement des regards, théorisant le *female gaze*",
+              "directorCode": "CELINE_SCIAMMA"
+            }
+          ],
+          "movies": []
+        }
+      ]
     }
   ]
 }

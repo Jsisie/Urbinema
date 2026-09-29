@@ -21,6 +21,11 @@ import fr.jsisie.urbinema.data.db.CountryEntity
 import fr.jsisie.urbinema.data.db.CountryProgressRow
 import fr.jsisie.urbinema.data.db.DirectorEntity
 import fr.jsisie.urbinema.data.db.GenreEntity
+import fr.jsisie.urbinema.data.db.LearningPathEntity
+import fr.jsisie.urbinema.data.db.LearningPathFactEntity
+import fr.jsisie.urbinema.data.db.LearningPathFigureEntity
+import fr.jsisie.urbinema.data.db.LearningPathMovieCrossRef
+import fr.jsisie.urbinema.data.db.LearningPathStepEntity
 import fr.jsisie.urbinema.data.db.MovieWithRelations
 import fr.jsisie.urbinema.data.db.QuestDifficulty
 import fr.jsisie.urbinema.data.db.QuestEntity
@@ -51,6 +56,10 @@ import fr.jsisie.urbinema.ui.model.AppLanguage
 import fr.jsisie.urbinema.ui.model.BadgeUi
 import fr.jsisie.urbinema.ui.model.CollectionTrack
 import fr.jsisie.urbinema.ui.model.CollectionUi
+import fr.jsisie.urbinema.ui.model.PathFactUi
+import fr.jsisie.urbinema.ui.model.PathFigureUi
+import fr.jsisie.urbinema.ui.model.PathStepUi
+import fr.jsisie.urbinema.ui.model.PathUi
 import fr.jsisie.urbinema.ui.model.DirectorUi
 import fr.jsisie.urbinema.ui.model.ExplorationState
 import fr.jsisie.urbinema.ui.model.FilmListSort
@@ -119,6 +128,11 @@ class MainViewModel(
     private var earnedBadgeCodesOrdered: List<String> = emptyList()
     private var rankings: List<RankingEntity> = emptyList()
     private var questEntities: List<QuestEntity> = emptyList()
+    private var learningPaths: List<LearningPathEntity> = emptyList()
+    private var learningPathSteps: List<LearningPathStepEntity> = emptyList()
+    private var learningPathFacts: List<LearningPathFactEntity> = emptyList()
+    private var learningPathFigures: List<LearningPathFigureEntity> = emptyList()
+    private var learningPathMovies: List<LearningPathMovieCrossRef> = emptyList()
     private var assignedQuests: List<QuestUi> = emptyList()
     private var historyEvents: List<ActivityEventEntity> = emptyList()
     private var totalXp: Long = 0
@@ -139,6 +153,7 @@ class MainViewModel(
     private var decadeState by mutableStateOf(emptyList<TerritoryUi>())
     private var genreState by mutableStateOf(emptyList<TerritoryUi>())
     private var collectionState by mutableStateOf(emptyList<CollectionUi>())
+    private var pathState by mutableStateOf(emptyList<PathUi>())
     private var badgeState by mutableStateOf(emptyList<BadgeUi>())
     private var rankState by mutableStateOf(emptyList<RankUi>())
     private var directorState by mutableStateOf(emptyList<DirectorUi>())
@@ -168,6 +183,7 @@ class MainViewModel(
     override val decades: List<TerritoryUi> get() = decadeState
     override val genres: List<TerritoryUi> get() = genreState
     override val collections: List<CollectionUi> get() = collectionState
+    override val paths: List<PathUi> get() = pathState
     override val badges: List<BadgeUi> get() = badgeState
     override val ranks: List<RankUi> get() = rankState
     override val directors: List<DirectorUi> get() = directorState
@@ -668,6 +684,11 @@ class MainViewModel(
         badgeEntities = catalog.observeBadges().first()
         rankings = catalog.observeRankings().first()
         questEntities = catalog.observeQuests().first()
+        learningPaths = catalog.allLearningPaths()
+        learningPathSteps = catalog.allLearningPathSteps()
+        learningPathFacts = catalog.allLearningPathFacts()
+        learningPathFigures = catalog.allLearningPathFigures()
+        learningPathMovies = catalog.allLearningPathMovies()
     }
 
     private fun observeUser(value: UserEntity) {
@@ -830,6 +851,42 @@ class MainViewModel(
                 completed = followed && rawProgress >= 100,
             )
         }.sortedWith(compareBy<CollectionUi> { it.track.ordinal }.thenBy { it.displayOrder })
+        pathState = learningPaths.map { path ->
+            val steps = learningPathSteps.filter { it.pathId == path.pathId }.sortedBy { it.position }
+            PathUi(
+                id = path.code,
+                name = path.name,
+                summary = path.summary,
+                description = path.description,
+                periodLabel = path.periodLabel,
+                steps = steps.map { step ->
+                    val characteristic = characteristicEntities.firstOrNull { it.characteristicId == step.characteristicId }
+                    PathStepUi(
+                        id = step.code,
+                        name = step.name,
+                        periodLabel = step.periodLabel,
+                        description = step.description,
+                        imageCode = characteristic?.code ?: step.code,
+                        facts = learningPathFacts.filter { it.stepId == step.stepId }
+                            .sortedBy { it.position }
+                            .map { PathFactUi(it.title, it.body) },
+                        figures = learningPathFigures.filter { it.stepId == step.stepId }
+                            .sortedBy { it.position }
+                            .map { figure ->
+                                PathFigureUi(
+                                    name = figure.displayName,
+                                    role = figure.role,
+                                    directorCode = directorEntities.firstOrNull { it.directorId == figure.directorId }?.code,
+                                )
+                            },
+                        movies = learningPathMovies.filter { it.stepId == step.stepId }
+                            .sortedBy { it.position }
+                            .mapNotNull { link -> moviesByMovieId[link.movieId]?.let { toSummary(it) } },
+                        transition = step.transitionText,
+                    )
+                },
+            )
+        }
         val newlyCompleted = collectionState.filter { it.completed }.map { it.id }.toSet()
         if (!completionBaselineReady) {
             if (collectionsWithMovies.isNotEmpty()) {

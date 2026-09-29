@@ -168,6 +168,34 @@ data class CollectionUi(
     val completed: Boolean = false,
 )
 
+/** One pedagogical path, opened from the Parcours tab. */
+data class PathUi(
+    val id: String,
+    val name: String,
+    val summary: String,
+    val description: String,
+    val periodLabel: String,
+    val steps: List<PathStepUi>,
+)
+
+/** A current bubble. `transition` is the text toward the next bubble. */
+data class PathStepUi(
+    val id: String,
+    val name: String,
+    val periodLabel: String,
+    val description: String,
+    val imageCode: String,
+    val facts: List<PathFactUi>,
+    val figures: List<PathFigureUi>,
+    val movies: List<MovieSummaryUi>,
+    val transition: String?,
+)
+
+data class PathFactUi(val title: String, val body: String)
+
+/** `directorCode` is null when the person has no director fiche. */
+data class PathFigureUi(val name: String, val role: String, val directorCode: String?)
+
 data class HistoryUi(
     val dateLabel: String,
     val type: String,
@@ -290,6 +318,7 @@ interface UrbinemaViewModel {
     val decades: List<TerritoryUi>
     val genres: List<TerritoryUi>
     val collections: List<CollectionUi>
+    val paths: List<PathUi>
     val badges: List<BadgeUi>
     val ranks: List<RankUi>
     val directors: List<DirectorUi>
@@ -349,6 +378,7 @@ private val previewFilms = listOf(
 
 /** Deterministic preview data that keeps Compose independent from unfinished data layers. */
 object PreviewUrbinemaViewModel : UrbinemaViewModel {
+    override val paths = emptyList<PathUi>()
     override val collections = listOf(
         CollectionUi(
             "COLLECTION_001",
