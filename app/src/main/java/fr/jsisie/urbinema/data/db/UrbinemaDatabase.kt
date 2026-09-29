@@ -130,7 +130,23 @@ abstract class UrbinemaDatabase : RoomDatabase() {
         }
 
         val MIGRATION_7_8 = Migration(7, 8) { database ->
-            database.execSQL("ALTER TABLE directors ADD COLUMN biography TEXT")
+            // Room compare le schéma juste après la migration. Cet index partiel
+            // n'est pas dans les annotations : onOpen l'a déjà créé sur la base v7.
+            // On le retire pour le contrôle, onOpen le recrée ensuite.
+            database.execSQL("DROP INDEX IF EXISTS `$PRIMARY_COUNTRY_INDEX`")
+            if (!hasColumn(database, "directors", "biography")) {
+                database.execSQL("ALTER TABLE directors ADD COLUMN biography TEXT")
+            }
+        }
+
+        private fun hasColumn(database: SupportSQLiteDatabase, table: String, column: String): Boolean {
+            database.query("PRAGMA table_info(`$table`)").use { cursor ->
+                val name = cursor.getColumnIndex("name")
+                while (cursor.moveToNext()) {
+                    if (cursor.getString(name) == column) return true
+                }
+            }
+            return false
         }
 
         /** Callback shared by production and tests that require the complete physical schema. */

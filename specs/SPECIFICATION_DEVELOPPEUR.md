@@ -533,6 +533,11 @@ CREATE UNIQUE INDEX IF NOT EXISTS index_movies_countries_one_primary
 ON movies_countries(movieId) WHERE isPrimary = 1;
 ```
 
+Room ne connaît pas cet index. Toute migration doit le supprimer avant le
+contrôle de schéma (`DROP INDEX IF EXISTS`), sinon l’ouverture plante.
+`onOpen` le recrée juste après. `MIGRATION_7_8` le fait, puis ajoute
+`directors.biography`.
+
 `PRAGMA foreign_keys = ON` à chaque ouverture.
 
 `collections.track` TEXT NOT NULL, ajouté par `MIGRATION_4_5` (défaut
