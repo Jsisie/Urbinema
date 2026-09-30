@@ -21,6 +21,8 @@ import fr.jsisie.urbinema.domain.rank.TerritoryReference
 import fr.jsisie.urbinema.domain.xp.XpEngine
 import java.time.Clock
 import java.time.Instant
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 /**
  * Recalculates every durable consequence of a movie validation.
@@ -44,6 +46,12 @@ class ProgressionCoordinator(
      * (never decreases). New badges are inserted only; already earned ones stay.
      */
     suspend fun recalculate(userId: Long) {
+        withContext(Dispatchers.Default) {
+            recalculateOffMain(userId)
+        }
+    }
+
+    private suspend fun recalculateOffMain(userId: Long) {
         val catalogDao = database.catalogDao()
         val progressDao = database.progressDao()
         val rankDao = database.rankConfigDao()

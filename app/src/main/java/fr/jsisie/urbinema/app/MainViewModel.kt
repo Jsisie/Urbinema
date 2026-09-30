@@ -119,6 +119,7 @@ class MainViewModel(
     private var moviesWithRelations: List<MovieWithRelations> = emptyList()
     private var moviesByMovieId: Map<Long, MovieWithRelations> = emptyMap()
     private var orderedDirectorsByMovieId: Map<Long, List<DirectorEntity>> = emptyMap()
+    private var filmsByDirectorId: Map<Long, List<MovieWithRelations>> = emptyMap()
     private var watched: List<UserMovieCrossRef> = emptyList()
     private var collectionsWithMovies: List<CollectionWithMovies> = emptyList()
     private var collectionProgress: Map<Long, CollectionProgressRow> = emptyMap()
@@ -699,6 +700,13 @@ class MainViewModel(
         val catalog = database.catalogDao()
         moviesWithRelations = catalog.allMoviesWithRelations()
         moviesByMovieId = moviesWithRelations.associateBy { it.movie.movieId }
+        val byDirector = HashMap<Long, MutableList<MovieWithRelations>>()
+        for (rel in moviesWithRelations) {
+            for (director in rel.directors) {
+                byDirector.getOrPut(director.directorId) { mutableListOf() }.add(rel)
+            }
+        }
+        filmsByDirectorId = byDirector
         collectionsWithMovies = catalog.observeCollectionsWithMovies().first()
         collectionCountryRefs = catalog.observeCollectionCountries().first()
         collectionCharacteristicRefs = catalog.observeCollectionCharacteristics().first()
@@ -1007,17 +1015,29 @@ class MainViewModel(
                 current = it.rankingId == rank?.rankingId,
             )
         }
+        val collectionsByFilmId = HashMap<String, MutableList<CollectionUi>>()
+        for (collection in collectionState) {
+            for (film in collection.films) {
+                collectionsByFilmId.getOrPut(film.id) { mutableListOf() }.add(collection)
+            }
+        }
         directorState = directorEntities.mapNotNull { director ->
-            val films = moviesWithRelations.filter { rel -> rel.directors.any { it.directorId == director.directorId } }
-                .map(::toWatchedSummary)
+            val rels = filmsByDirectorId[director.directorId].orEmpty()
+            if (rels.isEmpty()) return@mapNotNull null
+            val films = rels
+                .map { rel -> toSummary(rel, watched = rel.movie.movieId in watchedIds) }
                 .sortedFilms(FilmListSort.TitleAsc)
-            if (films.isEmpty()) return@mapNotNull null
-            val filmIds = films.map { it.id }.toSet()
+            val linked = LinkedHashMap<String, CollectionUi>()
+            for (film in films) {
+                for (collection in collectionsByFilmId[film.id].orEmpty()) {
+                    linked.putIfAbsent(collection.id, collection)
+                }
+            }
             DirectorUi(
                 director.code,
                 director.displayName,
                 films,
-                collectionState.filter { collection -> collection.films.any { it.id in filmIds } },
+                linked.values.toList(),
                 director.biographyFor(prefersEnglish()),
             )
         }

@@ -3,7 +3,6 @@ package fr.jsisie.urbinema.ui
 import android.content.Context
 import android.content.res.Configuration
 import androidx.annotation.StringRes
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -56,10 +55,13 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Canvas
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.CompositingStrategy
-import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.Paint
+import kotlin.math.abs
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
@@ -252,37 +254,38 @@ private fun FilmGrainOverlay(dark: Boolean) {
     val wash = if (dark) 0.033f else 0.032f
     val lightSpeck = if (dark) 0.076f else 0.07f
     val darkSpeck = if (dark) 0.092f else 0.09f
-    Canvas(
+    val lightRadius = if (dark) 0.71.dp else 0.7.dp
+    Box(
         Modifier
             .fillMaxSize()
-            .graphicsLayer { compositingStrategy = CompositingStrategy.Offscreen },
-    ) {
-        drawRect(Color.Black.copy(alpha = wash))
-        val step = 5.dp.toPx()
-        var x = 0f
-        while (x < size.width) {
-            var y = 0f
-            while (y < size.height) {
-                val hash = abs((x * 127.1f + y * 311.7f).toInt())
-                val speck = hash % 8
-                if (speck == 0) {
-                    drawCircle(
-                        color = Color.White.copy(alpha = lightSpeck),
-                        radius = if (dark) 0.71.dp.toPx() else 0.7.dp.toPx(),
-                        center = Offset(x, y),
-                    )
-                } else if (speck == 1) {
-                    drawCircle(
-                        color = Color.Black.copy(alpha = darkSpeck),
-                        radius = 0.8.dp.toPx(),
-                        center = Offset(x, y),
-                    )
+            .drawWithCache {
+                val width = size.width.toInt().coerceAtLeast(1)
+                val height = size.height.toInt().coerceAtLeast(1)
+                val image = ImageBitmap(width, height)
+                val canvas = Canvas(image)
+                val washPaint = Paint().apply { color = Color.Black.copy(alpha = wash) }
+                val lightPaint = Paint().apply { color = Color.White.copy(alpha = lightSpeck) }
+                val darkPaint = Paint().apply { color = Color.Black.copy(alpha = darkSpeck) }
+                canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), washPaint)
+                val step = 5.dp.toPx()
+                val lightR = lightRadius.toPx()
+                val darkR = 0.8.dp.toPx()
+                var x = 0f
+                while (x < width) {
+                    var y = 0f
+                    while (y < height) {
+                        val hash = abs((x * 127.1f + y * 311.7f).toInt())
+                        when (hash % 8) {
+                            0 -> canvas.drawCircle(Offset(x, y), lightR, lightPaint)
+                            1 -> canvas.drawCircle(Offset(x, y), darkR, darkPaint)
+                        }
+                        y += step
+                    }
+                    x += step
                 }
-                y += step
-            }
-            x += step
-        }
-    }
+                onDrawBehind { drawImage(image) }
+            },
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -293,6 +296,10 @@ private fun UrbinemaNavigation(
     onThemeModeChange: (UrbinemaThemeMode) -> Unit,
 ) {
     val navController = rememberNavController()
+    val openFilm = { code: String ->
+        model.openMovie(code)
+        navController.navigate(movieRoute(code))
+    }
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     val entry by navController.currentBackStackEntryAsState()
@@ -487,13 +494,16 @@ private fun UrbinemaNavigation(
                         layer = mapLayer,
                         onLayerChange = { mapLayer = it },
                         filmsOf = { code -> skyFilms(model, mapLayer, code, graph) },
-                        onMovie = { navController.navigate(movieRoute(it)) },
+                        onMovie = openFilm,
                         onMarkWatched = model::markMovieWatched,
                         onCenterFilm = {
                             mapFocus = it
                             mapLayer = MapLayer.AROUND_FILM
                         },
-                        onOpenNode = { kind, code -> openMapNode(navController, kind, code, ::openCollection) },
+                        onOpenNode = { kind, code ->
+                            if (kind == MapNodeKind.FILM) model.openMovie(code)
+                            openMapNode(navController, kind, code, ::openCollection)
+                        },
                     )
                 }
                 composable(Routes.Collections) {
@@ -514,7 +524,7 @@ private fun UrbinemaNavigation(
                     if (path != null) {
                         PathDetailScreen(
                             path = path,
-                            onMovie = { navController.navigate(movieRoute(it)) },
+                            onMovie = openFilm,
                             onDirector = { navController.navigate(directorRoute(it)) },
                         )
                     }
@@ -581,7 +591,7 @@ private fun UrbinemaNavigation(
                     if (collection != null) {
                         CollectionScreen(
                             collection = collection,
-                            onMovie = { navController.navigate(movieRoute(it)) },
+                            onMovie = openFilm,
                             onFollow = { model.followCollection(collection.id) },
                             onUnfollow = { model.unfollowCollection(collection.id) },
                             onMarkWatched = model::markMovieWatched,
@@ -594,7 +604,7 @@ private fun UrbinemaNavigation(
                 composable(Routes.Search) {
                     SearchScreen(model::search, onMarkWatched = model::markMovieWatched) { hit ->
                         when (hit.kind) {
-                            SearchKind.Movie -> navController.navigate(movieRoute(hit.id))
+                            SearchKind.Movie -> openFilm(hit.id)
                             SearchKind.Country -> navController.navigate(territoryRoute("country", hit.id))
                             SearchKind.Current -> navController.navigate(territoryRoute("current", hit.id))
                             SearchKind.Collection -> openCollection(hit.id)
@@ -638,7 +648,7 @@ private fun UrbinemaNavigation(
                     if (director != null) {
                         DirectorScreen(
                             director = director,
-                            onMovie = { navController.navigate(movieRoute(it)) },
+                            onMovie = openFilm,
                             onCollection = ::openCollection,
                             onMarkWatched = model::markMovieWatched,
                         )
@@ -676,7 +686,7 @@ private fun UrbinemaNavigation(
                         collections = collections,
                         films = films,
                         onCollection = ::openCollection,
-                        onMovie = { navController.navigate(movieRoute(it)) },
+                        onMovie = openFilm,
                         onMarkWatched = model::markMovieWatched,
                     )
                 }
