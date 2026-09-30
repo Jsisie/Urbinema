@@ -98,19 +98,19 @@ class ProgressionCoordinator(
 
         val watchedRels = progressDao.validatedMovies(userId)
         val validated = watchedRels.mapNotNull { it.toDomainOrNull(lookups) }
-        val ageYears = user.birthDate?.let { java.time.Year.now().value - it.year }
-        val result = rankEngine.calculate(validated, stats, currentRankOrder, ageYears)
+        val result = rankEngine.calculate(validated, stats, currentRankOrder)
         val candidateRanking = checkNotNull(progressDao.rankingByOrder(result.displayedRank))
         val now = Instant.now(clock)
         Log.i(
             TAG,
             "Rang recalculé: films=${result.rawMovieCount} " +
                 "Vw=${"%.4f".format(result.weightedVolume)} " +
-                "D=${"%.4f".format(result.diversity)} " +
+                "Dbrut=${"%.4f".format(result.rawDiversity)} " +
+                "Dlissé=${"%.4f".format(result.diversity)} " +
+                "Dmax=${"%.4f".format(result.diversityCapacity)} " +
                 "P=${"%.4f".format(result.depth)} " +
-                "âge=${ageYears ?: "-"} A=${"%.4f".format(result.ageBonus)} " +
                 "S=${"%.4f".format(result.score)} " +
-                "(S = 0.6*ln(1+Vw) + 6*D + 1.2*ln(1+P) + A) " +
+                "(S = 1.02*ln(1+Vw/25) + 6*Dlissé + 1.2*ln(1+P)) " +
                 "rangBrut=${result.rawRank} rangAffiché=${result.displayedRank} " +
                 "code=${candidateRanking.code}",
         )

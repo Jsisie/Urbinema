@@ -5,9 +5,12 @@ alwaysApply: true
 
 # Version de l'app
 
-La version courante est **0.3.0** (`versionCode` 24).
+Le seul endroit à modifier est `app/build.gradle.kts`, `defaultConfig` :
+`versionName` (actuellement `"0.3.1"`) et `versionCode` (actuellement `24`).
 
 - Ne **pas** bumper `versionName` / `versionCode` à chaque correctif ou ajout.
 - Bumper uniquement si Léo le demande explicitement, ou au moment d'une
   vraie release APK.
-- L'écran À propos lit `BuildConfig.VERSION_NAME`.
+- L'écran À propos affiche `BuildConfig.VERSION_NAME`. Ce n'est pas un
+  deuxième fichier : Gradle l'écrit à la compilation à partir de `versionName`.
+  Ne pas éditer `BuildConfig`, ni dupliquer le numéro dans les strings ou le Kotlin.

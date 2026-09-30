@@ -78,7 +78,7 @@ deux ne doit être versionné.
 Au premier lancement l’application :
 
 1. importe `assets/catalog/catalog.json` dans Room (si pack plus récent) ;
-2. insère la config de rang v0.3 si elle manque ;
+2. active la config de rang lissée v0.3.1 ;
 3. affiche l’onboarding **pseudo + âge + avatar** s’il n’y a pas de `users` **ou** si
    `birthDate` est null (install 0.1.6 « Léo » sans âge) : insert ou update ;
 4. affiche Accueil, Collections, Atlas, Parcours, Profil.
@@ -126,7 +126,7 @@ Cinq onglets bas :
 | Collections | Groupées par `track`. Initiation ouverte ; cadenas Initiation (≥ 1 Vu) puis cadenas **entre groupes** (2 collections commencées). Suivies en or. Non suivie = 0 %. Terminée = or + check. |
 | Atlas | Listes (onglet). **?** = aide. **Étoiles** = carte du ciel (`atlas/sky`). |
 | Parcours | Rang détaillé, quêtes, collections en cours. `?` → Aide. |
-| Profil | Pseudo, rang, niveau/XP, **jusqu’à 3 badges** vitrine, stats. Réglages via l’icône ⚙ (thème, langue, grain, Aide, reset, À propos). |
+| Profil | Pseudo, rang, niveau/XP, **jusqu’à 3 badges** vitrine (appui long = condition), stats. Réglages via l’icône ⚙ (thème, langue, grain, Aide, reset, À propos). |
 
 Le tiroir (☰ sur **chaque onglet**) ouvre les index : rangs, badges, collections, recherche,
 statistiques. Plus d’entrée « Tous les courants » : les pays et courants vivent
@@ -156,8 +156,11 @@ L’onglet actif : retaper l’onglet revient à sa racine.
 - Le niveau XP **ne recule jamais** (`users.maxLevelReached`), sauf recalage
   si le tarif film du ledger change. Un film Vu = **25 XP une fois**, et seulement s’il est dans une collection suivie.
   Quêtes 100 / 250 / 500.
-- Réglages → **Réinitialiser les données** : confirme, puis efface **uniquement**
-  la progression. Le catalogue et le profil (pseudo) restent.
+- Réglages → **Réinitialiser les données** : `SettingsScreen` ouvre le
+  dialogue localisé `reset_data_*`. `RESET_CONFIRMATION_DELAY_SECONDS = 10`
+  pilote un `LaunchedEffect` annulé à la fermeture ; le bouton destructif
+  reste désactivé et affiche `(10)` à `(1)`, puis confirme et efface
+  **uniquement** la progression. Le catalogue et le profil restent.
 - Onglet Atlas = listes. Icône étoiles = carte du ciel. Tap film =
   recentrer la constellation ; tap territoire = feuille + fiche.
 
@@ -200,7 +203,12 @@ Pop-up badge : codes déjà fêtés dans DataStore
 (`badge_celebration_seeded` + `badge_celebration_codes`). Premier snapshot
 Room + prefs = marquer comme vus, **pas** de replay à la réouverture.
 Nouveaux codes seulement après hydratation. Reset données : liste vide,
-seeded reste vrai.
+seeded reste vrai. La file contient les `BadgeUi`, pas seulement leurs noms,
+afin que `BadgeUnlockedDialog` affiche aussi `BadgeArtwork` sous le message.
+
+Les résumés de films passent les crédits ordonnés à `listDirectorLabel` :
+un nom par ligne, deux noms maximum et `...` après le deuxième. Les cartes
+réservent donc deux lignes au réalisateur sans réduire la place du titre.
 
     Historique Accueil : 30 dernières (`HistoryUi.HOME_PREVIEW_LIMIT`) + bouton
 « Voir tout l’historique » (`history`). DAO `observeActivity` LIMIT 2000.
@@ -281,7 +289,13 @@ app/src/main/assets/catalog/catalog.json
 
 Il décrit le monde : films, pays, continents, réalisateurs, caractéristiques,
 genres, ères, collections, 10 rangs, 38 badges, 59 quêtes types (19 Bronze, 20 Argent, 20 Or).
-Le pack courant est la version **28** (1538 films, 28 collections, biographies de réalisateurs en français et en anglais quand les deux existent). `catalog.json` est la copie de `catalog_v3.json`. Les portraits sont des fichiers `assets/media/directors/{CODE}.jpg`, lus par code, sans ligne `mediaAssets`. La collection `COLLECTION_027` (« Cinéma des premiers temps ») est sur le groupe `GATEWAY`, avec 17 films de 1892 à 1906.
+Le pack courant est la version **40** (1613 films, 28 collections, biographies de réalisateurs en français et en anglais quand les deux existent). `catalog.json` est la copie de `catalog_v3.json`. Les portraits sont des fichiers `assets/media/directors/{CODE}.jpg`, lus par code, sans ligne `mediaAssets`. La collection `COLLECTION_027` (« Cinéma des premiers temps ») est sur le groupe `GATEWAY`, avec 17 films de 1892 à 1906.
+
+Titres : `originalTitle` est toujours la valeur de repli affichée.
+`frenchTitle` est facultatif et ne doit exister que pour un véritable titre
+français distinct. Le batch TMDB n'accepte comme titre alternatif français
+que le territoire `FR` : `BE` et `CH` sont multilingues et ont déjà injecté
+des titres néerlandais dans cette colonne.
 
 Modèle Kotlin : `data/importer/CatalogPack.kt`.  
 Validateur : `data/importer/CatalogValidator.kt`.  
@@ -315,7 +329,8 @@ réinjecterait un état inattendu.
 
 1. Si le pack JSON a une `version` **strictement supérieure** à
    `catalog_versions` → upsert éditorial (codes stables). Sinon no-op.
-2. Si aucune config de rang active → insérer `RANK_V03_INITIAL`.
+2. Si la config active n'est pas `RANK_V031_DURATION_WEIGHTED` → désactiver
+   l'ancienne, puis activer ou insérer la configuration lissée.
 3. Si aucun utilisateur local → **ne rien créer**. L’UI bloque sur
    l’onboarding (pseudo + âge + avatar) puis insère `users` avec `birthDate`
    approximée (1er janvier de l’année `année_courante - âge`) et `avatarCode`.
@@ -501,7 +516,7 @@ fr.jsisie.urbinema
 │   └── repository/            Catalog / Progress / coordinators
 ├── domain/                    Kotlin pur, zéro Android
 │   ├── model/
-│   ├── rank/                  formule v0.3
+│   ├── rank/                  formule v0.3.1
 │   ├── xp/                    courbe 1–50
 │   ├── quest/
 │   ├── badge/
@@ -666,20 +681,31 @@ Après toute modification du JSON : `version` strictement plus grande, copie
 
 ## 7. Moteurs métier — où changer les formules
 
-### 7.1 Rang v0.3
+### 7.1 Rang v0.3.1
 
 Fichiers : `domain/rank/RankEngine.kt`, `RankDefaults`.
 
 - Volume / diversité / profondeur, ρ = 0,5 (`attenuationExponent`).
+- Volume lissé : `1,02 × ln(1 + Vw / 25)` via `volumeScore`.
+- Diversité lissée : `Dmax × (D / Dmax)^1,2` via
+  `smoothedDiversity`. `Dmax` est la somme des références de tous les
+  territoires ; la couverture complète conserve ainsi son ancienne valeur.
+- Durée : `RankDurationDefaults` contient tous les ancrages
+  (`10 min → 0,10`, `20 → 0,20`, `30 → 1`). `durationFactor()` interpole
+  entre eux. Le facteur multiplie le poids de volume et alimente
+  l'exposition cumulée de chaque territoire ; diversité et profondeur
+  travaillent sur cette exposition, pas sur un simple nombre entier de films.
 - 8 dimensions, parts : caractéristique 0,25 · réalisateur 0,20 · pays 0,18 ·
   décennie 0,15 · continent 0,07 · ère 0,05 · genre 0,05 · forme 0,05.
-- 9 seuils quantitatifs V1 (rangs 2–10) dans `RankDefaults.thresholds`.
+- 9 seuils (rangs 2–10) dans `RankDefaults.thresholds` :
+  `1,80 / 3,00 / 4,20 / 5,40 / 6,60 / 7,80 / 9,20 / 10,80 / 12,50`.
 - Recalcul : `ProgressionCoordinator.recalculate(userId)` après chaque film vu.
 - Le rang affiché = `max(rang calculé, rang déjà affiché)`.
 
-Changer les λ ou parts : `RankDefaults` **et** la ligne `rank_engine_configs`
-(aujourd’hui insérée seulement si absente). Sur un appareil déjà lancé, soit
-vider les données, soit écrire une migration / un update ciblé.
+La configuration active porte le code `RANK_V031_DURATION_WEIGHTED`. Au démarrage,
+`AppBootstrapper` désactive une ancienne configuration et active ou insère
+celle-ci. Les constantes `25` et `1,2` appartiennent à cette version de formule ;
+les λ et parts restent enregistrés dans `rank_engine_configs`.
 
 Les rangs 8–10 restent quantitatifs en V1 (pas encore de critères qualitatifs).
 
@@ -719,7 +745,8 @@ validés **pendant** la fenêtre comptent. Récompenses snapshotées.
 
 `domain/badge/BadgeRegistry.kt`. Codes `001`–`032`. Jamais retirés une fois
 obtenus. À l’unlock : pop-up FR/EN (« Félicitations ! Vous avez débloqué
-le badge « … » ! »).
+le badge « … » ! ») et illustration locale de 72 dp. Les trois badges vitrine
+du Profil utilisent un appui long pour afficher `BadgeUi.condition`.
 
 ### 7.5 Collections
 
@@ -757,7 +784,7 @@ Parcours.
 | Test | Rôle |
 | --- | --- |
 | `domain/xp/XpEngineTest` | seuils T(20), T(49), T(50), ratchet de niveau |
-| `domain/rank/RankEngineTest` | v0.3, ratchet de rang |
+| `domain/rank/RankEngineTest` | v0.3.1, deux lissages, ratchet de rang |
 | `domain/quest/QuestEngineTest` | fenêtres lundi 02:00, non-rétroactivité |
 | `domain/validation/ValidationTest` | pays primaire, codes |
 | `domain/ProgressionRulesTest` | règles transverses |

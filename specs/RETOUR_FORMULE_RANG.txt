@@ -1,25 +1,72 @@
 ANALYSE DU CALCUL DU RANG — URBINEMA
 Auteur : Cursor
-Date : 2026-09-16
-Porte sur : FORMULE_MATHEMATIQUE.txt (v0.3)
+Date : 2026-09-30
+Porte sur : FORMULE_MATHEMATIQUE.txt (v0.3.1)
 
-Ce document justifie les choix de la v0.3 et liste ce qui reste ouvert.
+Ce document justifie les choix de la v0.3.1 et liste ce qui reste ouvert.
 L'historique des corrections v0.1 → v0.2 a été retiré : il n'a plus
 d'intérêt, tout est réglé.
+
+========================================================================
+0.A — RETOUR RÉEL ET LISSAGES v0.3.1
+========================================================================
+
+Le premier parcours réel sur 1 613 films a révélé un défaut que les profils
+théoriques n'avaient pas montré : le logarithme du volume était beaucoup trop
+raide à son origine. Sur la collection Initiation, le volume apportait environ
+774 millièmes au premier film, 317 au deuxième, 204 au troisième et encore 58
+au dixième. Avec la diversité ouverte simultanément, 28 films suffisaient pour
+atteindre le rang 5.
+
+La correction ne remplace pas la formule par un montant fixe. Elle conserve
+ses trois axes et introduit deux lissages :
+
+    S_V = ln(1 + V_w / 25), avec lambda_V = 1.02
+
+La réserve 25 équivaut à une dizaine de films pondérés. Elle réduit fortement
+la dérivée au départ, mais le coefficient 1.02 permet de rejoindre presque
+exactement l'ancien total de volume autour de V_w = 2500, soit environ
+1 100 films. Les rangs élevés restent donc accessibles.
+
+    D_lisse = D_max * (D / D_max)^1.2
+
+La puissance 1.2 retarde légèrement la valeur des premières découvertes.
+La normalisation par D_max garantit D_lisse = D_max quand toute la carte est
+couverte : aucun potentiel de fin de parcours n'est supprimé.
+
+Ordres de grandeur visés sur Initiation : environ 165, 125, 100, 125, 95,
+85, 70, 90, 115 puis 60 millièmes. Le dixième film n'est ainsi plus écrasé
+par le premier. Vers le 500e film, le volume marginal est proche de 2
+millièmes ; une nouvelle décennie, époque ou caractéristique reste capable
+de produire un gain nettement supérieur.
+
+Le second test réel (35 films, essentiellement américains) a conduit aux
+seuils 1.80 / 3.00 / 4.20 / 5.40 / 6.60 / 7.80 / 9.20 / 10.80 / 12.50.
+Le haut de la courbe est préservé : le rang 10 reste à 12.50. Le score est
+strictement nul à zéro film.
+
+Le troisième test a isolé les films très courts : La Loupe de grand-maman
+(1 minute), douzième film de Cinéma des premiers temps, rapportait encore
+171 millièmes. La durée n'intervenait alors nulle part : son poids H/A/R/C
+élevé et ses nouveaux territoires étaient traités comme ceux d'un long
+métrage. Le coefficient de durée 0.10 / 0.15 / 0.20 / 1.00 agit désormais
+sur les trois axes. L'exposition cumulée garantit l'indépendance à l'ordre :
+dix films d'une minute équivalent ensemble à une exposition complète.
 
 
 ========================================================================
 0. VERDICT
 ========================================================================
 
-La v0.3 est implémentable telle quelle, sans réserve technique.
+La v0.3.1 est implémentée, sans réserve technique.
 
 Elle tient en une quarantaine de lignes de Kotlin pur, dans le module
 domain, testable hors Android. Le recalcul complet du rang est
 instantané même à 5000 films validés : aucun calcul incrémental,
 aucune optimisation, aucune dépendance.
 
-Il ne reste que du CALIBRAGE, c'est-à-dire du jugement cinéphile.
+Il reste le CALIBRAGE des neuf seuils sur le nouveau parcours réel,
+c'est-à-dire du jugement cinéphile.
 Ce n'est plus un problème d'ingénierie.
 
 
@@ -51,13 +98,14 @@ toutes les deux en racine carrée. Numériquement :
 territoires découverts). Les deux axes racontaient la même histoire.
 Régler λ_D et λ_P séparément revenait à régler un seul curseur.
 
-CORRECTION : la diversité utilise la Découverte binaire, déjà définie
-au §9 de la v0.2 mais jamais branchée dans le calcul final.
+CORRECTION v0.3 : la diversité utilise la Découverte binaire, déjà définie
+au §9 de la v0.2 mais jamais branchée dans le calcul final. La pondération
+de durée v0.3.1 généralise ensuite ce principe à une exposition E :
 
-    v0.3 :  D(u) = Σ w_x · Q_x                   (borné, sature)
-            P(u) = Σ w_x · Q_x · sqrt(n_x - 1)   (non borné, croît)
+    v0.3.1 : D(u) = Σ w_x · Q_x · min(1, E_x)       (borné, sature)
+             P(u) = Σ w_x · Q_x · sqrt(E_x - 1)      (non borné, croît)
 
-Maintenant :
+Pour des films de 30 minutes et plus, E_x reste égal au nombre de films :
 
     n_x      Diversité   Profondeur
      1          1           0
@@ -65,9 +113,9 @@ Maintenant :
     10          1           3.00
     50          1           7.00
 
-La diversité s'arrête au premier film du territoire. Tout le reste est
-de l'approfondissement. Les deux axes sont enfin indépendants, et
-λ_D et λ_P sont deux vrais réglages distincts.
+La diversité s'arrête à une unité d'exposition. Tout le reste est de
+l'approfondissement. Les deux axes sont indépendants, et λ_D et λ_P sont
+deux vrais réglages distincts.
 
 Bénéfice secondaire : D devient interprétable en une phrase — « la part
 du territoire cinématographique que tu as touchée ». Ce qui est
@@ -251,9 +299,9 @@ sur 2000 films à la main n'arrivera jamais.
 2.4 — CALIBRAGE
 ------------------------------------------------------------------------
 
-Vingt valeurs, dont seules les neuf dernières demandent un vrai
-arbitrage. Méthode : simuler des profils types et ajuster jusqu'à ce
-que chacun tombe sur le rang attendu.
+Les lissages K_V = 25 et gamma_D = 1.2 sont désormais actés. Les neuf
+seuils demandent encore un vrai arbitrage. Méthode : simuler des profils
+types et ajuster jusqu'à ce que chacun tombe sur le rang attendu.
 
 Les profils et les cibles sont listés au §14 de la formule. Ces cibles
 relèvent de ton jugement cinéphile, le code ne fait que résoudre.
@@ -282,9 +330,8 @@ Le moteur tient dans le module domain, en Kotlin pur, sans Android :
       - w_x_ref par caractéristique
       - version
 
-    RankParameters        les 20 valeurs, externalisées et non codées
-                          en dur, pour pouvoir les ajuster sans
-                          recompiler
+    RankParameters        parts, coefficients et deux paramètres de
+                          lissage regroupés dans une seule configuration
 
 Tout est testable en JUnit sans émulateur. C'est le premier morceau de
 code que je recommande d'écrire, avant même l'interface : il est le

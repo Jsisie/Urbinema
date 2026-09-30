@@ -86,7 +86,7 @@ cinématographiques, accompagnée d'une capacité d'analyse avancée.
 CALCUL DU RANG
 ------------------------------------------------------------------------
 
-Formule ARRÊTÉE (v0.3), implémentable en l'état.
+Formule ARRÊTÉE (v0.3.1), implémentée.
 Le rang additionne trois axes :
 
   VOLUME PONDÉRÉ  combien de films validés, chacun compté à hauteur
@@ -96,14 +96,41 @@ Le rang additionne trois axes :
   PROFONDEUR      à quel point ces territoires ont été creusés.
                   Non bornée.
 
+LISSAGE DU DÉMARRAGE :
+
+  volume      = 1,02 * ln(1 + Vw / 25)
+  diversité   = Dmax * (D / Dmax)^1,2
+
+La réserve 25 évite qu'un premier film encaisse l'essentiel du
+logarithme. La puissance 1,2 rend les premières découvertes progressives,
+sans modifier la valeur d'une couverture complète du catalogue.
+
+SEUILS DES RANGS 2 À 10 :
+
+  1,80 / 3,00 / 4,20 / 5,40 / 6,60 / 7,80 / 9,20 / 10,80 / 12,50
+
+Zéro film validé donne strictement zéro point.
+
+PONDÉRATION DE DURÉE :
+
+  1–10 min -> x0,10
+  15 min   -> x0,15
+  20 min   -> x0,20
+  30+ min  -> x1
+
+Les valeurs intermédiaires sont interpolées. Le coefficient agit sur
+volume, diversité et profondeur. Cette décision évite qu'un film primitif
+d'une minute rapporte autant qu'un long métrage simplement parce qu'il
+ouvre un nouveau pays, une décennie ou un réalisateur.
+
 RÈGLE CENTRALE — découverte et approfondissement sont séparés :
 
-  1er film japonais   -> diversité acquise, profondeur nulle
-  2e et suivants      -> plus aucune diversité, que de la profondeur
+  exposition <= 1     -> diversité progressive, profondeur nulle
+  exposition > 1      -> diversité acquise, surplus en profondeur
 
-Celui qui voit un film par pays aura une diversité maximale et aucune
-profondeur. Celui qui voit 50 films japonais aura l'inverse. Les deux
-profils sont distingués, c'était tout l'objectif.
+Celui qui voit un long métrage par pays aura une diversité maximale et
+aucune profondeur. Celui qui voit 50 films japonais aura l'inverse. Les
+deux profils sont distingués, c'était tout l'objectif.
 
 POIDS DU FILM : un Marvel vaut 1, une œuvre rare et exigeante jusqu'à
 3,16 fois plus. L'écart est volontairement borné — quelques films
@@ -123,9 +150,8 @@ Analyse et justification ... RETOUR_FORMULE_RANG.txt
 ENCORE OUVERT
 ------------------------------------------------------------------------
 
-- Calibrage : 20 valeurs, dont 9 seuils de rang qui demandent un vrai
-  arbitrage cinéphile. À faire par simulation sur profils types.
-  C'est le gros du travail restant.
+- Calibrage : les deux lissages sont actés. Les 9 seuils de rang restent
+  à confirmer par simulation et nouveau test réel.
 - Qui attribue les 4 notes de poids de chaque film ? Deux sont
   dérivables automatiquement, deux relèvent du jugement.
   Piste : un seul curseur de 1 à 5 par film.

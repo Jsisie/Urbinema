@@ -12,7 +12,7 @@ Tous les documents vivent dans specs/ :
   - SPECIFICATION_DEVELOPPEUR.md       (v1.5 — livrable 0.1.11)
   - ROADMAP_V2_V3.md
   - ASSETS.md
-  - FORMULE_MATHEMATIQUE.txt           (v0.3, formule de rang)
+  - FORMULE_MATHEMATIQUE.txt           (v0.3.1, formule de rang lissée)
   - FORMULE_NIVEAUX_XP.txt             (v1.1, niveaux 1 à 50 + XP films)
   - RETOUR_FORMULE_RANG.txt            (analyse de la formule)
   - RETOUR_CAHIER_TECHNIQUE.txt        (état des lieux stack)
@@ -268,25 +268,36 @@ F. MODÈLE DE CONTENU — GENRES, MOUVEMENTS, FILMS
 G. CALCUL DU RANG
 ========================================================================
 
-35. FORMULE ARRÊTÉE — v0.3
+35. FORMULE ARRÊTÉE — v0.3.1
     Implémentable en l’état, sans réserve technique.
     Formulation complète : FORMULE_MATHEMATIQUE.txt
     Justification des choix : RETOUR_FORMULE_RANG.txt
 
     TROIS AXES :
-      Volume pondéré  V_w = somme des poids atténués des films validés
-      Diversité       D   = somme des raretés des territoires TOUCHÉS
-                            (binaire, bornée, sature)
-      Profondeur      P   = somme pondérée de sqrt(n_x - 1)
+      Volume pondéré  V_w = somme de k_f * poids atténué
+      Diversité       D   = somme pondérée de min(1, exposition_x)
+                            (progressive, bornée, sature)
+      Profondeur      P   = somme pondérée de sqrt(exposition_x - 1)
                             (non bornée, croît toujours)
 
-      S = lambda_V * log(1 + V_w) + lambda_D * D + lambda_P * log(1 + P)
+      D_lisse = D_max * (D / D_max)^1.2
+      S = 1.02 * log(1 + V_w / 25)
+        + 6 * D_lisse
+        + 1.2 * log(1 + P)
       avec lambda_V < lambda_D et lambda_V < lambda_P
 
+    LISSAGES DU DÉMARRAGE — ACTÉS LE 30/09/2026 :
+      - réserve de volume K_V = 25 : le logarithme garde une pente finie
+        sur les premiers films et rejoint l'ancien total vers 1100 films ;
+      - exposant de diversité gamma_D = 1.2 : les nombreux territoires
+        ouverts par le premier film n'entrent plus immédiatement à pleine
+        valeur ;
+      - normalisation par D_max : une couverture complète rapporte
+        strictement autant qu'avant.
+
     SÉPARATION DÉCOUVERTE / APPROFONDISSEMENT :
-      1er film d’un territoire  -> diversité acquise, profondeur 0
-      2e et suivants            -> plus aucune diversité, que de la
-                                   profondeur
+      exposition <= 1  -> diversité progressive, profondeur 0
+      exposition > 1   -> diversité acquise, surplus en profondeur
       C’est ce qui rend les deux axes réellement indépendants.
 
     POIDS DU FILM :
@@ -296,6 +307,13 @@ G. CALCUL DU RANG
       accessible et le plus exigeant. C’est le « facteur 3 » voulu.
       Le poids se branche sur le VOLUME, seule somme qui porte sur les
       films — donc aucun double comptage avec la rareté.
+
+    PONDÉRATION DE DURÉE — ACTÉE LE 30/09/2026 :
+      k_f = 0.10 jusqu'à 10 min ; 0.15 à 15 min ; 0.20 à 20 min ;
+      interpolation jusqu'à 1.00 à 30 min ; 1.00 ensuite.
+      Le coefficient agit sur volume, diversité et profondeur. Dix films
+      d'une minute forment une exposition complète au lieu d'ouvrir chacun
+      tous leurs territoires comme un long métrage.
 
     ÉQUILIBRE DES DIMENSIONS :
       w_x = Omega_X / somme des Q_x de la dimension X
@@ -314,6 +332,9 @@ G. CALCUL DU RANG
       des années sous les pieds du seul utilisateur.
 
     CONVERSION : 9 seuils fixes T1..T9, pas de sigmoïde.
+      1.80 / 3.00 / 4.20 / 5.40 / 6.60 / 7.80 / 9.20 / 10.80 / 12.50
+      Les premiers seuils ont été repoussés après le test à 35 films ;
+      le rang 10 reste à 12.50.
     Le rang 10 est donc réellement atteignable.
 
 36. CHOIX ÉCARTÉ, ET POURQUOI
@@ -327,8 +348,8 @@ G. CALCUL DU RANG
     des dimensions), et le cliquet sur w_x neutralise la dilution.
 
 37. ENCORE À TRANCHER (produit, pas technique)
-    - Calibrage : 20 valeurs, dont 9 seuils qui demandent un vrai
-      arbitrage cinéphile. Par simulation sur profils types.
+    - Calibrage : les deux lissages sont actés. Les 9 seuils demandent
+      encore confirmation par simulation et par un nouveau parcours réel.
       Les cibles relèvent du jugement de Léo, le code ne fait que
       résoudre.
     - Qui attribue H, A, R, C à chaque film ? H et C sont dérivables
@@ -720,8 +741,9 @@ E. CE QUI RESTE OUVERT (cœur fonctionnel, pas le cloud)
 ========================================================================
 
 RÉGLÉ — le calcul du rang.
-  La formule v0.3 est arrêtée et implémentable. Voir section G ci-dessous
-  et FORMULE_MATHEMATIQUE.txt. Il ne reste que du calibrage.
+  La formule v0.3.1 est arrêtée et implémentée. Voir section G ci-dessous
+  et FORMULE_MATHEMATIQUE.txt. Il ne reste que la confirmation des seuils
+  par simulation et nouveau parcours réel.
 
 RESTE OUVERT
   Liste complète, classée par priorité : FAQ_CAHIER_FONCTIONNEL.txt.

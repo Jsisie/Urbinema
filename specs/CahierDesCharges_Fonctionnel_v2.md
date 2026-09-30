@@ -7,7 +7,7 @@
 ## Spécification fonctionnelle du produit
 
 **Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 38, 1613 films, 28 collections, parcours 1)
+**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 42, 1613 films, 28 collections, parcours 1)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -103,7 +103,7 @@ Documents liés :
 - `ASSETS.md` — dossiers et branchement des médias
 - `FAQ_CAHIER_FONCTIONNEL.txt` — questions encore ouvertes
 - `Listes_Fonctionnelles/` — rangs, badges, caractéristiques cinématographiques et genres
-- `FORMULE_MATHEMATIQUE.txt` — formulation du calcul du rang (v0.3)
+- `FORMULE_MATHEMATIQUE.txt` — formulation du calcul du rang (v0.3.1)
 - `FORMULE_NIVEAUX_XP.txt` — formulation des niveaux et de la courbe d'XP
 - `RETOUR_FORMULE_RANG.txt` — analyse et justification de cette formule
 
@@ -418,7 +418,9 @@ Chaque film possède au minimum :
 - un identifiant technique ;
 - un code éditorial stable ;
 - un titre original, affiché en premier ;
-- un titre français facultatif, affiché en second ;
+- un titre français facultatif, affiché en second. Lorsqu'il est absent,
+  l'application utilise le titre original dans toutes les listes et n'affiche
+  pas de second titre vide sur la fiche ;
 - une année de référence ;
 - une durée en minutes ;
 - un synopsis ;
@@ -776,6 +778,11 @@ Il affiche notamment :
 - décennies explorées ;
 - collections complétées.
 
+Les Réglages permettent de réinitialiser toute la progression locale. Cette
+action est irréversible et exige un dialogue de confirmation traduit, dont la
+validation reste inaccessible pendant 10 secondes avec un compte à rebours
+visible. Le catalogue éditorial et le profil restent en place.
+
 ------
 
 ## 6.3. Film vu (validé)
@@ -1088,7 +1095,9 @@ Les rangs 1 à 7 décrivent une **culture qui s'élargit**.
 
 ## 9.4. Calcul du rang
 
-La formule est **arrêtée** et implémentable en l'état. Cette section en donne la lecture fonctionnelle ; la formulation complète est dans `FORMULE_MATHEMATIQUE.txt` (v0.3), et la justification des choix dans `RETOUR_FORMULE_RANG.txt`.
+La formule est **arrêtée** et implémentée. Cette section en donne la lecture
+fonctionnelle ; la formulation complète est dans `FORMULE_MATHEMATIQUE.txt`
+(v0.3.1), et la justification des choix dans `RETOUR_FORMULE_RANG.txt`.
 
 ### Principe retenu
 
@@ -1102,19 +1111,57 @@ Le rang ne se calcule pas sur un compteur de films. Il combine **trois axes**, d
 
 > Voir beaucoup de films proches ne suffit pas. Voir un film de chaque zone non plus. Le rang élevé demande les deux : **étendue et approfondissement**.
 
+### Lissages du démarrage (0.3.1)
+
+Deux lissages empêchent les tout premiers films de franchir plusieurs rangs :
+
+- le volume utilise `1,02 × ln(1 + Vw / 25)`. La réserve `25` réduit la pente
+  initiale du logarithme, puis la courbe rejoint l'ancien total vers
+  1 100 films ;
+- la diversité brute `D` devient progressivement effective :
+  `Dmax × (D / Dmax)^1,2`. Un premier film peut ouvrir dix territoires sans
+  encaisser instantanément leur valeur entière. Couvrir toute la carte
+  rapporte néanmoins strictement autant qu'avant.
+
+Ordres de grandeur visés sur la collection Initiation : environ 165 points
+pour le premier film, 100–125 pour les suivants les plus riches en
+découvertes et 60 pour le dixième. Vers le 500e film, le volume seul apporte
+environ 2 points ; les gains significatifs viennent alors de nouveaux pays,
+courants, décennies ou époques.
+
+### Pondération des films courts
+
+La durée pondère les trois axes du rang. Jusqu'à 10 minutes, un film compte
+`×0,10` ; à 15 minutes `×0,15` ; à 20 minutes `×0,20` ; entre 20 et 30
+minutes le coefficient rejoint progressivement `×1`, appliqué à partir de
+30 minutes.
+
+Cette règle vient du test de **Cinéma des premiers temps** : un film d'une
+minute pouvait rapporter 171 points parce qu'il ouvrait intégralement pays,
+décennie, réalisateur, genres et formes comme un long métrage. Désormais dix
+films d'une minute représentent ensemble une exposition complète à leurs
+territoires communs. La pondération agit sur le volume, la diversité et la
+profondeur ; elle reste donc indépendante de l'ordre de validation.
+
 ### Séparation stricte découverte / approfondissement
 
-C'est la mécanique centrale. Un territoire — un pays, un réalisateur, un mouvement — alimente **soit** la diversité, **soit** la profondeur. Jamais les deux.
+C'est la mécanique centrale. Un territoire — un pays, un réalisateur, un
+mouvement — alimente d'abord la diversité jusqu'à une unité d'exposition,
+puis la profondeur. Jamais les deux pour la même fraction d'exposition.
 
-| Films vus d'un même territoire | Diversité | Profondeur |
+| Exposition cumulée d'un territoire | Diversité | Profondeur |
 | --- | --- | --- |
 | 0 | 0 | 0 |
+| 0,1 (un film d'une minute) | 10 % acquise | 0 |
 | 1 | **acquise, définitivement** | 0 |
 | 2 | acquise | commence |
 | 10 | acquise | élevée |
-| 50 | acquise | très élevée |
 
-Le premier film japonais ouvre le territoire « Japon ». Le deuxième n'apporte plus aucune diversité — il commence à apporter de la profondeur. Un utilisateur qui voit un seul film par pays aura une diversité maximale et une profondeur nulle ; celui qui voit cinquante films japonais aura l'inverse. Les deux profils sont distingués, ce qui était tout l'objectif.
+Un long métrage japonais ouvre entièrement « Japon ». Un film japonais d'une
+minute en ouvre 10 %. Une fois l'unité atteinte, les films suivants
+approfondissent le territoire. Les profils larges et profonds restent ainsi
+distingués sans qu'une poignée de vues primitives de quelques secondes ne
+vaille plusieurs longs métrages.
 
 ### Poids intrinsèque du film
 
@@ -1148,15 +1195,22 @@ Ce dernier point couvre aussi le retrait accidentel d'un film et les corrections
 
 Le score global est converti par une **table de neuf seuils**, et non par une courbe. C'est plus lisible, ajustable rang par rang, et cela rend le rang 10 réellement atteignable.
 
-En V1, les rangs 8 à 10 restent attribués aux scores les plus élevés. Le rang
-10 correspond à un parcours presque exhaustif : couverture de la quasi-totalité
-des pays, caractéristiques, époques et autres dimensions du catalogue. Cette
-approximation quantitative est acceptée pour démarrer ; les seuils seront
-affinés sur des données réelles.
+Seuils des rangs 2 à 10 après le test du 30 septembre 2026 :
+**1,80 / 3,00 / 4,20 / 5,40 / 6,60 / 7,80 / 9,20 / 10,80 / 12,50**.
+Le score vaut strictement zéro lorsqu'aucun film n'est validé.
+
+En V1, les rangs 8 à 10 restent attribués aux scores les plus élevés. Le
+lissage conserve le total de volume de l'ancienne formule vers 1 100 films et
+la valeur maximale de la diversité : les trois derniers rangs restent donc
+atteignables dans un catalogue de 1 600 films. Les cibles de calibration sont
+environ 500–650 films pour le rang 8, 750–900 pour le rang 9 et 1 050–1 200
+pour le rang 10, à condition d'avoir un parcours suffisamment diversifié.
 
 ### Points encore ouverts
 
-- **Calibrage** : vingt valeurs, dont neuf seuils qui demandent un vrai arbitrage cinéphile. À faire par simulation sur des profils types, pas à l'intuition.
+- **Calibrage des seuils** : les deux courbes sont actées ; les neuf seuils
+  restent à confirmer après un nouveau parcours réel et des simulations de
+  profils types.
 - **Attribution du poids** : quatre notes par film sur plusieurs milliers de films, c'est le coût caché de la formule. Deux des quatre sont dérivables automatiquement ; les deux autres demandent un jugement. Piste : un seul curseur manuel de 1 à 5 par film.
 
 ------
@@ -1173,6 +1227,10 @@ Toutes les conditions portent sur les films du **catalogue Urbinema** validés.
 
 Un badge obtenu est **définitivement acquis**. Le retrait ou la correction
 ultérieure d'un film ne supprime jamais une date d'obtention existante.
+
+Chaque nouvelle obtention est annoncée une seule fois par une boîte localisée
+qui affiche le nom et la petite illustration du badge. Plusieurs obtentions
+simultanées sont présentées successivement.
 
 ------
 
@@ -1320,7 +1378,8 @@ Sur le profil, la hiérarchie est : **Pseudo → Rang → niveau/XP → jusqu’
 badges vitrine → statistiques**.
 
 Le rang est l'élément identitaire principal. Les badges se placent en dessous,
-en sélection (3 max, choisis depuis Tous les badges).
+en sélection (3 max, choisis depuis Tous les badges). Un appui long sur un
+badge vitrine rappelle sa condition d'obtention.
 
 Détail d'interface : voir `CahierDesCharges_IHM.md`.
 

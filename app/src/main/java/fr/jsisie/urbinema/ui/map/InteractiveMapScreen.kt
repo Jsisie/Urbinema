@@ -441,7 +441,7 @@ private fun NodeSheet(
                                 .joinToString(" · "),
                             color = colors.onBackgroundMuted,
                             style = MaterialTheme.typography.bodyMedium,
-                            maxLines = 1,
+                            maxLines = 2,
                             overflow = TextOverflow.Ellipsis,
                         )
                     }

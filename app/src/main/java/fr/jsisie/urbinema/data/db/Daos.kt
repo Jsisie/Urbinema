@@ -471,6 +471,15 @@ interface RankConfigDao {
     @Query("SELECT * FROM rank_engine_configs WHERE isActive = 1 ORDER BY rankEngineConfigId DESC LIMIT 1")
     suspend fun activeRankConfig(): RankEngineConfigEntity?
 
+    @Query("SELECT * FROM rank_engine_configs WHERE code = :code LIMIT 1")
+    suspend fun rankConfigByCode(code: String): RankEngineConfigEntity?
+
+    @Query("UPDATE rank_engine_configs SET isActive = 0 WHERE isActive = 1")
+    suspend fun deactivateRankConfigs()
+
+    @Query("UPDATE rank_engine_configs SET isActive = 1 WHERE rankEngineConfigId = :configId")
+    suspend fun activateRankConfig(configId: Long)
+
     @Query(
         """SELECT * FROM rank_thresholds
            WHERE rankEngineConfigId = :configId ORDER BY rankOrder"""

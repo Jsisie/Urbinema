@@ -97,6 +97,7 @@ import fr.jsisie.urbinema.ui.model.UrbinemaViewModel
 import fr.jsisie.urbinema.ui.screens.AppGuideDialog
 import fr.jsisie.urbinema.ui.screens.AtlasScreen
 import fr.jsisie.urbinema.ui.screens.BadgesScreen
+import fr.jsisie.urbinema.ui.screens.BadgeUnlockedDialog
 import fr.jsisie.urbinema.ui.screens.CollectionScreen
 import fr.jsisie.urbinema.ui.screens.CollectionsScreen
 import fr.jsisie.urbinema.ui.screens.DirectorScreen
@@ -192,20 +193,10 @@ fun UrbinemaApp(model: UrbinemaViewModel = PreviewUrbinemaViewModel) {
                             }
                         },
                     )
-                } ?: model.unlockedBadgeCelebration?.let { name ->
-                    val resources = LocalContext.current.resources
-                    val title = resources.getString(R.string.badge_unlocked_title)
-                    val body = resources.getString(R.string.badge_unlocked_body, name)
-                    val confirm = resources.getString(R.string.confirm)
-                    AlertDialog(
-                        onDismissRequest = model::dismissBadgeCelebration,
-                        title = { Text(title) },
-                        text = { Text(body) },
-                        confirmButton = {
-                            TextButton(onClick = model::dismissBadgeCelebration) {
-                                Text(confirm)
-                            }
-                        },
+                } ?: model.unlockedBadgeCelebration?.let { badge ->
+                    BadgeUnlockedDialog(
+                        badge = badge,
+                        onDismiss = model::dismissBadgeCelebration,
                     )
                 }
                 if (model.followLimitReached) {

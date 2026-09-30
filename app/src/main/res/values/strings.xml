@@ -132,7 +132,7 @@
     <string name="search_result_year">%1$d</string>
     <string name="rank_explanation_title">Comment le rang avance</string>
     <string name="rank_explanation_body">Le rang décrit où tu en es dans ton parcours de cinéphile. Il y a 10 rangs, du Novice au Maître, et il ne recule jamais.\n\nIl se calcule à partir de ce que tu as réellement vu : le volume de films, la diversité des territoires (pays, époques, courants, auteurs) et la profondeur avec laquelle tu les as parcourus. Un film plus exigeant ou plus rare pèse un peu plus qu’un film très accessible, sans jamais tout écraser.\n\nLes badges et les quêtes enrichissent ce parcours, mais le rang reste une lecture globale de ton exploration. Le niveau et l’XP, eux, mesurent surtout l’assiduité — ce n’est pas la même chose que le rang.</string>
-    <string name="reset_data_body">Ceci efface tes films vus, badges, collections terminées, XP, rang et quêtes. Le catalogue éditorial reste en place. Cette action est irréversible.</string>
+    <string name="reset_data_body">Tous tes films vus, badges, collections terminées, XP, rangs et quêtes seront définitivement supprimés. Cette action est irréversible : aucun retour en arrière ne sera possible. Le catalogue éditorial restera en place.</string>
     <string name="rank_explorer">Explorateur</string>
     <string name="preview_nickname">Léo</string>
     <string name="rank_out_of_ten">Rang %1$d sur 10</string>
@@ -189,6 +189,10 @@
     <string name="language_options">Français · English</string>
     <string name="data">Données</string>
     <string name="reset_data">Réinitialiser les données</string>
+    <string name="reset_data_dialog_title">Réinitialiser toutes les données ?</string>
+    <string name="reset_data_confirm">Confirmer</string>
+    <string name="reset_data_cancel">Annuler</string>
+    <string name="reset_data_countdown">(%1$d)</string>
     <string name="about">À propos</string>
     <string name="about_app_name">Urbinema</string>
     <string name="about_version">Version %1$s</string>

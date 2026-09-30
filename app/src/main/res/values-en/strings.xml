@@ -132,7 +132,7 @@
     <string name="search_result_year">%1$d</string>
     <string name="rank_explanation_title">How rank moves</string>
     <string name="rank_explanation_body">Rank describes where you are on your cinephile path. There are 10 ranks, from Novice to Master, and it never goes backwards.\n\nIt is calculated from what you have actually watched: the volume of films, the diversity of territories (countries, eras, currents, authors) and how deeply you have explored them. A more demanding or rarer film weighs a little more than a very accessible one, without ever dominating the score.\n\nBadges and quests enrich this path, but rank remains a global reading of your exploration. Level and XP mostly measure consistency — that is not the same thing as rank.</string>
-    <string name="reset_data_body">This clears watched films, badges, completed collections, XP, rank and quests. The editorial catalog stays in place. This cannot be undone.</string>
+    <string name="reset_data_body">All watched films, badges, completed collections, XP, ranks, and quests will be permanently deleted. This action is irreversible and cannot be undone. The editorial catalog will remain installed.</string>
     <string name="rank_explorer">Explorer</string>
     <string name="preview_nickname">Léo</string>
     <string name="rank_out_of_ten">Rank %1$d of 10</string>
@@ -189,6 +189,10 @@
     <string name="language_options">Français · English</string>
     <string name="data">Data</string>
     <string name="reset_data">Reset data</string>
+    <string name="reset_data_dialog_title">Reset all data?</string>
+    <string name="reset_data_confirm">Confirm</string>
+    <string name="reset_data_cancel">Cancel</string>
+    <string name="reset_data_countdown">(%1$d)</string>
     <string name="about">About</string>
     <string name="about_app_name">Urbinema</string>
     <string name="about_version">Version %1$s</string>

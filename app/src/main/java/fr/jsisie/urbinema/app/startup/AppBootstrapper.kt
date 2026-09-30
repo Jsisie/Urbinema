@@ -45,8 +45,10 @@ class AppBootstrapper(
                 }
             }
 
-            if (rankDao.activeRankConfig() == null && rankDao.latestCatalogVersion() != null) {
-                insertDefaultRankConfiguration()
+            if (rankDao.latestCatalogVersion() != null &&
+                rankDao.activeRankConfig()?.code != RankDefaults.CONFIG_CODE
+            ) {
+                activateDefaultRankConfiguration()
             }
         } catch (error: CancellationException) {
             throw error
@@ -56,13 +58,18 @@ class AppBootstrapper(
         rankDao.latestCatalogVersion() != null
     }
 
-    private suspend fun insertDefaultRankConfiguration() {
+    private suspend fun activateDefaultRankConfiguration() {
         val parameters = RankDefaults.parameters
         val shares = parameters.dimensionShares
         val rankDao = database.rankConfigDao()
+        rankDao.deactivateRankConfigs()
+        rankDao.rankConfigByCode(RankDefaults.CONFIG_CODE)?.let { existing ->
+            rankDao.activateRankConfig(existing.rankEngineConfigId)
+            return
+        }
         val configId = rankDao.insertRankConfig(
             RankEngineConfigEntity(
-                code = "RANK_V03_INITIAL",
+                code = RankDefaults.CONFIG_CODE,
                 volumeLambda = parameters.volumeLambda,
                 diversityLambda = parameters.diversityLambda,
                 depthLambda = parameters.depthLambda,

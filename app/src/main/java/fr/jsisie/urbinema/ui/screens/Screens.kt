@@ -126,7 +126,10 @@ import fr.jsisie.urbinema.ui.model.TerritoryUi
 import fr.jsisie.urbinema.ui.theme.RankDisplayStyle
 import fr.jsisie.urbinema.ui.theme.UrbinemaThemeMode
 import fr.jsisie.urbinema.ui.theme.UrbinemaThemeTokens
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+
+private const val RESET_CONFIRMATION_DELAY_SECONDS = 10
 
 private val pageModifier: Modifier
     @Composable get() = Modifier.fillMaxSize().background(UrbinemaThemeTokens.colors.background)
@@ -503,6 +506,19 @@ fun ProfileScreen(
     onBadges: () -> Unit,
     onRank: () -> Unit,
 ) {
+    var conditionBadge by remember { mutableStateOf<BadgeUi?>(null) }
+    conditionBadge?.let { badge ->
+        AlertDialog(
+            onDismissRequest = { conditionBadge = null },
+            title = { Text(badge.name) },
+            text = { Text(badge.condition) },
+            confirmButton = {
+                TextButton(onClick = { conditionBadge = null }) {
+                    Text(stringResource(R.string.confirm))
+                }
+            },
+        )
+    }
     LazyColumn(
         modifier = pageModifier,
         contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen),
@@ -591,7 +607,7 @@ fun ProfileScreen(
                     verticalAlignment = Alignment.Top,
                 ) {
                     shown.forEach { badge ->
-                        BadgeTile(badge)
+                        BadgeTile(badge, onLongPress = { conditionBadge = badge })
                     }
                 }
             }
@@ -924,7 +940,13 @@ fun CollectionScreen(
                         )
                     }
                     if (film.director.isNotBlank()) {
-                        Text(film.director, color = UrbinemaThemeTokens.colors.onBackgroundMuted, textAlign = TextAlign.End)
+                        Text(
+                            film.director,
+                            color = UrbinemaThemeTokens.colors.onBackgroundMuted,
+                            textAlign = TextAlign.End,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis,
+                        )
                     }
                 }
             }
@@ -1329,9 +1351,36 @@ private fun ShowcaseBadgesDialog(
 }
 
 @Composable
-private fun BadgeTile(badge: BadgeUi) {
+fun BadgeUnlockedDialog(badge: BadgeUi, onDismiss: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.badge_unlocked_title)) },
+        text = {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.md),
+            ) {
+                Text(
+                    stringResource(R.string.badge_unlocked_body, badge.name),
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                BadgeArtwork(badge, Modifier.size(72.dp))
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) { Text(stringResource(R.string.confirm)) }
+        },
+    )
+}
+
+@Composable
+private fun BadgeTile(badge: BadgeUi, onLongPress: () -> Unit) {
     Column(
-        modifier = Modifier.width(88.dp),
+        modifier = Modifier
+            .width(88.dp)
+            .pointerInput(badge.code) {
+                detectTapGestures(onLongPress = { onLongPress() })
+            },
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs),
     ) {
@@ -1586,16 +1635,41 @@ fun SettingsScreen(
     var editedUsername by remember(username) { mutableStateOf(username) }
     var editedAge by remember(ageYears) { mutableStateOf(ageYears?.toString().orEmpty()) }
     var confirmReset by remember { mutableStateOf(false) }
+    var resetCountdown by remember { mutableStateOf(RESET_CONFIRMATION_DELAY_SECONDS) }
+    LaunchedEffect(confirmReset) {
+        if (!confirmReset) return@LaunchedEffect
+        resetCountdown = RESET_CONFIRMATION_DELAY_SECONDS
+        while (resetCountdown > 0) {
+            delay(1_000)
+            resetCountdown -= 1
+        }
+    }
     if (confirmReset) {
         AlertDialog(
             onDismissRequest = { confirmReset = false },
-            title = { Text(stringResource(R.string.reset_data)) },
+            title = { Text(stringResource(R.string.reset_data_dialog_title)) },
             text = { Text(stringResource(R.string.reset_data_body)) },
             confirmButton = {
-                TextButton(onClick = { confirmReset = false; onResetProgress() }) { Text(stringResource(R.string.confirm)) }
+                TextButton(
+                    enabled = resetCountdown == 0,
+                    onClick = {
+                        confirmReset = false
+                        onResetProgress()
+                    },
+                ) {
+                    Text(
+                        if (resetCountdown > 0) {
+                            stringResource(R.string.reset_data_countdown, resetCountdown)
+                        } else {
+                            stringResource(R.string.reset_data_confirm)
+                        },
+                    )
+                }
             },
             dismissButton = {
-                TextButton(onClick = { confirmReset = false }) { Text(stringResource(R.string.cancel)) }
+                TextButton(onClick = { confirmReset = false }) {
+                    Text(stringResource(R.string.reset_data_cancel))
+                }
             },
         )
     }

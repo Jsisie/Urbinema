@@ -1,15 +1,42 @@
 CALCUL DU RANG CINÉPHILE — URBINEMA
-Version : 0.3 (version de référence, implémentable en l'état)
-Date : 2026-09-16
+Version : 0.3.1 (lissages du volume et de la diversité)
+Date : 2026-09-30
 Analyse et justification des choix : RETOUR_FORMULE_RANG.txt
 
 ------------------------------------------------------------------------
-CHANGEMENTS DEPUIS LA v0.2
+CHANGEMENTS DEPUIS LA v0.3
 ------------------------------------------------------------------------
 
-  1. DIVERSITÉ ET PROFONDEUR SONT ENFIN ORTHOGONALES.
-     La diversité utilise désormais la Découverte binaire du §9 de la v0.2,
-     définie mais jamais branchée. G(n) et g(n) sont supprimés.
+  1. LE LOGARITHME DU VOLUME EST DÉCALÉ.
+     ln(1 + V_w) donnait une pente démesurée au départ : environ 774
+     millièmes de score au premier film, puis 317 et 204. Il devient
+     ln(1 + V_w / K_V), avec K_V = 25. λ_V passe de 0.6 à 1.02 afin
+     de retrouver presque exactement l'ancien volume total vers
+     V_w = 2500 (environ 1100 films).
+
+  2. LA DIVERSITÉ BRUTE EST LISSÉE.
+     Le premier film ouvre simultanément de nombreux territoires. Avant,
+     leur valeur entière entrait immédiatement dans le score. Le score
+     utilise désormais D_l = D_max * (D / D_max)^gamma_D, avec
+     gamma_D = 1.2. Le début est progressif et une couverture complète
+     conserve exactement sa valeur antérieure.
+
+  3. LES FILMS COURTS SONT PONDÉRÉS PAR LEUR DURÉE.
+     Le test de la collection Cinéma des premiers temps a montré qu'un film
+     d'une minute pouvait rapporter 171 millièmes : sa durée n'intervenait
+     dans aucun axe. Un coefficient k_f agit désormais sur le volume,
+     l'ouverture des territoires et leur profondeur. Dix films d'une minute
+     forment ensemble une exposition complète au lieu d'ouvrir chacun tous
+     leurs territoires à pleine valeur.
+
+------------------------------------------------------------------------
+RAPPEL DES CHANGEMENTS DEPUIS LA v0.2
+------------------------------------------------------------------------
+
+  1. DIVERSITÉ ET PROFONDEUR SONT ORTHOGONALES.
+     La diversité v0.3 utilisait la Découverte binaire du §9 de la v0.2,
+     définie mais jamais branchée. La pondération de durée la généralise
+     ensuite en exposition progressive. G(n) et g(n) sont supprimés.
      Diversité = « combien de territoires touchés », bornée.
      Profondeur = « à quel point creusés », non bornée.
      Les deux ne mesurent plus la même chose.
@@ -77,6 +104,30 @@ W'_f = W_f ^ ρ
 //   blockbuster contemporain   W_f ≈ 1.5   → W'_f ≈ 1.22
 //   grand classique connu      W_f ≈ 5     → W'_f ≈ 2.24
 //   œuvre rare et exigeante    W_f ≈ 9.5   → W'_f ≈ 3.08
+
+
+// ============================================================
+// 1.a COEFFICIENT DE DURÉE
+// ============================================================
+
+// La durée ne doit pas rendre un film long « meilleur », mais un film
+// d'une minute ne peut pas compter comme un long métrage entier sur les
+// trois axes du rang. Le coefficient k_f est borné dans [0.10, 1].
+
+k_f =
+    0.10                                      si durée <= 10 min
+    interpolation(10, 0.10, 20, 0.20)        si 10 < durée <= 20
+    interpolation(20, 0.20, 30, 1.00)        si 20 < durée < 30
+    1.00                                      si durée >= 30 min
+
+// Points d'ancrage actés :
+//   1–10 min → 0.10
+//   15 min   → 0.15
+//   20 min   → 0.20
+//   25 min   → 0.60
+//   30+ min  → 1.00
+//
+// Ces valeurs sont regroupées dans RankDurationDefaults.
 
 
 // ============================================================
@@ -239,22 +290,22 @@ Q_x_ref = max( Q_x^(v1), Q_x^(v2), ..., Q_x^(vk) )
 
 
 // ============================================================
-// 5. OCCURRENCE CHEZ UN UTILISATEUR
+// 5. EXPOSITION CHEZ UN UTILISATEUR
 // ============================================================
 
-n_x(u) = |{f ∈ F_u : f possède x}|
+E_x(u) = Σ_{f ∈ F_u et f possède x} k_f
 
 X_u    = ensemble des caractéristiques présentes dans F_u
-       = { x : n_x(u) >= 1 }
+       = { x : E_x(u) > 0 }
 
 
 // Exemples :
-//   n_Ozu(u)   = nombre de films d'Ozu validés
-//   n_Japon(u) = nombre de films japonais validés
+//   dix films d'une minute d'Ozu  → E_Ozu = 1
+//   un long métrage japonais      → E_Japon = 1
 
 // RÈGLES DE CARDINALITÉ V1 :
 //
-// - PAYS : seul le pays marqué isPrimary compte dans n_x.
+// - PAYS : seul le pays marqué isPrimary compte dans E_x.
 //   Une coproduction ne peut donc pas ouvrir plusieurs pays avec un film.
 // - CONTINENT : dérivé du pays principal et de ses liaisons continentales.
 // - RÉALISATEUR : chaque réalisateur lié reçoit une occurrence.
@@ -274,29 +325,26 @@ X_u    = ensemble des caractéristiques présentes dans F_u
 
 // C'est le point central de la v0.3.
 
-// DÉCOUVERTE — binaire, bornée. Un territoire est touché, ou non.
+// DÉCOUVERTE — progressive jusqu'à une exposition complète, puis bornée.
 
 Decouverte_x(u) =
-    1  si n_x(u) >= 1
-    0  sinon
+    min(1, E_x(u))
 
 
-// PROFONDEUR — la première occurrence ne compte PAS.
+// PROFONDEUR — la première unité d'exposition ne compte PAS.
 
-h(n) = sqrt( max(0, n - 1) )
+h(E) = sqrt( max(0, E - 1) )
 
 
 // Table de vérité :
 //
-//   n_x    Découverte    Profondeur
-//    0          0           0
-//    1          1           0.000
-//    2          1           1.000
-//    3          1           1.414
-//    5          1           2.000
-//   10          1           3.000
-//   20          1           4.359
-//   50          1           7.000
+//   E_x    Découverte    Profondeur
+//   0.0        0.0          0
+//   0.1        0.1          0
+//   1.0        1.0          0.000
+//   2.0        1.0          1.000
+//   3.0        1.0          1.414
+//  10.0        1.0          3.000
 
 
 // Aucune des deux ne dépend de l'ordre de validation des films.
@@ -345,12 +393,7 @@ w_x = Ω_X / Σ_{x' ∈ X} Q_x'_ref        pour x ∈ X
 // 8. DIVERSITÉ
 // ============================================================
 
-D(u) = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref * Decouverte_x(u)
-
-
-// Comme Decouverte_x(u) = 1 pour tout x ∈ X_u, cela se réduit à :
-
-D(u) = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref
+D(u) = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref * min(1, E_x(u))
 
 
 // LECTURE PRODUIT :
@@ -364,17 +407,18 @@ D(u) = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref
 // Le cliquet sur w_x_ref peut faire légèrement dépasser 1. Sans gravité.
 
 // PROPRIÉTÉ ESSENTIELLE : la diversité SATURE.
-// Le 1er film japonais rapporte de la diversité. Le 2e, plus rien.
-// Tout le reste bascule dans la profondeur.
+// Un long métrage japonais ouvre entièrement le territoire au premier film.
+// Un film d'une minute en ouvre 10 % ; dix films semblables l'ouvrent
+// entièrement. Au-delà d'une unité, le reste bascule dans la profondeur.
 
 
 // ============================================================
 // 9. PROFONDEUR
 // ============================================================
 
-P(u) = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref * h( n_x(u) )
+P(u) = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref * h( E_x(u) )
 
-     = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref * sqrt( max(0, n_x(u) - 1) )
+     = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref * sqrt( max(0, E_x(u) - 1) )
 
 
 // LECTURE PRODUIT :
@@ -391,9 +435,9 @@ P(u) = Σ_{x ∈ X_u}  w_x_ref * Q_x_ref * h( n_x(u) )
 // Le volume n'est plus un comptage brut : chaque film compte
 // à hauteur de son exigence.
 
-V_w(u) = Σ_{f ∈ F_u}  W'_f
+V_w(u) = Σ_{f ∈ F_u}  k_f * W'_f
 
-       = Σ_{f ∈ F_u}  W_f ^ 0.5
+       = Σ_{f ∈ F_u}  k_f * W_f ^ 0.5
 
 
 // Pour mémoire, le comptage brut reste conservé pour l'affichage :
@@ -412,11 +456,26 @@ V(u) = |F_u|
 // ============================================================
 
 // Volume et profondeur sont non bornés : on les compresse.
-// La diversité est déjà bornée dans [0,1] : on la laisse telle quelle.
+// Le volume reçoit une réserve K_V qui évite une pente explosive à zéro.
+// La diversité brute reste bornée, mais son entrée dans le score est
+// progressive afin qu'un premier film ne touche pas immédiatement la
+// valeur entière de tous ses territoires.
 
-S_V(u) = log( 1 + V_w(u) )
+K_V = 25
+gamma_D = 1.2
 
-S_D(u) = D(u)
+S_V(u) = log( 1 + V_w(u) / K_V )
+
+D_max = Σ_{x présent dans le catalogue} w_x_ref * Q_x_ref
+
+S_D(u) = D_l(u)
+       = D_max * ( D(u) / D_max ) ^ gamma_D
+
+// Propriétés :
+//   D = 0       → D_l = 0
+//   0 < D<Dmax  → D_l < D
+//   D = D_max   → D_l = D_max
+// La couverture complète garde donc strictement la même valeur.
 
 S_P(u) = log( 1 + P(u) )
 
@@ -438,38 +497,13 @@ S(u) = λ_V * S_V(u)
 // grand que λ_V et λ_P pour peser autant. Ce n'est pas une
 // incohérence, c'est une conséquence des domaines.
 
-// Valeurs de départ proposées, à calibrer :
+// Valeurs implémentées après le test réel du 30 septembre 2026 :
 //
-//   λ_V = 0.6
+//   λ_V = 1.02
 //   λ_D = 6.0
 //   λ_P = 1.2
-
-
-// ============================================================
-// 11.bis ÂGE (bonus de parcours, v0.4 / livrable 0.1.9)
-// ============================================================
-
-// L'âge est demandé à l'onboarding : un spectateur plus âgé a, même
-// sans être cinéphile, simplement eu plus d'années de cinéma. Le bonus
-// est volontairement petit : il ne doit jamais remplacer diversité ni
-// profondeur, surtout tant que le catalogue de démo reste trop étroit
-// pour tester vraiment les seuils de rang.
-
-S_A(u) = λ_A * ln( 1 + max(0, âge(u) - 16) / 20 )
-
-λ_A = 0.35
-
-// Ordres de grandeur :
-//   20 ans  → S_A ≈ 0.06
-//   40 ans  → S_A ≈ 0.28
-//   60 ans  → S_A ≈ 0.41
-//   80 ans  → S_A ≈ 0.50
-// Sans date de naissance : S_A = 0.
-
-S(u) = λ_V * S_V(u)
-     + λ_D * S_D(u)
-     + λ_P * S_P(u)
-     + S_A(u)
+//   K_V = 25
+//   gamma_D = 1.2
 
 
 // ============================================================
@@ -479,6 +513,11 @@ S(u) = λ_V * S_V(u)
 // Neuf seuils fixes :
 
 T_1 < T_2 < T_3 < T_4 < T_5 < T_6 < T_7 < T_8 < T_9
+
+T = [1.80, 3.00, 4.20, 5.40, 6.60, 7.80, 9.20, 10.80, 12.50]
+
+// Calibration du 30 septembre 2026 : les premiers seuils sont repoussés
+// après le test à 35 films américains ; le seuil du rang 10 reste 12.50.
 
 
 Rang_brut(u) =
@@ -532,15 +571,19 @@ for each film f in catalogue:
 
 // --- Calculé à chaque validation / retrait -------------------
 
-Vw = sum(Wp_f for f in F_u)
+Vw = sum(k_f * Wp_f for f in F_u)
 
-for each x with n_x >= 1:
-    D += w_x_ref * Q_x_ref
-    P += w_x_ref * Q_x_ref * sqrt(max(0, n_x - 1))
+for each territory x:
+    E_x = sum(k_f for each validated film f having x)
+    D += w_x_ref * Q_x_ref * min(1, E_x)
+    P += w_x_ref * Q_x_ref * sqrt(max(0, E_x - 1))
 
-S = lambda_V * log(1 + Vw)
-  + lambda_D * D
-  + lambda_P * log(1 + P)
+Dmax = sum(w_x_ref * Q_x_ref for every catalogue territory x)
+Dlisse = Dmax * (D / Dmax)^1.2
+
+S = 1.02 * log(1 + Vw / 25)
+  + 6.0 * Dlisse
+  + 1.2 * log(1 + P)
 
 rang_brut = lookup(S, T_1..T_9)
 rang_affiche = max(rang_brut, rang_affiche_stored)
@@ -558,6 +601,11 @@ rang_affiche = max(rang_brut, rang_affiche_stored)
 // ACTÉS :
 //
 //   ρ = 0.5                       atténuation du poids film
+//   k(<=10 min) = 0.10            plancher des films très courts
+//   k(20 min) = 0.20              ancrage intermédiaire
+//   k(>=30 min) = 1.00            plein tarif
+//   K_V = 25                      réserve initiale du logarithme de volume
+//   gamma_D = 1.2                 progressivité de la diversité
 //   λ_V < λ_D et λ_V < λ_P        le volume pèse le moins
 //   Σ_X Ω_X = 1                   les parts cibles somment à 1
 
@@ -568,8 +616,7 @@ rang_affiche = max(rang_brut, rang_affiche_stored)
 //   λ_V λ_D λ_P  3 pondérations d'axe
 //   T_1 .. T_9   9 seuils de rang
 //
-//   Soit 20 valeurs, mais seules les 9 dernières demandent un vrai
-//   jugement cinéphile.
+//   K_V et gamma_D sont actés par le test réel du 30 septembre 2026.
 
 
 // MÉTHODE DE CALIBRAGE :

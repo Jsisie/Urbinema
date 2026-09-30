@@ -66,12 +66,12 @@ fun filmIndexLetter(title: String): Char {
     return if (first in 'A'..'Z') first else '#'
 }
 
-/** Lists show two directors, then "..." when the film has more. */
+/** Lists show one director per line, at most two, then "..." when there are more. */
 fun listDirectorLabel(names: List<String>): String {
     val cleaned = names.map { it.trim() }.filter { it.isNotEmpty() }
     return when {
-        cleaned.size <= 2 -> cleaned.joinToString(", ")
-        else -> cleaned.take(2).joinToString(", ") + "..."
+        cleaned.size <= 2 -> cleaned.joinToString("\n")
+        else -> cleaned.take(2).joinToString("\n") + "..."
     }
 }
 
@@ -367,7 +367,7 @@ interface UrbinemaViewModel {
     val devMode: Boolean get() = false
     val needsOnboarding: Boolean
     val completedCollectionCelebration: String?
-    val unlockedBadgeCelebration: String?
+    val unlockedBadgeCelebration: BadgeUi?
     val followLimitReached: Boolean
     val showAppGuide: Boolean
     val rankUpCelebration: String?
@@ -523,7 +523,7 @@ object PreviewUrbinemaViewModel : UrbinemaViewModel {
     override val filmGrain = false
     override val needsOnboarding = false
     override val completedCollectionCelebration: String? = null
-    override val unlockedBadgeCelebration: String? = null
+    override val unlockedBadgeCelebration: BadgeUi? = null
     override val followLimitReached: Boolean = false
     override val showAppGuide: Boolean = false
     override val rankUpCelebration: String? = null

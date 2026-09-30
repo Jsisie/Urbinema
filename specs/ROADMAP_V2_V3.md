@@ -37,7 +37,7 @@ avatars packagés, affiches par code, catalogue démo élargi.
   les 14 autres alimentées), 50 quêtes types (16/17/17), 42 pays.
 - Quêtes hebdo lundi 02:00 : une tirée au hasard par palier, éligibilité
   `remainingCapacity`.
-- XP 1–50, rang formule v0.3, **25 XP** si le film est dans une collection suivie + quêtes 100/250/500.
+- XP 1–50, rang formule lissée v0.3.1, **25 XP** si le film est dans une collection suivie + quêtes 100/250/500.
 - Atlas = **listes** (icône liste, TalkBack).
 - **0.2.1 :** première carte du ciel (autour d’un film).
 - **0.2.3 :** couleurs par type + légende, pas de doublons de libellé,

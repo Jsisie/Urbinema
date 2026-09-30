@@ -735,6 +735,9 @@ Pas d'étoiles : elles évoquent une note, or Urbinema ne note aucun film.
 
 Ordre : **Avatar + pseudo → Rang → niveau/XP → Badges → statistiques**.
 
+Un **appui long** sur l'un des trois badges vitrine ouvre une boîte sobre avec
+son nom et sa condition d'obtention. L'appui simple reste sans action.
+
 Cliquer le rang ouvre l'échelle 1→10, flèches entre les rangs, rang actuel
 en `accent`, et **sous le nom de ce rang uniquement** la description détaillée
 (`rankings.longDescription`, issue de `Liste_Des_Rangs.txt`). Même écran
@@ -787,7 +790,9 @@ L'effet est immédiat, se lit sans explication, et ne coûte qu'un jeu de jetons
 
 Le calcul combine trois axes pondérés (fonctionnel §9.4). C'est puissant mais **opaque** : l'utilisateur ne peut pas deviner pourquoi il a progressé, et le cœur du produit ne peut pas être une boîte noire.
 
-La formule v0.3 se prête bien à une lecture littéraire, parce que ses trois axes sont indépendants et nommables :
+La formule v0.3.1 se prête bien à une lecture littéraire, parce que ses trois
+axes restent indépendants et nommables. Les lissages du volume et de la
+diversité ne sont jamais exposés dans l'interface publique :
 
 > « Ce qui te fait progresser en ce moment : ton **étendue géographique**.
 > Ce qui stagne : l'**approfondissement** — tu as vu beaucoup de premiers films, peu de filmographies. »
@@ -880,12 +885,17 @@ check, plus dans « en cours ».
 Les paliers s’affichent en **pourcentage** (fonctionnel §8.7). La barre et le
 compteur restent à 0 tant que la collection n’est pas suivie.
 
+Dans toutes les cartes rectangulaires de films, les coréalisateurs occupent une
+ligne chacun afin de ne pas comprimer le titre : deux noms maximum, puis `…`
+s'il existe d'autres crédits.
+
 À 100 % d’une collection **suivie** : boîte « Collection terminée / Félicitations,
 vous avez terminé la collection « … ». » Puis l’écran reste sur la fiche
 terminée.
 
 Au déblocage d’un badge : même type de boîte, FR/EN
-« Félicitations ! Vous avez débloqué le badge « … » ! ». Si plusieurs badges
+« Félicitations ! Vous avez débloqué le badge « … » ! », avec son illustration
+en petit sous le message. Si plusieurs badges
 tombent d’un coup, ils s’enchaînent. Si une collection se termine en même
 temps, la collection s’affiche d’abord.
 
@@ -966,6 +976,13 @@ Accessibles par la **roue en haut à droite du Profil**.
 | À propos | version, auteur (Léo Barroux), crédits TMDB / Flaticon / Avatar Maker | — |
 
 Le changement de thème et de langue s'applique **immédiatement**, sans redémarrage.
+
+La réinitialisation ouvre un dialogue destructif entièrement localisé en
+français et en anglais. Le texte énumère les données supprimées et indique
+explicitement que l'action est irréversible. Le bouton de confirmation reste
+désactivé pendant **10 secondes** et affiche `(10)`, `(9)` … `(1)`, puis
+**Confirmer** / **Confirm**. Annuler ou fermer le dialogue interrompt le
+compte à rebours ; une nouvelle ouverture repart de 10.
 
 L'explication des rangs est volontairement rangée ici derrière une entrée
 « Comprendre les rangs » et un bouton `?` près du rang. Elle décrit simplement

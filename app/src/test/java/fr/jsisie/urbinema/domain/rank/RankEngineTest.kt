@@ -8,10 +8,11 @@ import fr.jsisie.urbinema.domain.model.TerritoryDimension
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import kotlin.math.ln
 import kotlin.math.sqrt
 
 class RankEngineTest {
-    private val parameters = RankParameters.v03((1..9).map(Int::toDouble))
+    private val parameters = RankParameters.v031((1..9).map(Int::toDouble))
     private val engine = RankEngine(parameters)
     private val statsEngine = CatalogRankStatsEngine()
 
@@ -43,6 +44,61 @@ class RankEngineTest {
         val second = engine.calculate(catalog, stats)
         assertEquals(first.diversity, second.diversity, 1e-12)
         assertTrue(second.depth > first.depth)
+    }
+
+    @Test
+    fun `shifted volume logarithm smooths the first films`() {
+        val firstGain = engine.volumeScore(1.0)
+        val secondGain = engine.volumeScore(2.0) - firstGain
+        val tenthGain = engine.volumeScore(10.0) - engine.volumeScore(9.0)
+
+        assertTrue(firstGain > secondGain)
+        assertTrue(secondGain > tenthGain)
+        assertTrue(firstGain / tenthGain < 1.4)
+    }
+
+    @Test
+    fun `shifted volume catches up with legacy volume near eleven hundred films`() {
+        val referenceWeightedVolume = 2_500.0
+        val legacy = 0.6 * ln(1.0 + referenceWeightedVolume)
+        val smoothed = engine.volumeScore(referenceWeightedVolume)
+
+        assertEquals(legacy, smoothed, 0.03)
+    }
+
+    @Test
+    fun `progressive diversity softens the start and preserves full coverage`() {
+        val capacity = 1.0
+        val initial = engine.smoothedDiversity(0.1, capacity)
+
+        assertTrue(initial in 0.0..0.1)
+        assertEquals(capacity, engine.smoothedDiversity(capacity, capacity), 1e-12)
+    }
+
+    @Test
+    fun `duration factor follows the agreed anchors`() {
+        assertEquals(0.10, engine.durationFactor(1), 1e-12)
+        assertEquals(0.10, engine.durationFactor(10), 1e-12)
+        assertEquals(0.15, engine.durationFactor(15), 1e-12)
+        assertEquals(0.20, engine.durationFactor(20), 1e-12)
+        assertEquals(0.60, engine.durationFactor(25), 1e-12)
+        assertEquals(1.00, engine.durationFactor(30), 1e-12)
+        assertEquals(1.00, engine.durationFactor(180), 1e-12)
+    }
+
+    @Test
+    fun `ten one minute films equal one full territory exposure`() {
+        val catalog = (1..11).map { movie("SHORT_$it", durationMinutes = 1) }
+        val stats = statsEngine.build(1, catalog, parameters.dimensionShares)
+        val one = engine.calculate(catalog.take(1), stats)
+        val ten = engine.calculate(catalog.take(10), stats)
+        val eleven = engine.calculate(catalog, stats)
+
+        assertEquals(engine.attenuatedWeight(catalog.first()) * 0.10, one.weightedVolume, 1e-12)
+        assertEquals(one.diversityCapacity * 0.10, one.rawDiversity, 1e-12)
+        assertEquals(ten.diversityCapacity, ten.rawDiversity, 1e-12)
+        assertEquals(0.0, ten.depth, 1e-12)
+        assertTrue(eleven.depth > 0.0)
     }
 
     @Test
@@ -79,22 +135,18 @@ class RankEngineTest {
         val catalog = listOf(movie("A"))
         val stats = statsEngine.build(1, catalog, parameters.dimensionShares)
         val result = engine.calculate(emptyList(), stats, previousDisplayedRank = 7)
+        assertEquals(0.0, result.score, 1e-12)
         assertEquals(1, result.rawRank)
         assertEquals(7, result.displayedRank)
         assertEquals(2, parameters.thresholds.count { 1.0 >= it } + 1)
     }
 
     @Test
-    fun `age adds a modest bonus that grows slowly`() {
-        val catalog = listOf(movie("A"))
-        val stats = statsEngine.build(1, catalog, parameters.dimensionShares)
-        val young = engine.calculate(catalog, stats, ageYears = 20)
-        val older = engine.calculate(catalog, stats, ageYears = 60)
-        assertEquals(0.0, engine.ageBonus(null), 1e-12)
-        assertTrue(young.ageBonus > 0.0)
-        assertTrue(older.ageBonus > young.ageBonus)
-        assertTrue(older.score - young.score < 0.5)
-        assertEquals(older.diversity, young.diversity, 1e-12)
+    fun `playtest thresholds slow early ranks without moving rank ten`() {
+        assertEquals(
+            listOf(1.8, 3.0, 4.2, 5.4, 6.6, 7.8, 9.2, 10.8, 12.5),
+            RankDefaults.thresholds,
+        )
     }
 
     @Test(expected = IllegalArgumentException::class)
@@ -108,11 +160,12 @@ class RankEngineTest {
         code: String,
         weight: MovieWeightComponents = MovieWeightComponents(0.0, 0.0, 0.0, 0.0),
         country: String = "FRANCE",
+        durationMinutes: Int = 90,
     ) = Movie(
         code = EditorialCode(code),
         originalTitle = code,
         releaseYear = 2000,
-        durationMinutes = 90,
+        durationMinutes = durationMinutes,
         format = MovieFormat.FEATURE,
         weight = weight,
         primaryCountry = EditorialCode(country),

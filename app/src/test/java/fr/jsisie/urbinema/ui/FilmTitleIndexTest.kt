@@ -48,11 +48,11 @@ class FilmTitleIndexTest {
         assertEquals("", listDirectorLabel(emptyList()))
         assertEquals("Chantal Akerman", listDirectorLabel(listOf("Chantal Akerman")))
         assertEquals(
-            "Philippe Garrel, Chantal Akerman",
+            "Philippe Garrel\nChantal Akerman",
             listDirectorLabel(listOf("Philippe Garrel", "Chantal Akerman")),
         )
         assertEquals(
-            "Philippe Garrel, Chantal Akerman...",
+            "Philippe Garrel\nChantal Akerman...",
             listDirectorLabel(
                 listOf(
                     "Philippe Garrel",

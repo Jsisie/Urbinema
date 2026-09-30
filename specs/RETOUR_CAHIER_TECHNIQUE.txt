@@ -31,7 +31,7 @@ Mise à jour du 2026-09-16 :
   - XP et niveaux réintégrés en V1 : 50 niveaux, courbe dédiée et XP
     attribuée par les quêtes hebdomadaires.
   - Le moteur de rang est entièrement spécifié (FORMULE_MATHEMATIQUE.txt
-    v0.3) et testable hors Android. C’est le premier code à écrire.
+    v0.3.1 lissée) et testable hors Android.
 
 
 ========================================================================

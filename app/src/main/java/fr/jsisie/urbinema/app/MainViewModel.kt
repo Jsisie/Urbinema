@@ -182,7 +182,7 @@ class MainViewModel(
     private var shownXpGain: Long? = null
     private var showOnboarding by mutableStateOf(false)
     private var celebrationName by mutableStateOf<String?>(null)
-    private var pendingBadgeCelebrations by mutableStateOf(listOf<String>())
+    private var pendingBadgeCelebrations by mutableStateOf(listOf<BadgeUi>())
     private var completionBaselineReady = false
     private var lastCompletedCollectionIds = emptySet<String>()
     private var celebratedBadgeCodes = emptySet<String>()
@@ -212,7 +212,7 @@ class MainViewModel(
     override val devMode: Boolean get() = devModeEnabled
     override val needsOnboarding: Boolean get() = showOnboarding
     override val completedCollectionCelebration: String? get() = celebrationName
-    override val unlockedBadgeCelebration: String? get() = pendingBadgeCelebrations.firstOrNull()
+    override val unlockedBadgeCelebration: BadgeUi? get() = pendingBadgeCelebrations.firstOrNull()
     override val followLimitReached: Boolean get() = followLimitDialog
     override val showAppGuide: Boolean get() = guideVisible
     override val rankUpCelebration: String? get() = rankUpName
@@ -360,7 +360,7 @@ class MainViewModel(
             }
             val firstRank = database.progressDao().rankingByOrder(1) ?: return@launch
             runCatching {
-                database.progressDao().insertUser(
+                val userId = database.progressDao().insertUser(
                     UserEntity(
                         username = normalized,
                         birthDate = birthDate,
@@ -369,6 +369,7 @@ class MainViewModel(
                         createdAt = Instant.now(),
                     )
                 )
+                progressionCoordinator.recalculate(userId)
             }.onFailure { Log.e(TAG, "Onboarding profile insert failed", it) }
             preferencesRepository.setTutorialCompleted(false)
         }
@@ -641,9 +642,14 @@ class MainViewModel(
         followedCollectionIds = emptySet()
         rankCelebrationSeeded = false
         rankUpName = null
+        scoreBaseline = null
+        xpBaseline = null
+        shownScoreGain = null
+        shownXpGain = null
         refresh()
         viewModelScope.launch {
             progressRepository.resetProgress(profile.userId)
+            progressionCoordinator.recalculate(profile.userId)
             weeklyQuestCoordinator.ensureCurrentWeek(profile.userId)
             completionBaselineReady = false
             lastCompletedCollectionIds = emptySet()
@@ -999,9 +1005,8 @@ class MainViewModel(
             val justEarned = earnedBadgeCodesOrdered.filter { it !in celebratedBadgeCodes }
             if (justEarned.isNotEmpty()) {
                 celebratedBadgeCodes = celebratedBadgeCodes + justEarned.toSet()
-                pendingBadgeCelebrations = pendingBadgeCelebrations + justEarned.map { code ->
-                    badgeState.firstOrNull { it.code == code }?.name ?: code
-                }
+                pendingBadgeCelebrations = pendingBadgeCelebrations +
+                    justEarned.mapNotNull { code -> badgeState.firstOrNull { it.code == code } }
                 viewModelScope.launch { preferencesRepository.setCelebratedBadges(celebratedBadgeCodes) }
             }
         }

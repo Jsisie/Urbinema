@@ -8,6 +8,9 @@ import fr.jsisie.urbinema.domain.model.Movie
 import fr.jsisie.urbinema.domain.model.MovieFormat
 import fr.jsisie.urbinema.domain.model.MovieWeightComponents
 import fr.jsisie.urbinema.domain.quest.DefaultQuestRules
+import fr.jsisie.urbinema.domain.rank.CatalogRankStatsEngine
+import fr.jsisie.urbinema.domain.rank.RankDefaults
+import fr.jsisie.urbinema.domain.rank.RankEngine
 import java.io.File
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
@@ -21,9 +24,48 @@ class CatalogFixtureTest {
         val report = CatalogValidator().validate(pack)
 
         assertTrue(report.errors.joinToString { "${it.path}: ${it.message}" }, report.isValid)
-        assertEquals(38, pack.version)
+        assertEquals(42, pack.version)
         assertEquals(1613, pack.movies.size)
         assertEquals("Voir 50 films d'horreur.", pack.badges.first { it.code == "032" }.description)
+        assertEquals(
+            "Les Conséquences du féminisme",
+            pack.movies.first { it.code == "LES_CONSEQUENCES_DU_FEMINISME_1906" }.originalTitle,
+        )
+        assertTrue(
+            listOf(
+                "LES_CONSEQUENCES_DU_FEMINISME_1906",
+                "BOUDU_SAVED_FROM_DROWNING_1932",
+                "SENSO_1954",
+                "ELEVATOR_TO_THE_GALLOWS_1958",
+                "LE_TROU_1960",
+                "JE_SUIS_CUBA_1964",
+                "MASCULIN_FEMININ_1966",
+                "THE_WILD_CHILD_1970",
+                "THE_RED_CIRCLE_1970",
+            ).all { code -> pack.movies.first { it.code == code }.frenchTitle == null },
+        )
+        assertEquals("Z", pack.movies.first { it.code == "Z_1969" }.frenchTitle)
+        assertEquals("Le Jupon rouge", pack.movies.first { it.code == "ROUGE_1987" }.originalTitle)
+        assertEquals(null, pack.movies.first { it.code == "ROUGE_1987" }.frenchTitle)
+        assertEquals(
+            "Vérités et mensonges",
+            pack.movies.first { it.code == "VERITES_ET_MENSONGES_1973" }.originalTitle,
+        )
+        assertTrue(
+            listOf(
+                "PHANTOM_OF_THE_PARADISE_1974",
+                "SUSPIRIA_1977",
+                "ROBOCOP_1987",
+                "RESERVOIR_DOGS_1992",
+                "JURASSIC_PARK_1993",
+                "TOY_STORY_1995",
+                "THE_BIG_LEBOWSKI_1998",
+                "CODE_UNKNOWN_2000",
+                "THE_DARK_KNIGHT_2008",
+                "VERITES_ET_MENSONGES_1973",
+                "JE_TU_IL_ELLE_1974",
+            ).all { code -> pack.movies.first { it.code == code }.frenchTitle == null },
+        )
         assertTrue(
             listOf("BEAU_TRAVAIL_1999", "35_SHOTS_OF_RUM_2008", "TROUBLE_EVERY_DAY_2001", "CHOCOLAT_1988", "WHITE_MATERIAL_2009")
                 .all { code ->
@@ -115,6 +157,89 @@ class CatalogFixtureTest {
                 remaining >= quest.targetCount,
             )
         }
+    }
+
+    @Test
+    fun smoothedRankFormulaKeepsInitiationOpeningProgressive() {
+        val pack = packagedCatalog()
+        val continentsByCountry = pack.countries.associate { country ->
+            country.code to country.continentCodes.toSet()
+        }
+        val movies = pack.movies.map { imported ->
+            imported.toDomainMovie(continentsByCountry).copy(
+                era = pack.eras
+                    .filter { imported.releaseYear in it.startYear..it.endYear }
+                    .minByOrNull { it.endYear - it.startYear }
+                    ?.code
+                    ?.let(::EditorialCode),
+            )
+        }
+        val byCode = movies.associateBy { it.code.value }
+        val initiation = listOf(
+            "LE_PARRAIN_1972",
+            "LES_DENTS_DE_LA_MER_1975",
+            "LA_GUERRE_DES_ETOILES_1977",
+            "FORREST_GUMP_1994",
+            "PULP_FICTION_1994",
+            "LE_ROI_LION_1994",
+            "SEVEN_1995",
+            "TITANIC_1997",
+            "LE_VOYAGE_DE_CHIHIRO_2001",
+            "AVATAR_2009",
+        ).map(byCode::getValue)
+        val engine = RankEngine(RankDefaults.parameters)
+        val stats = CatalogRankStatsEngine().build(
+            version = pack.version.toLong(),
+            catalog = movies,
+            dimensionShares = RankDefaults.parameters.dimensionShares,
+        )
+        var previous = 0.0
+        val gains = initiation.indices.map { index ->
+            val score = engine.calculate(initiation.take(index + 1), stats).score
+            ((score - previous) * 1_000.0).also { previous = score }
+        }
+
+        assertTrue("Unexpected Initiation gains: $gains", gains[0] in 130.0..210.0)
+        assertTrue("Unexpected Initiation gains: $gains", gains[1] in 90.0..165.0)
+        assertTrue("Unexpected Initiation gains: $gains", gains[2] in 70.0..140.0)
+        assertTrue("Unexpected Initiation gains: $gains", gains[9] in 40.0..90.0)
+        assertTrue("Opening cliff remains too steep: $gains", gains[0] / gains[9] < 3.5)
+    }
+
+    @Test
+    fun oneMinuteEarlyCinemaFilmDoesNotProduceFeatureLengthRankGain() {
+        val pack = packagedCatalog()
+        val continentsByCountry = pack.countries.associate { country ->
+            country.code to country.continentCodes.toSet()
+        }
+        val movies = pack.movies.map { imported ->
+            imported.toDomainMovie(continentsByCountry).copy(
+                era = pack.eras
+                    .filter { imported.releaseYear in it.startYear..it.endYear }
+                    .minByOrNull { it.endYear - it.startYear }
+                    ?.code
+                    ?.let(::EditorialCode),
+            )
+        }
+        val byCode = movies.associateBy { it.code.value }
+        val sequenceCodes = buildList {
+            addAll(pack.collections.first { it.code == "COLLECTION_INITIATION" }.movies.map { it.code })
+            addAll(pack.collections.first { it.code == "COLLECTION_015" }.movies.map { it.code })
+            addAll(pack.collections.first { it.code == "COLLECTION_027" }.movies.take(12).map { it.code })
+        }.distinct()
+        assertEquals("LA_LOUPE_DE_GRAND_MAMAN_1900", sequenceCodes.last())
+        val sequence = sequenceCodes.map(byCode::getValue)
+        val engine = RankEngine(RankDefaults.parameters)
+        val stats = CatalogRankStatsEngine().build(
+            version = pack.version.toLong(),
+            catalog = movies,
+            dimensionShares = RankDefaults.parameters.dimensionShares,
+        )
+        val before = engine.calculate(sequence.dropLast(1), stats).score
+        val after = engine.calculate(sequence, stats).score
+        val gain = (after - before) * 1_000.0
+
+        assertTrue("One-minute film still grants $gain points", gain in 0.0..50.0)
     }
 
     private fun packagedCatalog(): CatalogPack {

@@ -22,13 +22,52 @@ data class MovieWeightParameters(
     }
 }
 
+data class DurationWeightParameters(
+    val minimumMinutes: Int,
+    val minimumFactor: Double,
+    val intermediateMinutes: Int,
+    val intermediateFactor: Double,
+    val fullWeightMinutes: Int,
+) {
+    init {
+        require(minimumMinutes > 0)
+        require(intermediateMinutes > minimumMinutes)
+        require(fullWeightMinutes > intermediateMinutes)
+        require(minimumFactor in 0.0..1.0)
+        require(intermediateFactor in minimumFactor..1.0)
+    }
+}
+
+/**
+ * Product anchors for short-film rank contribution.
+ *
+ * Kept together so duration calibration never requires editing the formula.
+ */
+object RankDurationDefaults {
+    const val MINIMUM_MINUTES = 10
+    const val MINIMUM_FACTOR = 0.10
+    const val INTERMEDIATE_MINUTES = 20
+    const val INTERMEDIATE_FACTOR = 0.20
+    const val FULL_WEIGHT_MINUTES = 30
+
+    val parameters = DurationWeightParameters(
+        minimumMinutes = MINIMUM_MINUTES,
+        minimumFactor = MINIMUM_FACTOR,
+        intermediateMinutes = INTERMEDIATE_MINUTES,
+        intermediateFactor = INTERMEDIATE_FACTOR,
+        fullWeightMinutes = FULL_WEIGHT_MINUTES,
+    )
+}
+
 data class RankParameters(
     val movieWeights: MovieWeightParameters = MovieWeightParameters(),
+    val durationWeights: DurationWeightParameters = RankDurationDefaults.parameters,
     val dimensionShares: Map<TerritoryDimension, Double>,
-    val volumeLambda: Double = 0.6,
+    val volumeLambda: Double = 1.02,
+    val volumeScale: Double = 25.0,
     val diversityLambda: Double = 6.0,
+    val diversityExponent: Double = 1.2,
     val depthLambda: Double = 1.2,
-    val ageLambda: Double = 0.35,
     val thresholds: List<Double>,
 ) {
     init {
@@ -39,8 +78,8 @@ data class RankParameters(
         require(kotlin.math.abs(dimensionShares.values.sum() - 1.0) < 1e-9) {
             "Dimension shares must sum to 1"
         }
-        require(listOf(volumeLambda, diversityLambda, depthLambda).all { it.isFinite() && it > 0.0 })
-        require(ageLambda.isFinite() && ageLambda >= 0.0)
+        require(listOf(volumeLambda, volumeScale, diversityLambda, diversityExponent, depthLambda)
+            .all { it.isFinite() && it > 0.0 })
         require(volumeLambda < diversityLambda && volumeLambda < depthLambda) {
             "Volume must weigh less than diversity and depth"
         }
@@ -52,10 +91,10 @@ data class RankParameters(
 
     companion object {
         /**
-         * Creates the v0.3 starting configuration while requiring the product
-         * thresholds that the specification deliberately leaves uncalibrated.
+         * Creates the smoothed v0.3.1 configuration while requiring the
+         * product thresholds that remain independently adjustable.
          */
-        fun v03(thresholds: List<Double>): RankParameters = RankParameters(
+        fun v031(thresholds: List<Double>): RankParameters = RankParameters(
             dimensionShares = mapOf(
                 TerritoryDimension.CINEMA_CHARACTERISTIC to 0.25,
                 TerritoryDimension.DIRECTOR to 0.20,
@@ -125,15 +164,16 @@ class CatalogRankStatsEngine {
 data class RankResult(
     val rawMovieCount: Int,
     val weightedVolume: Double,
+    val rawDiversity: Double,
     val diversity: Double,
+    val diversityCapacity: Double,
     val depth: Double,
-    val ageBonus: Double,
     val score: Double,
     val rawRank: Int,
     val displayedRank: Int,
 )
 
-/** Deterministic implementation of Urbinema rank formula v0.3. */
+/** Deterministic implementation of Urbinema rank formula v0.3.1. */
 class RankEngine(private val parameters: RankParameters) {
     fun intrinsicWeight(movie: Movie): Double {
         val p = parameters.movieWeights
@@ -151,85 +191,138 @@ class RankEngine(private val parameters: RankParameters) {
     }
 
     /**
-     * Applies formula v0.3:
-     * `S = 0.6·ln(1+Vw) + 6·D + 1.2·ln(1+P) + S_A`.
+     * Applies the smoothed formula v0.3.1:
+     * `S = 1.02·ln(1+Vw/25) + 6·D_l + 1.2·ln(1+P)`.
      *
      * - Vw is the sum of attenuated film weights (H/A/R/C).
+     * - Every film is multiplied by its duration factor on all three axes.
      * - D sums rarity×weight over distinct territories visited.
+     * - D_l = D_max·(D/D_max)^1.2 delays the initial diversity windfall
+     *   while preserving the value of complete catalogue coverage.
      * - P rewards watching the same territory more than once (sqrt of extras).
-     * - S_A is the modest age bonus; the displayed rank never goes down.
      */
     fun calculate(
         validatedMovies: Collection<Movie>,
         catalogStats: CatalogRankStats,
         previousDisplayedRank: Int = 1,
-        ageYears: Int? = null,
     ): RankResult {
         require(previousDisplayedRank in 1..10)
         require(validatedMovies.map { it.code }.distinct().size == validatedMovies.size) {
             "A movie can only be validated once"
         }
-        val occurrences = validatedMovies.flatMap { it.rankTerritories() }.groupingBy { it }.eachCount()
-        occurrences.keys.forEach { require(it in catalogStats.references) { "Unknown catalog territory: $it" } }
-        val weightedVolume = validatedMovies.sumOf(::attenuatedWeight)
-        val diversity = occurrences.keys.sumOf { key ->
-            catalogStats.references.getValue(key).let { it.weight * it.rarity }
+        val exposures = mutableMapOf<TerritoryKey, Double>()
+        validatedMovies.forEach { movie ->
+            val contribution = durationFactor(movie.durationMinutes)
+            movie.rankTerritories().forEach { key ->
+                exposures[key] = exposures.getOrDefault(key, 0.0) + contribution
+            }
         }
-        val depth = occurrences.entries.sumOf { (key, count) ->
+        exposures.keys.forEach { require(it in catalogStats.references) { "Unknown catalog territory: $it" } }
+        val weightedVolume = validatedMovies.sumOf { movie ->
+            attenuatedWeight(movie) * durationFactor(movie.durationMinutes)
+        }
+        val rawDiversity = exposures.entries.sumOf { (key, exposure) ->
             catalogStats.references.getValue(key).let { it.weight * it.rarity } *
-                sqrt(maxOf(0, count - 1).toDouble())
+                exposure.coerceAtMost(1.0)
         }
-        val lifetimeBonus = ageBonus(ageYears)
-        val score = parameters.volumeLambda * ln(1.0 + weightedVolume) +
+        val diversityCapacity = catalogStats.references.values.sumOf { it.weight * it.rarity }
+        val diversity = smoothedDiversity(rawDiversity, diversityCapacity)
+        val depth = exposures.entries.sumOf { (key, exposure) ->
+            catalogStats.references.getValue(key).let { it.weight * it.rarity } *
+                sqrt(maxOf(0.0, exposure - 1.0))
+        }
+        val score = volumeScore(weightedVolume) +
             parameters.diversityLambda * diversity +
-            parameters.depthLambda * ln(1.0 + depth) +
-            lifetimeBonus
+            parameters.depthLambda * ln(1.0 + depth)
         val rawRank = parameters.thresholds.count { score >= it } + 1
         return RankResult(
             rawMovieCount = validatedMovies.size,
             weightedVolume = weightedVolume,
+            rawDiversity = rawDiversity,
             diversity = diversity,
+            diversityCapacity = diversityCapacity,
             depth = depth,
-            ageBonus = lifetimeBonus,
             score = score,
             rawRank = rawRank,
             displayedRank = maxOf(rawRank, previousDisplayedRank),
         )
     }
 
-    /**
-     * Modest lifetime bonus: an older viewer has simply had more years of cinema.
-     * It must never dominate diversity or depth.
-     *
-     * S_A = λ_A * ln(1 + max(0, age - 16) / 20)
-     * λ_A = 0.35 → ~0.06 at 20, ~0.28 at 40, ~0.41 at 60.
-     */
-    fun ageBonus(ageYears: Int?): Double {
-        if (ageYears == null) return 0.0
-        val clamped = ageYears.coerceIn(8, 120)
-        val yearsPastYouth = maxOf(0.0, (clamped - 16.0) / 20.0)
-        return parameters.ageLambda * ln(1.0 + yearsPastYouth)
+    /** Shifted logarithm: its initial slope is finite instead of maximal. */
+    fun volumeScore(weightedVolume: Double): Double {
+        require(weightedVolume.isFinite() && weightedVolume >= 0.0)
+        return parameters.volumeLambda * ln(1.0 + weightedVolume / parameters.volumeScale)
     }
+
+    /**
+     * Duration contribution shared by volume, diversity and depth.
+     *
+     * Anchors: <=10 min = 0.10, 15 = 0.15, 20 = 0.20, >=30 = 1.00.
+     * Values between anchors are linearly interpolated.
+     */
+    fun durationFactor(durationMinutes: Int): Double {
+        require(durationMinutes >= 0)
+        val p = parameters.durationWeights
+        return when {
+            durationMinutes <= p.minimumMinutes -> p.minimumFactor
+            durationMinutes <= p.intermediateMinutes -> interpolate(
+                durationMinutes,
+                p.minimumMinutes,
+                p.intermediateMinutes,
+                p.minimumFactor,
+                p.intermediateFactor,
+            )
+            durationMinutes < p.fullWeightMinutes -> interpolate(
+                durationMinutes,
+                p.intermediateMinutes,
+                p.fullWeightMinutes,
+                p.intermediateFactor,
+                1.0,
+            )
+            else -> 1.0
+        }
+    }
+
+    /**
+     * Progressive diversity, normalized so complete coverage keeps exactly
+     * the same value as before smoothing.
+     */
+    fun smoothedDiversity(rawDiversity: Double, capacity: Double): Double {
+        require(rawDiversity.isFinite() && rawDiversity >= 0.0)
+        require(capacity.isFinite() && capacity >= 0.0)
+        if (capacity == 0.0) return 0.0
+        val fraction = (rawDiversity / capacity).coerceIn(0.0, 1.0)
+        return capacity * fraction.pow(parameters.diversityExponent)
+    }
+
+    private fun interpolate(
+        value: Int,
+        start: Int,
+        end: Int,
+        startFactor: Double,
+        endFactor: Double,
+    ): Double {
+        val fraction = (value - start).toDouble() / (end - start).toDouble()
+        return startFactor + fraction * (endFactor - startFactor)
+    }
+
 }
 
-/**
- * Initial calibration used until real catalogue simulations are available.
- *
- * Keeping it in one object makes product tuning a data change instead of a
- * rewrite of the calculation.
- */
+/** Calibration selected from the 1,613-film catalogue playtest. */
 object RankDefaults {
+    const val CONFIG_CODE = "RANK_V031_DURATION_WEIGHTED"
+
     val thresholds: List<Double> = listOf(
-        1.20,
-        2.20,
-        3.20,
-        4.50,
-        5.80,
-        7.20,
-        8.80,
-        10.50,
+        1.80,
+        3.00,
+        4.20,
+        5.40,
+        6.60,
+        7.80,
+        9.20,
+        10.80,
         12.50,
     )
 
-    val parameters: RankParameters = RankParameters.v03(thresholds)
+    val parameters: RankParameters = RankParameters.v031(thresholds)
 }

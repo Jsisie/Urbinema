@@ -133,7 +133,9 @@ def french_title(details: dict[str, Any], fallback: str) -> str:
         if candidate:
             return candidate
     for alt in (details.get("alternative_titles") or {}).get("titles") or []:
-        if alt.get("iso_3166_1") in {"FR", "BE", "CH"}:
+        # BE and CH are multilingual country tags, not French language tags:
+        # accepting them imported Dutch titles as frenchTitle in the catalog.
+        if alt.get("iso_3166_1") == "FR":
             candidate = str(alt.get("title") or "").strip()
             if candidate:
                 return candidate

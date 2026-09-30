@@ -242,15 +242,45 @@ badges obtenus et transactions d'XP.
 
 ## 5.4. Moteur de rang
 
-Le calcul du rang est le composant métier le plus sensible du projet. Il est **entièrement spécifié** : `FORMULE_MATHEMATIQUE.txt` (v0.3), analyse dans `RETOUR_FORMULE_RANG.txt`, lecture fonctionnelle au §9.4 du cahier fonctionnel.
+Le calcul du rang est le composant métier le plus sensible du projet. Il est **entièrement spécifié** : `FORMULE_MATHEMATIQUE.txt` (v0.3.1), analyse dans `RETOUR_FORMULE_RANG.txt`, lecture fonctionnelle au §9.4 du cahier fonctionnel.
 
 Trois axes : volume pondéré par l’exigence des films, diversité (bornée, elle sature) et profondeur (non bornée).
+
+Depuis la 0.3.1, deux fonctions pures lissent le démarrage :
+
+- `volumeScore(Vw) = 1,02 × ln(1 + Vw / 25)` ;
+- `smoothedDiversity(D, Dmax) = Dmax × (D / Dmax)^1,2`.
+
+`Dmax` est calculé à partir de toutes les références de territoire de la
+version du catalogue. Cette normalisation garantit que la couverture complète
+conserve la valeur antérieure, y compris lorsque les cliquets historiques font
+légèrement dépasser 1 à la diversité maximale.
+
+`RankDurationDefaults` centralise les ancrages de durée :
+
+- `MINIMUM_MINUTES = 10`, `MINIMUM_FACTOR = 0,10` ;
+- `INTERMEDIATE_MINUTES = 20`, `INTERMEDIATE_FACTOR = 0,20` ;
+- `FULL_WEIGHT_MINUTES = 30`, puis coefficient `1`.
+
+`RankEngine.durationFactor()` interpole linéairement entre ces points
+(`15 → 0,15`, `25 → 0,60`). Pour chaque territoire, le moteur additionne ces
+coefficients dans une exposition `E`. La diversité utilise `min(1, E)` et la
+profondeur `sqrt(max(0, E − 1))`. Le volume additionne `coefficient × W'`.
+Cette construction pondère réellement les trois axes sans rendre le résultat
+dépendant de l'ordre des validations.
+
+Seuils `RankDefaults.thresholds` des rangs 2 à 10 :
+`1,80 / 3,00 / 4,20 / 5,40 / 6,60 / 7,80 / 9,20 / 10,80 / 12,50`.
+À zéro film, les trois axes et le score valent zéro.
 
 Contraintes d’implémentation :
 
 - **Kotlin pur**, dans `domain`, sans dépendance Android — condition pour pouvoir le tester et le calibrer sans émulateur ;
 - **déterministe et indépendant de l’ordre** : le score se recalcule intégralement à partir de l’ensemble des films validés et du catalogue courant, sans rejouer un historique ;
-- **paramètres externalisés** : une vingtaine de coefficients à calibrer, jamais dispersés en dur dans le code, modifiables sans recompiler ;
+- **paramètres regroupés** dans `RankParameters` : `volumeScale = 25`,
+  `volumeLambda = 1,02`, `diversityExponent = 1,2` et les coefficients
+  historiques ; aucune constante de formule dispersée dans l’UI ou les
+  repositories ;
 - **statistiques de catalogue précalculées par version** et persistées (rareté et poids de dimension, avec leur cliquet) ;
 - **banc d’essai** : un harnais de simulation sur profils types, à écrire **en même temps** que le moteur. Sans lui, le calibrage se ferait à l’aveugle sur l’émulateur.
 
