@@ -249,9 +249,9 @@ private fun Context.withLocale(locale: Locale): Context {
 
 @Composable
 private fun FilmGrainOverlay(dark: Boolean) {
-    val wash = if (dark) 0.035f else 0.032f
-    val lightSpeck = if (dark) 0.083f else 0.07f
-    val darkSpeck = if (dark) 0.095f else 0.09f
+    val wash = if (dark) 0.033f else 0.032f
+    val lightSpeck = if (dark) 0.076f else 0.07f
+    val darkSpeck = if (dark) 0.092f else 0.09f
     Canvas(
         Modifier
             .fillMaxSize()
@@ -268,7 +268,7 @@ private fun FilmGrainOverlay(dark: Boolean) {
                 if (speck == 0) {
                     drawCircle(
                         color = Color.White.copy(alpha = lightSpeck),
-                        radius = if (dark) 0.72.dp.toPx() else 0.7.dp.toPx(),
+                        radius = if (dark) 0.71.dp.toPx() else 0.7.dp.toPx(),
                         center = Offset(x, y),
                     )
                 } else if (speck == 1) {
@@ -546,6 +546,9 @@ private fun UrbinemaNavigation(
                         onReplayGuide = model::replayAppGuide,
                         onSources = { navController.navigate(Routes.Sources) },
                         onResetProgress = model::resetProgress,
+                        showDevTools = model.devToolsAvailable,
+                        devMode = model.devMode,
+                        onDevModeChange = model::setDevMode,
                     )
                 }
                 composable(

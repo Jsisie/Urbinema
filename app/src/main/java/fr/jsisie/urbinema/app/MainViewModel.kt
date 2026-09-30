@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import fr.jsisie.urbinema.BuildConfig
 import fr.jsisie.urbinema.R
 import fr.jsisie.urbinema.app.startup.AppBootstrapper
 import fr.jsisie.urbinema.data.db.ActivityEventEntity
@@ -26,6 +27,7 @@ import fr.jsisie.urbinema.data.db.LearningPathFactEntity
 import fr.jsisie.urbinema.data.db.LearningPathFigureEntity
 import fr.jsisie.urbinema.data.db.LearningPathMovieCrossRef
 import fr.jsisie.urbinema.data.db.LearningPathStepEntity
+import fr.jsisie.urbinema.data.db.MovieDirectorBilling
 import fr.jsisie.urbinema.data.db.MovieWithRelations
 import fr.jsisie.urbinema.data.db.QuestDifficulty
 import fr.jsisie.urbinema.data.db.QuestEntity
@@ -33,6 +35,7 @@ import fr.jsisie.urbinema.data.db.RankingEntity
 import fr.jsisie.urbinema.data.db.UrbinemaDatabase
 import fr.jsisie.urbinema.data.db.UserEntity
 import fr.jsisie.urbinema.data.db.UserMovieCrossRef
+import fr.jsisie.urbinema.data.db.UserProgressStateEntity
 import fr.jsisie.urbinema.data.db.UserQuestStatus
 import fr.jsisie.urbinema.data.preferences.LanguagePreference
 import fr.jsisie.urbinema.data.preferences.PreferencesRepository
@@ -45,6 +48,7 @@ import fr.jsisie.urbinema.domain.FunctionalLimits
 import fr.jsisie.urbinema.domain.badge.ProfileBadges
 import fr.jsisie.urbinema.domain.collection.CollectionFollowRules
 import fr.jsisie.urbinema.domain.collection.CollectionUnlockRules
+import fr.jsisie.urbinema.domain.rank.RankDefaults
 import fr.jsisie.urbinema.domain.map.CinemaMapGraph
 import fr.jsisie.urbinema.domain.map.CinemaMapLayout
 import fr.jsisie.urbinema.domain.map.ConstellationSeed
@@ -60,12 +64,15 @@ import fr.jsisie.urbinema.ui.model.PathFactUi
 import fr.jsisie.urbinema.ui.model.PathFigureUi
 import fr.jsisie.urbinema.ui.model.PathStepUi
 import fr.jsisie.urbinema.ui.model.PathUi
+import fr.jsisie.urbinema.ui.model.DevProgressUi
 import fr.jsisie.urbinema.ui.model.DirectorUi
 import fr.jsisie.urbinema.ui.model.ExplorationState
 import fr.jsisie.urbinema.ui.model.FilmListSort
 import fr.jsisie.urbinema.ui.model.HistoryUi
 import fr.jsisie.urbinema.ui.model.HomeUiState
+import fr.jsisie.urbinema.ui.model.listDirectorLabel
 import fr.jsisie.urbinema.ui.model.LoadState
+import fr.jsisie.urbinema.ui.model.DirectorCreditUi
 import fr.jsisie.urbinema.ui.model.MovieSummaryUi
 import fr.jsisie.urbinema.ui.model.sortedFilms
 import fr.jsisie.urbinema.ui.model.MovieUi
@@ -111,6 +118,7 @@ class MainViewModel(
     private var user: UserEntity? = null
     private var moviesWithRelations: List<MovieWithRelations> = emptyList()
     private var moviesByMovieId: Map<Long, MovieWithRelations> = emptyMap()
+    private var orderedDirectorsByMovieId: Map<Long, List<DirectorEntity>> = emptyMap()
     private var watched: List<UserMovieCrossRef> = emptyList()
     private var collectionsWithMovies: List<CollectionWithMovies> = emptyList()
     private var collectionProgress: Map<Long, CollectionProgressRow> = emptyMap()
@@ -165,6 +173,12 @@ class MainViewModel(
     private var selectedThemeMode by mutableStateOf(UrbinemaThemeMode.Dark)
     private var selectedLanguage by mutableStateOf(AppLanguage.System)
     private var grainEnabled by mutableStateOf(false)
+    private var devModeEnabled by mutableStateOf(false)
+    private var progressSnapshot: UserProgressStateEntity? = null
+    private var scoreBaseline: Double? = null
+    private var xpBaseline: Long? = null
+    private var shownScoreGain: Double? = null
+    private var shownXpGain: Long? = null
     private var showOnboarding by mutableStateOf(false)
     private var celebrationName by mutableStateOf<String?>(null)
     private var pendingBadgeCelebrations by mutableStateOf(listOf<String>())
@@ -193,6 +207,8 @@ class MainViewModel(
     override val themeMode: UrbinemaThemeMode get() = selectedThemeMode
     override val language: AppLanguage get() = selectedLanguage
     override val filmGrain: Boolean get() = grainEnabled
+    override val devToolsAvailable: Boolean get() = BuildConfig.DEV_TOOLS
+    override val devMode: Boolean get() = devModeEnabled
     override val needsOnboarding: Boolean get() = showOnboarding
     override val completedCollectionCelebration: String? get() = celebrationName
     override val unlockedBadgeCelebration: String? get() = pendingBadgeCelebrations.firstOrNull()
@@ -224,6 +240,12 @@ class MainViewModel(
         }
         viewModelScope.launch {
             preferencesRepository.filmGrain.collectLatest { grainEnabled = it }
+        }
+        viewModelScope.launch {
+            preferencesRepository.devMode.collectLatest { stored ->
+                devModeEnabled = BuildConfig.DEV_TOOLS && stored
+                refresh()
+            }
         }
         viewModelScope.launch {
             preferencesRepository.tutorialCompleted.collectLatest { completed ->
@@ -281,6 +303,11 @@ class MainViewModel(
 
     override fun setFilmGrain(enabled: Boolean) {
         viewModelScope.launch { preferencesRepository.setFilmGrain(enabled) }
+    }
+
+    override fun setDevMode(enabled: Boolean) {
+        if (!BuildConfig.DEV_TOOLS) return
+        viewModelScope.launch { preferencesRepository.setDevMode(enabled) }
     }
 
     override fun setUsername(username: String) {
@@ -481,7 +508,7 @@ class MainViewModel(
             if (!match(french) && !match(original)) return@mapNotNull null
             val display = french.ifBlank { original }
             val subtitle = buildString {
-                append(rel.directors.firstOrNull()?.displayName.orEmpty())
+                append(listDirectorLabel(orderedDirectors(rel).map { it.displayName }))
                 append(" · ")
                 append(movie.releaseYear)
                 // Surface the English/original title when it is what matched.
@@ -679,6 +706,11 @@ class MainViewModel(
         continentEntities = catalog.observeContinents().first()
         countryContinents = catalog.observeCountryContinents().first()
         directorEntities = catalog.observeDirectors().first()
+        val directorsById = directorEntities.associateBy { it.directorId }
+        val billings: List<MovieDirectorBilling> = catalog.movieDirectorBillings()
+        orderedDirectorsByMovieId = billings.groupBy { it.movieId }.mapValues { (_, rows) ->
+            rows.sortedBy { it.billingOrder }.mapNotNull { directorsById[it.directorId] }
+        }
         genreEntities = catalog.observeGenres().first()
         characteristicEntities = catalog.observeCharacteristics().first()
         badgeEntities = catalog.observeBadges().first()
@@ -723,6 +755,12 @@ class MainViewModel(
         viewModelScope.launch {
             progress.observeActivity(value.userId).collectLatest { events ->
                 historyEvents = events
+                refresh()
+            }
+        }
+        viewModelScope.launch {
+            progress.observeProgressState(value.userId).collectLatest { snapshot ->
+                progressSnapshot = snapshot
                 refresh()
             }
         }
@@ -994,6 +1032,7 @@ class MainViewModel(
             ?.toInt()
             ?: level.xpIntoLevel.toInt()
         val rankLong = rank?.longDescription ?: rank?.description.orEmpty()
+        val dev = if (devModeEnabled) devSnapshot(level, rank?.displayOrder ?: 1) else null
         homeState = homeState.copy(
             loadState = when {
                 !catalogLoaded -> LoadState.Loading
@@ -1016,6 +1055,7 @@ class MainViewModel(
                     subject = historySubject(event.type, event.payloadJson),
                 )
             },
+            dev = dev,
         )
         val watchedCountryIds = watchedMovies.flatMap { it.countries }.map { it.countryId }.toSet()
         val continentIds = countryContinents.filter { it.countryId in watchedCountryIds }.map { it.continentId }.toSet()
@@ -1037,6 +1077,7 @@ class MainViewModel(
             continents = continentIds.size,
             directors = watchedMovies.flatMap { it.directors }.map { it.directorId }.distinct().size,
             avatarCode = user?.avatarCode,
+            dev = dev,
         )
         statsState = StatsListsUi(
             films = watchedMovies.map(::toSummary),
@@ -1175,17 +1216,25 @@ class MainViewModel(
         return CinemaMapLayout.dedupeConstellation(seeds, ::constellationLabel)
     }
 
+    private fun orderedDirectors(rel: MovieWithRelations): List<DirectorEntity> {
+        val ordered = orderedDirectorsByMovieId[rel.movie.movieId]
+        return if (!ordered.isNullOrEmpty()) ordered else rel.directors
+    }
+
     private fun toMovieUi(rel: MovieWithRelations): MovieUi {
         val movie = rel.movie
         val watchedIds = watched.mapTo(hashSetOf(), UserMovieCrossRef::movieId)
-        val director = rel.directors.firstOrNull()?.displayName
+        val directors = orderedDirectors(rel)
         val countryNames = rel.countries.joinToString(" · ") { it.name }
         val genreNames = rel.genres.map { it.name }
         return MovieUi(
             id = movie.code,
             originalTitle = movie.originalTitle,
             localizedTitle = movie.frenchTitle?.takeIf { it != movie.originalTitle },
-            credits = listOfNotNull(director, movie.releaseYear.toString()).joinToString(" · "),
+            credits = listOfNotNull(
+                directors.joinToString(", ") { it.displayName }.takeIf { it.isNotBlank() },
+                movie.releaseYear.toString(),
+            ).joinToString(" · "),
             metadata = listOfNotNull(
                 countryNames.takeIf { it.isNotBlank() },
                 formatDuration(movie.durationMinutes),
@@ -1199,7 +1248,9 @@ class MainViewModel(
             genres = rel.genres.map {
                 TerritoryUi(it.code, it.name, R.string.genres, 0, ExplorationState.Unexplored)
             },
-            directorIds = rel.directors.map { it.code },
+            directorIds = directors.map { it.code },
+            releaseYear = movie.releaseYear,
+            directorCredits = directors.map { DirectorCreditUi(it.code, it.displayName) },
         )
     }
 
@@ -1212,7 +1263,7 @@ class MainViewModel(
         id = rel.movie.code,
         title = rel.movie.frenchTitle ?: rel.movie.originalTitle,
         year = rel.movie.releaseYear,
-        director = rel.directors.firstOrNull()?.displayName.orEmpty(),
+        director = listDirectorLabel(orderedDirectors(rel).map { it.displayName }),
         watched = watched,
     )
 
@@ -1333,12 +1384,57 @@ class MainViewModel(
                 part.lowercase().replaceFirstChar { char -> char.titlecase() }
             }
 
+    private fun devSnapshot(level: fr.jsisie.urbinema.domain.xp.LevelProgress, rankOrder: Int): DevProgressUi {
+        val score = progressSnapshot?.score ?: 0.0
+        val thresholds = RankDefaults.thresholds
+        val floor = if (rankOrder <= 1) 0.0 else thresholds[rankOrder - 2]
+        val next = thresholds.getOrNull(rankOrder - 1)
+        val remaining = if (next == null) 0.0 else (next - score).coerceAtLeast(0.0)
+        val span = if (next == null) 1.0 else (next - floor).coerceAtLeast(1e-9)
+        val fraction = if (next == null) 1f else ((score - floor) / span).toFloat().coerceIn(0f, 1f)
+        val into = level.xpIntoLevel
+        val xpLeft = level.xpNeededForNextLevel
+        val xpSpan = into + (xpLeft ?: 0L)
+        val xpFraction = if (xpLeft == null) 1f else (into.toFloat() / xpSpan.coerceAtLeast(1)).coerceIn(0f, 1f)
+        if (progressSnapshot != null) {
+            val previousScore = scoreBaseline
+            val previousXp = xpBaseline
+            if (previousScore == null) {
+                scoreBaseline = score
+                xpBaseline = totalXp
+            } else if (score != previousScore || totalXp != previousXp) {
+                shownScoreGain = score - previousScore
+                shownXpGain = totalXp - (previousXp ?: totalXp)
+                scoreBaseline = score
+                xpBaseline = totalXp
+            }
+        }
+        return DevProgressUi(
+            rankOrder = rankOrder,
+            rawRank = progressSnapshot?.rawRankOrder ?: rankOrder,
+            score = score,
+            floor = floor,
+            nextThreshold = next,
+            remaining = remaining,
+            fraction = fraction,
+            lastScoreGain = shownScoreGain,
+            weightedVolume = progressSnapshot?.weightedVolume ?: 0.0,
+            diversity = progressSnapshot?.diversity ?: 0.0,
+            depth = progressSnapshot?.depth ?: 0.0,
+            xpIntoLevel = into.toInt(),
+            xpRemaining = xpLeft?.toInt(),
+            xpFraction = xpFraction,
+            lastXpGain = shownXpGain?.toInt(),
+        )
+    }
+
     private fun collectionLock(
         code: String,
         track: CollectionTrack,
         openOrdinal: Int,
         qualifiedByTrack: Map<CollectionTrack, Pair<Int, Int>>,
     ): CollectionLockUi {
+        if (devModeEnabled) return CollectionLockUi()
         if (code == INITIATION_CODE) return CollectionLockUi()
         if (!CollectionUnlockRules.isTrackLocked(track.ordinal, openOrdinal)) return CollectionLockUi()
         if (openOrdinal < 0) return CollectionLockUi(locked = true)

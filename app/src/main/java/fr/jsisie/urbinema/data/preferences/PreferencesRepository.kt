@@ -37,6 +37,10 @@ class PreferencesRepository(private val context: Context) {
         values[FILM_GRAIN] ?: false
     }
 
+    val devMode: Flow<Boolean> = context.urbinemaPreferences.data.map { values ->
+        values[DEV_MODE] ?: false
+    }
+
     val badgeCelebrations: Flow<BadgeCelebrationPrefs> = context.urbinemaPreferences.data.map { values ->
         BadgeCelebrationPrefs(
             seeded = values[BADGE_CELEBRATION_SEEDED] ?: false,
@@ -68,6 +72,10 @@ class PreferencesRepository(private val context: Context) {
         context.urbinemaPreferences.edit { it[FILM_GRAIN] = enabled }
     }
 
+    suspend fun setDevMode(enabled: Boolean) {
+        context.urbinemaPreferences.edit { it[DEV_MODE] = enabled }
+    }
+
     suspend fun setCelebratedBadges(codes: Set<String>) {
         context.urbinemaPreferences.edit { values ->
             values[BADGE_CELEBRATION_SEEDED] = true
@@ -79,6 +87,7 @@ class PreferencesRepository(private val context: Context) {
         val THEME_MODE = stringPreferencesKey("theme_mode")
         val LANGUAGE = stringPreferencesKey("language")
         val FILM_GRAIN = booleanPreferencesKey("film_grain")
+        val DEV_MODE = booleanPreferencesKey("dev_mode")
         val BADGE_CELEBRATION_SEEDED = booleanPreferencesKey("badge_celebration_seeded")
         val BADGE_CELEBRATION_CODES = stringPreferencesKey("badge_celebration_codes")
         val TUTORIAL_COMPLETED = booleanPreferencesKey("tutorial_completed")

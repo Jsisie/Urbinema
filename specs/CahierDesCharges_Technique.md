@@ -3,7 +3,7 @@
 ### Urbinema
 
 **Version :** 0.12  
-**Statut :** Cadrage technique aligné sur **0.3.0** (catalogue `catalog.json` v29, graine `catalog_v3.json`, 1542 films, 28 collections, 805 réalisateurs, 1 parcours, 59 quêtes)  
+**Statut :** Cadrage technique aligné sur **0.3.0** (catalogue `catalog.json` v38, graine `catalog_v3.json`, 1613 films, 28 collections, 856 réalisateurs, 1 parcours, 59 quêtes)  
 **Lié à :** `CahierDesCharges_Fonctionnel_v2.md`, `CahierDesCharges_IHM.md`, `DECISIONS_ACTEES.txt`, `ROADMAP_V2_V3.md`  
 **Emplacement :** tous les documents de cadrage vivent dans `specs/`
 

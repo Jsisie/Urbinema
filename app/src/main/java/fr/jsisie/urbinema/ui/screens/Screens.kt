@@ -9,6 +9,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
@@ -106,6 +108,7 @@ import fr.jsisie.urbinema.ui.model.BadgeRarity
 import fr.jsisie.urbinema.ui.model.BadgeUi
 import fr.jsisie.urbinema.ui.model.CollectionTrack
 import fr.jsisie.urbinema.ui.model.CollectionUi
+import fr.jsisie.urbinema.ui.model.DevProgressUi
 import fr.jsisie.urbinema.ui.model.DirectorUi
 import fr.jsisie.urbinema.ui.model.HelpTopic
 import fr.jsisie.urbinema.ui.model.HistoryUi
@@ -186,6 +189,12 @@ fun HomeScreen(
                     Text(stringResource(R.string.level_value, state.level), style = MaterialTheme.typography.labelMedium)
                 }
                 LinearXp(state.xp, state.nextLevelXp)
+            }
+            state.dev?.let { progress ->
+                DevProgressPanel(
+                    progress,
+                    Modifier.padding(horizontal = UrbinemaThemeTokens.dimens.screen),
+                )
             }
             LazyColumn(
                 contentPadding = androidx.compose.foundation.layout.PaddingValues(
@@ -281,6 +290,65 @@ fun LinearXp(xp: Int, target: Int) {
         trackColor = UrbinemaThemeTokens.colors.surfacePressed,
     )
     Text(stringResource(R.string.xp_progress, xp, target), style = MaterialTheme.typography.labelMedium)
+}
+
+@Composable
+internal fun DevProgressPanel(progress: DevProgressUi, modifier: Modifier = Modifier) {
+    Column(modifier.fillMaxWidth().padding(top = UrbinemaThemeTokens.dimens.sm)) {
+        androidx.compose.material3.LinearProgressIndicator(
+            progress = { progress.fraction },
+            modifier = Modifier.fillMaxWidth(),
+            color = UrbinemaThemeTokens.colors.accent,
+            trackColor = UrbinemaThemeTokens.colors.surfacePressed,
+        )
+        Text(
+            stringResource(R.string.dev_score_over_remaining, progress.score, progress.remaining),
+            style = MaterialTheme.typography.labelMedium,
+        )
+        Text(
+            if (progress.nextThreshold == null) {
+                stringResource(R.string.dev_rank_max)
+            } else {
+                stringResource(R.string.dev_rank_bounds, progress.floor, progress.nextThreshold)
+            },
+            style = MaterialTheme.typography.labelMedium,
+            color = UrbinemaThemeTokens.colors.onBackgroundMuted,
+        )
+        progress.lastScoreGain?.let { gain ->
+            Text(
+                stringResource(R.string.dev_last_score, gain),
+                style = MaterialTheme.typography.labelMedium,
+            )
+        }
+        Text(
+            stringResource(
+                R.string.dev_components,
+                progress.weightedVolume,
+                progress.diversity,
+                progress.depth,
+                progress.rawRank,
+            ),
+            style = MaterialTheme.typography.labelMedium,
+            color = UrbinemaThemeTokens.colors.onBackgroundMuted,
+        )
+        androidx.compose.material3.LinearProgressIndicator(
+            progress = { progress.xpFraction },
+            modifier = Modifier.fillMaxWidth().padding(top = UrbinemaThemeTokens.dimens.xs),
+            color = UrbinemaThemeTokens.colors.accent,
+            trackColor = UrbinemaThemeTokens.colors.surfacePressed,
+        )
+        Text(
+            if (progress.xpRemaining == null) {
+                stringResource(R.string.dev_xp_max)
+            } else {
+                stringResource(R.string.dev_xp_over_remaining, progress.xpIntoLevel, progress.xpRemaining)
+            },
+            style = MaterialTheme.typography.labelMedium,
+        )
+        progress.lastXpGain?.let { gain ->
+            Text(stringResource(R.string.dev_last_xp, gain), style = MaterialTheme.typography.labelMedium)
+        }
+    }
 }
 
 @Composable
@@ -492,6 +560,9 @@ fun ProfileScreen(
                     )
                 }
             }
+        }
+        state.dev?.let { progress ->
+            item { DevProgressPanel(progress) }
         }
         item {
             Column(Modifier.fillMaxWidth().padding(bottom = UrbinemaThemeTokens.dimens.xl)) {
@@ -1390,6 +1461,7 @@ private fun searchKindLabel(kind: SearchKind): Int = when (kind) {
     SearchKind.Genre -> R.string.genres
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun MovieScreen(
     movie: MovieUi,
@@ -1419,12 +1491,30 @@ fun MovieScreen(
             item { Text(localizedTitle, style = MaterialTheme.typography.titleLarge, color = UrbinemaThemeTokens.colors.onBackgroundMuted) }
         }
         item {
-            Text(
-                movie.credits,
-                modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.sm).clickable {
-                    movie.directorIds.firstOrNull()?.let(onDirector)
-                },
-            )
+            if (movie.directorCredits.isEmpty()) {
+                Text(
+                    movie.credits,
+                    modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.sm).clickable {
+                        movie.directorIds.firstOrNull()?.let(onDirector)
+                    },
+                )
+            } else {
+                FlowRow(
+                    modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.sm),
+                    horizontalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs),
+                ) {
+                    movie.directorCredits.forEach { credit ->
+                        Text(
+                            credit.name,
+                            color = UrbinemaThemeTokens.colors.accent,
+                            modifier = Modifier.clickable { onDirector(credit.id) },
+                        )
+                    }
+                    if (movie.releaseYear > 0) {
+                        Text("· ${movie.releaseYear}")
+                    }
+                }
+            }
         }
         item { Text(movie.metadata, color = UrbinemaThemeTokens.colors.onBackgroundMuted) }
         item {
@@ -1489,6 +1579,9 @@ fun SettingsScreen(
     onReplayGuide: () -> Unit = {},
     onSources: () -> Unit = {},
     onResetProgress: () -> Unit = {},
+    showDevTools: Boolean = false,
+    devMode: Boolean = false,
+    onDevModeChange: (Boolean) -> Unit = {},
 ) {
     var editedUsername by remember(username) { mutableStateOf(username) }
     var editedAge by remember(ageYears) { mutableStateOf(ageYears?.toString().orEmpty()) }
@@ -1571,6 +1664,16 @@ fun SettingsScreen(
                 ) { (mode, label) ->
                     FilterChip(themeMode == mode, { onThemeModeChange(mode) }, { Text(stringResource(label)) })
                 }
+            }
+        }
+        if (showDevTools) {
+            item { SettingsSwitch(R.string.dev_mode, devMode, onDevModeChange) }
+            item {
+                Text(
+                    stringResource(R.string.dev_mode_help),
+                    color = UrbinemaThemeTokens.colors.onBackgroundMuted,
+                    style = MaterialTheme.typography.bodyMedium,
+                )
             }
         }
         item { SettingsSwitch(R.string.film_grain, filmGrain, onFilmGrainChange) }

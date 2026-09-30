@@ -203,13 +203,12 @@ fun InteractiveMapScreen(
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = false)
     val layers = listOf(
         MapLayer.AROUND_FILM to R.string.sky_map_around,
-        MapLayer.CURRENTS to R.string.currents,
         MapLayer.COUNTRIES to R.string.countries,
         MapLayer.DECADES to R.string.decades,
-        MapLayer.GENRES to R.string.genres,
-        MapLayer.DIRECTORS to R.string.directors,
-        MapLayer.COLLECTIONS to R.string.all_collections,
     )
+    LaunchedEffect(layer) {
+        if (layers.none { it.first == layer }) onLayerChange(MapLayer.AROUND_FILM)
+    }
     Box(
         modifier
             .fillMaxSize()

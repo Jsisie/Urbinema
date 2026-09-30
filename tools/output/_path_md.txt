@@ -1,0 +1,16 @@
+PARCOURS_001_00 movies=4 missing=0 facts=2 figures=5
+  STAR La transition parlante || L'ère du muet prend fin brutalement en **1927** avec la sortie du film *Le Chanteur de jazz*, premier long-métrage doté de dialogues synchronisés.
+PARCOURS_001_01 movies=0 missing=0 facts=2 figures=4
+PARCOURS_001_02 movies=0 missing=0 facts=2 figures=4
+PARCOURS_001_03 movies=0 missing=0 facts=2 figures=4
+PARCOURS_001_04 movies=0 missing=0 facts=2 figures=4
+  STAR La provocation publique || Les projections surréalistes provoquaient régulièrement des scandales majeurs. Lors de la sortie de *L'Âge d'or*, des militants d'extrême droite ont saccagé la salle de cinéma, lacéré les tableaux surréalistes exposés dans le hall, et le film fut interdit par la police pendant plus de quarante ans.
+PARCOURS_001_05 movies=0 missing=0 facts=2 figures=4
+PARCOURS_001_06 movies=0 missing=0 facts=2 figures=4
+PARCOURS_001_07 movies=0 missing=0 facts=2 figures=4
+  STAR Le festival de Cannes 1959 || Cet événement marque le triomphe mondial du mouvement avec la présentation simultanée des *Quatre Cents Coups* de Truffaut (Prix de la mise en scène) et d'*Orphée* ou des repérages d'Alain Resnais pour *Hiroshima mon amour*.
+PARCOURS_001_08 movies=0 missing=0 facts=2 figures=4
+  STAR Une rupture sociopolitique || La *Nuberu Bagu* n'est pas qu'une révolution esthétique, elle est profondément politique. Elle explose en plein climat de contestation étudiante contre la reconduction du traité de coopération de sécurité entre les États-Unis et le Japon (le traité ANPO), un événement qui s'affiche ouvertement au centre de plusieurs films du mouvement.
+PARCOURS_001_09 movies=0 missing=0 facts=2 figures=4
+  STAR La reconnaissance internationale || Malgré sa brièveté et ses conditions de production complexes, le mouvement a connu un immense retentissement mondial, décrochant coup sur coup deux Oscars du meilleur film en langue étrangère (*Le Miroir aux alouettes* en 1965 et *Trains étroitement surveillés* en 1967).
+PARCOURS_001_10 movies=0 missing=0 facts=2 figures=4

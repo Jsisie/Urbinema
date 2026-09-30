@@ -7,7 +7,7 @@
 ## Spécification fonctionnelle du produit
 
 **Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 29, 1542 films, 28 collections, parcours 1)
+**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 38, 1613 films, 28 collections, parcours 1)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -1225,7 +1225,7 @@ Liste de travail : `Listes_Fonctionnelles/Liste_Des_Badges.txt`
 | --- | --- |
 | Passeport Cinéma | voir des films de 15 pays différents |
 | Globe-Trotter | voir des films de 30 pays différents |
-| Cartographe du Cinéma | voir des films de 50 pays différents |
+| Cartographe du Cinéma | voir des films de 40 pays différents |
 | Tour d'Europe | voir des films de 10 pays européens différents |
 | Au-delà des Frontières | voir au moins 5 films provenant de chacun de 5 continents |
 | Mappemonde | voir au moins un film de chaque pays du catalogue |
@@ -1239,6 +1239,7 @@ Liste de travail : `Listes_Fonctionnelles/Liste_Des_Badges.txt`
 | Rising Sun | voir 20 films japonais |
 | Lumière sur la France | voir 20 films français |
 | Made in Asia | voir 50 films asiatiques |
+| Lumière d'Afrique | voir 20 films issus du continent Africain |
 
 ### Temps
 
@@ -1250,6 +1251,7 @@ Liste de travail : `Listes_Fonctionnelles/Liste_Des_Badges.txt`
 | Fantômes du Muet | voir 20 films muets |
 | Retour aux Sources | voir des films de 5 décennies différentes |
 | À Travers les Âges | voir un film de chaque décennie, des années 1890 aux années 2020 |
+| Notre siècle | voir 50 films sortis depuis 2000 |
 
 ### Mouvements et genres
 
@@ -1260,7 +1262,9 @@ Liste de travail : `Listes_Fonctionnelles/Liste_Des_Badges.txt`
 | L'Œil soviétique | voir 10 films issus du cinéma soviétique |
 | Nuits américaines | voir 20 films noirs |
 | Western Spaghetti | voir 15 westerns italiens |
-| Cabinet des Frayeurs | voir 30 films d'horreur |
+| Cabinet des Frayeurs | voir 50 films d'horreur |
+| Le Réel | voir 20 documentaires |
+| Image par image | voir 20 films d'animation |
 
 ### Formes exigeantes
 
@@ -1269,12 +1273,14 @@ Liste de travail : `Listes_Fonctionnelles/Liste_Des_Badges.txt`
 | La Forme avant le Fond | voir 10 films particulièrement expérimentaux ou non narratifs |
 | Le Temps suspendu | voir 20 films de plus de 3 heures |
 | La Grande Traversée | voir 5 films de plus de 5 heures |
+| Argentique | voir 40 films en noir et blanc non muets |
+| En une bobine | voir 30 courts métrages |
 
 ### Panorama
 
 | Badge | Condition |
 | --- | --- |
-| Bibliothèque de Pellicule | voir au moins 10 films de 20 réalisateurs différents |
+| Les Grands Noms | voir au moins 10 films de 10 réalisateurs différents |
 | Encyclopédie Vivante | voir au moins 10 films appartenant à 30 mouvements cinématographiques différents |
 
 ------
@@ -1294,14 +1300,17 @@ En revanche, une condition de badge n'est **calculable** que si le film porte la
 | durée | Le Temps suspendu, La Grande Traversée |
 | muet (oui/non) | Fantômes du Muet |
 | expérimental / non narratif | La Forme avant le Fond |
-| réalisateur | Bibliothèque de Pellicule, Enfant de la Nouvelle Vague |
+| réalisateur | Les Grands Noms, Enfant de la Nouvelle Vague |
 | pays et continent | tous les badges géographiques |
 | mouvements | L'Œil soviétique, Encyclopédie Vivante |
-| genre | Nuits américaines, Western Spaghetti, La Dolce Commedia |
+| genre | Nuits américaines, Western Spaghetti, La Dolce Commedia, Le Réel, Image par image |
+| noir et blanc, hors muet | Argentique |
+| format court | En une bobine |
+| année depuis 2000 | Notre siècle |
 
 Le **réalisateur devient donc une donnée du film dès la V1** — il est requis par deux badges et par le calcul de profondeur du rang (§9.4). Cela ne remet pas en cause son statut d'entité de la carte, qui reste en V2.
 
-Pour mémoire, les volumes impliqués (100 films d'avant 1980, 50 pays, 20 réalisateurs à 10 films, 30 mouvements à 10 films) supposent un catalogue de plusieurs milliers de titres. Il sera atteint progressivement. Urbinema n'est pas pensée pour être terminée en deux mois, mais parcourue sur des années.
+Pour mémoire, les volumes impliqués (100 films d'avant 1980, 40 pays, 10 réalisateurs à 10 films, 30 mouvements à 10 films) supposent un catalogue de plusieurs milliers de titres. Il sera atteint progressivement. Urbinema n'est pas pensée pour être terminée en deux mois, mais parcourue sur des années.
 
 ------
 
@@ -1816,7 +1825,7 @@ L'administration devra permettre de gérer :
 
 ------
 
-## 15.8. Parcours pédagogiques (0.3.0, pack 29)
+## 15.8. Parcours pédagogiques (0.3.0, pack 38)
 
 L'onglet Parcours n'est pas une collection et ne marque aucun film Vu. Il
 propose des lectures : pour l'instant le parcours « Comment le cinéma est
@@ -2418,7 +2427,7 @@ Encore ouvert :
 ## 24.4. Badges
 
 **Tranché :** liste plate, cumulable, sans lien avec le rang. Première fournée
-de 32 badges. Code métier stable, difficulté 1 à 5, règle dans le code, image
+de 38 badges. Code métier stable, difficulté 1 à 5, règle dans le code, image
 locale. Tous les badges sont visibles (non obtenus en N&B) et un badge obtenu
 ne se perd jamais. Liste triée par difficulté puis `code`. Profil : jusqu’à
 **3 badges** choisis. La V1 affiche sa difficulté éditoriale, pas une rareté

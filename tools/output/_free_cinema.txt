@@ -1,0 +1,103 @@
+=== characteristics ===
+CINEMA_MUET_MOUVEMENT = Cinéma muet
+SURREALISME = Surréalisme
+BRITISH_NEW_WAVE = Free Cinema / British New Wave
+CINEMA_D_AUTEUR = Cinéma d'auteur
+NEO_NOIR = Néo-noir
+JIDAIGEKI = Jidai-geki
+ANIMATION_DAUTEUR = Animation d'auteur
+CINEMA_INDEPENDANT_AMERICAIN = Cinéma indépendant américain
+FREE_CINEMA = Free Cinema britannique
+NOUVELLE_VAGUE_BRITANNIQUE = Nouvelle Vague britannique / Kitchen Sink
+CINEMA_POLITIQUE_LATINO = Cinéma politique latino-américain
+CINEMA_DU_LOOK = Cinéma du look français
+NEW_FRENCH_EXTREMITY = New French Extremity
+CINEMA_TRANSGRESSION = Cinéma de transgression
+CINEMA_GORE = Cinéma gore
+
+=== tagged films ===
+LE_SALAIRE_DE_LA_PEUR_1953 | Le Salaire de la peur | 1953 | Henri-Georges Clouzot | THRILLER, AVENTURE | Cinéma d'auteur
+LES_DIABOLIQUES_1955 | Les Diaboliques | 1955 | Henri-Georges Clouzot | THRILLER, HORREUR | Cinéma d'auteur
+LA_NUIT_DU_CHASSEUR_1955 | La Nuit du chasseur | 1955 | Charles Laughton | THRILLER, HORREUR, DRAME, FILM_NOIR | Hollywood classique, Film noir
+KES_1969 | Kes | 1969 | Ken Loach | DRAME | Free Cinema / British New Wave
+VAMPYR_1932 | Vampyr | 1932 | Carl Theodor Dreyer | HORREUR | Cinéma d'auteur
+OSSESSIONE_1943 | Les Amants diaboliques | 1943 | Luchino Visconti | DRAME, POLICIER | Néoréalisme italien
+DEAD_RINGERS_1988 | Faux-semblants | 1988 | David Cronenberg | THRILLER, DRAME, HORREUR | Cinéma d'auteur
+DOCTEUR_FOLAMOUR_1964 | Docteur Folamour | 1964 | Stanley Kubrick | COMEDIE, GUERRE | Âge d'or d'Hollywood, Cinéma d'auteur, Free Cinema / British New Wave
+BLOW_UP_1966 | Blow-Up | 1966 | Michelangelo Antonioni | DRAME, MYSTERE, THRILLER | Cinéma classique italien, Cinéma d'auteur, Cinéma expérimental, Surréalisme, Free Cinema / British New Wave
+UNE_QUESTION_DE_VIE_OU_DE_MORT_1946 | Une question de vie ou de mort | 1946 | Emeric Pressburger, Michael Powell | ROMANCE, FANTASTIQUE, DRAME | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur
+LE_NARCISSE_NOIR_1947 | Le Narcisse noir | 1947 | Emeric Pressburger, Michael Powell | DRAME | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur
+COLONEL_BLIMP_1943 | Colonel Blimp | 1943 | Michael Powell, Emeric Pressburger | GUERRE, DRAME, ROMANCE, COMEDIE | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur
+BRAZIL_1985 | Brazil | 1985 | Terry Gilliam | COMEDIE, SCIENCE_FICTION | Free Cinema britannique, Surréalisme
+PERFORMANCE_1970 | Vanilla | 1970 | Nicolas Roeg, Donald Cammell | POLICIER, DRAME | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur, Surréalisme, Néo-noir, Free Cinema / British New Wave
+DISTANT_VOICES_STILL_LIVES_1988 | Distant Voices, Still Lives | 1988 | Terence Davies | DRAME, MUSICAL | Free Cinema britannique
+A_CANTERBURY_TALE_1944 | A Canterbury Tale | 1944 | Emeric Pressburger, Michael Powell | MYSTERE, GUERRE, DRAME | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur
+LE_VOYEUR_1960 | Le Voyeur | 1960 | Michael Powell | HORREUR, THRILLER, POLICIER | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur, Free Cinema / British New Wave
+UNDER_THE_SKIN_2013 | Under the Skin | 2013 | Jonathan Glazer | DRAME | Free Cinema britannique
+I_KNOW_WHERE_I_M_GOING_1945 | Je sais où je vais | 1945 | Michael Powell, Emeric Pressburger | ROMANCE, DRAME, COMEDIE | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur
+INNOCENTS_THE_1961 | Les Innocents | 1961 | Jack Clayton | HORREUR, MYSTERE, DRAME | Nouvelle Vague britannique / Kitchen Sink, Free Cinema / British New Wave
+POSSESSION_1981 | Possession | 1981 | Andrzej Żuławski | HORREUR | Cinéma du look français
+NAKED_1993 | Naked | 1993 | Mike Leigh | DRAME, COMEDIE | Nouvelle Vague britannique / Kitchen Sink
+IF_1968 | If.... | 1968 | Lindsay Anderson | DRAME | Free Cinema britannique, Free Cinema / British New Wave
+WITHNAIL_ET_MOI_1987 | Withnail et moi | 1987 | Bruce Robinson | COMEDIE, DRAME | Nouvelle Vague britannique / Kitchen Sink
+SECRETS_ET_MENSONGES_1996 | Secrets et mensonges | 1996 | Mike Leigh | DRAME | Nouvelle Vague britannique / Kitchen Sink
+THE_BRIDGE_ON_THE_RIVER_KWAI_1957 | Le Pont de la rivière Kwaï | 1957 | David Lean | DRAME, HISTORIQUE, GUERRE | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur, Free Cinema / British New Wave
+MONTY_PYTHON_S_LIFE_OF_BRIAN_1979 | Monty Python : La Vie de Brian | 1979 | Terry Jones | COMEDIE | Free Cinema britannique
+DOCTOR_ZHIVAGO_1965 | Le Docteur Jivago | 1965 | David Lean | DRAME, ROMANCE, GUERRE | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur, Mélodrame
+MORVERN_CALLAR_2002 | Le voyage de Morvern Callar | 2002 | Lynne Ramsay | DRAME | Free Cinema britannique
+REPULSION_1965 | Répulsion | 1965 | Roman Polanski | DRAME, THRILLER, HORREUR | Nouvel Hollywood, Cinéma d'auteur, Néo-noir, Free Cinema / British New Wave
+THE_SERVANT_1963 | The Servant | 1963 | Joseph Losey | DRAME | Nouvelle Vague britannique / Kitchen Sink, Free Cinema / British New Wave
+THE_DEVILS_1971 | Les Diables | 1971 | Ken Russell | DRAME, HISTORIQUE, HORREUR | Free Cinema britannique, Surréalisme
+WICKER_MAN_THE_1973 | Le dieu d'osier | 1973 | Robin Hardy | HORREUR | Free Cinema britannique
+THE_LONG_DAY_CLOSES_1992 | Une longue journée qui s'achève | 1992 | Terence Davies | DRAME | Free Cinema britannique
+THE_ROYAL_TENENBAUMS_2001 | La Famille Tenenbaum | 2001 | Wes Anderson | COMEDIE, DRAME | Free Cinema britannique
+HOUR_OF_THE_WOLF_1968 | L'Heure du loup | 1968 | Ingmar Bergman | DRAME, HORREUR | Nouvelle vague scandinave, Cinéma d'auteur, Surréalisme
+RATCATCHER_1999 | Ratcatcher | 1999 | Lynne Ramsay | DRAME | Free Cinema britannique
+RUSHMORE_1998 | Rushmore | 1998 | Wes Anderson | COMEDIE, DRAME | Free Cinema britannique
+AN_AMERICAN_WEREWOLF_IN_LONDON_1981 | Le Loup-Garou de Londres | 1981 | John Landis | COMEDIE, HORREUR, FANTASTIQUE | Free Cinema britannique
+TRAINSPOTTING_1996 | Ferrovipathes | 1996 | Danny Boyle | DRAME, POLICIER | Free Cinema britannique, Surréalisme
+INTRUDER_THE_2004 | Intruder, The | 2005 | Frank van Mechelen | HORREUR, THRILLER, MYSTERE | New French Extremity
+CURE_1997 | Cure | 1997 | Akira Kurosawa | POLICIER, HORREUR, MYSTERE | Âge d'or du cinéma japonais, Jidai-geki, Cinéma d'auteur, Néo-noir
+LOCAL_HERO_1983 | Local hero | 1983 | Bill Forsyth | COMEDIE, DRAME | Free Cinema britannique
+FISH_TANK_2009 | Fish Tank | 2009 | Andrea Arnold | DRAME | Free Cinema britannique
+HUNGER_2008 | Hunger | 2008 | Steve McQueen | DRAME, HISTORIQUE | Free Cinema britannique
+LOLITA_1962 | Lolita | 1962 | Stanley Kubrick | DRAME | Âge d'or d'Hollywood, Cinéma d'auteur, Free Cinema / British New Wave
+THE_COOK_THE_THIEF_HIS_WIFE_HER_LOVER_1989 | Le Cuisinier, le voleur, sa femme et son amant | 1989 | Peter Greenaway | POLICIER, DRAME | Free Cinema britannique, Cinéma expérimental, Surréalisme
+GREAT_EXPECTATIONS_1946 | Les Grandes Espérances | 1946 | David Lean | DRAME, ROMANCE | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur
+THIEF_OF_BAGDAD_THE_1940 | Le Voleur de Bagdad | 1940 | Ludwig Berger, Michael Powell, Tim Whelan | AVENTURE, FANTASTIQUE, ROMANCE | Nouvelle Vague britannique / Kitchen Sink, Cinéma d'auteur
+O_LUCKY_MAN_1973 | Le meilleur des mondes possibles | 1973 | Lindsay Anderson | COMEDIE, MUSICAL, FANTASTIQUE, DRAME | Free Cinema britannique, Surréalisme
+DEEP_END_1970 | Grand Bain | 1971 | Jerzy Skolimowski | DRAME, COMEDIE | Free Cinema britannique, Surréalisme
+WHO_S_AFRAID_OF_VIRGINIA_WOOLF_1966 | Qui a peur de Virginia Woolf ? | 1966 | Mike Nichols | DRAME | Cinéma indépendant américain
+EXCALIBUR_1981 | Excalibur l'epee magique | 1981 | John Boorman | AVENTURE, FANTASTIQUE | Free Cinema britannique
+ELEPHANT_TV_1989 | Elephant [TV] | 1989 | Alan Clarke | DRAME | Free Cinema britannique
+MONTY_PYTHON_AND_THE_HOLY_GRAIL_1975 | Monty Python : Sacré Graal ! | 1975 | Terry Jones, Terry Gilliam | AVENTURE, COMEDIE, FANTASTIQUE | Free Cinema britannique
+SHAUN_OF_THE_DEAD_2004 | Shaun et les zombies | 2004 | Edgar Wright | HORREUR, COMEDIE | Free Cinema britannique
+NIGHT_OF_THE_DEMON_1957 | Rendez-vous avec la peur | 1957 | Jacques Tourneur | FANTASTIQUE, HORREUR, MYSTERE | Film noir, Free Cinema / British New Wave
+SATURDAY_NIGHT_AND_SUNDAY_MORNING_1960 | Samedi soir, dimanche matin | 1960 | Karel Reisz | DRAME, ROMANCE | Nouvelle Vague britannique / Kitchen Sink, Free Cinema / British New Wave
+THE_LONELINESS_OF_THE_LONG_DISTANCE_RUNNER_1962 | La solitude du coureur de fond | 1962 | Tony Richardson | DRAME | Nouvelle Vague britannique / Kitchen Sink, Free Cinema / British New Wave
+THIS_SPORTING_LIFE_1963 | Le prix d'un homme | 1963 | Lindsay Anderson | DRAME | Free Cinema britannique, Free Cinema / British New Wave
+A_HARD_DAY_S_NIGHT_1964 | Quatre garçons dans le vent | 1964 | Richard Lester | COMEDIE, MUSICAL | Nouvelle Vague britannique / Kitchen Sink, Free Cinema / British New Wave
+ALMOST_HUMAN_1974 | La Rançon de la Peur | 1974 | Umberto Lenzi | POLICIER, THRILLER | Poliziottesco
+THE_HILLS_HAVE_EYES_1977 | La colline a des yeux | 1977 | Wes Craven | HORREUR | Grindhouse, Nouvel Hollywood
+SANTA_SANGRE_1989 | Santa Sangre | 1989 | Alejandro Jodorowsky | HORREUR, DRAME, THRILLER | Cinéma politique latino-américain, Cinéma expérimental, Surréalisme
+TROUBLE_EVERY_DAY_2001 | Trouble Every Day | 2001 | Denis Villeneuve | DRAME, HORREUR, THRILLER | New French Extremity
+JERUSALEMA_2008 | Gangster's Paradise: Jerusalema | 2008 | Ralph Ziman | ACTION, POLICIER, DRAME | Cinéma sud-africain contemporain
+ANGST_1983 | Angst | 1983 | Gerald Kargl | THRILLER, POLICIER, HORREUR | 
+MALPERTUIS_1971 | Malpertuis | 1971 | Harry Kümel | DRAME, HORREUR, FANTASTIQUE | 
+LES_LEVRES_ROUGES_1971 | Les Lèvres rouges | 1971 | Harry Kümel | DRAME, HORREUR, THRILLER | 
+NOVEMBER_2017 | November | 2017 | Rainer Sarnet | DRAME, FANTASTIQUE, ROMANCE, HORREUR | 
+FLOW_2024 | Flow, le chat qui n'avait plus peur de l'eau | 2024 | Gints Zilbalodis | AVENTURE, ANIMATION, FAMILLE, FANTASTIQUE | Animation d'auteur, Cinéma balte contemporain
+O_DREAMLAND_1953 | O Dreamland | 1953 | Lindsay Anderson | DOCUMENTAIRE, COMEDIE | Free Cinema britannique
+MOMMA_DON_T_ALLOW_1956 | Momma Don't Allow | 1956 | Karel Reisz, Tony Richardson | DOCUMENTAIRE, MUSICAL | Free Cinema britannique
+TOGETHER_1956 | Ensemble | 1956 | Lorenza Mazzetti, Denis Horne | DRAME | Free Cinema britannique
+EVERY_DAY_EXCEPT_CHRISTMAS_1957 | Every Day Except Christmas | 1957 | Lindsay Anderson | DOCUMENTAIRE | Free Cinema britannique
+WE_ARE_THE_LAMBETH_BOYS_1959 | We Are the Lambeth Boys | 1959 | Karel Reisz | DOCUMENTAIRE | Free Cinema britannique
+LES_CORPS_SAUVAGES_1959 | Les corps sauvages | 1959 | Tony Richardson | DRAME | Free Cinema britannique
+UN_GO_T_DE_MIEL_1961 | Un goût de miel | 1961 | Tony Richardson | DRAME | Free Cinema britannique
+UN_AMOUR_PAS_COMME_LES_AUTRES_1962 | Un amour pas comme les autres | 1962 | John Schlesinger | DRAME, ROMANCE | Free Cinema britannique
+BILLY_LE_MENTEUR_1963 | Billy le menteur | 1963 | John Schlesinger | COMEDIE, ROMANCE, DRAME | Free Cinema britannique
+DARLING_1965 | Darling chérie | 1965 | John Schlesinger | DRAME, ROMANCE | Free Cinema britannique
+LA_LOUPE_DE_GRAND_MAMAN_1900 | La Loupe de grand-maman | 1900 | George Albert Smith | DRAME | Cinéma muet
+
+=== other refs ===
+director KEN_LOACH Ken Loach

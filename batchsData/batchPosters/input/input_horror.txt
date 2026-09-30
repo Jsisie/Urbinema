@@ -1,0 +1,61 @@
+frenchTitle;releaseYear;director;code;originalTitle;demand
+"L'Oiseau au plumage de cristal";1970;"Dario Argento";L_OISEAU_AU_PLUMAGE_DE_CRISTAL_1970;"L'uccello dalle piume di cristallo";0.62
+"Ténèbres";1982;"Dario Argento";TENEBRES_1982;"Tenebre";0.64
+"Phénomènes";1985;"Dario Argento";PHENOMENES_1985;"Phenomena";0.6
+"Le Masque du démon";1960;"Mario Bava";LE_MASQUE_DU_DEMON_1960;"La maschera del demonio";0.7
+"La Danse des vampires";1967;"Roman Polanski";LA_DANSE_DES_VAMPIRES_1967;"The Fearless Vampire Killers";0.58
+"La Marque du diable";1970;"Michael Armstrong";LA_MARQUE_DU_DIABLE_1970;"Hexen bis aufs Blut gequält";0.55
+"Les Lèvres de sang";1975;"Jean Rollin";LES_LEVRES_DE_SANG_1975;"Lèvres de sang";0.58
+"La Mère Jeanne des Anges";1961;"Jerzy Kawalerowicz";LA_MERE_JEANNE_DES_ANGES_1961;"Matka Joanna od Aniołów";0.72
+"Viy";1967;"Konstantin Ershov";VIY_1967;"Вий";0.66
+"Le Diable";1972;"Andrzej Zulawski";LE_DIABLE_1972;"Diabeł";0.68
+"Szamanka";1996;"Andrzej Zulawski";SZAMANKA_1996;"Szamanka";0.66
+"Carnival of Souls";1962;"Herk Harvey";CARNIVAL_OF_SOULS_1962;"Carnival of Souls";0.7
+"Ganja & Hess";1973;"Bill Gunn";GANJA_AND_HESS_1973;"Ganja & Hess";0.72
+"Deranged";1974;"Jeff Gillen";DERANGED_1974;"Deranged";0.52
+"Martin";1977;"George A. Romero";MARTIN_1977;"Martin";0.68
+"Angoisse";1987;"Bigas Luna";ANGOISSE_1987;"Angustia";0.58
+"Inugami";2001;"Masato Harada";INUGAMI_2001;"Inugami";0.55
+"Trois histoires de l'au-delà";2002;"Kim Jee-woon";TROIS_HISTOIRES_DE_L_AU_DELA_2002;"三更";0.58
+"Spider Forest";2004;"Song Il-gon";SPIDER_FOREST_2004;"거미숲";0.6
+"La Nuit des maléfices";1971;"Piers Haggard";LA_NUIT_DES_MALEFICES_1971;"The Blood on Satan's Claw";0.64
+"Penda's Fen";1974;"Alan Clarke";PENDAS_FEN_1974;"Penda's Fen";0.7
+"A Field in England";2013;"Ben Wheatley";A_FIELD_IN_ENGLAND_2013;"A Field in England";0.62
+"The Witch";2015;"Robert Eggers";THE_WITCH_2015;"The Witch";0.7
+"Hagazussa";2017;"Lukas Feigelfeld";HAGAZUSSA_2017;"Hagazussa";0.66
+"Tetsuo";1989;"Shinya Tsukamoto";TETSUO_1989;"Tetsuo";0.72
+"eXistenZ";1999;"David Cronenberg";EXISTENZ_1999;"eXistenZ";0.66
+"Taxidermie";2006;"Gyorgy Palfi";TAXIDERMIE_2006;"Taxidermia";0.64
+"Titane";2021;"Julia Ducournau";TITANE_2021;"Titane";0.74
+"La Sentinelle des maudits";1977;"Michael Winner";LA_SENTINELLE_DES_MAUDITS_1977;"The Sentinel";0.52
+"Innocence";2004;"Lucile Hadzihalilovic";INNOCENCE_2004;"Innocence";0.66
+"Beyond the Black Rainbow";2010;"Panos Cosmatos";BEYOND_THE_BLACK_RAINBOW_2010;"Beyond the Black Rainbow";0.62
+"The Lighthouse";2019;"Robert Eggers";THE_LIGHTHOUSE_2019;"The Lighthouse";0.74
+"Frankenstein s'est échappé";1957;"Terence Fisher";FRANKENSTEIN_S_EST_ECHAPPE_1957;"The Curse of Frankenstein";0.62
+"Le Cauchemar de Dracula";1958;"Terence Fisher";LE_CAUCHEMAR_DE_DRACULA_1958;"Dracula";0.66
+"Le Grand Inquisiteur";1968;"Michael Reeves";LE_GRAND_INQUISITEUR_1968;"Witchfinder General";0.7
+"La Dernière Maison sur la gauche";1972;"Wes Craven";LA_DERNIERE_MAISON_SUR_LA_GAUCHE_1972;"The Last House on the Left";0.6
+"Vendredi 13";1980;"Sean S. Cunningham";VENDREDI_13_1980;"Friday the 13th";0.48
+"Les Griffes de la nuit";1984;"Wes Craven";LES_GRIFFES_DE_LA_NUIT_1984;"A Nightmare on Elm Street";0.62
+"Scream";1996;"Wes Craven";SCREAM_1996;"Scream";0.58
+"Ring";1998;"Hideo Nakata";RING_1998;"リング";0.7
+"Audition";1999;"Takashi Miike";AUDITION_1999;"オーディション";0.72
+"Kaïro";2001;"Kiyoshi Kurosawa";KAIRO_2001;"回路";0.74
+"Ju-on";2002;"Takashi Shimizu";JU_ON_2002;"Ju-on: The Grudge";0.58
+"The Eye";2002;"Oxide Pang";THE_EYE_2002;"見鬼";0.55
+"La Résidence";1969;"Narciso Ibanez Serrador";LA_RESIDENCE_1969;"La residencia";0.6
+"Les Révoltés de l'an 2000";1976;"Narciso Ibanez Serrador";LES_REVOLTES_DE_L_AN_2000_1976;"¿Quién puede matar a un niño?";0.64
+"Les Autres";2001;"Alejandro Amenabar";LES_AUTRES_2001;"The Others";0.62
+"L'Échine du Diable";2001;"Guillermo del Toro";L_ECHINE_DU_DIABLE_2001;"El espinazo del diablo";0.7
+"L'Orphelinat";2007;"J.A. Bayona";L_ORPHELINAT_2007;"El orfanato";0.62
+"La Chose d'un autre monde";1951;"Christian Nyby";LA_CHOSE_D_UN_AUTRE_MONDE_1951;"The Thing from Another World";0.68
+"L'Homme qui rétrécit";1957;"Jack Arnold";L_HOMME_QUI_RETRECIT_1957;"The Incredible Shrinking Man";0.66
+"It Follows";2014;"David Robert Mitchell";IT_FOLLOWS_2014;"It Follows";0.68
+"Hérédité";2018;"Ari Aster";HEREDITE_2018;"Hereditary";0.72
+"Us";2019;"Jordan Peele";US_2019;"Us";0.66
+"Nope";2022;"Jordan Peele";NOPE_2022;"Nope";0.64
+"Poltergeist";1982;"Tobe Hooper";POLTERGEIST_1982;"Poltergeist";0.58
+"Evil Dead";1981;"Sam Raimi";EVIL_DEAD_1981;"The Evil Dead";0.7
+"Misery";1990;"Rob Reiner";MISERY_1990;"Misery";0.6
+"28 jours plus tard";2002;"Danny Boyle";VINGT_HUIT_JOURS_PLUS_TARD_2002;"28 Days Later";0.64
+"Midsommar";2019;"Ari Aster";MIDSOMMAR_2019;"Midsommar";0.68

@@ -330,7 +330,7 @@ def map_characteristics(
     if primary in {"SENEGAL", "MALI", "ALGERIA", "EGYPT"}:
         add("CINEMA_AFRICAIN")
     if primary == "UK" and 1956 <= year <= 1970:
-        add("BRITISH_NEW_WAVE")
+        add("NOUVELLE_VAGUE_BRITANNIQUE")
     if primary == "POLAND" and 1956 <= year <= 1968:
         add("ECOLE_POLONAISE")
     if primary == "CZECH" and 1963 <= year <= 1969:

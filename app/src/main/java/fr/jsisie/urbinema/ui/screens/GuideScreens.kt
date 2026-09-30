@@ -13,9 +13,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
@@ -35,6 +35,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -98,46 +99,43 @@ fun AppGuideDialog(onFinished: () -> Unit) {
                 window.setDimAmount(0.72f)
             }
         }
+        val maxHeight = (LocalConfiguration.current.screenHeightDp * 0.34f).dp
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Surface(
                 modifier = Modifier
-                    .padding(horizontal = 24.dp)
-                    .widthIn(max = 480.dp)
-                    .fillMaxWidth()
-                    .fillMaxHeight(0.6f),
+                    .padding(horizontal = 32.dp)
+                    .widthIn(max = 340.dp)
+                    .heightIn(max = maxHeight),
                 shape = MaterialTheme.shapes.large,
                 color = colors.surface,
                 contentColor = colors.onBackground,
             ) {
-                Column(Modifier.padding(24.dp)) {
-                    Column(
-                        Modifier
-                            .weight(1f)
-                            .verticalScroll(rememberScrollState()),
-                        verticalArrangement = Arrangement.Top,
-                    ) {
-                        Text(
-                            title,
-                            style = MaterialTheme.typography.displayMedium,
-                            color = colors.onBackground,
-                            textAlign = TextAlign.Start,
-                        )
-                        Text(
-                            body,
-                            modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.lg),
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = colors.onBackgroundMuted,
-                        )
-                        Text(
-                            count,
-                            modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.xl),
-                            color = colors.onBackgroundFaint,
-                        )
-                    }
+                Column(
+                    Modifier
+                        .verticalScroll(rememberScrollState())
+                        .padding(16.dp),
+                ) {
+                    Text(
+                        title,
+                        style = MaterialTheme.typography.titleLarge,
+                        color = colors.onBackground,
+                        textAlign = TextAlign.Start,
+                    )
+                    Text(
+                        body,
+                        modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.sm),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = colors.onBackgroundMuted,
+                    )
+                    Text(
+                        count,
+                        modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.md),
+                        color = colors.onBackgroundFaint,
+                    )
                     Row(
                         Modifier
                             .fillMaxWidth()
-                            .padding(top = UrbinemaThemeTokens.dimens.md),
+                            .padding(top = UrbinemaThemeTokens.dimens.sm),
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically,
                     ) {

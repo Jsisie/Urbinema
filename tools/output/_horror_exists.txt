@@ -1,0 +1,218 @@
+=== chars ===
+NEOREALISME_ITALIEN | Néoréalisme italien
+NOUVELLE_VAGUE_FRANCAISE | Nouvelle Vague française
+AGE_OR_CINEMA_JAPONAIS | Âge d'or du cinéma japonais
+HOLLYWOOD_CLASSIQUE | Hollywood classique
+MONTAGE_SOVIETIQUE | Montage soviétique
+CINEMA_SOVIETIQUE | Cinéma soviétique
+EXPRESSIONNISME_ALLEMAND | Expressionnisme allemand
+FILM_NOIR_STYLE | Film noir
+WESTERN_CLASSIQUE | Western classique
+CINEMA_MUET_MOUVEMENT | Cinéma muet
+NOUVEAU_CINEMA_ALLEMAND | Nouveau cinéma allemand
+NOUVELLE_VAGUE_IRANIENNE | Nouvelle vague iranienne
+COMMEDIA_ALL_ITALIANA | Comédie à l'italienne
+SPAGHETTI_WESTERN | Western spaghetti
+SURREALISME | Surréalisme
+CINEMA_EXPERIMENTAL | Cinéma expérimental
+NEW_HOLLYWOOD | Nouvel Hollywood
+REALISME_POETIQUE | Réalisme poétique
+CINEMA_NOVO | Cinema Novo
+DOGME_95 | Dogme 95
+HONG_KONG_NEW_WAVE | Nouvelle Vague hongkongaise
+TAIWAN_NEW_CINEMA | Nouveau cinéma taïwanais
+KOREAN_NEW_WAVE | Nouvelle vague coréenne
+INDIAN_PARALLEL | Cinéma parallèle indien
+THIRD_CINEMA | Troisième cinéma
+MELODRAME | Mélodrame
+CINEMA_D_AUTEUR | Cinéma d'auteur
+IMPRESSIONNISME_FRANCAIS | Impressionnisme français
+DOCUMENTAIRE_POETIQUE | Documentaire poétique
+NEO_NOIR | Néo-noir
+ROAD_MOVIE | Road movie
+ECOLE_POLONAISE | École polonaise
+NOUVELLE_VAGUE_TCHEQUE | Nouvelle Vague tchèque
+CINEMA_DIRECT | Cinéma direct
+LEFT_BANK | Rive gauche
+JIDAIGEKI | Jidai-geki
+GIALLO | Giallo
+ANIMATION_DAUTEUR | Animation d'auteur
+CINEMA_AFRICAIN | Cinémas d'Afrique
+NOUVELLE_VAGUE_JAPONAISE | Nouvelle Vague japonaise (Nūberu Bāgu)
+CINEMA_CLASSIQUE_ITALIEN | Cinéma classique italien
+CINEMA_POLITIQUE_ITALIEN | Cinéma politique italien
+CINEMA_INDEPENDANT_AMERICAIN | Cinéma indépendant américain
+CINEMA_VERITE | Cinéma-vérité
+CINQUIEME_GENERATION_CHINOISE | Cinquième génération chinoise
+SIXIEME_GENERATION_CHINOISE | Sixième génération chinoise
+ECOLE_BRITANNIQUE_DOCUMENTAIRE | École britannique documentaire
+FREE_CINEMA | Free Cinema britannique
+NOUVELLE_VAGUE_BRITANNIQUE | Nouvelle Vague britannique / Kitchen Sink
+NOUVELLE_GENERATION_IRANIENNE | Nouvelle génération iranienne
+CINEMA_QUEBECOIS_MODERNE | Cinéma québécois moderne
+AUSTRALIAN_NEW_WAVE | Australian New Wave
+LA_REBELLION | Cinéma afro-américain indépendant / L.A. Rebellion
+NEW_QUEER_CINEMA | New Queer Cinema
+NOUVEAU_CINEMA_ROUMAIN | Nouveau cinéma roumain
+NOUVELLE_VAGUE_HONGROISE | Nouvelle Vague hongroise
+BLACK_WAVE_YOUGOSLAVE | Black Wave yougoslave
+CINEMA_POLITIQUE_LATINO | Cinéma politique latino-américain
+NOUVELLE_VAGUE_PHILIPPINE | Nouvelle Vague philippine
+CINEMA_DU_LOOK | Cinéma du look français
+NEW_FRENCH_EXTREMITY | New French Extremity
+SLOW_CINEMA | Slow Cinema
+NUEVO_CINE_ARGENTINO | Nuevo Cine Argentino
+NUEVO_CINE_MEXICANO | Nuevo Cine Mexicano
+CINEMA_ESPAGNOL_MODERNE | Nouvelle vague / cinéma moderne espagnol
+NOUVELLE_VAGUE_SCANDINAVE | Nouvelle vague scandinave
+CINEMA_TURC_MODERNE | Cinéma turc moderne
+CINEMA_MAGHREBIN | Cinéma maghrébin postcolonial
+CINEMA_AFRICAIN_POSTCOLONIAL | Cinéma africain postcolonial
+NOUVELLE_VAGUE_CHILIENNE | Nouvelle vague chilienne
+RETOMADA_BRESILIENNE | Retomada brésilienne
+CINEMA_THAILANDAIS | Cinéma thaïlandais contemporain
+CINEMA_INDONESIEN | Cinéma indonésien contemporain
+CINEMA_MALAYALAM | Cinéma malayalam contemporain
+NOUVELLE_VAGUE_SINGAPOURIENNE | Nouvelle vague singapourienne
+CINEMA_VIETNAMIEN | Cinéma vietnamien moderne
+CINEMA_CAMBODGIEN | Cinéma cambodgien moderne
+NOUVELLE_VAGUE_GEORGIENNE | Nouvelle vague géorgienne
+CINEMA_BALTE | Cinéma balte contemporain
+CINEMA_POST_SOVIETIQUE | Cinéma post-soviétique
+NOUVELLE_VAGUE_ISRAELIENNE | Nouvelle vague israélienne
+CINEMA_PALESTINIEN | Cinéma palestinien
+NOUVELLE_VAGUE_LIBANAISE | Nouvelle vague libanaise
+NOLLYWOOD | Cinéma nigérian / Nollywood
+CINEMA_SUD_AFRICAIN | Cinéma sud-africain contemporain
+CINEMA_SENEGALAIS | Cinéma sénégalais
+CINEMA_MALIEN | Cinéma malien
+CINEMA_ETHIOPIEN | Cinéma éthiopien contemporain
+CINEMA_NEO_ZELANDAIS | Cinéma néo-zélandais
+CINEMA_AUTOCHTONE | Cinéma amérindien / Indigenous Cinema
+CINEMA_FEMINISTE | Cinéma féministe
+CINEMA_QUEER_CONTEMPORAIN | Cinéma queer contemporain
+CINEMA_MILITANT | Cinéma militant
+CINEMA_POSTCOLONIAL | Cinéma postcolonial
+CINEMA_DIASPORIQUE | Cinéma diasporique
+CINEMA_TRANSGRESSION | Cinéma de transgression
+CINEMA_PUNK | Cinéma punk
+NO_WAVE | No Wave Cinema
+BLAXPLOITATION | Blaxploitation
+POLIZIOTTESCO | Poliziottesco
+MUMBLECORE | Mumblecore
+CINEMA_EXPLOITATION | Cinéma d'exploitation
+GRINDHOUSE | Grindhouse
+CINEMA_GORE | Cinéma gore
+PSYCHOTRONIC | Psychotronic Cinema
+CINEMA_ABSTRAIT | Cinéma abstrait
+CINEMA_DADAISTE | Cinéma dadaïste
+CINEMA_PUR | Cinéma pur
+STRUCTURAL_FILM | Structural Film
+EXPANDED_CINEMA | Expanded Cinema
+FOUND_FOOTAGE | Found Footage Cinema
+ESSAY_FILM | Essay Film / cinéma-essai
+AGE_OR_HOLLYWOOD | Âge d'or d'Hollywood
+NOUVEL_AGE_OR_HOLLYWOOD | Nouvel âge d'or hollywoodien
+DOCUMENTAIRE | Cinéma documentaire
+CINEMA_CONTEMPORAIN_MOUVEMENT | Cinéma contemporain
+
+=== directors hit ===
+LUIS_BUNUEL | Luis Buñuel
+HIROSHI_TESHIGAHARA | Hiroshi Teshigahara
+HOWARD_HAWKS | Howard Hawks
+ROMAN_POLANSKI | Roman Polanski
+PARK_CHAN_WOOK | Chan-wook Park
+LEE_CHANG_DONG | Chang-dong Lee
+GUILLERMO_DEL_TORO | Guillermo del Toro
+PETER_WEIR | Peter Weir
+DAVID_CRONENBERG | David Cronenberg
+CHANTAL_AKERMAN | Chantal Akerman
+TOBE_HOOPER | Tobe Hooper
+NAGISA_OSHIMA | Nagisa Ôshima
+JORDAN_PEELE | Jordan Peele
+JONATHAN_DEMME | Jonathan Demme
+GEORGE_A_ROMERO | George A. Romero
+ROB_REINER | Rob Reiner
+SAMUEL_ARMSTRONG | Samuel Armstrong
+DARIO_ARGENTO | Dario Argento
+ANDRZEJ_ZU_AWSKI | Andrzej Żuławski
+SHIRLEY_CLARKE | Shirley Clarke
+DANNY_BOYLE | Danny Boyle
+ANDREA_ARNOLD | Andrea Arnold
+SAM_RAIMI | Sam Raimi
+WES_CRAVEN | Wes Craven
+GILLIAN_ARMSTRONG | Gillian Armstrong
+ALAN_CLARKE | Alan Clarke
+JACKIE_CHAN | Jackie Chan
+PETER_CHAN | Peter Chan
+
+=== movies hit ===
+KAGEMUSHA_1980 | Kagemusha, l'ombre du guerrier | 1980
+LA_FEMME_DES_SABLES_1964 | La Femme des sables | 1964
+LA_MORT_ETAIT_AU_RENDEZ_VOUS_1967 | La Mort était au rendez-vous | 1967
+NOUS_NOUS_SOMMES_TANT_AIMES_1974 | Nous nous sommes tant aimés | 1974
+LA_FUREUR_DE_VIVRE_1955 | La Fureur de vivre | 1955
+NE_VOUS_RETOURNEZ_PAS_1973 | Ne vous retournez pas | 1973
+TOUS_LES_AUTRES_S_APPELLENT_ALI_1974 | Tous les autres s'appellent Ali | 1974
+LE_VENT_NOUS_EMPORTERA_1999 | Le Vent nous emportera | 1999
+THE_HOUSEMAID_1960 | The Housemaid | 1960
+LA_SALLE_DE_MUSIQUE_1958 | Le Salon de musique | 1958
+DIEU_NOIR_ET_DIABLE_BLOND_1964 | Dieu noir et diable blond | 1964
+CITE_DE_DIEU_2002 | La Cité de Dieu | 2002
+PARIS_NOUS_APPARTIENT_1961 | Paris nous appartient | 1961
+CREPUSCULE_A_TOKYO_1957 | Crépuscule à Tokyo | 1957
+MEMOIRES_DU_SOUS_DEVELOPPEMENT_1968 | Mémoires du sous-développement | 1968
+LA_FILLE_DE_L_USINE_ALLUMETTES_1990 | La Fille aux allumettes | 1990
+MANILLE_DANS_LES_GRIFFES_DE_LA_LUMIERE_1975 | Manille dans les griffes de la lumière | 1975
+LA_DERNIERE_VAGUE_1977 | La Dernière Vague | 1977
+SOMMEIL_D_HIVER_2014 | Winter Sleep | 2014
+UNE_FEMME_SOUS_INFLUENCE_1974 | Une femme sous influence | 1974
+VOL_AU_DESSUS_D_UN_NID_DE_COUCOU_1975 | Vol au-dessus d'un nid de coucou | 1975
+MASSACRE_A_LA_TRONCONNEUSE_1974 | Massacre à la tronçonneuse | 1974
+DAUGHTERS_OF_THE_DUST_1991 | Daughters of the Dust | 1991
+AMADEUS_1984 | Amadeus (Director's Cut) | 1984
+L_EMPIRE_DES_SENS_1976 | L'Empire des sens | 1976
+HUSBANDS_1970 | Husbands | 1970
+LE_SILENCE_DES_AGNEAUX_1991 | Le Silence des agneaux | 1991
+SUSPIRIA_1977 | Soupirs | 1977
+CARRIE_AU_BAL_DU_DIABLE_1976 | Carrie au bal du diable | 1976
+EPOUSES_ET_CONCUBINES_1991_YIMOU | Épouses et Concubines | 1991
+THE_HUSTLER_1961 | L'Arnaqueur | 1961
+THE_LIVES_OF_OTHERS_2006 | La Vie des autres | 2006
+THE_DEVIL_PROBABLY_1977 | The Devil, Probably | 1977
+RUSSIAN_ARK_2002 | L'Arche russe | 2002
+THE_DEVILS_1971 | Les Diables | 1971
+THE_VIRGIN_SPRING_1960 | La Source | 1960
+YOUNG_FRANKENSTEIN_1974 | Frankenstein Junior | 1974
+BRING_ME_THE_HEAD_OF_ALFREDO_GARCIA_1974 | Apportez-moi la tête d'Alfredo Garcia | 1974
+RUSHMORE_1998 | Rushmore | 1998
+EVIL_DEAD_II_1987 | Evil Dead 2 | 1987
+MY_LITTLE_LOVES_1974 | My Little Loves | 1974
+DEEP_RED_1975 | Les Frissons de l'angoisse | 1975
+NIGHT_OF_THE_DEMON_1957 | Rendez-vous avec la peur | 1957
+THE_CRIMINAL_LIFE_OF_ARCHIBALDO_DE_LA_CRUZ_1955 | La Vie criminelle d'Archibald de La Cruz | 1955
+KHRUSTALYOV_MY_CAR_1998 | Khroustaliov, ma voiture ! | 1999
+FOX_AND_HIS_FRIENDS_1975 | Le Droit du plus fort | 1975
+LA_COLLECTIONNEUSE_1967 | La Collectionneuse | 1967
+USKI_ROTI_1969 | Notre pain quotidien | 1970
+THE_ENIGMA_OF_KASPAR_HAUSER_1974 | L'Énigme de Kaspar Hauser | 1974
+SWITCHBLADE_SISTERS_1975 | Les loubardes | 1975
+CANNIBAL_HOLOCAUST_1980 | L'enfer des cannibales | 1980
+JESUS_OF_MONTREAL_1989 | Jesus of Montreal | 1989
+LA_BELLE_NOISEUSE_1991 | La Belle Noiseuse | 1991
+THE_BLAIR_WITCH_PROJECT_1999 | Le Projet Blair Witch | 1999
+THE_LITTLE_GIRL_WHO_SOLD_THE_SUN_1999 | La petite vendeuse de soleil | 1999
+LE_SEIGNEUR_DES_ANNEAUX_LA_COMMUNAUTE_DE_L_ANNEAU_2001 | Le Seigneur des anneaux : La Communauté de l'anneau | 2001
+UNKNOWN_PLEASURES_2002 | Plaisirs inconnus | 2002
+EVOLUTION_OF_A_FILIPINO_FAMILY_2004 | Evolution of a Filipino Family | 2004
+MUSTANG_2015 | Mustang | 2015
+MARLINA_THE_MURDERER_IN_FOUR_ACTS_2017 | Marlina, la tueuse en quatre actes | 2017
+WHAT_DO_WE_SEE_WHEN_WE_LOOK_AT_THE_SKY_2021 | Sous le ciel de Koutaïssi | 2021
+LA_BALLADE_DE_TSUGARU_1973 | La Ballade de Tsugaru | 1973
+HOUSE_1977 | House | 1977
+THREE_IRON_2004 | Locataires | 2004
+UN_AMOUR_PAS_COMME_LES_AUTRES_1962 | Un amour pas comme les autres | 1962
+ENQU_TE_SUR_UN_CITOYEN_AU_DESSUS_DE_TOUT_SOUP_ON_1970 | Enquête sur un citoyen au-dessus de tout soupçon | 1970
+LES_OISEAUX_LES_ORPHELINS_ET_LES_FOUS_1969 | Les oiseaux, les orphelins et les fous | 1969
+LES_MA_TRES_FOUS_1955 | Les Maîtres fous | 1955
+LA_PENDAISON_1968 | La Pendaison | 1968

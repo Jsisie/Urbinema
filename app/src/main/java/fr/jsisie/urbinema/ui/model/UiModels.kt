@@ -66,6 +66,15 @@ fun filmIndexLetter(title: String): Char {
     return if (first in 'A'..'Z') first else '#'
 }
 
+/** Lists show two directors, then "..." when the film has more. */
+fun listDirectorLabel(names: List<String>): String {
+    val cleaned = names.map { it.trim() }.filter { it.isNotEmpty() }
+    return when {
+        cleaned.size <= 2 -> cleaned.joinToString(", ")
+        else -> cleaned.take(2).joinToString(", ") + "..."
+    }
+}
+
 fun List<MovieSummaryUi>.sortedFilms(sort: FilmListSort): List<MovieSummaryUi> = when (sort) {
     FilmListSort.TitleAsc -> sortedWith(compareByTitleAsc())
     FilmListSort.TitleDesc -> sortedWith(compareByTitleDesc())
@@ -221,6 +230,26 @@ data class HomeUiState(
     val quests: List<QuestUi> = emptyList(),
     val collections: List<CollectionUi> = emptyList(),
     val history: List<HistoryUi> = emptyList(),
+    val dev: DevProgressUi? = null,
+)
+
+/** Exact rank score and XP, shown only while dev mode is on. */
+data class DevProgressUi(
+    val rankOrder: Int,
+    val rawRank: Int,
+    val score: Double,
+    val floor: Double,
+    val nextThreshold: Double?,
+    val remaining: Double,
+    val fraction: Float,
+    val lastScoreGain: Double?,
+    val weightedVolume: Double,
+    val diversity: Double,
+    val depth: Double,
+    val xpIntoLevel: Int,
+    val xpRemaining: Int?,
+    val xpFraction: Float,
+    val lastXpGain: Int?,
 )
 
 data class TerritoryUi(
@@ -233,6 +262,8 @@ data class TerritoryUi(
     val filmCount: Int = 0,
 )
 
+data class DirectorCreditUi(val id: String, val name: String)
+
 data class MovieUi(
     val id: String,
     val originalTitle: String,
@@ -244,6 +275,8 @@ data class MovieUi(
     val countries: List<TerritoryUi> = emptyList(),
     val genres: List<TerritoryUi> = emptyList(),
     val directorIds: List<String> = emptyList(),
+    val releaseYear: Int = 0,
+    val directorCredits: List<DirectorCreditUi> = emptyList(),
 )
 
 data class BadgeUi(
@@ -284,6 +317,7 @@ data class ProfileUiState(
     val continents: Int = 0,
     val directors: Int = 0,
     val avatarCode: String? = null,
+    val dev: DevProgressUi? = null,
 )
 
 data class SearchHitUi(
@@ -328,6 +362,9 @@ interface UrbinemaViewModel {
     val themeMode: UrbinemaThemeMode
     val language: AppLanguage
     val filmGrain: Boolean
+    /** True only when `urbinema.devTools` was true at compile time. */
+    val devToolsAvailable: Boolean get() = false
+    val devMode: Boolean get() = false
     val needsOnboarding: Boolean
     val completedCollectionCelebration: String?
     val unlockedBadgeCelebration: String?
@@ -338,6 +375,7 @@ interface UrbinemaViewModel {
     fun setThemeMode(mode: UrbinemaThemeMode)
     fun setLanguage(language: AppLanguage)
     fun setFilmGrain(enabled: Boolean)
+    fun setDevMode(enabled: Boolean) {}
     fun setUsername(username: String)
     fun setAge(age: Int)
     fun setAvatar(code: String)

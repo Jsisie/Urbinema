@@ -2,6 +2,7 @@ package fr.jsisie.urbinema.ui
 
 import fr.jsisie.urbinema.ui.model.filmIndexLetter
 import fr.jsisie.urbinema.ui.model.filmSortKey
+import fr.jsisie.urbinema.ui.model.listDirectorLabel
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -40,5 +41,26 @@ class FilmTitleIndexTest {
         assertEquals('A', filmIndexLetter("Les Amants"))
         assertEquals('A', filmIndexLetter("L'avventura"))
         assertEquals('Q', filmIndexLetter("Les Quatre Cents Coups"))
+    }
+
+    @Test
+    fun listShowsTwoDirectorsThenEllipsis() {
+        assertEquals("", listDirectorLabel(emptyList()))
+        assertEquals("Chantal Akerman", listDirectorLabel(listOf("Chantal Akerman")))
+        assertEquals(
+            "Philippe Garrel, Chantal Akerman",
+            listDirectorLabel(listOf("Philippe Garrel", "Chantal Akerman")),
+        )
+        assertEquals(
+            "Philippe Garrel, Chantal Akerman...",
+            listDirectorLabel(
+                listOf(
+                    "Philippe Garrel",
+                    "Chantal Akerman",
+                    "Bernard Dubois",
+                    "Frédéric Mitterrand",
+                ),
+            ),
+        )
     }
 }

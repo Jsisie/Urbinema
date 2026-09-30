@@ -43,9 +43,9 @@ class ProgressionRulesTest {
     }
 
     @Test
-    fun `all thirty-two initial badge codes are registered`() {
+    fun `all thirty-eight initial badge codes are registered`() {
         val registry = BadgeRegistry.initial()
-        (1..32).forEach { registry.require(code(it.toString().padStart(3, '0'))) }
+        (1..38).forEach { registry.require(code(it.toString().padStart(3, '0'))) }
     }
 
     @Test
@@ -101,11 +101,41 @@ class ProgressionRulesTest {
     }
 
     @Test
-    fun `horror badge needs thirty films tagged HORREUR`() {
+    fun `horror badge needs fifty films tagged HORREUR`() {
         val registry = BadgeRegistry.initial()
-        val twentyNine = (1..29).map { movie("HORROR_$it", genres = setOf("HORREUR")) }
-        assertFalse(registry.require(code("032")).holds(twentyNine))
-        assertTrue(registry.require(code("032")).holds(twentyNine + movie("HORROR_30", genres = setOf("HORREUR"))))
+        val fortyNine = (1..49).map { movie("HORROR_$it", genres = setOf("HORREUR")) }
+        assertFalse(registry.require(code("032")).holds(fortyNine))
+        assertTrue(registry.require(code("032")).holds(fortyNine + movie("HORROR_50", genres = setOf("HORREUR"))))
+    }
+
+    @Test
+    fun `new form genre and continent badges use their catalog thresholds`() {
+        val registry = BadgeRegistry.initial()
+        val silver = (1..39).map { movie("BW_$it", blackAndWhite = true) }
+        assertFalse(registry.require(code("033")).holds(silver))
+        assertTrue(registry.require(code("033")).holds(silver + movie("BW_40", blackAndWhite = true)))
+        assertFalse(registry.require(code("033")).holds((1..50).map { movie("SILENT_$it", blackAndWhite = true, silent = true) }))
+
+        val shorts = (1..29).map { movie("SHORT_$it", format = MovieFormat.SHORT) }
+        assertFalse(registry.require(code("034")).holds(shorts))
+        assertTrue(registry.require(code("034")).holds(shorts + movie("SHORT_30", format = MovieFormat.SHORT)))
+
+        val docs = (1..19).map { movie("DOC_$it", genres = setOf("DOCUMENTAIRE")) }
+        assertFalse(registry.require(code("035")).holds(docs))
+        assertTrue(registry.require(code("035")).holds(docs + movie("DOC_20", genres = setOf("DOCUMENTAIRE"))))
+
+        val africa = (1..19).map { movie("AF_$it", continents = setOf("AFRICA")) }
+        assertFalse(registry.require(code("036")).holds(africa))
+        assertTrue(registry.require(code("036")).holds(africa + movie("AF_20", continents = setOf("AFRICA"))))
+
+        val recent = (1..49).map { movie("NOW_$it", year = 2000) }
+        assertFalse(registry.require(code("037")).holds(recent))
+        assertTrue(registry.require(code("037")).holds(recent + movie("NOW_50", year = 2000)))
+        assertFalse(registry.require(code("037")).holds((1..50).map { movie("OLD_$it", year = 1999) }))
+
+        val animated = (1..19).map { movie("ANIM_$it", genres = setOf("ANIMATION")) }
+        assertFalse(registry.require(code("038")).holds(animated))
+        assertTrue(registry.require(code("038")).holds(animated + movie("ANIM_20", genres = setOf("ANIMATION"))))
     }
 
     private fun Iterable<Int>.mapToSet() = mapTo(linkedSetOf()) { code("MOVIE_$it") }
@@ -120,16 +150,22 @@ class ProgressionRulesTest {
         duration: Int = 90,
         year: Int = 2000,
         genres: Set<String> = emptySet(),
+        blackAndWhite: Boolean = false,
+        silent: Boolean = false,
+        format: MovieFormat = MovieFormat.FEATURE,
+        continents: Set<String> = setOf("EUROPE"),
     ) = Movie(
         code = code(movieCode),
         originalTitle = movieCode,
         releaseYear = year,
         durationMinutes = duration,
-        format = MovieFormat.FEATURE,
+        format = format,
         weight = MovieWeightComponents(0.0, 0.0, 0.0, 0.0),
         primaryCountry = code(country),
-        continents = setOf(code("EUROPE")),
+        continents = continents.mapTo(linkedSetOf(), ::code),
         directors = setOf(code("DIRECTOR")),
         genres = genres.mapTo(linkedSetOf(), ::code),
+        isSilent = silent,
+        isBlackAndWhite = blackAndWhite,
     )
 }

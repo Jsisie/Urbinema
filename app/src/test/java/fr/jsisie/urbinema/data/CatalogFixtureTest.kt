@@ -21,14 +21,33 @@ class CatalogFixtureTest {
         val report = CatalogValidator().validate(pack)
 
         assertTrue(report.errors.joinToString { "${it.path}: ${it.message}" }, report.isValid)
-        assertEquals(29, pack.version)
-        assertEquals(1542, pack.movies.size)
+        assertEquals(38, pack.version)
+        assertEquals(1613, pack.movies.size)
+        assertEquals("Voir 50 films d'horreur.", pack.badges.first { it.code == "032" }.description)
+        assertTrue(
+            listOf("BEAU_TRAVAIL_1999", "35_SHOTS_OF_RUM_2008", "TROUBLE_EVERY_DAY_2001", "CHOCOLAT_1988", "WHITE_MATERIAL_2009")
+                .all { code ->
+                    pack.movies.first { it.code == code }.directors.single().code == "CLAIRE_DENIS"
+                },
+        )
+        assertEquals(6, pack.movies.first { it.code == "VINGT_ANS_APRES_1984" }.directors.size)
         val parcours = pack.paths.first { it.code == "PARCOURS_001" }
         assertEquals(11, parcours.steps.size)
         assertEquals("CINEMA_MUET_MOUVEMENT", parcours.steps.first().characteristicCode)
         assertEquals("CINEMA_CONTEMPORAIN_MOUVEMENT", parcours.steps.last().characteristicCode)
+        assertTrue(parcours.steps.all { it.movies.size == 4 })
+        assertEquals("LA_SOURIANTE_MADAME_BEUDET_1923", parcours.steps[1].movies.first())
         assertTrue(pack.movies.any { it.code == "LA_COQUILLE_ET_LE_CLERGYMAN_1928" })
         assertTrue(pack.directors.any { it.code == "SHOHEI_IMAMURA" })
+        assertTrue(pack.directors.none { it.code == "DIRECTOR" })
+        assertEquals(
+            "MIKIO_NARUSE",
+            pack.movies.first { it.code == "NUAGES_FLOTTANTS_1955" }.directors.first().code,
+        )
+        assertTrue(
+            pack.movies.first { it.code == "THE_LEGEND_OF_SURAM_FORTRESS_1985" }
+                .directors.none { it.code == "DIRECTOR" },
+        )
         val premiersTemps = pack.collections.first { it.code == "COLLECTION_027" }
         assertEquals("Cinéma des premiers temps", premiersTemps.name)
         assertEquals("GATEWAY", premiersTemps.track)
@@ -59,7 +78,7 @@ class CatalogFixtureTest {
         assertEquals("Âge d'or japonais", pack.collections.first { it.code == "COLLECTION_003" }.name)
         assertEquals(10, pack.rankings.size)
         assertTrue(pack.rankings.all { !it.longDescription.isNullOrBlank() })
-        assertEquals(32, pack.badges.size)
+        assertEquals(38, pack.badges.size)
         assertEquals(19, pack.quests.count { it.difficulty == "BRONZE" })
         assertEquals(20, pack.quests.count { it.difficulty == "SILVER" })
         assertEquals(20, pack.quests.count { it.difficulty == "GOLD" })

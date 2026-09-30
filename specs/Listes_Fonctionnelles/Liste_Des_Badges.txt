@@ -1,7 +1,7 @@
 LISTE DES BADGES — URBINEMA
 Fichier de travail éditorial. Doublon volontaire du cahier fonctionnel (§9).
-Dernière mise à jour : 2026-09-20
-Statut : 32 badges. La liste a vocation à grossir
+Dernière mise à jour : 2026-09-30
+Statut : 38 badges. La liste a vocation à grossir
 librement au fil du développement (des dizaines, voire des centaines).
 
 ------------------------------------------------------------------------
@@ -34,7 +34,7 @@ Pour les badges géographiques, seul le pays principal du film compte.
 Le continent est dérivé des liaisons de ce pays principal.
 
 ------------------------------------------------------------------------
-BADGES — PREMIÈRE FOURNÉE
+BADGES
 ------------------------------------------------------------------------
 
 VOLUME
@@ -46,7 +46,7 @@ VOLUME
 GÉOGRAPHIE
   Passeport Cinéma .......... voir des films de 15 pays différents
   Globe-Trotter ............. voir des films de 30 pays différents
-  Cartographe du Cinéma ..... voir des films de 50 pays différents
+  Cartographe du Cinéma ..... voir des films de 40 pays différents
   Tour d'Europe ............. voir des films de 10 pays européens différents
   Au-delà des Frontières .... voir au moins 5 films de chacun de 5 continents
   Mappemonde ................ voir au moins un film de chaque pays du catalogue
@@ -57,6 +57,7 @@ PAYS / CINÉMATOGRAPHIES
   Rising Sun ................ voir 20 films japonais
   Lumière sur la France ..... voir 20 films français
   Made in Asia .............. voir 50 films asiatiques
+  Lumière d'Afrique ........ voir 20 films issus du continent Africain
 
 TEMPS
   Au-delà du Canon .......... voir 40 films sortis avant 1950
@@ -65,6 +66,7 @@ TEMPS
   Fantômes du Muet .......... voir 20 films muets
   Retour aux Sources ........ voir des films de 5 décennies différentes
   À Travers les Âges ........ voir un film de chaque décennie, des années 1890 aux années 2020
+  Notre siècle ............ voir 50 films sortis depuis 2000
 
 MOUVEMENTS / GENRES
   Enfant de la Nouvelle Vague  voir 15 films de réalisateurs associés à la
@@ -73,17 +75,20 @@ MOUVEMENTS / GENRES
   L'Œil soviétique .......... voir 10 films issus du cinéma soviétique
   Nuits américaines ......... voir 20 films noirs
   Western Spaghetti ......... voir 15 westerns italiens
-  Cabinet des Frayeurs ...... voir 30 films d'horreur
+  Cabinet des Frayeurs ...... voir 50 films d'horreur
+  Le Réel ................... voir 20 documentaires
+  Image par image ........... voir 20 films d'animation
 
 FORMES EXIGEANTES
   La Forme avant le Fond .... voir 10 films particulièrement expérimentaux
                               ou non narratifs
   Le Temps suspendu ......... voir 20 films de plus de 3 heures
   La Grande Traversée ....... voir 5 films de plus de 5 heures
+  Argentique ................ voir 40 films en noir et blanc non muets
+  En une bobine ............. voir 30 courts métrages
 
 PANORAMA
-  Bibliothèque de Pellicule . voir au moins 10 films de 20 réalisateurs
-                              différents
+  Les Grands Noms ........... voir au moins 10 films de 10 réalisateurs
   Encyclopédie Vivante ...... voir au moins 10 films appartenant à
                               30 mouvements cinématographiques différents
 
@@ -99,8 +104,7 @@ Données que le catalogue DOIT porter (sinon le badge n'est pas calculable) :
   - durée du film ............ Le Temps suspendu, La Grande Traversée
   - muet oui/non ............. Fantômes du Muet
   - expérimental / non narratif  La Forme avant le Fond (tag éditorial)
-  - réalisateur .............. Bibliothèque de Pellicule, Enfant de la
-                               Nouvelle Vague
+  - réalisateur .............. Les Grands Noms, Enfant de la Nouvelle Vague
   - pays + continent ......... tous les badges géo
   - caractéristiques ......... L'Œil soviétique, Encyclopédie Vivante, etc.
   - genre .................... Nuits américaines, Western Spaghetti,
@@ -112,12 +116,18 @@ Il est requis par ces badges ET par le calcul de profondeur du rang.
 Volumes minimaux impliqués :
   Mémoire du Septième Art .... ≥ 300 films d'avant 1980 dans le catalogue
   Mappemonde ................. ≥ 1 film pour chaque pays principal du catalogue
-  Cabinet des Frayeurs ....... ≥ 30 films d'horreur
-  Cartographe du Cinéma ...... ≥ 50 pays représentés
-  Bibliothèque de Pellicule .. ≥ 200 films répartis sur 20 réalisateurs
+  Cabinet des Frayeurs ....... ≥ 50 films d'horreur
+  Cartographe du Cinéma ...... ≥ 40 pays représentés
+  Les Grands Noms ............ ≥ 100 films répartis sur 10 réalisateurs
   Encyclopédie Vivante ....... ≥ 300 films répartis sur 30 mouvements,
                                sur les 50 traités en V1
   Made in USA / Made in Asia . ≥ 50 films par zone
+  Argentique ................ ≥ 40 films noir et blanc non muets
+  En une bobine ............. ≥ 30 courts métrages
+  Le Réel ................... ≥ 20 documentaires
+  Lumière d'Afrique ........ ≥ 20 films du continent Afrique
+  Notre siècle ............ ≥ 50 films sortis depuis 2000
+  Image par image ........... ≥ 20 films d'animation
 
 Additionnés, ces seuils supposent un catalogue de plusieurs milliers de
 titres. Le catalogue (N films) grandit progressivement : une centaine au
@@ -134,6 +144,12 @@ RÈGLES DE CLASSIFICATION V1
 - L'Œil soviétique : caractéristique `CINEMA_SOVIETIQUE`.
 - Nuits américaines : genre `FILM_NOIR`.
 - Cabinet des Frayeurs : genre `HORREUR`.
+- Le Réel : genre `DOCUMENTAIRE`.
+- Image par image : genre `ANIMATION`.
+- Argentique : film en noir et blanc, et pas muet.
+- En une bobine : format `SHORT`.
+- Notre siècle : année de sortie 2000 ou après.
+- Lumière d'Afrique : continent `AFRICA`, même règle que Made in Asia.
 - Mappemonde : un film validé dont le pays principal est chacun des pays
   principaux présents dans le catalogue (la liste grandit avec le pack).
 - Western Spaghetti : caractéristique `SPAGHETTI_WESTERN`.

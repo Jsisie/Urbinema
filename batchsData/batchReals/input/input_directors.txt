@@ -274,7 +274,6 @@ MARGUERITE_DURAS;Marguerite;Duras;Marguerite Duras
 CLINT_EASTWOOD;Clint;Eastwood;Clint Eastwood
 TERENCE_DAVIES;Terence;Davies;Terence Davies
 IRVIN_KERSHNER;Irvin;Kershner;Irvin Kershner
-DIRECTOR;;成瀬巳喜男;成瀬巳喜男
 TOD_BROWNING;Tod;Browning;Tod Browning
 JOHN_SCHLESINGER;John;Schlesinger;John Schlesinger
 ROBERT_FLAHERTY;Robert;Flaherty;Robert Flaherty
@@ -806,3 +805,55 @@ ALEXANDRE_PROMIO;Alexandre;Promio;Alexandre Promio
 JAMES_WILLIAMSON;James;Williamson;James Williamson
 GEORGE_ALBERT_SMITH;George Albert;Smith;George Albert Smith
 SHOHEI_IMAMURA;Shōhei;Imamura;Shōhei Imamura
+ALEXE_GUERMAN;Alexeï;Guerman;Alexeï Guerman
+GRIGORI_TCHOUKHRAI;Grigori;Tchoukhraï;Grigori Tchoukhraï
+ALEXANDRE_ASKOLDOV;Alexandre;Askoldov;Alexandre Askoldov
+SHIGEHIRO_OZAWA;Shigehiro;Ozawa;Shigehiro Ozawa
+WISIT_SASANATIENG;Wisit;Sasanatieng;Wisit Sasanatieng
+PRACHYA_PINKAEW;Prachya;Pinkaew;Prachya Pinkaew
+ALEXE_BALABANOV;Alexeï;Balabanov;Alexeï Balabanov
+ANTHONY_CHEN;Anthony;Chen;Anthony Chen
+ZAZA_URUSHADZE;Zaza;Urushadze;Zaza Urushadze
+CLAIRE_DENIS;Claire;Denis;Claire Denis
+KIYOSHI_KUROSAWA;Kiyoshi;Kurosawa;Kiyoshi Kurosawa
+MARIO_BAVA;Mario;Bava;Mario Bava
+MICHAEL_ARMSTRONG;Michael;Armstrong;Michael Armstrong
+ADRIAN_HOVEN;Adrian;Hoven;Adrian Hoven
+JEAN_ROLLIN;Jean;Rollin;Jean Rollin
+JERZY_KAWALEROWICZ;Jerzy;Kawalerowicz;Jerzy Kawalerowicz
+GUEORGUI_KROPATCHIOV;Gueorgui;Kropatchiov;Gueorgui Kropatchiov
+KONSTANTINE_IERCHOV;Konstantine;Ierchov;Konstantine Ierchov
+HERK_HARVEY;Herk;Harvey;Herk Harvey
+BILL_GUNN;Bill;Gunn;Bill Gunn
+ALAN_ORMSBY;Alan;Ormsby;Alan Ormsby
+JEFF_GILLEN;Jeff;Gillen;Jeff Gillen
+BIGAS_LUNA;Bigas;Luna;Bigas Luna
+NONZEE_NIMIBUTR;Nonzee;Nimibutr;Nonzee Nimibutr
+KIM_JEE_WOON;Kim;Jee-woon;Kim Jee-woon
+PIERS_HAGGARD;Piers;Haggard;Piers Haggard
+BEN_WHEATLEY;Ben;Wheatley;Ben Wheatley
+LUKAS_FEIGELFELD;Lukas;Feigelfeld;Lukas Feigelfeld
+PALFI_GYORGY;Pálfi;György;Pálfi György
+JULIA_DUCOURNAU;Julia;Ducournau;Julia Ducournau
+MICHAEL_WINNER;Michael;Winner;Michael Winner
+PANOS_COSMATOS;Panos;Cosmatos;Panos Cosmatos
+ROBERT_EGGERS;Robert;Eggers;Robert Eggers
+TERENCE_FISHER;Terence;Fisher;Terence Fisher
+MICHAEL_REEVES;Michael;Reeves;Michael Reeves
+SEAN_S_CUNNINGHAM;Sean S;Cunningham;Sean S. Cunningham
+HIDEO_NAKATA;Hideo;Nakata;Hideo Nakata
+TAKASHI_MIIKE;Takashi;Miike;Takashi Miike
+CHICHO_IBANEZ_SERRADOR;Chicho Ibáñez;Serrador;Chicho Ibáñez Serrador
+ALEJANDRO_AMENABAR;Alejandro;Amenábar;Alejandro Amenábar
+J_A_BAYONA;J A;Bayona;J. A. Bayona
+CHRISTIAN_NYBY;Christian;Nyby;Christian Nyby
+ARI_ASTER;Ari;Aster;Ari Aster
+LUCILE_HADZIHALILOVIC;Lucile;Hadzihalilovic;Lucile Hadzihalilovic
+DAVID_ROBERT_MITCHELL;David Robert;Mitchell;David Robert Mitchell
+SHINYA_TSUKAMOTO;Shinya;Tsukamoto;Shinya Tsukamoto
+MASATO_HARADA;Masato;Harada;Masato Harada
+SONG_IL_GON;Il-gon;Song;Song Il-gon
+TAKASHI_SHIMIZU;Takashi;Shimizu;Takashi Shimizu
+JACK_ARNOLD;Jack;Arnold;Jack Arnold
+OXIDE_PANG;Oxide;Pang;Oxide Pang
+DANNY_PANG;Danny;Pang;Danny Pang

@@ -2,6 +2,7 @@ package fr.jsisie.urbinema.domain.badge
 
 import fr.jsisie.urbinema.domain.model.EditorialCode
 import fr.jsisie.urbinema.domain.model.Movie
+import fr.jsisie.urbinema.domain.model.MovieFormat
 
 fun interface BadgeRule {
     /**
@@ -43,8 +44,8 @@ class BadgeRegistry(rules: Map<EditorialCode, BadgeRule>) {
 
     companion object {
         /**
-         * Builds the current 32 rules. Geographic codes are stable import-contract
-         * codes: ITALY, USA, JAPAN, FRANCE, EUROPE and ASIA.
+         * Builds the current 38 rules. Geographic codes are stable import-contract
+         * codes: ITALY, USA, JAPAN, FRANCE, EUROPE, ASIA and AFRICA.
          */
         fun initial(): BadgeRegistry = BadgeRegistry(linkedMapOf(
             code("001") to countAtLeast(1),
@@ -53,7 +54,7 @@ class BadgeRegistry(rules: Map<EditorialCode, BadgeRule>) {
             code("004") to countAtLeast(300),
             code("005") to distinctCountries(15),
             code("006") to distinctCountries(30),
-            code("007") to distinctCountries(50),
+            code("007") to distinctCountries(40),
             code("008") to BadgeRule { movies, _ ->
                 movies.filter { code("EUROPE") in it.continents }.map { it.primaryCountry }.toSet().size >= 10
             },
@@ -86,7 +87,7 @@ class BadgeRegistry(rules: Map<EditorialCode, BadgeRule>) {
             code("029") to BadgeRule { movies, _ ->
                 movies.flatMap { movie -> movie.directors.map { it to movie.code } }
                     .groupBy({ it.first }, { it.second })
-                    .count { (_, filmCodes) -> filmCodes.toSet().size >= 10 } >= 20
+                    .count { (_, filmCodes) -> filmCodes.toSet().size >= 10 } >= 10
             },
             code("030") to BadgeRule { movies, _ ->
                 movies.flatMap { movie -> movie.characteristics.map { it to movie.code } }
@@ -94,7 +95,17 @@ class BadgeRegistry(rules: Map<EditorialCode, BadgeRule>) {
                     .count { (_, filmCodes) -> filmCodes.toSet().size >= 10 } >= 30
             },
             code("031") to allCatalogCountries(),
-            code("032") to genreCount("HORREUR", 30),
+            code("032") to genreCount("HORREUR", 50),
+            code("033") to BadgeRule { movies, _ ->
+                movies.count { it.isBlackAndWhite && !it.isSilent } >= 40
+            },
+            code("034") to BadgeRule { movies, _ ->
+                movies.count { it.format == MovieFormat.SHORT } >= 30
+            },
+            code("035") to genreCount("DOCUMENTAIRE", 20),
+            code("036") to continentCount("AFRICA", 20),
+            code("037") to BadgeRule { movies, _ -> movies.count { it.releaseYear >= 2000 } >= 50 },
+            code("038") to genreCount("ANIMATION", 20),
         ))
 
         private fun code(value: String) = EditorialCode(value)

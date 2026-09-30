@@ -170,8 +170,8 @@ Film au centre, territoires du film en **secteurs par type** (réal, pays,
 genre… rayons un peu distincts), jusqu’à 12 films liés plus loin.
 `CinemaMapLayout.dedupeConstellation` enlève un nœud homonyme (collection
 « Akira Kurosawa » si le réalisateur est déjà là). Tap un autre film =
-recentre. Tap un territoire = feuille + navigation. Les puces Pays /
-Courants… gardent la vue calques. `MAX_SCALE = 14`. Fiche film : « Voir
+recentre. Tap un territoire = feuille + navigation. Les puces sont
+Autour du film, Pays et Décennies. `MAX_SCALE = 14`. Fiche film : « Voir
 sur la carte ».
 
 Couleurs **par type**, pas seulement par état d’exploration : films ivoire,
@@ -206,6 +206,21 @@ seeded reste vrai.
 « Voir tout l’historique » (`history`). DAO `observeActivity` LIMIT 2000.
 Libellés via `stringResource` (`history_*_body`), pas de FR/EN figé dans
 le ViewModel.
+
+### 2.3.1 Mode dev
+
+Dans `gradle.properties`, la ligne `urbinema.devTools=false` est le défaut.
+La passer à `true`, puis recompiler. Elle alimente `BuildConfig.DEV_TOOLS`
+dans `app/build.gradle.kts`. Tant qu’elle est fausse, le bouton n’existe pas.
+
+Le switch **Mode dev** est dans Réglages, juste avant le grain. Il est mémorisé
+(DataStore `dev_mode`) et ne fait rien si l’APK a été compilé avec la
+propriété à false.
+
+Activé : les collections ne sont plus verrouillées par le palier précédent.
+Sous le rang (Accueil et Profil), une barre et `score / reste` jusqu’au
+prochain rang (plancher → seuil, gain du dernier film, Vw, D, P, rang brut),
+puis la même chose pour l’XP du niveau (`XP dans le niveau / reste`).
 
 ### 2.4 Règles collections (code 0.1.11)
 
@@ -265,7 +280,7 @@ app/src/main/assets/catalog/catalog.json
 ```
 
 Il décrit le monde : films, pays, continents, réalisateurs, caractéristiques,
-genres, ères, collections, 10 rangs, 32 badges, 59 quêtes types (19 Bronze, 20 Argent, 20 Or).
+genres, ères, collections, 10 rangs, 38 badges, 59 quêtes types (19 Bronze, 20 Argent, 20 Or).
 Le pack courant est la version **28** (1538 films, 28 collections, biographies de réalisateurs en français et en anglais quand les deux existent). `catalog.json` est la copie de `catalog_v3.json`. Les portraits sont des fichiers `assets/media/directors/{CODE}.jpg`, lus par code, sans ligne `mediaAssets`. La collection `COLLECTION_027` (« Cinéma des premiers temps ») est sur le groupe `GATEWAY`, avec 17 films de 1892 à 1906.
 
 Modèle Kotlin : `data/importer/CatalogPack.kt`.  

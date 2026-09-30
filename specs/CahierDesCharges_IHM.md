@@ -12,7 +12,7 @@
 >
 > Les éléments **imposés par Léo** sont signalés par la mention **[imposé]**. Le reste relève de ma proposition.
 >
-> **0.3.0 —** Pendant le chargement du catalogue, fond blanc plein écran et icône de l’app (plus le texte « Votre aventure commence ici »). Après le pseudo, un guide de 6 pages (intro, Accueil, Atlas, Collections, futur Parcours, Profil) dans un panneau d’environ 60 % de l’écran, le reste fortement flouté. Rejouable dans Réglages (« Revoir le guide »). « Voir toutes les sources » sous les crédits. Index A–Z blanc (couleur du texte, pas l’or) sur pays, courants, genres et réalisateurs. Appui long sur un film d’une liste → confirmer Vu. La chaîne des rangs s’ouvre sur le rang courant. Un nouveau rang ouvre un dialogue avec confettis. Chaque liste de films affiche son effectif en petit. La fiche réalisateur montre un portrait (plus petit qu’une affiche) et la biographie au-dessus de la liste de films, avec un espace sous le titre « Biographie ». La biographie suit la langue de l’app. Le grain argentique est à peine plus visible en thème sombre. L'onglet Parcours liste des lectures (une grande carte par parcours, pas une carte de collection). Le fil est vertical : une bulle par courant, un trait, un point d'interrogation qui ouvre une petite fenêtre avec seulement la phrase de transition. La fiche courant est une feuille qui laisse voir le fil au-dessus.
+> **0.3.0 —** Pendant le chargement du catalogue, fond blanc plein écran et icône de l’app (plus le texte « Votre aventure commence ici »). Après le pseudo, un guide de 6 pages (intro, Accueil, Atlas, Collections, futur Parcours, Profil) dans un panneau à la taille du texte (environ un tiers de l’écran), le reste fortement flouté. Rejouable dans Réglages (« Revoir le guide »). « Voir toutes les sources » sous les crédits. Index A–Z blanc (couleur du texte, pas l’or) sur pays, courants, genres et réalisateurs. Appui long sur un film d’une liste → confirmer Vu. La chaîne des rangs s’ouvre sur le rang courant. Un nouveau rang ouvre un dialogue avec confettis. Chaque liste de films affiche son effectif en petit. La fiche réalisateur montre un portrait (plus petit qu’une affiche) et la biographie au-dessus de la liste de films, avec un espace sous le titre « Biographie ». La biographie suit la langue de l’app. Le grain argentique est à peine plus visible en thème sombre. L'onglet Parcours liste des lectures (une grande carte par parcours, pas une carte de collection). Le fil est vertical : une bulle par courant, un trait, un point d'interrogation qui ouvre une petite fenêtre avec seulement la phrase de transition. La fiche courant est une feuille qui laisse voir le fil au-dessus.
 
 ------
 
@@ -522,7 +522,7 @@ S’ouvre depuis l’icône étoiles de l’Atlas. Vue par défaut : un film au 
 │  ←          Carte du ciel          ?    │
 ├─────────────────────────────────────────┤
 │  Le film au centre, autour ce qui le lie│
-│  (Autour du film) (Pays) (Courants) …   │
+│  (Autour du film) (Pays) (Décennies)    │
 │                                         │
 │              KUROSAWA  (cyan)           │
 │                 ●                       │
@@ -593,8 +593,8 @@ Un seul allumé. Chip inactif : fond blanc 6 %, bordure 12 %, label ivoire.
 Chip actif : fond or 22 %, bordure or, label or.
 
 Changer de calque = **nouvelle constellation**, caméra qui recadre (spring),
-sélection perdue. Première puce : **Autour du film**. Puis Courants, Pays,
-Décennies, Genres, Réalisateurs, Collections.
+sélection perdue. Puces : **Autour du film**, Pays, Décennies. Courants,
+genres, réalisateurs et collections restent dans les listes de l’Atlas.
 
 Pays / réalisateurs : libellés de **continent** en petites capitales
 violettes, au-dessus des grappes.

@@ -60,6 +60,12 @@ interface CatalogDao {
     suspend fun directorCharacteristicCodes(movieId: Long): List<String>
 
     @Query(
+        """SELECT movieId, directorId, billingOrder FROM movies_directors
+           ORDER BY movieId, billingOrder"""
+    )
+    suspend fun movieDirectorBillings(): List<MovieDirectorBilling>
+
+    @Query(
         """SELECT code FROM eras
            WHERE :releaseYear BETWEEN startYear AND endYear AND isActive = 1
            ORDER BY (endYear - startYear), startYear LIMIT 1"""
@@ -403,6 +409,9 @@ interface ProgressDao {
            GROUP BY c.countryId"""
     )
     fun observeCountryProgress(userId: Long): Flow<List<CountryProgressRow>>
+
+    @Query("SELECT * FROM user_progress_state WHERE userId = :userId LIMIT 1")
+    fun observeProgressState(userId: Long): Flow<UserProgressStateEntity?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertProgressState(state: UserProgressStateEntity)

@@ -593,7 +593,7 @@ H. DIVERS
 
 71. BADGES 031/032 + SEUILS TEMPORELS
     031 Mappemonde (diff. 5) : un film de chaque pays principal du catalogue.
-    032 Cabinet des Frayeurs (diff. 3) : 30 films d’horreur.
+    032 Cabinet des Frayeurs (diff. 3) : 50 films d’horreur.
     015/016/017 doublés (20 avant 1950, 60 avant 1960, 200 avant 1980) ;
     017 passe en difficulté 4. Pop-up FR/EN à chaque badge débloqué.
     Pack JSON version 12.

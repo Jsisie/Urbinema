@@ -5,6 +5,13 @@ import androidx.room.Junction
 import androidx.room.Relation
 
 /** Complete film projection used by detail screens and rule evaluation. */
+/** Director credit in billing order, used to label multi-director films. */
+data class MovieDirectorBilling(
+    val movieId: Long,
+    val directorId: Long,
+    val billingOrder: Int,
+)
+
 data class MovieWithRelations(
     @Embedded val movie: MovieEntity,
     @Relation(

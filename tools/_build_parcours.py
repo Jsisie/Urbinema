@@ -346,14 +346,16 @@ def parse_path() -> dict:
         for line in film_block.splitlines():
             if not line.strip().startswith("-"):
                 continue
-            film = re.search(r"\*{2,3}([^*]+)\*{2,3}", line)
+            film = re.search(r"\*+([^*]+)\*+", line)
             if not film:
-                continue
+                raise SystemExit(f"unparsed film line {line.strip()}")
             key = fold(film.group(1))
             code = FILM_CODES.get(key)
             if not code:
                 raise SystemExit(f"unmapped film {film.group(1)}")
             movies.append(code)
+        if not movies:
+            raise SystemExit(f"no films for {name}")
         steps.append({
             "code": f"PARCOURS_001_{index // 2:02d}",
             "position": index // 2,
@@ -424,7 +426,7 @@ def main() -> None:
         if not step["transition"]:
             step.pop("transition", None)
     pack["paths"] = [path]
-    pack["version"] = 29
+    pack["version"] = 30
     temporary = CATALOG.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(pack, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temporary.replace(CATALOG)

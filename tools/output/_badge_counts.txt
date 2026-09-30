@@ -1,0 +1,199 @@
+movies 1542
+characteristics defined 117
+characteristic types {'MOVEMENT': 'Mouvement', 'CURRENT': 'Courant', 'STYLE': 'Style', 'PERIOD': 'Période', 'SCHOOL': 'École', 'WAVE': 'Vague'}
+
+=== Encyclopedie Vivante: characteristics with N films ===
+Badge counts every characteristic on the film, all types, threshold 10, need 30.
+ALL types actually on films: n=116 >=10 49 >=15 39 >=20 28
+type CURRENT (Courant): n=35 >=10 13 >=15 8 >=20 7
+type MOVEMENT (Mouvement): n=9 >=10 5 >=15 5 >=20 3
+type PERIOD (Période): n=9 >=10 8 >=15 8 >=20 7
+type SCHOOL (École): n=6 >=10 0 >=15 0 >=20 0
+type STYLE (Style): n=25 >=10 9 >=15 8 >=20 6
+type WAVE (Vague): n=32 >=10 14 >=15 10 >=20 5
+characteristics with zero films 1
+
+--- characteristics with at least 10 films ---
+ 386  CURRENT       Cinéma d'auteur
+ 132  PERIOD        Hollywood classique
+ 111  PERIOD        Nouvel Hollywood
+  97  PERIOD        Cinéma muet
+  85  PERIOD        Âge d'or d'Hollywood
+  78  STYLE         Cinéma expérimental
+  62  MOVEMENT      Surréalisme
+  61  STYLE         Néo-noir
+  59  STYLE         Film noir
+  49  PERIOD        Âge d'or du cinéma japonais
+  47  CURRENT       Cinéma indépendant américain
+  45  PERIOD        Nouvel âge d'or hollywoodien
+  40  WAVE          Nouvelle Vague française
+  37  STYLE         Western classique
+  36  WAVE          Nouvelle Vague hongkongaise
+  35  WAVE          Free Cinema britannique
+  35  MOVEMENT      Troisième cinéma
+  32  STYLE         Mélodrame
+  32  CURRENT       Cinémas d'Afrique
+  28  PERIOD        Cinéma soviétique
+  26  WAVE          Nouveau cinéma allemand
+  25  CURRENT       Cinéma africain postcolonial
+  24  CURRENT       Western spaghetti
+  23  CURRENT       Comédie à l'italienne
+  22  CURRENT       Réalisme poétique
+  21  WAVE          Nouvelle vague scandinave
+  20  STYLE         Cinéma documentaire
+  20  MOVEMENT      Expressionnisme allemand
+  19  WAVE          Nouvelle Vague britannique / Kitchen Sink
+  19  STYLE         Slow Cinema
+  19  MOVEMENT      Néoréalisme italien
+  18  WAVE          Cinquième génération chinoise
+  18  STYLE         Jidai-geki
+  18  PERIOD        Cinéma classique italien
+  18  CURRENT       New French Extremity
+  16  WAVE          Nouvelle Vague tchèque
+  16  WAVE          Free Cinema / British New Wave
+  15  WAVE          Nouveau cinéma taïwanais
+  15  MOVEMENT      Montage soviétique
+  14  STYLE         Road movie
+  14  CURRENT       Cinéma politique italien
+  13  WAVE          Nouvelle vague iranienne
+  12  WAVE          Nouvelle Vague japonaise (Nūberu Bāgu)
+  12  CURRENT       Rive gauche
+  12  CURRENT       Cinéma nigérian / Nollywood
+  11  CURRENT       Cinéma sénégalais
+  10  WAVE          Nuevo Cine Mexicano
+  10  WAVE          Nouvelle vague / cinéma moderne espagnol
+  10  CURRENT       Cinéma maghrébin postcolonial
+
+--- characteristics with 7 to 9 films ---
+   9  WAVE          Nouvelle vague coréenne
+   9  WAVE          Australian New Wave
+   9  STYLE         Cinéma du look français
+   9  PERIOD        Cinéma post-soviétique
+   8  WAVE          Nuevo Cine Argentino
+   8  WAVE          Nouvelle vague géorgienne
+   8  WAVE          New Queer Cinema
+   8  SCHOOL        École polonaise
+   8  SCHOOL        Dogme 95
+   7  WAVE          Sixième génération chinoise
+   7  WAVE          Nouvelle vague israélienne
+   7  STYLE         Essay Film / cinéma-essai
+   7  STYLE         Cinéma gore
+   7  SCHOOL        Cinéma afro-américain indépendant / L.A. Rebellion
+   7  MOVEMENT      Cinema Novo
+   7  CURRENT       Cinéma thaïlandais contemporain
+   7  CURRENT       Cinéma sud-africain contemporain
+   7  CURRENT       Cinéma politique latino-américain
+   7  CURRENT       Cinéma féministe
+   7  CURRENT       Cinéma balte contemporain
+
+=== Bibliotheque de Pellicule: directors ===
+>= 10 films: 12 directors
+>= 8 films: 22 directors
+>= 7 films: 32 directors
+>= 6 films: 54 directors
+>= 5 films: 74 directors
+--- directors with at least 5 films ---
+  20  Alfred Hitchcock
+  15  Luis Buñuel
+  14  Jean-Luc Godard
+  14  Ingmar Bergman
+  13  John Ford
+  13  Akira Kurosawa
+  10  Stanley Kubrick
+  10  Ousmane Sembène
+  10  Jean Renoir
+  10  Howard Hawks
+  10  Fritz Lang
+  10  Federico Fellini
+   9  Yasujirō Ozu
+   9  Robert Bresson
+   8  Steven Spielberg
+   8  Orson Welles
+   8  Michael Powell
+   8  Michael Haneke
+   8  Martin Scorsese
+   8  Luchino Visconti
+   8  David Lynch
+   8  Charlie Chaplin
+   7  Roberto Rossellini
+   7  Rainer Werner Fassbinder
+   7  Michelangelo Antonioni
+   7  Kar-wai Wong
+   7  John Huston
+   7  François Truffaut
+   7  Chantal Akerman
+   7  Chang-dong Lee
+   7  Apichatpong Weerasethakul
+   7  Andreï Tarkovski
+   6  Yimou Zhang
+   6  Woody Allen
+   6  Vittorio De Sica
+   6  Tsui Hark
+   6  Tsai Ming-liang
+   6  Sergueï Eisenstein
+   6  Sergio Leone
+   6  Satyajit Ray
+   6  Pier Paolo Pasolini
+   6  Paul Thomas Anderson
+   6  Masaki Kobayashi
+   6  Krzysztof Kieślowski
+   6  Kenji Mizoguchi
+   6  John Cassavetes
+   6  Joel Coen
+   6  Jean-Pierre Melville
+   6  Hsiao-hsien Hou
+   6  Ernst Lubitsch
+   6  Emeric Pressburger
+   6  Chen Kaige
+   6  Alain Resnais
+   6  Abbas Kiarostami
+   5  Éric Rohmer
+   5  Wim Wenders
+   5  Werner Herzog
+   5  Terrence Malick
+   5  Roman Polanski
+   5  Robert Altman
+   5  Quentin Tarantino
+   5  Nuri Bilge Ceylan
+   5  Mahamat-Saleh Haroun
+   5  Lindsay Anderson
+   5  Lars von Trier
+   5  Jia Zhangke
+   5  James Cameron
+   5  Jacques Rivette
+   5  Francis Ford Coppola
+   5  F. W. Murnau
+   5  Edward Yang
+   5  David Lean
+   5  Claude Chabrol
+   5  Carl Theodor Dreyer
+
+=== Grande Traversee: durationMinutes > 300 (strict, badge) and >= 300 ===
+> 300 min: 15
+== 300 min: 1
+>= 240 min (4h): 24
+>= 180 min (3h, Temps suspendu uses > 180): 75
+1440 min  The Clock  THE_CLOCK_2010
+ 894 min  Berlin Alexanderplatz  BERLIN_ALEXANDERPLATZ_1980
+ 729 min  Out 1 : Noli me tangere  OUT_1_1971
+ 625 min  Evolution of a Filipino Family  EVOLUTION_OF_A_FILIPINO_FAMILY_2004
+ 566 min  Shoah  SHOAH_1985
+ 551 min  À l'ouest des rails  A_L_OUEST_DES_RAILS_2003
+ 479 min  Empire  EMPIRE_WARHOL_1964
+ 450 min  Satantango  SATANTANGO_1994
+ 431 min  Guerre et Paix  GUERRE_ET_PAIX_1966
+ 417 min  Les Vampires  LES_VAMPIRES_1915
+ 410 min  Hitler, un film d'Allemagne  HITLER_A_FILM_FROM_GERMANY_1977
+ 339 min  Fantômas  FANTOMAS_1913
+ 333 min  Napoléon  NAPOLEON_1927
+ 330 min  Diary  DIARY_1983
+ 317 min  1900  NOVECENTO_1976
+ 300 min  Judex  JUDEX_1916
+
+=== Pays ===
+countries in catalog list: 67
+distinct primary countries on films: 66
+distinct countries on films (primary or co-production): 67
+listed countries never primary: 1
+  never primary: Suisse (1 co-productions)
+film countries missing from country list: []

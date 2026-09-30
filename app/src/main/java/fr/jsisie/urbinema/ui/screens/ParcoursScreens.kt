@@ -8,10 +8,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -40,6 +40,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -62,12 +68,6 @@ fun PathsScreen(paths: List<PathUi>, onPath: (String) -> Unit) {
         verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.lg),
     ) {
         item { ScreenTitle(R.string.progress) }
-        item {
-            Text(
-                stringResource(R.string.paths_intro),
-                color = UrbinemaThemeTokens.colors.onBackgroundMuted,
-            )
-        }
         items(paths, key = { it.id }) { path ->
             PathListPanel(path, onClick = { onPath(path.id) })
         }
@@ -271,10 +271,11 @@ private fun PathStepSheet(
     onMovie: (String) -> Unit,
     onDirector: (String) -> Unit,
 ) {
+    val maxSheet = (LocalConfiguration.current.screenHeightDp * 0.9f).dp
     Column(
         Modifier
             .fillMaxWidth()
-            .fillMaxHeight(0.78f)
+            .heightIn(max = maxSheet)
             .verticalScroll(rememberScrollState())
             .padding(horizontal = UrbinemaThemeTokens.dimens.screen, vertical = UrbinemaThemeTokens.dimens.md),
         verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.sm),
@@ -282,15 +283,15 @@ private fun PathStepSheet(
         Text(step.name, style = MaterialTheme.typography.headlineMedium)
         Text(step.periodLabel, color = UrbinemaThemeTokens.colors.accent, style = MaterialTheme.typography.labelMedium)
         Text(
-            step.description,
+            editorialInline(step.description),
             color = UrbinemaThemeTokens.colors.onBackgroundMuted,
             modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.sm, bottom = UrbinemaThemeTokens.dimens.md),
         )
         if (step.facts.isNotEmpty()) {
             Text(stringResource(R.string.path_facts), style = MaterialTheme.typography.titleMedium)
             step.facts.forEach { fact ->
-                Text(fact.title, style = MaterialTheme.typography.titleSmall)
-                Text(fact.body, color = UrbinemaThemeTokens.colors.onBackgroundMuted)
+                Text(editorialInline(fact.title), style = MaterialTheme.typography.titleSmall)
+                Text(editorialInline(fact.body), color = UrbinemaThemeTokens.colors.onBackgroundMuted)
             }
         }
         if (step.figures.isNotEmpty()) {
@@ -300,7 +301,7 @@ private fun PathStepSheet(
                 modifier = Modifier.padding(top = UrbinemaThemeTokens.dimens.md),
             )
             step.figures.forEach { figure ->
-                val label = "${figure.name} — ${figure.role}"
+                val label = editorialInline("${figure.name} — ${figure.role}")
                 if (figure.directorCode != null) {
                     Text(
                         label,
@@ -332,5 +333,34 @@ private fun PathStepSheet(
                 )
             }
         }
+    }
+}
+
+/** `**gras**` and `*italique*` from the path source, without leaving the stars on screen. */
+private fun editorialInline(source: String): AnnotatedString = buildAnnotatedString {
+    var index = 0
+    while (index < source.length) {
+        if (source.startsWith("**", index)) {
+            val end = source.indexOf("**", index + 2)
+            if (end > index) {
+                withStyle(SpanStyle(fontWeight = FontWeight.SemiBold)) {
+                    append(source.substring(index + 2, end))
+                }
+                index = end + 2
+                continue
+            }
+        }
+        if (source[index] == '*') {
+            val end = source.indexOf('*', index + 1)
+            if (end > index) {
+                withStyle(SpanStyle(fontStyle = FontStyle.Italic)) {
+                    append(source.substring(index + 1, end))
+                }
+                index = end + 1
+                continue
+            }
+        }
+        append(source[index])
+        index++
     }
 }
