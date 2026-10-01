@@ -28,6 +28,7 @@ import fr.jsisie.urbinema.data.db.LearningPathFigureEntity
 import fr.jsisie.urbinema.data.db.LearningPathMovieCrossRef
 import fr.jsisie.urbinema.data.db.LearningPathStepEntity
 import fr.jsisie.urbinema.data.db.MovieDirectorBilling
+import fr.jsisie.urbinema.data.db.MovieEntity
 import fr.jsisie.urbinema.data.db.MovieWithRelations
 import fr.jsisie.urbinema.data.db.QuestDifficulty
 import fr.jsisie.urbinema.data.db.QuestEntity
@@ -121,6 +122,7 @@ class MainViewModel(
     private var orderedDirectorsByMovieId: Map<Long, List<DirectorEntity>> = emptyMap()
     private var filmsByDirectorId: Map<Long, List<MovieWithRelations>> = emptyMap()
     private var watched: List<UserMovieCrossRef> = emptyList()
+    private var optimisticWatchedIds by mutableStateOf(emptySet<Long>())
     private var collectionsWithMovies: List<CollectionWithMovies> = emptyList()
     private var collectionProgress: Map<Long, CollectionProgressRow> = emptyMap()
     private var collectionCountryRefs: List<CollectionCountryCrossRef> = emptyList()
@@ -226,6 +228,12 @@ class MainViewModel(
                     ThemePreference.DARK -> UrbinemaThemeMode.Dark
                     ThemePreference.LIGHT -> UrbinemaThemeMode.Light
                     ThemePreference.SYSTEM -> UrbinemaThemeMode.System
+                    ThemePreference.CYANOTYPE -> UrbinemaThemeMode.Cyanotype
+                    ThemePreference.TIRAGE -> UrbinemaThemeMode.Tirage
+                    ThemePreference.RAYONNAGE -> UrbinemaThemeMode.Rayonnage
+                    ThemePreference.AFFICHE -> UrbinemaThemeMode.Affiche
+                    ThemePreference.VELOURS -> UrbinemaThemeMode.Velours
+                    ThemePreference.NUIT_AMERICAINE -> UrbinemaThemeMode.NuitAmericaine
                 }
             }
         }
@@ -285,6 +293,12 @@ class MainViewModel(
                     UrbinemaThemeMode.Dark -> ThemePreference.DARK
                     UrbinemaThemeMode.Light -> ThemePreference.LIGHT
                     UrbinemaThemeMode.System -> ThemePreference.SYSTEM
+                    UrbinemaThemeMode.Cyanotype -> ThemePreference.CYANOTYPE
+                    UrbinemaThemeMode.Tirage -> ThemePreference.TIRAGE
+                    UrbinemaThemeMode.Rayonnage -> ThemePreference.RAYONNAGE
+                    UrbinemaThemeMode.Affiche -> ThemePreference.AFFICHE
+                    UrbinemaThemeMode.Velours -> ThemePreference.VELOURS
+                    UrbinemaThemeMode.NuitAmericaine -> ThemePreference.NUIT_AMERICAINE
                 }
             )
         }
@@ -408,6 +422,9 @@ class MainViewModel(
     private fun markMovie(currentMovie: MovieWithRelations) {
         val currentUser = user ?: return
         if (watched.any { it.movieId == currentMovie.movie.movieId }) return
+        if (currentMovie.movie.movieId in optimisticWatchedIds) return
+        optimisticWatchedIds = optimisticWatchedIds + currentMovie.movie.movieId
+        paintFilmWatched(currentMovie.movie.code)
         if (movieState.id == currentMovie.movie.code) {
             movieState = movieState.copy(watched = true)
         }
@@ -449,6 +466,31 @@ class MainViewModel(
                 "Après recalcul: XP total=$xp  niveau=${level.displayedLevel}  " +
                     "dansLeNiveau=${level.xpIntoLevel}  restantPourSuivant=${level.xpNeededForNextLevel}",
             )
+        }
+    }
+
+    private fun watchedIdSet(): Set<Long> {
+        val ids = HashSet<Long>(watched.size + optimisticWatchedIds.size)
+        watched.forEach { ids.add(it.movieId) }
+        ids.addAll(optimisticWatchedIds)
+        return ids
+    }
+
+    private fun paintFilmWatched(code: String) {
+        fun List<MovieSummaryUi>.mark(followedOnly: Boolean = false, followed: Boolean = true) =
+            map { film ->
+                if (film.id == code && (!followedOnly || followed)) film.copy(watched = true) else film
+            }
+        collectionState = collectionState.map { collection ->
+            collection.copy(films = collection.films.mark(followedOnly = true, followed = collection.followed))
+        }
+        homeState = homeState.copy(
+            collections = homeState.collections.map { collection ->
+                collection.copy(films = collection.films.mark(followedOnly = true, followed = collection.followed))
+            },
+        )
+        directorState = directorState.map { director ->
+            director.copy(films = director.films.mark())
         }
     }
 
@@ -503,28 +545,7 @@ class MainViewModel(
         val needle = query.trim()
         if (needle.isEmpty()) return emptyList()
         fun match(value: String) = value.contains(needle, ignoreCase = true)
-        val movieHits = moviesWithRelations.mapNotNull { rel ->
-            val movie = rel.movie
-            val french = movie.frenchTitle.orEmpty()
-            val original = movie.originalTitle
-            if (!match(french) && !match(original)) return@mapNotNull null
-            val display = french.ifBlank { original }
-            val subtitle = buildString {
-                append(listDirectorLabel(orderedDirectors(rel).map { it.displayName }))
-                append(" · ")
-                append(movie.releaseYear)
-                // Surface the English/original title when it is what matched.
-                if (french.isNotBlank() &&
-                    !french.equals(original, ignoreCase = true) &&
-                    match(original) &&
-                    !match(french)
-                ) {
-                    append(" · ")
-                    append(original)
-                }
-            }
-            SearchHitUi(movie.code, SearchKind.Movie, display, subtitle)
-        }
+        val movieHits = movieTitleHits(needle)
         val countryHits = territoryState.filter { match(it.name) || match(it.id) }.map {
             SearchHitUi(it.id, SearchKind.Country, it.name, "")
         }
@@ -541,6 +562,41 @@ class MainViewModel(
             SearchHitUi(it.id, SearchKind.Genre, it.name, "")
         }
         return movieHits + countryHits + currentHits + collectionHits + directorHits + genreHits
+    }
+
+    override fun searchMovies(query: String): List<SearchHitUi> {
+        val needle = query.trim()
+        if (needle.isEmpty()) return emptyList()
+        return movieTitleHits(needle).take(8)
+    }
+
+    private fun movieTitleHits(needle: String): List<SearchHitUi> {
+        fun match(value: String) = value.contains(needle, ignoreCase = true)
+        return moviesWithRelations.mapNotNull { rel ->
+            val movie = rel.movie
+            val french = movie.frenchTitle.orEmpty()
+            val original = movie.originalTitle
+            if (!match(french) && !match(original)) return@mapNotNull null
+            val display = if (prefersEnglish()) original else french.ifBlank { original }
+            val subtitle = buildString {
+                append(listDirectorLabel(orderedDirectors(rel).map { it.displayName }))
+                append(" · ")
+                append(movie.releaseYear)
+                if (french.isNotBlank() &&
+                    !french.equals(original, ignoreCase = true) &&
+                    match(original) &&
+                    !match(french)
+                ) {
+                    append(" · ")
+                    append(original)
+                }
+            }
+            SearchHitUi(movie.code, SearchKind.Movie, display, subtitle)
+        }.sortedWith(
+            compareBy<SearchHitUi> { hit ->
+                if (hit.title.startsWith(needle, ignoreCase = true)) 0 else 1
+            }.thenBy { it.title.lowercase() },
+        )
     }
 
     override fun collectionsForCountry(code: String): List<CollectionUi> =
@@ -575,7 +631,7 @@ class MainViewModel(
             return CinemaMapLayout.buildAround(code, constellationSeeds(code))
         }
         val continentCodeById = continentEntities.associate { it.continentId to it.code }
-        val continentNameByCode = continentEntities.associate { it.code to it.name }
+        val continentNameByCode = continentEntities.associate { it.code to localized(it.name, it.nameEn) }
         val continentByCountryId = countryContinents.associate { it.countryId to it.continentId }
         val continentByCountryCode = countryEntities.associate { country ->
             country.code to continentByCountryId[country.countryId]?.let { continentCodeById[it] }.orEmpty()
@@ -639,6 +695,7 @@ class MainViewModel(
         val profile = user ?: return
         user = profile.copy(unlockedTrackOrdinal = CollectionUnlockRules.LOCKED_ORDINAL)
         watched = emptyList()
+        optimisticWatchedIds = emptySet()
         followedCollectionIds = emptySet()
         rankCelebrationSeeded = false
         rankUpName = null
@@ -828,7 +885,9 @@ class MainViewModel(
     }
 
     private fun refreshUnsafe() {
-        val watchedIds = watched.mapTo(hashSetOf(), UserMovieCrossRef::movieId)
+        val roomWatchedIds = watched.mapTo(hashSetOf(), UserMovieCrossRef::movieId)
+        optimisticWatchedIds = optimisticWatchedIds.filterNot { it in roomWatchedIds }.toSet()
+        val watchedIds = HashSet(roomWatchedIds).apply { addAll(optimisticWatchedIds) }
         val watchedMovies = moviesWithRelations.filter { it.movie.movieId in watchedIds }
         val level = xpEngine.progress(totalXp, user?.maxLevelReached ?: 1)
         val rank = rankings.firstOrNull { it.rankingId == user?.rankingId }
@@ -886,10 +945,10 @@ class MainViewModel(
             val lock = collectionLock(collection.code, track, openOrdinal, qualifiedByTrack)
             CollectionUi(
                 id = collection.code,
-                name = collection.name,
-                metadata = collection.description.orEmpty(),
-                shortDescription = collection.description.orEmpty(),
-                longDescription = collection.longDescription.orEmpty(),
+                name = localized(collection.name, collection.nameEn),
+                metadata = localized(collection.description, collection.descriptionEn),
+                shortDescription = localized(collection.description, collection.descriptionEn),
+                longDescription = localized(collection.longDescription, collection.longDescriptionEn),
                 progress = if (followed) rawProgress else 0,
                 films = filmSummaries,
                 countryCodes = countriesByCollection[collection.collectionId].orEmpty(),
@@ -907,34 +966,34 @@ class MainViewModel(
             val steps = learningPathSteps.filter { it.pathId == path.pathId }.sortedBy { it.position }
             PathUi(
                 id = path.code,
-                name = path.name,
-                summary = path.summary,
-                description = path.description,
-                periodLabel = path.periodLabel,
+                name = localized(path.name, path.nameEn),
+                summary = localized(path.summary, path.summaryEn),
+                description = localized(path.description, path.descriptionEn),
+                periodLabel = localized(path.periodLabel, path.periodLabelEn),
                 steps = steps.map { step ->
                     val characteristic = characteristicEntities.firstOrNull { it.characteristicId == step.characteristicId }
                     PathStepUi(
                         id = step.code,
-                        name = step.name,
-                        periodLabel = step.periodLabel,
-                        description = step.description,
+                        name = localized(step.name, step.nameEn),
+                        periodLabel = localized(step.periodLabel, step.periodLabelEn),
+                        description = localized(step.description, step.descriptionEn),
                         imageCode = characteristic?.code ?: step.code,
                         facts = learningPathFacts.filter { it.stepId == step.stepId }
                             .sortedBy { it.position }
-                            .map { PathFactUi(it.title, it.body) },
+                            .map { PathFactUi(localized(it.title, it.titleEn), localized(it.body, it.bodyEn)) },
                         figures = learningPathFigures.filter { it.stepId == step.stepId }
                             .sortedBy { it.position }
                             .map { figure ->
                                 PathFigureUi(
                                     name = figure.displayName,
-                                    role = figure.role,
+                                    role = localized(figure.role, figure.roleEn),
                                     directorCode = directorEntities.firstOrNull { it.directorId == figure.directorId }?.code,
                                 )
                             },
                         movies = learningPathMovies.filter { it.stepId == step.stepId }
                             .sortedBy { it.position }
                             .mapNotNull { link -> moviesByMovieId[link.movieId]?.let { toSummary(it) } },
-                        transition = step.transitionText,
+                        transition = localized(step.transitionText, step.transitionTextEn).takeIf { it.isNotBlank() },
                     )
                 },
             )
@@ -957,13 +1016,13 @@ class MainViewModel(
         territoryState = countryEntities.mapNotNull { country ->
             val progress = countryProgress[country.countryId]
             if ((progress?.totalCount ?: 0) <= 0) return@mapNotNull null
-            territoryFromProgress(country.code, country.name, R.string.countries, progress)
+            territoryFromProgress(country.code, localized(country.name, country.nameEn), R.string.countries, progress)
         }
         currentState = characteristicEntities.mapNotNull { characteristic ->
             val total = moviesWithRelations.count { rel -> rel.characteristics.any { it.characteristicId == characteristic.characteristicId } }
             if (total <= 0) return@mapNotNull null
             val seen = watchedMovies.count { rel -> rel.characteristics.any { it.characteristicId == characteristic.characteristicId } }
-            territoryFromCounts(characteristic.code, characteristic.name, R.string.currents, seen, total)
+            territoryFromCounts(characteristic.code, localized(characteristic.name, characteristic.nameEn), R.string.currents, seen, total)
         }
         decadeState = moviesWithRelations
             .map { it.movie.releaseYear / 10 * 10 }
@@ -978,15 +1037,15 @@ class MainViewModel(
             val total = moviesWithRelations.count { rel -> rel.genres.any { it.genreId == genre.genreId } }
             if (total <= 0) return@mapNotNull null
             val seen = watchedMovies.count { rel -> rel.genres.any { it.genreId == genre.genreId } }
-            territoryFromCounts(genre.code, genre.name, R.string.genres, seen, total)
+            territoryFromCounts(genre.code, localized(genre.name, genre.nameEn), R.string.genres, seen, total)
         }
         val earnedCodes = earnedBadgeCodesOrdered.toSet()
         val showcase = ProfileBadges.resolve(earnedBadgeCodesOrdered, user?.showcaseBadgeCodes)
         badgeState = badgeEntities.sortedWith(compareBy({ it.difficulty }, { it.code })).map {
             BadgeUi(
                 code = it.code,
-                name = it.name,
-                condition = it.description,
+                name = localized(it.name, it.nameEn),
+                condition = localized(it.description, it.descriptionEn),
                 earned = it.code in earnedCodes,
                 difficulty = it.difficulty,
                 showcaseSlot = showcase.indexOf(it.code).takeIf { slot -> slot >= 0 },
@@ -1014,9 +1073,11 @@ class MainViewModel(
             RankUi(
                 id = it.code,
                 order = it.displayOrder,
-                name = it.name,
-                description = it.description,
-                longDescription = it.longDescription ?: it.description,
+                name = localized(it.name, it.nameEn),
+                description = localized(it.description, it.descriptionEn),
+                longDescription = localized(it.longDescription, it.longDescriptionEn).ifBlank {
+                    localized(it.description, it.descriptionEn)
+                },
                 current = it.rankingId == rank?.rankingId,
             )
         }
@@ -1106,10 +1167,14 @@ class MainViewModel(
         )
         statsState = StatsListsUi(
             films = watchedMovies.map(::toSummary),
-            countries = countryEntities.filter { (countryProgress[it.countryId]?.watchedCount ?: 0) > 0 }.map { it.name },
+            countries = countryEntities.filter { (countryProgress[it.countryId]?.watchedCount ?: 0) > 0 }
+                .map { localized(it.name, it.nameEn) },
             decades = watchedMovies.map { it.movie.releaseYear / 10 * 10 }.distinct().sorted().map { decadeLabel(it) },
-            currents = watchedMovies.flatMap { it.characteristics }.distinctBy { it.characteristicId }.map { it.name },
-            continents = continentIds.mapNotNull { continentsById[it]?.name },
+            currents = watchedMovies.flatMap { it.characteristics }.distinctBy { it.characteristicId }
+                .map { localized(it.name, it.nameEn) },
+            continents = continentIds.mapNotNull { id ->
+                continentsById[id]?.let { localized(it.name, it.nameEn) }
+            },
             directors = watchedMovies.flatMap { it.directors }.distinctBy { it.directorId }.map { it.displayName },
         )
     }
@@ -1248,14 +1313,18 @@ class MainViewModel(
 
     private fun toMovieUi(rel: MovieWithRelations): MovieUi {
         val movie = rel.movie
-        val watchedIds = watched.mapTo(hashSetOf(), UserMovieCrossRef::movieId)
+        val watchedIds = watchedIdSet()
         val directors = orderedDirectors(rel)
-        val countryNames = rel.countries.joinToString(" · ") { it.name }
-        val genreNames = rel.genres.map { it.name }
+        val countryNames = rel.countries.joinToString(" · ") { localized(it.name, it.nameEn) }
+        val genreNames = rel.genres.map { localized(it.name, it.nameEn) }
         return MovieUi(
             id = movie.code,
             originalTitle = movie.originalTitle,
-            localizedTitle = movie.frenchTitle?.takeIf { it != movie.originalTitle },
+            localizedTitle = if (prefersEnglish()) {
+                null
+            } else {
+                movie.frenchTitle?.takeIf { it != movie.originalTitle }
+            },
             credits = listOfNotNull(
                 directors.joinToString(", ") { it.displayName }.takeIf { it.isNotBlank() },
                 movie.releaseYear.toString(),
@@ -1268,10 +1337,10 @@ class MainViewModel(
             synopsis = movie.synopsis.orEmpty(),
             watched = movie.movieId in watchedIds,
             countries = rel.countries.map {
-                TerritoryUi(it.code, it.name, R.string.countries, 0, ExplorationState.Unexplored)
+                TerritoryUi(it.code, localized(it.name, it.nameEn), R.string.countries, 0, ExplorationState.Unexplored)
             },
             genres = rel.genres.map {
-                TerritoryUi(it.code, it.name, R.string.genres, 0, ExplorationState.Unexplored)
+                TerritoryUi(it.code, localized(it.name, it.nameEn), R.string.genres, 0, ExplorationState.Unexplored)
             },
             directorIds = directors.map { it.code },
             releaseYear = movie.releaseYear,
@@ -1280,13 +1349,13 @@ class MainViewModel(
     }
 
     private fun toWatchedSummary(rel: MovieWithRelations): MovieSummaryUi {
-        val watchedIds = watched.mapTo(hashSetOf(), UserMovieCrossRef::movieId)
+        val watchedIds = watchedIdSet()
         return toSummary(rel, watched = rel.movie.movieId in watchedIds)
     }
 
     private fun toSummary(rel: MovieWithRelations, watched: Boolean = false): MovieSummaryUi = MovieSummaryUi(
         id = rel.movie.code,
-        title = rel.movie.frenchTitle ?: rel.movie.originalTitle,
+        title = displayTitle(rel.movie),
         year = rel.movie.releaseYear,
         director = listDirectorLabel(orderedDirectors(rel).map { it.displayName }),
         watched = watched,
@@ -1301,7 +1370,7 @@ class MainViewModel(
 
     private fun questUi(quest: QuestEntity): QuestUi = QuestUi(
         title = questTitle(quest.difficulty),
-        condition = quest.description,
+        condition = localized(quest.description, quest.descriptionEn),
         rewardXp = when (quest.difficulty) {
             QuestDifficulty.BRONZE -> 100
             QuestDifficulty.SILVER -> 250
@@ -1350,15 +1419,18 @@ class MainViewModel(
 
     private fun constellationLabel(seed: ConstellationSeed): String = when (seed.kind) {
         MapNodeKind.FILM -> moviesWithRelations.firstOrNull { it.movie.code == seed.id }?.movie
-            ?.let { it.frenchTitle ?: it.originalTitle }
+            ?.let(::displayTitle)
             .orEmpty()
         MapNodeKind.DIRECTOR -> directorEntities.firstOrNull { it.code == seed.id }?.displayName.orEmpty()
-        MapNodeKind.COUNTRY -> countryEntities.firstOrNull { it.code == seed.id }?.name.orEmpty()
-        MapNodeKind.GENRE -> genreEntities.firstOrNull { it.code == seed.id }?.name.orEmpty()
-        MapNodeKind.CURRENT -> characteristicEntities.firstOrNull { it.code == seed.id }?.name.orEmpty()
+        MapNodeKind.COUNTRY -> countryEntities.firstOrNull { it.code == seed.id }
+            ?.let { localized(it.name, it.nameEn) }.orEmpty()
+        MapNodeKind.GENRE -> genreEntities.firstOrNull { it.code == seed.id }
+            ?.let { localized(it.name, it.nameEn) }.orEmpty()
+        MapNodeKind.CURRENT -> characteristicEntities.firstOrNull { it.code == seed.id }
+            ?.let { localized(it.name, it.nameEn) }.orEmpty()
         MapNodeKind.DECADE -> seed.id
         MapNodeKind.COLLECTION -> collectionsWithMovies.firstOrNull { it.collection.code == seed.id }
-            ?.collection?.name.orEmpty()
+            ?.collection?.let { localized(it.name, it.nameEn) }.orEmpty()
         MapNodeKind.TERRITORY -> seed.id
     }
 
@@ -1367,6 +1439,15 @@ class MainViewModel(
         AppLanguage.French -> false
         AppLanguage.System -> java.util.Locale.getDefault().language.startsWith("en")
     }
+
+    private fun localized(french: String?, english: String?): String {
+        val fr = french?.trim().orEmpty()
+        val en = english?.trim().orEmpty()
+        return if (prefersEnglish()) en.ifBlank { fr } else fr.ifBlank { en }
+    }
+
+    private fun displayTitle(movie: MovieEntity): String =
+        if (prefersEnglish()) movie.originalTitle else movie.frenchTitle ?: movie.originalTitle
 
     private fun DirectorEntity.biographyFor(english: Boolean): String {
         val french = biography?.trim().orEmpty()
@@ -1384,18 +1465,19 @@ class MainViewModel(
             HistoryUi.MOVIE_VALIDATED -> {
                 val code = payload?.get("movieCode")?.jsonPrimitive?.content
                 val movie = moviesWithRelations.firstOrNull { it.movie.code == code }?.movie
-                movie?.frenchTitle
-                    ?: movie?.originalTitle
+                movie?.let(::displayTitle)
                     ?: code?.let(::titleFromEditorialCode)
                     ?: ""
             }
             HistoryUi.BADGE_EARNED -> {
                 val code = payload?.get("badgeCode")?.jsonPrimitive?.content
-                badgeEntities.firstOrNull { it.code == code }?.name ?: code.orEmpty()
+                badgeEntities.firstOrNull { it.code == code }?.let { localized(it.name, it.nameEn) }
+                    ?: code.orEmpty()
             }
             HistoryUi.RANK_UP -> {
                 val code = payload?.get("rankCode")?.jsonPrimitive?.content
-                rankings.firstOrNull { it.code == code }?.name ?: code.orEmpty()
+                rankings.firstOrNull { it.code == code }?.let { localized(it.name, it.nameEn) }
+                    ?: code.orEmpty()
             }
             else -> ""
         }

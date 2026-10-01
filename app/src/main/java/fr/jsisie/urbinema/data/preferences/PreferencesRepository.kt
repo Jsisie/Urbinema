@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.map
 
 private val Context.urbinemaPreferences by preferencesDataStore("urbinema_preferences")
 
-enum class ThemePreference { DARK, LIGHT, SYSTEM }
+enum class ThemePreference { DARK, LIGHT, SYSTEM, CYANOTYPE, TIRAGE, RAYONNAGE, AFFICHE, VELOURS, NUIT_AMERICAINE }
 
 enum class LanguagePreference { SYSTEM, FRENCH, ENGLISH }
 

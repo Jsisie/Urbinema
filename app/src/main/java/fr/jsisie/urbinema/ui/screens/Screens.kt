@@ -1,5 +1,6 @@
 package fr.jsisie.urbinema.ui.screens
 
+import android.graphics.drawable.ColorDrawable
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
@@ -24,6 +26,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -49,14 +52,19 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import androidx.compose.ui.window.DialogWindowProvider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -67,20 +75,30 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.IntRect
+import androidx.compose.ui.unit.IntSize
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Popup
+import androidx.compose.ui.window.PopupPositionProvider
+import androidx.compose.ui.window.PopupProperties
 import fr.jsisie.urbinema.BuildConfig
 import fr.jsisie.urbinema.R
 import fr.jsisie.urbinema.ui.components.AvatarPicker
@@ -124,6 +142,8 @@ import fr.jsisie.urbinema.ui.model.StatsCategory
 import fr.jsisie.urbinema.ui.model.StatsListsUi
 import fr.jsisie.urbinema.ui.model.TerritoryUi
 import fr.jsisie.urbinema.ui.theme.RankDisplayStyle
+import fr.jsisie.urbinema.ui.theme.ThemePickerButton
+import fr.jsisie.urbinema.ui.theme.ThemePickerDialog
 import fr.jsisie.urbinema.ui.theme.UrbinemaThemeMode
 import fr.jsisie.urbinema.ui.theme.UrbinemaThemeTokens
 import kotlinx.coroutines.delay
@@ -179,7 +199,13 @@ fun HomeScreen(
     onOpenProfile: () -> Unit = {},
     onCollection: (String) -> Unit,
     onSeeAllHistory: () -> Unit = {},
+    resetTick: Int = 0,
 ) {
+    val listState = rememberLazyListState()
+    LaunchedEffect(resetTick) {
+        if (resetTick == 0) return@LaunchedEffect
+        listState.scrollToItem(0)
+    }
     UiStatePane(state.loadState, onRetry) {
         Column(pageModifier) {
             Column(
@@ -200,6 +226,7 @@ fun HomeScreen(
                 )
             }
             LazyColumn(
+                state = listState,
                 contentPadding = androidx.compose.foundation.layout.PaddingValues(
                     horizontal = UrbinemaThemeTokens.dimens.screen,
                     vertical = UrbinemaThemeTokens.dimens.sm,
@@ -289,7 +316,7 @@ fun LinearXp(xp: Int, target: Int) {
     androidx.compose.material3.LinearProgressIndicator(
         progress = { xp.toFloat() / target.coerceAtLeast(1) },
         modifier = Modifier.fillMaxWidth().padding(top = UrbinemaThemeTokens.dimens.xs),
-        color = UrbinemaThemeTokens.colors.accent,
+        color = UrbinemaThemeTokens.colors.progress,
         trackColor = UrbinemaThemeTokens.colors.surfacePressed,
     )
     Text(stringResource(R.string.xp_progress, xp, target), style = MaterialTheme.typography.labelMedium)
@@ -301,7 +328,7 @@ internal fun DevProgressPanel(progress: DevProgressUi, modifier: Modifier = Modi
         androidx.compose.material3.LinearProgressIndicator(
             progress = { progress.fraction },
             modifier = Modifier.fillMaxWidth(),
-            color = UrbinemaThemeTokens.colors.accent,
+            color = UrbinemaThemeTokens.colors.line,
             trackColor = UrbinemaThemeTokens.colors.surfacePressed,
         )
         Text(
@@ -337,7 +364,7 @@ internal fun DevProgressPanel(progress: DevProgressUi, modifier: Modifier = Modi
         androidx.compose.material3.LinearProgressIndicator(
             progress = { progress.xpFraction },
             modifier = Modifier.fillMaxWidth().padding(top = UrbinemaThemeTokens.dimens.xs),
-            color = UrbinemaThemeTokens.colors.accent,
+            color = UrbinemaThemeTokens.colors.progress,
             trackColor = UrbinemaThemeTokens.colors.surfacePressed,
         )
         Text(
@@ -361,19 +388,25 @@ fun AtlasScreen(
     decades: List<TerritoryUi>,
     genres: List<TerritoryUi>,
     directors: List<TerritoryUi>,
+    selectedFilter: AtlasFilter = AtlasFilter.Countries,
+    onFilterChange: (AtlasFilter) -> Unit = {},
+    resetTick: Int = 0,
     onSelect: (AtlasFilter, String) -> Unit,
 ) {
-    var selected by rememberSaveable { mutableStateOf(AtlasFilter.Countries) }
     val listState = rememberLazyListState()
     val scope = rememberCoroutineScope()
-    val raw = when (selected) {
+    LaunchedEffect(resetTick) {
+        if (resetTick == 0) return@LaunchedEffect
+        listState.scrollToItem(0)
+    }
+    val raw = when (selectedFilter) {
         AtlasFilter.Countries -> countries
         AtlasFilter.Currents -> currents
         AtlasFilter.Decades -> decades
         AtlasFilter.Genres -> genres
         AtlasFilter.Directors -> directors
     }
-    val indexed = selected != AtlasFilter.Decades
+    val indexed = selectedFilter != AtlasFilter.Decades
     val items = remember(raw, indexed) {
         if (indexed) raw.sortedBy { filmSortKey(it.name) } else raw
     }
@@ -397,10 +430,10 @@ fun AtlasScreen(
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs)) {
                     items(filters) { (filter, label) ->
                         FilterChip(
-                            selected == filter,
+                            selectedFilter == filter,
                             {
-                                if (selected != filter) {
-                                    selected = filter
+                                if (selectedFilter != filter) {
+                                    onFilterChange(filter)
                                     scope.launch { listState.scrollToItem(0) }
                                 }
                             },
@@ -416,7 +449,7 @@ fun AtlasScreen(
                     modifier = Modifier.padding(vertical = UrbinemaThemeTokens.dimens.md),
                 )
             }
-            items(items, key = { it.id }) { TerritoryRow(it, { onSelect(selected, it.id) }) }
+            items(items, key = { it.id }) { TerritoryRow(it, { onSelect(selectedFilter, it.id) }) }
             item { Text(stringResource(R.string.atlas_legend), style = MaterialTheme.typography.bodyMedium) }
         }
         if (indexed) {
@@ -505,22 +538,16 @@ fun ProfileScreen(
     badges: List<BadgeUi>,
     onBadges: () -> Unit,
     onRank: () -> Unit,
+    resetTick: Int = 0,
 ) {
-    var conditionBadge by remember { mutableStateOf<BadgeUi?>(null) }
-    conditionBadge?.let { badge ->
-        AlertDialog(
-            onDismissRequest = { conditionBadge = null },
-            title = { Text(badge.name) },
-            text = { Text(badge.condition) },
-            confirmButton = {
-                TextButton(onClick = { conditionBadge = null }) {
-                    Text(stringResource(R.string.confirm))
-                }
-            },
-        )
+    val listState = rememberLazyListState()
+    LaunchedEffect(resetTick) {
+        if (resetTick == 0) return@LaunchedEffect
+        listState.scrollToItem(0)
     }
     LazyColumn(
         modifier = pageModifier,
+        state = listState,
         contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -557,7 +584,7 @@ fun ProfileScreen(
                 Box(
                     Modifier
                         .size(184.dp)
-                        .border(2.dp, UrbinemaThemeTokens.colors.accent, MaterialTheme.shapes.medium)
+                        .border(2.dp, UrbinemaThemeTokens.colors.line, MaterialTheme.shapes.medium)
                         .clip(MaterialTheme.shapes.medium),
                     contentAlignment = Alignment.Center,
                 ) {
@@ -607,7 +634,7 @@ fun ProfileScreen(
                     verticalAlignment = Alignment.Top,
                 ) {
                     shown.forEach { badge ->
-                        BadgeTile(badge, onLongPress = { conditionBadge = badge })
+                        BadgeTile(badge)
                     }
                 }
             }
@@ -682,7 +709,7 @@ fun RanksScreen(ranks: List<RankUi>) {
                     Icon(
                         Icons.Outlined.KeyboardArrowDown,
                         contentDescription = null,
-                        tint = UrbinemaThemeTokens.colors.accent,
+                        tint = UrbinemaThemeTokens.colors.line,
                         modifier = Modifier.padding(vertical = UrbinemaThemeTokens.dimens.sm).size(32.dp),
                     )
                 }
@@ -728,7 +755,16 @@ fun NamedListScreen(title: Int, values: List<String>) {
 }
 
 @Composable
-fun CollectionsScreen(collections: List<CollectionUi>, onCollection: (String) -> Unit) {
+fun CollectionsScreen(
+    collections: List<CollectionUi>,
+    onCollection: (String) -> Unit,
+    resetTick: Int = 0,
+) {
+    val listState = rememberLazyListState()
+    LaunchedEffect(resetTick) {
+        if (resetTick == 0) return@LaunchedEffect
+        listState.scrollToItem(0)
+    }
     var lockTarget by remember { mutableStateOf<CollectionUi?>(null) }
     lockTarget?.let { locked ->
         val lockTitle = stringResource(R.string.collection_locked_title)
@@ -745,7 +781,11 @@ fun CollectionsScreen(collections: List<CollectionUi>, onCollection: (String) ->
             },
         )
     }
-    LazyColumn(pageModifier, contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen)) {
+    LazyColumn(
+        modifier = pageModifier,
+        state = listState,
+        contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen),
+    ) {
         item { ScreenTitle(R.string.collections_tab) }
         item {
             Text(
@@ -804,7 +844,7 @@ fun CollectionsScreen(collections: List<CollectionUi>, onCollection: (String) ->
                             Icon(
                                 Icons.Outlined.CheckCircle,
                                 contentDescription = stringResource(R.string.collection_completed),
-                                tint = UrbinemaThemeTokens.colors.accent,
+                                tint = UrbinemaThemeTokens.colors.line,
                             )
                         }
                     }
@@ -908,7 +948,10 @@ fun CollectionScreen(
                     Button(
                         onClick = onFollow,
                         modifier = Modifier.fillMaxWidth().padding(bottom = UrbinemaThemeTokens.dimens.md),
-                        colors = ButtonDefaults.buttonColors(containerColor = UrbinemaThemeTokens.colors.accent),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = UrbinemaThemeTokens.colors.line,
+                            contentColor = UrbinemaThemeTokens.colors.onBackground,
+                        ),
                     ) { Text(stringResource(R.string.follow_collection)) }
                 }
             }
@@ -1143,7 +1186,7 @@ private fun AlphabetScrubber(
     modifier: Modifier = Modifier,
     plain: Boolean = false,
 ) {
-    val letters = listOf('#') + ('A'..'Z').toList()
+    val letters = ('A'..'Z').toList() + '#'
     val present = titles.mapTo(hashSetOf(), ::filmIndexLetter)
     val description = stringResource(R.string.alphabet_index_cd)
     fun letterAt(y: Float, height: Int): Char {
@@ -1275,7 +1318,7 @@ fun BadgesScreen(badges: List<BadgeUi>, onSaveShowcase: (List<String>) -> Unit) 
                             Icon(
                                 Icons.Outlined.Check,
                                 contentDescription = stringResource(R.string.earned),
-                                tint = UrbinemaThemeTokens.colors.accent,
+                                tint = UrbinemaThemeTokens.colors.line,
                             )
                         }
                     }
@@ -1333,7 +1376,7 @@ private fun ShowcaseBadgesDialog(
                                 Icon(
                                     Icons.Outlined.Check,
                                     contentDescription = stringResource(R.string.earned),
-                                    tint = UrbinemaThemeTokens.colors.accent,
+                                    tint = UrbinemaThemeTokens.colors.line,
                                 )
                             }
                         }
@@ -1352,46 +1395,117 @@ private fun ShowcaseBadgesDialog(
 
 @Composable
 fun BadgeUnlockedDialog(badge: BadgeUi, onDismiss: () -> Unit) {
-    AlertDialog(
+    val colors = UrbinemaThemeTokens.colors
+    val dialogShape = RoundedCornerShape(12.dp)
+    Dialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.badge_unlocked_title)) },
-        text = {
+        properties = DialogProperties(usePlatformDefaultWidth = false),
+    ) {
+        val dialogView = LocalView.current
+        SideEffect {
+            val window = (dialogView.parent as? DialogWindowProvider)?.window ?: return@SideEffect
+            window.setBackgroundDrawable(ColorDrawable(android.graphics.Color.TRANSPARENT))
+        }
+        Surface(
+            modifier = Modifier.widthIn(max = 240.dp),
+            shape = dialogShape,
+            color = colors.surface,
+            contentColor = colors.onBackground,
+        ) {
             Column(
+                Modifier.padding(horizontal = 14.dp, vertical = 12.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.md),
+                verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs),
             ) {
                 Text(
-                    stringResource(R.string.badge_unlocked_body, badge.name),
-                    modifier = Modifier.fillMaxWidth(),
+                    stringResource(R.string.badge_unlocked_title),
+                    style = MaterialTheme.typography.titleSmall,
+                    textAlign = TextAlign.Center,
                 )
-                BadgeArtwork(badge, Modifier.size(72.dp))
+                Text(
+                    stringResource(R.string.badge_unlocked_body, badge.name),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = colors.onBackgroundMuted,
+                    textAlign = TextAlign.Center,
+                )
+                BadgeArtwork(badge, Modifier.size(40.dp))
+                TextButton(
+                    onClick = onDismiss,
+                    contentPadding = PaddingValues(horizontal = 10.dp, vertical = 2.dp),
+                ) {
+                    Text(stringResource(R.string.confirm), style = MaterialTheme.typography.labelMedium)
+                }
             }
-        },
-        confirmButton = {
-            TextButton(onClick = onDismiss) { Text(stringResource(R.string.confirm)) }
-        },
-    )
+        }
+    }
 }
 
 @Composable
-private fun BadgeTile(badge: BadgeUi, onLongPress: () -> Unit) {
-    Column(
-        modifier = Modifier
-            .width(88.dp)
-            .pointerInput(badge.code) {
-                detectTapGestures(onLongPress = { onLongPress() })
-            },
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs),
-    ) {
-        BadgeArtwork(badge, Modifier.size(72.dp))
-        Text(
-            badge.name,
-            style = MaterialTheme.typography.labelSmall,
-            textAlign = TextAlign.Center,
-            maxLines = 2,
-            overflow = TextOverflow.Ellipsis,
-        )
+private fun BadgeTile(badge: BadgeUi) {
+    var press by remember { mutableStateOf<Offset?>(null) }
+    val colors = UrbinemaThemeTokens.colors
+    Box {
+        Column(
+            modifier = Modifier
+                .width(88.dp)
+                .pointerInput(badge.code) {
+                    detectTapGestures(
+                        onPress = { offset ->
+                            press = offset
+                            try {
+                                awaitRelease()
+                            } finally {
+                                press = null
+                            }
+                        },
+                    )
+                },
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs),
+        ) {
+            BadgeArtwork(badge, Modifier.size(72.dp))
+            Text(
+                badge.name,
+                style = MaterialTheme.typography.labelSmall,
+                textAlign = TextAlign.Center,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
+        press?.let { offset ->
+            val gapPx = with(LocalDensity.current) { 8.dp.roundToPx() }
+            Popup(
+                popupPositionProvider = remember(offset, gapPx) {
+                    object : PopupPositionProvider {
+                        override fun calculatePosition(
+                            anchorBounds: IntRect,
+                            windowSize: IntSize,
+                            layoutDirection: LayoutDirection,
+                            popupContentSize: IntSize,
+                        ): IntOffset {
+                            val x = (anchorBounds.left + offset.x.toInt() - popupContentSize.width / 2)
+                                .coerceIn(8, (windowSize.width - popupContentSize.width - 8).coerceAtLeast(8))
+                            val y = (anchorBounds.top - popupContentSize.height - gapPx)
+                                .coerceAtLeast(8)
+                            return IntOffset(x, y)
+                        }
+                    }
+                },
+                properties = PopupProperties(focusable = false, clippingEnabled = false),
+            ) {
+                Text(
+                    badge.condition,
+                    modifier = Modifier
+                        .widthIn(max = 200.dp)
+                        .background(colors.surfaceElevated, MaterialTheme.shapes.small)
+                        .border(1.dp, colors.outline, MaterialTheme.shapes.small)
+                        .padding(horizontal = 8.dp, vertical = 4.dp),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = colors.onBackground,
+                    textAlign = TextAlign.Center,
+                )
+            }
+        }
     }
 }
 
@@ -1410,8 +1524,8 @@ private fun BadgeArtwork(badge: BadgeUi, modifier: Modifier = Modifier) {
         Icon(
             Icons.Outlined.Image,
             contentDescription = null,
-            tint = if (badge.earned) {
-                UrbinemaThemeTokens.colors.accent
+                tint = if (badge.earned) {
+                UrbinemaThemeTokens.colors.line
             } else {
                 UrbinemaThemeTokens.colors.onBackgroundFaint
             },
@@ -1572,7 +1686,8 @@ fun MovieScreen(
                 enabled = !movie.watched,
                 modifier = Modifier.fillMaxWidth().padding(vertical = UrbinemaThemeTokens.dimens.lg),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = if (movie.watched) UrbinemaThemeTokens.colors.surfacePressed else UrbinemaThemeTokens.colors.accent,
+                    containerColor = if (movie.watched) UrbinemaThemeTokens.colors.surfacePressed else UrbinemaThemeTokens.colors.line,
+                    contentColor = UrbinemaThemeTokens.colors.onBackground,
                     disabledContainerColor = UrbinemaThemeTokens.colors.surfacePressed,
                     disabledContentColor = UrbinemaThemeTokens.colors.onBackgroundFaint,
                 ),
@@ -1609,6 +1724,7 @@ fun MovieScreen(
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun SettingsScreen(
     themeMode: UrbinemaThemeMode,
@@ -1635,6 +1751,7 @@ fun SettingsScreen(
     var editedUsername by remember(username) { mutableStateOf(username) }
     var editedAge by remember(ageYears) { mutableStateOf(ageYears?.toString().orEmpty()) }
     var confirmReset by remember { mutableStateOf(false) }
+    var showThemePicker by remember { mutableStateOf(false) }
     var resetCountdown by remember { mutableStateOf(RESET_CONFIRMATION_DELAY_SECONDS) }
     LaunchedEffect(confirmReset) {
         if (!confirmReset) return@LaunchedEffect
@@ -1643,6 +1760,13 @@ fun SettingsScreen(
             delay(1_000)
             resetCountdown -= 1
         }
+    }
+    if (showThemePicker) {
+        ThemePickerDialog(
+            selected = themeMode,
+            onSelect = onThemeModeChange,
+            onDismiss = { showThemePicker = false },
+        )
     }
     if (confirmReset) {
         AlertDialog(
@@ -1728,17 +1852,10 @@ fun SettingsScreen(
         }
         item { SectionTitle(R.string.theme) }
         item {
-            LazyRow(horizontalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs)) {
-                items(
-                    listOf(
-                        UrbinemaThemeMode.Dark to R.string.dark_theme,
-                        UrbinemaThemeMode.Light to R.string.light_theme,
-                        UrbinemaThemeMode.System to R.string.system_theme,
-                    ),
-                ) { (mode, label) ->
-                    FilterChip(themeMode == mode, { onThemeModeChange(mode) }, { Text(stringResource(label)) })
-                }
-            }
+            ThemePickerButton(
+                selected = themeMode,
+                onOpen = { showThemePicker = true },
+            )
         }
         if (showDevTools) {
             item { SettingsSwitch(R.string.dev_mode, devMode, onDevModeChange) }
@@ -1777,7 +1894,10 @@ fun SettingsScreen(
             Button(
                 onClick = onHelp,
                 modifier = Modifier.fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(containerColor = UrbinemaThemeTokens.colors.accent),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = UrbinemaThemeTokens.colors.line,
+                    contentColor = UrbinemaThemeTokens.colors.onBackground,
+                ),
             ) { Text(stringResource(R.string.help_open)) }
         }
         item {

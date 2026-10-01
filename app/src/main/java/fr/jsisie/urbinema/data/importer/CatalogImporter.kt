@@ -151,6 +151,7 @@ class CatalogImporter(
                 ContinentEntity(
                     code = value.code,
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     imageMediaId = value.imageMediaCode.idIn(mediaIds),
                     isActive = value.isActive,
                     createdAt = timestamp,
@@ -163,6 +164,7 @@ class CatalogImporter(
                 CountryEntity(
                     code = value.code,
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     isoCode = value.isoCode,
                     imageMediaId = value.imageMediaCode.idIn(mediaIds),
                     isActive = value.isActive,
@@ -192,8 +194,10 @@ class CatalogImporter(
                 CinemaCharacteristicEntity(
                     code = value.code,
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     typeCode = value.typeCode,
                     description = value.description,
+                    descriptionEn = value.descriptionEn.blankToNull(),
                     imageMediaId = value.imageMediaCode.idIn(mediaIds),
                     isActive = value.isActive,
                     createdAt = timestamp,
@@ -206,6 +210,7 @@ class CatalogImporter(
                 GenreEntity(
                     code = value.code,
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     description = value.description,
                     imageMediaId = value.imageMediaCode.idIn(mediaIds),
                     isActive = value.isActive,
@@ -219,6 +224,7 @@ class CatalogImporter(
                 EraEntity(
                     code = value.code,
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     startYear = value.startYear,
                     endYear = value.endYear,
                     description = value.description,
@@ -287,8 +293,11 @@ class CatalogImporter(
                     code = value.code,
                     displayOrder = value.displayOrder,
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     description = value.description,
+                    descriptionEn = value.descriptionEn.blankToNull(),
                     longDescription = value.longDescription,
+                    longDescriptionEn = value.longDescriptionEn.blankToNull(),
                     track = value.track,
                     coverMediaId = value.coverMediaCode.idIn(mediaIds),
                     isPublished = value.isPublished,
@@ -330,8 +339,11 @@ class CatalogImporter(
                     code = value.code,
                     displayOrder = value.displayOrder,
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     description = value.description,
+                    descriptionEn = value.descriptionEn.blankToNull(),
                     longDescription = value.longDescription,
+                    longDescriptionEn = value.longDescriptionEn.blankToNull(),
                     imageMediaId = value.imageMediaCode.idIn(mediaIds),
                     isActive = value.isActive,
                     createdAt = timestamp,
@@ -344,7 +356,9 @@ class CatalogImporter(
                 BadgeEntity(
                     code = value.code,
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     description = value.description,
+                    descriptionEn = value.descriptionEn.blankToNull(),
                     difficulty = value.difficulty,
                     category = value.category,
                     iconMediaId = value.iconMediaCode.idIn(mediaIds),
@@ -359,7 +373,9 @@ class CatalogImporter(
                 QuestEntity(
                     code = value.code,
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     description = value.description,
+                    descriptionEn = value.descriptionEn.blankToNull(),
                     difficulty = QuestDifficulty.valueOf(value.difficulty),
                     ruleCode = value.ruleCode,
                     targetCount = value.targetCount,
@@ -375,9 +391,13 @@ class CatalogImporter(
                     code = value.code,
                     displayOrder = value.displayOrder,
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     summary = value.summary,
+                    summaryEn = value.summaryEn.blankToNull(),
                     description = value.description,
+                    descriptionEn = value.descriptionEn.blankToNull(),
                     periodLabel = value.periodLabel,
+                    periodLabelEn = value.periodLabelEn.blankToNull(),
                     isActive = value.isActive,
                     createdAt = timestamp,
                     updatedAt = timestamp,
@@ -394,9 +414,13 @@ class CatalogImporter(
                     position = value.position,
                     characteristicId = characteristicIds.id(value.characteristicCode),
                     name = value.name,
+                    nameEn = value.nameEn.blankToNull(),
                     periodLabel = value.periodLabel,
+                    periodLabelEn = value.periodLabelEn.blankToNull(),
                     description = value.description,
+                    descriptionEn = value.descriptionEn.blankToNull(),
                     transitionText = value.transition,
+                    transitionTextEn = value.transitionEn.blankToNull(),
                     isActive = value.isActive,
                 )
             )
@@ -408,7 +432,9 @@ class CatalogImporter(
                         stepId = stepIds.id(step.code),
                         position = index,
                         title = fact.title,
+                        titleEn = fact.titleEn.blankToNull(),
                         body = fact.body,
+                        bodyEn = fact.bodyEn.blankToNull(),
                     )
                 }
             }
@@ -421,6 +447,7 @@ class CatalogImporter(
                         position = index,
                         displayName = figure.displayName,
                         role = figure.role,
+                        roleEn = figure.roleEn.blankToNull(),
                         directorId = figure.directorCode.idIn(directorIds),
                     )
                 }
@@ -568,6 +595,8 @@ class CatalogImporter(
         if (existing == null) dao.insertQuest(value)
         else dao.updateQuest(value.copy(questId = existing.questId, createdAt = existing.createdAt))
     }
+
+    private fun String?.blankToNull(): String? = this?.takeIf { it.isNotBlank() }
 
     private fun String?.idIn(ids: Map<String, Long>): Long? =
         this?.let { code -> ids.id(code) }

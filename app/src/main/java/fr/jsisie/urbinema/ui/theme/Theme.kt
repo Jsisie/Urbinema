@@ -1,11 +1,46 @@
 package fr.jsisie.urbinema.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.graphics.Color
+import fr.jsisie.urbinema.R
 
-enum class UrbinemaThemeMode { Dark, Light, System }
+enum class UrbinemaThemeMode { Dark, Light, System, Cyanotype, Tirage, Rayonnage, Affiche, Velours, NuitAmericaine }
+
+internal fun paletteFor(
+    mode: UrbinemaThemeMode,
+    systemDark: Boolean,
+): UrbinemaColors = when (mode) {
+    UrbinemaThemeMode.Dark -> SalleObscureColors
+    UrbinemaThemeMode.Light -> SalleEclaireeColors
+    UrbinemaThemeMode.System -> if (systemDark) SalleObscureColors else SalleEclaireeColors
+    UrbinemaThemeMode.Cyanotype -> CyanotypeColors
+    UrbinemaThemeMode.Tirage -> TirageColors
+    UrbinemaThemeMode.Rayonnage -> RayonnageColors
+    UrbinemaThemeMode.Affiche -> AfficheColors
+    UrbinemaThemeMode.Velours -> VeloursColors
+    UrbinemaThemeMode.NuitAmericaine -> NuitAmericaineColors
+}
+
+fun UrbinemaColors.previewSwatches(): List<Color> =
+    listOf(background, accent, line, cool).distinct().take(3)
+
+val UrbinemaThemeMode.labelRes: Int
+    get() = when (this) {
+        UrbinemaThemeMode.Dark -> R.string.dark_theme
+        UrbinemaThemeMode.Light -> R.string.light_theme
+        UrbinemaThemeMode.System -> R.string.system_theme
+        UrbinemaThemeMode.Cyanotype -> R.string.theme_cyanotype
+        UrbinemaThemeMode.Tirage -> R.string.theme_tirage
+        UrbinemaThemeMode.Rayonnage -> R.string.theme_rayonnage
+        UrbinemaThemeMode.Affiche -> R.string.theme_affiche
+        UrbinemaThemeMode.Velours -> R.string.theme_velours
+        UrbinemaThemeMode.NuitAmericaine -> R.string.theme_nuit_americaine
+    }
 
 /** Public access to semantic tokens selected by [UrbinemaTheme]. */
 object UrbinemaThemeTokens {
@@ -15,22 +50,37 @@ object UrbinemaThemeTokens {
         @Composable get() = LocalUrbinemaDimens.current
 }
 
-/** Applies one of the two fixed palettes; dynamic color is intentionally unsupported. */
+private data class ResolvedTheme(
+    val colors: UrbinemaColors,
+    val scheme: ColorScheme,
+    val typography: Typography,
+)
+
+/** Applies one of the fixed palettes; dynamic color is intentionally unsupported. */
 @Composable
 fun UrbinemaTheme(
     mode: UrbinemaThemeMode = UrbinemaThemeMode.Dark,
     content: @Composable () -> Unit
 ) {
-    val darkTheme = when (mode) {
-        UrbinemaThemeMode.Dark -> true
-        UrbinemaThemeMode.Light -> false
-        UrbinemaThemeMode.System -> isSystemInDarkTheme()
+    val resolved = when (mode) {
+        UrbinemaThemeMode.Dark -> ResolvedTheme(SalleObscureColors, SalleObscureScheme, UrbinemaTypography)
+        UrbinemaThemeMode.Light -> ResolvedTheme(SalleEclaireeColors, SalleEclaireeScheme, UrbinemaTypography)
+        UrbinemaThemeMode.System -> if (isSystemInDarkTheme()) {
+            ResolvedTheme(SalleObscureColors, SalleObscureScheme, UrbinemaTypography)
+        } else {
+            ResolvedTheme(SalleEclaireeColors, SalleEclaireeScheme, UrbinemaTypography)
+        }
+        UrbinemaThemeMode.Cyanotype -> ResolvedTheme(CyanotypeColors, CyanotypeScheme, SourceTypography)
+        UrbinemaThemeMode.Tirage -> ResolvedTheme(TirageColors, TirageScheme, SourceTypography)
+        UrbinemaThemeMode.Rayonnage -> ResolvedTheme(RayonnageColors, RayonnageScheme, SourceTypography)
+        UrbinemaThemeMode.Affiche -> ResolvedTheme(AfficheColors, AfficheScheme, SourceTypography)
+        UrbinemaThemeMode.Velours -> ResolvedTheme(VeloursColors, VeloursScheme, SourceTypography)
+        UrbinemaThemeMode.NuitAmericaine -> ResolvedTheme(NuitAmericaineColors, NuitAmericaineScheme, SourceTypography)
     }
-    val colors = if (darkTheme) SalleObscureColors else SalleEclaireeColors
-    CompositionLocalProvider(LocalUrbinemaColors provides colors) {
+    CompositionLocalProvider(LocalUrbinemaColors provides resolved.colors) {
         MaterialTheme(
-            colorScheme = if (darkTheme) SalleObscureScheme else SalleEclaireeScheme,
-            typography = UrbinemaTypography,
+            colorScheme = resolved.scheme,
+            typography = resolved.typography,
             shapes = UrbinemaShapes,
             content = content,
         )

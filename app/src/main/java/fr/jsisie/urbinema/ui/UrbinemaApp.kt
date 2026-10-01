@@ -54,6 +54,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.geometry.Offset
@@ -85,6 +86,8 @@ import fr.jsisie.urbinema.domain.map.CinemaMapGraph
 import fr.jsisie.urbinema.domain.map.MapLayer
 import fr.jsisie.urbinema.domain.map.MapNodeKind
 import fr.jsisie.urbinema.ui.map.InteractiveMapScreen
+import fr.jsisie.urbinema.ui.map.SkyMapSearchHits
+import fr.jsisie.urbinema.ui.map.SkyMapTitleSearch
 import fr.jsisie.urbinema.ui.model.HelpTopic
 import fr.jsisie.urbinema.ui.model.AppLanguage
 import fr.jsisie.urbinema.ui.model.AtlasFilter
@@ -296,8 +299,15 @@ private fun UrbinemaNavigation(
     val entry by navController.currentBackStackEntryAsState()
     val route = entry?.destination?.route ?: Routes.Home
     var activeTab by remember { mutableStateOf(Routes.Home) }
+    var tabResetRoute by remember { mutableStateOf<String?>(null) }
+    var tabResetTick by remember { mutableStateOf(0) }
+    var atlasFilter by remember { mutableStateOf(AtlasFilter.Countries) }
     var mapLayer by rememberSaveable { mutableStateOf(MapLayer.AROUND_FILM) }
     var mapFocus by rememberSaveable { mutableStateOf("") }
+    var skyQuery by remember { mutableStateOf("") }
+    LaunchedEffect(route) {
+        if (route != Routes.SkyMap) skyQuery = ""
+    }
     var showCollectionLock by remember { mutableStateOf<CollectionUi?>(null) }
     val isHome = route == Routes.Home
     val isProfile = route == Routes.Profile
@@ -347,8 +357,13 @@ private fun UrbinemaNavigation(
                 onNavigate = { destination ->
                     scope.launch { drawerState.close() }
                     if (tabs.any { it.route == destination }) {
-                        selectTab(navController, destination, route, activeTab)
+                        val reselected = highlightedTab == destination
+                        selectTab(navController, destination, highlightedTab)
                         activeTab = destination
+                        if (reselected) {
+                            tabResetRoute = destination
+                            tabResetTick++
+                        }
                     } else {
                         navController.navigate(destination)
                     }
@@ -368,10 +383,9 @@ private fun UrbinemaNavigation(
                                 modifier = Modifier.height(40.dp),
                                 contentScale = ContentScale.Fit,
                             )
-                            route == Routes.SkyMap -> Text(
-                                stringResource(R.string.sky_map),
-                                maxLines = 1,
-                                overflow = TextOverflow.Ellipsis,
+                            route == Routes.SkyMap -> SkyMapTitleSearch(
+                                query = skyQuery,
+                                onQueryChange = { skyQuery = it },
                             )
                             route == Routes.History -> Text(
                                 stringResource(R.string.history),
@@ -416,19 +430,26 @@ private fun UrbinemaNavigation(
             },
             bottomBar = {
                 BottomBar(highlightedTab) { selected ->
-                    selectTab(navController, selected, route, activeTab)
+                    val reselected = highlightedTab == selected
+                    selectTab(navController, selected, highlightedTab)
                     activeTab = selected
+                    if (reselected) {
+                        tabResetRoute = selected
+                        tabResetTick++
+                    }
                 }
             },
         ) { padding ->
-            NavHost(navController, Routes.Home, Modifier.padding(padding)) {
+            Box(Modifier.padding(padding).fillMaxSize()) {
+            NavHost(navController, Routes.Home, Modifier.fillMaxSize()) {
                 composable(Routes.Home) {
                     HomeScreen(
                         state = model.home,
+                        resetTick = if (tabResetRoute == Routes.Home) tabResetTick else 0,
                         onRetry = model::retryBootstrap,
                         onOpenProfile = {
                             activeTab = Routes.Profile
-                            selectTab(navController, Routes.Profile, route, Routes.Home)
+                            selectTab(navController, Routes.Profile, Routes.Home)
                         },
                         onCollection = ::openCollection,
                         onSeeAllHistory = { navController.navigate(Routes.History) },
@@ -456,6 +477,9 @@ private fun UrbinemaNavigation(
                                 filmCount = total,
                             )
                         },
+                        selectedFilter = atlasFilter,
+                        onFilterChange = { atlasFilter = it },
+                        resetTick = if (tabResetRoute == Routes.Atlas) tabResetTick else 0,
                     ) { filter, code ->
                         when (filter) {
                             AtlasFilter.Countries -> navController.navigate(territoryRoute("country", code))
@@ -498,13 +522,20 @@ private fun UrbinemaNavigation(
                     )
                 }
                 composable(Routes.Collections) {
-                    CollectionsScreen(model.collections, ::openCollection)
+                    CollectionsScreen(
+                        collections = model.collections,
+                        onCollection = ::openCollection,
+                        resetTick = if (tabResetRoute == Routes.Collections) tabResetTick else 0,
+                    )
                 }
                 composable(Routes.Progress) {
                     // Ancien onglet Parcours : rang, quêtes de la semaine, collections en cours.
                     // ProgressScreen est conservé pour le remettre plus tard (Accueil ou Profil).
                     // ProgressScreen(model.home, model.ranks)
-                    PathsScreen(model.paths) { code -> navController.navigate(pathRoute(code)) }
+                    PathsScreen(
+                        paths = model.paths,
+                        resetTick = if (tabResetRoute == Routes.Progress) tabResetTick else 0,
+                    ) { code -> navController.navigate(pathRoute(code)) }
                 }
                 composable(
                     Routes.Path,
@@ -526,6 +557,7 @@ private fun UrbinemaNavigation(
                         badges = model.badges,
                         onBadges = { navController.navigate(Routes.Badges) },
                         onRank = { navController.navigate(Routes.Ranks) },
+                        resetTick = if (tabResetRoute == Routes.Profile) tabResetTick else 0,
                     )
                 }
                 composable(Routes.Settings) {
@@ -692,6 +724,20 @@ private fun UrbinemaNavigation(
                 }
                 composable(Routes.Sources) { SourcesScreen() }
             }
+            if (route == Routes.SkyMap && skyQuery.isNotBlank()) {
+                SkyMapSearchHits(
+                    hits = model.searchMovies(skyQuery),
+                    onPick = { code ->
+                        mapFocus = code
+                        mapLayer = MapLayer.AROUND_FILM
+                        skyQuery = ""
+                    },
+                    modifier = Modifier
+                        .align(Alignment.TopEnd)
+                        .padding(8.dp),
+                )
+            }
+            }
         }
     }
 }
@@ -723,7 +769,7 @@ private fun BottomBar(currentRoute: String, onSelect: (String) -> Unit) {
                 },
                 alwaysShowLabel = true,
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = UrbinemaThemeTokens.colors.accent,
+                    selectedIconColor = UrbinemaThemeTokens.colors.line,
                     selectedTextColor = UrbinemaThemeTokens.colors.accent,
                     unselectedIconColor = UrbinemaThemeTokens.colors.onBackgroundMuted,
                     unselectedTextColor = UrbinemaThemeTokens.colors.onBackgroundMuted,
@@ -877,12 +923,17 @@ private fun explorationFrom(percent: Int): ExplorationState = when {
 private fun selectTab(
     navController: NavHostController,
     route: String,
-    currentRoute: String,
-    activeTab: String,
+    highlightedTab: String,
 ) {
-    if (currentRoute == route) return
-    if (activeTab == route && currentRoute != route) {
-        navController.popBackStack(route, inclusive = false)
+    if (highlightedTab == route) {
+        if (navController.currentDestination?.route != route) {
+            if (!navController.popBackStack(route, inclusive = false)) {
+                navController.navigate(route) {
+                    launchSingleTop = true
+                    popUpTo(navController.graph.findStartDestination().id) { saveState = false }
+                }
+            }
+        }
         return
     }
     navController.navigate(route) {

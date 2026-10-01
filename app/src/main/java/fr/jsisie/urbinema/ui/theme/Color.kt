@@ -17,6 +17,8 @@ data class UrbinemaColors(
     val onBackgroundFaint: Color,
     val accent: Color,
     val accentMuted: Color,
+    val line: Color = accent,
+    val progress: Color = line,
     val cool: Color,
     val rare: Color,
     val danger: Color,

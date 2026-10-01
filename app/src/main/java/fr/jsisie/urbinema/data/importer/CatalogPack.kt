@@ -42,12 +42,17 @@ data class MediaAssetImport(
 )
 
 @Serializable
-data class CharacteristicTypeImport(val typeCode: String, val name: String)
+data class CharacteristicTypeImport(
+    val typeCode: String,
+    val name: String,
+    val nameEn: String? = null,
+)
 
 @Serializable
 data class CountryImport(
     val code: String,
     val name: String,
+    val nameEn: String? = null,
     val isoCode: String? = null,
     val imageMediaCode: String? = null,
     val continentCodes: List<String> = emptyList(),
@@ -58,6 +63,7 @@ data class CountryImport(
 data class ContinentImport(
     val code: String,
     val name: String,
+    val nameEn: String? = null,
     val imageMediaCode: String? = null,
     val isActive: Boolean = true,
 )
@@ -79,8 +85,10 @@ data class DirectorImport(
 data class CharacteristicImport(
     val code: String,
     val name: String,
+    val nameEn: String? = null,
     val typeCode: String,
     val description: String? = null,
+    val descriptionEn: String? = null,
     val imageMediaCode: String? = null,
     val isActive: Boolean = true,
 )
@@ -89,6 +97,7 @@ data class CharacteristicImport(
 data class GenreImport(
     val code: String,
     val name: String,
+    val nameEn: String? = null,
     val description: String? = null,
     val imageMediaCode: String? = null,
     val isActive: Boolean = true,
@@ -98,6 +107,7 @@ data class GenreImport(
 data class EraImport(
     val code: String,
     val name: String,
+    val nameEn: String? = null,
     val startYear: Int,
     val endYear: Int,
     val description: String? = null,
@@ -140,8 +150,11 @@ data class CollectionImport(
     val code: String,
     val displayOrder: Int,
     val name: String,
+    val nameEn: String? = null,
     val description: String? = null,
+    val descriptionEn: String? = null,
     val longDescription: String? = null,
+    val longDescriptionEn: String? = null,
     val track: String = "CLUB",
     val coverMediaCode: String? = null,
     val isPublished: Boolean = false,
@@ -162,9 +175,13 @@ data class PathImport(
     val code: String,
     val displayOrder: Int,
     val name: String,
+    val nameEn: String? = null,
     val summary: String,
+    val summaryEn: String? = null,
     val description: String,
+    val descriptionEn: String? = null,
     val periodLabel: String,
+    val periodLabelEn: String? = null,
     val steps: List<PathStepImport> = emptyList(),
     val isActive: Boolean = true,
 )
@@ -175,22 +192,32 @@ data class PathStepImport(
     val position: Int,
     val characteristicCode: String,
     val name: String,
+    val nameEn: String? = null,
     val periodLabel: String,
+    val periodLabelEn: String? = null,
     val description: String,
+    val descriptionEn: String? = null,
     val facts: List<PathFactImport> = emptyList(),
     val figures: List<PathFigureImport> = emptyList(),
     val movies: List<String> = emptyList(),
     val transition: String? = null,
+    val transitionEn: String? = null,
     val isActive: Boolean = true,
 )
 
 @Serializable
-data class PathFactImport(val title: String, val body: String)
+data class PathFactImport(
+    val title: String,
+    val body: String,
+    val titleEn: String? = null,
+    val bodyEn: String? = null,
+)
 
 @Serializable
 data class PathFigureImport(
     val displayName: String,
     val role: String,
+    val roleEn: String? = null,
     val directorCode: String? = null,
 )
 
@@ -199,8 +226,11 @@ data class RankingImport(
     val code: String,
     val displayOrder: Int,
     val name: String,
+    val nameEn: String? = null,
     val description: String,
+    val descriptionEn: String? = null,
     val longDescription: String? = null,
+    val longDescriptionEn: String? = null,
     val imageMediaCode: String? = null,
     val isActive: Boolean = true,
 )
@@ -209,7 +239,9 @@ data class RankingImport(
 data class BadgeImport(
     val code: String,
     val name: String,
+    val nameEn: String? = null,
     val description: String,
+    val descriptionEn: String? = null,
     val difficulty: Int,
     val category: String,
     val iconMediaCode: String? = null,
@@ -220,7 +252,9 @@ data class BadgeImport(
 data class QuestImport(
     val code: String,
     val name: String,
+    val nameEn: String? = null,
     val description: String,
+    val descriptionEn: String? = null,
     val difficulty: String,
     val ruleCode: String,
     val targetCount: Int,

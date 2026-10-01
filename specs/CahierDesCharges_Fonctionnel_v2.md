@@ -7,7 +7,7 @@
 ## Spécification fonctionnelle du produit
 
 **Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 42, 1613 films, 28 collections, parcours 1)
+**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 47, 1613 films, 28 collections, parcours 1)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -1228,9 +1228,9 @@ Toutes les conditions portent sur les films du **catalogue Urbinema** validés.
 Un badge obtenu est **définitivement acquis**. Le retrait ou la correction
 ultérieure d'un film ne supprime jamais une date d'obtention existante.
 
-Chaque nouvelle obtention est annoncée une seule fois par une boîte localisée
-qui affiche le nom et la petite illustration du badge. Plusieurs obtentions
-simultanées sont présentées successivement.
+Chaque nouvelle obtention est annoncée une seule fois par une boîte compacte
+localisée, qui affiche le nom et la petite illustration du badge. Plusieurs
+obtentions simultanées sont présentées successivement.
 
 ------
 
@@ -1378,8 +1378,8 @@ Sur le profil, la hiérarchie est : **Pseudo → Rang → niveau/XP → jusqu’
 badges vitrine → statistiques**.
 
 Le rang est l'élément identitaire principal. Les badges se placent en dessous,
-en sélection (3 max, choisis depuis Tous les badges). Un appui long sur un
-badge vitrine rappelle sa condition d'obtention.
+en sélection (3 max, choisis depuis Tous les badges). Maintenir un
+badge vitrine affiche sa condition au-dessus du doigt, jusqu’au relâchement.
 
 Détail d'interface : voir `CahierDesCharges_IHM.md`.
 

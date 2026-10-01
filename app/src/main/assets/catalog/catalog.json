@@ -1,57 +1,69 @@
 {
-  "version": 42,
+  "version": 47,
   "generatedAt": "2026-09-30T18:05:00Z",
   "mediaAssets": [],
   "characteristicTypes": [
     {
       "typeCode": "MOVEMENT",
-      "name": "Mouvement"
+      "name": "Mouvement",
+      "nameEn": "Movement"
     },
     {
       "typeCode": "CURRENT",
-      "name": "Courant"
+      "name": "Courant",
+      "nameEn": "Current"
     },
     {
       "typeCode": "STYLE",
-      "name": "Style"
+      "name": "Style",
+      "nameEn": "Style"
     },
     {
       "typeCode": "PERIOD",
-      "name": "Période"
+      "name": "Période",
+      "nameEn": "Period"
     },
     {
       "typeCode": "SCHOOL",
-      "name": "École"
+      "name": "École",
+      "nameEn": "School"
     },
     {
       "typeCode": "WAVE",
-      "name": "Vague"
+      "name": "Vague",
+      "nameEn": "Wave"
     }
   ],
   "continents": [
     {
       "code": "EUROPE",
-      "name": "Europe"
+      "name": "Europe",
+      "nameEn": "Europe"
     },
     {
       "code": "ASIA",
-      "name": "Asie"
+      "name": "Asie",
+      "nameEn": "Asia"
     },
     {
       "code": "NORTH_AMERICA",
-      "name": "Amérique du Nord"
+      "name": "Amérique du Nord",
+      "nameEn": "North America"
     },
     {
       "code": "SOUTH_AMERICA",
-      "name": "Amérique du Sud"
+      "name": "Amérique du Sud",
+      "nameEn": "South America"
     },
     {
       "code": "AFRICA",
-      "name": "Afrique"
+      "name": "Afrique",
+      "nameEn": "Africa"
     },
     {
       "code": "OCEANIA",
-      "name": "Océanie"
+      "name": "Océanie",
+      "nameEn": "Oceania"
     }
   ],
   "countries": [
@@ -61,7 +73,8 @@
       "isoCode": "FR",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "France"
     },
     {
       "code": "ITALY",
@@ -69,7 +82,8 @@
       "isoCode": "IT",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Italy"
     },
     {
       "code": "JAPAN",
@@ -77,7 +91,8 @@
       "isoCode": "JP",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Japan"
     },
     {
       "code": "USA",
@@ -85,7 +100,8 @@
       "isoCode": "US",
       "continentCodes": [
         "NORTH_AMERICA"
-      ]
+      ],
+      "nameEn": "United States"
     },
     {
       "code": "UK",
@@ -93,7 +109,8 @@
       "isoCode": "GB",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "United Kingdom"
     },
     {
       "code": "GERMANY",
@@ -101,7 +118,8 @@
       "isoCode": "DE",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Germany"
     },
     {
       "code": "RUSSIA",
@@ -109,7 +127,8 @@
       "isoCode": "RU",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Russia"
     },
     {
       "code": "SWEDEN",
@@ -117,7 +136,8 @@
       "isoCode": "SE",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Sweden"
     },
     {
       "code": "IRAN",
@@ -125,7 +145,8 @@
       "isoCode": "IR",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Iran"
     },
     {
       "code": "SENEGAL",
@@ -133,7 +154,8 @@
       "isoCode": "SN",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Senegal"
     },
     {
       "code": "SOUTH_KOREA",
@@ -141,7 +163,8 @@
       "isoCode": "KR",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "South Korea"
     },
     {
       "code": "INDIA",
@@ -149,7 +172,8 @@
       "isoCode": "IN",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "India"
     },
     {
       "code": "CHINA",
@@ -157,7 +181,8 @@
       "isoCode": "CN",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "China"
     },
     {
       "code": "BRAZIL",
@@ -165,7 +190,8 @@
       "isoCode": "BR",
       "continentCodes": [
         "SOUTH_AMERICA"
-      ]
+      ],
+      "nameEn": "Brazil"
     },
     {
       "code": "MEXICO",
@@ -173,7 +199,8 @@
       "isoCode": "MX",
       "continentCodes": [
         "NORTH_AMERICA"
-      ]
+      ],
+      "nameEn": "Mexico"
     },
     {
       "code": "SPAIN",
@@ -181,7 +208,8 @@
       "isoCode": "ES",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Spain"
     },
     {
       "code": "POLAND",
@@ -189,7 +217,8 @@
       "isoCode": "PL",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Poland"
     },
     {
       "code": "DENMARK",
@@ -197,7 +226,8 @@
       "isoCode": "DK",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Denmark"
     },
     {
       "code": "CZECH",
@@ -205,7 +235,8 @@
       "isoCode": "CZ",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Czechia"
     },
     {
       "code": "HUNGARY",
@@ -213,7 +244,8 @@
       "isoCode": "HU",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Hungary"
     },
     {
       "code": "ARGENTINA",
@@ -221,7 +253,8 @@
       "isoCode": "AR",
       "continentCodes": [
         "SOUTH_AMERICA"
-      ]
+      ],
+      "nameEn": "Argentina"
     },
     {
       "code": "EGYPT",
@@ -229,7 +262,8 @@
       "isoCode": "EG",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Egypt"
     },
     {
       "code": "AUSTRALIA",
@@ -237,7 +271,8 @@
       "isoCode": "AU",
       "continentCodes": [
         "OCEANIA"
-      ]
+      ],
+      "nameEn": "Australia"
     },
     {
       "code": "CANADA",
@@ -245,7 +280,8 @@
       "isoCode": "CA",
       "continentCodes": [
         "NORTH_AMERICA"
-      ]
+      ],
+      "nameEn": "Canada"
     },
     {
       "code": "BELGIUM",
@@ -253,7 +289,8 @@
       "isoCode": "BE",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Belgium"
     },
     {
       "code": "GREECE",
@@ -261,7 +298,8 @@
       "isoCode": "GR",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Greece"
     },
     {
       "code": "TURKEY",
@@ -270,7 +308,8 @@
       "continentCodes": [
         "EUROPE",
         "ASIA"
-      ]
+      ],
+      "nameEn": "Turkey"
     },
     {
       "code": "HONG_KONG",
@@ -278,7 +317,8 @@
       "isoCode": "HK",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Hong Kong"
     },
     {
       "code": "TAIWAN",
@@ -286,7 +326,8 @@
       "isoCode": "TW",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Taiwan"
     },
     {
       "code": "ALGERIA",
@@ -294,7 +335,8 @@
       "isoCode": "DZ",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Algeria"
     },
     {
       "code": "MALI",
@@ -302,7 +344,8 @@
       "isoCode": "ML",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Mali"
     },
     {
       "code": "CUBA",
@@ -310,7 +353,8 @@
       "isoCode": "CU",
       "continentCodes": [
         "NORTH_AMERICA"
-      ]
+      ],
+      "nameEn": "Cuba"
     },
     {
       "code": "AUSTRIA",
@@ -318,7 +362,8 @@
       "isoCode": "AT",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Austria"
     },
     {
       "code": "PORTUGAL",
@@ -326,7 +371,8 @@
       "isoCode": "PT",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Portugal"
     },
     {
       "code": "CHILE",
@@ -334,7 +380,8 @@
       "isoCode": "CL",
       "continentCodes": [
         "SOUTH_AMERICA"
-      ]
+      ],
+      "nameEn": "Chile"
     },
     {
       "code": "NEW_ZEALAND",
@@ -342,7 +389,8 @@
       "isoCode": "NZ",
       "continentCodes": [
         "OCEANIA"
-      ]
+      ],
+      "nameEn": "New Zealand"
     },
     {
       "code": "UKRAINE",
@@ -350,7 +398,8 @@
       "isoCode": "UA",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Ukraine"
     },
     {
       "code": "FINLAND",
@@ -358,7 +407,8 @@
       "isoCode": "FI",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Finland"
     },
     {
       "code": "THAILAND",
@@ -366,7 +416,8 @@
       "isoCode": "TH",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Thailand"
     },
     {
       "code": "PHILIPPINES",
@@ -374,7 +425,8 @@
       "isoCode": "PH",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Philippines"
     },
     {
       "code": "BURKINA_FASO",
@@ -382,7 +434,8 @@
       "isoCode": "BF",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Burkina Faso"
     },
     {
       "code": "ANGOLA",
@@ -390,7 +443,8 @@
       "isoCode": "AO",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Angola"
     },
     {
       "code": "NIGERIA",
@@ -398,7 +452,8 @@
       "isoCode": "NG",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Nigeria"
     },
     {
       "code": "PALESTINE",
@@ -406,7 +461,8 @@
       "isoCode": "PS",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Palestine"
     },
     {
       "code": "LEBANON",
@@ -414,7 +470,8 @@
       "isoCode": "LB",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Lebanon"
     },
     {
       "code": "SINGAPORE",
@@ -422,7 +479,8 @@
       "isoCode": "SG",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Singapore"
     },
     {
       "code": "INDONESIA",
@@ -430,7 +488,8 @@
       "isoCode": "ID",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Indonesia"
     },
     {
       "code": "BOLIVIA",
@@ -438,7 +497,8 @@
       "isoCode": "BO",
       "continentCodes": [
         "SOUTH_AMERICA"
-      ]
+      ],
+      "nameEn": "Bolivia"
     },
     {
       "code": "ETHIOPIA",
@@ -446,7 +506,8 @@
       "isoCode": "ET",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Ethiopia"
     },
     {
       "code": "MAURITANIA",
@@ -454,7 +515,8 @@
       "isoCode": "MR",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Mauritania"
     },
     {
       "code": "CAMEROON",
@@ -462,7 +524,8 @@
       "isoCode": "CM",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Cameroon"
     },
     {
       "code": "ZIMBABWE",
@@ -470,7 +533,8 @@
       "isoCode": "ZW",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Zimbabwe"
     },
     {
       "code": "CHAD",
@@ -478,7 +542,8 @@
       "isoCode": "TD",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Chad"
     },
     {
       "code": "ESTONIA",
@@ -486,7 +551,8 @@
       "isoCode": "EE",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Estonia"
     },
     {
       "code": "LITHUANIA",
@@ -494,7 +560,8 @@
       "isoCode": "LT",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Lithuania"
     },
     {
       "code": "LATVIA",
@@ -502,7 +569,8 @@
       "isoCode": "LV",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Latvia"
     },
     {
       "code": "NORWAY",
@@ -510,7 +578,8 @@
       "isoCode": "NO",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Norway"
     },
     {
       "code": "TUNISIA",
@@ -518,7 +587,8 @@
       "isoCode": "TN",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "Tunisia"
     },
     {
       "code": "ISRAEL",
@@ -526,7 +596,8 @@
       "isoCode": "IL",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Israel"
     },
     {
       "code": "GEORGIA",
@@ -535,7 +606,8 @@
       "continentCodes": [
         "ASIA",
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Georgia"
     },
     {
       "code": "ROMANIA",
@@ -543,7 +615,8 @@
       "isoCode": "RO",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Romania"
     },
     {
       "code": "NETHERLANDS",
@@ -551,7 +624,8 @@
       "isoCode": "NL",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Netherlands"
     },
     {
       "code": "VIETNAM",
@@ -559,7 +633,8 @@
       "isoCode": "VN",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Vietnam"
     },
     {
       "code": "CAMBODIA",
@@ -567,7 +642,8 @@
       "isoCode": "KH",
       "continentCodes": [
         "ASIA"
-      ]
+      ],
+      "nameEn": "Cambodia"
     },
     {
       "code": "SOUTH_AFRICA",
@@ -575,7 +651,8 @@
       "isoCode": "ZA",
       "continentCodes": [
         "AFRICA"
-      ]
+      ],
+      "nameEn": "South Africa"
     },
     {
       "code": "YUGOSLAVIA",
@@ -583,7 +660,8 @@
       "isoCode": "YU",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Yugoslavia"
     },
     {
       "code": "SWITZERLAND",
@@ -591,7 +669,8 @@
       "isoCode": "CH",
       "continentCodes": [
         "EUROPE"
-      ]
+      ],
+      "nameEn": "Switzerland"
     }
   ],
   "directors": [
@@ -8173,831 +8252,1096 @@
       "code": "NEOREALISME_ITALIEN",
       "name": "Néoréalisme italien",
       "typeCode": "MOVEMENT",
-      "description": "Un cinéma d'après-guerre tourné dans la rue, avec des non-professionnels et le réel social pour matière."
+      "description": "Un cinéma d'après-guerre tourné dans la rue, avec des non-professionnels et le réel social pour matière.",
+      "nameEn": "Italian Neorealism",
+      "descriptionEn": "A postwar cinema shot in the street, with non-professionals and social reality as its material."
     },
     {
       "code": "NOUVELLE_VAGUE_FRANCAISE",
       "name": "Nouvelle Vague française",
       "typeCode": "WAVE",
-      "description": "Une génération de critiques devenus cinéastes, caméra légère, rupture de découpage et liberté de récit."
+      "description": "Une génération de critiques devenus cinéastes, caméra légère, rupture de découpage et liberté de récit.",
+      "nameEn": "French New Wave",
+      "descriptionEn": "A generation of critics turned filmmakers: light camera, broken continuity and freedom of story."
     },
     {
       "code": "AGE_OR_CINEMA_JAPONAIS",
       "name": "Âge d'or du cinéma japonais",
       "typeCode": "PERIOD",
-      "description": "Les studios japonais des années 1930-1960, de Mizoguchi et Ozu à Kurosawa."
+      "description": "Les studios japonais des années 1930-1960, de Mizoguchi et Ozu à Kurosawa.",
+      "nameEn": "Japanese golden age",
+      "descriptionEn": "The Japanese studios of the 1930s–1960s, from Mizoguchi and Ozu to Kurosawa."
     },
     {
       "code": "HOLLYWOOD_CLASSIQUE",
       "name": "Hollywood classique",
       "typeCode": "PERIOD",
-      "description": "Le système des studios américains, ses genres, sa continuité invisible et ses stars."
+      "description": "Le système des studios américains, ses genres, sa continuité invisible et ses stars.",
+      "nameEn": "Classical Hollywood",
+      "descriptionEn": "The American studio system, its genres, invisible continuity and stars."
     },
     {
       "code": "MONTAGE_SOVIETIQUE",
       "name": "Montage soviétique",
       "typeCode": "MOVEMENT",
-      "description": "Le choc des plans comme pensée politique, d'Eisenstein à Vertov."
+      "description": "Le choc des plans comme pensée politique, d'Eisenstein à Vertov.",
+      "nameEn": "Soviet Montage",
+      "descriptionEn": "The collision of shots as political thought, from Eisenstein to Vertov."
     },
     {
       "code": "CINEMA_SOVIETIQUE",
       "name": "Cinéma soviétique",
       "typeCode": "PERIOD",
-      "description": "L'histoire du cinéma d'URSS, de l'avant-garde muette au dégel et à l'auteurisme tardif."
+      "description": "L'histoire du cinéma d'URSS, de l'avant-garde muette au dégel et à l'auteurisme tardif.",
+      "nameEn": "Soviet cinema",
+      "descriptionEn": "The history of USSR cinema, from the silent avant-garde to the thaw and late auteurism."
     },
     {
       "code": "EXPRESSIONNISME_ALLEMAND",
       "name": "Expressionnisme allemand",
       "typeCode": "MOVEMENT",
-      "description": "Décors distendus, ombres portées et psyché visuelle du cinéma de Weimar."
+      "description": "Décors distendus, ombres portées et psyché visuelle du cinéma de Weimar.",
+      "nameEn": "German Expressionism",
+      "descriptionEn": "Stretched sets, cast shadows and the visual psyche of Weimar cinema."
     },
     {
       "code": "FILM_NOIR_STYLE",
       "name": "Film noir",
       "typeCode": "STYLE",
-      "description": "Fatalité urbaine, éclairages contrastés et moralité trouble de l'après-guerre."
+      "description": "Fatalité urbaine, éclairages contrastés et moralité trouble de l'après-guerre.",
+      "nameEn": "Film noir",
+      "descriptionEn": "Urban fatality, high-contrast lighting and troubled morality after the war."
     },
     {
       "code": "WESTERN_CLASSIQUE",
       "name": "Western classique",
       "typeCode": "STYLE",
-      "description": "La frontière américaine comme mythe, paysage et conflit moral."
+      "description": "La frontière américaine comme mythe, paysage et conflit moral.",
+      "nameEn": "Classical western",
+      "descriptionEn": "The American frontier as myth, landscape and moral conflict."
     },
     {
       "code": "CINEMA_MUET_MOUVEMENT",
       "name": "Cinéma muet",
       "typeCode": "PERIOD",
-      "description": "L'âge du cinéma avant la parole synchronisée, du trick film au mélodrame monumental."
+      "description": "L'âge du cinéma avant la parole synchronisée, du trick film au mélodrame monumental.",
+      "nameEn": "Silent cinema",
+      "descriptionEn": "The age of cinema before synchronised speech, from the trick film to monumental melodrama."
     },
     {
       "code": "NOUVEAU_CINEMA_ALLEMAND",
       "name": "Nouveau cinéma allemand",
       "typeCode": "WAVE",
-      "description": "Le renouveau ouest-allemand des années 1960-1980, d'Oberhausen à Fassbinder, Herzog et Wenders."
+      "description": "Le renouveau ouest-allemand des années 1960-1980, d'Oberhausen à Fassbinder, Herzog et Wenders.",
+      "nameEn": "New German Cinema",
+      "descriptionEn": "The West German revival of the 1960s–1980s, from Oberhausen to Fassbinder, Herzog and Wenders."
     },
     {
       "code": "NOUVELLE_VAGUE_IRANIENNE",
       "name": "Nouvelle vague iranienne",
       "typeCode": "WAVE",
-      "description": "Un cinéma de la vie quotidienne, de l'enfance et du hors-champ, de Kiarostami à Farhadi."
+      "description": "Un cinéma de la vie quotidienne, de l'enfance et du hors-champ, de Kiarostami à Farhadi.",
+      "nameEn": "Iranian New Wave",
+      "descriptionEn": "A cinema of everyday life, childhood and off-screen space, from Kiarostami to Farhadi."
     },
     {
       "code": "COMMEDIA_ALL_ITALIANA",
       "name": "Comédie à l'italienne",
       "typeCode": "CURRENT",
-      "description": "Satire sociale, amertume et virtuoses du jeu, de Monicelli à Scola."
+      "description": "Satire sociale, amertume et virtuoses du jeu, de Monicelli à Scola.",
+      "nameEn": "Commedia all'italiana",
+      "descriptionEn": "Social satire, bitterness and virtuoso acting, from Monicelli to Scola."
     },
     {
       "code": "SPAGHETTI_WESTERN",
       "name": "Western spaghetti",
       "typeCode": "CURRENT",
-      "description": "Le western européen, violent et baroque, recentré sur l'Italie des années 1960."
+      "description": "Le western européen, violent et baroque, recentré sur l'Italie des années 1960.",
+      "nameEn": "Spaghetti western",
+      "descriptionEn": "The violent, baroque European western, recentred on 1960s Italy."
     },
     {
       "code": "SURREALISME",
       "name": "Surréalisme",
       "typeCode": "MOVEMENT",
-      "description": "Le rêve, le choc d'images et la subversion de la logique narrative."
+      "description": "Le rêve, le choc d'images et la subversion de la logique narrative.",
+      "nameEn": "Surrealism",
+      "descriptionEn": "Dream, the shock of images and the subversion of narrative logic."
     },
     {
       "code": "CINEMA_EXPERIMENTAL",
       "name": "Cinéma expérimental",
       "typeCode": "STYLE",
-      "description": "Films qui travaillent la matière, le temps et la perception hors du récit classique."
+      "description": "Films qui travaillent la matière, le temps et la perception hors du récit classique.",
+      "nameEn": "Experimental cinema",
+      "descriptionEn": "Films that work on matter, time and perception outside classical storytelling."
     },
     {
       "code": "NEW_HOLLYWOOD",
       "name": "Nouvel Hollywood",
       "typeCode": "PERIOD",
-      "description": "La rupture américaine 1967-1980 : auteurs, contre-culture et fin du code Hays."
+      "description": "La rupture américaine 1967-1980 : auteurs, contre-culture et fin du code Hays.",
+      "nameEn": "New Hollywood",
+      "descriptionEn": "The American rupture of 1967–1980: auteurs, counterculture and the end of the Hays Code."
     },
     {
       "code": "REALISME_POETIQUE",
       "name": "Réalisme poétique",
       "typeCode": "CURRENT",
-      "description": "Le lyrisme populaire français des années 1930, de Carné à Renoir."
+      "description": "Le lyrisme populaire français des années 1930, de Carné à Renoir.",
+      "nameEn": "Poetic realism",
+      "descriptionEn": "French popular lyricism of the 1930s, from Carné to Renoir."
     },
     {
       "code": "CINEMA_NOVO",
       "name": "Cinema Novo",
       "typeCode": "MOVEMENT",
-      "description": "L'esthétique de la faim brésilienne, entre allégorie et urgences politiques."
+      "description": "L'esthétique de la faim brésilienne, entre allégorie et urgences politiques.",
+      "nameEn": "Cinema Novo",
+      "descriptionEn": "The Brazilian aesthetic of hunger, between allegory and political urgency."
     },
     {
       "code": "DOGME_95",
       "name": "Dogme 95",
       "typeCode": "SCHOOL",
-      "description": "Le manifeste danois de 1995 : caméra portée, lumière naturelle, rejet du cosmétique."
+      "description": "Le manifeste danois de 1995 : caméra portée, lumière naturelle, rejet du cosmétique.",
+      "nameEn": "Dogme 95",
+      "descriptionEn": "The Danish manifesto of 1995: handheld camera, natural light, rejection of cosmetics."
     },
     {
       "code": "HONG_KONG_NEW_WAVE",
       "name": "Nouvelle Vague hongkongaise",
       "typeCode": "WAVE",
-      "description": "Modernité urbaine, polar et mélancolie, de Wong Kar-wai à John Woo."
+      "description": "Modernité urbaine, polar et mélancolie, de Wong Kar-wai à John Woo.",
+      "nameEn": "Hong Kong New Wave",
+      "descriptionEn": "Urban modernity, crime films and melancholy, from Wong Kar-wai to John Woo."
     },
     {
       "code": "TAIWAN_NEW_CINEMA",
       "name": "Nouveau cinéma taïwanais",
       "typeCode": "WAVE",
-      "description": "Mémoire, plans-séquences et histoire nationale, de Hou Hsiao-hsien à Edward Yang."
+      "description": "Mémoire, plans-séquences et histoire nationale, de Hou Hsiao-hsien à Edward Yang.",
+      "nameEn": "Taiwan New Cinema",
+      "descriptionEn": "Memory, long takes and national history, from Hou Hsiao-hsien to Edward Yang."
     },
     {
       "code": "KOREAN_NEW_WAVE",
       "name": "Nouvelle vague coréenne",
       "typeCode": "WAVE",
-      "description": "Le cinéma sud-coréen contemporain, entre genre virtuose et critique sociale."
+      "description": "Le cinéma sud-coréen contemporain, entre genre virtuose et critique sociale.",
+      "nameEn": "Korean New Wave",
+      "descriptionEn": "Contemporary South Korean cinema, between virtuoso genre and social critique."
     },
     {
       "code": "INDIAN_PARALLEL",
       "name": "Cinéma parallèle indien",
       "typeCode": "CURRENT",
-      "description": "L'alternative au studio hindi, de Satyajit Ray au réalisme bengali."
+      "description": "L'alternative au studio hindi, de Satyajit Ray au réalisme bengali.",
+      "nameEn": "Indian parallel cinema",
+      "descriptionEn": "The alternative to the Hindi studio, from Satyajit Ray to Bengali realism."
     },
     {
       "code": "THIRD_CINEMA",
       "name": "Troisième cinéma",
       "typeCode": "MOVEMENT",
-      "description": "Un cinéma de décolonisation, contre Hollywood et l'auteurisme européen."
+      "description": "Un cinéma de décolonisation, contre Hollywood et l'auteurisme européen.",
+      "nameEn": "Third Cinema",
+      "descriptionEn": "A cinema of decolonisation, against Hollywood and European auteurism."
     },
     {
       "code": "MELODRAME",
       "name": "Mélodrame",
       "typeCode": "STYLE",
-      "description": "L'excès émotionnel comme forme : Sirk, Mizoguchi, Almodóvar."
+      "description": "L'excès émotionnel comme forme : Sirk, Mizoguchi, Almodóvar.",
+      "nameEn": "Melodrama",
+      "descriptionEn": "Emotional excess as form: Sirk, Mizoguchi, Almodóvar."
     },
     {
       "code": "CINEMA_D_AUTEUR",
       "name": "Cinéma d'auteur",
       "typeCode": "CURRENT",
-      "description": "La mise en scène comme signature, héritée de la politique des auteurs."
+      "description": "La mise en scène comme signature, héritée de la politique des auteurs.",
+      "nameEn": "Art cinema",
+      "descriptionEn": "Mise en scène as signature, inherited from the politique des auteurs."
     },
     {
       "code": "IMPRESSIONNISME_FRANCAIS",
       "name": "Impressionnisme français",
       "typeCode": "MOVEMENT",
-      "description": "Rythme, superpositions et états d'âme du cinéma français des années 1920."
+      "description": "Rythme, superpositions et états d'âme du cinéma français des années 1920.",
+      "nameEn": "French Impressionism",
+      "descriptionEn": "Rhythm, superimpositions and states of mind in 1920s French cinema."
     },
     {
       "code": "DOCUMENTAIRE_POETIQUE",
       "name": "Documentaire poétique",
       "typeCode": "STYLE",
-      "description": "Le réel travaillé comme matière lyrique plutôt que comme reportage."
+      "description": "Le réel travaillé comme matière lyrique plutôt que comme reportage.",
+      "nameEn": "Poetic documentary",
+      "descriptionEn": "The real worked as lyrical material rather than as reportage."
     },
     {
       "code": "NEO_NOIR",
       "name": "Néo-noir",
       "typeCode": "STYLE",
-      "description": "L'héritage du film noir après 1960, de Chinatown à Oldboy."
+      "description": "L'héritage du film noir après 1960, de Chinatown à Oldboy.",
+      "nameEn": "Neo-noir",
+      "descriptionEn": "The legacy of film noir after 1960, from Chinatown to Oldboy."
     },
     {
       "code": "ROAD_MOVIE",
       "name": "Road movie",
       "typeCode": "STYLE",
-      "description": "La route comme forme : errance, paysage et identité."
+      "description": "La route comme forme : errance, paysage et identité.",
+      "nameEn": "Road movie",
+      "descriptionEn": "The road as form: wandering, landscape and identity."
     },
     {
       "code": "ECOLE_POLONAISE",
       "name": "École polonaise",
       "typeCode": "SCHOOL",
-      "description": "La mémoire de la guerre et du stalinisme dans le cinéma polonais d'après 1956."
+      "description": "La mémoire de la guerre et du stalinisme dans le cinéma polonais d'après 1956.",
+      "nameEn": "Polish School",
+      "descriptionEn": "The memory of war and Stalinism in Polish cinema after 1956."
     },
     {
       "code": "NOUVELLE_VAGUE_TCHEQUE",
       "name": "Nouvelle Vague tchèque",
       "typeCode": "WAVE",
-      "description": "L'ironie et la liberté formelle du cinéma tchécoslovaque des années 1960."
+      "description": "L'ironie et la liberté formelle du cinéma tchécoslovaque des années 1960.",
+      "nameEn": "Czech New Wave",
+      "descriptionEn": "The irony and formal freedom of 1960s Czechoslovak cinema."
     },
     {
       "code": "CINEMA_DIRECT",
       "name": "Cinéma direct",
       "typeCode": "CURRENT",
-      "description": "Prise de vue légère, son synchrone et observation du présent."
+      "description": "Prise de vue légère, son synchrone et observation du présent.",
+      "nameEn": "Direct cinema",
+      "descriptionEn": "Light shooting, synch sound and observation of the present."
     },
     {
       "code": "LEFT_BANK",
       "name": "Rive gauche",
       "typeCode": "CURRENT",
-      "description": "Le versant littéraire et moderne de la Nouvelle Vague : Resnais, Marker, Varda."
+      "description": "Le versant littéraire et moderne de la Nouvelle Vague : Resnais, Marker, Varda.",
+      "nameEn": "Left Bank",
+      "descriptionEn": "The literary, modern wing of the New Wave: Resnais, Marker, Varda."
     },
     {
       "code": "JIDAIGEKI",
       "name": "Jidai-geki",
       "typeCode": "STYLE",
-      "description": "Le film d'époque japonais, samouraïs, codes et violence cérémonielle."
+      "description": "Le film d'époque japonais, samouraïs, codes et violence cérémonielle.",
+      "nameEn": "Jidai-geki",
+      "descriptionEn": "The Japanese period film: samurai, codes and ceremonial violence."
     },
     {
       "code": "GIALLO",
       "name": "Giallo",
       "typeCode": "STYLE",
-      "description": "Polar-horreur italien, couleur saturée et mise en scène du crime."
+      "description": "Polar-horreur italien, couleur saturée et mise en scène du crime.",
+      "nameEn": "Giallo",
+      "descriptionEn": "Italian crime-horror, saturated colour and the staging of murder."
     },
     {
       "code": "ANIMATION_DAUTEUR",
       "name": "Animation d'auteur",
       "typeCode": "STYLE",
-      "description": "Le dessin et l'animation comme cinéma d'auteur, de McLaren à Ghibli."
+      "description": "Le dessin et l'animation comme cinéma d'auteur, de McLaren à Ghibli.",
+      "nameEn": "Auteur animation",
+      "descriptionEn": "Drawing and animation as art cinema, from McLaren to Ghibli."
     },
     {
       "code": "CINEMA_AFRICAIN",
       "name": "Cinémas d'Afrique",
       "typeCode": "CURRENT",
-      "description": "Les cinématographies africaines, de Sembène à Cissé, entre fable et politique."
+      "description": "Les cinématographies africaines, de Sembène à Cissé, entre fable et politique.",
+      "nameEn": "African cinemas",
+      "descriptionEn": "African cinematographies, from Sembène to Cissé, between fable and politics."
     },
     {
       "code": "NOUVELLE_VAGUE_JAPONAISE",
       "name": "Nouvelle Vague japonaise (Nūberu Bāgu)",
       "typeCode": "WAVE",
-      "description": "Le nūberu bāgu des années 1960 : Ōshima, Imamura, Shinoda, Yoshida, Suzuki."
+      "description": "Le nūberu bāgu des années 1960 : Ōshima, Imamura, Shinoda, Yoshida, Suzuki.",
+      "nameEn": "Japanese New Wave (Nūberu Bāgu)",
+      "descriptionEn": "The nūberu bāgu of the 1960s: Ōshima, Imamura, Shinoda, Yoshida, Suzuki."
     },
     {
       "code": "CINEMA_CLASSIQUE_ITALIEN",
       "name": "Cinéma classique italien",
       "typeCode": "PERIOD",
-      "description": "L'âge des auteurs italiens après le néoréalisme : Fellini, Antonioni, Visconti."
+      "description": "L'âge des auteurs italiens après le néoréalisme : Fellini, Antonioni, Visconti.",
+      "nameEn": "Classical Italian cinema",
+      "descriptionEn": "The age of Italian auteurs after neorealism: Fellini, Antonioni, Visconti."
     },
     {
       "code": "CINEMA_POLITIQUE_ITALIEN",
       "name": "Cinéma politique italien",
       "typeCode": "CURRENT",
-      "description": "Le cinéma engagé italien, de Pasolini et Rosi à Bertolucci et Pontecorvo."
+      "description": "Le cinéma engagé italien, de Pasolini et Rosi à Bertolucci et Pontecorvo.",
+      "nameEn": "Italian political cinema",
+      "descriptionEn": "Italian committed cinema, from Pasolini and Rosi to Bertolucci and Pontecorvo."
     },
     {
       "code": "CINEMA_INDEPENDANT_AMERICAIN",
       "name": "Cinéma indépendant américain",
       "typeCode": "CURRENT",
-      "description": "Hors studios : Cassavetes, Jarmusch, l'indie US et ses héritiers."
+      "description": "Hors studios : Cassavetes, Jarmusch, l'indie US et ses héritiers.",
+      "nameEn": "American independent cinema",
+      "descriptionEn": "Outside the studios: Cassavetes, Jarmusch, US indie and its heirs."
     },
     {
       "code": "CINEMA_VERITE",
       "name": "Cinéma-vérité",
       "typeCode": "SCHOOL",
-      "description": "Caméra participante, parole directe : Rouch, Morin, et la tradition vérité."
+      "description": "Caméra participante, parole directe : Rouch, Morin, et la tradition vérité.",
+      "nameEn": "Cinéma vérité",
+      "descriptionEn": "Participating camera, direct speech: Rouch, Morin, and the vérité tradition."
     },
     {
       "code": "CINQUIEME_GENERATION_CHINOISE",
       "name": "Cinquième génération chinoise",
       "typeCode": "WAVE",
-      "description": "Les cinéastes sortis de Pékin après 1982 : Chen Kaige, Zhang Yimou, Tian Zhuangzhuang."
+      "description": "Les cinéastes sortis de Pékin après 1982 : Chen Kaige, Zhang Yimou, Tian Zhuangzhuang.",
+      "nameEn": "Chinese Fifth Generation",
+      "descriptionEn": "Filmmakers out of Beijing after 1982: Chen Kaige, Zhang Yimou, Tian Zhuangzhuang."
     },
     {
       "code": "SIXIEME_GENERATION_CHINOISE",
       "name": "Sixième génération chinoise",
       "typeCode": "WAVE",
-      "description": "Le cinéma urbain chinois des années 1990-2000 : Jia Zhangke, Wang Bing, Jiang Wen."
+      "description": "Le cinéma urbain chinois des années 1990-2000 : Jia Zhangke, Wang Bing, Jiang Wen.",
+      "nameEn": "Chinese Sixth Generation",
+      "descriptionEn": "Urban Chinese cinema of the 1990s–2000s: Jia Zhangke, Wang Bing, Jiang Wen."
     },
     {
       "code": "ECOLE_BRITANNIQUE_DOCUMENTAIRE",
       "name": "École britannique documentaire",
       "typeCode": "SCHOOL",
-      "description": "Le documentaire social britannique, de Grierson et Jennings au Free Cinema."
+      "description": "Le documentaire social britannique, de Grierson et Jennings au Free Cinema.",
+      "nameEn": "British documentary school",
+      "descriptionEn": "British social documentary, from Grierson and Jennings to Free Cinema."
     },
     {
       "code": "FREE_CINEMA",
       "name": "Free Cinema britannique",
       "typeCode": "WAVE",
-      "description": "Courts documentaires et fictions sociales britanniques de la fin des années 1950."
+      "description": "Courts documentaires et fictions sociales britanniques de la fin des années 1950.",
+      "nameEn": "British Free Cinema",
+      "descriptionEn": "British short documentaries and social fictions of the late 1950s."
     },
     {
       "code": "NOUVELLE_VAGUE_BRITANNIQUE",
       "name": "Nouvelle Vague britannique / Kitchen Sink",
       "typeCode": "WAVE",
-      "description": "Le réalisme social britannique : Saturday Night, This Sporting Life, Loach, Leigh."
+      "description": "Le réalisme social britannique : Saturday Night, This Sporting Life, Loach, Leigh.",
+      "nameEn": "British New Wave / Kitchen Sink",
+      "descriptionEn": "British social realism: Saturday Night, This Sporting Life, Loach, Leigh."
     },
     {
       "code": "NOUVELLE_GENERATION_IRANIENNE",
       "name": "Nouvelle génération iranienne",
       "typeCode": "WAVE",
-      "description": "Après Kiarostami : Panahi, Farhadi, et le cinéma iranien des années 2000."
+      "description": "Après Kiarostami : Panahi, Farhadi, et le cinéma iranien des années 2000.",
+      "nameEn": "Iranian new generation",
+      "descriptionEn": "After Kiarostami: Panahi, Farhadi, and Iranian cinema of the 2000s."
     },
     {
       "code": "CINEMA_QUEBECOIS_MODERNE",
       "name": "Cinéma québécois moderne",
       "typeCode": "CURRENT",
-      "description": "Le cinéma québécois d'auteur, de Jutra et Arcand à Egoyan et Villeneuve."
+      "description": "Le cinéma québécois d'auteur, de Jutra et Arcand à Egoyan et Villeneuve.",
+      "nameEn": "Modern Quebec cinema",
+      "descriptionEn": "Quebec auteur cinema, from Jutra and Arcand to Egoyan and Villeneuve."
     },
     {
       "code": "AUSTRALIAN_NEW_WAVE",
       "name": "Australian New Wave",
       "typeCode": "WAVE",
-      "description": "La vague australienne des années 1970 : Weir, Armstrong, Beresford, Schepisi."
+      "description": "La vague australienne des années 1970 : Weir, Armstrong, Beresford, Schepisi.",
+      "nameEn": "Australian New Wave",
+      "descriptionEn": "The Australian wave of the 1970s: Weir, Armstrong, Beresford, Schepisi."
     },
     {
       "code": "LA_REBELLION",
       "name": "Cinéma afro-américain indépendant / L.A. Rebellion",
       "typeCode": "SCHOOL",
-      "description": "L.A. Rebellion et le cinéma noir indépendant : Burnett, Dash, Gerima, Spike Lee."
+      "description": "L.A. Rebellion et le cinéma noir indépendant : Burnett, Dash, Gerima, Spike Lee.",
+      "nameEn": "Black independent cinema / L.A. Rebellion",
+      "descriptionEn": "L.A. Rebellion and Black independent cinema: Burnett, Dash, Gerima, Spike Lee."
     },
     {
       "code": "NEW_QUEER_CINEMA",
       "name": "New Queer Cinema",
       "typeCode": "WAVE",
-      "description": "Le New Queer Cinema des années 1990 : Haynes, Van Sant, Jarman, Livingston."
+      "description": "Le New Queer Cinema des années 1990 : Haynes, Van Sant, Jarman, Livingston.",
+      "nameEn": "New Queer Cinema",
+      "descriptionEn": "The New Queer Cinema of the 1990s: Haynes, Van Sant, Jarman, Livingston."
     },
     {
       "code": "NOUVEAU_CINEMA_ROUMAIN",
       "name": "Nouveau cinéma roumain",
       "typeCode": "WAVE",
-      "description": "La Romanian New Wave : Puiu, Mungiu, Porumboiu, le plan-séquence du réel."
+      "description": "La Romanian New Wave : Puiu, Mungiu, Porumboiu, le plan-séquence du réel.",
+      "nameEn": "Romanian New Wave",
+      "descriptionEn": "The Romanian New Wave: Puiu, Mungiu, Porumboiu, the long take of the real."
     },
     {
       "code": "NOUVELLE_VAGUE_HONGROISE",
       "name": "Nouvelle Vague hongroise",
       "typeCode": "WAVE",
-      "description": "Jancsó, Szabó, et le cinéma hongrois moderne des années 1960."
+      "description": "Jancsó, Szabó, et le cinéma hongrois moderne des années 1960.",
+      "nameEn": "Hungarian New Wave",
+      "descriptionEn": "Jancsó, Szabó, and modern Hungarian cinema of the 1960s."
     },
     {
       "code": "BLACK_WAVE_YOUGOSLAVE",
       "name": "Black Wave yougoslave",
       "typeCode": "WAVE",
-      "description": "Le Black Wave yougoslave : Makavejev, Petrović, Pavlović, Žilnik."
+      "description": "Le Black Wave yougoslave : Makavejev, Petrović, Pavlović, Žilnik.",
+      "nameEn": "Yugoslav Black Wave",
+      "descriptionEn": "The Yugoslav Black Wave: Makavejev, Petrović, Pavlović, Žilnik."
     },
     {
       "code": "CINEMA_POLITIQUE_LATINO",
       "name": "Cinéma politique latino-américain",
       "typeCode": "CURRENT",
-      "description": "Le cinéma politique latino-américain, de Cuba à l'Argentine et au Chili."
+      "description": "Le cinéma politique latino-américain, de Cuba à l'Argentine et au Chili.",
+      "nameEn": "Latin American political cinema",
+      "descriptionEn": "Latin American political cinema, from Cuba to Argentina and Chile."
     },
     {
       "code": "NOUVELLE_VAGUE_PHILIPPINE",
       "name": "Nouvelle Vague philippine",
       "typeCode": "WAVE",
-      "description": "Brocka, Bernal, Diaz : le cinéma philippin d'auteur et de dénonciation."
+      "description": "Brocka, Bernal, Diaz : le cinéma philippin d'auteur et de dénonciation.",
+      "nameEn": "Philippine New Wave",
+      "descriptionEn": "Brocka, Bernal, Diaz: Philippine auteur cinema and denunciation."
     },
     {
       "code": "CINEMA_DU_LOOK",
       "name": "Cinéma du look français",
       "typeCode": "STYLE",
-      "description": "Beineix, Besson, Carax : image saturée, clips et romantisme des années 1980."
+      "description": "Beineix, Besson, Carax : image saturée, clips et romantisme des années 1980.",
+      "nameEn": "French cinéma du look",
+      "descriptionEn": "Beineix, Besson, Carax: saturated image, music video and 1980s romanticism."
     },
     {
       "code": "NEW_FRENCH_EXTREMITY",
       "name": "New French Extremity",
       "typeCode": "CURRENT",
-      "description": "L'extrême contemporain français : Noé, Denis, Haneke, horreur et transgression."
+      "description": "L'extrême contemporain français : Noé, Denis, Haneke, horreur et transgression.",
+      "nameEn": "New French Extremity",
+      "descriptionEn": "Contemporary French extremity: Noé, Denis, Haneke, horror and transgression."
     },
     {
       "code": "SLOW_CINEMA",
       "name": "Slow Cinema",
       "typeCode": "STYLE",
-      "description": "Plans longs, temps dilaté : Tarr, Costa, Tsai, Díaz, Weerasethakul."
+      "description": "Plans longs, temps dilaté : Tarr, Costa, Tsai, Díaz, Weerasethakul.",
+      "nameEn": "Slow Cinema",
+      "descriptionEn": "Long takes, dilated time: Tarr, Costa, Tsai, Díaz, Weerasethakul."
     },
     {
       "code": "NUEVO_CINE_ARGENTINO",
       "name": "Nuevo Cine Argentino",
       "typeCode": "WAVE",
-      "description": "Le nouveau cinéma argentin des années 1990-2000 : Martel, Bielinsky, Llinás."
+      "description": "Le nouveau cinéma argentin des années 1990-2000 : Martel, Bielinsky, Llinás.",
+      "nameEn": "Nuevo Cine Argentino",
+      "descriptionEn": "The new Argentine cinema of the 1990s–2000s: Martel, Bielinsky, Llinás."
     },
     {
       "code": "NUEVO_CINE_MEXICANO",
       "name": "Nuevo Cine Mexicano",
       "typeCode": "WAVE",
-      "description": "Le renouveau mexicain : Cuarón, Iñárritu, del Toro, Reygadas."
+      "description": "Le renouveau mexicain : Cuarón, Iñárritu, del Toro, Reygadas.",
+      "nameEn": "Nuevo Cine Mexicano",
+      "descriptionEn": "The Mexican revival: Cuarón, Iñárritu, del Toro, Reygadas."
     },
     {
       "code": "CINEMA_ESPAGNOL_MODERNE",
       "name": "Nouvelle vague / cinéma moderne espagnol",
       "typeCode": "WAVE",
-      "description": "Erice, Saura, Berlanga, Almodóvar : l'Espagne après le franquisme et avant."
+      "description": "Erice, Saura, Berlanga, Almodóvar : l'Espagne après le franquisme et avant.",
+      "nameEn": "Modern Spanish cinema",
+      "descriptionEn": "Erice, Saura, Berlanga, Almodóvar: Spain after Franco and before."
     },
     {
       "code": "NOUVELLE_VAGUE_SCANDINAVE",
       "name": "Nouvelle vague scandinave",
       "typeCode": "WAVE",
-      "description": "Bergman et ses héritiers, Kaurismäki, Moodysson, Andersson, Trier (hors Dogme)."
+      "description": "Bergman et ses héritiers, Kaurismäki, Moodysson, Andersson, Trier (hors Dogme).",
+      "nameEn": "Scandinavian New Wave",
+      "descriptionEn": "Bergman and his heirs, Kaurismäki, Moodysson, Andersson, Trier (outside Dogme)."
     },
     {
       "code": "CINEMA_TURC_MODERNE",
       "name": "Cinéma turc moderne",
       "typeCode": "CURRENT",
-      "description": "Güney, Ceylan, et le cinéma turc d'auteur contemporain."
+      "description": "Güney, Ceylan, et le cinéma turc d'auteur contemporain.",
+      "nameEn": "Modern Turkish cinema",
+      "descriptionEn": "Güney, Ceylan, and contemporary Turkish auteur cinema."
     },
     {
       "code": "CINEMA_MAGHREBIN",
       "name": "Cinéma maghrébin postcolonial",
       "typeCode": "CURRENT",
-      "description": "Algérie, Tunisie, Maroc : Lakhdar-Hamina, Allouache, Tlatli, Boughedir."
+      "description": "Algérie, Tunisie, Maroc : Lakhdar-Hamina, Allouache, Tlatli, Boughedir.",
+      "nameEn": "Postcolonial Maghrebi cinema",
+      "descriptionEn": "Algeria, Tunisia, Morocco: Lakhdar-Hamina, Allouache, Tlatli, Boughedir."
     },
     {
       "code": "CINEMA_AFRICAIN_POSTCOLONIAL",
       "name": "Cinéma africain postcolonial",
       "typeCode": "CURRENT",
-      "description": "Les cinémas d'Afrique après les indépendances, au-delà du Sénégal et du Mali."
+      "description": "Les cinémas d'Afrique après les indépendances, au-delà du Sénégal et du Mali.",
+      "nameEn": "Postcolonial African cinema",
+      "descriptionEn": "African cinemas after independence, beyond Senegal and Mali."
     },
     {
       "code": "NOUVELLE_VAGUE_CHILIENNE",
       "name": "Nouvelle vague chilienne",
       "typeCode": "WAVE",
-      "description": "Littín, Guzmán, Larraín : exil, mémoire et cinéma chilien."
+      "description": "Littín, Guzmán, Larraín : exil, mémoire et cinéma chilien.",
+      "nameEn": "Chilean New Wave",
+      "descriptionEn": "Littín, Guzmán, Larraín: exile, memory and Chilean cinema."
     },
     {
       "code": "RETOMADA_BRESILIENNE",
       "name": "Retomada brésilienne",
       "typeCode": "WAVE",
-      "description": "La retomada des années 1990-2010 : Salles, Padilha, Mendonça Filho."
+      "description": "La retomada des années 1990-2010 : Salles, Padilha, Mendonça Filho.",
+      "nameEn": "Brazilian Retomada",
+      "descriptionEn": "The retomada of the 1990s–2010s: Salles, Padilha, Mendonça Filho."
     },
     {
       "code": "CINEMA_THAILANDAIS",
       "name": "Cinéma thaïlandais contemporain",
       "typeCode": "CURRENT",
-      "description": "Weerasethakul et le cinéma thaïlandais d'auteur contemporain."
+      "description": "Weerasethakul et le cinéma thaïlandais d'auteur contemporain.",
+      "nameEn": "Contemporary Thai cinema",
+      "descriptionEn": "Weerasethakul and contemporary Thai auteur cinema."
     },
     {
       "code": "CINEMA_INDONESIEN",
       "name": "Cinéma indonésien contemporain",
       "typeCode": "CURRENT",
-      "description": "Nugroho, Surya, Anwar, et le cinéma indonésien contemporain."
+      "description": "Nugroho, Surya, Anwar, et le cinéma indonésien contemporain.",
+      "nameEn": "Contemporary Indonesian cinema",
+      "descriptionEn": "Nugroho, Surya, Anwar, and contemporary Indonesian cinema."
     },
     {
       "code": "CINEMA_MALAYALAM",
       "name": "Cinéma malayalam contemporain",
       "typeCode": "CURRENT",
-      "description": "Le cinéma du Kerala, de Gopalakrishnan au New Malayalam."
+      "description": "Le cinéma du Kerala, de Gopalakrishnan au New Malayalam.",
+      "nameEn": "Contemporary Malayalam cinema",
+      "descriptionEn": "Kerala cinema, from Gopalakrishnan to New Malayalam."
     },
     {
       "code": "NOUVELLE_VAGUE_SINGAPOURIENNE",
       "name": "Nouvelle vague singapourienne",
       "typeCode": "WAVE",
-      "description": "Khoo, Chen, Tan : le cinéma singapourien d'auteur."
+      "description": "Khoo, Chen, Tan : le cinéma singapourien d'auteur.",
+      "nameEn": "Singaporean New Wave",
+      "descriptionEn": "Khoo, Chen, Tan: Singaporean auteur cinema."
     },
     {
       "code": "CINEMA_VIETNAMIEN",
       "name": "Cinéma vietnamien moderne",
       "typeCode": "CURRENT",
-      "description": "Tran Anh Hung et le cinéma vietnamien moderne."
+      "description": "Tran Anh Hung et le cinéma vietnamien moderne.",
+      "nameEn": "Modern Vietnamese cinema",
+      "descriptionEn": "Tran Anh Hung and modern Vietnamese cinema."
     },
     {
       "code": "CINEMA_CAMBODGIEN",
       "name": "Cinéma cambodgien moderne",
       "typeCode": "CURRENT",
-      "description": "Rithy Panh et la mémoire du Cambodge contemporain."
+      "description": "Rithy Panh et la mémoire du Cambodge contemporain.",
+      "nameEn": "Modern Cambodian cinema",
+      "descriptionEn": "Rithy Panh and the memory of contemporary Cambodia."
     },
     {
       "code": "NOUVELLE_VAGUE_GEORGIENNE",
       "name": "Nouvelle vague géorgienne",
       "typeCode": "WAVE",
-      "description": "Iosseliani, Abuladze, et le cinéma géorgien d'auteur."
+      "description": "Iosseliani, Abuladze, et le cinéma géorgien d'auteur.",
+      "nameEn": "Georgian New Wave",
+      "descriptionEn": "Iosseliani, Abuladze, and Georgian auteur cinema."
     },
     {
       "code": "CINEMA_BALTE",
       "name": "Cinéma balte contemporain",
       "typeCode": "CURRENT",
-      "description": "Estonie, Lettonie, Lituanie : le cinéma balte contemporain."
+      "description": "Estonie, Lettonie, Lituanie : le cinéma balte contemporain.",
+      "nameEn": "Contemporary Baltic cinema",
+      "descriptionEn": "Estonia, Latvia, Lithuania: contemporary Baltic cinema."
     },
     {
       "code": "CINEMA_POST_SOVIETIQUE",
       "name": "Cinéma post-soviétique",
       "typeCode": "PERIOD",
-      "description": "Après 1991 : Sokurov, Zvyagintsev, German, Balabanov."
+      "description": "Après 1991 : Sokurov, Zvyagintsev, German, Balabanov.",
+      "nameEn": "Post-Soviet cinema",
+      "descriptionEn": "After 1991: Sokurov, Zvyagintsev, German, Balabanov."
     },
     {
       "code": "NOUVELLE_VAGUE_ISRAELIENNE",
       "name": "Nouvelle vague israélienne",
       "typeCode": "WAVE",
-      "description": "Le cinéma israélien contemporain : Folman, Maoz, Kolirin."
+      "description": "Le cinéma israélien contemporain : Folman, Maoz, Kolirin.",
+      "nameEn": "Israeli New Wave",
+      "descriptionEn": "Contemporary Israeli cinema: Folman, Maoz, Kolirin."
     },
     {
       "code": "CINEMA_PALESTINIEN",
       "name": "Cinéma palestinien",
       "typeCode": "CURRENT",
-      "description": "Suleiman, Abu-Assad, Khleifi : le cinéma palestinien."
+      "description": "Suleiman, Abu-Assad, Khleifi : le cinéma palestinien.",
+      "nameEn": "Palestinian cinema",
+      "descriptionEn": "Suleiman, Abu-Assad, Khleifi: Palestinian cinema."
     },
     {
       "code": "NOUVELLE_VAGUE_LIBANAISE",
       "name": "Nouvelle vague libanaise",
       "typeCode": "WAVE",
-      "description": "Labaki, Doueiri, et le cinéma libanais contemporain."
+      "description": "Labaki, Doueiri, et le cinéma libanais contemporain.",
+      "nameEn": "Lebanese New Wave",
+      "descriptionEn": "Labaki, Doueiri, and contemporary Lebanese cinema."
     },
     {
       "code": "NOLLYWOOD",
       "name": "Cinéma nigérian / Nollywood",
       "typeCode": "CURRENT",
-      "description": "Nollywood et le New Nigerian Cinema : Afolayan, Adetiba, Nnaji."
+      "description": "Nollywood et le New Nigerian Cinema : Afolayan, Adetiba, Nnaji.",
+      "nameEn": "Nigerian cinema / Nollywood",
+      "descriptionEn": "Nollywood and New Nigerian Cinema: Afolayan, Adetiba, Nnaji."
     },
     {
       "code": "CINEMA_SUD_AFRICAIN",
       "name": "Cinéma sud-africain contemporain",
       "typeCode": "CURRENT",
-      "description": "Le cinéma sud-africain après l'apartheid : Tsotsi, District 9, The Wound."
+      "description": "Le cinéma sud-africain après l'apartheid : Tsotsi, District 9, The Wound.",
+      "nameEn": "Contemporary South African cinema",
+      "descriptionEn": "South African cinema after apartheid: Tsotsi, District 9, The Wound."
     },
     {
       "code": "CINEMA_SENEGALAIS",
       "name": "Cinéma sénégalais",
       "typeCode": "CURRENT",
-      "description": "Sembène, Mambéty, Diop, Gomis : le cinéma sénégalais."
+      "description": "Sembène, Mambéty, Diop, Gomis : le cinéma sénégalais.",
+      "nameEn": "Senegalese cinema",
+      "descriptionEn": "Sembène, Mambéty, Diop, Gomis: Senegalese cinema."
     },
     {
       "code": "CINEMA_MALIEN",
       "name": "Cinéma malien",
       "typeCode": "CURRENT",
-      "description": "Cissé, Sissako, Sissoko : le cinéma malien."
+      "description": "Cissé, Sissako, Sissoko : le cinéma malien.",
+      "nameEn": "Malian cinema",
+      "descriptionEn": "Cissé, Sissako, Sissoko: Malian cinema."
     },
     {
       "code": "CINEMA_ETHIOPIEN",
       "name": "Cinéma éthiopien contemporain",
       "typeCode": "CURRENT",
-      "description": "Haile Gerima et le cinéma éthiopien contemporain."
+      "description": "Haile Gerima et le cinéma éthiopien contemporain.",
+      "nameEn": "Contemporary Ethiopian cinema",
+      "descriptionEn": "Haile Gerima and contemporary Ethiopian cinema."
     },
     {
       "code": "CINEMA_NEO_ZELANDAIS",
       "name": "Cinéma néo-zélandais",
       "typeCode": "CURRENT",
-      "description": "Campion, Jackson, Waititi : le cinéma néo-zélandais."
+      "description": "Campion, Jackson, Waititi : le cinéma néo-zélandais.",
+      "nameEn": "New Zealand cinema",
+      "descriptionEn": "Campion, Jackson, Waititi: New Zealand cinema."
     },
     {
       "code": "CINEMA_AUTOCHTONE",
       "name": "Cinéma amérindien / Indigenous Cinema",
       "typeCode": "CURRENT",
-      "description": "Kunuk, Eyre, Barnaby, Zhao : le cinéma autochtone."
+      "description": "Kunuk, Eyre, Barnaby, Zhao : le cinéma autochtone.",
+      "nameEn": "Indigenous cinema",
+      "descriptionEn": "Kunuk, Eyre, Barnaby, Zhao: Indigenous cinema."
     },
     {
       "code": "CINEMA_FEMINISTE",
       "name": "Cinéma féministe",
       "typeCode": "CURRENT",
-      "description": "Un cinéma qui place l'expérience des femmes au centre du regard."
+      "description": "Un cinéma qui place l'expérience des femmes au centre du regard.",
+      "nameEn": "Feminist cinema",
+      "descriptionEn": "A cinema that places women's experience at the centre of the gaze."
     },
     {
       "code": "CINEMA_QUEER_CONTEMPORAIN",
       "name": "Cinéma queer contemporain",
       "typeCode": "CURRENT",
-      "description": "Le cinéma queer après le New Queer Cinema : Moonlight, Carol, 120 BPM."
+      "description": "Le cinéma queer après le New Queer Cinema : Moonlight, Carol, 120 BPM.",
+      "nameEn": "Contemporary queer cinema",
+      "descriptionEn": "Queer cinema after New Queer Cinema: Moonlight, Carol, 120 BPM."
     },
     {
       "code": "CINEMA_MILITANT",
       "name": "Cinéma militant",
       "typeCode": "CURRENT",
-      "description": "Films de lutte, de grève et de manifeste politique."
+      "description": "Films de lutte, de grève et de manifeste politique.",
+      "nameEn": "Militant cinema",
+      "descriptionEn": "Films of struggle, strike and political manifesto."
     },
     {
       "code": "CINEMA_POSTCOLONIAL",
       "name": "Cinéma postcolonial",
       "typeCode": "CURRENT",
-      "description": "Un cinéma qui pense l'après-empire, la langue et la mémoire coloniale."
+      "description": "Un cinéma qui pense l'après-empire, la langue et la mémoire coloniale.",
+      "nameEn": "Postcolonial cinema",
+      "descriptionEn": "A cinema that thinks after empire, language and colonial memory."
     },
     {
       "code": "CINEMA_DIASPORIQUE",
       "name": "Cinéma diasporique",
       "typeCode": "CURRENT",
-      "description": "Exil, migration, double culture : La Haine, Head-On, Minari, Atlantique."
+      "description": "Exil, migration, double culture : La Haine, Head-On, Minari, Atlantique.",
+      "nameEn": "Diasporic cinema",
+      "descriptionEn": "Exile, migration, double culture: La Haine, Head-On, Minari, Atlantics."
     },
     {
       "code": "CINEMA_TRANSGRESSION",
       "name": "Cinéma de transgression",
       "typeCode": "STYLE",
-      "description": "Waters, Korine, Ferrara : trash, scandale et transgression assumée."
+      "description": "Waters, Korine, Ferrara : trash, scandale et transgression assumée.",
+      "nameEn": "Cinema of transgression",
+      "descriptionEn": "Waters, Korine, Ferrara: trash, scandal and assumed transgression."
     },
     {
       "code": "CINEMA_PUNK",
       "name": "Cinéma punk",
       "typeCode": "STYLE",
-      "description": "L'esprit punk à l'écran : Jubilee, Repo Man, Decline of Western Civilization."
+      "description": "L'esprit punk à l'écran : Jubilee, Repo Man, Decline of Western Civilization.",
+      "nameEn": "Punk cinema",
+      "descriptionEn": "The punk spirit on screen: Jubilee, Repo Man, The Decline of Western Civilization."
     },
     {
       "code": "NO_WAVE",
       "name": "No Wave Cinema",
       "typeCode": "WAVE",
-      "description": "Le No Wave new-yorkais : Jarmusch, Ferrara, Borden, Gordon."
+      "description": "Le No Wave new-yorkais : Jarmusch, Ferrara, Borden, Gordon.",
+      "nameEn": "No Wave Cinema",
+      "descriptionEn": "New York No Wave: Jarmusch, Ferrara, Borden, Gordon."
     },
     {
       "code": "BLAXPLOITATION",
       "name": "Blaxploitation",
       "typeCode": "STYLE",
-      "description": "Shaft, Super Fly, Coffy : le cycle blaxploitation des années 1970."
+      "description": "Shaft, Super Fly, Coffy : le cycle blaxploitation des années 1970.",
+      "nameEn": "Blaxploitation",
+      "descriptionEn": "Shaft, Super Fly, Coffy: the blaxploitation cycle of the 1970s."
     },
     {
       "code": "POLIZIOTTESCO",
       "name": "Poliziottesco",
       "typeCode": "STYLE",
-      "description": "Le polar italien violent des années 1970 : Di Leo, Lenzi, Castellari."
+      "description": "Le polar italien violent des années 1970 : Di Leo, Lenzi, Castellari.",
+      "nameEn": "Poliziottesco",
+      "descriptionEn": "Violent Italian crime films of the 1970s: Di Leo, Lenzi, Castellari."
     },
     {
       "code": "MUMBLECORE",
       "name": "Mumblecore",
       "typeCode": "WAVE",
-      "description": "Bujalski, Swanberg, Duplass : dialogues, DIY et indé US des années 2000."
+      "description": "Bujalski, Swanberg, Duplass : dialogues, DIY et indé US des années 2000.",
+      "nameEn": "Mumblecore",
+      "descriptionEn": "Bujalski, Swanberg, Duplass: dialogue, DIY and 2000s US indie."
     },
     {
       "code": "CINEMA_EXPLOITATION",
       "name": "Cinéma d'exploitation",
       "typeCode": "STYLE",
-      "description": "Sexploitation, horreur cheap, drive-in : Meyer, Corman, Craven."
+      "description": "Sexploitation, horreur cheap, drive-in : Meyer, Corman, Craven.",
+      "nameEn": "Exploitation cinema",
+      "descriptionEn": "Sexploitation, cheap horror, drive-in: Meyer, Corman, Craven."
     },
     {
       "code": "GRINDHOUSE",
       "name": "Grindhouse",
       "typeCode": "STYLE",
-      "description": "Le circuit grindhouse et ses hommages : Hills Have Eyes, Death Proof."
+      "description": "Le circuit grindhouse et ses hommages : Hills Have Eyes, Death Proof.",
+      "nameEn": "Grindhouse",
+      "descriptionEn": "The grindhouse circuit and its homages: The Hills Have Eyes, Death Proof."
     },
     {
       "code": "CINEMA_GORE",
       "name": "Cinéma gore",
       "typeCode": "STYLE",
-      "description": "Splatter et gore : Fulci, Romero, Jackson, Gordon."
+      "description": "Splatter et gore : Fulci, Romero, Jackson, Gordon.",
+      "nameEn": "Gore cinema",
+      "descriptionEn": "Splatter and gore: Fulci, Romero, Jackson, Gordon."
     },
     {
       "code": "PSYCHOTRONIC",
       "name": "Psychotronic Cinema",
       "typeCode": "STYLE",
-      "description": "Cultes bizarres, Troma, Liquid Sky, Donnie Darko."
+      "description": "Cultes bizarres, Troma, Liquid Sky, Donnie Darko.",
+      "nameEn": "Psychotronic Cinema",
+      "descriptionEn": "Bizarre cults, Troma, Liquid Sky, Donnie Darko."
     },
     {
       "code": "CINEMA_ABSTRAIT",
       "name": "Cinéma abstrait",
       "typeCode": "STYLE",
-      "description": "Cinéma visuel non figuratif : Whitney, Belson, Kubelka, Conrad."
+      "description": "Cinéma visuel non figuratif : Whitney, Belson, Kubelka, Conrad.",
+      "nameEn": "Abstract cinema",
+      "descriptionEn": "Non-figurative visual cinema: Whitney, Belson, Kubelka, Conrad."
     },
     {
       "code": "CINEMA_DADAISTE",
       "name": "Cinéma dadaïste",
       "typeCode": "MOVEMENT",
-      "description": "Dada à l'écran : Entr'acte, Anémic Cinéma, Man Ray, Richter."
+      "description": "Dada à l'écran : Entr'acte, Anémic Cinéma, Man Ray, Richter.",
+      "nameEn": "Dada cinema",
+      "descriptionEn": "Dada on screen: Entr'acte, Anémic Cinéma, Man Ray, Richter."
     },
     {
       "code": "CINEMA_PUR",
       "name": "Cinéma pur",
       "typeCode": "MOVEMENT",
-      "description": "Le cinéma pur et les city symphonies : Cavalcanti, Ivens, Manhatta."
+      "description": "Le cinéma pur et les city symphonies : Cavalcanti, Ivens, Manhatta.",
+      "nameEn": "Pure cinema",
+      "descriptionEn": "Pure cinema and city symphonies: Cavalcanti, Ivens, Manhatta."
     },
     {
       "code": "STRUCTURAL_FILM",
       "name": "Structural Film",
       "typeCode": "SCHOOL",
-      "description": "Le structural film : Snow, Frampton, Gehr, Brakhage."
+      "description": "Le structural film : Snow, Frampton, Gehr, Brakhage.",
+      "nameEn": "Structural Film",
+      "descriptionEn": "Structural film: Snow, Frampton, Gehr, Brakhage."
     },
     {
       "code": "EXPANDED_CINEMA",
       "name": "Expanded Cinema",
       "typeCode": "STYLE",
-      "description": "L'expanded cinema : Warhol, McCall, installations et durée extrême."
+      "description": "L'expanded cinema : Warhol, McCall, installations et durée extrême.",
+      "nameEn": "Expanded Cinema",
+      "descriptionEn": "Expanded cinema: Warhol, McCall, installations and extreme duration."
     },
     {
       "code": "FOUND_FOOTAGE",
       "name": "Found Footage Cinema",
       "typeCode": "STYLE",
-      "description": "Found footage expérimental et pop : Conner, Morrison, Blair Witch."
+      "description": "Found footage expérimental et pop : Conner, Morrison, Blair Witch.",
+      "nameEn": "Found Footage Cinema",
+      "descriptionEn": "Experimental and pop found footage: Conner, Morrison, The Blair Witch Project."
     },
     {
       "code": "ESSAY_FILM",
       "name": "Essay Film / cinéma-essai",
       "typeCode": "STYLE",
-      "description": "Le film-essai : Marker, Welles, Akerman, Andersen, Farrokhzad."
+      "description": "Le film-essai : Marker, Welles, Akerman, Andersen, Farrokhzad.",
+      "nameEn": "Essay film",
+      "descriptionEn": "The essay film: Marker, Welles, Akerman, Andersen, Farrokhzad."
     },
     {
       "code": "AGE_OR_HOLLYWOOD",
       "name": "Âge d'or d'Hollywood",
       "typeCode": "PERIOD",
-      "description": "Le studio system et le star system, ~1927–1960, apogée des majors."
+      "description": "Le studio system et le star system, ~1927–1960, apogée des majors.",
+      "nameEn": "Hollywood golden age",
+      "descriptionEn": "The studio system and the star system, ~1927–1960, peak of the majors."
     },
     {
       "code": "NOUVEL_AGE_OR_HOLLYWOOD",
       "name": "Nouvel âge d'or hollywoodien",
       "typeCode": "PERIOD",
-      "description": "Renaissance prestige US ~1990–2015 : Tarantino, PTA, Coen, Fincher, Nolan."
+      "description": "Renaissance prestige US ~1990–2015 : Tarantino, PTA, Coen, Fincher, Nolan.",
+      "nameEn": "New Hollywood golden age",
+      "descriptionEn": "US prestige renaissance ~1990–2015: Tarantino, PTA, Coen, Fincher, Nolan."
     },
     {
       "code": "DOCUMENTAIRE",
       "name": "Cinéma documentaire",
       "typeCode": "STYLE",
-      "description": "Le réel comme sujet : enquête, portrait ou essai, plutôt que le reportage illustré."
+      "description": "Le réel comme sujet : enquête, portrait ou essai, plutôt que le reportage illustré.",
+      "nameEn": "Documentary cinema",
+      "descriptionEn": "The real as subject: inquiry, portrait or essay, rather than illustrated reportage."
     },
     {
       "code": "CINEMA_CONTEMPORAIN_MOUVEMENT",
       "name": "Cinéma contemporain",
       "typeCode": "PERIOD",
-      "description": "L'ère d'hybridation du cinéma, après les manifestes du XXe siècle : métissage des formes, du numérique et des regards mondiaux."
+      "description": "L'ère d'hybridation du cinéma, après les manifestes du XXe siècle : métissage des formes, du numérique et des regards mondiaux.",
+      "nameEn": "Contemporary cinema",
+      "descriptionEn": "The era of hybrid cinema after the 20th-century manifestos: mixed forms, digital and worldwide gazes."
     }
   ],
   "genres": [
     {
       "code": "DRAME",
-      "name": "Drame"
+      "name": "Drame",
+      "nameEn": "Drama"
     },
     {
       "code": "GUERRE",
-      "name": "Guerre"
+      "name": "Guerre",
+      "nameEn": "War"
     },
     {
       "code": "HISTORIQUE",
-      "name": "Historique"
+      "name": "Historique",
+      "nameEn": "Historical"
     },
     {
       "code": "POLICIER",
-      "name": "Policier"
+      "name": "Policier",
+      "nameEn": "Crime"
     },
     {
       "code": "DOCUMENTAIRE",
-      "name": "Documentaire"
+      "name": "Documentaire",
+      "nameEn": "Documentary"
     },
     {
       "code": "COMEDIE",
-      "name": "Comédie"
+      "name": "Comédie",
+      "nameEn": "Comedy"
     },
     {
       "code": "WESTERN",
-      "name": "Western"
+      "name": "Western",
+      "nameEn": "Western"
     },
     {
       "code": "HORREUR",
-      "name": "Horreur"
+      "name": "Horreur",
+      "nameEn": "Horror"
     },
     {
       "code": "SCIENCE_FICTION",
-      "name": "Science-fiction"
+      "name": "Science-fiction",
+      "nameEn": "Science fiction"
     },
     {
       "code": "ROMANCE",
-      "name": "Romance"
+      "name": "Romance",
+      "nameEn": "Romance"
     },
     {
       "code": "THRILLER",
-      "name": "Thriller"
+      "name": "Thriller",
+      "nameEn": "Thriller"
     },
     {
       "code": "MUSICAL",
-      "name": "Musical"
+      "name": "Musical",
+      "nameEn": "Musical"
     },
     {
       "code": "ANIMATION",
-      "name": "Animation"
+      "name": "Animation",
+      "nameEn": "Animation"
     },
     {
       "code": "AVENTURE",
-      "name": "Aventure"
+      "name": "Aventure",
+      "nameEn": "Adventure"
     },
     {
       "code": "FILM_NOIR",
-      "name": "Film noir"
+      "name": "Film noir",
+      "nameEn": "Film noir"
     },
     {
       "code": "ACTION",
-      "name": "Action"
+      "name": "Action",
+      "nameEn": "Action"
     },
     {
       "code": "ARTS_MARTIAUX",
-      "name": "Arts martiaux"
+      "name": "Arts martiaux",
+      "nameEn": "Martial arts"
     },
     {
       "code": "BIOGRAPHIQUE",
-      "name": "Biographique"
+      "name": "Biographique",
+      "nameEn": "Biographical"
     },
     {
       "code": "CATASTROPHE",
-      "name": "Catastrophe"
+      "name": "Catastrophe",
+      "nameEn": "Disaster"
     },
     {
       "code": "COMEDIE_DRAMATIQUE",
-      "name": "Comédie dramatique"
+      "name": "Comédie dramatique",
+      "nameEn": "Dramedy"
     },
     {
       "code": "CRIME",
-      "name": "Crime"
+      "name": "Crime",
+      "nameEn": "Crime"
     },
     {
       "code": "ENQUETE",
-      "name": "Enquête"
+      "name": "Enquête",
+      "nameEn": "Investigation"
     },
     {
       "code": "EPOUVANTE",
-      "name": "Épouvante"
+      "name": "Épouvante",
+      "nameEn": "Terror"
     },
     {
       "code": "EROTIQUE",
-      "name": "Érotique"
+      "name": "Érotique",
+      "nameEn": "Erotic"
     },
     {
       "code": "ESPIONNAGE",
-      "name": "Espionnage"
+      "name": "Espionnage",
+      "nameEn": "Spy"
     },
     {
       "code": "FAMILLE",
-      "name": "Famille"
+      "name": "Famille",
+      "nameEn": "Family"
     },
     {
       "code": "FANTASTIQUE",
-      "name": "Fantastique"
+      "name": "Fantastique",
+      "nameEn": "Fantasy"
     },
     {
       "code": "GANGSTER",
-      "name": "Gangster"
+      "name": "Gangster",
+      "nameEn": "Gangster"
     },
     {
       "code": "MYSTERE",
-      "name": "Mystère"
+      "name": "Mystère",
+      "nameEn": "Mystery"
     },
     {
       "code": "PEPLUM",
-      "name": "Péplum"
+      "name": "Péplum",
+      "nameEn": "Sword-and-sandal"
     },
     {
       "code": "POLITIQUE",
-      "name": "Politique"
+      "name": "Politique",
+      "nameEn": "Political"
     },
     {
       "code": "SPORT",
-      "name": "Sport"
+      "name": "Sport",
+      "nameEn": "Sport"
     },
     {
       "code": "SUPER_HEROS",
-      "name": "Super-héros"
+      "name": "Super-héros",
+      "nameEn": "Superhero"
     }
   ],
   "eras": [
@@ -9005,25 +9349,29 @@
       "code": "CINEMA_MUET",
       "name": "Cinéma muet",
       "startYear": 1895,
-      "endYear": 1929
+      "endYear": 1929,
+      "nameEn": "Silent cinema"
     },
     {
       "code": "CINEMA_CLASSIQUE",
       "name": "Cinéma classique",
       "startYear": 1930,
-      "endYear": 1959
+      "endYear": 1959,
+      "nameEn": "Classical cinema"
     },
     {
       "code": "CINEMA_MODERNE",
       "name": "Cinéma moderne",
       "startYear": 1960,
-      "endYear": 1979
+      "endYear": 1979,
+      "nameEn": "Modern cinema"
     },
     {
       "code": "CINEMA_CONTEMPORAIN",
       "name": "Cinéma contemporain",
       "startYear": 1980,
-      "endYear": 2028
+      "endYear": 2028,
+      "nameEn": "Contemporary cinema"
     }
   ],
   "movies": [
@@ -23297,7 +23645,6 @@
     {
       "code": "ROSEMARY_S_BABY_1968",
       "originalTitle": "Rosemary's Baby",
-      "frenchTitle": "Le Bébé de Rosemary",
       "releaseYear": 1968,
       "durationMinutes": 138,
       "format": "FEATURE",
@@ -24243,7 +24590,6 @@
     {
       "code": "THE_THING_1982",
       "originalTitle": "The Thing",
-      "frenchTitle": "L'effroyable Chose",
       "releaseYear": 1982,
       "durationMinutes": 109,
       "format": "FEATURE",
@@ -24448,7 +24794,6 @@
     {
       "code": "MOONLIGHT_2016",
       "originalTitle": "Moonlight",
-      "frenchTitle": "Moonlight : L'histoire d'une vie",
       "releaseYear": 2016,
       "durationMinutes": 100,
       "format": "FEATURE",
@@ -24856,7 +25201,6 @@
     {
       "code": "MCCABE_AND_MRS_MILLER_1971",
       "originalTitle": "McCabe & Mrs. Miller",
-      "frenchTitle": "John McCabe",
       "releaseYear": 1971,
       "durationMinutes": 116,
       "format": "FEATURE",
@@ -26161,7 +26505,6 @@
     {
       "code": "CABARET_1972",
       "originalTitle": "Cabaret",
-      "frenchTitle": "Adieu Berlin",
       "releaseYear": 1972,
       "durationMinutes": 118,
       "format": "FEATURE",
@@ -26655,7 +26998,6 @@
     {
       "code": "AMADEUS_1984",
       "originalTitle": "Amadeus",
-      "frenchTitle": "Amadeus (Director's Cut)",
       "releaseYear": 1984,
       "durationMinutes": 180,
       "format": "EXTENDED",
@@ -28557,7 +28899,6 @@
     {
       "code": "THE_LONG_GOODBYE_1973",
       "originalTitle": "The Long Goodbye",
-      "frenchTitle": "Le Privé",
       "releaseYear": 1973,
       "durationMinutes": 122,
       "format": "FEATURE",
@@ -28657,7 +28998,6 @@
     {
       "code": "THE_THIN_BLUE_LINE_1988",
       "originalTitle": "The Thin Blue Line",
-      "frenchTitle": "Le dossier Adams",
       "releaseYear": 1988,
       "durationMinutes": 103,
       "format": "FEATURE",
@@ -29915,7 +30255,7 @@
     {
       "code": "UNE_ETOILE_EST_NEE_1954",
       "originalTitle": "A Star Is Born",
-      "frenchTitle": "Une étoile est née",
+      "frenchTitle": null,
       "releaseYear": 1954,
       "durationMinutes": 176,
       "format": "FEATURE",
@@ -30546,7 +30886,7 @@
     {
       "code": "PINOCCHIO_1940",
       "originalTitle": "Pinocchio",
-      "frenchTitle": "Pinokkio",
+      "frenchTitle": null,
       "releaseYear": 1940,
       "durationMinutes": 88,
       "format": "FEATURE",
@@ -31634,7 +31974,6 @@
     {
       "code": "BLOW_OUT_1981",
       "originalTitle": "Blow Out",
-      "frenchTitle": "Éclatement",
       "releaseYear": 1981,
       "durationMinutes": 107,
       "format": "FEATURE",
@@ -32987,7 +33326,6 @@
     {
       "code": "HALLOWEEN_1978",
       "originalTitle": "Halloween",
-      "frenchTitle": "La Nuit des masques",
       "releaseYear": 1978,
       "durationMinutes": 91,
       "format": "FEATURE",
@@ -34394,7 +34732,6 @@
     {
       "code": "FAT_CITY_1972",
       "originalTitle": "Fat City",
-      "frenchTitle": "La Dernière Chance",
       "releaseYear": 1972,
       "durationMinutes": 100,
       "format": "FEATURE",
@@ -36156,7 +36493,6 @@
     {
       "code": "ONCE_UPON_A_TIME_IN_HOLLYWOOD_2019",
       "originalTitle": "Once Upon a Time... in Hollywood",
-      "frenchTitle": "Il était une fois... à Hollywood",
       "releaseYear": 2019,
       "durationMinutes": 162,
       "format": "FEATURE",
@@ -36190,7 +36526,6 @@
     {
       "code": "PARTY_THE_1968",
       "originalTitle": "The Party",
-      "frenchTitle": "La Party",
       "releaseYear": 1968,
       "durationMinutes": 99,
       "format": "FEATURE",
@@ -36777,7 +37112,6 @@
     {
       "code": "STAND_BY_ME_1986",
       "originalTitle": "Stand by Me",
-      "frenchTitle": "Compte sur moi",
       "releaseYear": 1986,
       "durationMinutes": 85,
       "format": "FEATURE",
@@ -38139,7 +38473,6 @@
     {
       "code": "SCARFACE_1983",
       "originalTitle": "Scarface",
-      "frenchTitle": "Le balafré",
       "releaseYear": 1983,
       "durationMinutes": 165,
       "format": "FEATURE",
@@ -44804,7 +45137,6 @@
     {
       "code": "SWITCHBLADE_SISTERS_1975",
       "originalTitle": "Switchblade Sisters",
-      "frenchTitle": "Les loubardes",
       "releaseYear": 1975,
       "durationMinutes": 91,
       "format": "FEATURE",
@@ -60247,7 +60579,7 @@
     {
       "code": "LA_DANSE_DES_VAMPIRES_1967",
       "originalTitle": "The Fearless Vampire Killers",
-      "frenchTitle": "La Danse des vampires",
+      "frenchTitle": "Le Bal des vampires",
       "releaseYear": 1967,
       "durationMinutes": 108,
       "format": "FEATURE",
@@ -62289,7 +62621,6 @@
     {
       "code": "JE_VEUX_JUSTE_EN_FINIR_2020",
       "originalTitle": "I'm Thinking of Ending Things",
-      "frenchTitle": "Je veux juste en finir",
       "releaseYear": 2020,
       "durationMinutes": 134,
       "format": "FEATURE",
@@ -62503,7 +62834,10 @@
         "USA",
         "JAPAN"
       ],
-      "track": "GATEWAY"
+      "track": "GATEWAY",
+      "nameEn": "Initiation",
+      "descriptionEn": "Ten films everyone has already come across, to raise the curtain.",
+      "longDescriptionEn": "The Lion King, Forrest Gump, Titanic, Spirited Away, Pulp Fiction, Seven, Avatar, The Godfather, Star Wars and Jaws: titles seen, seen again, quoted, zapped on a Sunday night. This collection is not a cinephile exam. It is the first row of the theatre. Follow it, mark at least one film as watched, and the rest of Urbinema opens: currents, countries, authors, more demanding collections. You already know these images. Here you simply start to put them in order."
     },
     {
       "code": "COLLECTION_001",
@@ -62556,7 +62890,10 @@
       "countryCodes": [
         "ITALY"
       ],
-      "track": "DARKROOM"
+      "track": "DARKROOM",
+      "nameEn": "Italian Neorealism",
+      "descriptionEn": "The founding gestures of a cinema turned toward the street and the aftermath of war.",
+      "longDescriptionEn": "Neorealism is born in defeated Italy in 1945, when studios lack means and the street already offers every set. Roberto Rossellini films occupied then liberated Rome, Vittorio De Sica follows an unemployed man and a child searching for a bicycle, Luchino Visconti goes down to Sicily. You see non-professionals, daylight, endings without consolation. The movement lasts little, from Roma città aperta to Umberto D., but it shifts world cinema: poverty ceases to be a picturesque motif. Fellini, still close to those years, will inherit the tenderness of the roads before inventing something else. Neorealism is not a single style: it is a historical urgency."
     },
     {
       "code": "COLLECTION_002",
@@ -62644,7 +62981,10 @@
       "eraCodes": [
         "CINEMA_MODERNE"
       ],
-      "track": "CLUB"
+      "track": "CLUB",
+      "nameEn": "French New Wave",
+      "descriptionEn": "A freedom of shooting and of story that transforms French cinema.",
+      "longDescriptionEn": "At the end of the 1950s, Cahiers du cinéma critics step behind the camera. François Truffaut, Jean-Luc Godard, Claude Chabrol, Éric Rohmer and Jacques Rivette refuse « quality cinema » in favour of light shooting, real streets and jagged editing. The Left Bank, with Alain Resnais, Agnès Varda and Chris Marker, adds memory, documentary and literary modernity. From 1958 to 1965, Paris becomes an open-air studio. The New Wave is not a single manifesto: it is a generation that makes the filmmaker visible as an author. Its legacy still runs, from the handheld camera to stories full of holes."
     },
     {
       "code": "COLLECTION_003",
@@ -62741,7 +63081,10 @@
       "countryCodes": [
         "JAPAN"
       ],
-      "track": "CLUB"
+      "track": "CLUB",
+      "nameEn": "Japanese golden age",
+      "descriptionEn": "A few doors into the golden age of Japanese cinema.",
+      "longDescriptionEn": "From the 1930s to the 1960s, the great Japanese studios produce a cinema of rare density. Yasujirō Ozu watches families and silences from a tatami. Kenji Mizoguchi follows women's destinies across eras and luxury prostitutes. Akira Kurosawa opens jidai-geki to the world, from Rashōmon to Seven Samurai. Masaki Kobayashi and Mikio Naruse add moral anger and urban melodrama. This golden age is not a single school: it is an industry able to carry authors to the end of their form. You learn to read a shot as a rite."
     },
     {
       "code": "COLLECTION_004",
@@ -62795,7 +63138,10 @@
       "countryCodes": [
         "JAPAN"
       ],
-      "track": "DARKROOM"
+      "track": "DARKROOM",
+      "nameEn": "Akira Kurosawa",
+      "descriptionEn": "From the court of Rashōmon to the colours of Ran, a world-work.",
+      "longDescriptionEn": "Akira Kurosawa crosses almost all of postwar Japanese cinema. Rashōmon imposes in 1950 the relativity of stories. Seven Samurai invents a popular epic Hollywood has never stopped rereading. Ikiru, Yojimbo, High and Low show a moralist of the wide shot and of rain. Later, Kagemusha and Ran unfold colour as a Shakespearean tragedy. Kurosawa is not only « exportable » Japan: he is a craftsman of movement, of the group and of doubt. This collection follows the arc of an author who never stopped filming justice."
     },
     {
       "code": "COLLECTION_005",
@@ -62876,7 +63222,10 @@
       "eraCodes": [
         "CINEMA_CLASSIQUE"
       ],
-      "track": "CLUB"
+      "track": "CLUB",
+      "nameEn": "Hollywood golden age",
+      "descriptionEn": "The studio system, its genres and its invisible continuity.",
+      "longDescriptionEn": "From 1930 to 1960, Hollywood makes a language the whole world learns. John Ford sculpts the western, Howard Hawks moves from crime to comedy, Billy Wilder sharpens dialogue, Welles opens an auteur breach inside the system itself. The Hays Code reins in, stars carry, invisible continuity stitches the shots. Gone with the Wind and The Wizard of Oz saturate the myth; Citizen Kane and Casablanca crack it. This period is not an innocent golden age: it is an industry, a censorship and a permanent invention."
     },
     {
       "code": "COLLECTION_006",
@@ -62941,7 +63290,10 @@
       "countryCodes": [
         "GERMANY"
       ],
-      "track": "CLUB"
+      "track": "CLUB",
+      "nameEn": "German Expressionism",
+      "descriptionEn": "Shadows, stretched sets and the visual psyche of Weimar.",
+      "longDescriptionEn": "After 1919, Weimar cinema invents an inner city. The Cabinet of Dr. Caligari paints its streets askew, Nosferatu makes the vampire a silhouette, Metropolis raises an architecture of classes. Fritz Lang and F. W. Murnau do not merely illustrate anguish: they build it in light. Expressionism overflows the fantastic, as far as M. When its craftsmen leave for Hollywood, they carry the shadows that will feed film noir. This collection links the German studio to a lasting idea: the set thinks."
     },
     {
       "code": "COLLECTION_007",
@@ -63009,7 +63361,10 @@
         "UKRAINE",
         "CUBA"
       ],
-      "track": "OFFSCREEN"
+      "track": "OFFSCREEN",
+      "nameEn": "Soviet Montage",
+      "descriptionEn": "The collision of shots as political thought.",
+      "longDescriptionEn": "In the 1920s, the USSR makes editing a theory as much as a technique. Sergei Eisenstein collides shots to produce an idea, Dziga Vertov films the camera as a new eye, Dovzhenko seeks an agrarian poetry. Battleship Potemkin, October and Man with a Movie Camera do not only tell the revolution: they try to make it visible. Later, Alexander Nevsky and Ivan the Terrible show how that energy bends to power. Soviet montage remains a lesson: a film thinks by collisions."
     },
     {
       "code": "COLLECTION_008",
@@ -63100,7 +63455,10 @@
         "FILM_NOIR_STYLE"
       ],
       "track": "CLUB",
-      "countryCodes": []
+      "countryCodes": [],
+      "nameEn": "Film noir",
+      "descriptionEn": "Urban fatality, contrasted lighting and troubled morality.",
+      "longDescriptionEn": "Film noir is not a genre declared by Hollywood: it is a climate recognised after the fact. Double Indemnity, The Maltese Falcon, Sunset Boulevard: men talk too well and die too fast. The war, émigré expressionism and the hard-boiled novel meet there. Jules Dassin takes the formula to Paris with Rififi, Carol Reed plants it in Vienna in The Third Man. Later, Chinatown rereads the myth in Los Angeles. This collection follows a light: the one that cuts a face in two."
     },
     {
       "code": "COLLECTION_009",
@@ -63196,7 +63554,10 @@
         "SPAGHETTI_WESTERN"
       ],
       "track": "CLUB",
-      "countryCodes": []
+      "countryCodes": [],
+      "nameEn": "Westerns",
+      "descriptionEn": "The American frontier, then its Italian reinvention.",
+      "longDescriptionEn": "The western is Hollywood's founding myth: the stagecoach, the sheriff, the desert. John Ford makes an elegy of it, from Stagecoach to The Searchers. Hawks, Zinnemann and others test courage and community there. In the 1960s, Sergio Leone and Sergio Corbucci move the genre to Spain and Italy: close-up, violence, irony. The spaghetti western does not imitate Ford: it takes him apart. To go from Stagecoach to Django is to see a myth change continent and morality."
     },
     {
       "code": "COLLECTION_010",
@@ -63253,7 +63614,10 @@
       "countryCodes": [
         "GERMANY"
       ],
-      "track": "OFFSCREEN"
+      "track": "OFFSCREEN",
+      "nameEn": "New German Cinema",
+      "descriptionEn": "The West German revival, from Oberhausen to Fassbinder.",
+      "longDescriptionEn": "After the Oberhausen manifesto in 1962, a generation refuses daddy's cinema. Rainer Werner Fassbinder films the FRG as a political melodrama, Werner Herzog sends his heroes into the jungle and up a mountain, Wim Wenders makes of the road and of angels a language. Volker Schlöndorff adapts Grass. From 1966 to 1982, West Germany finally tells itself its violence, its immigrants, its economic miracle. It is not a single school: it is a formal anger. You learn that a country can film itself against its advertisements."
     },
     {
       "code": "COLLECTION_011",
@@ -63306,7 +63670,10 @@
       "countryCodes": [
         "IRAN"
       ],
-      "track": "CINEMATHEQUE"
+      "track": "CINEMATHEQUE",
+      "nameEn": "Iranian New Wave",
+      "descriptionEn": "Childhood, off-screen space and everyday life as politics.",
+      "longDescriptionEn": "Modern Iranian cinema invents itself between poetry and constraint. Forough Farrokhzad films a leper colony like a verse. Abbas Kiarostami makes of childhood, the village and off-screen space an art of the question. Close-Up blurs documentary and fiction, Taste of Cherry walks along a hill. Later, Asghar Farhadi folds that ethics of looking into the bourgeois closed room. Censorship is not a backdrop: it forces another way of filming. This wave does not imitate 1960s France: it invents a radical modesty."
     },
     {
       "code": "COLLECTION_012",
@@ -63424,7 +63791,10 @@
         "CINEMA_MUET"
       ],
       "track": "DARKROOM",
-      "countryCodes": []
+      "countryCodes": [],
+      "nameEn": "Silent cinema",
+      "descriptionEn": "The age of images before synchronised speech.",
+      "longDescriptionEn": "Cinema invents almost all its languages before synchronised speech covers them. Griffith monumentalises narrative, Feuillade strings Fantômas and Les Vampires, Keaton, Chaplin and Lloyd make of the body a grammar. German expressionism, Flaherty, Murnau, Soviet montage and Dreyer prove that silence is not a lack. The Passion of Joan of Arc sticks to faces, Sunrise invents a lyrical camera, Napoléon overflows the screen. To return to silent film is to relearn seeing before listening."
     },
     {
       "code": "COLLECTION_013",
@@ -63498,7 +63868,10 @@
         "AFRICA"
       ],
       "track": "CINEMATHEQUE",
-      "countryCodes": []
+      "countryCodes": [],
+      "nameEn": "African cinemas",
+      "descriptionEn": "Political fables, from Sembène to Cissé and Sissako.",
+      "longDescriptionEn": "Ousmane Sembène, often called the father of African cinemas, films Dakar, the mandate and colonial domesticity. Djibril Diop Mambéty with Touki Bouki invents a Wolof modernity, between cows and ocean liner. In Mali, Souleymane Cissé opens Yeelen as an initiatory tale. Youssef Chahine and Shadi Abdel Salam inscribe Egypt in a history older than Nasser. Later, Abderrahmane Sissako watches Timbuktu under occupation. This collection does not unify a continent: it refuses that it be reduced to an off-screen."
     },
     {
       "code": "COLLECTION_014",
@@ -63582,7 +63955,10 @@
         "NORTH_AMERICA"
       ],
       "track": "CINEMATHEQUE",
-      "countryCodes": []
+      "countryCodes": [],
+      "nameEn": "Latin America",
+      "descriptionEn": "From Cinema Novo to contemporary stories of Mexico and Argentina.",
+      "longDescriptionEn": "Glauber Rocha proclaims an aesthetic of hunger and arms the sertão. Luis Buñuel, exiled in Mexico, films Los Olvidados without miserabilism. Later, City of God, Roma, Amores perros and Pan's Labyrinth show a Latin American cinema become visible in Northern festivals, without ceasing to speak of classes, maids, favelas and dictatorships. In Argentina, The Official Story and Lucrecia Martel work memory and bourgeois unspoken. This map is not exhaustive: it opens roads."
     },
     {
       "code": "COLLECTION_015",
@@ -63714,7 +64090,10 @@
       "eraCodes": [
         "CINEMA_MODERNE"
       ],
-      "track": "GATEWAY"
+      "track": "GATEWAY",
+      "nameEn": "New Hollywood",
+      "descriptionEn": "The years 1967–1979, when studios let authors break the toy.",
+      "longDescriptionEn": "After Bonnie and Clyde and The Graduate, Hollywood tips. Easy Rider, Taxi Driver, The Godfather, Apocalypse Now, The Texas Chain Saw Massacre: a generation films war, paranoia, sex and horror without the varnish of the Hays Code. Coppola, Scorsese, Hopper, Friedkin, Hooper, still-young Spielberg: the studio finances films that devour it. This collection is not all American cinema of the 1970s: it is the door into that shift."
     },
     {
       "code": "COLLECTION_016",
@@ -63768,7 +64147,10 @@
       "countryCodes": [
         "JAPAN"
       ],
-      "track": "CINEMATHEQUE"
+      "track": "CINEMATHEQUE",
+      "nameEn": "Japan — the 1970s",
+      "descriptionEn": "After the studio golden age: yakuza, ghosts, experimental and pop.",
+      "longDescriptionEn": "When the great Japanese studios falter, another decade opens. Shindō brings the dead back as cats, Saitō films native Tsugaru, Terayama turns childhood into theatre, Fukasaku buries the yakuza code, Ōshima pushes desire to scandal, Obayashi lets a house devour schoolgirls. Around them, Kurosawa in colour, Yoshida, Matsumoto, Imamura. It is not a school: it is 1970s Japan, off the classical tatami."
     },
     {
       "code": "COLLECTION_017",
@@ -63863,7 +64245,10 @@
         "USA",
         "UK"
       ],
-      "track": "DARKROOM"
+      "track": "DARKROOM",
+      "nameEn": "Hitchcock — suspense as form",
+      "descriptionEn": "Twenty films where suspense becomes a form, from London to Hollywood.",
+      "longDescriptionEn": "Alfred Hitchcock moves from the British thriller of the 1930s to the American studio, then returns to London for Frenzy. The 39 Steps, Rebecca, Rear Window, Vertigo, Psycho, The Birds: the gaze, the blonde, the staircase, the train. This collection gathers twenty major films, taken out of other paths so they can be seen as a body of work, not as one more Hollywood genre."
     },
     {
       "code": "COLLECTION_018",
@@ -63940,7 +64325,10 @@
       "countryCodes": [
         "UK"
       ],
-      "track": "CLUB"
+      "track": "CLUB",
+      "nameEn": "British Free Cinema",
+      "descriptionEn": "British youth leaves the studios to film life as it is.",
+      "longDescriptionEn": "At the end of the 1950s, young British filmmakers turn their gaze toward workers, small towns and a youth that no longer recognises itself in traditional cinema. Lindsay Anderson, Tony Richardson and Karel Reisz film streets, factories, flats and daily frustrations. Influenced by theatre and documentary, Free Cinema seeks a freedom of tone and a new closeness to its characters. O Dreamland, We Are the Lambeth Boys, Saturday Night and Sunday Morning or A Taste of Honey announce a wider transformation of British cinema and prepare, with their own means, the emergence of a lasting social cinema."
     },
     {
       "code": "COLLECTION_019",
@@ -64097,7 +64485,10 @@
       "countryCodes": [
         "HONG_KONG"
       ],
-      "track": "DARKROOM"
+      "track": "DARKROOM",
+      "nameEn": "Hong Kong golden age",
+      "descriptionEn": "When Hong Kong turns popular cinema into a laboratory of forms.",
+      "longDescriptionEn": "At the end of the 1970s, a new generation of filmmakers renews Hong Kong cinema, coming from television, independent film or training abroad. Ann Hui, Tsui Hark, Patrick Tam or Allen Fong film the contemporary city, social violence and political upheavals with a new freedom, while the popular industry in parallel explodes martial arts, comedy, crime and the fantastic. In the 1980s those two dynamics meet: John Woo, Jackie Chan, Tsui Hark or Ringo Lam reinvent genre codes with ever more spectacular mise en scène, while a second wave led by Wong Kar-wai, Stanley Kwan or Fruit Chan pushes Hong Kong cinema toward memory, desire and identity. From New Wave to grand spectacle, this collection tells how a small industry becomes one of the world's most inventive and influential cinemas."
     },
     {
       "code": "COLLECTION_020",
@@ -64188,7 +64579,10 @@
       "countryCodes": [
         "USA"
       ],
-      "track": "DARKROOM"
+      "track": "DARKROOM",
+      "nameEn": "American cinema after New Hollywood",
+      "descriptionEn": "When American cinema reinvents independence after the 1970s revolution.",
+      "longDescriptionEn": "In the early 1980s studios gradually take back the reins, but Scorsese's generation keeps looking for new forms. In its wake, Jarmusch, the Coen brothers, Spike Lee, Lynch, Tarantino or Paul Thomas Anderson bring out a new generation of authors, between independent cinema and Hollywood. From the 80s to the 2000s, genres shift, borders between independent cinema and the major studio become porous and new voices impose themselves. From Raging Bull to There Will Be Blood, this collection tells what American cinema becomes after the end of the great age of the 70s."
     },
     {
       "code": "COLLECTION_021",
@@ -64267,7 +64661,10 @@
         "SURREALISME"
       ],
       "countryCodes": [],
-      "track": "DARKROOM"
+      "track": "DARKROOM",
+      "nameEn": "Surreal and oneiric cinema",
+      "descriptionEn": "When cinema stops telling the world in order to invent its own rules.",
+      "longDescriptionEn": "From the surrealism of Buñuel and Cocteau to the visions of Jodorowsky, from the deformation of story in Resnais to the labyrinths of David Lynch, some filmmakers use fiction to make our bearings waver. Time breaks, identities split, spaces become mental and images sometimes cease to obey a realist logic. This collection crosses a cinema that remains deeply narrative or poetic while pushing back the conventions of story, staging and editing. Here experiment is not only abandoning the rules: it is inventing new ones."
     },
     {
       "code": "COLLECTION_022",
@@ -64362,7 +64759,10 @@
       "countryCodes": [
         "ITALY"
       ],
-      "track": "CINEMATHEQUE"
+      "track": "CINEMATHEQUE",
+      "nameEn": "Italian post-neorealism",
+      "descriptionEn": "Italian cinema frees itself from the real and invents new forms.",
+      "longDescriptionEn": "After neorealism, Italian cinema does not go back to the studio: it transforms the world. Fellini makes of memory and spectacle a baroque material, Antonioni films alienation and modern landscapes, Visconti moves from the people to the aristocracy and the historical fresco. Pasolini mixes cinema, politics, religion and mythology while Bertolucci, Rosi or Bellocchio prolong that ferment in the 1960s and 1970s. From La dolce vita to Salò, from L'Avventura to The Leopard, this collection follows an Italian cinema that no longer only wants to show reality: it wants to understand what it has become."
     },
     {
       "code": "COLLECTION_023",
@@ -64443,7 +64843,10 @@
       "countryCodes": [
         "CZECH"
       ],
-      "track": "CINEMATHEQUE"
+      "track": "CINEMATHEQUE",
+      "nameEn": "Czechoslovak New Wave",
+      "descriptionEn": "A generation of filmmakers blows apart the rules of state cinema.",
+      "longDescriptionEn": "In the early 1960s a new Czechoslovak generation transforms comedy, social narrative and political cinema. Miloš Forman watches with irony a youth that is suffocating, Věra Chytilová destroys narrative conventions, Jiří Menzel mixes humour and melancholy, while Jan Němec and Juraj Herz push cinema toward the absurd, anguish and allegory. Between creative freedom and political control, this generation gives birth to one of the most inventive cinemas of the Eastern bloc. Loves of a Blonde, Daisies or Closely Watched Trains do not always look like a single school: they share above all the feeling that a new way of looking at the world must be found."
     },
     {
       "code": "COLLECTION_024",
@@ -64524,7 +64927,10 @@
       "countryCodes": [
         "CHINA"
       ],
-      "track": "CINEMATHEQUE"
+      "track": "CINEMATHEQUE",
+      "nameEn": "Chinese cinema — Fifth Generation",
+      "descriptionEn": "After the Cultural Revolution, a generation reinvents the Chinese gaze.",
+      "longDescriptionEn": "Graduates of the Beijing Film Academy in the early 1980s, the Fifth Generation filmmakers break with Maoist cinema forms to look at Chinese history otherwise. Chen Kaige, Zhang Yimou and Tian Zhuangzhuang transform landscapes, colours, traditions and individual destinies into cinematic material, while other filmmakers explore comedy, political memory or the margins of society. From Yellow Earth to The Blue Kite, their films confront the individual with a history made of upheavals, violences and traditions. This generation makes Chinese cinema known on the international scene while pushing back what it is possible to show in China."
     },
     {
       "code": "COLLECTION_025",
@@ -64619,7 +65025,10 @@
         "DOCUMENTAIRE"
       ],
       "countryCodes": [],
-      "track": "CINEMATHEQUE"
+      "track": "CINEMATHEQUE",
+      "nameEn": "Documentary cinema",
+      "descriptionEn": "When cinema stops playing reality in order to try to look at it.",
+      "longDescriptionEn": "From Robert Flaherty's ethnographic gaze to cinéma vérité, from Dziga Vertov's political montage to Frederick Wiseman's patient portraits, documentary is never a simple copy of the real. To film is to choose, frame, edit, question and sometimes provoke. This collection crosses the great documentary forms: observation, propaganda, inquiry, essay film and direct cinema. It shows how filmmakers used a camera turned toward the world to invent forms as diverse as Nanook of the North, Man with a Movie Camera, Chronicle of a Summer or Titicut Follies. Documentary is not the absence of mise en scène: it is another way of thinking it."
     },
     {
       "code": "COLLECTION_026",
@@ -64674,7 +65083,10 @@
         "CINEMA_EXPERIMENTAL"
       ],
       "countryCodes": [],
-      "track": "OFFSCREEN"
+      "track": "OFFSCREEN",
+      "nameEn": "Experimental and formal cinema",
+      "descriptionEn": "When cinema no longer seeks to tell, but to explore what an image can be.",
+      "longDescriptionEn": "Here the film becomes an experience of perception rather than a story. Film stock is scratched, painted or exposed, the camera becomes a device, time stretches to exhaustion and editing can almost disappear. From Man Ray to Maya Deren, from Brakhage to Warhol and Michael Snow, these filmmakers move cinema toward abstraction, matter, duration and perception. It is no longer a matter of diverting the rules of story: it is a matter of discovering what remains of cinema when one begins to abandon them."
     },
     {
       "code": "COLLECTION_027",
@@ -64758,7 +65170,10 @@
         "USA",
         "UK"
       ],
-      "track": "GATEWAY"
+      "track": "GATEWAY",
+      "nameEn": "Early cinema",
+      "descriptionEn": "The years 1892–1906, when ingenious tinkerers invent the first tricks, movements and dramas of an art that still has no rules.",
+      "longDescriptionEn": "Before being an industry or a classical art, cinema was a fairground attraction, a magic trick and an open-air laboratory. From The Sprinkler Sprinkled to A Trip to the Moon, by way of the first tracking shots on the canals of Venice and the invention of the close-up by the Brighton School, this period lays the bases of everything that follows. Alice Guy, the Lumière brothers, Georges Méliès or Edwin S. Porter: these pioneers had no model, they invented everything as they walked. This collection does not gather spectacular features: it is the sketchbook of the first times of the seventh art."
     }
   ],
   "rankings": [
@@ -64767,70 +65182,100 @@
       "displayOrder": 1,
       "name": "Novice",
       "description": "Tu commences à tracer ta carte du cinéma.",
-      "longDescription": "Tu entres dans le catalogue comme on pousse une première porte de salle. Quelques films suffisent à poser un point sur la carte, sans encore dessiner un territoire. Ce rang enregistre un contact inaugural avec l'histoire du cinéma, pas une culture déjà formée. Chaque séance suivante élargit simplement l'espace que tu commences à habiter."
+      "longDescription": "Tu entres dans le catalogue comme on pousse une première porte de salle. Quelques films suffisent à poser un point sur la carte, sans encore dessiner un territoire. Ce rang enregistre un contact inaugural avec l'histoire du cinéma, pas une culture déjà formée. Chaque séance suivante élargit simplement l'espace que tu commences à habiter.",
+      "nameEn": "Novice",
+      "descriptionEn": "You are starting to draw your map of cinema.",
+      "longDescriptionEn": "You enter the catalogue as one pushes a first theatre door. A few films are enough to put a point on the map, without yet drawing a territory. This rank records a first contact with film history, not a culture already formed. Each later screening simply widens the space you are beginning to inhabit."
     },
     {
       "code": "RANK_02",
       "displayOrder": 2,
       "name": "Amateur",
       "description": "Ta curiosité prend forme.",
-      "longDescription": "Ta curiosité n'est plus un accident : tu reviens vers les films par choix. Les titres s'accumulent et les premiers échos apparaissent entre les époques. Tu n'as pas encore de méthode, mais tu as un goût qui commence à se formuler. Le cinéma cesse d'être un divertissement isolé pour devenir une habitude de regard."
+      "longDescription": "Ta curiosité n'est plus un accident : tu reviens vers les films par choix. Les titres s'accumulent et les premiers échos apparaissent entre les époques. Tu n'as pas encore de méthode, mais tu as un goût qui commence à se formuler. Le cinéma cesse d'être un divertissement isolé pour devenir une habitude de regard.",
+      "nameEn": "Amateur",
+      "descriptionEn": "Your curiosity takes shape.",
+      "longDescriptionEn": "Your curiosity is no longer an accident: you return to films by choice. Titles accumulate and the first echoes appear between eras. You do not yet have a method, but you have a taste that is beginning to take form. Cinema ceases to be isolated entertainment and becomes a habit of looking."
     },
     {
       "code": "RANK_03",
       "displayOrder": 3,
       "name": "Initié",
       "description": "Tu reconnais les premiers territoires.",
-      "longDescription": "Tu reconnais désormais quelques territoires : un pays, une décennie, un nom d'auteur. Les films cessent d'arriver un par un ; ils s'inscrivent dans des familles. Tu sais situer une œuvre sans encore pouvoir en raconter toute la généalogie. L'initiation, ici, c'est moins le savoir encyclopédique que le passage d'un regard passif à un regard orienté."
+      "longDescription": "Tu reconnais désormais quelques territoires : un pays, une décennie, un nom d'auteur. Les films cessent d'arriver un par un ; ils s'inscrivent dans des familles. Tu sais situer une œuvre sans encore pouvoir en raconter toute la généalogie. L'initiation, ici, c'est moins le savoir encyclopédique que le passage d'un regard passif à un regard orienté.",
+      "nameEn": "Initiate",
+      "descriptionEn": "You recognise the first territories.",
+      "longDescriptionEn": "You now recognise a few territories: a country, a decade, an author's name. Films stop arriving one by one; they take their place in families. You can situate a work without yet being able to tell its whole genealogy. Initiation here is less encyclopaedic knowledge than the passage from a passive gaze to an oriented one."
     },
     {
       "code": "RANK_04",
       "displayOrder": 4,
       "name": "Passionné",
       "description": "Le cinéma accompagne régulièrement ton regard.",
-      "longDescription": "Le cinéma accompagne régulièrement tes semaines, plus comme une pratique que comme une liste. Tu acceptes des films difficiles, longs, anciens, parce que le plaisir s'est déplacé vers la découverte. Les conversations que tu pourrais avoir sur un plan, un acteur ou une époque s'étoffent. Ce rang marque l'instant où le catalogue n'est plus un défi : il devient un appétit."
+      "longDescription": "Le cinéma accompagne régulièrement tes semaines, plus comme une pratique que comme une liste. Tu acceptes des films difficiles, longs, anciens, parce que le plaisir s'est déplacé vers la découverte. Les conversations que tu pourrais avoir sur un plan, un acteur ou une époque s'étoffent. Ce rang marque l'instant où le catalogue n'est plus un défi : il devient un appétit.",
+      "nameEn": "Enthusiast",
+      "descriptionEn": "Cinema regularly accompanies your gaze.",
+      "longDescriptionEn": "Cinema regularly accompanies your weeks, more as a practice than as a list. You accept difficult, long, old films because pleasure has shifted toward discovery. The conversations you could have about a shot, an actor or an era grow richer. This rank marks the moment when the catalogue is no longer a challenge: it becomes an appetite."
     },
     {
       "code": "RANK_05",
       "displayOrder": 5,
       "name": "Explorateur",
       "description": "Tu parcours des cinématographies variées.",
-      "longDescription": "Tu quittes les sentiers les plus balisés pour parcourir des cinématographies éloignées. L'Asie, l'Afrique, l'Amérique latine ou le muet ne sont plus des exceptions, mais des directions. Explorer, c'est accepter de se perdre : un film peut déplacer tout ce que tu croyais établi. Ta carte s'agrandit moins par accumulation que par écarts volontairement cherchés."
+      "longDescription": "Tu quittes les sentiers les plus balisés pour parcourir des cinématographies éloignées. L'Asie, l'Afrique, l'Amérique latine ou le muet ne sont plus des exceptions, mais des directions. Explorer, c'est accepter de se perdre : un film peut déplacer tout ce que tu croyais établi. Ta carte s'agrandit moins par accumulation que par écarts volontairement cherchés.",
+      "nameEn": "Explorer",
+      "descriptionEn": "You travel through varied cinematographies.",
+      "longDescriptionEn": "You leave the most marked paths to travel through distant cinematographies. Asia, Africa, Latin America or silent film are no longer exceptions, but directions. To explore is to accept getting lost: a film can displace everything you thought settled. Your map grows less by accumulation than by gaps you seek on purpose."
     },
     {
       "code": "RANK_06",
       "displayOrder": 6,
       "name": "Connaisseur",
       "description": "Tu relies les œuvres, les auteurs et les époques.",
-      "longDescription": "Tu relies désormais les œuvres, les auteurs et les époques avec une mémoire active. Un plan de Mizoguchi appelle Renoir ; un polar italien réveille Hollywood ; un muet éclaire un film contemporain. Le connaisseur ne cite pas pour briller : il compare pour comprendre. Ton parcours commence à avoir une cohérence, même s'il reste inachevé par nature."
+      "longDescription": "Tu relies désormais les œuvres, les auteurs et les époques avec une mémoire active. Un plan de Mizoguchi appelle Renoir ; un polar italien réveille Hollywood ; un muet éclaire un film contemporain. Le connaisseur ne cite pas pour briller : il compare pour comprendre. Ton parcours commence à avoir une cohérence, même s'il reste inachevé par nature.",
+      "nameEn": "Connoisseur",
+      "descriptionEn": "You connect works, authors and eras.",
+      "longDescriptionEn": "You now connect works, authors and eras with an active memory. A Mizoguchi shot calls Renoir; an Italian crime film wakes Hollywood; a silent film lights a contemporary one. The connoisseur does not quote to shine: they compare in order to understand. Your path begins to have a coherence, even if it remains unfinished by nature."
     },
     {
       "code": "RANK_07",
       "displayOrder": 7,
       "name": "Érudit",
       "description": "Ta culture est large et approfondie.",
-      "longDescription": "Ta culture s'est élargie sans se diluer : tu tiens ensemble le canon et ses marges. Les mouvements, les écoles et les chronologies ne sont plus des étiquettes, mais des outils. L'érudition, dans Urbinema, se mesure à la diversité réelle de ce que tu as vu, pas à la pose du specialist. Tu peux traverser un siècle de cinéma et encore pointer ce qui te manque."
+      "longDescription": "Ta culture s'est élargie sans se diluer : tu tiens ensemble le canon et ses marges. Les mouvements, les écoles et les chronologies ne sont plus des étiquettes, mais des outils. L'érudition, dans Urbinema, se mesure à la diversité réelle de ce que tu as vu, pas à la pose du specialist. Tu peux traverser un siècle de cinéma et encore pointer ce qui te manque.",
+      "nameEn": "Scholar",
+      "descriptionEn": "Your culture is broad and deep.",
+      "longDescriptionEn": "Your culture has widened without thinning: you hold together the canon and its margins. Movements, schools and chronologies are no longer labels, but tools. Erudition, in Urbinema, is measured by the real diversity of what you have seen, not by the specialist's pose. You can cross a century of cinema and still point to what you lack."
     },
     {
       "code": "RANK_08",
       "displayOrder": 8,
       "name": "Spécialiste",
       "description": "Tu maîtrises de vastes pans de l'histoire du cinéma.",
-      "longDescription": "Tu maîtrises de vastes pans de l'histoire du cinéma, assez pour y discerner des lignes de force. Certains territoires te sont devenus familiers au point que tu y repères les exceptions. Le spécialiste n'est pas celui qui s'enferme : c'est celui qui peut approfondir sans perdre le panorama. À ce stade, chaque nouveau film se lit contre une bibliothèque intérieure déjà dense."
+      "longDescription": "Tu maîtrises de vastes pans de l'histoire du cinéma, assez pour y discerner des lignes de force. Certains territoires te sont devenus familiers au point que tu y repères les exceptions. Le spécialiste n'est pas celui qui s'enferme : c'est celui qui peut approfondir sans perdre le panorama. À ce stade, chaque nouveau film se lit contre une bibliothèque intérieure déjà dense.",
+      "nameEn": "Specialist",
+      "descriptionEn": "You master vast stretches of film history.",
+      "longDescriptionEn": "You master vast stretches of film history, enough to discern lines of force in them. Some territories have become familiar enough that you can spot the exceptions. The specialist is not the one who shuts themselves in: it is the one who can go deep without losing the panorama. At this stage, each new film is read against an already dense inner library."
     },
     {
       "code": "RANK_09",
       "displayOrder": 9,
       "name": "Expert",
       "description": "Ton parcours couvre presque tout le territoire proposé.",
-      "longDescription": "Ton parcours couvre presque tout le territoire proposé, des premiers muets aux formes contemporaines. Tu as croisé assez de pays, de formats et de courants pour que les hasards du catalogue deviennent rares. L'expertise se voit moins à la vitesse qu'à la justesse : tu sais ce que tu as vu et ce que cela ouvre. Il reste des zones d'ombre, mais elles sont choisies, plus subies."
+      "longDescription": "Ton parcours couvre presque tout le territoire proposé, des premiers muets aux formes contemporaines. Tu as croisé assez de pays, de formats et de courants pour que les hasards du catalogue deviennent rares. L'expertise se voit moins à la vitesse qu'à la justesse : tu sais ce que tu as vu et ce que cela ouvre. Il reste des zones d'ombre, mais elles sont choisies, plus subies.",
+      "nameEn": "Expert",
+      "descriptionEn": "Your path covers almost the whole proposed territory.",
+      "longDescriptionEn": "Your path covers almost the whole proposed territory, from the first silents to contemporary forms. You have crossed enough countries, formats and currents for catalogue accidents to become rare. Expertise shows less in speed than in accuracy: you know what you have seen and what it opens. There remain dark zones, but they are chosen more than suffered."
     },
     {
       "code": "RANK_10",
       "displayOrder": 10,
       "name": "Maître",
       "description": "Tu as parcouru presque intégralement le catalogue Urbinema.",
-      "longDescription": "Tu as parcouru presque intégralement le catalogue Urbinema, non comme une collection fermée, mais comme une carte habitée. Le titre de maître n'arrête pas le regard : il constate une traversée longue, diverse et tenace. Les films se répondent désormais d'eux-mêmes, d'un continent à l'autre, d'une décennie à la suivante. Revenir à un titre déjà vu, dès lors, n'est plus une répétition : c'est une relecture."
+      "longDescription": "Tu as parcouru presque intégralement le catalogue Urbinema, non comme une collection fermée, mais comme une carte habitée. Le titre de maître n'arrête pas le regard : il constate une traversée longue, diverse et tenace. Les films se répondent désormais d'eux-mêmes, d'un continent à l'autre, d'une décennie à la suivante. Revenir à un titre déjà vu, dès lors, n'est plus une répétition : c'est une relecture.",
+      "nameEn": "Master",
+      "descriptionEn": "You have travelled almost the whole Urbinema catalogue.",
+      "longDescriptionEn": "You have travelled almost the whole Urbinema catalogue, not as a closed collection, but as an inhabited map. The title of master does not stop the gaze: it records a long, diverse, stubborn crossing. Films now answer one another of themselves, from one continent to another, from one decade to the next. Returning to a title already seen is then no longer a repetition: it is a rereading."
     }
   ],
   "badges": [
@@ -64839,266 +65284,342 @@
       "name": "Premier Rideau",
       "description": "Voir son premier film.",
       "difficulty": 1,
-      "category": "VOLUME"
+      "category": "VOLUME",
+      "nameEn": "First Curtain",
+      "descriptionEn": "Watch your first film."
     },
     {
       "code": "002",
       "name": "Deuxième Séance",
       "description": "Voir 20 films.",
       "difficulty": 1,
-      "category": "VOLUME"
+      "category": "VOLUME",
+      "nameEn": "Second Screening",
+      "descriptionEn": "Watch 20 films."
     },
     {
       "code": "003",
       "name": "Accro au Ciné",
       "description": "Voir 100 films.",
       "difficulty": 2,
-      "category": "VOLUME"
+      "category": "VOLUME",
+      "nameEn": "Cinema Addict",
+      "descriptionEn": "Watch 100 films."
     },
     {
       "code": "004",
       "name": "Collectionneur",
       "description": "Voir 300 films.",
       "difficulty": 3,
-      "category": "VOLUME"
+      "category": "VOLUME",
+      "nameEn": "Collector",
+      "descriptionEn": "Watch 300 films."
     },
     {
       "code": "005",
       "name": "Passeport Cinéma",
       "description": "Explorer 15 pays.",
       "difficulty": 2,
-      "category": "GEOGRAPHY"
+      "category": "GEOGRAPHY",
+      "nameEn": "Cinema Passport",
+      "descriptionEn": "Explore 15 countries."
     },
     {
       "code": "006",
       "name": "Globe-Trotter",
       "description": "Explorer 30 pays.",
       "difficulty": 3,
-      "category": "GEOGRAPHY"
+      "category": "GEOGRAPHY",
+      "nameEn": "Globe-Trotter",
+      "descriptionEn": "Explore 30 countries."
     },
     {
       "code": "007",
       "name": "Cartographe du Cinéma",
       "description": "Explorer 40 pays.",
       "difficulty": 5,
-      "category": "GEOGRAPHY"
+      "category": "GEOGRAPHY",
+      "nameEn": "Cartographer of Cinema",
+      "descriptionEn": "Explore 40 countries."
     },
     {
       "code": "008",
       "name": "Tour d'Europe",
       "description": "Explorer 10 pays européens.",
       "difficulty": 3,
-      "category": "GEOGRAPHY"
+      "category": "GEOGRAPHY",
+      "nameEn": "Grand Tour of Europe",
+      "descriptionEn": "Explore 10 European countries."
     },
     {
       "code": "009",
       "name": "Au-delà des Frontières",
       "description": "Voir cinq films sur cinq continents.",
       "difficulty": 4,
-      "category": "GEOGRAPHY"
+      "category": "GEOGRAPHY",
+      "nameEn": "Beyond Borders",
+      "descriptionEn": "Watch five films on five continents."
     },
     {
       "code": "010",
       "name": "Dolce Vita",
       "description": "Voir 20 films italiens.",
       "difficulty": 3,
-      "category": "COUNTRY"
+      "category": "COUNTRY",
+      "nameEn": "Dolce Vita",
+      "descriptionEn": "Watch 20 Italian films."
     },
     {
       "code": "011",
       "name": "Made in USA",
       "description": "Voir 50 films américains.",
       "difficulty": 3,
-      "category": "COUNTRY"
+      "category": "COUNTRY",
+      "nameEn": "Made in USA",
+      "descriptionEn": "Watch 50 American films."
     },
     {
       "code": "012",
       "name": "Rising Sun",
       "description": "Voir 20 films japonais.",
       "difficulty": 3,
-      "category": "COUNTRY"
+      "category": "COUNTRY",
+      "nameEn": "Rising Sun",
+      "descriptionEn": "Watch 20 Japanese films."
     },
     {
       "code": "013",
       "name": "Lumière sur la France",
       "description": "Voir 20 films français.",
       "difficulty": 3,
-      "category": "COUNTRY"
+      "category": "COUNTRY",
+      "nameEn": "Light on France",
+      "descriptionEn": "Watch 20 French films."
     },
     {
       "code": "014",
       "name": "Made in Asia",
       "description": "Voir 50 films asiatiques.",
       "difficulty": 4,
-      "category": "COUNTRY"
+      "category": "COUNTRY",
+      "nameEn": "Made in Asia",
+      "descriptionEn": "Watch 50 Asian films."
     },
     {
       "code": "015",
       "name": "Au-delà du Canon",
       "description": "Voir 40 films sortis avant 1950.",
       "difficulty": 2,
-      "category": "TIME"
+      "category": "TIME",
+      "nameEn": "Beyond the Canon",
+      "descriptionEn": "Watch 40 films released before 1950."
     },
     {
       "code": "016",
       "name": "Archéologue du Cinéma",
       "description": "Voir 100 films sortis avant 1960.",
       "difficulty": 3,
-      "category": "TIME"
+      "category": "TIME",
+      "nameEn": "Archaeologist of Cinema",
+      "descriptionEn": "Watch 100 films released before 1960."
     },
     {
       "code": "017",
       "name": "Mémoire du Septième Art",
       "description": "Voir 300 films sortis avant 1980.",
       "difficulty": 4,
-      "category": "TIME"
+      "category": "TIME",
+      "nameEn": "Memory of the Seventh Art",
+      "descriptionEn": "Watch 300 films released before 1980."
     },
     {
       "code": "018",
       "name": "Fantômes du Muet",
       "description": "Voir 20 films muets.",
       "difficulty": 3,
-      "category": "TIME"
+      "category": "TIME",
+      "nameEn": "Ghosts of Silence",
+      "descriptionEn": "Watch 20 silent films."
     },
     {
       "code": "019",
       "name": "Retour aux Sources",
       "description": "Explorer 5 décennies.",
       "difficulty": 2,
-      "category": "TIME"
+      "category": "TIME",
+      "nameEn": "Back to the Sources",
+      "descriptionEn": "Explore 5 decades."
     },
     {
       "code": "020",
       "name": "À Travers les Âges",
       "description": "Voir un film de chaque décennie, de 1890 à 2020.",
       "difficulty": 4,
-      "category": "TIME"
+      "category": "TIME",
+      "nameEn": "Across the Ages",
+      "descriptionEn": "Watch one film from each decade, from 1890 to 2020."
     },
     {
       "code": "021",
       "name": "Enfant de la Nouvelle Vague",
       "description": "Voir 15 films de cinéastes associés à la Nouvelle Vague.",
       "difficulty": 4,
-      "category": "CURRENT"
+      "category": "CURRENT",
+      "nameEn": "Child of the New Wave",
+      "descriptionEn": "Watch 15 films by filmmakers associated with the New Wave."
     },
     {
       "code": "022",
       "name": "La Dolce Commedia",
       "description": "Voir 15 films de la comédie italienne.",
       "difficulty": 3,
-      "category": "CURRENT"
+      "category": "CURRENT",
+      "nameEn": "La Dolce Commedia",
+      "descriptionEn": "Watch 15 films of Italian comedy."
     },
     {
       "code": "023",
       "name": "L'Œil soviétique",
       "description": "Voir 10 films du cinéma soviétique.",
       "difficulty": 3,
-      "category": "CURRENT"
+      "category": "CURRENT",
+      "nameEn": "The Soviet Eye",
+      "descriptionEn": "Watch 10 films of Soviet cinema."
     },
     {
       "code": "024",
       "name": "Nuits américaines",
       "description": "Voir 20 films noirs.",
       "difficulty": 3,
-      "category": "GENRE"
+      "category": "GENRE",
+      "nameEn": "American Nights",
+      "descriptionEn": "Watch 20 film noirs."
     },
     {
       "code": "025",
       "name": "Western Spaghetti",
       "description": "Voir 15 westerns italiens.",
       "difficulty": 3,
-      "category": "CURRENT"
+      "category": "CURRENT",
+      "nameEn": "Spaghetti Western",
+      "descriptionEn": "Watch 15 Italian westerns."
     },
     {
       "code": "026",
       "name": "La Forme avant le Fond",
       "description": "Voir 10 films expérimentaux.",
       "difficulty": 4,
-      "category": "FORM"
+      "category": "FORM",
+      "nameEn": "Form Before Content",
+      "descriptionEn": "Watch 10 experimental films."
     },
     {
       "code": "027",
       "name": "Le Temps suspendu",
       "description": "Voir 20 films de plus de trois heures.",
       "difficulty": 4,
-      "category": "FORM"
+      "category": "FORM",
+      "nameEn": "Suspended Time",
+      "descriptionEn": "Watch 20 films longer than three hours."
     },
     {
       "code": "028",
       "name": "La Grande Traversée",
       "description": "Voir 5 films de plus de cinq heures.",
       "difficulty": 5,
-      "category": "FORM"
+      "category": "FORM",
+      "nameEn": "The Great Crossing",
+      "descriptionEn": "Watch 5 films longer than five hours."
     },
     {
       "code": "029",
       "name": "Les Grands Noms",
       "description": "Voir 10 films de 10 réalisateurs.",
       "difficulty": 5,
-      "category": "PANORAMA"
+      "category": "PANORAMA",
+      "nameEn": "The Great Names",
+      "descriptionEn": "Watch 10 films by 10 directors."
     },
     {
       "code": "030",
       "name": "Encyclopédie Vivante",
       "description": "Voir 10 films de 30 courants.",
       "difficulty": 5,
-      "category": "PANORAMA"
+      "category": "PANORAMA",
+      "nameEn": "Living Encyclopaedia",
+      "descriptionEn": "Watch 10 films from 30 currents."
     },
     {
       "code": "031",
       "name": "Mappemonde",
       "description": "Voir au moins un film de chaque pays.",
       "difficulty": 5,
-      "category": "GEOGRAPHY"
+      "category": "GEOGRAPHY",
+      "nameEn": "World Map",
+      "descriptionEn": "Watch at least one film from every country."
     },
     {
       "code": "032",
       "name": "Cabinet des Frayeurs",
       "description": "Voir 50 films d'horreur.",
       "difficulty": 3,
-      "category": "GENRE"
+      "category": "GENRE",
+      "nameEn": "Cabinet of Fears",
+      "descriptionEn": "Watch 50 horror films."
     },
     {
       "code": "033",
       "name": "Argentique",
       "description": "Voir 40 films en noir et blanc non muets.",
       "difficulty": 3,
-      "category": "FORM"
+      "category": "FORM",
+      "nameEn": "Silver Grain",
+      "descriptionEn": "Watch 40 non-silent black-and-white films."
     },
     {
       "code": "034",
       "name": "En une bobine",
       "description": "Voir 30 courts métrages.",
       "difficulty": 4,
-      "category": "FORM"
+      "category": "FORM",
+      "nameEn": "In One Reel",
+      "descriptionEn": "Watch 30 short films."
     },
     {
       "code": "035",
       "name": "Le Réel",
       "description": "Voir 20 documentaires.",
       "difficulty": 3,
-      "category": "GENRE"
+      "category": "GENRE",
+      "nameEn": "The Real",
+      "descriptionEn": "Watch 20 documentaries."
     },
     {
       "code": "036",
       "name": "Lumière d'Afrique",
       "description": "Voir 20 films issus du continent Africain.",
       "difficulty": 4,
-      "category": "COUNTRY"
+      "category": "COUNTRY",
+      "nameEn": "Light of Africa",
+      "descriptionEn": "Watch 20 films from the African continent."
     },
     {
       "code": "037",
       "name": "Notre siècle",
       "description": "Voir 50 films sortis depuis 2000.",
       "difficulty": 2,
-      "category": "TIME"
+      "category": "TIME",
+      "nameEn": "Our Century",
+      "descriptionEn": "Watch 50 films released since 2000."
     },
     {
       "code": "038",
       "name": "Image par image",
       "description": "Voir 20 films d'animation.",
       "difficulty": 4,
-      "category": "GENRE"
+      "category": "GENRE",
+      "nameEn": "Frame by Frame",
+      "descriptionEn": "Watch 20 animated films."
     }
   ],
   "quests": [
@@ -65108,7 +65629,9 @@
       "description": "Voir 1 film muet",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_SILENT",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "Silence is golden",
+      "descriptionEn": "Watch 1 silent film"
     },
     {
       "code": "QUEST_BRONZE_FRANCE",
@@ -65116,7 +65639,9 @@
       "description": "Voir 1 film français",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_COUNTRY_FRANCE",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "A French screening",
+      "descriptionEn": "Watch 1 French film"
     },
     {
       "code": "QUEST_BRONZE_BW",
@@ -65124,7 +65649,9 @@
       "description": "Voir 1 film en noir et blanc",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_BLACK_AND_WHITE",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "Shades of grey",
+      "descriptionEn": "Watch 1 black-and-white film"
     },
     {
       "code": "QUEST_BRONZE_DRAMA",
@@ -65132,7 +65659,9 @@
       "description": "Voir 1 drame",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_GENRE_DRAMA",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "Drama first",
+      "descriptionEn": "Watch 1 drama"
     },
     {
       "code": "QUEST_BRONZE_COMEDY",
@@ -65140,7 +65669,9 @@
       "description": "Voir 1 comédie",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_GENRE_COMEDIE",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "A burst of laughter",
+      "descriptionEn": "Watch 1 comedy"
     },
     {
       "code": "QUEST_BRONZE_WESTERN",
@@ -65148,7 +65679,9 @@
       "description": "Voir 1 western",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_GENRE_WESTERN",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "Dust and horizon",
+      "descriptionEn": "Watch 1 western"
     },
     {
       "code": "QUEST_BRONZE_HORROR",
@@ -65156,7 +65689,9 @@
       "description": "Voir 1 film d'horreur",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_GENRE_HORREUR",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "A short scare",
+      "descriptionEn": "Watch 1 horror film"
     },
     {
       "code": "QUEST_BRONZE_UK",
@@ -65164,7 +65699,9 @@
       "description": "Voir 1 film britannique",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_COUNTRY_UK",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "A British evening",
+      "descriptionEn": "Watch 1 British film"
     },
     {
       "code": "QUEST_BRONZE_GERMANY",
@@ -65172,7 +65709,9 @@
       "description": "Voir 1 film allemand",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_COUNTRY_GERMANY",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "A German screening",
+      "descriptionEn": "Watch 1 German film"
     },
     {
       "code": "QUEST_BRONZE_EXPERIMENTAL",
@@ -65180,7 +65719,9 @@
       "description": "Voir 1 film expérimental",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_EXPERIMENTAL",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "Off the story",
+      "descriptionEn": "Watch 1 experimental film"
     },
     {
       "code": "QUEST_BRONZE_1930S",
@@ -65188,7 +65729,9 @@
       "description": "Voir 1 film sorti dans les années 1930",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_DECADE_1930",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "Back to 1930",
+      "descriptionEn": "Watch 1 film released in the 1930s"
     },
     {
       "code": "QUEST_BRONZE_FROM_1980",
@@ -65196,7 +65739,9 @@
       "description": "Voir 1 film sorti en 1980 ou après",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_FROM_1980",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "After 1980",
+      "descriptionEn": "Watch 1 film released in 1980 or later"
     },
     {
       "code": "QUEST_BRONZE_NEW_WAVE",
@@ -65204,7 +65749,9 @@
       "description": "Voir 1 film de la Nouvelle Vague française",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_CHARACTERISTIC_NOUVELLE_VAGUE_FRANCAISE",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "A breath of Wave",
+      "descriptionEn": "Watch 1 film of the French New Wave"
     },
     {
       "code": "QUEST_BRONZE_NOIR",
@@ -65212,7 +65759,9 @@
       "description": "Voir 1 film noir",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_GENRE_FILM_NOIR",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "A dark alley",
+      "descriptionEn": "Watch 1 film noir"
     },
     {
       "code": "QUEST_BRONZE_ANIMATION",
@@ -65220,7 +65769,9 @@
       "description": "Voir 1 film d'animation",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_GENRE_ANIMATION",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "A drawing that moves",
+      "descriptionEn": "Watch 1 animated film"
     },
     {
       "code": "QUEST_BRONZE_DOCUMENTARY",
@@ -65228,7 +65779,9 @@
       "description": "Voir 1 documentaire",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_GENRE_DOCUMENTAIRE",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "A look at the real",
+      "descriptionEn": "Watch 1 documentary"
     },
     {
       "code": "QUEST_SILVER_ASIA",
@@ -65236,7 +65789,9 @@
       "description": "Voir 3 films asiatiques",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_CONTINENT_ASIA",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Three Asian gazes",
+      "descriptionEn": "Watch 3 Asian films"
     },
     {
       "code": "QUEST_SILVER_ITALY",
@@ -65244,7 +65799,9 @@
       "description": "Voir 3 films italiens",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_COUNTRY_ITALY",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Journey to Italy",
+      "descriptionEn": "Watch 3 Italian films"
     },
     {
       "code": "QUEST_SILVER_JAPAN",
@@ -65252,7 +65809,9 @@
       "description": "Voir 3 films japonais",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_COUNTRY_JAPAN",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Three gazes from Japan",
+      "descriptionEn": "Watch 3 Japanese films"
     },
     {
       "code": "QUEST_SILVER_1960S",
@@ -65260,7 +65819,9 @@
       "description": "Voir 3 films sortis dans les années 1960",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_DECADE_1960",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "The 1960s",
+      "descriptionEn": "Watch 3 films released in the 1960s"
     },
     {
       "code": "QUEST_SILVER_DRAMA_2",
@@ -65268,7 +65829,9 @@
       "description": "Voir 2 drames",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_GENRE_DRAMA",
-      "targetCount": 2
+      "targetCount": 2,
+      "nameEn": "Two dramas",
+      "descriptionEn": "Watch 2 dramas"
     },
     {
       "code": "QUEST_SILVER_COMEDY",
@@ -65276,7 +65839,9 @@
       "description": "Voir 2 comédies",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_GENRE_COMEDIE",
-      "targetCount": 2
+      "targetCount": 2,
+      "nameEn": "Two comedies",
+      "descriptionEn": "Watch 2 comedies"
     },
     {
       "code": "QUEST_SILVER_GERMANY",
@@ -65284,7 +65849,9 @@
       "description": "Voir 3 films allemands",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_COUNTRY_GERMANY",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Three Germanys",
+      "descriptionEn": "Watch 3 German films"
     },
     {
       "code": "QUEST_SILVER_UK",
@@ -65292,7 +65859,9 @@
       "description": "Voir 3 films britanniques",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_COUNTRY_UK",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Three Albions",
+      "descriptionEn": "Watch 3 British films"
     },
     {
       "code": "QUEST_SILVER_1950S",
@@ -65300,7 +65869,9 @@
       "description": "Voir 3 films sortis dans les années 1950",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_DECADE_1950",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "The 1950s",
+      "descriptionEn": "Watch 3 films released in the 1950s"
     },
     {
       "code": "QUEST_SILVER_1970S",
@@ -65308,7 +65879,9 @@
       "description": "Voir 3 films sortis dans les années 1970",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_DECADE_1970",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "The 1970s",
+      "descriptionEn": "Watch 3 films released in the 1970s"
     },
     {
       "code": "QUEST_SILVER_1930S",
@@ -65316,7 +65889,9 @@
       "description": "Voir 3 films sortis dans les années 1930",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_DECADE_1930",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "The 1930s",
+      "descriptionEn": "Watch 3 films released in the 1930s"
     },
     {
       "code": "QUEST_SILVER_NEW_HOLLYWOOD",
@@ -65324,7 +65899,9 @@
       "description": "Voir 3 films du Nouvel Hollywood",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_CHARACTERISTIC_NEW_HOLLYWOOD",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "New Hollywood",
+      "descriptionEn": "Watch 3 New Hollywood films"
     },
     {
       "code": "QUEST_SILVER_NOIR",
@@ -65332,7 +65909,9 @@
       "description": "Voir 3 films noirs",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_GENRE_FILM_NOIR",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Three dark nights",
+      "descriptionEn": "Watch 3 film noirs"
     },
     {
       "code": "QUEST_SILVER_WESTERN",
@@ -65340,7 +65919,9 @@
       "description": "Voir 3 westerns",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_GENRE_WESTERN",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Three frontiers",
+      "descriptionEn": "Watch 3 westerns"
     },
     {
       "code": "QUEST_SILVER_BW",
@@ -65348,7 +65929,9 @@
       "description": "Voir 3 films en noir et blanc",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_BLACK_AND_WHITE",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Three greys",
+      "descriptionEn": "Watch 3 black-and-white films"
     },
     {
       "code": "QUEST_SILVER_SOUTH_AMERICA",
@@ -65356,7 +65939,9 @@
       "description": "Voir 3 films sud-américains",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_CONTINENT_SOUTH_AMERICA",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Three South Americas",
+      "descriptionEn": "Watch 3 South American films"
     },
     {
       "code": "QUEST_SILVER_AUTEUR",
@@ -65364,7 +65949,9 @@
       "description": "Voir 3 films de cinéma d'auteur",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_CHARACTERISTIC_CINEMA_D_AUTEUR",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Three signatures",
+      "descriptionEn": "Watch 3 art-house films"
     },
     {
       "code": "QUEST_GOLD_BEFORE_1950",
@@ -65372,7 +65959,9 @@
       "description": "Voir 5 films sortis avant 1950",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_BEFORE_1950",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Before 1950",
+      "descriptionEn": "Watch 5 films released before 1950"
     },
     {
       "code": "QUEST_GOLD_USA",
@@ -65380,7 +65969,9 @@
       "description": "Voir 5 films américains",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_COUNTRY_USA",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five Americas",
+      "descriptionEn": "Watch 5 American films"
     },
     {
       "code": "QUEST_GOLD_EUROPE",
@@ -65388,7 +65979,9 @@
       "description": "Voir 5 films européens",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_CONTINENT_EUROPE",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Grand tour of Europe",
+      "descriptionEn": "Watch 5 European films"
     },
     {
       "code": "QUEST_GOLD_DIRECTORS",
@@ -65396,7 +65989,9 @@
       "description": "Voir 5 films de 5 réalisateurs différents",
       "difficulty": "GOLD",
       "ruleCode": "DISTINCT_DIRECTORS",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five authors",
+      "descriptionEn": "Watch 5 films by 5 different directors"
     },
     {
       "code": "QUEST_GOLD_FRANCE",
@@ -65404,7 +65999,9 @@
       "description": "Voir 5 films français",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_COUNTRY_FRANCE",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five French screenings",
+      "descriptionEn": "Watch 5 French films"
     },
     {
       "code": "QUEST_GOLD_1960S",
@@ -65412,7 +66009,9 @@
       "description": "Voir 5 films sortis dans les années 1960",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_DECADE_1960",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Full 1960s",
+      "descriptionEn": "Watch 5 films released in the 1960s"
     },
     {
       "code": "QUEST_GOLD_FROM_1980",
@@ -65420,7 +66019,9 @@
       "description": "Voir 5 films sortis en 1980 ou après",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_FROM_1980",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five contemporary gazes",
+      "descriptionEn": "Watch 5 films released in 1980 or later"
     },
     {
       "code": "QUEST_GOLD_COUNTRIES",
@@ -65428,7 +66029,9 @@
       "description": "Voir des films de 5 pays différents",
       "difficulty": "GOLD",
       "ruleCode": "DISTINCT_COUNTRIES",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five flags",
+      "descriptionEn": "Watch films from 5 different countries"
     },
     {
       "code": "QUEST_GOLD_GENRES",
@@ -65436,7 +66039,9 @@
       "description": "Voir des films de 4 genres différents",
       "difficulty": "GOLD",
       "ruleCode": "DISTINCT_GENRES",
-      "targetCount": 4
+      "targetCount": 4,
+      "nameEn": "Four genres",
+      "descriptionEn": "Watch films from 4 different genres"
     },
     {
       "code": "QUEST_GOLD_DECADES",
@@ -65444,7 +66049,9 @@
       "description": "Voir des films de 4 décennies différentes",
       "difficulty": "GOLD",
       "ruleCode": "DISTINCT_DECADES",
-      "targetCount": 4
+      "targetCount": 4,
+      "nameEn": "Four decades",
+      "descriptionEn": "Watch films from 4 different decades"
     },
     {
       "code": "QUEST_GOLD_NOIR",
@@ -65452,7 +66059,9 @@
       "description": "Voir 5 films noirs",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_GENRE_FILM_NOIR",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five dark nights",
+      "descriptionEn": "Watch 5 film noirs"
     },
     {
       "code": "QUEST_GOLD_AUTEUR",
@@ -65460,7 +66069,9 @@
       "description": "Voir 5 films de cinéma d'auteur",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_CHARACTERISTIC_CINEMA_D_AUTEUR",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five signatures",
+      "descriptionEn": "Watch 5 art-house films"
     },
     {
       "code": "QUEST_GOLD_HOLLYWOOD",
@@ -65468,7 +66079,9 @@
       "description": "Voir 5 films d'Hollywood classique",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_CHARACTERISTIC_HOLLYWOOD_CLASSIQUE",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five studios",
+      "descriptionEn": "Watch 5 films of classical Hollywood"
     },
     {
       "code": "QUEST_GOLD_RUNTIME",
@@ -65476,7 +66089,9 @@
       "description": "Voir 5 films de plus de 2 heures",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_RUNTIME_OVER_120",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five long screenings",
+      "descriptionEn": "Watch 5 films longer than 2 hours"
     },
     {
       "code": "QUEST_GOLD_WESTERN",
@@ -65484,7 +66099,9 @@
       "description": "Voir 5 westerns",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_GENRE_WESTERN",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five rides",
+      "descriptionEn": "Watch 5 westerns"
     },
     {
       "code": "QUEST_GOLD_COMEDY",
@@ -65492,7 +66109,9 @@
       "description": "Voir 5 comédies",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_GENRE_COMEDIE",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five bursts",
+      "descriptionEn": "Watch 5 comedies"
     },
     {
       "code": "QUEST_GOLD_NEW_WAVE",
@@ -65500,7 +66119,9 @@
       "description": "Voir 5 films de la Nouvelle Vague française",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_CHARACTERISTIC_NOUVELLE_VAGUE_FRANCAISE",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five Waves",
+      "descriptionEn": "Watch 5 films of the French New Wave"
     },
     {
       "code": "QUEST_BRONZE_GIALLO",
@@ -65508,7 +66129,9 @@
       "description": "Voir 1 Giallo",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_CHARACTERISTIC_GIALLO",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "A red blade",
+      "descriptionEn": "Watch 1 giallo"
     },
     {
       "code": "QUEST_BRONZE_DOGME",
@@ -65516,7 +66139,9 @@
       "description": "Voir 1 film Dogme 95",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_CHARACTERISTIC_DOGME_95",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "The vow of chastity",
+      "descriptionEn": "Watch 1 Dogme 95 film"
     },
     {
       "code": "QUEST_BRONZE_JIDAIGEKI",
@@ -65524,7 +66149,9 @@
       "description": "Voir 1 jidai-geki",
       "difficulty": "BRONZE",
       "ruleCode": "WATCH_CHARACTERISTIC_JIDAIGEKI",
-      "targetCount": 1
+      "targetCount": 1,
+      "nameEn": "Blade and era",
+      "descriptionEn": "Watch 1 jidai-geki"
     },
     {
       "code": "QUEST_SILVER_NEOREALISM",
@@ -65532,7 +66159,9 @@
       "description": "Voir 3 films du néoréalisme italien",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_CHARACTERISTIC_NEOREALISME_ITALIEN",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "The postwar streets",
+      "descriptionEn": "Watch 3 films of Italian neorealism"
     },
     {
       "code": "QUEST_SILVER_EXPRESSIONISM",
@@ -65540,7 +66169,9 @@
       "description": "Voir 3 films de l'expressionnisme allemand",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_CHARACTERISTIC_EXPRESSIONNISME_ALLEMAND",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Tilted shadows",
+      "descriptionEn": "Watch 3 films of German expressionism"
     },
     {
       "code": "QUEST_SILVER_SPAGHETTI",
@@ -65548,7 +66179,9 @@
       "description": "Voir 3 westerns spaghetti",
       "difficulty": "SILVER",
       "ruleCode": "WATCH_CHARACTERISTIC_SPAGHETTI_WESTERN",
-      "targetCount": 3
+      "targetCount": 3,
+      "nameEn": "Three duels in the sun",
+      "descriptionEn": "Watch 3 spaghetti westerns"
     },
     {
       "code": "QUEST_GOLD_SURREALISM",
@@ -65556,7 +66189,9 @@
       "description": "Voir 5 films surréalistes",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_CHARACTERISTIC_SURREALISME",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Logic of the dream",
+      "descriptionEn": "Watch 5 surrealist films"
     },
     {
       "code": "QUEST_GOLD_JAPAN_GOLDEN",
@@ -65564,7 +66199,9 @@
       "description": "Voir 5 films de l'âge d'or du cinéma japonais",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_CHARACTERISTIC_AGE_OR_CINEMA_JAPONAIS",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five golden screens",
+      "descriptionEn": "Watch 5 films of the Japanese golden age"
     },
     {
       "code": "QUEST_GOLD_SOVIET",
@@ -65572,7 +66209,9 @@
       "description": "Voir 5 films du cinéma soviétique",
       "difficulty": "GOLD",
       "ruleCode": "WATCH_CHARACTERISTIC_CINEMA_SOVIETIQUE",
-      "targetCount": 5
+      "targetCount": 5,
+      "nameEn": "Five montages",
+      "descriptionEn": "Watch 5 films of Soviet cinema"
     }
   ],
   "movieAliases": [
@@ -65784,38 +66423,47 @@
           "facts": [
             {
               "title": "La transition parlante",
-              "body": "L'ère du muet prend fin brutalement en **1927** avec la sortie du film *Le Chanteur de jazz*, premier long-métrage doté de dialogues synchronisés."
+              "body": "L'ère du muet prend fin brutalement en **1927** avec la sortie du film *Le Chanteur de jazz*, premier long-métrage doté de dialogues synchronisés.",
+              "titleEn": "The coming of sound",
+              "bodyEn": "The silent era ends abruptly in **1927** with *The Jazz Singer*, the first feature with synchronised dialogue."
             },
             {
               "title": "L'orchestration en direct",
-              "body": "Les séances n'étaient jamais silencieuses ; elles étaient systématiquement accompagnées par un pianiste, un orchestre ou un bonimenteur dans la salle."
+              "body": "Les séances n'étaient jamais silencieuses ; elles étaient systématiquement accompagnées par un pianiste, un orchestre ou un bonimenteur dans la salle.",
+              "titleEn": "Live accompaniment",
+              "bodyEn": "Screenings were never silent; they were always accompanied by a pianist, an orchestra or a lecturer in the theatre."
             }
           ],
           "figures": [
             {
               "displayName": "Louis & Auguste Lumière",
               "role": "Pionniers techniques",
-              "directorCode": "LOUIS_LUMIERE"
+              "directorCode": "LOUIS_LUMIERE",
+              "roleEn": "Technical pioneers"
             },
             {
               "displayName": "Georges Méliès",
               "role": "Pionnier de la fiction et des effets spéciaux",
-              "directorCode": "GEORGES_MELIES"
+              "directorCode": "GEORGES_MELIES",
+              "roleEn": "Pioneer of fiction and special effects"
             },
             {
               "displayName": "D.W. Griffith",
               "role": "Pionnier du montage narratif moderne",
-              "directorCode": "DW_GRIFFITH"
+              "directorCode": "DW_GRIFFITH",
+              "roleEn": "Pioneer of modern narrative editing"
             },
             {
               "displayName": "Charlie Chaplin",
               "role": "Maîtres du burlesque",
-              "directorCode": "CHARLIE_CHAPLIN"
+              "directorCode": "CHARLIE_CHAPLIN",
+              "roleEn": "Masters of slapstick"
             },
             {
               "displayName": "Buster Keaton",
               "role": "Maîtres du burlesque",
-              "directorCode": "BUSTER_KEATON"
+              "directorCode": "BUSTER_KEATON",
+              "roleEn": "Masters of slapstick"
             }
           ],
           "movies": [
@@ -65824,7 +66472,10 @@
             "NAISSANCE_D_UNE_NATION_1915",
             "LE_MECANICIEN_DE_LA_GENERAL_1926"
           ],
-          "transition": "Alors que le cinéma muet installe les bases de la narration, les cinéastes français s'en emparent pour explorer la subjectivité et le rythme visuel."
+          "transition": "Alors que le cinéma muet installe les bases de la narration, les cinéastes français s'en emparent pour explorer la subjectivité et le rythme visuel.",
+          "nameEn": "Silent cinema",
+          "descriptionEn": "Cinema is not born at once as an art, but as a technical feat of recording reality (the Lumière brothers). Very quickly it becomes a fairground spectacle and a craft of illusion (Georges Méliès). In this period without recorded speech, filmmakers around the world invent from scratch the visual grammar we still use: camera movement, scene breakdown, the close-up and narrative editing.",
+          "transitionEn": "While silent cinema lays the foundations of storytelling, French filmmakers take hold of it to explore subjectivity and visual rhythm."
         },
         {
           "code": "PARCOURS_001_01",
@@ -65836,32 +66487,40 @@
           "facts": [
             {
               "title": "La photogénie",
-              "body": "C'est le concept central théorisé par Louis Delluc. Il désigne la capacité du cinéma à transformer le réel par l'enregistrement de la caméra, révélant une beauté ou un sens inédit que l'œil humain ne peut pas capter seul."
+              "body": "C'est le concept central théorisé par Louis Delluc. Il désigne la capacité du cinéma à transformer le réel par l'enregistrement de la caméra, révélant une beauté ou un sens inédit que l'œil humain ne peut pas capter seul.",
+              "titleEn": "Photogénie",
+              "bodyEn": "This is the central concept theorised by Louis Delluc. It names cinema's capacity to transform reality through the camera's recording, revealing a beauty or a meaning the human eye cannot catch on its own."
             },
             {
               "title": "Fin de l'élan",
-              "body": "L'arrivée du cinéma sonore à la fin des années 1920, conjuguée à des difficultés de financement face aux industries américaines et allemandes, met un terme à cette vague d'expérimentations."
+              "body": "L'arrivée du cinéma sonore à la fin des années 1920, conjuguée à des difficultés de financement face aux industries américaines et allemandes, met un terme à cette vague d'expérimentations.",
+              "titleEn": "The end of the impulse",
+              "bodyEn": "The arrival of sound at the end of the 1920s, together with funding difficulties against the American and German industries, brings this wave of experiments to a close."
             }
           ],
           "figures": [
             {
               "displayName": "Louis Delluc",
-              "role": "Théoricien majeur et chef de file du mouvement"
+              "role": "Théoricien majeur et chef de file du mouvement",
+              "roleEn": "Major theorist and leader of the movement"
             },
             {
               "displayName": "Abel Gance",
               "role": "Le grand technicien aux innovations visuelles monumentales",
-              "directorCode": "ABEL_GANCE"
+              "directorCode": "ABEL_GANCE",
+              "roleEn": "The great technician of monumental visual innovations"
             },
             {
               "displayName": "Jean Epstein",
               "role": "Réalisateur et philosophe du cinéma",
-              "directorCode": "JEAN_EPSTEIN"
+              "directorCode": "JEAN_EPSTEIN",
+              "roleEn": "Filmmaker and philosopher of cinema"
             },
             {
               "displayName": "Germaine Dulac",
               "role": "Pionnière de l'avant-garde et du cinéma féministe",
-              "directorCode": "GERMAINE_DULAC"
+              "directorCode": "GERMAINE_DULAC",
+              "roleEn": "Pioneer of the avant-garde and of feminist cinema"
             }
           ],
           "movies": [
@@ -65870,7 +66529,10 @@
             "LA_GLACE_A_TROIS_FACES_1927",
             "NAPOLEON_1927"
           ],
-          "transition": "Tandis que la France filme les fluctuations de l'âme, l'Allemagne déforme la réalité matérielle pour projeter la folie et l'angoisse dans ses décors."
+          "transition": "Tandis que la France filme les fluctuations de l'âme, l'Allemagne déforme la réalité matérielle pour projeter la folie et l'angoisse dans ses décors.",
+          "nameEn": "French Impressionism",
+          "descriptionEn": "Also called the \"First Avant-garde\", this current is born in the aftermath of the First World War. Led by French filmmakers and theorists, its aim is to detach cinema from theatre and literature and make it a purely visual, autonomous art. For these directors, cinema must film the invisible: characters' subjectivity, states of mind, dreams and memories. They use a very rhythmic montage and many optical effects (blurs, superimpositions, distorting mirrors) so that the spectator feels the psychology and emotions of the protagonists.",
+          "transitionEn": "While France films the fluctuations of the soul, Germany distorts material reality to project madness and anguish into its sets."
         },
         {
           "code": "PARCOURS_001_02",
@@ -65882,32 +66544,40 @@
           "facts": [
             {
               "title": "L'influence du studio",
-              "body": "La quasi-totalité de ces films a été tournée entièrement en studio (notamment à la UFA, près de Berlin). Ce contrôle total de l'environnement permettait aux réalisateurs de maîtriser chaque ombre et chaque angle de décor au millimètre près."
+              "body": "La quasi-totalité de ces films a été tournée entièrement en studio (notamment à la UFA, près de Berlin). Ce contrôle total de l'environnement permettait aux réalisateurs de maîtriser chaque ombre et chaque angle de décor au millimètre près.",
+              "titleEn": "The influence of the studio",
+              "bodyEn": "Almost all of these films were shot entirely in studio (notably at UFA, near Berlin). That total control of the environment let directors master every shadow and every set angle to the millimetre."
             },
             {
               "title": "L'héritage hollywoodien",
-              "body": "Avec la montée du nazisme, la plupart des grands maîtres de l'expressionnisme ont fui l'Allemagne pour Hollywood. Ils y ont importé leur esthétique, donnant directement naissance aux codes visuels du Film Noir et du Cinéma d'Épouvante américain (les monstres d'Universal)."
+              "body": "Avec la montée du nazisme, la plupart des grands maîtres de l'expressionnisme ont fui l'Allemagne pour Hollywood. Ils y ont importé leur esthétique, donnant directement naissance aux codes visuels du Film Noir et du Cinéma d'Épouvante américain (les monstres d'Universal).",
+              "titleEn": "The Hollywood legacy",
+              "bodyEn": "With the rise of Nazism, most of the great masters of expressionism fled Germany for Hollywood. They brought their aesthetic with them, giving rise directly to the visual codes of film noir and American horror (Universal's monsters)."
             }
           ],
           "figures": [
             {
               "displayName": "Robert Wiene",
               "role": "Réalisateur du film fondateur du mouvement",
-              "directorCode": "ROBERT_WIENE"
+              "directorCode": "ROBERT_WIENE",
+              "roleEn": "Director of the movement's founding film"
             },
             {
               "displayName": "F.W. Murnau",
               "role": "Maître de la poésie visuelle et du fantastique",
-              "directorCode": "FW_MURNAU"
+              "directorCode": "FW_MURNAU",
+              "roleEn": "Master of visual poetry and the fantastic"
             },
             {
               "displayName": "Fritz Lang",
               "role": "Cinéaste visionnaire de l'architecture et de la dystopie urbaine",
-              "directorCode": "FRITZ_LANG"
+              "directorCode": "FRITZ_LANG",
+              "roleEn": "Visionary filmmaker of architecture and urban dystopia"
             },
             {
               "displayName": "Conrad Veidt",
-              "role": "Acteur emblématique aux expressions faciales marquantes"
+              "role": "Acteur emblématique aux expressions faciales marquantes",
+              "roleEn": "Iconic actor of striking facial expressions"
             }
           ],
           "movies": [
@@ -65916,7 +66586,10 @@
             "LES_TROIS_LUMIERES_1921",
             "METROPOLIS_1927"
           ],
-          "transition": "Face à la recherche esthétique et psychologique allemande, l'école soviétique intellectualise le cinéma en faisant du montage l'outil politique suprême."
+          "transition": "Face à la recherche esthétique et psychologique allemande, l'école soviétique intellectualise le cinéma en faisant du montage l'outil politique suprême.",
+          "nameEn": "German Expressionism",
+          "descriptionEn": "Born in a Germany traumatised and ruined by the First World War, this artistic movement wholly rejects realism. Its aim is to project madness, anguish, paranoia and the dark side of the human psyche directly onto the screen. Filmmakers use painted, geometric, distorted sets (oblique lines, asymmetrical windows) and a revolutionary handling of light. The style rests on chiaroscuro, with gigantic, threatening shadows that become characters in their own right. Actors adopt an exaggerated performance, close to theatre or mime, to heighten terror and the fantastic.",
+          "transitionEn": "Against the German search for aesthetic and psychological form, the Soviet school intellectualises cinema by making editing the supreme political tool."
         },
         {
           "code": "PARCOURS_001_03",
@@ -65928,32 +66601,40 @@
           "facts": [
             {
               "title": "L'Effet Koulechov",
-              "body": "C'est l'expérience fondatrice du mouvement. Le cinéaste Lev Koulechov montre le même plan fixe du visage d'un acteur alterné successivement avec un bol de soupe, un cercueil, puis une petite fille. Les spectateurs attribuent à l'acteur des émotions différentes (faim, tristesse, tendresse), prouvant que le montage crée le sens de manière totalement artificielle."
+              "body": "C'est l'expérience fondatrice du mouvement. Le cinéaste Lev Koulechov montre le même plan fixe du visage d'un acteur alterné successivement avec un bol de soupe, un cercueil, puis une petite fille. Les spectateurs attribuent à l'acteur des émotions différentes (faim, tristesse, tendresse), prouvant que le montage crée le sens de manière totalement artificielle.",
+              "titleEn": "The Kuleshov Effect",
+              "bodyEn": "This is the movement's founding experiment. Lev Kuleshov shows the same static close-up of an actor's face successively alternating with a bowl of soup, a coffin, then a little girl. Spectators attribute different emotions to the actor (hunger, sadness, tenderness), proving that editing creates meaning in a wholly artificial way."
             },
             {
               "title": "Le montage intellectuel",
-              "body": "Sergueï Eisenstein a théorisé le « montage d'attractions », associant des images sans lien narratif direct pour créer une métaphore dans l'esprit du spectateur (par exemple, alterner des ouvriers qui se font fusiller avec des images d'un abattoir de bœufs)."
+              "body": "Sergueï Eisenstein a théorisé le « montage d'attractions », associant des images sans lien narratif direct pour créer une métaphore dans l'esprit du spectateur (par exemple, alterner des ouvriers qui se font fusiller avec des images d'un abattoir de bœufs).",
+              "titleEn": "Intellectual montage",
+              "bodyEn": "Sergei Eisenstein theorised « montage of attractions », associating images with no direct narrative link to create a metaphor in the spectator's mind (for example, alternating workers being shot with images of a cattle slaughterhouse)."
             }
           ],
           "figures": [
             {
               "displayName": "Sergueï Eisenstein",
               "role": "Le grand théoricien du montage-choc et de la dynamique des masses",
-              "directorCode": "SERGEI_EISENSTEIN"
+              "directorCode": "SERGEI_EISENSTEIN",
+              "roleEn": "The great theorist of collision montage and the dynamics of the masses"
             },
             {
               "displayName": "Dziga Vertov",
               "role": "Pionnier du cinéma expérimental et du manifeste de la caméra-œil",
-              "directorCode": "DZIGA_VERTOV"
+              "directorCode": "DZIGA_VERTOV",
+              "roleEn": "Pioneer of experimental cinema and of the camera-eye manifesto"
             },
             {
               "displayName": "Lev Koulechov",
-              "role": "Enseignant et théoricien pionnier de la manipulation du montage"
+              "role": "Enseignant et théoricien pionnier de la manipulation du montage",
+              "roleEn": "Teacher and pioneer theorist of the manipulation of editing"
             },
             {
               "displayName": "Vsevolod Poudovkine",
               "role": "Cinéaste axé sur le montage narratif et le drame psychologique",
-              "directorCode": "VSEVOLOD_PUDOVKIN"
+              "directorCode": "VSEVOLOD_PUDOVKIN",
+              "roleEn": "Filmmaker focused on narrative editing and psychological drama"
             }
           ],
           "movies": [
@@ -65962,7 +66643,10 @@
             "LA_MERE_1926",
             "L_HOMME_A_LA_CAMERA_1929"
           ],
-          "transition": "En parallèle de cette rigueur de montage constructive, les surréalistes font exploser la logique pour filmer la liberté totale des rêves et de l'inconscient."
+          "transition": "En parallèle de cette rigueur de montage constructive, les surréalistes font exploser la logique pour filmer la liberté totale des rêves et de l'inconscient.",
+          "nameEn": "Soviet Montage",
+          "descriptionEn": "In the wake of the 1917 revolution, the young Soviet state nationalises cinema, Lenin proclaiming it « the most important of all the arts » for educating the masses. A generation of theorist-filmmakers then revolutionises film history by placing editing at the heart of creation. For them, a film's meaning is not born from the content of an isolated shot, but from the shock produced by juxtaposing two different shots. Cinema becomes an intellectual, rhythmic and sensory language, able to manipulate concepts and stir powerful political emotions.",
+          "transitionEn": "Alongside this constructive rigour of editing, the surrealists blow logic apart in order to film the total freedom of dreams and the unconscious."
         },
         {
           "code": "PARCOURS_001_04",
@@ -65974,31 +66658,39 @@
           "facts": [
             {
               "title": "La provocation publique",
-              "body": "Les projections surréalistes provoquaient régulièrement des scandales majeurs. Lors de la sortie de *L'Âge d'or*, des militants d'extrême droite ont saccagé la salle de cinéma, lacéré les tableaux surréalistes exposés dans le hall, et le film fut interdit par la police pendant plus de quarante ans."
+              "body": "Les projections surréalistes provoquaient régulièrement des scandales majeurs. Lors de la sortie de *L'Âge d'or*, des militants d'extrême droite ont saccagé la salle de cinéma, lacéré les tableaux surréalistes exposés dans le hall, et le film fut interdit par la police pendant plus de quarante ans.",
+              "titleEn": "Public provocation",
+              "bodyEn": "Surrealist screenings regularly caused major scandals. At the release of *L'Âge d'or*, far-right militants wrecked the cinema, slashed the surrealist paintings in the lobby, and the film was banned by the police for more than forty years."
             },
             {
               "title": "Le rêve éveillé",
-              "body": "Les surréalistes fréquentaient les cinémas d'une manière unique : ils entraient dans les salles au hasard, sans regarder les horaires, regardaient le film quelques minutes, puis changeaient de cinéma pour créer leur propre montage aléatoire et poétique de la réalité."
+              "body": "Les surréalistes fréquentaient les cinémas d'une manière unique : ils entraient dans les salles au hasard, sans regarder les horaires, regardaient le film quelques minutes, puis changeaient de cinéma pour créer leur propre montage aléatoire et poétique de la réalité.",
+              "titleEn": "The waking dream",
+              "bodyEn": "The surrealists went to the cinema in a unique way: they entered theatres at random, without looking at the times, watched a few minutes, then changed cinema to create their own random, poetic montage of reality."
             }
           ],
           "figures": [
             {
               "displayName": "Luis Buñuel",
               "role": "Le réalisateur emblématique qui portera l'esprit surréaliste toute sa vie",
-              "directorCode": "LUIS_BUNUEL"
+              "directorCode": "LUIS_BUNUEL",
+              "roleEn": "The emblematic director who carried the surrealist spirit all his life"
             },
             {
               "displayName": "Salvador Dalí",
-              "role": "Peintre co-scénariste et concepteur des images des premiers films de Buñuel"
+              "role": "Peintre co-scénariste et concepteur des images des premiers films de Buñuel",
+              "roleEn": "Painter, co-screenwriter and designer of the images in Buñuel's first films"
             },
             {
               "displayName": "Man Ray",
               "role": "Photographe et plasticien, pionnier du cinéma expérimental abstrait",
-              "directorCode": "MAN_RAY"
+              "directorCode": "MAN_RAY",
+              "roleEn": "Photographer and visual artist, pioneer of abstract experimental cinema"
             },
             {
               "displayName": "Antonin Artaud",
-              "role": "Théoricien, acteur et scénariste du premier film considéré comme surréaliste"
+              "role": "Théoricien, acteur et scénariste du premier film considéré comme surréaliste",
+              "roleEn": "Theorist, actor and screenwriter of the first film considered surrealist"
             }
           ],
           "movies": [
@@ -66007,7 +66699,10 @@
             "L_AGE_D_OR_1930",
             "LE_SANG_D_UN_PO_TE_1930"
           ],
-          "transition": "Après le bouillonnement anarchique de ces avant-gardes européennes, Hollywood synthétise ces techniques pour créer une industrie du récit universelle et codifiée."
+          "transition": "Après le bouillonnement anarchique de ces avant-gardes européennes, Hollywood synthétise ces techniques pour créer une industrie du récit universelle et codifiée.",
+          "nameEn": "Cinematic Surrealism",
+          "descriptionEn": "Born in Paris in the wake of André Breton's literary and pictorial movement, surrealism sees cinema as the ideal tool for breaking free of reason, logic and bourgeois morality. Surrealist filmmakers refuse the traditional linear story in order to explore the mechanisms of dream, repressed desire, the unconscious and madness. Using absurd associations of images, provocative visual collages and violent or erotic metaphors, they seek to provoke a poetic and psychological shock in the spectator.",
+          "transitionEn": "After the anarchic ferment of these European avant-gardes, Hollywood synthesises the techniques to create a universal, codified industry of storytelling."
         },
         {
           "code": "PARCOURS_001_05",
@@ -66019,33 +66714,41 @@
           "facts": [
             {
               "title": "Le Code Hays",
-              "body": "De 1934 à la fin des années 1950, la production hollywoodienne est soumise à une censure morale très stricte. Le code interdit de montrer la nudité, les relations interraciales, les profanations, ou de présenter les criminels sous un jour sympathique. Les cinéastes ont dû redoubler d'ingéniosité visuelle et de sous-entendus pour contourner ces interdictions."
+              "body": "De 1934 à la fin des années 1950, la production hollywoodienne est soumise à une censure morale très stricte. Le code interdit de montrer la nudité, les relations interraciales, les profanations, ou de présenter les criminels sous un jour sympathique. Les cinéastes ont dû redoubler d'ingéniosité visuelle et de sous-entendus pour contourner ces interdictions.",
+              "titleEn": "The Hays Code",
+              "bodyEn": "From 1934 to the late 1950s, Hollywood production is subject to very strict moral censorship. The code forbids showing nudity, interracial relationships, profanation, or presenting criminals in a sympathetic light. Filmmakers had to redouble visual ingenuity and innuendo to get around these bans."
             },
             {
               "title": "Le Studio System",
-              "body": "Les réalisateurs étaient alors des salariés sous contrat avec les grands studios (MGM, Paramount, Warner Bros.). Ils n'avaient que très rarement le contrôle sur le montage final de leurs films. C'est la vision du producteur qui dominait."
+              "body": "Les réalisateurs étaient alors des salariés sous contrat avec les grands studios (MGM, Paramount, Warner Bros.). Ils n'avaient que très rarement le contrôle sur le montage final de leurs films. C'est la vision du producteur qui dominait.",
+              "titleEn": "The Studio System",
+              "bodyEn": "Directors were then employees under contract with the major studios (MGM, Paramount, Warner Bros.). They very rarely had control over the final cut of their films. It was the producer's vision that dominated."
             }
           ],
           "figures": [
             {
               "displayName": "John Ford",
               "role": "Le maître absolu du western et de la construction du mythe américain",
-              "directorCode": "JOHN_FORD"
+              "directorCode": "JOHN_FORD",
+              "roleEn": "The absolute master of the western and of the construction of the American myth"
             },
             {
               "displayName": "Alfred Hitchcock",
               "role": "Le génie du suspense qui a su plier le système des studios à ses obsessions visuelles",
-              "directorCode": "ALFRED_HITCHCOCK"
+              "directorCode": "ALFRED_HITCHCOCK",
+              "roleEn": "The genius of suspense who bent the studio system to his visual obsessions"
             },
             {
               "displayName": "Howard Hawks",
               "role": "Le réalisateur caméléon, virtuose de la comédie *screwball* et du film d'aventure",
-              "directorCode": "HOWARD_HAWKS"
+              "directorCode": "HOWARD_HAWKS",
+              "roleEn": "The chameleon director, virtuoso of screwball comedy and of the adventure film"
             },
             {
               "displayName": "Orson Welles",
               "role": "L'enfant terrible qui a dynamité de l'intérieur les règles du classicisme avec *Citizen Kane*",
-              "directorCode": "ORSON_WELLES"
+              "directorCode": "ORSON_WELLES",
+              "roleEn": "The enfant terrible who blew classicism apart from the inside with *Citizen Kane*"
             }
           ],
           "movies": [
@@ -66054,7 +66757,10 @@
             "CITIZEN_KANE_1941",
             "CASABLANCA_1942"
           ],
-          "transition": "En réaction aux studios et au glamour standardisé américain, l'Italie d'après-guerre descend dans la rue pour capter la vérité brute de la condition humaine."
+          "transition": "En réaction aux studios et au glamour standardisé américain, l'Italie d'après-guerre descend dans la rue pour capter la vérité brute de la condition humaine.",
+          "nameEn": "Hollywood classicism",
+          "descriptionEn": "This « Golden Age » is the peak of the American studio system. Hollywood standardises production and creates a universal language based on transparency: technique (staging, editing, lighting) must disappear completely so that the spectator is wholly immersed in the story. Narratives are linear, genres (western, musical, film noir) are strictly codified, and stars (Garbo, Bogart, Gable) are shaped by the studios to draw the public. It is the era of grand spectacle and perfect illusion.",
+          "transitionEn": "In reaction to the studios and to standardised American glamour, postwar Italy goes down into the street to capture the raw truth of the human condition."
         },
         {
           "code": "PARCOURS_001_06",
@@ -66066,32 +66772,40 @@
           "facts": [
             {
               "title": "L'éthique avant l'esthétique",
-              "body": "Pour les néoréalistes, le cinéma a un devoir moral. Il ne doit plus chercher à divertir ou à faire oublier la réalité, mais forcer le spectateur à regarder en face la détresse humaine et sociale de son époque."
+              "body": "Pour les néoréalistes, le cinéma a un devoir moral. Il ne doit plus chercher à divertir ou à faire oublier la réalité, mais forcer le spectateur à regarder en face la détresse humaine et sociale de son époque.",
+              "titleEn": "Ethics before aesthetics",
+              "bodyEn": "For the neorealists, cinema has a moral duty. It must no longer seek to entertain or to make people forget reality, but force the spectator to look the human and social distress of the time in the face."
             },
             {
               "title": "Le démantèlement par la politique",
-              "body": "Le mouvement s'est éteint au début des années 1950, notamment à cause du gouvernement italien (via la loi Andreotti), qui refusait de subventionner des films exportant à l'étranger une image misérable et jugée « antipatriotique » du pays en pleine reconstruction."
+              "body": "Le mouvement s'est éteint au début des années 1950, notamment à cause du gouvernement italien (via la loi Andreotti), qui refusait de subventionner des films exportant à l'étranger une image misérable et jugée « antipatriotique » du pays en pleine reconstruction.",
+              "titleEn": "Dismantled by politics",
+              "bodyEn": "The movement died out in the early 1950s, notably because of the Italian government (via the Andreotti law), which refused to subsidise films that exported abroad a miserable, supposedly « unpatriotic » image of a country in reconstruction."
             }
           ],
           "figures": [
             {
               "displayName": "Roberto Rossellini",
               "role": "Le pionnier qui jette les bases du courant en filmant clandestinement",
-              "directorCode": "ROBERTO_ROSSELLINI"
+              "directorCode": "ROBERTO_ROSSELLINI",
+              "roleEn": "The pioneer who lays the current's foundations by filming clandestinely"
             },
             {
               "displayName": "Vittorio De Sica",
               "role": "Le réalisateur humaniste qui filme le quotidien à hauteur d'homme",
-              "directorCode": "VITTORIO_DE_SICA"
+              "directorCode": "VITTORIO_DE_SICA",
+              "roleEn": "The humanist director who films everyday life at human height"
             },
             {
               "displayName": "Luchino Visconti",
               "role": "Le cinéaste aristocrate qui insuffle une dimension tragique et opératique au réalisme",
-              "directorCode": "LUCHINO_VISCONTI"
+              "directorCode": "LUCHINO_VISCONTI",
+              "roleEn": "The aristocratic filmmaker who infuses realism with a tragic, operatic dimension"
             },
             {
               "displayName": "Cesare Zavattini",
-              "role": "Le théoricien et scénariste crucial qui a formalisé toute la pensée néoréaliste"
+              "role": "Le théoricien et scénariste crucial qui a formalisé toute la pensée néoréaliste",
+              "roleEn": "The crucial theorist and screenwriter who formalised the whole neorealist thought"
             }
           ],
           "movies": [
@@ -66100,7 +66814,10 @@
             "LE_VOLEUR_DE_BICYCLETTE_1948",
             "LA_TERRE_TREMBLE_1948"
           ],
-          "transition": "Inspirés par cette liberté de tournage italienne, de jeunes critiques français théorisent la politique des auteurs et brisent définitivement l'académisme."
+          "transition": "Inspirés par cette liberté de tournage italienne, de jeunes critiques français théorisent la politique des auteurs et brisent définitivement l'académisme.",
+          "nameEn": "Italian Neorealism",
+          "descriptionEn": "Born in the ruins of fascist Italy after the war, this movement makes the most radical break in film history by rejecting Hollywood glamour and illusionism. With the Cinecittà studios destroyed or requisitioned, filmmakers go straight into the street to film poverty, unemployment, destruction and the everyday life of the working class. The style is raw, close to reportage: natural light, real locations and frequent use of non-professional actors chosen for the authenticity of their faces and their lives.",
+          "transitionEn": "Inspired by this Italian freedom of shooting, young French critics theorise the politique des auteurs and definitively break academic cinema."
         },
         {
           "code": "PARCOURS_001_07",
@@ -66112,33 +66829,41 @@
           "facts": [
             {
               "title": "La politique des auteurs",
-              "body": "C'est le grand apport théorique de la Nouvelle Vague. François Truffaut et ses pairs affirment que le réalisateur est le seul et unique auteur de son film, au même titre qu'un écrivain pour son livre ou un peintre pour sa toile. Le metteur en scène n'est plus un technicien au service d'un studio, mais un artiste qui exprime sa vision du monde."
+              "body": "C'est le grand apport théorique de la Nouvelle Vague. François Truffaut et ses pairs affirment que le réalisateur est le seul et unique auteur de son film, au même titre qu'un écrivain pour son livre ou un peintre pour sa toile. Le metteur en scène n'est plus un technicien au service d'un studio, mais un artiste qui exprime sa vision du monde.",
+              "titleEn": "The politique des auteurs",
+              "bodyEn": "This is the New Wave's great theoretical contribution. François Truffaut and his peers assert that the director is the sole author of the film, as a writer is of a book or a painter of a canvas. The filmmaker is no longer a technician in the service of a studio, but an artist expressing a vision of the world."
             },
             {
               "title": "Le festival de Cannes 1959",
-              "body": "Cet événement marque le triomphe mondial du mouvement avec la présentation simultanée des *Quatre Cents Coups* de Truffaut (Prix de la mise en scène) et d'*Orphée* ou des repérages d'Alain Resnais pour *Hiroshima mon amour*."
+              "body": "Cet événement marque le triomphe mondial du mouvement avec la présentation simultanée des *Quatre Cents Coups* de Truffaut (Prix de la mise en scène) et d'*Orphée* ou des repérages d'Alain Resnais pour *Hiroshima mon amour*.",
+              "titleEn": "The 1959 Cannes Festival",
+              "bodyEn": "This event marks the movement's worldwide triumph with the simultaneous presentation of Truffaut's *The 400 Blows* (Best Director) and of Alain Resnais's work around *Hiroshima mon amour*."
             }
           ],
           "figures": [
             {
               "displayName": "François Truffaut",
               "role": "Le cinéaste de l'enfance, des sentiments et du romanesque",
-              "directorCode": "FRANCOIS_TRUFFAUT"
+              "directorCode": "FRANCOIS_TRUFFAUT",
+              "roleEn": "The filmmaker of childhood, of feeling and of the novelistic"
             },
             {
               "displayName": "Jean-Luc Godard",
               "role": "L'expérimentateur radical qui a déconstruit toute la forme cinématographique",
-              "directorCode": "JEAN_LUC_GODARD"
+              "directorCode": "JEAN_LUC_GODARD",
+              "roleEn": "The radical experimenter who deconstructed cinematic form as a whole"
             },
             {
               "displayName": "Agnès Varda",
               "role": "La figure de proue de la Rive Gauche, mêlant documentaire, fiction et féminisme",
-              "directorCode": "AGNES_VARDA"
+              "directorCode": "AGNES_VARDA",
+              "roleEn": "The leading figure of the Left Bank, mixing documentary, fiction and feminism"
             },
             {
               "displayName": "Éric Rohmer",
               "role": "Le maître du verbe, de la parole et des marivaudages psychologiques",
-              "directorCode": "ERIC_ROHMER"
+              "directorCode": "ERIC_ROHMER",
+              "roleEn": "The master of speech, of talk and of psychological marivaudage"
             }
           ],
           "movies": [
@@ -66147,7 +66872,10 @@
             "A_BOUT_DE_SOUFFLE_1960",
             "CLEO_DE_5_A_7_1962"
           ],
-          "transition": "Cet électrochoc français résonne instantanément au Japon, où une nouvelle génération de cinéastes s'approprie cette liberté pour dynamiter les codes des studios traditionnels."
+          "transition": "Cet électrochoc français résonne instantanément au Japon, où une nouvelle génération de cinéastes s'approprie cette liberté pour dynamiter les codes des studios traditionnels.",
+          "nameEn": "French New Wave",
+          "descriptionEn": "This major movement is started by young critics from *Cahiers du Cinéma* who decide to step behind the camera. They violently reject « daddy's cinema », judged too academic, bourgeois and corseted in its studios. Taking advantage of lighter equipment (16mm cameras, portable recorders), they go down into the street, shoot without a budget, camera on the shoulder and in natural light. They dynamite classical grammar by inventing new rules: deliberate jump cuts, actors addressing the camera, and largely improvised scripts. Cinema becomes personal, free and spontaneous.",
+          "transitionEn": "This French electric shock resonates instantly in Japan, where a new generation of filmmakers seizes that freedom to dynamite the codes of the traditional studios."
         },
         {
           "code": "PARCOURS_001_08",
@@ -66159,33 +66887,41 @@
           "facts": [
             {
               "title": "Une rupture sociopolitique",
-              "body": "La *Nuberu Bagu* n'est pas qu'une révolution esthétique, elle est profondément politique. Elle explose en plein climat de contestation étudiante contre la reconduction du traité de coopération de sécurité entre les États-Unis et le Japon (le traité ANPO), un événement qui s'affiche ouvertement au centre de plusieurs films du mouvement."
+              "body": "La *Nuberu Bagu* n'est pas qu'une révolution esthétique, elle est profondément politique. Elle explose en plein climat de contestation étudiante contre la reconduction du traité de coopération de sécurité entre les États-Unis et le Japon (le traité ANPO), un événement qui s'affiche ouvertement au centre de plusieurs films du mouvement.",
+              "titleEn": "A sociopolitical rupture",
+              "bodyEn": "The *Nūberu Bāgu* is not only an aesthetic revolution; it is deeply political. It explodes in a climate of student protest against the renewal of the security treaty between the United States and Japan (the ANPO treaty), an event that sits openly at the centre of several films of the movement."
             },
             {
               "title": "Le passage à l'indépendance",
-              "body": "Face à la censure croissante des studios devant la radicalité de leurs œuvres, les réalisateurs phares ont rapidement rompu leurs contrats pour fonder des structures de production indépendantes (notamment la mythique ATG - Art Theatre Guild) afin de conserver leur totale liberté de création."
+              "body": "Face à la censure croissante des studios devant la radicalité de leurs œuvres, les réalisateurs phares ont rapidement rompu leurs contrats pour fonder des structures de production indépendantes (notamment la mythique ATG - Art Theatre Guild) afin de conserver leur totale liberté de création.",
+              "titleEn": "The move to independence",
+              "bodyEn": "Faced with growing studio censorship of the radicalism of their work, the leading directors quickly broke their contracts to found independent production structures (notably the legendary ATG — Art Theatre Guild) in order to keep total creative freedom."
             }
           ],
           "figures": [
             {
               "displayName": "Nagisa Ōshima",
               "role": "Le chef de file provocateur et politiquement radical du mouvement",
-              "directorCode": "NAGISA_OSHIMA"
+              "directorCode": "NAGISA_OSHIMA",
+              "roleEn": "The provocative, politically radical leader of the movement"
             },
             {
               "displayName": "Masahiro Shinoda",
               "role": "Cinéaste esthète combinant théâtralité traditionnelle et modernité visuelle",
-              "directorCode": "MASAHIRO_SHINODA"
+              "directorCode": "MASAHIRO_SHINODA",
+              "roleEn": "An aesthete filmmaker combining traditional theatricality and visual modernity"
             },
             {
               "displayName": "Shohei Imamura",
               "role": "Le réalisateur anthropologue qui préférait filmer les pulsions de la basse société japonaise",
-              "directorCode": "SHOHEI_IMAMURA"
+              "directorCode": "SHOHEI_IMAMURA",
+              "roleEn": "The anthropologist director who preferred to film the drives of Japan's lower depths"
             },
             {
               "displayName": "Kijū Yoshida",
               "role": "Metteur en scène rigoureux explorant les structures du pouvoir et l'aliénation politique",
-              "directorCode": "YOSHISHIGE_YOSHIDA"
+              "directorCode": "YOSHISHIGE_YOSHIDA",
+              "roleEn": "A rigorous filmmaker exploring structures of power and political alienation"
             }
           ],
           "movies": [
@@ -66194,7 +66930,10 @@
             "LA_FEMME_INSECTE_1963",
             "EROS_MASSACRE_1969"
           ],
-          "transition": "La contestation devient mondiale : à l'Est, sous le régime communiste, les cinéastes tchécoslovaques utilisent à leur tour cette modernité pour injecter de l'absurde et de la satire sociale."
+          "transition": "La contestation devient mondiale : à l'Est, sous le régime communiste, les cinéastes tchécoslovaques utilisent à leur tour cette modernité pour injecter de l'absurde et de la satire sociale.",
+          "nameEn": "Japanese New Wave (Nūberu Bāgu)",
+          "descriptionEn": "Unlike its French counterpart, born outside traditional structures, the Japanese New Wave first emerges inside a major studio (Shochiku), which hands the reins to young assistants in order to modernise its productions. The movement violently rejects the humanist classicism of the postwar masters (Ozu, Kurosawa). Filmmakers seize the camera to examine, crudely, the taboos and traumas of contemporary Japan: juvenile delinquency, sexuality, racism, corruption and resentment toward the American military occupation. The style is aggressive, jagged, marked by frenetic editing, outrageous framing and a pop or experimental aesthetic.",
+          "transitionEn": "The contestation becomes worldwide: in the East, under the communist regime, Czechoslovak filmmakers in turn use this modernity to inject absurdity and social satire."
         },
         {
           "code": "PARCOURS_001_09",
@@ -66206,33 +66945,41 @@
           "facts": [
             {
               "title": "Le Printemps de Prague",
-              "body": "L'âge d'or de ce courant est intimement lié à ce mouvement de libéralisation politique. L'invasion de Prague par les chars du Pacte de Varsovie en août 1968 brise net cette dynamique artistique. Les films sont interdits (« mis au coffre »), les structures de production sont reprises en main par le Parti, et plusieurs cinéastes majeurs choisissent l'exil."
+              "body": "L'âge d'or de ce courant est intimement lié à ce mouvement de libéralisation politique. L'invasion de Prague par les chars du Pacte de Varsovie en août 1968 brise net cette dynamique artistique. Les films sont interdits (« mis au coffre »), les structures de production sont reprises en main par le Parti, et plusieurs cinéastes majeurs choisissent l'exil.",
+              "titleEn": "The Prague Spring",
+              "bodyEn": "The golden age of this current is intimately tied to that movement of political liberalisation. The invasion of Prague by Warsaw Pact tanks in August 1968 breaks the artistic momentum. Films are banned (« put in the vault »), production structures are taken back by the Party, and several major filmmakers choose exile."
             },
             {
               "title": "La reconnaissance internationale",
-              "body": "Malgré sa brièveté et ses conditions de production complexes, le mouvement a connu un immense retentissement mondial, décrochant coup sur coup deux Oscars du meilleur film en langue étrangère (*Le Miroir aux alouettes* en 1965 et *Trains étroitement surveillés* en 1967)."
+              "body": "Malgré sa brièveté et ses conditions de production complexes, le mouvement a connu un immense retentissement mondial, décrochant coup sur coup deux Oscars du meilleur film en langue étrangère (*Le Miroir aux alouettes* en 1965 et *Trains étroitement surveillés* en 1967).",
+              "titleEn": "International recognition",
+              "bodyEn": "Despite its brevity and complex production conditions, the movement had a huge worldwide impact, winning two Oscars for Best Foreign Language Film in a row (*The Shop on Main Street* in 1965 and *Closely Watched Trains* in 1967)."
             }
           ],
           "figures": [
             {
               "displayName": "Miloš Forman",
               "role": "Le maître de la satire sociale et du regard tendre mais piquant sur l'humain",
-              "directorCode": "MILOS_FORMAN"
+              "directorCode": "MILOS_FORMAN",
+              "roleEn": "The master of social satire and of a tender but sharp gaze on the human"
             },
             {
               "displayName": "Věra Chytilová",
               "role": "La réalisatrice féministe, iconoclaste et visuellement la plus expérimentale du groupe",
-              "directorCode": "VERA_CHYTILOVA"
+              "directorCode": "VERA_CHYTILOVA",
+              "roleEn": "The feminist, iconoclastic director, visually the most experimental of the group"
             },
             {
               "displayName": "Jiří Menzel",
               "role": "Cinéaste virtuose de la tragi-comédie et de la poésie du quotidien",
-              "directorCode": "JIRI_MENZEL"
+              "directorCode": "JIRI_MENZEL",
+              "roleEn": "A virtuoso of tragicomedy and of the poetry of everyday life"
             },
             {
               "displayName": "Jaromil Jireš",
               "role": "Réalisateur d'œuvres poétiques et critiques majeures à la forme éclatée",
-              "directorCode": "JAROMIL_JIRES"
+              "directorCode": "JAROMIL_JIRES",
+              "roleEn": "Director of major poetic and critical works of fractured form"
             }
           ],
           "movies": [
@@ -66241,7 +66988,10 @@
             "TRAINS_ETROITEMENT_SURVEILLES_1966",
             "THE_FIREMEN_S_BALL_1967"
           ],
-          "transition": "Une fois toutes ces règles brisées et réinventées par les modernités mondiales, le cinéma entre dans l'ère contemporaine, un espace de métissage où s'entremêlent tous ces héritages."
+          "transition": "Une fois toutes ces règles brisées et réinventées par les modernités mondiales, le cinéma entre dans l'ère contemporaine, un espace de métissage où s'entremêlent tous ces héritages.",
+          "nameEn": "Czechoslovak New Wave",
+          "descriptionEn": "This immensely rich movement is born thanks to a temporary softening of the communist regime in Czechoslovakia (the thaw). Trained at Prague's prestigious film school (FAMU), young directors use this opening to get around state censorship. To criticise the absurdity of bureaucracy and totalitarianism, they leave official socialist realism behind and adopt a unique tone, marked by black humour, fierce satire, irony and the absurd. Visually, the current oscillates between a quasi-documentary realism inherited from cinéma direct and surreal, colourful formal experiments.",
+          "transitionEn": "Once all these rules have been broken and reinvented by modernities around the world, cinema enters the contemporary era, a space of hybridity where all these inheritances intertwine."
         },
         {
           "code": "PARCOURS_001_10",
@@ -66253,33 +67003,41 @@
           "facts": [
             {
               "title": "La guerre des écrans",
-              "body": "L'émergence des plateformes de streaming et le développement des technologies domestiques redéfinissent la frontière du cinéma. La création contemporaine ne se pense plus uniquement pour la salle obscure, obligeant l'industrie à réinventer l'expérience collective du grand écran (grand spectacle technologique ou événements immersifs)."
+              "body": "L'émergence des plateformes de streaming et le développement des technologies domestiques redéfinissent la frontière du cinéma. La création contemporaine ne se pense plus uniquement pour la salle obscure, obligeant l'industrie à réinventer l'expérience collective du grand écran (grand spectacle technologique ou événements immersifs).",
+              "titleEn": "The war of screens",
+              "bodyEn": "The rise of streaming platforms and of domestic technologies redefines cinema's border. Contemporary creation is no longer thought only for the darkened theatre, forcing the industry to reinvent the collective experience of the big screen (technological spectacle or immersive events)."
             },
             {
               "title": "La décentralisation du regard",
-              "body": "L'histoire du cinéma a longtemps été dominée par l'Occident. L'ère contemporaine consacre définitivement l'explosion et la reconnaissance mondiale de cinématographies autrefois marginalisées (Corée du Sud, Iran, Mexique, Afrique de l'Ouest), bousculant les structures traditionnelles de légitimité artistique."
+              "body": "L'histoire du cinéma a longtemps été dominée par l'Occident. L'ère contemporaine consacre définitivement l'explosion et la reconnaissance mondiale de cinématographies autrefois marginalisées (Corée du Sud, Iran, Mexique, Afrique de l'Ouest), bousculant les structures traditionnelles de légitimité artistique.",
+              "titleEn": "The decentring of the gaze",
+              "bodyEn": "Film history was long dominated by the West. The contemporary era definitively consecrates the explosion and worldwide recognition of cinematographies once marginalised (South Korea, Iran, Mexico, West Africa), shaking the traditional structures of artistic legitimacy."
             }
           ],
           "figures": [
             {
               "displayName": "Christopher Nolan",
               "role": "Architecte d'un cinéma grand public à la structure narrative complexe et cérébrale",
-              "directorCode": "CHRISTOPHER_NOLAN"
+              "directorCode": "CHRISTOPHER_NOLAN",
+              "roleEn": "Architect of a popular cinema of complex, cerebral narrative structure"
             },
             {
               "displayName": "Bong Joon-ho",
               "role": "Chef de file du renouveau coréen, maniant la satire sociale et le mélange des genres",
-              "directorCode": "BONG_JOON_HO"
+              "directorCode": "BONG_JOON_HO",
+              "roleEn": "Leader of the Korean revival, handling social satire and the mixing of genres"
             },
             {
               "displayName": "Denis Villeneuve",
               "role": "Maître de la science-fiction moderne à l'esthétique monumentale et métaphysique",
-              "directorCode": "DENIS_VILLENEUVE"
+              "directorCode": "DENIS_VILLENEUVE",
+              "roleEn": "Master of modern science fiction of monumental, metaphysical aesthetic"
             },
             {
               "displayName": "Celine Sciamma",
               "role": "Cinéaste majeure du renouvellement des regards, théorisant le *female gaze*",
-              "directorCode": "CELINE_SCIAMMA"
+              "directorCode": "CELINE_SCIAMMA",
+              "roleEn": "A major filmmaker of the renewal of gazes, theorising the *female gaze*"
             }
           ],
           "movies": [
@@ -66287,9 +67045,16 @@
             "MULHOLLAND_DRIVE_2001",
             "MAD_MAX_FURY_ROAD_2015",
             "PARASITE_2019_JOON_HO"
-          ]
+          ],
+          "nameEn": "Contemporary cinema",
+          "descriptionEn": "This period marks cinema's entry into an era of total hybridisation. Freed from the strict manifestos of the last century, contemporary cinema is marked by the mixing of styles, genres and cultures. It is the age of the global digital transition, which transforms capture, visual effects and distribution. Contemporary authors draw freely on the whole history of cinema, recycling and quoting past currents (postmodernism) to interrogate ecological crises, technological alienation, questions of identity and worldwide geopolitical upheavals.",
+          "periodLabelEn": "2000 – present"
         }
-      ]
+      ],
+      "nameEn": "How cinema became an art",
+      "summaryEn": "This path traces the aesthetic and theoretical stages that lifted cinema from a technical curiosity to the status of Seventh Art. The aim is to see how film grammar was forged through successive movements of rupture and artistic affirmation.",
+      "descriptionEn": "This path traces the aesthetic and theoretical stages that lifted cinema from a technical curiosity to the status of Seventh Art. The aim is to see how film grammar was forged through successive movements of rupture and artistic affirmation.\n\nThe itinerary opens on the foundations of silent cinema, the key period when narrative editing and the first visual codes were invented. It then explores the European avant-gardes of the 1920s — French Impressionism, German Expressionism, Soviet Montage and Surrealism — four currents that proved the camera could translate the unconscious, poetry or political ideology, freeing itself from mere recording of reality or filmed theatre.\n\nThe second half looks at how Hollywood classicism codified that grammar, then at the modern postwar revolutions. From Italian Neorealism to the explosion of the French, Japanese and Czechoslovak New Waves, you will see how filmmakers broke academic rules to impose street realism and the subjectivity of the author. The path ends with contemporary cinema, the direct heir of those decades of experiment and intercultural dialogue.",
+      "periodLabelEn": "1895 – today"
     }
   ]
 }

@@ -28,7 +28,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         RankEngineConfigEntity::class, RankThresholdEntity::class,
         CatalogDimensionStatEntity::class, UserProgressStateEntity::class,
     ],
-    version = 10,
+    version = 11,
     exportSchema = true,
 )
 @TypeConverters(UrbinemaConverters::class)
@@ -51,6 +51,7 @@ abstract class UrbinemaDatabase : RoomDatabase() {
                 .addMigrations(
                     MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6,
                     MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10,
+                    MIGRATION_10_11,
                 )
                 .fallbackToDestructiveMigration(true)
                 .addCallback(SchemaCallback)
@@ -225,6 +226,44 @@ abstract class UrbinemaDatabase : RoomDatabase() {
             )
             database.execSQL("CREATE INDEX IF NOT EXISTS `index_learning_path_movies_movieId` ON `learning_path_movies` (`movieId`)")
             database.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_learning_path_movies_stepId_position` ON `learning_path_movies` (`stepId`, `position`)")
+        }
+
+        val MIGRATION_10_11 = Migration(10, 11) { database ->
+            dropPartialCountryIndex(database)
+            val columns = listOf(
+                "countries" to "nameEn",
+                "continents" to "nameEn",
+                "cinema_characteristics" to "nameEn",
+                "cinema_characteristics" to "descriptionEn",
+                "genres" to "nameEn",
+                "eras" to "nameEn",
+                "collections" to "nameEn",
+                "collections" to "descriptionEn",
+                "collections" to "longDescriptionEn",
+                "learning_paths" to "nameEn",
+                "learning_paths" to "summaryEn",
+                "learning_paths" to "descriptionEn",
+                "learning_paths" to "periodLabelEn",
+                "learning_path_steps" to "nameEn",
+                "learning_path_steps" to "periodLabelEn",
+                "learning_path_steps" to "descriptionEn",
+                "learning_path_steps" to "transitionTextEn",
+                "learning_path_facts" to "titleEn",
+                "learning_path_facts" to "bodyEn",
+                "learning_path_figures" to "roleEn",
+                "rankings" to "nameEn",
+                "rankings" to "descriptionEn",
+                "rankings" to "longDescriptionEn",
+                "badges" to "nameEn",
+                "badges" to "descriptionEn",
+                "quests" to "nameEn",
+                "quests" to "descriptionEn",
+            )
+            for ((table, column) in columns) {
+                if (!hasColumn(database, table, column)) {
+                    database.execSQL("ALTER TABLE `$table` ADD COLUMN `$column` TEXT")
+                }
+            }
         }
 
         private fun dropPartialCountryIndex(database: SupportSQLiteDatabase) {

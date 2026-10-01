@@ -389,6 +389,7 @@ interface UrbinemaViewModel {
     fun movie(code: String): MovieUi?
     fun director(code: String): DirectorUi?
     fun search(query: String): List<SearchHitUi>
+    fun searchMovies(query: String): List<SearchHitUi>
     fun collectionsForCountry(code: String): List<CollectionUi>
     fun collectionsForCurrent(code: String): List<CollectionUi>
     fun moviesForCountry(code: String): List<MovieSummaryUi>
@@ -553,6 +554,7 @@ object PreviewUrbinemaViewModel : UrbinemaViewModel {
             match(it.title) || match(movie.originalTitle) || match(movie.localizedTitle.orEmpty())
         }
     }
+    override fun searchMovies(query: String): List<SearchHitUi> = search(query)
     override fun collectionsForCountry(code: String) = collections.filter { code in it.countryCodes }
     override fun collectionsForCurrent(code: String) = collections.filter { code in it.characteristicCodes }
     override fun moviesForCountry(code: String) = previewFilms

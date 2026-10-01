@@ -51,6 +51,7 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -100,7 +101,7 @@ fun EditorialCard(
         colors = CardDefaults.cardColors(containerColor = UrbinemaThemeTokens.colors.surface),
         border = androidx.compose.foundation.BorderStroke(
             if (highlighted) 2.dp else 1.dp,
-            if (highlighted) UrbinemaThemeTokens.colors.accent else UrbinemaThemeTokens.colors.outline,
+            if (highlighted) UrbinemaThemeTokens.colors.line else UrbinemaThemeTokens.colors.outline,
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
     ) {
@@ -145,7 +146,7 @@ fun LabeledProgress(progress: Int, modifier: Modifier = Modifier, emphasize: Boo
         LinearProgressIndicator(
             progress = { progress.coerceIn(0, 100) / 100f },
             modifier = Modifier.weight(1f),
-            color = UrbinemaThemeTokens.colors.accent,
+            color = UrbinemaThemeTokens.colors.line,
             trackColor = UrbinemaThemeTokens.colors.surfacePressed,
             strokeCap = StrokeCap.Square,
         )
@@ -162,7 +163,12 @@ fun WatchedFilmTitle(title: String, watched: Boolean, modifier: Modifier = Modif
     Text(
         title,
         modifier = modifier,
-        color = if (watched) UrbinemaThemeTokens.colors.accent else UrbinemaThemeTokens.colors.onBackground,
+        color = if (watched) {
+            UrbinemaThemeTokens.colors.accent
+        } else {
+            UrbinemaThemeTokens.colors.onBackgroundMuted
+        },
+        fontWeight = if (watched) FontWeight.SemiBold else FontWeight.Normal,
     )
 }
 
@@ -203,7 +209,7 @@ fun TerritoryRow(item: TerritoryUi, onClick: () -> Unit, modifier: Modifier = Mo
                 ExplorationState.Unexplored -> colors.onBackgroundFaint
                 ExplorationState.InProgress -> colors.cool
                 ExplorationState.Explored -> colors.onBackground
-                ExplorationState.Completed, ExplorationState.Mastered -> colors.accent
+                ExplorationState.Completed, ExplorationState.Mastered -> colors.line
             }
             val effect = if (item.state == ExplorationState.Unexplored) {
                 PathEffect.dashPathEffect(floatArrayOf(4.dp.toPx(), 3.dp.toPx()))
@@ -278,7 +284,7 @@ fun CollectionMedallion(name: String, progress: Int, onClick: () -> Unit) {
         verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.sm),
     ) {
         Box(
-            Modifier.size(72.dp).border(2.dp, UrbinemaThemeTokens.colors.accent, CircleShape),
+            Modifier.size(72.dp).border(2.dp, UrbinemaThemeTokens.colors.line, CircleShape),
             contentAlignment = Alignment.Center,
         ) {
             Text(stringResource(R.string.percent_value, progress), style = MaterialTheme.typography.labelMedium)
@@ -358,7 +364,7 @@ fun AvatarPicker(
                     .size(72.dp)
                     .border(
                         if (selected) 2.dp else 1.dp,
-                        if (selected) UrbinemaThemeTokens.colors.accent else UrbinemaThemeTokens.colors.outline,
+                        if (selected) UrbinemaThemeTokens.colors.line else UrbinemaThemeTokens.colors.outline,
                         CircleShape,
                     )
                     .clickable { onSelect(code) },

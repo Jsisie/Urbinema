@@ -173,7 +173,14 @@
     <string name="dark_theme">Dark theme</string>
     <string name="light_theme">Light theme</string>
     <string name="system_theme">System theme</string>
+    <string name="theme_cyanotype">Cyanotype</string>
+    <string name="theme_tirage">Silver print</string>
+    <string name="theme_rayonnage">Library</string>
+    <string name="theme_affiche">Poster</string>
+    <string name="theme_velours">Velvet</string>
+    <string name="theme_nuit_americaine">Day for night</string>
     <string name="theme">Theme</string>
+    <string name="theme_close">Close</string>
     <string name="dev_mode">Dev mode</string>
     <string name="dev_mode_help">Unlocks every collection. Under the rank: score / points left, and level XP.</string>
     <string name="dev_score_over_remaining">%1$.3f / %2$.3f</string>
@@ -244,6 +251,8 @@
     <string name="badge_unlocked_title">Badge unlocked</string>
     <string name="badge_unlocked_body">Congratulations! You have unlocked the “%1$s” badge!</string>
     <string name="sky_map">Sky map</string>
+    <string name="sky_map_search_hint">Film title</string>
+    <string name="sky_map_search_clear">Clear</string>
     <string name="sky_map_open">Open the interactive map</string>
     <string name="sky_map_around">Around the film</string>
     <string name="sky_map_hint">Pinch to zoom, drag to travel, tap a star.</string>
@@ -257,7 +266,7 @@
     <string name="sky_map_open_place">Open this place</string>
     <string name="sky_map_open_fiche_from_movie">Show on the map</string>
     <string name="help_sky_map_title">Interactive map</string>
-    <string name="help_sky_map_body">The sky map starts from a film: director, countries, genres nearby; other films farther if they share less. In the light theme the sky switches to paper so lists stay readable; each kind keeps its colour. The same name is shown only once. The chips are “Around the film”, “Countries” and “Decades”. A tap opens the fiche or the list. Open it from the Atlas tab, stars icon in the top bar. Pinch to zoom.</string>
+    <string name="help_sky_map_body">The sky map starts from a film: director, countries, genres nearby; other films farther if they share less. In the light theme the sky switches to paper so lists stay readable; each kind keeps its colour. The same name is shown only once. The chips are “Around the film”, “Countries” and “Decades”. A tap opens the fiche or the list. Open it from the Atlas tab, stars icon in the top bar. The top field searches a French or original title and recentres the map. Pinch to zoom.</string>
     <string name="mark_watched_prompt">Mark “%1$s” as watched?</string>
     <string name="replay_guide">Replay the guide</string>
     <string name="see_all_sources">See all sources</string>

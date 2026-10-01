@@ -1,0 +1,241 @@
+{
+  "code": "PARCOURS_001",
+  "nameEn": "How cinema became an art",
+  "summaryEn": "This path traces the aesthetic and theoretical stages that lifted cinema from a technical curiosity to the status of Seventh Art. The aim is to see how film grammar was forged through successive movements of rupture and artistic affirmation.",
+  "descriptionEn": "This path traces the aesthetic and theoretical stages that lifted cinema from a technical curiosity to the status of Seventh Art. The aim is to see how film grammar was forged through successive movements of rupture and artistic affirmation.\n\nThe itinerary opens on the foundations of silent cinema, the key period when narrative editing and the first visual codes were invented. It then explores the European avant-gardes of the 1920s — French Impressionism, German Expressionism, Soviet Montage and Surrealism — four currents that proved the camera could translate the unconscious, poetry or political ideology, freeing itself from mere recording of reality or filmed theatre.\n\nThe second half looks at how Hollywood classicism codified that grammar, then at the modern postwar revolutions. From Italian Neorealism to the explosion of the French, Japanese and Czechoslovak New Waves, you will see how filmmakers broke academic rules to impose street realism and the subjectivity of the author. The path ends with contemporary cinema, the direct heir of those decades of experiment and intercultural dialogue.",
+  "periodLabelEn": "1895 – today",
+  "steps": {
+    "PARCOURS_001_00": {
+      "nameEn": "Silent cinema",
+      "descriptionEn": "Cinema is not born at once as an art, but as a technical feat of recording reality (the Lumière brothers). Very quickly it becomes a fairground spectacle and a craft of illusion (Georges Méliès). In this period without recorded speech, filmmakers around the world invent from scratch the visual grammar we still use: camera movement, scene breakdown, the close-up and narrative editing.",
+      "transitionEn": "While silent cinema lays the foundations of storytelling, French filmmakers take hold of it to explore subjectivity and visual rhythm.",
+      "facts": [
+        {
+          "titleEn": "The coming of sound",
+          "bodyEn": "The silent era ends abruptly in **1927** with *The Jazz Singer*, the first feature with synchronised dialogue."
+        },
+        {
+          "titleEn": "Live accompaniment",
+          "bodyEn": "Screenings were never silent; they were always accompanied by a pianist, an orchestra or a lecturer in the theatre."
+        }
+      ],
+      "figures": [
+        "Technical pioneers",
+        "Pioneer of fiction and special effects",
+        "Pioneer of modern narrative editing",
+        "Masters of slapstick",
+        "Masters of slapstick"
+      ]
+    },
+    "PARCOURS_001_01": {
+      "nameEn": "French Impressionism",
+      "descriptionEn": "Also called the \"First Avant-garde\", this current is born in the aftermath of the First World War. Led by French filmmakers and theorists, its aim is to detach cinema from theatre and literature and make it a purely visual, autonomous art. For these directors, cinema must film the invisible: characters' subjectivity, states of mind, dreams and memories. They use a very rhythmic montage and many optical effects (blurs, superimpositions, distorting mirrors) so that the spectator feels the psychology and emotions of the protagonists.",
+      "transitionEn": "While France films the fluctuations of the soul, Germany distorts material reality to project madness and anguish into its sets.",
+      "facts": [
+        {
+          "titleEn": "Photogénie",
+          "bodyEn": "This is the central concept theorised by Louis Delluc. It names cinema's capacity to transform reality through the camera's recording, revealing a beauty or a meaning the human eye cannot catch on its own."
+        },
+        {
+          "titleEn": "The end of the impulse",
+          "bodyEn": "The arrival of sound at the end of the 1920s, together with funding difficulties against the American and German industries, brings this wave of experiments to a close."
+        }
+      ],
+      "figures": [
+        "Major theorist and leader of the movement",
+        "The great technician of monumental visual innovations",
+        "Filmmaker and philosopher of cinema",
+        "Pioneer of the avant-garde and of feminist cinema"
+      ]
+    },
+    "PARCOURS_001_02": {
+      "nameEn": "German Expressionism",
+      "descriptionEn": "Born in a Germany traumatised and ruined by the First World War, this artistic movement wholly rejects realism. Its aim is to project madness, anguish, paranoia and the dark side of the human psyche directly onto the screen. Filmmakers use painted, geometric, distorted sets (oblique lines, asymmetrical windows) and a revolutionary handling of light. The style rests on chiaroscuro, with gigantic, threatening shadows that become characters in their own right. Actors adopt an exaggerated performance, close to theatre or mime, to heighten terror and the fantastic.",
+      "transitionEn": "Against the German search for aesthetic and psychological form, the Soviet school intellectualises cinema by making editing the supreme political tool.",
+      "facts": [
+        {
+          "titleEn": "The influence of the studio",
+          "bodyEn": "Almost all of these films were shot entirely in studio (notably at UFA, near Berlin). That total control of the environment let directors master every shadow and every set angle to the millimetre."
+        },
+        {
+          "titleEn": "The Hollywood legacy",
+          "bodyEn": "With the rise of Nazism, most of the great masters of expressionism fled Germany for Hollywood. They brought their aesthetic with them, giving rise directly to the visual codes of film noir and American horror (Universal's monsters)."
+        }
+      ],
+      "figures": [
+        "Director of the movement's founding film",
+        "Master of visual poetry and the fantastic",
+        "Visionary filmmaker of architecture and urban dystopia",
+        "Iconic actor of striking facial expressions"
+      ]
+    },
+    "PARCOURS_001_03": {
+      "nameEn": "Soviet Montage",
+      "descriptionEn": "In the wake of the 1917 revolution, the young Soviet state nationalises cinema, Lenin proclaiming it « the most important of all the arts » for educating the masses. A generation of theorist-filmmakers then revolutionises film history by placing editing at the heart of creation. For them, a film's meaning is not born from the content of an isolated shot, but from the shock produced by juxtaposing two different shots. Cinema becomes an intellectual, rhythmic and sensory language, able to manipulate concepts and stir powerful political emotions.",
+      "transitionEn": "Alongside this constructive rigour of editing, the surrealists blow logic apart in order to film the total freedom of dreams and the unconscious.",
+      "facts": [
+        {
+          "titleEn": "The Kuleshov Effect",
+          "bodyEn": "This is the movement's founding experiment. Lev Kuleshov shows the same static close-up of an actor's face successively alternating with a bowl of soup, a coffin, then a little girl. Spectators attribute different emotions to the actor (hunger, sadness, tenderness), proving that editing creates meaning in a wholly artificial way."
+        },
+        {
+          "titleEn": "Intellectual montage",
+          "bodyEn": "Sergei Eisenstein theorised « montage of attractions », associating images with no direct narrative link to create a metaphor in the spectator's mind (for example, alternating workers being shot with images of a cattle slaughterhouse)."
+        }
+      ],
+      "figures": [
+        "The great theorist of collision montage and the dynamics of the masses",
+        "Pioneer of experimental cinema and of the camera-eye manifesto",
+        "Teacher and pioneer theorist of the manipulation of editing",
+        "Filmmaker focused on narrative editing and psychological drama"
+      ]
+    },
+    "PARCOURS_001_04": {
+      "nameEn": "Cinematic Surrealism",
+      "descriptionEn": "Born in Paris in the wake of André Breton's literary and pictorial movement, surrealism sees cinema as the ideal tool for breaking free of reason, logic and bourgeois morality. Surrealist filmmakers refuse the traditional linear story in order to explore the mechanisms of dream, repressed desire, the unconscious and madness. Using absurd associations of images, provocative visual collages and violent or erotic metaphors, they seek to provoke a poetic and psychological shock in the spectator.",
+      "transitionEn": "After the anarchic ferment of these European avant-gardes, Hollywood synthesises the techniques to create a universal, codified industry of storytelling.",
+      "facts": [
+        {
+          "titleEn": "Public provocation",
+          "bodyEn": "Surrealist screenings regularly caused major scandals. At the release of *L'Âge d'or*, far-right militants wrecked the cinema, slashed the surrealist paintings in the lobby, and the film was banned by the police for more than forty years."
+        },
+        {
+          "titleEn": "The waking dream",
+          "bodyEn": "The surrealists went to the cinema in a unique way: they entered theatres at random, without looking at the times, watched a few minutes, then changed cinema to create their own random, poetic montage of reality."
+        }
+      ],
+      "figures": [
+        "The emblematic director who carried the surrealist spirit all his life",
+        "Painter, co-screenwriter and designer of the images in Buñuel's first films",
+        "Photographer and visual artist, pioneer of abstract experimental cinema",
+        "Theorist, actor and screenwriter of the first film considered surrealist"
+      ]
+    },
+    "PARCOURS_001_05": {
+      "nameEn": "Hollywood classicism",
+      "descriptionEn": "This « Golden Age » is the peak of the American studio system. Hollywood standardises production and creates a universal language based on transparency: technique (staging, editing, lighting) must disappear completely so that the spectator is wholly immersed in the story. Narratives are linear, genres (western, musical, film noir) are strictly codified, and stars (Garbo, Bogart, Gable) are shaped by the studios to draw the public. It is the era of grand spectacle and perfect illusion.",
+      "transitionEn": "In reaction to the studios and to standardised American glamour, postwar Italy goes down into the street to capture the raw truth of the human condition.",
+      "facts": [
+        {
+          "titleEn": "The Hays Code",
+          "bodyEn": "From 1934 to the late 1950s, Hollywood production is subject to very strict moral censorship. The code forbids showing nudity, interracial relationships, profanation, or presenting criminals in a sympathetic light. Filmmakers had to redouble visual ingenuity and innuendo to get around these bans."
+        },
+        {
+          "titleEn": "The Studio System",
+          "bodyEn": "Directors were then employees under contract with the major studios (MGM, Paramount, Warner Bros.). They very rarely had control over the final cut of their films. It was the producer's vision that dominated."
+        }
+      ],
+      "figures": [
+        "The absolute master of the western and of the construction of the American myth",
+        "The genius of suspense who bent the studio system to his visual obsessions",
+        "The chameleon director, virtuoso of screwball comedy and of the adventure film",
+        "The enfant terrible who blew classicism apart from the inside with *Citizen Kane*"
+      ]
+    },
+    "PARCOURS_001_06": {
+      "nameEn": "Italian Neorealism",
+      "descriptionEn": "Born in the ruins of fascist Italy after the war, this movement makes the most radical break in film history by rejecting Hollywood glamour and illusionism. With the Cinecittà studios destroyed or requisitioned, filmmakers go straight into the street to film poverty, unemployment, destruction and the everyday life of the working class. The style is raw, close to reportage: natural light, real locations and frequent use of non-professional actors chosen for the authenticity of their faces and their lives.",
+      "transitionEn": "Inspired by this Italian freedom of shooting, young French critics theorise the politique des auteurs and definitively break academic cinema.",
+      "facts": [
+        {
+          "titleEn": "Ethics before aesthetics",
+          "bodyEn": "For the neorealists, cinema has a moral duty. It must no longer seek to entertain or to make people forget reality, but force the spectator to look the human and social distress of the time in the face."
+        },
+        {
+          "titleEn": "Dismantled by politics",
+          "bodyEn": "The movement died out in the early 1950s, notably because of the Italian government (via the Andreotti law), which refused to subsidise films that exported abroad a miserable, supposedly « unpatriotic » image of a country in reconstruction."
+        }
+      ],
+      "figures": [
+        "The pioneer who lays the current's foundations by filming clandestinely",
+        "The humanist director who films everyday life at human height",
+        "The aristocratic filmmaker who infuses realism with a tragic, operatic dimension",
+        "The crucial theorist and screenwriter who formalised the whole neorealist thought"
+      ]
+    },
+    "PARCOURS_001_07": {
+      "nameEn": "French New Wave",
+      "descriptionEn": "This major movement is started by young critics from *Cahiers du Cinéma* who decide to step behind the camera. They violently reject « daddy's cinema », judged too academic, bourgeois and corseted in its studios. Taking advantage of lighter equipment (16mm cameras, portable recorders), they go down into the street, shoot without a budget, camera on the shoulder and in natural light. They dynamite classical grammar by inventing new rules: deliberate jump cuts, actors addressing the camera, and largely improvised scripts. Cinema becomes personal, free and spontaneous.",
+      "transitionEn": "This French electric shock resonates instantly in Japan, where a new generation of filmmakers seizes that freedom to dynamite the codes of the traditional studios.",
+      "facts": [
+        {
+          "titleEn": "The politique des auteurs",
+          "bodyEn": "This is the New Wave's great theoretical contribution. François Truffaut and his peers assert that the director is the sole author of the film, as a writer is of a book or a painter of a canvas. The filmmaker is no longer a technician in the service of a studio, but an artist expressing a vision of the world."
+        },
+        {
+          "titleEn": "The 1959 Cannes Festival",
+          "bodyEn": "This event marks the movement's worldwide triumph with the simultaneous presentation of Truffaut's *The 400 Blows* (Best Director) and of Alain Resnais's work around *Hiroshima mon amour*."
+        }
+      ],
+      "figures": [
+        "The filmmaker of childhood, of feeling and of the novelistic",
+        "The radical experimenter who deconstructed cinematic form as a whole",
+        "The leading figure of the Left Bank, mixing documentary, fiction and feminism",
+        "The master of speech, of talk and of psychological marivaudage"
+      ]
+    },
+    "PARCOURS_001_08": {
+      "nameEn": "Japanese New Wave (Nūberu Bāgu)",
+      "descriptionEn": "Unlike its French counterpart, born outside traditional structures, the Japanese New Wave first emerges inside a major studio (Shochiku), which hands the reins to young assistants in order to modernise its productions. The movement violently rejects the humanist classicism of the postwar masters (Ozu, Kurosawa). Filmmakers seize the camera to examine, crudely, the taboos and traumas of contemporary Japan: juvenile delinquency, sexuality, racism, corruption and resentment toward the American military occupation. The style is aggressive, jagged, marked by frenetic editing, outrageous framing and a pop or experimental aesthetic.",
+      "transitionEn": "The contestation becomes worldwide: in the East, under the communist regime, Czechoslovak filmmakers in turn use this modernity to inject absurdity and social satire.",
+      "facts": [
+        {
+          "titleEn": "A sociopolitical rupture",
+          "bodyEn": "The *Nūberu Bāgu* is not only an aesthetic revolution; it is deeply political. It explodes in a climate of student protest against the renewal of the security treaty between the United States and Japan (the ANPO treaty), an event that sits openly at the centre of several films of the movement."
+        },
+        {
+          "titleEn": "The move to independence",
+          "bodyEn": "Faced with growing studio censorship of the radicalism of their work, the leading directors quickly broke their contracts to found independent production structures (notably the legendary ATG — Art Theatre Guild) in order to keep total creative freedom."
+        }
+      ],
+      "figures": [
+        "The provocative, politically radical leader of the movement",
+        "An aesthete filmmaker combining traditional theatricality and visual modernity",
+        "The anthropologist director who preferred to film the drives of Japan's lower depths",
+        "A rigorous filmmaker exploring structures of power and political alienation"
+      ]
+    },
+    "PARCOURS_001_09": {
+      "nameEn": "Czechoslovak New Wave",
+      "descriptionEn": "This immensely rich movement is born thanks to a temporary softening of the communist regime in Czechoslovakia (the thaw). Trained at Prague's prestigious film school (FAMU), young directors use this opening to get around state censorship. To criticise the absurdity of bureaucracy and totalitarianism, they leave official socialist realism behind and adopt a unique tone, marked by black humour, fierce satire, irony and the absurd. Visually, the current oscillates between a quasi-documentary realism inherited from cinéma direct and surreal, colourful formal experiments.",
+      "transitionEn": "Once all these rules have been broken and reinvented by modernities around the world, cinema enters the contemporary era, a space of hybridity where all these inheritances intertwine.",
+      "facts": [
+        {
+          "titleEn": "The Prague Spring",
+          "bodyEn": "The golden age of this current is intimately tied to that movement of political liberalisation. The invasion of Prague by Warsaw Pact tanks in August 1968 breaks the artistic momentum. Films are banned (« put in the vault »), production structures are taken back by the Party, and several major filmmakers choose exile."
+        },
+        {
+          "titleEn": "International recognition",
+          "bodyEn": "Despite its brevity and complex production conditions, the movement had a huge worldwide impact, winning two Oscars for Best Foreign Language Film in a row (*The Shop on Main Street* in 1965 and *Closely Watched Trains* in 1967)."
+        }
+      ],
+      "figures": [
+        "The master of social satire and of a tender but sharp gaze on the human",
+        "The feminist, iconoclastic director, visually the most experimental of the group",
+        "A virtuoso of tragicomedy and of the poetry of everyday life",
+        "Director of major poetic and critical works of fractured form"
+      ]
+    },
+    "PARCOURS_001_10": {
+      "nameEn": "Contemporary cinema",
+      "periodLabelEn": "2000 – present",
+      "descriptionEn": "This period marks cinema's entry into an era of total hybridisation. Freed from the strict manifestos of the last century, contemporary cinema is marked by the mixing of styles, genres and cultures. It is the age of the global digital transition, which transforms capture, visual effects and distribution. Contemporary authors draw freely on the whole history of cinema, recycling and quoting past currents (postmodernism) to interrogate ecological crises, technological alienation, questions of identity and worldwide geopolitical upheavals.",
+      "facts": [
+        {
+          "titleEn": "The war of screens",
+          "bodyEn": "The rise of streaming platforms and of domestic technologies redefines cinema's border. Contemporary creation is no longer thought only for the darkened theatre, forcing the industry to reinvent the collective experience of the big screen (technological spectacle or immersive events)."
+        },
+        {
+          "titleEn": "The decentring of the gaze",
+          "bodyEn": "Film history was long dominated by the West. The contemporary era definitively consecrates the explosion and worldwide recognition of cinematographies once marginalised (South Korea, Iran, Mexico, West Africa), shaking the traditional structures of artistic legitimacy."
+        }
+      ],
+      "figures": [
+        "Architect of a popular cinema of complex, cerebral narrative structure",
+        "Leader of the Korean revival, handling social satire and the mixing of genres",
+        "Master of modern science fiction of monumental, metaphysical aesthetic",
+        "A major filmmaker of the renewal of gazes, theorising the *female gaze*"
+      ]
+    }
+  }
+}

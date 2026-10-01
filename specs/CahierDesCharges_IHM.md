@@ -12,7 +12,7 @@
 >
 > Les éléments **imposés par Léo** sont signalés par la mention **[imposé]**. Le reste relève de ma proposition.
 >
-> **0.3.0 —** Pendant le chargement du catalogue, fond blanc plein écran et icône de l’app (plus le texte « Votre aventure commence ici »). Après le pseudo, un guide de 6 pages (intro, Accueil, Atlas, Collections, futur Parcours, Profil) dans un panneau à la taille du texte (environ un tiers de l’écran), le reste fortement flouté. Rejouable dans Réglages (« Revoir le guide »). « Voir toutes les sources » sous les crédits. Index A–Z blanc (couleur du texte, pas l’or) sur pays, courants, genres et réalisateurs. Appui long sur un film d’une liste → confirmer Vu. La chaîne des rangs s’ouvre sur le rang courant. Un nouveau rang ouvre un dialogue avec confettis. Chaque liste de films affiche son effectif en petit. La fiche réalisateur montre un portrait (plus petit qu’une affiche) et la biographie au-dessus de la liste de films, avec un espace sous le titre « Biographie ». La biographie suit la langue de l’app. Le grain argentique est à peine plus visible en thème sombre. L'onglet Parcours liste des lectures (une grande carte par parcours, pas une carte de collection). Le fil est vertical : une bulle par courant, un trait, un point d'interrogation qui ouvre une petite fenêtre avec seulement la phrase de transition. La fiche courant est une feuille qui laisse voir le fil au-dessus.
+> **0.3.0 —** Pendant le chargement du catalogue, fond blanc plein écran et icône de l’app (plus le texte « Votre aventure commence ici »). Après le pseudo, un guide de 6 pages (intro, Accueil, Atlas, Collections, futur Parcours, Profil) dans un panneau à la taille du texte (environ un tiers de l’écran), le reste fortement flouté. Rejouable dans Réglages (« Revoir le guide »). « Voir toutes les sources » sous les crédits. Index A–Z blanc (couleur du texte, pas l’or) sur pays, courants, genres et réalisateurs, `#` (autres) après Z. Appui long sur un film d’une liste → confirmer Vu. La chaîne des rangs s’ouvre sur le rang courant. Un nouveau rang ouvre un dialogue avec confettis. Chaque liste de films affiche son effectif en petit. La fiche réalisateur montre un portrait (plus petit qu’une affiche) et la biographie au-dessus de la liste de films, avec un espace sous le titre « Biographie ». La biographie suit la langue de l’app. Le grain argentique est à peine plus visible en thème sombre. L'onglet Parcours liste des lectures (une grande carte par parcours, pas une carte de collection). Le fil est vertical : une bulle par courant, un trait, un point d'interrogation qui ouvre une petite fenêtre avec seulement la phrase de transition. La fiche courant est une feuille qui laisse voir le fil au-dessus.
 
 ------
 
@@ -347,7 +347,7 @@ Justification : la carte est l'objet le plus spectaculaire du produit et mérite
 - Libellés **toujours visibles**, **une seule ligne**, jamais seulement au survol. Cinq icônes muettes sont indéchiffrables. « Collections » ne passe pas à la ligne.
 - Onglet actif : icône pleine + libellé en `accent`. Onglet inactif : icône linéaire + libellé en `onBackgroundMuted`.
 - **Pas de badge de notification** sur les onglets. Contraire au principe « gamification mesurée ».
-- Chaque onglet conserve sa propre pile de navigation. Retaper l'onglet actif remonte en haut de la pile.
+- Chaque onglet conserve sa propre pile de navigation. Retaper l'onglet actif revient à sa page principale (racine de la pile, liste en haut).
 
 ## 8.3. Menu latéral **[imposé]**
 
@@ -391,7 +391,7 @@ Sur Parcours (et les écrans d’aide thématiques) : **?** ouvre l’aide.
 
 Sur l’**onglet Atlas** : ☰, **?** aide, icône **étoiles** (carte du ciel).
 
-Sur la **carte du ciel** : flèche retour, titre « Carte du ciel », **?**.
+Sur la **carte du ciel** : flèche retour, champ de recherche titre (VF/VO) à gauche du **?**.
 Fond nuit en salle obscure ; **papier** (salle éclairée) en thème clair.
 
 Les autres écrans hors onglet : flèche de retour + titre.
@@ -519,7 +519,7 @@ S’ouvre depuis l’icône étoiles de l’Atlas. Vue par défaut : un film au 
 
 ```text
 ┌─────────────────────────────────────────┐
-│  ←          Carte du ciel          ?    │
+│  ←     [recherche titre]           ?    │
 ├─────────────────────────────────────────┤
 │  Le film au centre, autour ce qui le lie│
 │  (Autour du film) (Pays) (Décennies)    │
@@ -536,10 +536,11 @@ S’ouvre depuis l’icône étoiles de l’Atlas. Vue par défaut : un film au 
 │   ⌂     ▦    ((●))    ◈     ☺           │
 ```
 
-Le **Canvas occupe tout** sous la barre haute. Les chips et le hint sont
-**superposés**. En salle obscure le ciel reste `#07060D` ; en salle éclairée
-il reprend le papier du thème pour que la liste de films (titres vus compris)
-reste lisible.
+Le **Canvas occupe tout** sous la barre haute. Le champ titre (VF ou VO)
+propose une liste courte ; un tap recentre autour du film. Les chips et le
+hint sont **superposés**. En salle obscure le ciel reste `#07060D` ; en salle
+éclairée il reprend le papier du thème pour que la liste de films (titres
+vus compris) reste lisible.
 
 ------
 
@@ -735,8 +736,9 @@ Pas d'étoiles : elles évoquent une note, or Urbinema ne note aucun film.
 
 Ordre : **Avatar + pseudo → Rang → niveau/XP → Badges → statistiques**.
 
-Un **appui long** sur l'un des trois badges vitrine ouvre une boîte sobre avec
-son nom et sa condition d'obtention. L'appui simple reste sans action.
+**Maintenir** l'un des trois badges vitrine affiche uniquement sa condition,
+en petit, au-dessus du doigt. Relâcher fait disparaître le texte. Pas de
+boîte, pas de bouton, pas de nom du badge. L'appui simple reste sans action.
 
 Cliquer le rang ouvre l'échelle 1→10, flèches entre les rangs, rang actuel
 en `accent`, et **sous le nom de ce rang uniquement** la description détaillée

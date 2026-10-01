@@ -18,6 +18,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -61,9 +63,15 @@ import fr.jsisie.urbinema.ui.theme.UrbinemaThemeTokens
 
 /** List of pedagogical paths. One large panel per path, not a collection card. */
 @Composable
-fun PathsScreen(paths: List<PathUi>, onPath: (String) -> Unit) {
+fun PathsScreen(paths: List<PathUi>, resetTick: Int = 0, onPath: (String) -> Unit) {
+    val listState = rememberLazyListState()
+    LaunchedEffect(resetTick) {
+        if (resetTick == 0) return@LaunchedEffect
+        listState.scrollToItem(0)
+    }
     LazyColumn(
         modifier = Modifier.fillMaxSize().background(UrbinemaThemeTokens.colors.background),
+        state = listState,
         contentPadding = PaddingValues(UrbinemaThemeTokens.dimens.screen),
         verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.lg),
     ) {
@@ -89,7 +97,7 @@ private fun PathListPanel(path: PathUi, onClick: () -> Unit) {
             Modifier
                 .width(3.dp)
                 .height(148.dp)
-                .background(UrbinemaThemeTokens.colors.accent),
+                .background(UrbinemaThemeTokens.colors.line),
         )
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.sm)) {
             Text(
@@ -227,13 +235,13 @@ private fun TransitionLink(onClick: () -> Unit) {
                 .padding(top = UrbinemaThemeTokens.dimens.sm)
                 .width(1.dp)
                 .height(28.dp)
-                .background(UrbinemaThemeTokens.colors.accent.copy(alpha = 0.7f)),
+                .background(UrbinemaThemeTokens.colors.line.copy(alpha = 0.7f)),
         )
         Box(
             modifier = Modifier
                 .size(32.dp)
                 .clip(CircleShape)
-                .border(1.dp, UrbinemaThemeTokens.colors.accent, CircleShape)
+                .border(1.dp, UrbinemaThemeTokens.colors.line, CircleShape)
                 .clickable(onClick = onClick),
             contentAlignment = Alignment.Center,
         ) {
@@ -244,7 +252,7 @@ private fun TransitionLink(onClick: () -> Unit) {
                 .padding(bottom = UrbinemaThemeTokens.dimens.sm)
                 .width(1.dp)
                 .height(28.dp)
-                .background(UrbinemaThemeTokens.colors.accent.copy(alpha = 0.7f)),
+                .background(UrbinemaThemeTokens.colors.line.copy(alpha = 0.7f)),
         )
     }
 }
@@ -257,7 +265,7 @@ private fun MovementBubble(code: String, name: String, modifier: Modifier = Modi
         contentDescription = name,
         modifier = modifier
             .clip(CircleShape)
-            .border(1.dp, UrbinemaThemeTokens.colors.accent.copy(alpha = 0.45f), CircleShape),
+            .border(1.dp, UrbinemaThemeTokens.colors.line.copy(alpha = 0.45f), CircleShape),
     ) {
         Box(Modifier.fillMaxSize().background(UrbinemaThemeTokens.colors.background), contentAlignment = Alignment.Center) {
             Icon(Icons.Outlined.Image, name, Modifier.size(22.dp), tint = UrbinemaThemeTokens.colors.onBackgroundMuted)

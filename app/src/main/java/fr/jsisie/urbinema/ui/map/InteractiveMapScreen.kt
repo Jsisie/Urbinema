@@ -36,21 +36,28 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Close
 import androidx.compose.material.icons.outlined.MyLocation
+import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberModalBottomSheetState
@@ -93,6 +100,7 @@ import fr.jsisie.urbinema.ui.components.MarkWatchedDialog
 import fr.jsisie.urbinema.ui.components.WatchedFilmTitle
 import fr.jsisie.urbinema.ui.model.ExplorationState
 import fr.jsisie.urbinema.ui.model.MovieSummaryUi
+import fr.jsisie.urbinema.ui.model.SearchHitUi
 import fr.jsisie.urbinema.ui.model.TerritoryUi
 import fr.jsisie.urbinema.ui.theme.UrbinemaThemeTokens
 import kotlin.math.hypot
@@ -123,8 +131,9 @@ private data class SkyPalette(
 @Composable
 private fun rememberSkyPalette(): SkyPalette {
     val colors = UrbinemaThemeTokens.colors
-    return if (colors.isDark) {
-        SkyPalette(
+    val classicDark = colors.isDark && colors.line == SkyGold
+    return when {
+        classicDark -> SkyPalette(
             isDark = true,
             sky = SkyNight,
             glow = Color(0xFF1B1430),
@@ -134,13 +143,22 @@ private fun rememberSkyPalette(): SkyPalette {
             fab = Color(0xFF16141F),
             star = Color.White,
         )
-    } else {
-        SkyPalette(
+        colors.isDark -> SkyPalette(
+            isDark = true,
+            sky = colors.background,
+            glow = colors.surface,
+            ink = colors.onBackground,
+            gold = colors.line,
+            sheet = colors.surfaceElevated,
+            fab = colors.surfaceElevated,
+            star = colors.onBackground,
+        )
+        else -> SkyPalette(
             isDark = false,
             sky = colors.background,
             glow = colors.surface,
             ink = colors.onBackground,
-            gold = colors.accent,
+            gold = colors.line,
             sheet = colors.surfaceElevated,
             fab = colors.surfaceElevated,
             star = colors.accentMuted,
@@ -397,7 +415,7 @@ private fun NodeSheet(
                         .fillMaxWidth()
                         .padding(top = 12.dp)
                         .height(3.dp),
-                    color = colors.accent,
+                    color = colors.line,
                     trackColor = colors.surfacePressed,
                 )
             }
@@ -733,5 +751,88 @@ internal suspend fun animateCamera(
             ),
         )
         onFrame()
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SkyMapTitleSearch(
+    query: String,
+    onQueryChange: (String) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val colors = UrbinemaThemeTokens.colors
+    OutlinedTextField(
+        value = query,
+        onValueChange = onQueryChange,
+        modifier = modifier.fillMaxWidth(),
+        singleLine = true,
+        placeholder = {
+            Text(stringResource(R.string.sky_map_search_hint), style = MaterialTheme.typography.bodySmall)
+        },
+        leadingIcon = { Icon(Icons.Outlined.Search, contentDescription = null) },
+        trailingIcon = if (query.isNotEmpty()) {
+            {
+                IconButton(onClick = { onQueryChange("") }) {
+                    Icon(Icons.Outlined.Close, stringResource(R.string.sky_map_search_clear))
+                }
+            }
+        } else {
+            null
+        },
+        textStyle = MaterialTheme.typography.bodyMedium,
+        colors = OutlinedTextFieldDefaults.colors(
+            focusedTextColor = colors.onBackground,
+            unfocusedTextColor = colors.onBackground,
+            focusedBorderColor = colors.line,
+            unfocusedBorderColor = colors.outline,
+            cursorColor = colors.accent,
+            focusedContainerColor = colors.surface,
+            unfocusedContainerColor = colors.surface,
+        ),
+    )
+}
+
+@Composable
+fun SkyMapSearchHits(
+    hits: List<SearchHitUi>,
+    onPick: (String) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val colors = UrbinemaThemeTokens.colors
+    Surface(
+        modifier = modifier.widthIn(max = 320.dp).fillMaxWidth(0.92f),
+        shape = MaterialTheme.shapes.medium,
+        color = colors.surfaceElevated,
+        shadowElevation = 6.dp,
+    ) {
+        Column(Modifier.padding(vertical = 4.dp)) {
+            if (hits.isEmpty()) {
+                Text(
+                    stringResource(R.string.search_no_results),
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = colors.onBackgroundMuted,
+                )
+            } else {
+                hits.forEach { hit ->
+                    Column(
+                        Modifier
+                            .fillMaxWidth()
+                            .clickable { onPick(hit.id) }
+                            .padding(horizontal = 12.dp, vertical = 8.dp),
+                    ) {
+                        Text(hit.title, style = MaterialTheme.typography.bodyMedium, color = colors.onBackground)
+                        if (hit.subtitle.isNotBlank()) {
+                            Text(
+                                hit.subtitle,
+                                style = MaterialTheme.typography.labelSmall,
+                                color = colors.onBackgroundMuted,
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 }

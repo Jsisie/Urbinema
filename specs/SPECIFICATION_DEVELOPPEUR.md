@@ -126,13 +126,13 @@ Cinq onglets bas :
 | Collections | Groupées par `track`. Initiation ouverte ; cadenas Initiation (≥ 1 Vu) puis cadenas **entre groupes** (2 collections commencées). Suivies en or. Non suivie = 0 %. Terminée = or + check. |
 | Atlas | Listes (onglet). **?** = aide. **Étoiles** = carte du ciel (`atlas/sky`). |
 | Parcours | Rang détaillé, quêtes, collections en cours. `?` → Aide. |
-| Profil | Pseudo, rang, niveau/XP, **jusqu’à 3 badges** vitrine (appui long = condition), stats. Réglages via l’icône ⚙ (thème, langue, grain, Aide, reset, À propos). |
+| Profil | Pseudo, rang, niveau/XP, **jusqu’à 3 badges** vitrine (maintenir = condition au-dessus du doigt), stats. Réglages via l’icône ⚙ (thème, langue, grain, Aide, reset, À propos). |
 
 Le tiroir (☰ sur **chaque onglet**) ouvre les index : rangs, badges, collections, recherche,
 statistiques. Plus d’entrée « Tous les courants » : les pays et courants vivent
 dans Atlas.
 
-L’onglet actif : retaper l’onglet revient à sa racine.
+L’onglet actif : retaper l’onglet revient à sa page principale (pile vidée jusqu’à la racine, liste remonte en haut).
 
 ### 2.2 Gestes métier V1
 
@@ -175,7 +175,8 @@ genre… rayons un peu distincts), jusqu’à 12 films liés plus loin.
 « Akira Kurosawa » si le réalisateur est déjà là). Tap un autre film =
 recentre. Tap un territoire = feuille + navigation. Les puces sont
 Autour du film, Pays et Décennies. `MAX_SCALE = 14`. Fiche film : « Voir
-sur la carte ».
+sur la carte ». Champ titre en haut (VF ou VO) : une liste courte, un tap
+recentre la constellation (`mapFocus` + `AROUND_FILM`).
 
 Couleurs **par type**, pas seulement par état d’exploration : films ivoire,
 vus / centre or, réalisateurs cyan `#5EC8D8`, pays corail `#E07A5F`,
@@ -289,7 +290,7 @@ app/src/main/assets/catalog/catalog.json
 
 Il décrit le monde : films, pays, continents, réalisateurs, caractéristiques,
 genres, ères, collections, 10 rangs, 38 badges, 59 quêtes types (19 Bronze, 20 Argent, 20 Or).
-Le pack courant est la version **40** (1613 films, 28 collections, biographies de réalisateurs en français et en anglais quand les deux existent). `catalog.json` est la copie de `catalog_v3.json`. Les portraits sont des fichiers `assets/media/directors/{CODE}.jpg`, lus par code, sans ligne `mediaAssets`. La collection `COLLECTION_027` (« Cinéma des premiers temps ») est sur le groupe `GATEWAY`, avec 17 films de 1892 à 1906.
+Le pack courant est la version **47** (1613 films, 28 collections, biographies de réalisateurs et textes éditoriaux en français et en anglais quand les deux existent). `catalog.json` est la copie de `catalog_v3.json`. Les portraits sont des fichiers `assets/media/directors/{CODE}.jpg`, lus par code, sans ligne `mediaAssets`. La collection `COLLECTION_027` (« Cinéma des premiers temps ») est sur le groupe `GATEWAY`, avec 17 films de 1892 à 1906.
 
 Titres : `originalTitle` est toujours la valeur de repli affichée.
 `frenchTitle` est facultatif et ne doit exister que pour un véritable titre
@@ -580,7 +581,11 @@ nullable). Room **v7** (`MIGRATION_6_7`) : `users.avatarCode`. Room **v8**
 (`MIGRATION_7_8`) : `directors.biography`. Room **v9** (`MIGRATION_8_9`) :
 `directors.biographyEn`. Room **v10** (`MIGRATION_9_10`) : tables des
 parcours pédagogiques (ci-dessous). Elle retire aussi l'index partiel avant
-le contrôle. Colonne film
+le contrôle. Room **v11** (`MIGRATION_10_11`) : colonnes `*En` sur pays,
+continents, courants, genres, collections, parcours (étapes, faits, figures),
+rangs, badges et quêtes. L'UI prend le texte anglais si la langue est
+l'anglais, sinon le français, et retombe sur l'autre si une langue manque.
+Colonne film
 `artisticDemand` = exigence A_f de la formule. Comment poser H/A/R/C :
 `FORMULE_MATHEMATIQUE.txt` §1.bis.
 
@@ -605,7 +610,9 @@ de `PathsScreen`, avec la mention « Ancien onglet Parcours ».
 
 La source éditoriale est `specs/Listes_Fonctionnelles/Listes_Des_Parcours.txt`.
 L'app ne lit pas ce fichier. Elle lit le catalogue, clé `paths`, importée
-dans Room quand `version` augmente. Pack courant : **29**.
+dans Room quand `version` augmente. Pack courant : **47**.
+Les champs `nameEn`, `summaryEn`, `descriptionEn`, `periodLabelEn`,
+`transitionEn`, `titleEn`, `bodyEn`, `roleEn` nourrissent l'anglais.
 
 Fichiers : `CatalogPack.kt` (`PathImport`), `CatalogImporter.persist`,
 `MainViewModel` (`paths`), `ParcoursScreens.kt`. Dessins des bulles :
@@ -648,7 +655,7 @@ reste du texte (acteur, théoricien). S'il est présent, il doit exister dans
 tableaux `facts`, `figures` et `movies` est l'ordre affiché.
 
 Modifier un parcours : éditer `name`, `summary`, `description` ou
-`periodLabel` dans `catalog_v3.json`, copier vers `catalog.json`, monter
+`periodLabel` (et les champs `*En` pour l'anglais) dans `catalog_v3.json`, copier vers `catalog.json`, monter
 `version` d'un cran.
 
 Ajouter un parcours : un nouvel objet dans `paths`, `code` et `displayOrder`
@@ -746,7 +753,7 @@ validés **pendant** la fenêtre comptent. Récompenses snapshotées.
 `domain/badge/BadgeRegistry.kt`. Codes `001`–`032`. Jamais retirés une fois
 obtenus. À l’unlock : pop-up FR/EN (« Félicitations ! Vous avez débloqué
 le badge « … » ! ») et illustration locale de 72 dp. Les trois badges vitrine
-du Profil utilisent un appui long pour afficher `BadgeUi.condition`.
+du Profil : tant qu’on appuie, un libellé `BadgeUi.condition` s’affiche au-dessus du doigt ; il disparaît au relâchement.
 
 ### 7.5 Collections
 

@@ -10,5 +10,5 @@ val UrbinemaShapes = Shapes(
     small = RoundedCornerShape(8.dp),
     medium = RoundedCornerShape(8.dp),
     large = RoundedCornerShape(16.dp),
-    extraLarge = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
+    extraLarge = RoundedCornerShape(16.dp),
 )

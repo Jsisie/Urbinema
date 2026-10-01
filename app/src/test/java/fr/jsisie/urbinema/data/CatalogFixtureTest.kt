@@ -24,7 +24,7 @@ class CatalogFixtureTest {
         val report = CatalogValidator().validate(pack)
 
         assertTrue(report.errors.joinToString { "${it.path}: ${it.message}" }, report.isValid)
-        assertEquals(42, pack.version)
+        assertEquals(47, pack.version)
         assertEquals(1613, pack.movies.size)
         assertEquals("Voir 50 films d'horreur.", pack.badges.first { it.code == "032" }.description)
         assertEquals(
@@ -64,7 +64,39 @@ class CatalogFixtureTest {
                 "THE_DARK_KNIGHT_2008",
                 "VERITES_ET_MENSONGES_1973",
                 "JE_TU_IL_ELLE_1974",
+                "STAND_BY_ME_1986",
+                "THE_THIN_BLUE_LINE_1988",
+                "AMADEUS_1984",
+                "ONCE_UPON_A_TIME_IN_HOLLYWOOD_2019",
+                "THE_THING_1982",
+                "SCARFACE_1983",
+                "BLOW_OUT_1981",
+                "HALLOWEEN_1978",
+                "SWITCHBLADE_SISTERS_1975",
+                "THE_LONG_GOODBYE_1973",
+                "CABARET_1972",
+                "FAT_CITY_1972",
+                "MCCABE_AND_MRS_MILLER_1971",
+                "PARTY_THE_1968",
+                "ROSEMARY_S_BABY_1968",
+                "JE_VEUX_JUSTE_EN_FINIR_2020",
+                "MOONLIGHT_2016",
+                "UNE_ETOILE_EST_NEE_1954",
+                "PINOCCHIO_1940",
             ).all { code -> pack.movies.first { it.code == code }.frenchTitle == null },
+        )
+        assertEquals(
+            "Le Bal des vampires",
+            pack.movies.first { it.code == "LA_DANSE_DES_VAMPIRES_1967" }.frenchTitle,
+        )
+        assertEquals("First Curtain", pack.badges.first { it.code == "001" }.nameEn)
+        assertEquals(
+            "How cinema became an art",
+            pack.paths.first { it.code == "PARCOURS_001" }.nameEn,
+        )
+        assertEquals(
+            "Silent cinema",
+            pack.paths.first { it.code == "PARCOURS_001" }.steps.first().nameEn,
         )
         assertTrue(
             listOf("BEAU_TRAVAIL_1999", "35_SHOTS_OF_RUM_2008", "TROUBLE_EVERY_DAY_2001", "CHOCOLAT_1988", "WHITE_MATERIAL_2009")

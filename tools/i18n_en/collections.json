@@ -1,0 +1,142 @@
+{
+  "COLLECTION_INITIATION": {
+    "nameEn": "Initiation",
+    "descriptionEn": "Ten films everyone has already come across, to raise the curtain.",
+    "longDescriptionEn": "The Lion King, Forrest Gump, Titanic, Spirited Away, Pulp Fiction, Seven, Avatar, The Godfather, Star Wars and Jaws: titles seen, seen again, quoted, zapped on a Sunday night. This collection is not a cinephile exam. It is the first row of the theatre. Follow it, mark at least one film as watched, and the rest of Urbinema opens: currents, countries, authors, more demanding collections. You already know these images. Here you simply start to put them in order."
+  },
+  "COLLECTION_001": {
+    "nameEn": "Italian Neorealism",
+    "descriptionEn": "The founding gestures of a cinema turned toward the street and the aftermath of war.",
+    "longDescriptionEn": "Neorealism is born in defeated Italy in 1945, when studios lack means and the street already offers every set. Roberto Rossellini films occupied then liberated Rome, Vittorio De Sica follows an unemployed man and a child searching for a bicycle, Luchino Visconti goes down to Sicily. You see non-professionals, daylight, endings without consolation. The movement lasts little, from Roma città aperta to Umberto D., but it shifts world cinema: poverty ceases to be a picturesque motif. Fellini, still close to those years, will inherit the tenderness of the roads before inventing something else. Neorealism is not a single style: it is a historical urgency."
+  },
+  "COLLECTION_002": {
+    "nameEn": "French New Wave",
+    "descriptionEn": "A freedom of shooting and of story that transforms French cinema.",
+    "longDescriptionEn": "At the end of the 1950s, Cahiers du cinéma critics step behind the camera. François Truffaut, Jean-Luc Godard, Claude Chabrol, Éric Rohmer and Jacques Rivette refuse « quality cinema » in favour of light shooting, real streets and jagged editing. The Left Bank, with Alain Resnais, Agnès Varda and Chris Marker, adds memory, documentary and literary modernity. From 1958 to 1965, Paris becomes an open-air studio. The New Wave is not a single manifesto: it is a generation that makes the filmmaker visible as an author. Its legacy still runs, from the handheld camera to stories full of holes."
+  },
+  "COLLECTION_003": {
+    "nameEn": "Japanese golden age",
+    "descriptionEn": "A few doors into the golden age of Japanese cinema.",
+    "longDescriptionEn": "From the 1930s to the 1960s, the great Japanese studios produce a cinema of rare density. Yasujirō Ozu watches families and silences from a tatami. Kenji Mizoguchi follows women's destinies across eras and luxury prostitutes. Akira Kurosawa opens jidai-geki to the world, from Rashōmon to Seven Samurai. Masaki Kobayashi and Mikio Naruse add moral anger and urban melodrama. This golden age is not a single school: it is an industry able to carry authors to the end of their form. You learn to read a shot as a rite."
+  },
+  "COLLECTION_004": {
+    "nameEn": "Akira Kurosawa",
+    "descriptionEn": "From the court of Rashōmon to the colours of Ran, a world-work.",
+    "longDescriptionEn": "Akira Kurosawa crosses almost all of postwar Japanese cinema. Rashōmon imposes in 1950 the relativity of stories. Seven Samurai invents a popular epic Hollywood has never stopped rereading. Ikiru, Yojimbo, High and Low show a moralist of the wide shot and of rain. Later, Kagemusha and Ran unfold colour as a Shakespearean tragedy. Kurosawa is not only « exportable » Japan: he is a craftsman of movement, of the group and of doubt. This collection follows the arc of an author who never stopped filming justice."
+  },
+  "COLLECTION_005": {
+    "nameEn": "Hollywood golden age",
+    "descriptionEn": "The studio system, its genres and its invisible continuity.",
+    "longDescriptionEn": "From 1930 to 1960, Hollywood makes a language the whole world learns. John Ford sculpts the western, Howard Hawks moves from crime to comedy, Billy Wilder sharpens dialogue, Welles opens an auteur breach inside the system itself. The Hays Code reins in, stars carry, invisible continuity stitches the shots. Gone with the Wind and The Wizard of Oz saturate the myth; Citizen Kane and Casablanca crack it. This period is not an innocent golden age: it is an industry, a censorship and a permanent invention."
+  },
+  "COLLECTION_006": {
+    "nameEn": "German Expressionism",
+    "descriptionEn": "Shadows, stretched sets and the visual psyche of Weimar.",
+    "longDescriptionEn": "After 1919, Weimar cinema invents an inner city. The Cabinet of Dr. Caligari paints its streets askew, Nosferatu makes the vampire a silhouette, Metropolis raises an architecture of classes. Fritz Lang and F. W. Murnau do not merely illustrate anguish: they build it in light. Expressionism overflows the fantastic, as far as M. When its craftsmen leave for Hollywood, they carry the shadows that will feed film noir. This collection links the German studio to a lasting idea: the set thinks."
+  },
+  "COLLECTION_007": {
+    "nameEn": "Soviet Montage",
+    "descriptionEn": "The collision of shots as political thought.",
+    "longDescriptionEn": "In the 1920s, the USSR makes editing a theory as much as a technique. Sergei Eisenstein collides shots to produce an idea, Dziga Vertov films the camera as a new eye, Dovzhenko seeks an agrarian poetry. Battleship Potemkin, October and Man with a Movie Camera do not only tell the revolution: they try to make it visible. Later, Alexander Nevsky and Ivan the Terrible show how that energy bends to power. Soviet montage remains a lesson: a film thinks by collisions."
+  },
+  "COLLECTION_008": {
+    "nameEn": "Film noir",
+    "descriptionEn": "Urban fatality, contrasted lighting and troubled morality.",
+    "longDescriptionEn": "Film noir is not a genre declared by Hollywood: it is a climate recognised after the fact. Double Indemnity, The Maltese Falcon, Sunset Boulevard: men talk too well and die too fast. The war, émigré expressionism and the hard-boiled novel meet there. Jules Dassin takes the formula to Paris with Rififi, Carol Reed plants it in Vienna in The Third Man. Later, Chinatown rereads the myth in Los Angeles. This collection follows a light: the one that cuts a face in two."
+  },
+  "COLLECTION_009": {
+    "nameEn": "Westerns",
+    "descriptionEn": "The American frontier, then its Italian reinvention.",
+    "longDescriptionEn": "The western is Hollywood's founding myth: the stagecoach, the sheriff, the desert. John Ford makes an elegy of it, from Stagecoach to The Searchers. Hawks, Zinnemann and others test courage and community there. In the 1960s, Sergio Leone and Sergio Corbucci move the genre to Spain and Italy: close-up, violence, irony. The spaghetti western does not imitate Ford: it takes him apart. To go from Stagecoach to Django is to see a myth change continent and morality."
+  },
+  "COLLECTION_010": {
+    "nameEn": "New German Cinema",
+    "descriptionEn": "The West German revival, from Oberhausen to Fassbinder.",
+    "longDescriptionEn": "After the Oberhausen manifesto in 1962, a generation refuses daddy's cinema. Rainer Werner Fassbinder films the FRG as a political melodrama, Werner Herzog sends his heroes into the jungle and up a mountain, Wim Wenders makes of the road and of angels a language. Volker Schlöndorff adapts Grass. From 1966 to 1982, West Germany finally tells itself its violence, its immigrants, its economic miracle. It is not a single school: it is a formal anger. You learn that a country can film itself against its advertisements."
+  },
+  "COLLECTION_011": {
+    "nameEn": "Iranian New Wave",
+    "descriptionEn": "Childhood, off-screen space and everyday life as politics.",
+    "longDescriptionEn": "Modern Iranian cinema invents itself between poetry and constraint. Forough Farrokhzad films a leper colony like a verse. Abbas Kiarostami makes of childhood, the village and off-screen space an art of the question. Close-Up blurs documentary and fiction, Taste of Cherry walks along a hill. Later, Asghar Farhadi folds that ethics of looking into the bourgeois closed room. Censorship is not a backdrop: it forces another way of filming. This wave does not imitate 1960s France: it invents a radical modesty."
+  },
+  "COLLECTION_012": {
+    "nameEn": "Silent cinema",
+    "descriptionEn": "The age of images before synchronised speech.",
+    "longDescriptionEn": "Cinema invents almost all its languages before synchronised speech covers them. Griffith monumentalises narrative, Feuillade strings Fantômas and Les Vampires, Keaton, Chaplin and Lloyd make of the body a grammar. German expressionism, Flaherty, Murnau, Soviet montage and Dreyer prove that silence is not a lack. The Passion of Joan of Arc sticks to faces, Sunrise invents a lyrical camera, Napoléon overflows the screen. To return to silent film is to relearn seeing before listening."
+  },
+  "COLLECTION_013": {
+    "nameEn": "African cinemas",
+    "descriptionEn": "Political fables, from Sembène to Cissé and Sissako.",
+    "longDescriptionEn": "Ousmane Sembène, often called the father of African cinemas, films Dakar, the mandate and colonial domesticity. Djibril Diop Mambéty with Touki Bouki invents a Wolof modernity, between cows and ocean liner. In Mali, Souleymane Cissé opens Yeelen as an initiatory tale. Youssef Chahine and Shadi Abdel Salam inscribe Egypt in a history older than Nasser. Later, Abderrahmane Sissako watches Timbuktu under occupation. This collection does not unify a continent: it refuses that it be reduced to an off-screen."
+  },
+  "COLLECTION_014": {
+    "nameEn": "Latin America",
+    "descriptionEn": "From Cinema Novo to contemporary stories of Mexico and Argentina.",
+    "longDescriptionEn": "Glauber Rocha proclaims an aesthetic of hunger and arms the sertão. Luis Buñuel, exiled in Mexico, films Los Olvidados without miserabilism. Later, City of God, Roma, Amores perros and Pan's Labyrinth show a Latin American cinema become visible in Northern festivals, without ceasing to speak of classes, maids, favelas and dictatorships. In Argentina, The Official Story and Lucrecia Martel work memory and bourgeois unspoken. This map is not exhaustive: it opens roads."
+  },
+  "COLLECTION_015": {
+    "nameEn": "New Hollywood",
+    "descriptionEn": "The years 1967–1979, when studios let authors break the toy.",
+    "longDescriptionEn": "After Bonnie and Clyde and The Graduate, Hollywood tips. Easy Rider, Taxi Driver, The Godfather, Apocalypse Now, The Texas Chain Saw Massacre: a generation films war, paranoia, sex and horror without the varnish of the Hays Code. Coppola, Scorsese, Hopper, Friedkin, Hooper, still-young Spielberg: the studio finances films that devour it. This collection is not all American cinema of the 1970s: it is the door into that shift."
+  },
+  "COLLECTION_016": {
+    "nameEn": "Japan — the 1970s",
+    "descriptionEn": "After the studio golden age: yakuza, ghosts, experimental and pop.",
+    "longDescriptionEn": "When the great Japanese studios falter, another decade opens. Shindō brings the dead back as cats, Saitō films native Tsugaru, Terayama turns childhood into theatre, Fukasaku buries the yakuza code, Ōshima pushes desire to scandal, Obayashi lets a house devour schoolgirls. Around them, Kurosawa in colour, Yoshida, Matsumoto, Imamura. It is not a school: it is 1970s Japan, off the classical tatami."
+  },
+  "COLLECTION_017": {
+    "nameEn": "Hitchcock — suspense as form",
+    "descriptionEn": "Twenty films where suspense becomes a form, from London to Hollywood.",
+    "longDescriptionEn": "Alfred Hitchcock moves from the British thriller of the 1930s to the American studio, then returns to London for Frenzy. The 39 Steps, Rebecca, Rear Window, Vertigo, Psycho, The Birds: the gaze, the blonde, the staircase, the train. This collection gathers twenty major films, taken out of other paths so they can be seen as a body of work, not as one more Hollywood genre."
+  },
+  "COLLECTION_018": {
+    "nameEn": "British Free Cinema",
+    "descriptionEn": "British youth leaves the studios to film life as it is.",
+    "longDescriptionEn": "At the end of the 1950s, young British filmmakers turn their gaze toward workers, small towns and a youth that no longer recognises itself in traditional cinema. Lindsay Anderson, Tony Richardson and Karel Reisz film streets, factories, flats and daily frustrations. Influenced by theatre and documentary, Free Cinema seeks a freedom of tone and a new closeness to its characters. O Dreamland, We Are the Lambeth Boys, Saturday Night and Sunday Morning or A Taste of Honey announce a wider transformation of British cinema and prepare, with their own means, the emergence of a lasting social cinema."
+  },
+  "COLLECTION_019": {
+    "nameEn": "Hong Kong golden age",
+    "descriptionEn": "When Hong Kong turns popular cinema into a laboratory of forms.",
+    "longDescriptionEn": "At the end of the 1970s, a new generation of filmmakers renews Hong Kong cinema, coming from television, independent film or training abroad. Ann Hui, Tsui Hark, Patrick Tam or Allen Fong film the contemporary city, social violence and political upheavals with a new freedom, while the popular industry in parallel explodes martial arts, comedy, crime and the fantastic. In the 1980s those two dynamics meet: John Woo, Jackie Chan, Tsui Hark or Ringo Lam reinvent genre codes with ever more spectacular mise en scène, while a second wave led by Wong Kar-wai, Stanley Kwan or Fruit Chan pushes Hong Kong cinema toward memory, desire and identity. From New Wave to grand spectacle, this collection tells how a small industry becomes one of the world's most inventive and influential cinemas."
+  },
+  "COLLECTION_020": {
+    "nameEn": "American cinema after New Hollywood",
+    "descriptionEn": "When American cinema reinvents independence after the 1970s revolution.",
+    "longDescriptionEn": "In the early 1980s studios gradually take back the reins, but Scorsese's generation keeps looking for new forms. In its wake, Jarmusch, the Coen brothers, Spike Lee, Lynch, Tarantino or Paul Thomas Anderson bring out a new generation of authors, between independent cinema and Hollywood. From the 80s to the 2000s, genres shift, borders between independent cinema and the major studio become porous and new voices impose themselves. From Raging Bull to There Will Be Blood, this collection tells what American cinema becomes after the end of the great age of the 70s."
+  },
+  "COLLECTION_021": {
+    "nameEn": "Surreal and oneiric cinema",
+    "descriptionEn": "When cinema stops telling the world in order to invent its own rules.",
+    "longDescriptionEn": "From the surrealism of Buñuel and Cocteau to the visions of Jodorowsky, from the deformation of story in Resnais to the labyrinths of David Lynch, some filmmakers use fiction to make our bearings waver. Time breaks, identities split, spaces become mental and images sometimes cease to obey a realist logic. This collection crosses a cinema that remains deeply narrative or poetic while pushing back the conventions of story, staging and editing. Here experiment is not only abandoning the rules: it is inventing new ones."
+  },
+  "COLLECTION_022": {
+    "nameEn": "Italian post-neorealism",
+    "descriptionEn": "Italian cinema frees itself from the real and invents new forms.",
+    "longDescriptionEn": "After neorealism, Italian cinema does not go back to the studio: it transforms the world. Fellini makes of memory and spectacle a baroque material, Antonioni films alienation and modern landscapes, Visconti moves from the people to the aristocracy and the historical fresco. Pasolini mixes cinema, politics, religion and mythology while Bertolucci, Rosi or Bellocchio prolong that ferment in the 1960s and 1970s. From La dolce vita to Salò, from L'Avventura to The Leopard, this collection follows an Italian cinema that no longer only wants to show reality: it wants to understand what it has become."
+  },
+  "COLLECTION_023": {
+    "nameEn": "Czechoslovak New Wave",
+    "descriptionEn": "A generation of filmmakers blows apart the rules of state cinema.",
+    "longDescriptionEn": "In the early 1960s a new Czechoslovak generation transforms comedy, social narrative and political cinema. Miloš Forman watches with irony a youth that is suffocating, Věra Chytilová destroys narrative conventions, Jiří Menzel mixes humour and melancholy, while Jan Němec and Juraj Herz push cinema toward the absurd, anguish and allegory. Between creative freedom and political control, this generation gives birth to one of the most inventive cinemas of the Eastern bloc. Loves of a Blonde, Daisies or Closely Watched Trains do not always look like a single school: they share above all the feeling that a new way of looking at the world must be found."
+  },
+  "COLLECTION_024": {
+    "nameEn": "Chinese cinema — Fifth Generation",
+    "descriptionEn": "After the Cultural Revolution, a generation reinvents the Chinese gaze.",
+    "longDescriptionEn": "Graduates of the Beijing Film Academy in the early 1980s, the Fifth Generation filmmakers break with Maoist cinema forms to look at Chinese history otherwise. Chen Kaige, Zhang Yimou and Tian Zhuangzhuang transform landscapes, colours, traditions and individual destinies into cinematic material, while other filmmakers explore comedy, political memory or the margins of society. From Yellow Earth to The Blue Kite, their films confront the individual with a history made of upheavals, violences and traditions. This generation makes Chinese cinema known on the international scene while pushing back what it is possible to show in China."
+  },
+  "COLLECTION_025": {
+    "nameEn": "Documentary cinema",
+    "descriptionEn": "When cinema stops playing reality in order to try to look at it.",
+    "longDescriptionEn": "From Robert Flaherty's ethnographic gaze to cinéma vérité, from Dziga Vertov's political montage to Frederick Wiseman's patient portraits, documentary is never a simple copy of the real. To film is to choose, frame, edit, question and sometimes provoke. This collection crosses the great documentary forms: observation, propaganda, inquiry, essay film and direct cinema. It shows how filmmakers used a camera turned toward the world to invent forms as diverse as Nanook of the North, Man with a Movie Camera, Chronicle of a Summer or Titicut Follies. Documentary is not the absence of mise en scène: it is another way of thinking it."
+  },
+  "COLLECTION_026": {
+    "nameEn": "Experimental and formal cinema",
+    "descriptionEn": "When cinema no longer seeks to tell, but to explore what an image can be.",
+    "longDescriptionEn": "Here the film becomes an experience of perception rather than a story. Film stock is scratched, painted or exposed, the camera becomes a device, time stretches to exhaustion and editing can almost disappear. From Man Ray to Maya Deren, from Brakhage to Warhol and Michael Snow, these filmmakers move cinema toward abstraction, matter, duration and perception. It is no longer a matter of diverting the rules of story: it is a matter of discovering what remains of cinema when one begins to abandon them."
+  },
+  "COLLECTION_027": {
+    "nameEn": "Early cinema",
+    "descriptionEn": "The years 1892–1906, when ingenious tinkerers invent the first tricks, movements and dramas of an art that still has no rules.",
+    "longDescriptionEn": "Before being an industry or a classical art, cinema was a fairground attraction, a magic trick and an open-air laboratory. From The Sprinkler Sprinkled to A Trip to the Moon, by way of the first tracking shots on the canals of Venice and the invention of the close-up by the Brighton School, this period lays the bases of everything that follows. Alice Guy, the Lumière brothers, Georges Méliès or Edwin S. Porter: these pioneers had no model, they invented everything as they walked. This collection does not gather spectacular features: it is the sketchbook of the first times of the seventh art."
+  }
+}
