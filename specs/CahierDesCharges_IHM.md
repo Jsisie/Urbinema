@@ -2,7 +2,7 @@
 
 ### Urbinema
 
-**Version :** 1.5 — 0.3.0 : splash logo, guide, sources, index lettres, appui long Vu, célébration de rang
+**Version :** 1.6 — 0.3.5 : palettes extra, Expanding Search Bar, logo Accueil, stats %, grain tuile, saveState
 **Statut :** Direction de travail validée ; carte du ciel = maquette jouable (0.2.3+)
 **Lié à :** `CahierDesCharges_Fonctionnel_v2.md`, `CahierDesCharges_Technique.md`, `DECISIONS_ACTEES.txt`
 
@@ -13,6 +13,8 @@
 > Les éléments **imposés par Léo** sont signalés par la mention **[imposé]**. Le reste relève de ma proposition.
 >
 > **0.3.0 —** Pendant le chargement du catalogue, fond blanc plein écran et icône de l’app (plus le texte « Votre aventure commence ici »). Après le pseudo, un guide de 6 pages (intro, Accueil, Atlas, Collections, futur Parcours, Profil) dans un panneau à la taille du texte (environ un tiers de l’écran), le reste fortement flouté. Rejouable dans Réglages (« Revoir le guide »). « Voir toutes les sources » sous les crédits. Index A–Z blanc (couleur du texte, pas l’or) sur pays, courants, genres et réalisateurs, `#` (autres) après Z. Appui long sur un film d’une liste → confirmer Vu. La chaîne des rangs s’ouvre sur le rang courant. Un nouveau rang ouvre un dialogue avec confettis. Chaque liste de films affiche son effectif en petit. La fiche réalisateur montre un portrait (plus petit qu’une affiche) et la biographie au-dessus de la liste de films, avec un espace sous le titre « Biographie ». La biographie suit la langue de l’app. Le grain argentique est à peine plus visible en thème sombre. L'onglet Parcours liste des lectures (une grande carte par parcours, pas une carte de collection). Le fil est vertical : une bulle par courant, un trait, un point d'interrogation qui ouvre une petite fenêtre avec seulement la phrase de transition. La fiche courant est une feuille qui laisse voir le fil au-dessus.
+>
+> **0.3.5 —** Accueil : logo à droite, au-dessus de Niveau ; tap = popup Application Urbinema + version. Quêtes collées sous la barre XP. Carte du ciel : titre à gauche, loupe Expanding Search Bar à gauche du `?`. Stats détaillées : % de films vus (sauf liste Films), tri, `0` → `<1 %`. Sélecteur de thème : palettes extra, noms anglais. Grain = tuile répétée, pas un bitmap plein écran. Changer d’onglet conserve l’écran ouvert (`saveState`) ; retaper l’onglet actif ramène à la racine. Dialogue reset : chaînes lues avant l’`AlertDialog`.
 
 ------
 
@@ -128,17 +130,16 @@ Ces éléments diraient « cinéma » immédiatement, et diraient aussi « fait 
 
 ## 3.4. Le grain
 
-Une **texture de grain argentique** discrète, overlay Compose plein écran,
-unifie l'ensemble. En 0.1.10 le voile est **un peu plus léger** qu’en 0.1.9 :
-fond noir à ~3,2 % d’opacité, points espacés de 5 dp, specks ~7–9 % d’alpha.
-Texture **statique**, jamais animée.
+Une **texture de grain argentique** discrète unifie l'ensemble. Ce n’est
+plus un overlay bitmap plein écran : `Modifier.filmGrain` peint en
+`drawBehind` une **tuile 128 px** répétée (`ImageShader` / `TileMode.Repeated`).
+Calibrage inchangé : voile noir ~3,2 % d’opacité, points espacés de 5 dp,
+specks ~7–9 % d’alpha. Texture **statique**, jamais animée. Un peu plus
+lisible en thème sombre (specks légèrement plus opaques).
 
 Contraintes : désactivable dans les Réglages (défaut **désactivé**), persisté
 dans DataStore. Ce n’est qu’un effet visuel : il ne touche ni au catalogue ni
 à la progression.
-
-Le grain est livré ; le calibrage actuel (0.1.10) est le voile ~3,2 %.
-On ne le renforce plus sans nouvel essai visuel.
 
 ------
 
@@ -146,7 +147,14 @@ On ne le renforce plus sans nouvel essai visuel.
 
 ## 4.1. Principe
 
-Deux thèmes complets **[imposé]** : **sombre par défaut**, clair disponible. Chaque thème vit dans son propre fichier de configuration (§21.2) **[imposé]**.
+Deux thèmes de base **[imposé]** : **sombre par défaut** (Salle obscure),
+clair disponible (Salle éclairée), plus **Système**. Chaque palette vit
+dans son propre fichier (§21.2) **[imposé]**.
+
+Sélecteur Réglages (`ThemePickerDialog`) : Dark theme, Light theme,
+System theme, puis Cyanotype, Silver print, Library, Poster, Velvet,
+Day for night. Ces **noms restent en anglais** dans `values/` et
+`values-en/` ; les libellés « Thème » et « Fermer » restent traduits.
 
 Aucune couleur n'est écrite en dur dans un Composable. On passe **toujours** par un jeton sémantique.
 
@@ -192,7 +200,21 @@ Le thème clair **n'est pas l'inverse mécanique** du sombre. Il change de méta
 
 **Piège classique à éviter :** reprendre les mêmes accents dans les deux thèmes. `#E8C68A` sur `#F5F1E8` donne un contraste de 1,6:1 — invisible. D'où deux valeurs distinctes par rôle.
 
-## 4.4. Couleur et signification
+## 4.4. Palettes extra (0.3.5)
+
+Mêmes jetons sémantiques. Les palettes extra utilisent **Source Serif 4**
+(display) et **Source Sans 3** (texte) au lieu de Bodoni / Inter.
+
+| Mode | Fichier | Ambiance |
+| --- | --- | --- |
+| Cyanotype | `ThemeCyanotype.kt` | Nuit prussienne, écriture pâle, bronze sur les traits |
+| Silver print | `ThemeTirage.kt` | Papier gris, encre cyan |
+| Library | `ThemeRayonnage.kt` | Parchemin, mousse, noyer |
+| Poster | `ThemeAffiche.kt` | Encre marine, vermillon, moutarde, teal |
+| Velvet | `ThemeVelours.kt` | Velours bordeaux, papier crème |
+| Day for night | `ThemeNuitAmericaine.kt` | Indigo, acier lunaire, cuivre tungstène |
+
+## 4.5. Couleur et signification
 
 La couleur ne porte **jamais seule** une information (§20). Les cinq états de la carte se distinguent par la couleur **et** par le trait, l'opacité et la forme (§7.3).
 
@@ -204,8 +226,8 @@ La couleur ne porte **jamais seule** une information (§20). Les cinq états de 
 
 | Rôle | Police | Justification |
 | --- | --- | --- |
-| **Display** — rang, titres d'écran, noms de collections | **Bodoni Moda** | Didone à fort contraste. C'est la typographie des affiches et des cartons de générique. Elle porte à elle seule l'élégance, ce qui permet de supprimer tout ornement ailleurs |
-| **Texte** — tout le reste | **Inter** | Grotesque neutre, variable, excellente en petit corps. L'application est très textuelle (§22 du technique) : la lisibilité prime |
+| **Display** — rang, titres d'écran, noms de collections | **Bodoni Moda** (palettes extra : **Source Serif 4**) | Didone à fort contraste. C'est la typographie des affiches et des cartons de générique. Elle porte à elle seule l'élégance, ce qui permet de supprimer tout ornement ailleurs |
+| **Texte** — tout le reste | **Inter** (palettes extra : **Source Sans 3**) | Grotesque neutre, variable, excellente en petit corps. L'application est très textuelle (§22 du technique) : la lisibilité prime |
 
 Les deux sont sur Google Fonts, licence libre, embarquables en local — cohérent avec une application qui doit fonctionner hors ligne.
 
@@ -347,7 +369,11 @@ Justification : la carte est l'objet le plus spectaculaire du produit et mérite
 - Libellés **toujours visibles**, **une seule ligne**, jamais seulement au survol. Cinq icônes muettes sont indéchiffrables. « Collections » ne passe pas à la ligne.
 - Onglet actif : icône pleine + libellé en `accent`. Onglet inactif : icône linéaire + libellé en `onBackgroundMuted`.
 - **Pas de badge de notification** sur les onglets. Contraire au principe « gamification mesurée ».
-- Chaque onglet conserve sa propre pile de navigation. Retaper l'onglet actif revient à sa page principale (racine de la pile, liste en haut).
+- Chaque onglet conserve sa propre pile de navigation (`saveState` /
+  `restoreState` sur `selectTab`). Quitter un onglet **ne détruit pas**
+  l’écran ouvert (fiche, ciel, puce Atlas) : y revenir le retrouve.
+  Retaper l'onglet **déjà actif** revient à sa page principale (pile
+  vidée jusqu’à la racine, liste en haut).
 
 ## 8.3. Menu latéral **[imposé]**
 
@@ -382,8 +408,10 @@ premier item (Tous les rangs) — padding logo `md`, titre `xxs` en dessous.
 
 Sur **tous les onglets** : à gauche, **☰** (tiroir des index).
 
-Sur l’**Accueil** : logo Urbinema au centre de la barre ; le rang / niveau / XP
-vit **sous** la barre, dans l’en-tête cliquable (ouvre le Profil).
+Sur l’**Accueil** : logo Urbinema **à droite** de la barre, aligné au-dessus
+de Niveau. Tap = petite popup (logo, « Application Urbinema », version),
+sans bouton Confirmer ; tap dehors ferme. Le rang / niveau / XP vit
+**sous** la barre, dans l’en-tête cliquable (ouvre le Profil).
 
 Sur le **Profil** : à droite, **⚙** roue des réglages (§17).
 
@@ -391,8 +419,9 @@ Sur Parcours (et les écrans d’aide thématiques) : **?** ouvre l’aide.
 
 Sur l’**onglet Atlas** : ☰, **?** aide, icône **étoiles** (carte du ciel).
 
-Sur la **carte du ciel** : flèche retour, champ de recherche titre (VF/VO) à gauche du **?**.
-Fond nuit en salle obscure ; **papier** (salle éclairée) en thème clair.
+Sur la **carte du ciel** : flèche retour, titre « Carte du ciel » à gauche,
+loupe Expanding Search Bar à **gauche** du **?** (8 dp d’écart). Fond nuit
+en salle obscure ; **papier** (salle éclairée) en thème clair.
 
 Les autres écrans hors onglet : flèche de retour + titre.
 
@@ -421,11 +450,11 @@ en V1 : Urbinema propose déjà ses films à travers les collections et parcours
 
 ```text
 ┌────────────────────────────────────────────┐
-│ ☰  [logo]                                   │
+│ ☰                                  [logo]   │  ← tap logo = popup version
 │ EXPLORATEUR                        NIV. 12  │ ← zone fixe, ouvre le Profil
 │ ━━━━━━━━━━━━━━━━━━━━━━━━░░░  380 / 500 XP │
 ├────────────────────────────────────────────┤
-│ QUÊTES DE LA SEMAINE                        │
+│ QUÊTES DE LA SEMAINE                        │  ← collées sous l’XP (`xxs`)
 │ Bronze · Un film muet              ✓ 100 XP│
 │ Argent · Trois pays d'Asie       2 / 3 ▰▰▱ │
 │ Or · Cinq films avant 1950       1 / 5 ▰▱▱ │
@@ -447,7 +476,8 @@ en V1 : Urbinema propose déjà ses films à travers les collections et parcours
 
 ## 9.3. Répartition
 
-- **Premier tiers** : en-tête rang/niveau/XP et trois quêtes.
+- **Premier tiers** : en-tête rang/niveau/XP et trois quêtes, collées
+  juste sous la barre XP (padding `xxs`, ~2 mm).
 - **Deuxième tiers** : **collections en cours** = suivies, **pas** à 100 %,
   **pas** cadenassées. Vignettes circulaires et pourcentage. Une collection
   terminée ou encore verrouillée n’y figure pas.
@@ -519,7 +549,7 @@ S’ouvre depuis l’icône étoiles de l’Atlas. Vue par défaut : un film au 
 
 ```text
 ┌─────────────────────────────────────────┐
-│  ←     [recherche titre]           ?    │
+│  ←  Carte du ciel           (🔍)   ?    │  ← loupe à gauche du ?
 ├─────────────────────────────────────────┤
 │  Le film au centre, autour ce qui le lie│
 │  (Autour du film) (Pays) (Décennies)    │
@@ -536,11 +566,13 @@ S’ouvre depuis l’icône étoiles de l’Atlas. Vue par défaut : un film au 
 │   ⌂     ▦    ((●))    ◈     ☺           │
 ```
 
-Le **Canvas occupe tout** sous la barre haute. Le champ titre (VF ou VO)
-propose une liste courte ; un tap recentre autour du film. Les chips et le
-hint sont **superposés**. En salle obscure le ciel reste `#07060D` ; en salle
-éclairée il reprend le papier du thème pour que la liste de films (titres
-vus compris) reste lisible.
+Le **Canvas occupe tout** sous la barre haute. La loupe (`SkyMapExpandingSearch`)
+s’ouvre en **pilule** depuis la droite (40 dp cercle → 228 dp, 280 ms).
+Liste courte de titres VF ou VO ; un tap recentre autour du film et
+**ferme** la barre. Champ vide + clavier masqué = même fermeture. Les
+chips et le hint sont **superposés**. En salle obscure le ciel reste
+`#07060D` ; en salle éclairée il reprend le papier du thème pour que la
+liste de films (titres vus compris) reste lisible.
 
 ------
 
@@ -583,6 +615,7 @@ obscure** dédiée.
 | FAB cible | recadre |
 | Chip | remplace le dessin, recadre |
 | Icône liste | Atlas scrollable |
+| Loupe | Expanding Search Bar titre VF/VO ; tap un hit = recentrer + fermer |
 
 Pas de rotation à deux doigts. Pas de double-tap zoom en 0.2.1.
 
@@ -654,7 +687,8 @@ c’est lié* (vue autour) ; sur un calque territoires, les cinq états.
 ## 10.10. Hors 0.2.1
 
 Pas d’affiches sur le ciel. Pas les 405 films d’un coup (12 voisins max).
-Pas de mini-map. Pas de mode jour pour cet écran.
+Pas de mini-map. En thème clair le ciel passe au **papier** (§10.3), ce
+n’est pas une seconde carte « jour ».
 
 ------
 
@@ -730,11 +764,20 @@ Pas d'étoiles : elles évoquent une note, or Urbinema ne note aucun film.
 │  jusqu’à 3 badges (centrés)  │  ← choisis depuis Tous les badges
 │        voir tous             │
 │                              │
-│  stats non cliquables        │   → listes via le tiroir
+│  stats non cliquables        │   → détail via le tiroir
 └──────────────────────────────┘
 ```
 
 Ordre : **Avatar + pseudo → Rang → niveau/XP → Badges → statistiques**.
+
+Les totaux du Profil ne sont pas des boutons. Le tiroir **Statistiques
+détaillées** ouvre six listes (`NamedListScreen`) : films vus (titre ·
+année, **sans** %), puis pays, décennies, courants, continents,
+réalisateurs. Chaque ligne hors Films affiche la **part des films vus**
+qui touchent cet item (un film multi-pays compte pour chaque pays, la
+somme peut dépasser 100 %). Un pourcentage arrondi à 0 s’affiche
+`<1 %`. Menu de tri en tête : A–Z / Z–A, et % croissant/décroissant
+(sauf Films) ; décennies : ordre chronologique par défaut.
 
 **Maintenir** l'un des trois badges vitrine affiche uniquement sa condition,
 en petit, au-dessus du doigt. Relâcher fait disparaître le texte. Pas de
@@ -911,7 +954,8 @@ La fiche film affiche :
 
 - affiche locale dès la V1 — la V0.1 peut utiliser un placeholder textuel ;
 - titre original en grand et en gras ;
-- titre français plus petit juste dessous ;
+- titre français plus petit juste dessous **en français seulement** ; en
+  anglais, le sous-titre VF est masqué (listes = titre original) ;
 - année, durée, réalisateurs ;
 - pays principal puis coproductions ;
 - genres, caractéristiques et collections ;
@@ -931,6 +975,7 @@ possible, mais ne bloque pas la première fiche.
 │                                          │
 │  七人の侍                                 │  ← titre original, grand
 │  Les Sept Samouraïs                      │  ← titre français, plus petit
+│                                          │     (masqué si l’app est en anglais)
 │  Akira Kurosawa · 1954                   │
 │  Japon · 3 h 27                          │
 │                                          │
@@ -968,9 +1013,9 @@ Accessibles par la **roue en haut à droite du Profil**.
 | **Avatar** | 10 visuels packagés, carrousel coulissant | demandé à l'onboarding, changeable ensuite |
 | **Pseudo** | texte libre | demandé à l'onboarding |
 | **Âge** | entier 8–120 | demandé à l'onboarding, modifiable ensuite |
-| **Thème** | Sombre · Clair · Système | **Sombre** |
+| **Thème** | Dark theme · Light theme · System theme · Cyanotype · Silver print · Library · Poster · Velvet · Day for night | **Dark theme** |
 | **Langue** | Système · Français · English | **Système** (switch réel, immédiat) |
-| Grain argentique | activé · désactivé | **désactivé** — overlay persisté, voir §3.4 |
+| Grain argentique | activé · désactivé | **désactivé** — tuile persistée, voir §3.4 |
 | Titres | VO principale + français secondaire | fixé |
 | Aide | écran d’aide (collections, carte, courants, rang, badges, XP) | aussi `?` sur Parcours |
 | Comprendre les rangs | inclus dans Aide | — |
@@ -980,11 +1025,13 @@ Accessibles par la **roue en haut à droite du Profil**.
 Le changement de thème et de langue s'applique **immédiatement**, sans redémarrage.
 
 La réinitialisation ouvre un dialogue destructif entièrement localisé en
-français et en anglais. Le texte énumère les données supprimées et indique
-explicitement que l'action est irréversible. Le bouton de confirmation reste
-désactivé pendant **10 secondes** et affiche `(10)`, `(9)` … `(1)`, puis
-**Confirmer** / **Confirm**. Annuler ou fermer le dialogue interrompt le
-compte à rebours ; une nouvelle ouverture repart de 10.
+français et en anglais. Les chaînes `reset_data_*` sont lues **avant**
+l’`AlertDialog` (la fenêtre Android ignore sinon la locale Compose). Le
+texte énumère les données supprimées et indique explicitement que l'action
+est irréversible. Le bouton de confirmation reste désactivé pendant
+**10 secondes** et affiche `(10)`, `(9)` … `(1)`, puis **Confirmer** /
+**Confirm**. Annuler ou fermer le dialogue interrompt le compte à rebours ;
+une nouvelle ouverture repart de 10.
 
 L'explication des rangs est volontairement rangée ici derrière une entrée
 « Comprendre les rangs » et un bouton `?` près du rang. Elle décrit simplement
@@ -1083,22 +1130,29 @@ Ces exigences valent pour tout le projet, pas seulement pour l'interface. Elles 
 
 ```text
 ui/theme/
-├── UrbinemaTheme.kt        // point d'entrée, choisit le schéma
-├── ColorTokens.kt          // définition des jetons sémantiques
-├── ThemeSalleObscure.kt    // ← un fichier : le thème sombre
-├── ThemeSalleEclairee.kt   // ← un fichier : le thème clair
-├── Typography.kt
+├── Theme.kt                 // point d'entrée, UrbinemaThemeMode
+├── ThemePicker.kt           // sélecteur Réglages
+├── Color.kt                 // jetons sémantiques
+├── ThemeSalleObscure.kt
+├── ThemeSalleEclairee.kt
+├── ThemeCyanotype.kt
+├── ThemeTirage.kt           // Silver print
+├── ThemeRayonnage.kt        // Library
+├── ThemeAffiche.kt          // Poster
+├── ThemeVelours.kt          // Velvet
+├── ThemeNuitAmericaine.kt   // Day for night
+├── Type.kt                  // Bodoni/Inter + Source Serif/Sans
 ├── Shapes.kt
 └── Dimens.kt
 ```
 
-Chaque fichier de thème ne contient **que** des valeurs : aucune logique. Ajouter un troisième thème doit se réduire à créer un fichier et l'enregistrer.
+Chaque fichier de palette ne contient **que** des valeurs : aucune logique. Ajouter un thème se réduit à créer un fichier, un `UrbinemaThemeMode` et une `ThemePreference`.
 
 Le reste de l'application ne connaît que les **jetons sémantiques** (`accent`, `surfaceElevated`), jamais les valeurs. Une couleur écrite en dur dans un écran est un défaut.
 
 **Exception 0.2.1 :** la carte du ciel (`InteractiveMapScreen`) a sa propre
-palette nuit (`SkyNight`, `SkyGold`, …). Elle ne suit **pas** le thème
-salle éclairée : c’est une salle obscure dédiée, documentée au §10.4.
+palette nuit (`SkyNight`, `SkyGold`, …). En salle obscure le ciel reste
+cette nuit ; en salle éclairée il reprend le papier du thème (§10.3).
 
 ## 21.3. Un fichier par langue **[imposé]**
 

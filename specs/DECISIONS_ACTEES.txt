@@ -427,7 +427,7 @@ H. DIVERS
 
 43. DIRECTION ARTISTIQUE
     Élégant, sombre, moderne. Thème SOMBRE par défaut, thème clair
-    disponible.
+    disponible, plus Système et palettes extra (décision 79).
     Métaphore : la salle obscure et la lumière du projecteur.
       Sombre : fond #0A0A0C, texte ivoire #F4EFE6, accent ambre #E8C68A.
       Clair  : fond papier #F5F1E8, accents assombris (obligatoire, sinon
@@ -516,7 +516,8 @@ H. DIVERS
     Les autres seuils restent paramétrables en pourcentage.
 
 52. FICHE FILM
-    Affiche locale, titre VO principal, titre français secondaire,
+    Affiche locale, titre VO principal, titre français secondaire
+    **en français seulement** (en anglais : VO seul, listes = originalTitle),
     année, durée, réalisateurs, pays, genres, caractéristiques,
     collections et synopsis.
 
@@ -540,6 +541,8 @@ H. DIVERS
 57. GRAIN ARGENTIQUE
     Overlay persisté, défaut désactivé. Calibrage 0.1.10 : voile noir ~3,2 %,
     specks ~7–9 % d’alpha (plus léger que 0.1.9).
+    AMENDÉ 0.3.5 : plus un bitmap plein écran — tuile 128 px répétée
+    (`Modifier.filmGrain`, `drawBehind`).
 
 58. AIDE
     Écran d’aide (collections, carte, courants, rang, badges, XP) depuis
@@ -554,7 +557,8 @@ H. DIVERS
     Tag unique UrbinemaProgress (validation, XP quête, rang).
 
 60. LANGUE DES DIALOGUES
-    Configuration.setLocales : cadenas et félicitations suivent FR/EN.
+    Configuration.setLocales : cadenas, félicitations **et reset données**
+    suivent FR/EN. Les chaînes se lisent **avant** l’AlertDialog.
 
 61. PAYS SANS ACCENTS
     Libellés Egypte, Etats-Unis, etc. pour le tri alphabétique Atlas.
@@ -734,6 +738,22 @@ H. DIVERS
     Alice Guy reste le code ALICE_GUY. Grandma's Reading Glass est crédité George Albert Smith.
     Six réalisateurs en plus, avec portrait et biographie. 1538 films,
     28 collections, 804 réalisateurs.
+
+79. LIVRABLE 0.3.5 (PALETTES, CIEL, STATS, NAV, RESET)
+    Palettes extra persistées : Cyanotype, Silver print, Library, Poster,
+    Velvet, Day for night. Noms du sélecteur en anglais ; Thème / Fermer
+    restent traduits. Typo Source Serif 4 + Source Sans 3 sur ces palettes.
+    Accueil : logo à droite (au-dessus de Niveau) ; tap = popup Application
+    Urbinema + versionName, sans bouton. Quêtes collées sous l’XP.
+    Carte du ciel : Expanding Search Bar (pilule depuis la loupe).
+    Stats tiroir : % des films vus (sauf liste Films), 0 → <1 %, menu de tri.
+    Vu : peinture optimistic avant Room.
+    Onglets : saveState / restoreState (retrouver l’écran) ; retaper =
+    racine + scroll haut.
+    Grain : tuile 128 px drawBehind.
+    Reset : chaînes reset_data_* hors AlertDialog (locale Compose).
+    Launcher : generate_launcher_icons.py depuis logo transparent.
+    Formule de rang inchangée (v0.3.1). Pack JSON 47.
 
 
 ========================================================================

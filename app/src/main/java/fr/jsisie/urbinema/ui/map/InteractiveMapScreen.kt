@@ -2,15 +2,18 @@ package fr.jsisie.urbinema.ui.map
 
 import android.graphics.Paint
 import android.graphics.Typeface
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -30,17 +33,24 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Close
 import androidx.compose.material.icons.outlined.MyLocation
@@ -55,8 +65,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -72,10 +80,14 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
@@ -83,8 +95,10 @@ import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.LocalViewConfiguration
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
@@ -754,43 +768,155 @@ internal suspend fun animateCamera(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+private val SkySearchCollapsed = 40.dp
+private val SkySearchExpanded = 228.dp
+private val SkySearchHeight = 40.dp
+
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun SkyMapTitleSearch(
+fun SkyMapExpandingSearch(
+    expanded: Boolean,
     query: String,
     onQueryChange: (String) -> Unit,
+    onExpand: () -> Unit,
+    onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val colors = UrbinemaThemeTokens.colors
-    OutlinedTextField(
-        value = query,
-        onValueChange = onQueryChange,
-        modifier = modifier.fillMaxWidth(),
-        singleLine = true,
-        placeholder = {
-            Text(stringResource(R.string.sky_map_search_hint), style = MaterialTheme.typography.bodySmall)
-        },
-        leadingIcon = { Icon(Icons.Outlined.Search, contentDescription = null) },
-        trailingIcon = if (query.isNotEmpty()) {
-            {
-                IconButton(onClick = { onQueryChange("") }) {
-                    Icon(Icons.Outlined.Close, stringResource(R.string.sky_map_search_clear))
+    val keyboard = LocalSoftwareKeyboardController.current
+    val focusRequester = remember { FocusRequester() }
+    val imeVisible = WindowInsets.isImeVisible
+    var imeWasShown by remember { mutableStateOf(false) }
+    val barWidth by animateDpAsState(
+        targetValue = if (expanded) SkySearchExpanded else SkySearchCollapsed,
+        animationSpec = tween(280, easing = FastOutSlowInEasing),
+        label = "sky-search-width",
+    )
+    val barColor by animateColorAsState(
+        targetValue = if (expanded) colors.surface else Color.Transparent,
+        animationSpec = tween(180),
+        label = "sky-search-fill",
+    )
+    val borderColor by animateColorAsState(
+        targetValue = if (expanded) colors.outline else Color.Transparent,
+        animationSpec = tween(180),
+        label = "sky-search-border",
+    )
+    val pill = RoundedCornerShape(percent = 50)
+
+    LaunchedEffect(expanded) {
+        if (expanded) {
+            kotlinx.coroutines.delay(40)
+            focusRequester.requestFocus()
+            keyboard?.show()
+        } else {
+            imeWasShown = false
+            keyboard?.hide()
+        }
+    }
+    LaunchedEffect(imeVisible, query, expanded) {
+        if (!expanded) return@LaunchedEffect
+        if (imeVisible) {
+            imeWasShown = true
+        } else if (imeWasShown && query.isBlank()) {
+            onDismiss()
+        }
+    }
+
+    Box(
+        modifier = modifier.height(48.dp),
+        contentAlignment = Alignment.CenterEnd,
+    ) {
+        Surface(
+            modifier = Modifier
+                .height(SkySearchHeight)
+                .width(barWidth),
+            shape = pill,
+            color = barColor,
+            border = BorderStroke(1.dp, borderColor),
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clip(pill),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                if (expanded) {
+                    Box(
+                        Modifier
+                            .weight(1f)
+                            .padding(start = 14.dp, end = 4.dp),
+                        contentAlignment = Alignment.CenterStart,
+                    ) {
+                        BasicTextField(
+                            value = query,
+                            onValueChange = onQueryChange,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .focusRequester(focusRequester),
+                            singleLine = true,
+                            textStyle = MaterialTheme.typography.bodySmall.copy(color = colors.onBackground),
+                            cursorBrush = SolidColor(colors.accent),
+                            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+                            keyboardActions = KeyboardActions(
+                                onSearch = {
+                                    if (query.isBlank()) {
+                                        keyboard?.hide()
+                                        onDismiss()
+                                    } else {
+                                        keyboard?.hide()
+                                    }
+                                },
+                            ),
+                            decorationBox = { inner ->
+                                if (query.isEmpty()) {
+                                    Text(
+                                        stringResource(R.string.sky_map_search_hint),
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = colors.onBackgroundMuted,
+                                        maxLines = 1,
+                                        overflow = TextOverflow.Ellipsis,
+                                    )
+                                }
+                                inner()
+                            },
+                        )
+                    }
+                    if (query.isNotEmpty()) {
+                        Icon(
+                            Icons.Outlined.Close,
+                            contentDescription = stringResource(R.string.sky_map_search_clear),
+                            tint = colors.onBackgroundMuted,
+                            modifier = Modifier
+                                .size(32.dp)
+                                .clickable { onQueryChange("") }
+                                .padding(6.dp),
+                        )
+                    }
+                }
+                Box(
+                    modifier = Modifier
+                        .size(SkySearchHeight)
+                        .clickable {
+                            if (expanded) {
+                                focusRequester.requestFocus()
+                                keyboard?.show()
+                            } else {
+                                onExpand()
+                            }
+                        },
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Icon(
+                        Icons.Outlined.Search,
+                        contentDescription = stringResource(R.string.search),
+                        tint = colors.onBackground,
+                        modifier = Modifier.size(22.dp),
+                    )
                 }
             }
-        } else {
-            null
-        },
-        textStyle = MaterialTheme.typography.bodyMedium,
-        colors = OutlinedTextFieldDefaults.colors(
-            focusedTextColor = colors.onBackground,
-            unfocusedTextColor = colors.onBackground,
-            focusedBorderColor = colors.line,
-            unfocusedBorderColor = colors.outline,
-            cursorColor = colors.accent,
-            focusedContainerColor = colors.surface,
-            unfocusedContainerColor = colors.surface,
-        ),
-    )
+        }
+    }
 }
 
 @Composable

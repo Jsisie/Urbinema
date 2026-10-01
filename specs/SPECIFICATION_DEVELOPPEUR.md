@@ -1,7 +1,7 @@
 # Spécification développeur — Urbinema
 
-**Version :** 1.11 — 0.3.0  
-**Date :** 2026-09-28  
+**Version :** 1.12 — 0.3.5  
+**Date :** 2026-10-01  
 **Statut :** document de reprise. Il décrit le code réellement livré.
 
 Ce document est le mode d’emploi pour reprendre le projet. Les décisions
@@ -9,11 +9,11 @@ produit restent dans `DECISIONS_ACTEES.txt`. Les formules restent dans
 `FORMULE_MATHEMATIQUE.txt` et `FORMULE_NIVEAUX_XP.txt`. En cas d’écart, le
 code et les tests font foi.
 
-**Lire les docs avec l’app à côté.** Ce fichier décrit le code **0.3.0**
+**Lire les docs avec l’app à côté.** Ce fichier décrit le code **0.3.5**
 (`versionCode` 24). Les cahiers fonctionnel / IHM / technique, les décisions
 et la FAQ collent à cet état. Un comportement vu à l’écran a toujours une
 trace ici (navigation §2, persistence §3, règles §2.4 / §7, carte §2.2.1).
-Un chiffre de spec (XP quêtes 100/250/500, **25 XP** film si collection suivie, 3 badges, pack JSON **20**, Room 7, cliquet,
+Un chiffre de spec (XP quêtes 100/250/500, **25 XP** film si collection suivie, 3 badges, pack JSON **47**, Room **11**, cliquet,
 10 collections en cours, 10 avatars) se retrouve dans le code (`FunctionalLimits`) et, s’il est visible, dans `strings.xml`.
 
 ---
@@ -48,7 +48,7 @@ Urbinema est une application Android **100 % locale**.
 | IDE | Android Studio (Narwhal / Hedgehog ou plus récent) |
 | Application ID | `fr.jsisie.urbinema` |
 | Module Gradle / Android Studio | `:urbinema` (dossier physique `app/`) |
-| versionName / versionCode | `0.3.0` / `24` |
+| versionName / versionCode | `0.3.5` / `24` |
 | APK debug | `urbinema-debug.apk` |
 | minSdk | 26 |
 | compileSdk / targetSdk | 36 / 36 |
@@ -122,17 +122,17 @@ Cinq onglets bas :
 
 | Onglet | Rôle |
 | --- | --- |
-| Accueil | Rang, niveau, XP, quêtes de la semaine, **collections en cours** (suivies, **pas** à 100 %, **pas** cadenassées), historique en **titres**. Barre haute : logo + ☰. |
+| Accueil | Rang, niveau, XP, quêtes de la semaine (collées sous l’XP), **collections en cours** (suivies, **pas** à 100 %, **pas** cadenassées), historique en **titres**. Barre haute : ☰ à gauche, logo à **droite** (tap = `LogoAboutDialog`, version `BuildConfig.VERSION_NAME`). |
 | Collections | Groupées par `track`. Initiation ouverte ; cadenas Initiation (≥ 1 Vu) puis cadenas **entre groupes** (2 collections commencées). Suivies en or. Non suivie = 0 %. Terminée = or + check. |
 | Atlas | Listes (onglet). **?** = aide. **Étoiles** = carte du ciel (`atlas/sky`). |
 | Parcours | Rang détaillé, quêtes, collections en cours. `?` → Aide. |
-| Profil | Pseudo, rang, niveau/XP, **jusqu’à 3 badges** vitrine (maintenir = condition au-dessus du doigt), stats. Réglages via l’icône ⚙ (thème, langue, grain, Aide, reset, À propos). |
+| Profil | Pseudo, rang, niveau/XP, **jusqu’à 3 badges** vitrine (maintenir = condition au-dessus du doigt), stats (totaux, pas cliquables). Réglages via l’icône ⚙ (thème, langue, grain, Aide, reset, À propos). |
 
 Le tiroir (☰ sur **chaque onglet**) ouvre les index : rangs, badges, collections, recherche,
 statistiques. Plus d’entrée « Tous les courants » : les pays et courants vivent
 dans Atlas.
 
-L’onglet actif : retaper l’onglet revient à sa page principale (pile vidée jusqu’à la racine, liste remonte en haut).
+L’onglet actif : retaper l’onglet revient à sa page principale (pile vidée jusqu’à la racine, liste remonte en haut via `tabResetTick`). Changer d’onglet **conserve** l’écran ouvert : `selectTab` utilise `saveState = true` / `restoreState = true` (`popUpTo` start). Une fiche, le ciel ou la puce Atlas survivent au passage par un autre onglet.
 
 ### 2.2 Gestes métier V1
 
@@ -143,7 +143,8 @@ L’onglet actif : retaper l’onglet revient à sa page principale (pile vidée
   Unfollow interdit si `completed`.
 - Ouvrir un film → fiche + **Marquer comme vu** à **la date du jour locale**
   (`LocalDate.now(ZoneId.systemDefault())`). Pas de calendrier. Le bouton passe
-  tout de suite à **Film vu**, grisé, non cliquable.
+  tout de suite à **Film vu**, grisé, non cliquable (`optimisticWatchedIds` +
+  `paintFilmWatched` avant le write Room).
 - Un film ne peut être validé **qu’une fois**.
 - Un pays / courant / genre / décennie n’affiche que **ses** films et **ses**
   collections éditoriales.
@@ -157,7 +158,8 @@ L’onglet actif : retaper l’onglet revient à sa page principale (pile vidée
   si le tarif film du ledger change. Un film Vu = **25 XP une fois**, et seulement s’il est dans une collection suivie.
   Quêtes 100 / 250 / 500.
 - Réglages → **Réinitialiser les données** : `SettingsScreen` ouvre le
-  dialogue localisé `reset_data_*`. `RESET_CONFIRMATION_DELAY_SECONDS = 10`
+  dialogue localisé `reset_data_*`. Les chaînes sont lues **avant**
+  l’`AlertDialog` (même motif que cadenas / félicitations). `RESET_CONFIRMATION_DELAY_SECONDS = 10`
   pilote un `LaunchedEffect` annulé à la fermeture ; le bouton destructif
   reste désactivé et affiche `(10)` à `(1)`, puis confirme et efface
   **uniquement** la progression. Le catalogue et le profil restent.
@@ -175,8 +177,7 @@ genre… rayons un peu distincts), jusqu’à 12 films liés plus loin.
 « Akira Kurosawa » si le réalisateur est déjà là). Tap un autre film =
 recentre. Tap un territoire = feuille + navigation. Les puces sont
 Autour du film, Pays et Décennies. `MAX_SCALE = 14`. Fiche film : « Voir
-sur la carte ». Champ titre en haut (VF ou VO) : une liste courte, un tap
-recentre la constellation (`mapFocus` + `AROUND_FILM`).
+sur la carte ». Recherche titre : voir ci-dessous (`SkyMapExpandingSearch`).
 
 Couleurs **par type**, pas seulement par état d’exploration : films ivoire,
 vus / centre or, réalisateurs cyan `#5EC8D8`, pays corail `#E07A5F`,
@@ -186,19 +187,33 @@ de la couleur du type. Légende colorée sous le hint, en bas à gauche.
 
 `MainViewModel.cinemaMap(layer, focusMovieCode)`. Tests : `CinemaMapTest`.
 
-Le Canvas reste `#07060D` quel que soit le thème. Cahier technique §8,
-IHM §10, fonctionnel §11.
+Le titre de barre est `R.string.sky_map` (« Carte du ciel »). À **droite**,
+`SkyMapExpandingSearch` : cercle 40 dp, s’ouvre en pilule 228 dp
+(`animateDpAsState` 280 ms, `RoundedCornerShape` 50 %), icône ancrée à
+droite, 8 dp avant le `?`. `searchMovies` / `movieTitleHits` sur VF et VO.
+Tap un hit : `mapFocus` + `AROUND_FILM` et fermeture. Champ vide + IME
+masqué : `onDismiss`.
+
+Le Canvas reste `#07060D` en salle obscure. En salle éclairée il reprend
+le papier du thème. Cahier technique §8, IHM §10, fonctionnel §11.
 
 ### 2.3 Thème et grain
 
-Salle obscure (sombre, défaut), salle éclairée (clair), ou système. Persistant
-via DataStore. Pas de couleurs dynamiques Material You. Grain argentique :
-switch persisté, overlay `FilmGrainOverlay` (voile noir ~0,032).
+`UrbinemaThemeMode` : Dark, Light, System, Cyanotype, Tirage, Rayonnage,
+Affiche, Velours, NuitAmericaine. Persistant via DataStore
+(`ThemePreference`). Pas de couleurs dynamiques Material You. Palettes
+extra : Source Serif 4 + Source Sans 3 (`SourceTypography`). Libellés du
+sélecteur en anglais (`dark_theme`, `theme_cyanotype`, …) ; « Thème » /
+« Fermer » traduits.
+
+Grain argentique : switch persisté. `Modifier.filmGrain` sur le `Box`
+racine (`drawBehind`, tuile 128 px `ImageShader` Repeat). Voile ~0,032,
+specks ~7–9 %. Plus de composable overlay plein écran.
 
 `LocalizedContent` fournit `LocalContext` et `LocalConfiguration`. Les
-`AlertDialog` (badges, collections) lisent les chaînes via
-`LocalContext.resources` **avant** le dialogue, sinon la fenêtre Android
-ignore la locale Compose.
+`AlertDialog` (badges, collections, **reset données**) lisent les chaînes via
+`stringResource` **avant** le dialogue, sinon la fenêtre Android ignore
+la locale Compose. Le menu de tri stats pré-résout aussi ses libellés.
 
 Pop-up badge : codes déjà fêtés dans DataStore
 (`badge_celebration_seeded` + `badge_celebration_codes`). Premier snapshot
@@ -770,15 +785,26 @@ vus que si elle l’est. Complétion UI = followed && 100 %.
   `collection/{collectionCode}`, listes `atlas`, ciel `atlas/sky`.
 - Contrat UI : `ui/model/UiModels.kt`. Previews via `PreviewUrbinemaViewModel`
   (données fictives, sans Room).
-- Thèmes : `ThemeSalleObscure.kt`, `ThemeSalleEclairee.kt`. Tokens via
+- Thèmes : `Theme.kt` (`UrbinemaThemeMode`), palettes `ThemeSalleObscure.kt`,
+  `ThemeSalleEclairee.kt`, `ThemeCyanotype.kt`, `ThemeTirage.kt`,
+  `ThemeRayonnage.kt`, `ThemeAffiche.kt`, `ThemeVelours.kt`,
+  `ThemeNuitAmericaine.kt`, sélecteur `ThemePicker.kt`. Tokens via
   `UrbinemaThemeTokens`.
 - Chaînes : toujours `stringResource`, jamais de texte dur dans les Composables
   (sauf contenus éditoriaux issus du catalogue : titres originaux, noms de
-  collections, descriptions JSON). Dialogues cadenas / 100 % : strings FR/EN,
-  locale appliquée via `setLocales`.
-- Tutoiement FR. EN parallèle obligatoire.
+  collections, descriptions JSON). Dialogues cadenas / 100 % / reset : strings
+  FR/EN, **pré-résolues hors `AlertDialog`**.
+- Tutoiement FR. EN parallèle obligatoire. Listes de films en anglais = titre
+  original ; fiche : pas de sous-titre VF.
 - Historique : reconstruit dans `refreshUnsafe` après chargement des films ;
   filet `titleFromEditorialCode` si le film manque encore.
+- Stats détaillées : `MainViewModel.statsShares` + `NamedListScreen` /
+  `StatsListSort`. Calcul au moment de l’ouverture, pas à chaque composition
+  Accueil.
+- Grain : `UrbinemaApp.filmGrain` (tuile). Logo Accueil : `LogoAboutDialog`.
+- Carte : `SkyMapExpandingSearch` dans `InteractiveMapScreen.kt`.
+- Launcher : `tools/generate_launcher_icons.py` lit
+  `res/drawable-nodpi/logo_urbinema.png`.
 
 Le sélecteur de langue dans Réglages est **effectif**. Le grain argentique est
 un switch **persisté** (DataStore). Aide : `HelpScreen`, entrée Réglages + `?`

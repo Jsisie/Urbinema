@@ -2,8 +2,8 @@
 
 ### Urbinema
 
-**Version :** 0.12  
-**Statut :** Cadrage technique aligné sur **0.3.0** (catalogue `catalog.json` v38, graine `catalog_v3.json`, 1613 films, 28 collections, 856 réalisateurs, 1 parcours, 59 quêtes)  
+**Version :** 0.13  
+**Statut :** Cadrage technique aligné sur **0.3.5** (catalogue `catalog.json` v47, graine `catalog_v3.json`, 1613 films, 28 collections, 856 réalisateurs, 1 parcours, 59 quêtes)  
 **Lié à :** `CahierDesCharges_Fonctionnel_v2.md`, `CahierDesCharges_IHM.md`, `DECISIONS_ACTEES.txt`, `ROADMAP_V2_V3.md`  
 **Emplacement :** tous les documents de cadrage vivent dans `specs/`
 
@@ -98,8 +98,10 @@ Reste ensuite à ma charge : les dépendances et le `libs.versions.toml`, la con
 - **Atlas scrollable** (listes + filtres) depuis 0.1.6.
 - **Carte du ciel** : Compose **Canvas custom**, livrée en **0.2.1** (V2).
   Voir §8. Pas de bibliothèque de graphe.
-- Navigation Compose.
+- Navigation Compose (`saveState` / `restoreState` entre onglets).
 - Alimentation du catalogue par **batch / script** vers Room (pas de CMS web).
+- Grain argentique : tuile 128 px en `drawBehind` (`Modifier.filmGrain`), pas un overlay bitmap plein écran.
+- Icônes launcher : `tools/generate_launcher_icons.py` à partir de `drawable-nodpi/logo_urbinema.png`.
 
 ## 2.2. V1 — hors périmètre
 
@@ -155,16 +157,18 @@ Pas de foldable comme cible. Pas de desktop Compose.
 - **Room + KSP** — unique base locale : catalogue éditorial **et** progression (tables séparées, voir §6).
 - **Koin** — injection de dépendances.
 - **MVVM + Clean Architecture** — UI / domaine / data séparés. Le métier (rang, badges, quêtes, collections) ne vit pas dans les Composables.
-- **DataStore** (Preferences) — thème, langue, grain argentique, **codes de
+- **DataStore** (Preferences) — thème (`ThemePreference` : Dark/Light/System
+  + Cyanotype, Tirage, Rayonnage, Affiche, Velours, NuitAmericaine), langue,
+  grain argentique, **codes de
   badges déjà célébrés** (`badge_celebration_seeded` + liste). Le sélecteur
   de langue est **effectif** (`Configuration.setLocales` via `LocalContext`) ;
-  les dialogues (cadenas, félicitations) **pré-résolvent** les chaînes hors
-  de l’`AlertDialog` avec `LocalContext.resources`. Réglages légers. Le profil
+  les dialogues (cadenas, félicitations, **reset données**) **pré-résolvent**
+  les chaînes hors de l’`AlertDialog`. Réglages légers. Le profil
   et le pseudo ont une seule source de vérité : `users` dans Room.
 
 ## 4.3. Navigation et médias
 
-- **Jetpack Compose Navigation** — graphe d’écrans V1 (carte, collections, fiche film, quêtes, profil, etc.). On part là-dessus ; on réévaluera si le graphe explose.
+- **Jetpack Compose Navigation** — graphe d’écrans V1 (carte, collections, fiche film, quêtes, profil, etc.). `selectTab` : `saveState` / `restoreState` pour conserver l’écran d’un onglet ; retaper l’onglet actif = `popBackStack` racine. On part là-dessus ; on réévaluera si le graphe explose.
 - **Coil 3** — chargement et cache des images locales dès la V1 (affiches,
   portraits, badges, collections, avatars). Jamais utilisé dans le Canvas de
   l'Atlas/carte. La V0.1 peut rester textuelle.
@@ -595,7 +599,9 @@ bibliothèque de graphe ni moteur de jeu.
 
 L’onglet Atlas **est** les listes (`atlas`). La carte du ciel est une
 route `atlas/sky` (icône étoiles en haut à droite). Onglet bas : « Atlas ».
-☰ reste sur l’onglet (c’est un onglet, pas un écran poussé).
+☰ reste sur l’onglet (c’est un onglet, pas un écran poussé). Barre du ciel :
+titre à gauche, `SkyMapExpandingSearch` (pilule depuis la loupe) à gauche
+du `?`.
 
 Les **données** viennent de Room. En vue « Autour du film », les nœuds
 mélangent un film, ses territoires (secteurs par `MapNodeKind`), et jusqu’à

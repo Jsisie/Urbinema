@@ -82,6 +82,8 @@ import fr.jsisie.urbinema.ui.model.QuestUi
 import fr.jsisie.urbinema.ui.model.RankUi
 import fr.jsisie.urbinema.ui.model.SearchHitUi
 import fr.jsisie.urbinema.ui.model.SearchKind
+import fr.jsisie.urbinema.ui.model.StatShareUi
+import fr.jsisie.urbinema.ui.model.StatsCategory
 import fr.jsisie.urbinema.ui.model.StatsListsUi
 import fr.jsisie.urbinema.ui.model.TerritoryUi
 import fr.jsisie.urbinema.ui.model.UrbinemaViewModel
@@ -100,6 +102,7 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
+import kotlin.math.roundToInt
 
 /**
  * Application-level presentation model backed by Room flows.
@@ -207,6 +210,76 @@ class MainViewModel(
     override val movie: MovieUi get() = movieState
     override val profile: ProfileUiState get() = profileState
     override val statsLists: StatsListsUi get() = statsState
+
+    override fun statsShares(category: StatsCategory): List<StatShareUi> {
+        if (category == StatsCategory.Films) {
+            return statsState.films.map {
+                StatShareUi("${it.title} · ${it.year}", sortKey = it.title, year = it.year)
+            }
+        }
+        val watchedIds = HashSet<Long>().apply {
+            watched.forEach { add(it.movieId) }
+            addAll(optimisticWatchedIds)
+        }
+        val watchedMovies = moviesWithRelations.filter { it.movie.movieId in watchedIds }
+        val total = watchedMovies.size
+        fun pct(count: Int): Int = if (total == 0) 0 else ((count * 100.0) / total).roundToInt()
+        return when (category) {
+            StatsCategory.Films -> emptyList()
+            StatsCategory.Countries -> countryEntities
+                .filter { country ->
+                    watchedMovies.any { rel -> rel.countries.any { it.countryId == country.countryId } }
+                }
+                .map { country ->
+                    val count = watchedMovies.count { rel ->
+                        rel.countries.any { it.countryId == country.countryId }
+                    }
+                    StatShareUi(localized(country.name, country.nameEn), pct(count))
+                }
+            StatsCategory.Decades -> watchedMovies
+                .map { it.movie.releaseYear / 10 * 10 }
+                .distinct()
+                .sorted()
+                .map { decade ->
+                    val count = watchedMovies.count { it.movie.releaseYear / 10 * 10 == decade }
+                    StatShareUi(decadeLabel(decade), pct(count), year = decade)
+                }
+            StatsCategory.Currents -> watchedMovies
+                .flatMap { it.characteristics }
+                .distinctBy { it.characteristicId }
+                .map { current ->
+                    val count = watchedMovies.count { rel ->
+                        rel.characteristics.any { it.characteristicId == current.characteristicId }
+                    }
+                    StatShareUi(localized(current.name, current.nameEn), pct(count))
+                }
+            StatsCategory.Continents -> {
+                val continentByCountryId = countryContinents.associate { it.countryId to it.continentId }
+                val continentsById = continentEntities.associateBy { it.continentId }
+                val watchedCountryIds = watchedMovies.flatMap { it.countries }.map { it.countryId }.toSet()
+                countryContinents
+                    .filter { it.countryId in watchedCountryIds }
+                    .map { it.continentId }
+                    .distinct()
+                    .mapNotNull { id -> continentsById[id] }
+                    .map { continent ->
+                        val count = watchedMovies.count { rel ->
+                            rel.countries.any { continentByCountryId[it.countryId] == continent.continentId }
+                        }
+                        StatShareUi(localized(continent.name, continent.nameEn), pct(count))
+                    }
+            }
+            StatsCategory.Directors -> watchedMovies
+                .flatMap { it.directors }
+                .distinctBy { it.directorId }
+                .map { director ->
+                    val count = watchedMovies.count { rel ->
+                        rel.directors.any { it.directorId == director.directorId }
+                    }
+                    StatShareUi(director.displayName, pct(count))
+                }
+        }
+    }
     override val themeMode: UrbinemaThemeMode get() = selectedThemeMode
     override val language: AppLanguage get() = selectedLanguage
     override val filmGrain: Boolean get() = grainEnabled

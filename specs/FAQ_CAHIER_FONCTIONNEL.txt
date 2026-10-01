@@ -1,6 +1,7 @@
 FAQ — URBINEMA (après 0.2.4, pack 14)
 Auteur : Cursor
 Date : 2026-09-21
+Mise à jour code livré : 0.3.5 — voir `SPECIFICATION_DEVELOPPEUR.md` et décision 79.
 
 Ce fichier remplace l’ancienne FAQ de cadrage pré-code.
 Il ne reprend plus les questions déjà tranchées (compte, cloud, TMDb dans

@@ -4,13 +4,16 @@ import android.content.Context
 import android.content.res.Configuration
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material.icons.automirrored.outlined.HelpOutline
@@ -56,12 +59,15 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawWithCache
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Canvas
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.ImageShader
 import androidx.compose.ui.graphics.Paint
+import androidx.compose.ui.graphics.ShaderBrush
+import androidx.compose.ui.graphics.TileMode
 import kotlin.math.abs
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextOverflow
@@ -86,8 +92,8 @@ import fr.jsisie.urbinema.domain.map.CinemaMapGraph
 import fr.jsisie.urbinema.domain.map.MapLayer
 import fr.jsisie.urbinema.domain.map.MapNodeKind
 import fr.jsisie.urbinema.ui.map.InteractiveMapScreen
+import fr.jsisie.urbinema.ui.map.SkyMapExpandingSearch
 import fr.jsisie.urbinema.ui.map.SkyMapSearchHits
-import fr.jsisie.urbinema.ui.map.SkyMapTitleSearch
 import fr.jsisie.urbinema.ui.model.HelpTopic
 import fr.jsisie.urbinema.ui.model.AppLanguage
 import fr.jsisie.urbinema.ui.model.AtlasFilter
@@ -107,6 +113,7 @@ import fr.jsisie.urbinema.ui.screens.DirectorScreen
 import fr.jsisie.urbinema.ui.screens.HelpScreen
 import fr.jsisie.urbinema.ui.screens.HistoryScreen
 import fr.jsisie.urbinema.ui.screens.HomeScreen
+import fr.jsisie.urbinema.ui.screens.LogoAboutDialog
 import fr.jsisie.urbinema.ui.screens.collectionLockMessage
 import fr.jsisie.urbinema.ui.model.CollectionUi
 import fr.jsisie.urbinema.ui.screens.MovieScreen
@@ -167,9 +174,18 @@ private val tabs = listOf(
 fun UrbinemaApp(model: UrbinemaViewModel = PreviewUrbinemaViewModel) {
     LocalizedContent(model.language) {
         UrbinemaTheme(model.themeMode) {
-            Box(Modifier.fillMaxSize()) {
+            Box(
+                Modifier
+                    .fillMaxSize()
+                    .then(
+                        if (model.filmGrain) {
+                            Modifier.filmGrain(dark = UrbinemaThemeTokens.colors.isDark)
+                        } else {
+                            Modifier
+                        },
+                    ),
+            ) {
                 UrbinemaNavigation(model, model.themeMode, model::setThemeMode)
-                if (model.filmGrain) FilmGrainOverlay(dark = UrbinemaThemeTokens.colors.isDark)
                 if (model.needsOnboarding) {
                     OnboardingDialog(
                         avatars = model.availableAvatars,
@@ -244,42 +260,51 @@ private fun Context.withLocale(locale: Locale): Context {
 }
 
 @Composable
-private fun FilmGrainOverlay(dark: Boolean) {
-    val wash = if (dark) 0.033f else 0.032f
-    val lightSpeck = if (dark) 0.076f else 0.07f
-    val darkSpeck = if (dark) 0.092f else 0.09f
-    val lightRadius = if (dark) 0.71.dp else 0.7.dp
-    Box(
-        Modifier
-            .fillMaxSize()
-            .drawWithCache {
-                val width = size.width.toInt().coerceAtLeast(1)
-                val height = size.height.toInt().coerceAtLeast(1)
-                val image = ImageBitmap(width, height)
-                val canvas = Canvas(image)
-                val washPaint = Paint().apply { color = Color.Black.copy(alpha = wash) }
-                val lightPaint = Paint().apply { color = Color.White.copy(alpha = lightSpeck) }
-                val darkPaint = Paint().apply { color = Color.Black.copy(alpha = darkSpeck) }
-                canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), washPaint)
-                val step = 5.dp.toPx()
-                val lightR = lightRadius.toPx()
-                val darkR = 0.8.dp.toPx()
-                var x = 0f
-                while (x < width) {
-                    var y = 0f
-                    while (y < height) {
-                        val hash = abs((x * 127.1f + y * 311.7f).toInt())
-                        when (hash % 8) {
-                            0 -> canvas.drawCircle(Offset(x, y), lightR, lightPaint)
-                            1 -> canvas.drawCircle(Offset(x, y), darkR, darkPaint)
-                        }
-                        y += step
-                    }
-                    x += step
-                }
-                onDrawBehind { drawImage(image) }
-            },
-    )
+private fun Modifier.filmGrain(dark: Boolean): Modifier {
+    val tile = remember(dark) {
+        grainTile(
+            dark = dark,
+            wash = if (dark) 0.033f else 0.032f,
+            lightSpeck = if (dark) 0.076f else 0.07f,
+            darkSpeck = if (dark) 0.092f else 0.09f,
+        )
+    }
+    val brush = remember(tile) {
+        ShaderBrush(ImageShader(tile, TileMode.Repeated, TileMode.Repeated))
+    }
+    return drawBehind { drawRect(brush) }
+}
+
+private fun grainTile(
+    dark: Boolean,
+    wash: Float,
+    lightSpeck: Float,
+    darkSpeck: Float,
+): ImageBitmap {
+    val size = 128
+    val image = ImageBitmap(size, size)
+    val canvas = Canvas(image)
+    val washPaint = Paint().apply { color = Color.Black.copy(alpha = wash) }
+    val lightPaint = Paint().apply { color = Color.White.copy(alpha = lightSpeck) }
+    val darkPaint = Paint().apply { color = Color.Black.copy(alpha = darkSpeck) }
+    canvas.drawRect(0f, 0f, size.toFloat(), size.toFloat(), washPaint)
+    val step = 5f
+    val lightR = if (dark) 1.4f else 1.3f
+    val darkR = 1.5f
+    var x = 0f
+    while (x < size) {
+        var y = 0f
+        while (y < size) {
+            val hash = abs((x * 127.1f + y * 311.7f).toInt())
+            when (hash % 8) {
+                0 -> canvas.drawCircle(Offset(x, y), lightR, lightPaint)
+                1 -> canvas.drawCircle(Offset(x, y), darkR, darkPaint)
+            }
+            y += step
+        }
+        x += step
+    }
+    return image
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -305,8 +330,15 @@ private fun UrbinemaNavigation(
     var mapLayer by rememberSaveable { mutableStateOf(MapLayer.AROUND_FILM) }
     var mapFocus by rememberSaveable { mutableStateOf("") }
     var skyQuery by remember { mutableStateOf("") }
+    var skySearchOpen by remember { mutableStateOf(false) }
+    var showLogoAbout by remember { mutableStateOf(false) }
+    fun closeSkySearch() {
+        skyQuery = ""
+        skySearchOpen = false
+    }
     LaunchedEffect(route) {
-        if (route != Routes.SkyMap) skyQuery = ""
+        if (route != Routes.SkyMap) closeSkySearch()
+        if (route != Routes.Home) showLogoAbout = false
     }
     var showCollectionLock by remember { mutableStateOf<CollectionUi?>(null) }
     val isHome = route == Routes.Home
@@ -332,6 +364,9 @@ private fun UrbinemaNavigation(
         } else {
             navController.navigate(collectionRoute(code))
         }
+    }
+    showLogoAbout.takeIf { it }?.let {
+        LogoAboutDialog(onDismiss = { showLogoAbout = false })
     }
     showCollectionLock?.let { locked ->
         val lockTitle = stringResource(R.string.collection_locked_title)
@@ -377,15 +412,10 @@ private fun UrbinemaNavigation(
                 TopAppBar(
                     title = {
                         when {
-                            isHome -> Image(
-                                painter = painterResource(R.drawable.logo_urbinema),
-                                contentDescription = stringResource(R.string.app_name),
-                                modifier = Modifier.height(40.dp),
-                                contentScale = ContentScale.Fit,
-                            )
-                            route == Routes.SkyMap -> SkyMapTitleSearch(
-                                query = skyQuery,
-                                onQueryChange = { skyQuery = it },
+                            route == Routes.SkyMap -> Text(
+                                stringResource(R.string.sky_map),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
                             )
                             route == Routes.History -> Text(
                                 stringResource(R.string.history),
@@ -402,6 +432,17 @@ private fun UrbinemaNavigation(
                         }
                     },
                     actions = {
+                        if (isHome) {
+                            Image(
+                                painter = painterResource(R.drawable.logo_urbinema),
+                                contentDescription = stringResource(R.string.app_name),
+                                modifier = Modifier
+                                    .height(40.dp)
+                                    .padding(end = UrbinemaThemeTokens.dimens.screen - 4.dp)
+                                    .clickable { showLogoAbout = true },
+                                contentScale = ContentScale.Fit,
+                            )
+                        }
                         if (route == Routes.Atlas) {
                             IconButton(onClick = { navController.navigate(helpRoute(HelpTopic.Atlas)) }) {
                                 Icon(Icons.AutoMirrored.Outlined.HelpOutline, stringResource(R.string.help))
@@ -410,6 +451,14 @@ private fun UrbinemaNavigation(
                                 Icon(Icons.Outlined.AutoAwesome, stringResource(R.string.sky_map_open))
                             }
                         } else if (route == Routes.SkyMap) {
+                            SkyMapExpandingSearch(
+                                expanded = skySearchOpen,
+                                query = skyQuery,
+                                onQueryChange = { skyQuery = it },
+                                onExpand = { skySearchOpen = true },
+                                onDismiss = { closeSkySearch() },
+                            )
+                            Spacer(Modifier.width(8.dp))
                             IconButton(onClick = { navController.navigate(helpRoute(HelpTopic.InteractiveMap)) }) {
                                 Icon(Icons.AutoMirrored.Outlined.HelpOutline, stringResource(R.string.help))
                             }
@@ -459,12 +508,8 @@ private fun UrbinemaNavigation(
                     HistoryScreen(model.home.history)
                 }
                 composable(Routes.Atlas) {
-                    AtlasScreen(
-                        countries = model.territories,
-                        currents = model.currents,
-                        decades = model.decades,
-                        genres = model.genres,
-                        directors = model.directors.map { director ->
+                    val directorTerritories = remember(model.directors) {
+                        model.directors.map { director ->
                             val seen = director.films.count { it.watched }
                             val total = director.films.size
                             val percent = if (total == 0) 0 else seen * 100 / total
@@ -476,7 +521,14 @@ private fun UrbinemaNavigation(
                                 explorationFrom(percent),
                                 filmCount = total,
                             )
-                        },
+                        }
+                    }
+                    AtlasScreen(
+                        countries = model.territories,
+                        currents = model.currents,
+                        decades = model.decades,
+                        genres = model.genres,
+                        directors = directorTerritories,
                         selectedFilter = atlasFilter,
                         onFilterChange = { atlasFilter = it },
                         resetTick = if (tabResetRoute == Routes.Atlas) tabResetTick else 0,
@@ -649,18 +701,19 @@ private fun UrbinemaNavigation(
                     val category = statsEntry.arguments?.getString("category")
                         ?.let { runCatching { StatsCategory.valueOf(it) }.getOrNull() }
                         ?: StatsCategory.Films
-                    val lists = model.statsLists
-                    when (category) {
-                        StatsCategory.Films -> NamedListScreen(
-                            R.string.films_seen,
-                            lists.films.map { "${it.title} · ${it.year}" },
-                        )
-                        StatsCategory.Countries -> NamedListScreen(R.string.countries, lists.countries)
-                        StatsCategory.Decades -> NamedListScreen(R.string.decades, lists.decades)
-                        StatsCategory.Currents -> NamedListScreen(R.string.currents, lists.currents)
-                        StatsCategory.Continents -> NamedListScreen(R.string.continents, lists.continents)
-                        StatsCategory.Directors -> NamedListScreen(R.string.directors, lists.directors)
+                    val title = when (category) {
+                        StatsCategory.Films -> R.string.films_seen
+                        StatsCategory.Countries -> R.string.countries
+                        StatsCategory.Decades -> R.string.decades
+                        StatsCategory.Currents -> R.string.currents
+                        StatsCategory.Continents -> R.string.continents
+                        StatsCategory.Directors -> R.string.directors
                     }
+                    NamedListScreen(
+                        title,
+                        category,
+                        remember(category, model.profile.films) { model.statsShares(category) },
+                    )
                 }
                 composable(
                     Routes.Director,
@@ -724,17 +777,17 @@ private fun UrbinemaNavigation(
                 }
                 composable(Routes.Sources) { SourcesScreen() }
             }
-            if (route == Routes.SkyMap && skyQuery.isNotBlank()) {
+            if (route == Routes.SkyMap && skySearchOpen && skyQuery.isNotBlank()) {
                 SkyMapSearchHits(
                     hits = model.searchMovies(skyQuery),
                     onPick = { code ->
                         mapFocus = code
                         mapLayer = MapLayer.AROUND_FILM
-                        skyQuery = ""
+                        closeSkySearch()
                     },
                     modifier = Modifier
                         .align(Alignment.TopEnd)
-                        .padding(8.dp),
+                        .padding(end = 12.dp, top = 8.dp),
                 )
             }
             }
@@ -928,18 +981,19 @@ private fun selectTab(
     if (highlightedTab == route) {
         if (navController.currentDestination?.route != route) {
             if (!navController.popBackStack(route, inclusive = false)) {
-                navController.navigate(route) {
+    navController.navigate(route) {
                     launchSingleTop = true
-                    popUpTo(navController.graph.findStartDestination().id) { saveState = false }
+                    restoreState = true
+                    popUpTo(navController.graph.findStartDestination().id) { saveState = true }
                 }
             }
         }
         return
     }
     navController.navigate(route) {
-        popUpTo(navController.graph.findStartDestination().id) { saveState = false }
+        popUpTo(navController.graph.findStartDestination().id) { saveState = true }
         launchSingleTop = true
-        restoreState = false
+        restoreState = true
     }
 }
 

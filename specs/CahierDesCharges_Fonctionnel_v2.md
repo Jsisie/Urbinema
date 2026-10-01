@@ -6,8 +6,8 @@
 
 ## Spécification fonctionnelle du produit
 
-**Version :** 0.14
-**Statut :** Cadrage fonctionnel aligné sur **0.3.0** (catalogue v3, pack 47, 1613 films, 28 collections, parcours 1)
+**Version :** 0.15
+**Statut :** Cadrage fonctionnel aligné sur **0.3.5** (catalogue v3, pack 47, 1613 films, 28 collections, parcours 1)
 **Périmètre :** Fonctionnel
 **Technologie :** Voir `CahierDesCharges_Technique.md` (hors détail d’implémentation ici)
 **Décisions actées :** `DECISIONS_ACTEES.txt` — en cas de conflit, les décisions actées priment, puis le code
@@ -59,6 +59,13 @@ dorés, pays, réal, genres, courants, décennies, collections) + légende.
 Pas de doublon de libellé (réal vs collection homonyme). Pop-up badge
 une seule fois (DataStore), chaînes FR/EN. Historique Accueil limité à
 50 + écran complet. Tiroir : un peu plus d’air sous le logo.
+
+**0.15 — livrable 0.3.5 :** palettes extra (Cyanotype … Day for night).
+Accueil : logo à droite, popup version. Carte du ciel : Expanding Search
+Bar. Stats détaillées : part des films vus + tri. Marquage Vu immédiat.
+Navigation onglets : `saveState` / `restoreState` ; retaper = racine.
+Dialogue reset : chaînes hors `AlertDialog`. Icônes launcher depuis le
+logo transparent. Formule de rang **inchangée** (v0.3.1).
 
 > **Vision du produit**
 >
@@ -792,6 +799,8 @@ L'utilisateur peut marquer un **film du catalogue** comme :
 > **Vu** (validé)
 
 Cette action déclenche les mécanismes de progression associés.
+L’écran passe **immédiatement** à Film vu (peinture optimistic) ; Room
+et le recalcul rang / badges / quêtes suivent.
 
 Cela ne signifie pas « j'ajoute n'importe quel titre de ma vie réelle ». En V1, seuls les titres proposés par Urbinema sont validables.
 
@@ -1528,6 +1537,7 @@ visuelle est un **plaisir**, pas un passage obligé.
 4. Puce **Autour du film** vs **Pays / Courants / …** : l’ancienne vue
    calques.
 5. Icône **étoiles** (depuis l’Atlas) → carte du ciel. Fiche film → **Voir sur la carte**.
+6. **Loupe** (Expanding Search Bar) : titre VF ou VO, tap = recentrer et fermer.
 
 Le bas de l’app reste visible. L’onglet Atlas reste sélectionné.
 
@@ -1702,6 +1712,13 @@ Collections complétées   23
 Quêtes réalisées          47
 Badges obtenus            38
 ```
+
+Depuis le tiroir, chaque ligne ouvre la liste détaillée. Hors **Films**,
+chaque entrée affiche le **pourcentage des films vus** qui concernent
+cet item (`MainViewModel.statsShares`). Un film coproduit compte pour
+chaque pays : la somme des % pays peut dépasser 100 %. Un 0 arrondi
+s’affiche `<1 %`. Les films n’ont pas de % (inutile). Un menu trie
+A–Z, % ou décennie.
 
 ------
 
@@ -2066,12 +2083,14 @@ Le rang s'affiche comme un **état**, pas comme une barre de chargement vers le 
 La page d'accueil est organisée en trois zones :
 
 1. **En-tête fixe** — rang en haut à gauche, niveau en haut à droite, barre
-   d'XP sur presque toute la largeur juste dessous.
-2. **Quêtes puis parcours** — trois quêtes hebdomadaires avec leurs barres de
-   progression ; ensuite les **collections en cours** : suivies **et non
-   complétées**. Une collection à 100 % disparaît de cette zone. Vignettes
-   circulaires illustrées, avec leur pourcentage. Au premier lancement cette
-   zone est vide.
+   d'XP sur presque toute la largeur juste dessous. Logo **à droite** de la
+   barre haute, au-dessus de Niveau ; tap = popup Application Urbinema +
+   version (`BuildConfig.VERSION_NAME`), sans bouton, tap dehors.
+2. **Quêtes puis parcours** — trois quêtes hebdomadaires collées sous
+   l’XP (padding `xxs`), avec leurs barres de progression ; ensuite les
+   **collections en cours** : suivies **et non complétées**. Une collection
+   à 100 % disparaît de cette zone. Vignettes circulaires illustrées, avec
+   leur pourcentage. Au premier lancement cette zone est vide.
 3. **Historique** — flux chronologique des actions, **titres de films lisibles**
    (pas les codes), occupant le bas de l'écran puis l'essentiel de l'espace à
    mesure que l'on défile.
@@ -2176,7 +2195,8 @@ Le MVP doit contenir :
 - mouvements ;
 - collections ;
 - badges ;
-- quêtes.
+- quêtes ;
+- listes détaillées : part des films vus + tri (sauf liste Films).
 
 ### Carte
 

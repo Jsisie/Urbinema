@@ -36,6 +36,7 @@
     <string name="xp_value">%1$d XP</string>
     <string name="xp_progress">%1$d / %2$d XP</string>
     <string name="percent_value">%1$d%%</string>
+    <string name="percent_under_one">&lt;1%</string>
     <string name="progress_percent">Progress: %1$d percent</string>
     <string name="weekly_quests">Weekly quests</string>
     <string name="current_quests">Current quests</string>
@@ -81,8 +82,15 @@
     <string name="sort_films">Sort films</string>
     <string name="sort_title_az">Title A–Z</string>
     <string name="sort_title_za">Title Z–A</string>
+    <string name="sort_name_az">Name A–Z</string>
+    <string name="sort_name_za">Name Z–A</string>
     <string name="sort_year_asc">Year ascending</string>
     <string name="sort_year_desc">Year descending</string>
+    <string name="sort_decade_asc">Decade ascending</string>
+    <string name="sort_decade_desc">Decade descending</string>
+    <string name="sort_percent_asc">Percentage ascending</string>
+    <string name="sort_percent_desc">Percentage descending</string>
+    <string name="sort_by">Sort by</string>
     <string name="alphabet_index_cd">Alphabetical index, slide to jump to a letter</string>
     <string name="territories">Territories</string>
     <string name="currents">Currents</string>
@@ -203,6 +211,8 @@
     <string name="about">About</string>
     <string name="about_app_name">Urbinema</string>
     <string name="about_version">Version %1$s</string>
+    <string name="logo_popup_app">Urbinema application</string>
+    <string name="logo_popup_version">version %1$s</string>
     <string name="about_author">Created and developed by Léo Barroux</string>
     <string name="about_github">github.com/jsisie</string>
     <string name="about_catalog">Local catalog</string>
@@ -266,7 +276,7 @@
     <string name="sky_map_open_place">Open this place</string>
     <string name="sky_map_open_fiche_from_movie">Show on the map</string>
     <string name="help_sky_map_title">Interactive map</string>
-    <string name="help_sky_map_body">The sky map starts from a film: director, countries, genres nearby; other films farther if they share less. In the light theme the sky switches to paper so lists stay readable; each kind keeps its colour. The same name is shown only once. The chips are “Around the film”, “Countries” and “Decades”. A tap opens the fiche or the list. Open it from the Atlas tab, stars icon in the top bar. The top field searches a French or original title and recentres the map. Pinch to zoom.</string>
+    <string name="help_sky_map_body">The sky map starts from a film: director, countries, genres nearby; other films farther if they share less. In the light theme the sky switches to paper so lists stay readable; each kind keeps its colour. The same name is shown only once. The chips are “Around the film”, “Countries” and “Decades”. A tap opens the fiche or the list. Open it from the Atlas tab, stars icon in the top bar. The magnifying glass at the top right searches a French or original title and recentres the map. Pinch to zoom.</string>
     <string name="mark_watched_prompt">Mark “%1$s” as watched?</string>
     <string name="replay_guide">Replay the guide</string>
     <string name="see_all_sources">See all sources</string>

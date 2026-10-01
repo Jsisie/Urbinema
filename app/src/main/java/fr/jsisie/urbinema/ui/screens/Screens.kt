@@ -45,11 +45,16 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
@@ -138,8 +143,13 @@ import fr.jsisie.urbinema.ui.model.ProfileUiState
 import fr.jsisie.urbinema.ui.model.RankUi
 import fr.jsisie.urbinema.ui.model.SearchHitUi
 import fr.jsisie.urbinema.ui.model.SearchKind
+import fr.jsisie.urbinema.ui.model.StatShareUi
 import fr.jsisie.urbinema.ui.model.StatsCategory
+import fr.jsisie.urbinema.ui.model.StatsListSort
 import fr.jsisie.urbinema.ui.model.StatsListsUi
+import fr.jsisie.urbinema.ui.model.defaultStatsListSort
+import fr.jsisie.urbinema.ui.model.sortedStats
+import fr.jsisie.urbinema.ui.model.statsSortOptions
 import fr.jsisie.urbinema.ui.model.TerritoryUi
 import fr.jsisie.urbinema.ui.theme.RankDisplayStyle
 import fr.jsisie.urbinema.ui.theme.ThemePickerButton
@@ -227,14 +237,16 @@ fun HomeScreen(
             }
             LazyColumn(
                 state = listState,
-                contentPadding = androidx.compose.foundation.layout.PaddingValues(
-                    horizontal = UrbinemaThemeTokens.dimens.screen,
-                    vertical = UrbinemaThemeTokens.dimens.sm,
+                contentPadding = PaddingValues(
+                    start = UrbinemaThemeTokens.dimens.screen,
+                    end = UrbinemaThemeTokens.dimens.screen,
+                    top = UrbinemaThemeTokens.dimens.xxs,
+                    bottom = UrbinemaThemeTokens.dimens.sm,
                 ),
                 verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.md),
             ) {
                 item { SectionTitle(R.string.weekly_quests) }
-                items(state.quests) { QuestCard(it) }
+                items(state.quests, key = { "${it.title}-${it.condition}" }) { QuestCard(it) }
                 item { SectionTitle(R.string.current_collections) }
                 if (state.collections.isEmpty()) {
                     item {
@@ -246,7 +258,7 @@ fun HomeScreen(
                 } else {
                     item {
                         LazyRow(horizontalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.md)) {
-                            items(state.collections) { collection ->
+                            items(state.collections, key = { it.id }) { collection ->
                                 CollectionMedallion(collection.name, collection.progress) { onCollection(collection.id) }
                             }
                         }
@@ -254,7 +266,10 @@ fun HomeScreen(
                 }
                 item { SectionTitle(R.string.history) }
                 if (state.history.isEmpty()) item { Text(stringResource(R.string.journey_starts)) }
-                items(state.history.take(HistoryUi.HOME_PREVIEW_LIMIT)) { event ->
+                items(
+                    state.history.take(HistoryUi.HOME_PREVIEW_LIMIT),
+                    key = { "${it.dateLabel}-${it.type}-${it.subject}" },
+                ) { event ->
                     HistoryEventRow(event)
                 }
                 if (state.history.size > HistoryUi.HOME_PREVIEW_LIMIT) {
@@ -742,15 +757,100 @@ fun StatsScreen(state: ProfileUiState, lists: StatsListsUi, onOpen: (StatsCatego
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NamedListScreen(title: Int, values: List<String>) {
+fun NamedListScreen(title: Int, category: StatsCategory, values: List<StatShareUi>) {
+    val muted = UrbinemaThemeTokens.colors.onBackgroundMuted
+    val options = statsSortOptions(category)
+    val defaultSort = defaultStatsListSort(category)
+    var sortName by rememberSaveable(category) { mutableStateOf(defaultSort.name) }
+    val sort = StatsListSort.entries.firstOrNull { it.name == sortName }
+        ?.takeIf { option -> options.any { it.first == option } }
+        ?: defaultSort
+    val sorted = remember(values, sort) { values.sortedStats(sort) }
     LazyColumn(
         modifier = pageModifier,
         contentPadding = androidx.compose.foundation.layout.PaddingValues(UrbinemaThemeTokens.dimens.screen),
     ) {
         item { ScreenTitle(title) }
-        if (values.isEmpty()) item { Text(stringResource(R.string.empty_state)) }
-        items(values) { Text(it, modifier = Modifier.padding(vertical = UrbinemaThemeTokens.dimens.sm)) }
+        if (values.isNotEmpty()) {
+            item {
+                StatsSortDropdown(
+                    options = options,
+                    current = sort,
+                    onChange = { sortName = it.name },
+                    modifier = Modifier.padding(bottom = UrbinemaThemeTokens.dimens.sm),
+                )
+            }
+        }
+        if (sorted.isEmpty()) item { Text(stringResource(R.string.empty_state)) }
+        items(sorted) { item ->
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = UrbinemaThemeTokens.dimens.sm),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(item.label, modifier = Modifier.weight(1f).padding(end = UrbinemaThemeTokens.dimens.sm))
+                item.percent?.let { percent ->
+                    Text(
+                        if (percent == 0) {
+                            stringResource(R.string.percent_under_one)
+                        } else {
+                            stringResource(R.string.percent_value, percent)
+                        },
+                        color = muted,
+                        style = MaterialTheme.typography.labelMedium,
+                    )
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun StatsSortDropdown(
+    options: List<Pair<StatsListSort, Int>>,
+    current: StatsListSort,
+    onChange: (StatsListSort) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    var expanded by remember { mutableStateOf(false) }
+    val resolved = options.map { it.first to stringResource(it.second) }
+    val currentLabel = resolved.firstOrNull { it.first == current }?.second ?: resolved.first().second
+    ExposedDropdownMenuBox(
+        expanded = expanded,
+        onExpandedChange = { expanded = it },
+        modifier = modifier.fillMaxWidth(),
+    ) {
+        OutlinedTextField(
+            value = currentLabel,
+            onValueChange = {},
+            readOnly = true,
+            singleLine = true,
+            label = { Text(stringResource(R.string.sort_by)) },
+            trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded) },
+            textStyle = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier
+                .menuAnchor(MenuAnchorType.PrimaryNotEditable)
+                .fillMaxWidth(),
+        )
+        ExposedDropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false },
+        ) {
+            resolved.forEach { (value, label) ->
+                DropdownMenuItem(
+                    text = { Text(label) },
+                    onClick = {
+                        onChange(value)
+                        expanded = false
+                    },
+                )
+            }
+        }
     }
 }
 
@@ -1441,6 +1541,50 @@ fun BadgeUnlockedDialog(badge: BadgeUi, onDismiss: () -> Unit) {
 }
 
 @Composable
+fun LogoAboutDialog(onDismiss: () -> Unit) {
+    val colors = UrbinemaThemeTokens.colors
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(usePlatformDefaultWidth = false),
+    ) {
+        val dialogView = LocalView.current
+        SideEffect {
+            val window = (dialogView.parent as? DialogWindowProvider)?.window ?: return@SideEffect
+            window.setBackgroundDrawable(ColorDrawable(android.graphics.Color.TRANSPARENT))
+        }
+        Surface(
+            shape = RoundedCornerShape(16.dp),
+            color = colors.surface,
+            contentColor = colors.onBackground,
+        ) {
+            Column(
+                Modifier.padding(horizontal = 20.dp, vertical = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(UrbinemaThemeTokens.dimens.xs),
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.logo_urbinema),
+                    contentDescription = stringResource(R.string.app_name),
+                    modifier = Modifier.height(96.dp),
+                    contentScale = ContentScale.Fit,
+                )
+                Text(
+                    stringResource(R.string.logo_popup_app),
+                    style = MaterialTheme.typography.titleSmall,
+                    textAlign = TextAlign.Center,
+                )
+                Text(
+                    stringResource(R.string.logo_popup_version, BuildConfig.VERSION_NAME),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = colors.onBackgroundMuted,
+                    textAlign = TextAlign.Center,
+                )
+            }
+        }
+    }
+}
+
+@Composable
 private fun BadgeTile(badge: BadgeUi) {
     var press by remember { mutableStateOf<Offset?>(null) }
     val colors = UrbinemaThemeTokens.colors
@@ -1769,10 +1913,15 @@ fun SettingsScreen(
         )
     }
     if (confirmReset) {
+        val resetTitle = stringResource(R.string.reset_data_dialog_title)
+        val resetBody = stringResource(R.string.reset_data_body)
+        val resetConfirm = stringResource(R.string.reset_data_confirm)
+        val resetCancel = stringResource(R.string.reset_data_cancel)
+        val resetCountdownLabel = stringResource(R.string.reset_data_countdown, resetCountdown)
         AlertDialog(
             onDismissRequest = { confirmReset = false },
-            title = { Text(stringResource(R.string.reset_data_dialog_title)) },
-            text = { Text(stringResource(R.string.reset_data_body)) },
+            title = { Text(resetTitle) },
+            text = { Text(resetBody) },
             confirmButton = {
                 TextButton(
                     enabled = resetCountdown == 0,
@@ -1781,18 +1930,12 @@ fun SettingsScreen(
                         onResetProgress()
                     },
                 ) {
-                    Text(
-                        if (resetCountdown > 0) {
-                            stringResource(R.string.reset_data_countdown, resetCountdown)
-                        } else {
-                            stringResource(R.string.reset_data_confirm)
-                        },
-                    )
+                    Text(if (resetCountdown > 0) resetCountdownLabel else resetConfirm)
                 }
             },
             dismissButton = {
                 TextButton(onClick = { confirmReset = false }) {
-                    Text(stringResource(R.string.reset_data_cancel))
+                    Text(resetCancel)
                 }
             },
         )

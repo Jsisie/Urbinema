@@ -344,6 +344,62 @@ data class StatsListsUi(
     val directors: List<String> = emptyList(),
 )
 
+data class StatShareUi(
+    val label: String,
+    val percent: Int? = null,
+    val sortKey: String = label,
+    val year: Int? = null,
+)
+
+enum class StatsListSort {
+    LabelAsc,
+    LabelDesc,
+    DecadeAsc,
+    DecadeDesc,
+    PercentAsc,
+    PercentDesc,
+}
+
+fun defaultStatsListSort(category: StatsCategory): StatsListSort = when (category) {
+    StatsCategory.Decades -> StatsListSort.DecadeAsc
+    else -> StatsListSort.LabelAsc
+}
+
+fun statsSortOptions(category: StatsCategory): List<Pair<StatsListSort, Int>> = when (category) {
+    StatsCategory.Films -> listOf(
+        StatsListSort.LabelAsc to R.string.sort_title_az,
+        StatsListSort.LabelDesc to R.string.sort_title_za,
+    )
+    StatsCategory.Decades -> listOf(
+        StatsListSort.DecadeAsc to R.string.sort_decade_asc,
+        StatsListSort.DecadeDesc to R.string.sort_decade_desc,
+        StatsListSort.PercentAsc to R.string.sort_percent_asc,
+        StatsListSort.PercentDesc to R.string.sort_percent_desc,
+    )
+    else -> listOf(
+        StatsListSort.LabelAsc to R.string.sort_name_az,
+        StatsListSort.LabelDesc to R.string.sort_name_za,
+        StatsListSort.PercentAsc to R.string.sort_percent_asc,
+        StatsListSort.PercentDesc to R.string.sort_percent_desc,
+    )
+}
+
+fun List<StatShareUi>.sortedStats(sort: StatsListSort): List<StatShareUi> {
+    val byLabel = Comparator<StatShareUi> { left, right ->
+        filmTitleCollator.compare(filmSortKey(left.sortKey), filmSortKey(right.sortKey))
+    }
+    val byYear = compareBy<StatShareUi> { it.year ?: Int.MAX_VALUE }
+    val byPercent = compareBy<StatShareUi> { it.percent ?: -1 }
+    return when (sort) {
+        StatsListSort.LabelAsc -> sortedWith(byLabel)
+        StatsListSort.LabelDesc -> sortedWith(byLabel.reversed())
+        StatsListSort.DecadeAsc -> sortedWith(byYear.then(byLabel))
+        StatsListSort.DecadeDesc -> sortedWith(byYear.reversed().then(byLabel))
+        StatsListSort.PercentAsc -> sortedWith(byPercent.then(byLabel))
+        StatsListSort.PercentDesc -> sortedWith(byPercent.reversed().then(byLabel))
+    }
+}
+
 /** UI-only contract, ready to be implemented by a domain-backed ViewModel. */
 interface UrbinemaViewModel {
     val home: HomeUiState
@@ -359,6 +415,7 @@ interface UrbinemaViewModel {
     val movie: MovieUi
     val profile: ProfileUiState
     val statsLists: StatsListsUi
+    fun statsShares(category: StatsCategory): List<StatShareUi>
     val themeMode: UrbinemaThemeMode
     val language: AppLanguage
     val filmGrain: Boolean
@@ -519,6 +576,7 @@ object PreviewUrbinemaViewModel : UrbinemaViewModel {
         avatarCode = "AVATAR_01",
     )
     override val statsLists = StatsListsUi()
+    override fun statsShares(category: StatsCategory): List<StatShareUi> = emptyList()
     override val themeMode = UrbinemaThemeMode.Dark
     override val language = AppLanguage.System
     override val filmGrain = false

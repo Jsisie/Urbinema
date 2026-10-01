@@ -75,6 +75,19 @@ si on veut un chemin différent du code, pas pour le cas normal.
 
 ---
 
+## 2.bis Icône launcher et logo in-app
+
+Source unique : `app/src/main/res/drawable-nodpi/logo_urbinema.png`
+(fond **transparent**). Le splash, la barre Accueil et `LogoAboutDialog`
+lisent ce drawable.
+
+Les mipmaps (`ic_launcher`, `ic_launcher_round`, `ic_launcher_foreground`)
+sont régénérés par `tools/generate_launcher_icons.py` : foreground adaptatif
+432 px, icônes densité sur fond crème. Relancer le script après un nouveau
+PNG, ne pas repeindre les mipmaps à la main.
+
+---
+
 ## 3. Branchement JSON (optionnel, plus tard)
 
 Dans `catalog.json` :
